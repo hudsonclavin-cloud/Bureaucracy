@@ -140,6 +140,42 @@ _OFFICE_OF = re.compile(r"^(?:immediate )?office of (?:the )?")
 #: the unit the title names. Measured on the committed export before it was
 #: built: 10 posts, none of them reachable by a bare title.
 SCOPE_TITLE_NAMES_ITS_ORGANISATION = "title_names_its_organisation"
+#: Since 2026-10-08 (the fourteenth batch): a title that names THE OFFICE IT
+#: IS FILED UNDER -- "DIRECTOR, OFFICE OF NUCLEAR REACTOR REGULATION" under the
+#: Nuclear Regulatory Commission's sub-organisation "OFFICE OF NUCLEAR REACTOR
+#: REGULATION", "DIRECTOR, BUREAU OF COMPETITION" under the FTC's "BUREAU OF
+#: COMPETITION" -- where that office names no node here and this graph draws
+#: the office's head directly under the agency, under the WHOLE title
+#: ("Director — Office of Nuclear Reactor Regulation"). The organisation half
+#: after the title's last comma must be the sub-organisation's own name by
+#: canonical-key equality (no fold) and carry at least two tokens, and the
+#: whole title must answer to exactly one direct child of the agency node,
+#: under every refusal the main pass makes. It is the office-named-for-the-
+#: post rule's shape one step over: there the office is named for the title,
+#: here the title names the office, and in both the row is the office's own
+#: head and nothing else. The placement claimed is the one that rule claims,
+#: under the agency, the unit the export files the office under. Measured on
+#: the committed export before it was built: 10 posts, every one a direct
+#: child of NRC, FERC, FTC or OPM; four are then refused by
+#: `CODE_CONTRADICTED_LISTINGS`. Reaching beneath the agency rather than its
+#: direct children was measured at 13 (USDA's Veterinary Services and
+#: National Forest System deputies, NCI's Director) and NOT built.
+SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER = "title_names_the_office_it_is_filed_under"
+#: Posts whose listing in the export contradicts the U.S. Code's own Executive
+#: Schedule, refused by node id from every pass (CURATION.md §19.20): the Code
+#: places the office at a level and the export lists it on the ES plan, and a
+#: listing the Code contradicts is published from neither document. Each
+#: value is the Code's printed title and the section that prints it.
+CODE_CONTRADICTED_LISTINGS: dict[str, tuple[str, str]] = {
+    "exec-regulatory-nrc-director-office-of-nuclear-reactor-regulation": (
+        "Director of Nuclear Reactor Regulation, Nuclear Regulatory Commission", "5 U.S.C. 5315"),
+    "exec-regulatory-nrc-director-office-of-nuclear-material-safety-safeguards": (
+        "Director of Nuclear Material Safety and Safeguards, Nuclear Regulatory Commission", "5 U.S.C. 5315"),
+    "exec-regulatory-nrc-director-office-of-nuclear-regulatory-research": (
+        "Director of Nuclear Regulatory Research, Nuclear Regulatory Commission", "5 U.S.C. 5315"),
+    "exec-ind-opm-associate-director-merit-system-accountability-compliance": (
+        "Associate Directors of the Office of Personnel Management (5)", "5 U.S.C. 5316"),
+}
 PAY_SOURCE = "opm_plum_current_export"
 PAY_SOURCE_TYPE = "opm_plum_current_export"
 PAY_METHOD = "rate_of_basic_pay_stated_in_opm_current_plum_export"
@@ -366,6 +402,21 @@ def title_names_this_organisation(title: Any, organisation_name: Any) -> str | N
         return None
     office_key, keys = parsed
     return office_key if keys & organisation_fold_keys(organisation_name) else None
+
+
+def title_names_the_office_it_is_filed_under(title: Any, organization: Any) -> bool:
+    """True when the organisation half after `title`'s last comma IS
+    `organization` by canonical-key equality and carries two tokens or more:
+    "DIRECTOR, OFFICE OF NUCLEAR REACTOR REGULATION" under "OFFICE OF NUCLEAR
+    REACTOR REGULATION". No fold of any kind: "DEPUTY ADMINISTRATOR, PLANT
+    PROTECTION AND QUARANTINE" under "PLANT PROTECTION AND QUARANTINE SERVICE"
+    names a different string and is refused."""
+    text = unescape(title).strip()
+    if "," not in text:
+        return False
+    office, tail = text.rsplit(",", 1)
+    tail_key = canonical_name_key(tail)
+    return bool(canonical_name_key(office)) and len(tail_key.split()) >= 2 and tail_key == canonical_name_key(unescape(organization))
 
 
 def agency_unit_name(agency: Any) -> str:
@@ -617,6 +668,7 @@ def match_positions(
         "positions_shared_title": [],
         "positions_ambiguous_alternatives": [],
         "positions_title_ambiguous_in_export": [],
+        "positions_refused_code_contradicts_listing": [],
         "positions_unmatched": 0,
         "positions_unmatched_sample": [],
         "unmatched_titles_top": [],
@@ -702,6 +754,11 @@ def match_positions(
                     "organisationId": alias_owner,
                 }
                 report["positions_under_an_aliased_agency"] = report.get("positions_under_an_aliased_agency", 0) + 1
+            if node_id in CODE_CONTRADICTED_LISTINGS:
+                report["positions_refused_code_contradicts_listing"].append(
+                    {"id": node_id, "listedTitle": listed_title, "codeTitle": CODE_CONTRADICTED_LISTINGS[node_id][0],
+                     "codeSection": CODE_CONTRADICTED_LISTINGS[node_id][1]})
+                continue
             records[node_id] = record
             report["positions_matched"] += 1
             plan = str(record.get("payPlan") or "?")
@@ -783,6 +840,11 @@ def match_positions(
             if agency_alias is not None:
                 record["organisationNameAlias"] = {"alias": agency_alias.alias, "basis": agency_alias.basis, "organisationId": agency_id}
                 report["positions_under_an_aliased_agency"] = report.get("positions_under_an_aliased_agency", 0) + 1
+            if node_id in CODE_CONTRADICTED_LISTINGS:
+                report["positions_refused_code_contradicts_listing"].append(
+                    {"id": node_id, "listedTitle": listed_title, "codeTitle": CODE_CONTRADICTED_LISTINGS[node_id][0],
+                     "codeSection": CODE_CONTRADICTED_LISTINGS[node_id][1]})
+                continue
             records[node_id] = record
             report["positions_matched"] += 1
             report["positions_matched_under_an_office_named_for_the_post"] += 1
@@ -882,9 +944,96 @@ def match_positions(
             if agency_alias is not None:
                 record["organisationNameAlias"] = {"alias": agency_alias.alias, "basis": agency_alias.basis, "organisationId": agency_id}
                 report["positions_under_an_aliased_agency"] = report.get("positions_under_an_aliased_agency", 0) + 1
+            if node_id in CODE_CONTRADICTED_LISTINGS:
+                report["positions_refused_code_contradicts_listing"].append(
+                    {"id": node_id, "listedTitle": listed_title, "codeTitle": CODE_CONTRADICTED_LISTINGS[node_id][0],
+                     "codeSection": CODE_CONTRADICTED_LISTINGS[node_id][1]})
+                continue
             records[node_id] = record
             report["positions_matched"] += 1
             report["positions_matched_by_the_organisation_their_title_names"] += 1
+            name = str(positions[node_id].get("name") or "")
+            if unmatched_titles.get(name):
+                unmatched_titles[name] -= 1
+                report["positions_unmatched"] -= 1
+                if unmatched_titles[name] <= 0:
+                    del unmatched_titles[name]
+            plan = str(record.get("payPlan") or "?")
+            report["positions_by_pay_plan"][plan] = report["positions_by_pay_plan"].get(plan, 0) + 1
+            if record.get("reportedPay") is not None:
+                report["positions_with_a_rate"] += 1
+    # A fourth pass, since 2026-10-08 (SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER):
+    # rows filed under a sub-organisation that names no node here, whose
+    # title's organisation half IS that sub-organisation, reaching the one
+    # direct child of the agency node that answers to the WHOLE title. The
+    # refusals are the second pass's; the placement it claims is the second
+    # pass's, under the agency.
+    report["positions_matched_by_a_title_naming_the_office_it_is_filed_under"] = 0
+    filed: dict[str, dict[str, dict[tuple[str, str], list[dict[str, Any]]]]] = {}
+    for (agency, organization), org_rows in groups.items():
+        if (agency, organization) in group_nodes or agency not in agency_nodes:
+            continue
+        for r in org_rows:
+            if title_names_the_office_it_is_filed_under(r["title"], organization):
+                filed.setdefault(agency_nodes[agency], {}).setdefault(
+                    canonical_name_key(unescape(r["title"])), {}).setdefault((agency, organization), []).append(r)
+    for agency_id, by_title in sorted(filed.items()):
+        agency_node = node_map[agency_id]
+        children = [i for i in positions if parent_map.get(i) == agency_id and i not in records]
+        if not children:
+            continue
+        alternatives = {i: position_name_alternatives(positions[i].get("name"), agency_node.get("name")) for i in children}
+        shared = Counter(k for keys in alternatives.values() for k in keys)
+        for node_id in sorted(children):
+            keys = alternatives[node_id]
+            hits = [k for k in keys if k in by_title]
+            if not hits:
+                continue
+            if any(shared[k] > 1 for k in keys):
+                report["positions_shared_title"].append({"id": node_id, "name": positions[node_id].get("name"), "organization": agency_id})
+                continue
+            if len(hits) > 1:
+                report["positions_ambiguous_alternatives"].append({"id": node_id, "name": positions[node_id].get("name"), "titles": sorted(hits)})
+                continue
+            filings = by_title[hits[0]]
+            if len(filings) != 1:
+                report["positions_title_in_several_groups"].append({"id": node_id, "name": positions[node_id].get("name"), "groups": sorted(filings)})
+                continue
+            (agency, organization), rows = next(iter(filings.items()))
+            spellings = sorted({r["title"] for r in rows})
+            if len(spellings) > 1:
+                report["positions_title_ambiguous_in_export"].append({"id": node_id, "name": positions[node_id].get("name"), "titles": spellings})
+                continue
+            listed_title = spellings[0]
+            agency_alias = alias_hits.get(agency_id)
+            record = {
+                "source": SOURCE,
+                "method": METHOD,
+                "edition": label,
+                "listedTitle": listed_title,
+                "agency": agency,
+                "organization": organization,
+                "agencyMatchedBy": "scoped_prefix" if split_scoped_agency(agency) and not (export_agency_keys(agency) & {canonical_name_key(agency_node.get("name"))}) else "name",
+                "scopeRule": SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER,
+                **describe_listing(rows),
+                "exportFetchedAt": export.get("fetched_at"),
+                "url": export.get("url"),
+                "documentSha256": export.get("sha256"),
+                "placement": {"status": STATUS_LISTED, "parentId": agency_id, "parentListedName": agency_unit_name(agency)},
+            }
+            if len(keys) > 1:
+                record["matchedAlternative"] = hits[0]
+            if agency_alias is not None:
+                record["organisationNameAlias"] = {"alias": agency_alias.alias, "basis": agency_alias.basis, "organisationId": agency_id}
+                report["positions_under_an_aliased_agency"] = report.get("positions_under_an_aliased_agency", 0) + 1
+            if node_id in CODE_CONTRADICTED_LISTINGS:
+                report["positions_refused_code_contradicts_listing"].append(
+                    {"id": node_id, "listedTitle": listed_title, "codeTitle": CODE_CONTRADICTED_LISTINGS[node_id][0],
+                     "codeSection": CODE_CONTRADICTED_LISTINGS[node_id][1]})
+                continue
+            records[node_id] = record
+            report["positions_matched"] += 1
+            report["positions_matched_by_a_title_naming_the_office_it_is_filed_under"] += 1
             name = str(positions[node_id].get("name") or "")
             if unmatched_titles.get(name):
                 unmatched_titles[name] -= 1
@@ -1056,11 +1205,14 @@ def apply_current_listing(
         alias_table = load_alias_table(root, index_tree=index_tree)
     stats = {"listed": 0, "unknown_node": 0, "not_a_position": 0, "stale_name": 0, "undated": 0,
              "placements_listed": 0, "placements_stale_parent": 0, "urls_added": 0, "with_a_rate": 0,
-             "agency_alias_row_withdrawn": 0, "under_an_aliased_agency": 0}
+             "agency_alias_row_withdrawn": 0, "under_an_aliased_agency": 0, "code_contradicts_listing": 0}
     for node_id, record in records.items():
         node = node_map.get(node_id)
         if node is None:
             stats["unknown_node"] += 1
+            continue
+        if node_id in CODE_CONTRADICTED_LISTINGS:
+            stats["code_contradicts_listing"] += 1
             continue
         if not _is_position(node):
             stats["not_a_position"] += 1
@@ -1081,6 +1233,14 @@ def apply_current_listing(
             office_key = title_names_this_organisation(record.get("listedTitle"), (parent or {}).get("name"))
             still_names = office_key is not None and office_key in position_name_alternatives(
                 node.get("name"), (parent or {}).get("name"))
+        elif record.get("scopeRule") == SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER:
+            # The WHOLE title must still name the node, and the title must
+            # still name the office the export files it under.
+            still_names = (
+                title_names_the_office_it_is_filed_under(record.get("listedTitle"), record.get("organization"))
+                and canonical_name_key(unescape(record.get("listedTitle"))) in position_name_alternatives(
+                    node.get("name"), (parent or {}).get("name"))
+            )
         else:
             still_names = listed_title_still_names(node.get("name"), parent_names, record.get("listedTitle"))
         if not still_names:

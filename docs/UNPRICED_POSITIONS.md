@@ -8,12 +8,12 @@ checkable claim. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is generated from this
 same list in the same run.
 
 - position nodes in the published graph: **4,591**
-- carrying a pay claim an official document supports: **1,242**
-- carrying none: **3,349**
+- carrying a pay claim an official document supports: **1,248**
+- carrying none: **3,343**
 
 | reason | count | what it means |
 |---|---|---|
-| `unreached` | 2,176 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
+| `unreached` | 2,170 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
 | `multiplicity` | 611 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 46 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
 | `beneath_replaced_unit` | 432 | the post sits beneath a unit the government has replaced, and research on it is paused. The owner's decision of 2026-10-07: these posts (the eighteen former VA networks' medical-centre posts and network officers, CURATION.md §10) are not asked about in any research pack until a VA document maps medical centres to the five current networks and they are re-homed. What pays a medical-centre post does not depend on which network it reports to, so the question is not lost; it is waiting on curation, not on research. |
 | `not_federally_paid` | 112 | an official document establishes the post is not on a federal pay schedule. The owner's decision of 2026-10-07: where a committed official document establishes that a post's holder is not paid by the federal government (a laboratory DOE states is operated by a contractor), the post carries `positionEmployer` saying so and is no longer research work. No federal pay figure exists for it to find. |
@@ -2071,19 +2071,6 @@ same list in the same run.
 - `exec-dept-dhs-fema-federal-coordinating-officer-fco-disaster-deployments` — Federal Coordinating Officer (FCO) — disaster deployments — `unreached`
 - `exec-dept-dhs-fema-regional-administrator-10-fema-regions` — Regional Administrator — 10 FEMA Regions — `unreached`
 
-## Federal Trade Commission (FTC)  — 8 unpriced
-
-`exec-regulatory-ftc`
-
-- `exec-regulatory-ftc-chief-advisor` — Chief Advisor — `unreached`
-- `exec-regulatory-ftc-director-bureau-of-competition` — Director — Bureau of Competition — `unreached`
-- `exec-regulatory-ftc-director-bureau-of-consumer-protection` — Director — Bureau of Consumer Protection — `unreached`
-- `exec-regulatory-ftc-director-bureau-of-economics` — Director — Bureau of Economics — `unreached`
-- `exec-regulatory-ftc-economist-multiple` — Economist (×multiple) — `multiplicity`
-- `exec-regulatory-ftc-inspector-general` — Inspector General — `unreached`
-- `exec-regulatory-ftc-regional-director-7-regional-offices` — Regional Director — 7 Regional Offices — `unreached`
-- `exec-regulatory-ftc-staff-attorney-multiple` — Staff Attorney (×multiple) — `multiplicity`
-
 ## Forest Service (USFS)  — 8 unpriced
 
 `exec-dept-usda-fs`
@@ -2661,18 +2648,6 @@ same list in the same run.
 - `jud-circuit-11th-circuit-law-clerk-3-per-active-judge` — Law Clerk (×3 per active judge) — `multiplicity`
 - `jud-circuit-11th-circuit-library-director` — Library Director — `unreached`
 - `jud-circuit-11th-circuit-staff-attorney-multiple` — Staff Attorney (×multiple) — `multiplicity`
-
-## Federal Energy Regulatory Commission (FERC)  — 7 unpriced
-
-`exec-regulatory-ferc`
-
-- `exec-regulatory-ferc-chief-of-staff` — Chief of Staff — `unreached`
-- `exec-regulatory-ferc-director-office-of-electric-reliability` — Director — Office of Electric Reliability — `unreached`
-- `exec-regulatory-ferc-director-office-of-energy-market-regulation` — Director — Office of Energy Market Regulation — `unreached`
-- `exec-regulatory-ferc-director-office-of-energy-policy-innovation` — Director — Office of Energy Policy & Innovation — `unreached`
-- `exec-regulatory-ferc-director-office-of-enforcement` — Director — Office of Enforcement — `unreached`
-- `exec-regulatory-ferc-energy-industry-analyst-multiple` — Energy Industry Analyst (×multiple) — `multiplicity`
-- `exec-regulatory-ferc-inspector-general` — Inspector General — `unreached`
 
 ## Federal Public Defender Offices (82)  — 7 unpriced
 
@@ -3294,17 +3269,6 @@ same list in the same run.
 - `exec-dept-defense-agency-nro-director-national-reconnaissance-office-nro` — Director, National Reconnaissance Office (NRO) — `unreached`
 - `exec-dept-defense-agency-nro-general-counsel` — General Counsel — `unreached`
 
-## Nuclear Regulatory Commission (NRC)  — 6 unpriced
-
-`exec-regulatory-nrc`
-
-- `exec-regulatory-nrc-director-office-of-nuclear-material-safety-safeguards` — Director — Office of Nuclear Material Safety & Safeguards — `unreached`
-- `exec-regulatory-nrc-director-office-of-nuclear-reactor-regulation` — Director — Office of Nuclear Reactor Regulation — `unreached`
-- `exec-regulatory-nrc-director-office-of-nuclear-regulatory-research` — Director — Office of Nuclear Regulatory Research — `unreached`
-- `exec-regulatory-nrc-director-office-of-nuclear-security-incident-response` — Director — Office of Nuclear Security & Incident Response — `unreached`
-- `exec-regulatory-nrc-nuclear-reactor-regulation-specialist-multiple` — Nuclear Reactor Regulation Specialist (×multiple) — `multiplicity`
-- `exec-regulatory-nrc-regional-director-4-regions` — Regional Director — 4 Regions — `unreached`
-
 ## Office of Environmental Management (EM)  — 6 unpriced
 
 `exec-dept-doe-em`
@@ -3503,6 +3467,16 @@ same list in the same run.
 - `exec-dept-usda-fsa-farm-loan-officer` — Farm Loan Officer — `unreached`
 - `exec-dept-usda-fsa-state-executive-director-50-states` — State Executive Director — 50 states — `unreached`
 
+## Federal Energy Regulatory Commission (FERC)  — 5 unpriced
+
+`exec-regulatory-ferc`
+
+- `exec-regulatory-ferc-chief-of-staff` — Chief of Staff — `unreached`
+- `exec-regulatory-ferc-director-office-of-energy-policy-innovation` — Director — Office of Energy Policy & Innovation — `unreached`
+- `exec-regulatory-ferc-director-office-of-enforcement` — Director — Office of Enforcement — `unreached`
+- `exec-regulatory-ferc-energy-industry-analyst-multiple` — Energy Industry Analyst (×multiple) — `multiplicity`
+- `exec-regulatory-ferc-inspector-general` — Inspector General — `unreached`
+
 ## Federal Highway Administration (FHWA)  — 5 unpriced
 
 `exec-dept-dot-fhwa`
@@ -3522,6 +3496,16 @@ same list in the same run.
 - `jud-support-fjc-director-information-technology` — Director — Information Technology — `unreached`
 - `jud-support-fjc-director-research-division` — Director — Research Division — `unreached`
 - `jud-support-fjc-research-scientist-attorney-multiple` — Research Scientist / Attorney (×multiple) — `multiplicity`
+
+## Federal Trade Commission (FTC)  — 5 unpriced
+
+`exec-regulatory-ftc`
+
+- `exec-regulatory-ftc-chief-advisor` — Chief Advisor — `unreached`
+- `exec-regulatory-ftc-economist-multiple` — Economist (×multiple) — `multiplicity`
+- `exec-regulatory-ftc-inspector-general` — Inspector General — `unreached`
+- `exec-regulatory-ftc-regional-director-7-regional-offices` — Regional Director — 7 Regional Offices — `unreached`
+- `exec-regulatory-ftc-staff-attorney-multiple` — Staff Attorney (×multiple) — `multiplicity`
 
 ## Health Resources & Services Administration (HRSA)  — 5 unpriced
 
@@ -3602,6 +3586,16 @@ same list in the same run.
 - `exec-dept-usda-nrcs-district-conservationist` — District Conservationist — `unreached`
 - `exec-dept-usda-nrcs-soil-conservationist` — Soil Conservationist — `unreached`
 - `exec-dept-usda-nrcs-state-conservationist-50-states` — State Conservationist — 50 states — `unreached`
+
+## Nuclear Regulatory Commission (NRC)  — 5 unpriced
+
+`exec-regulatory-nrc`
+
+- `exec-regulatory-nrc-director-office-of-nuclear-material-safety-safeguards` — Director — Office of Nuclear Material Safety & Safeguards — `unreached`
+- `exec-regulatory-nrc-director-office-of-nuclear-reactor-regulation` — Director — Office of Nuclear Reactor Regulation — `unreached`
+- `exec-regulatory-nrc-director-office-of-nuclear-regulatory-research` — Director — Office of Nuclear Regulatory Research — `unreached`
+- `exec-regulatory-nrc-nuclear-reactor-regulation-specialist-multiple` — Nuclear Reactor Regulation Specialist (×multiple) — `multiplicity`
+- `exec-regulatory-nrc-regional-director-4-regions` — Regional Director — 4 Regions — `unreached`
 
 ## Office of Financial Research (OFR)  — 5 unpriced
 

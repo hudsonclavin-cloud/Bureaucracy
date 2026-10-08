@@ -297299,18 +297299,95 @@
                     "attempts": 1,
                     "detail": "PermissionError: robots.txt disallows this path (www.ftc.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
                   },
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                  ],
+                  "evidenceUrls": [
+                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                  ],
+                  "sourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "positionCurrentListing": {
+                    "source": "opm_plum_current_export",
+                    "method": "listed_in_opm_current_plum_export",
+                    "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                    "listedTitle": "DIRECTOR, BUREAU OF COMPETITION",
+                    "agency": "FEDERAL TRADE COMMISSION",
+                    "organization": "BUREAU OF COMPETITION",
+                    "positionStatus": "Filled",
+                    "appointmentType": "NA",
+                    "payPlan": "ES",
+                    "level": "$197,200",
+                    "payLevel": null,
+                    "reportedPay": 197200.0,
+                    "reportedPayText": "$197,200",
+                    "payPlanAndLevelOnOneRow": true,
+                    "rows": 1,
+                    "rowsListed": 1,
+                    "exportFetchedAt": "2026-09-21T03:02:16Z",
+                    "checkedAt": "2026-09-21T03:02:16Z",
+                    "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                    "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                    "scopeRule": "title_names_the_office_it_is_filed_under"
+                  },
+                  "lastVerified": "2026-09-21T03:02:16Z",
+                  "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                  "verificationMethod": "listed_in_opm_current_plum_export",
+                  "placementVerified": true,
+                  "placementUrl": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                  "placementVerifiedAt": "2026-09-21T03:02:16Z",
+                  "placementParentId": "exec-regulatory-ftc",
+                  "placementMatchedText": "DIRECTOR, BUREAU OF COMPETITION",
+                  "placementMethod": "listed_under_organization_in_opm_current_plum_export",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "positionCurrentPay": {
+                    "source": "opm_plum_current_export",
+                    "sourceLabel": "OPM's current PLUM Reporting export",
+                    "method": "rate_of_basic_pay_stated_in_opm_current_plum_export",
+                    "amount": 197200.0,
+                    "rateText": "$197,200",
+                    "payPlan": "ES",
+                    "listedTitle": "DIRECTOR, BUREAU OF COMPETITION",
+                    "agency": "FEDERAL TRADE COMMISSION",
+                    "organization": "BUREAU OF COMPETITION",
+                    "positionStatus": "Filled",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "DIRECTOR, BUREAU OF COMPETITION",
+                    "quote": "DIRECTOR, BUREAU OF COMPETITION; FEDERAL TRADE COMMISSION; BUREAU OF COMPETITION; Pay Plan ES; Level, Grade, or Pay $197,200; Position Status Filled",
+                    "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+                    "exportFetchedAt": "2026-09-21T03:02:16Z",
+                    "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                    "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                    "checkedAt": "2026-09-21T03:02:16Z",
+                    "verification": {
+                      "documents": 1,
+                      "documentsStatingTheFigure": 1,
+                      "percent": 70,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right -- and a row in that export is an incumbency, not the post's own rate.",
+                      "documentRoles": [
+                        {
+                          "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                          "role": "prints the rate for the one row listed under this title now"
+                        }
+                      ]
+                    }
+                  },
                   "resolved_total_amount": null,
                   "cost_status": "unavailable",
                   "cost_basis": "subtree_weight",
@@ -297337,18 +297414,95 @@
                     "attempts": 1,
                     "detail": "PermissionError: robots.txt disallows this path (www.ftc.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
                   },
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                  ],
+                  "evidenceUrls": [
+                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                  ],
+                  "sourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "positionCurrentListing": {
+                    "source": "opm_plum_current_export",
+                    "method": "listed_in_opm_current_plum_export",
+                    "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                    "listedTitle": "DIRECTOR, BUREAU OF CONSUMER PROTECTION",
+                    "agency": "FEDERAL TRADE COMMISSION",
+                    "organization": "BUREAU OF CONSUMER PROTECTION",
+                    "positionStatus": "Filled",
+                    "appointmentType": "NA",
+                    "payPlan": "ES",
+                    "level": "$197,200",
+                    "payLevel": null,
+                    "reportedPay": 197200.0,
+                    "reportedPayText": "$197,200",
+                    "payPlanAndLevelOnOneRow": true,
+                    "rows": 1,
+                    "rowsListed": 1,
+                    "exportFetchedAt": "2026-09-21T03:02:16Z",
+                    "checkedAt": "2026-09-21T03:02:16Z",
+                    "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                    "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                    "scopeRule": "title_names_the_office_it_is_filed_under"
+                  },
+                  "lastVerified": "2026-09-21T03:02:16Z",
+                  "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                  "verificationMethod": "listed_in_opm_current_plum_export",
+                  "placementVerified": true,
+                  "placementUrl": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                  "placementVerifiedAt": "2026-09-21T03:02:16Z",
+                  "placementParentId": "exec-regulatory-ftc",
+                  "placementMatchedText": "DIRECTOR, BUREAU OF CONSUMER PROTECTION",
+                  "placementMethod": "listed_under_organization_in_opm_current_plum_export",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "positionCurrentPay": {
+                    "source": "opm_plum_current_export",
+                    "sourceLabel": "OPM's current PLUM Reporting export",
+                    "method": "rate_of_basic_pay_stated_in_opm_current_plum_export",
+                    "amount": 197200.0,
+                    "rateText": "$197,200",
+                    "payPlan": "ES",
+                    "listedTitle": "DIRECTOR, BUREAU OF CONSUMER PROTECTION",
+                    "agency": "FEDERAL TRADE COMMISSION",
+                    "organization": "BUREAU OF CONSUMER PROTECTION",
+                    "positionStatus": "Filled",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "DIRECTOR, BUREAU OF CONSUMER PROTECTION",
+                    "quote": "DIRECTOR, BUREAU OF CONSUMER PROTECTION; FEDERAL TRADE COMMISSION; BUREAU OF CONSUMER PROTECTION; Pay Plan ES; Level, Grade, or Pay $197,200; Position Status Filled",
+                    "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+                    "exportFetchedAt": "2026-09-21T03:02:16Z",
+                    "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                    "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                    "checkedAt": "2026-09-21T03:02:16Z",
+                    "verification": {
+                      "documents": 1,
+                      "documentsStatingTheFigure": 1,
+                      "percent": 70,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right -- and a row in that export is an incumbency, not the post's own rate.",
+                      "documentRoles": [
+                        {
+                          "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                          "role": "prints the rate for the one row listed under this title now"
+                        }
+                      ]
+                    }
+                  },
                   "resolved_total_amount": null,
                   "cost_status": "unavailable",
                   "cost_basis": "subtree_weight",
@@ -297375,18 +297529,130 @@
                     "attempts": 1,
                     "detail": "PermissionError: robots.txt disallows this path (www.ftc.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
                   },
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                  ],
+                  "evidenceUrls": [
+                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                  ],
+                  "sourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "positionCurrentListing": {
+                    "source": "opm_plum_current_export",
+                    "method": "listed_in_opm_current_plum_export",
+                    "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                    "listedTitle": "DIRECTOR, BUREAU OF ECONOMICS",
+                    "agency": "FEDERAL TRADE COMMISSION",
+                    "organization": "BUREAU OF ECONOMICS",
+                    "positionStatus": "Vacant",
+                    "appointmentType": "CA",
+                    "payPlan": "ES",
+                    "level": null,
+                    "payLevel": null,
+                    "reportedPay": null,
+                    "reportedPayText": null,
+                    "payPlanAndLevelOnOneRow": false,
+                    "rows": 1,
+                    "rowsListed": 1,
+                    "exportFetchedAt": "2026-09-21T03:02:16Z",
+                    "checkedAt": "2026-09-21T03:02:16Z",
+                    "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                    "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                    "scopeRule": "title_names_the_office_it_is_filed_under"
+                  },
+                  "lastVerified": "2026-09-21T03:02:16Z",
+                  "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                  "verificationMethod": "listed_in_opm_current_plum_export",
+                  "placementVerified": true,
+                  "placementUrl": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                  "placementVerifiedAt": "2026-09-21T03:02:16Z",
+                  "placementParentId": "exec-regulatory-ftc",
+                  "placementMatchedText": "DIRECTOR, BUREAU OF ECONOMICS",
+                  "placementMethod": "listed_under_organization_in_opm_current_plum_export",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "positionGradePay": {
+                    "source": "opm_salary_table_range",
+                    "method": "pay_system_range_for_the_pay_plan_reported_in_the_plum_archive",
+                    "kind": "senior_executive_service",
+                    "payPlan": "ES",
+                    "grade": null,
+                    "minimum": 151661.0,
+                    "minimumPrinted": "151,661",
+                    "maximum": 228000.0,
+                    "maximumPrinted": "228,000",
+                    "table": "Salary Table No. 2026-ES",
+                    "effectiveText": "Effective January 2026",
+                    "effective": "2026-01-01",
+                    "fiscalYear": 2026,
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+                    "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000 | Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+                    "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+                    "footnotes": [
+                      "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                    ],
+                    "listingSource": {
+                      "source": "opm_plum_current_export",
+                      "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                      "period": null,
+                      "listedTitle": "DIRECTOR, BUREAU OF ECONOMICS",
+                      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                      "checkedAt": "2026-09-21T03:02:16Z"
+                    },
+                    "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+                    "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+                    "checkedAt": "2026-09-21T03:00:01Z",
+                    "rows": [
+                      {
+                        "label": "Agencies with a Certified SES Performance Appraisal System",
+                        "minimum": 151661.0,
+                        "minimumRaw": "151,661",
+                        "maximum": 228000.0,
+                        "maximumRaw": "228,000",
+                        "rowText": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000"
+                      },
+                      {
+                        "label": "Agencies without a Certified SES Performance Appraisal System",
+                        "minimum": 151661.0,
+                        "minimumRaw": "151,661",
+                        "maximum": 209600.0,
+                        "maximumRaw": "209,600",
+                        "rowText": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600"
+                      }
+                    ],
+                    "verification": {
+                      "documents": 2,
+                      "documentsStatingTheFigure": 1,
+                      "percent": 80,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "One document prints the bounds and the other states which pay plan this post is on. The percentage measures how much official documentation the range rests on, not the chance that it is right -- and a range is not a rate: neither document says what this post is paid.",
+                      "documentRoles": [
+                        {
+                          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+                          "role": "states the pay system's or grade's printed bounds"
+                        },
+                        {
+                          "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                          "role": "states the pay plan this post is on"
+                        }
+                      ]
+                    }
+                  },
                   "resolved_total_amount": null,
                   "cost_status": "unavailable",
                   "cost_basis": "subtree_weight",
@@ -298317,18 +298583,130 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                  ],
+                  "evidenceUrls": [
+                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                  ],
+                  "sourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "positionCurrentListing": {
+                    "source": "opm_plum_current_export",
+                    "method": "listed_in_opm_current_plum_export",
+                    "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                    "listedTitle": "DIRECTOR, OFFICE OF NUCLEAR SECURITY AND INCIDENT RESPONSE",
+                    "agency": "NUCLEAR REGULATORY COMMISSION",
+                    "organization": "OFFICE OF NUCLEAR SECURITY AND INCIDENT RESPONSE",
+                    "positionStatus": "Vacant",
+                    "appointmentType": "CA",
+                    "payPlan": "ES",
+                    "level": null,
+                    "payLevel": null,
+                    "reportedPay": null,
+                    "reportedPayText": null,
+                    "payPlanAndLevelOnOneRow": false,
+                    "rows": 1,
+                    "rowsListed": 1,
+                    "exportFetchedAt": "2026-09-21T03:02:16Z",
+                    "checkedAt": "2026-09-21T03:02:16Z",
+                    "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                    "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                    "scopeRule": "title_names_the_office_it_is_filed_under"
+                  },
+                  "lastVerified": "2026-09-21T03:02:16Z",
+                  "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                  "verificationMethod": "listed_in_opm_current_plum_export",
+                  "placementVerified": true,
+                  "placementUrl": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                  "placementVerifiedAt": "2026-09-21T03:02:16Z",
+                  "placementParentId": "exec-regulatory-nrc",
+                  "placementMatchedText": "DIRECTOR, OFFICE OF NUCLEAR SECURITY AND INCIDENT RESPONSE",
+                  "placementMethod": "listed_under_organization_in_opm_current_plum_export",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "positionGradePay": {
+                    "source": "opm_salary_table_range",
+                    "method": "pay_system_range_for_the_pay_plan_reported_in_the_plum_archive",
+                    "kind": "senior_executive_service",
+                    "payPlan": "ES",
+                    "grade": null,
+                    "minimum": 151661.0,
+                    "minimumPrinted": "151,661",
+                    "maximum": 228000.0,
+                    "maximumPrinted": "228,000",
+                    "table": "Salary Table No. 2026-ES",
+                    "effectiveText": "Effective January 2026",
+                    "effective": "2026-01-01",
+                    "fiscalYear": 2026,
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+                    "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000 | Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+                    "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+                    "footnotes": [
+                      "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                    ],
+                    "listingSource": {
+                      "source": "opm_plum_current_export",
+                      "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                      "period": null,
+                      "listedTitle": "DIRECTOR, OFFICE OF NUCLEAR SECURITY AND INCIDENT RESPONSE",
+                      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                      "checkedAt": "2026-09-21T03:02:16Z"
+                    },
+                    "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+                    "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+                    "checkedAt": "2026-09-21T03:00:01Z",
+                    "rows": [
+                      {
+                        "label": "Agencies with a Certified SES Performance Appraisal System",
+                        "minimum": 151661.0,
+                        "minimumRaw": "151,661",
+                        "maximum": 228000.0,
+                        "maximumRaw": "228,000",
+                        "rowText": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000"
+                      },
+                      {
+                        "label": "Agencies without a Certified SES Performance Appraisal System",
+                        "minimum": 151661.0,
+                        "minimumRaw": "151,661",
+                        "maximum": 209600.0,
+                        "maximumRaw": "209,600",
+                        "rowText": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600"
+                      }
+                    ],
+                    "verification": {
+                      "documents": 2,
+                      "documentsStatingTheFigure": 1,
+                      "percent": 80,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "One document prints the bounds and the other states which pay plan this post is on. The percentage measures how much official documentation the range rests on, not the chance that it is right -- and a range is not a rate: neither document says what this post is paid.",
+                      "documentRoles": [
+                        {
+                          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+                          "role": "states the pay system's or grade's printed bounds"
+                        },
+                        {
+                          "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                          "role": "states the pay plan this post is on"
+                        }
+                      ]
+                    }
+                  },
                   "resolved_total_amount": null,
                   "cost_status": "unavailable",
                   "cost_basis": "subtree_weight",
@@ -299461,18 +299839,95 @@
                     "attempts": 1,
                     "detail": "HTTPError: HTTP Error 403: Forbidden"
                   },
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                  ],
+                  "evidenceUrls": [
+                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                  ],
+                  "sourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "positionCurrentListing": {
+                    "source": "opm_plum_current_export",
+                    "method": "listed_in_opm_current_plum_export",
+                    "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                    "listedTitle": "DIRECTOR, OFFICE OF ENERGY MARKET REGULATION",
+                    "agency": "FEDERAL ENERGY REGULATORY COMMISSION",
+                    "organization": "OFFICE OF ENERGY MARKET REGULATION",
+                    "positionStatus": "Filled",
+                    "appointmentType": "CA",
+                    "payPlan": "ES",
+                    "level": "$228,000",
+                    "payLevel": null,
+                    "reportedPay": 228000.0,
+                    "reportedPayText": "$228,000",
+                    "payPlanAndLevelOnOneRow": true,
+                    "rows": 1,
+                    "rowsListed": 1,
+                    "exportFetchedAt": "2026-09-21T03:02:16Z",
+                    "checkedAt": "2026-09-21T03:02:16Z",
+                    "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                    "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                    "scopeRule": "title_names_the_office_it_is_filed_under"
+                  },
+                  "lastVerified": "2026-09-21T03:02:16Z",
+                  "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                  "verificationMethod": "listed_in_opm_current_plum_export",
+                  "placementVerified": true,
+                  "placementUrl": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                  "placementVerifiedAt": "2026-09-21T03:02:16Z",
+                  "placementParentId": "exec-regulatory-ferc",
+                  "placementMatchedText": "DIRECTOR, OFFICE OF ENERGY MARKET REGULATION",
+                  "placementMethod": "listed_under_organization_in_opm_current_plum_export",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "positionCurrentPay": {
+                    "source": "opm_plum_current_export",
+                    "sourceLabel": "OPM's current PLUM Reporting export",
+                    "method": "rate_of_basic_pay_stated_in_opm_current_plum_export",
+                    "amount": 228000.0,
+                    "rateText": "$228,000",
+                    "payPlan": "ES",
+                    "listedTitle": "DIRECTOR, OFFICE OF ENERGY MARKET REGULATION",
+                    "agency": "FEDERAL ENERGY REGULATORY COMMISSION",
+                    "organization": "OFFICE OF ENERGY MARKET REGULATION",
+                    "positionStatus": "Filled",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "DIRECTOR, OFFICE OF ENERGY MARKET REGULATION",
+                    "quote": "DIRECTOR, OFFICE OF ENERGY MARKET REGULATION; FEDERAL ENERGY REGULATORY COMMISSION; OFFICE OF ENERGY MARKET REGULATION; Pay Plan ES; Level, Grade, or Pay $228,000; Position Status Filled",
+                    "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+                    "exportFetchedAt": "2026-09-21T03:02:16Z",
+                    "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                    "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                    "checkedAt": "2026-09-21T03:02:16Z",
+                    "verification": {
+                      "documents": 1,
+                      "documentsStatingTheFigure": 1,
+                      "percent": 70,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right -- and a row in that export is an incumbency, not the post's own rate.",
+                      "documentRoles": [
+                        {
+                          "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                          "role": "prints the rate for the one row listed under this title now"
+                        }
+                      ]
+                    }
+                  },
                   "resolved_total_amount": null,
                   "cost_status": "unavailable",
                   "cost_basis": "subtree_weight",
@@ -299499,18 +299954,95 @@
                     "attempts": 1,
                     "detail": "HTTPError: HTTP Error 403: Forbidden"
                   },
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                  ],
+                  "evidenceUrls": [
+                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                  ],
+                  "sourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "positionCurrentListing": {
+                    "source": "opm_plum_current_export",
+                    "method": "listed_in_opm_current_plum_export",
+                    "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                    "listedTitle": "DIRECTOR, OFFICE OF ELECTRIC RELIABILITY",
+                    "agency": "FEDERAL ENERGY REGULATORY COMMISSION",
+                    "organization": "OFFICE OF ELECTRIC RELIABILITY",
+                    "positionStatus": "Filled",
+                    "appointmentType": "CA",
+                    "payPlan": "ES",
+                    "level": "$228,000",
+                    "payLevel": null,
+                    "reportedPay": 228000.0,
+                    "reportedPayText": "$228,000",
+                    "payPlanAndLevelOnOneRow": true,
+                    "rows": 1,
+                    "rowsListed": 1,
+                    "exportFetchedAt": "2026-09-21T03:02:16Z",
+                    "checkedAt": "2026-09-21T03:02:16Z",
+                    "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                    "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                    "scopeRule": "title_names_the_office_it_is_filed_under"
+                  },
+                  "lastVerified": "2026-09-21T03:02:16Z",
+                  "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                  "verificationMethod": "listed_in_opm_current_plum_export",
+                  "placementVerified": true,
+                  "placementUrl": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                  "placementVerifiedAt": "2026-09-21T03:02:16Z",
+                  "placementParentId": "exec-regulatory-ferc",
+                  "placementMatchedText": "DIRECTOR, OFFICE OF ELECTRIC RELIABILITY",
+                  "placementMethod": "listed_under_organization_in_opm_current_plum_export",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "positionCurrentPay": {
+                    "source": "opm_plum_current_export",
+                    "sourceLabel": "OPM's current PLUM Reporting export",
+                    "method": "rate_of_basic_pay_stated_in_opm_current_plum_export",
+                    "amount": 228000.0,
+                    "rateText": "$228,000",
+                    "payPlan": "ES",
+                    "listedTitle": "DIRECTOR, OFFICE OF ELECTRIC RELIABILITY",
+                    "agency": "FEDERAL ENERGY REGULATORY COMMISSION",
+                    "organization": "OFFICE OF ELECTRIC RELIABILITY",
+                    "positionStatus": "Filled",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "DIRECTOR, OFFICE OF ELECTRIC RELIABILITY",
+                    "quote": "DIRECTOR, OFFICE OF ELECTRIC RELIABILITY; FEDERAL ENERGY REGULATORY COMMISSION; OFFICE OF ELECTRIC RELIABILITY; Pay Plan ES; Level, Grade, or Pay $228,000; Position Status Filled",
+                    "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+                    "exportFetchedAt": "2026-09-21T03:02:16Z",
+                    "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                    "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                    "checkedAt": "2026-09-21T03:02:16Z",
+                    "verification": {
+                      "documents": 1,
+                      "documentsStatingTheFigure": 1,
+                      "percent": 70,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right -- and a row in that export is an incumbency, not the post's own rate.",
+                      "documentRoles": [
+                        {
+                          "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                          "role": "prints the rate for the one row listed under this title now"
+                        }
+                      ]
+                    }
+                  },
                   "resolved_total_amount": null,
                   "cost_status": "unavailable",
                   "cost_basis": "subtree_weight",

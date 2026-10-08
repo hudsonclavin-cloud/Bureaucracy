@@ -1098,5 +1098,222 @@ class PublishedTitleRuleTests(unittest.TestCase):
             self.assertNotIn("positionCurrentListing", by_id[node_id], node_id)
 
 
+
+# --------------------------------------------------------------------------
+# The fourth pass: a title naming the office it is filed under (2026-10-08)
+
+OER, BOC, OBES = "OFFICE OF ELECTRIC RELIABILITY", "BUREAU OF COMPETITION", "OFFICE OF BASIC ENERGY SCIENCES"
+
+
+def _base_with_office_heads() -> dict:
+    """BASE with two office heads drawn directly under the Department of
+    Energy under their WHOLE titles, and one drawn beneath the Office of
+    Science, the shapes the NRC, FERC and FTC directors and the Office of
+    Science's associate directors take in the curated graph."""
+    base = json.loads(json.dumps(BASE))
+    by_id = {n["id"]: n for n in _walk(base)}
+    by_id["exec-dept-doe"]["children"] += [P("doe-oer-director", "Director — Office of Electric Reliability"),
+                                           P("doe-boc-director", "Director — Bureau of Competition")]
+    by_id["doe-science"]["children"].append(P("doe-science-bes", "Director — Office of Basic Energy Sciences"))
+    return base
+
+
+OFFICE_ROWS = [
+    row(DOE, OER, "DIRECTOR, OFFICE OF ELECTRIC RELIABILITY", "Filled", "CA", "$228,000", "ES"),
+    row(DOE, BOC, "DIRECTOR, BUREAU OF COMPETITION", "Vacant", "CA", "", "ES"),
+]
+
+
+class TitleNamesTheOfficeItIsFiledUnderTests(FixtureTestCase):
+    """The fourth pass, pinned both ways."""
+
+    def setUp(self) -> None:
+        super().setUp()
+        self.base = _base_with_office_heads()
+        self.node_map, self.parent_map = index_tree(self.base)
+
+    def test_a_title_naming_its_own_filing_reaches_the_agencys_direct_child(self) -> None:
+        write_fixture(self.tmp, ROWS + OFFICE_ROWS)
+        _, records, report = self._match()
+        rule = plum_current.SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER
+        oer, boc = records["doe-oer-director"], records["doe-boc-director"]
+        self.assertEqual((oer["scopeRule"], boc["scopeRule"]), (rule, rule))
+        self.assertEqual(oer["organization"], OER)
+        self.assertEqual(oer["reportedPayText"], "$228,000")
+        self.assertIsNone(boc["reportedPay"])
+        self.assertEqual(boc["positionStatus"], "Vacant")
+        # The placement claimed is the office-named-for-the-post rule's: under the agency.
+        self.assertEqual(oer["placement"]["parentId"], "exec-dept-doe")
+        self.assertEqual(report["positions_matched_by_a_title_naming_the_office_it_is_filed_under"], 2)
+
+    def test_an_organisation_half_that_is_not_the_filing_is_refused(self) -> None:
+        # No fold: "PLANT PROTECTION AND QUARANTINE" is not "... SERVICE".
+        self.assertFalse(plum_current.title_names_the_office_it_is_filed_under(
+            "DEPUTY ADMINISTRATOR, PLANT PROTECTION AND QUARANTINE", "PLANT PROTECTION AND QUARANTINE SERVICE"))
+        self.assertTrue(plum_current.title_names_the_office_it_is_filed_under(
+            "DIRECTOR, OFFICE OF ELECTRIC RELIABILITY", "Office of Electric Reliability"))
+        write_fixture(self.tmp, ROWS + [row(DOE, "OFFICE OF ELECTRIC RELIABILITY AND SECURITY",
+                                            "DIRECTOR, OFFICE OF ELECTRIC RELIABILITY", "Filled", "CA", "$228,000", "ES")])
+        _, records, _ = self._match()
+        self.assertNotIn("doe-oer-director", records)
+
+    def test_a_one_token_organisation_half_and_a_bare_title_are_refused(self) -> None:
+        self.assertFalse(plum_current.title_names_the_office_it_is_filed_under("DIRECTOR, OER", "OER"))
+        self.assertFalse(plum_current.title_names_the_office_it_is_filed_under("DIRECTOR", OER))
+        self.assertFalse(plum_current.title_names_the_office_it_is_filed_under(", " + OER, OER))
+        write_fixture(self.tmp, ROWS + [row(DOE, OER, "DIRECTOR", "Filled", "CA", "$228,000", "ES")])
+        _, records, _ = self._match()
+        self.assertNotIn("doe-oer-director", records)
+
+    def test_a_post_beneath_the_agency_but_not_its_direct_child_is_never_reached(self) -> None:
+        # Reaching beneath the agency was measured (13 posts) and not built.
+        write_fixture(self.tmp, ROWS + [row(DOE, OBES, "DIRECTOR, OFFICE OF BASIC ENERGY SCIENCES",
+                                            "Filled", "CA", "$226,664", "ES")])
+        _, records, _ = self._match()
+        self.assertNotIn("doe-science-bes", records)
+
+    def test_a_title_filed_under_two_spellings_of_its_office_claims_neither(self) -> None:
+        write_fixture(self.tmp, ROWS + OFFICE_ROWS[:1] + [
+            row(DOE, "Office of Electric Reliability", "DIRECTOR, OFFICE OF ELECTRIC RELIABILITY", "Vacant", "CA", "", "ES")])
+        _, records, report = self._match()
+        self.assertNotIn("doe-oer-director", records)
+        self.assertTrue(any(item["id"] == "doe-oer-director" for item in report["positions_title_in_several_groups"]))
+
+    def test_a_listing_the_code_contradicts_is_refused_by_node_id(self) -> None:
+        write_fixture(self.tmp, ROWS + OFFICE_ROWS)
+        saved = dict(plum_current.CODE_CONTRADICTED_LISTINGS)
+        plum_current.CODE_CONTRADICTED_LISTINGS["doe-oer-director"] = ("Director of Electric Reliability", "5 U.S.C. 5315")
+        try:
+            _, records, report = self._match()
+        finally:
+            plum_current.CODE_CONTRADICTED_LISTINGS.clear()
+            plum_current.CODE_CONTRADICTED_LISTINGS.update(saved)
+        self.assertNotIn("doe-oer-director", records)
+        self.assertIn("doe-boc-director", records)
+        self.assertEqual([i["id"] for i in report["positions_refused_code_contradicts_listing"]], ["doe-oer-director"])
+
+    def test_the_gates_mirrors_are_the_modules(self) -> None:
+        for title, org in (("DIRECTOR, OFFICE OF ELECTRIC RELIABILITY", OER), ("DIRECTOR, BUREAU OF COMPETITION", BOC),
+                           ("DEPUTY ADMINISTRATOR, PLANT PROTECTION AND QUARANTINE", "PLANT PROTECTION AND QUARANTINE SERVICE"),
+                           ("DIRECTOR, OER", "OER"), ("DIRECTOR", OER), ("", ""),
+                           ("DIRECTOR, AMERICA&#039;S HERITAGE OFFICE", "AMERICA'S HERITAGE OFFICE"),
+                           ("DIRECTOR,  VEHICLE TECHNOLOGIES OFFICE", "OFFICE OF CRITICAL MINERALS AND ENERGY INNOVATION")):
+            self.assertEqual(gate.plum_title_names_the_office_it_is_filed_under(title, org),
+                             plum_current.title_names_the_office_it_is_filed_under(title, org), (title, org))
+        self.assertEqual(gate.PLUM_CURRENT_SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER,
+                         plum_current.SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER)
+        self.assertEqual(gate.PLUM_CURRENT_CODE_CONTRADICTED, frozenset(plum_current.CODE_CONTRADICTED_LISTINGS))
+
+    def test_each_code_contradiction_is_printed_by_the_committed_section(self) -> None:
+        uscode = Path(__file__).resolve().parent / "fixtures" / "uscode"
+        for node_id, (code_title, section) in plum_current.CODE_CONTRADICTED_LISTINGS.items():
+            page = (uscode / "exec_schedule_{}.html".format(section.rsplit(" ", 1)[1])).read_text(encoding="utf-8")
+            self.assertIn(code_title, page, node_id)
+
+
+class TitleNamesTheOfficeItIsFiledUnderGateTests(_GateHarness):
+    """The fourth pass end to end, and every way of faking it refused."""
+
+    FIXTURE_ROWS = ROWS + OFFICE_ROWS
+
+    def setUp(self) -> None:
+        super().setUp()
+        self.base.write_text(json.dumps(_base_with_office_heads()), encoding="utf-8")
+
+    def test_the_block_carries_the_rule_and_the_gate_passes(self) -> None:
+        code, out = self._derive()
+        self.assertEqual(code, 0, out)
+        self.assertIn("matched by a title naming the office it is filed under 2", out)
+        result = self._build()
+        graph = json.loads(result.graph_path.read_text(encoding="utf-8"))
+        by_id = index_tree(graph)[0]
+        node = by_id["doe-oer-director"]
+        self.assertEqual(node["positionCurrentListing"]["scopeRule"], plum_current.SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER)
+        self.assertEqual(node["positionCurrentPay"]["rateText"], "$228,000")
+        self.assertEqual(node["placementMethod"], PLACEMENT_METHOD)
+        self.assertNotIn("positionCurrentPay", by_id["doe-boc-director"])
+        code, out = self._gate(result.graph_path)
+        self.assertEqual(code, 0, out)
+
+    def test_the_gate_refuses_an_organisation_the_title_does_not_name(self) -> None:
+        code, out = self._corrupt(node_id="doe-oer-director", listing_fields={"organization": "OFFICE OF SCIENCE"})
+        self.assertEqual(code, 1, out)
+        self.assertIn("names the office it is filed under, but the export files it under 'OFFICE OF SCIENCE'", out)
+
+    def test_the_gate_refuses_the_rule_on_a_row_filed_under_the_agency_itself(self) -> None:
+        code, out = self._corrupt(node_id="doe-oer-director", listing_fields={"organization": DOE})
+        self.assertEqual(code, 1, out)
+        self.assertIn("claims the title-names-the-office-it-is-filed-under rule for a row filed under the agency itself", out)
+
+    def test_the_gate_refuses_the_listing_without_the_rule(self) -> None:
+        code, out = self._corrupt(node_id="doe-oer-director", listing_fields={"scopeRule": None})
+        self.assertEqual(code, 1, out)
+        self.assertIn("is filed by the export under '{}', but its parent in the tree is".format(OER), out)
+
+    def test_the_gate_refuses_the_block_moved_beneath_the_agency(self) -> None:
+        def move(graph, by_id):
+            by_id["exec-dept-doe"]["children"].remove(by_id["doe-oer-director"])
+            by_id["doe-science"]["children"].append(by_id["doe-oer-director"])
+        code, out = self._corrupt(node_id="doe-oer-director", mutate=move)
+        self.assertEqual(code, 1, out)
+        self.assertIn("but its parent in the tree is 'Office of Science (SC)'", out)
+
+    def test_the_gate_requires_the_whole_title_not_its_office_half(self) -> None:
+        # "Director" answers to the archive's stripped key, never to this rule.
+        code, out = self._corrupt(node_id="doe-oer-director", node_fields={"name": "Director"})
+        self.assertEqual(code, 1, out)
+        self.assertIn("is listed as 'DIRECTOR, OFFICE OF ELECTRIC RELIABILITY', which does not name it", out)
+
+    def test_the_gate_refuses_a_listing_on_a_post_the_code_contradicts(self) -> None:
+        saved = gate.PLUM_CURRENT_CODE_CONTRADICTED
+        gate.PLUM_CURRENT_CODE_CONTRADICTED = saved | {"doe-oer-director"}
+        try:
+            code, out = self._corrupt(node_id="doe-oer-director")
+        finally:
+            gate.PLUM_CURRENT_CODE_CONTRADICTED = saved
+        self.assertEqual(code, 1, out)
+        self.assertIn("carries a current PLUM listing the U.S. Code's Executive Schedule contradicts", out)
+
+
+#: The six posts the fourth pass reaches on the committed export (2026-10-08),
+#: each with the printed rate where its row prints one.
+OFFICE_RULE_POSTS = {
+    "exec-regulatory-ftc-director-bureau-of-competition": "$197,200",
+    "exec-regulatory-ftc-director-bureau-of-consumer-protection": "$197,200",
+    "exec-regulatory-ftc-director-bureau-of-economics": None,
+    "exec-regulatory-ferc-director-office-of-electric-reliability": "$228,000",
+    "exec-regulatory-ferc-director-office-of-energy-market-regulation": "$228,000",
+    "exec-regulatory-nrc-director-office-of-nuclear-security-incident-response": None,
+}
+
+
+class PublishedOfficeRuleTests(unittest.TestCase):
+    """Pass only after a regenerate: exactly these six listings carry the rule,
+    the two vacant ones take the SES range, and the posts the Code contradicts
+    and the leads the rule does not reach carry no current listing."""
+
+    @unittest.skipUnless(PUBLISHED_GRAPH.exists(), "no published graph")
+    def test_the_rule_reaches_exactly_the_measured_posts(self) -> None:
+        by_id = index_tree(json.loads(PUBLISHED_GRAPH.read_text(encoding="utf-8")))[0]
+        rule = plum_current.SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER
+        carrying = {i for i, n in by_id.items() if (n.get("positionCurrentListing") or {}).get("scopeRule") == rule}
+        self.assertEqual(set(OFFICE_RULE_POSTS), carrying)
+        for node_id, text in OFFICE_RULE_POSTS.items():
+            node = by_id[node_id]
+            self.assertEqual(text, (node.get("positionCurrentPay") or {}).get("rateText"), node_id)
+            if text is None:
+                self.assertEqual("senior_executive_service", node["positionGradePay"]["kind"], node_id)
+        for node_id in plum_current.CODE_CONTRADICTED_LISTINGS:
+            self.assertNotIn("positionCurrentListing", by_id[node_id], node_id)
+        # Leads declined for their own reasons (CURATION.md §19.24).
+        for node_id in ("exec-dept-doe-sc-associate-director-basic-energy-sciences",
+                        "exec-dept-doe-eere-director-vehicle-technologies",
+                        "exec-dept-usda-aphis-deputy-administrator-veterinary-services",
+                        "exec-dept-doc-census-associate-director-economic-programs",
+                        "exec-dept-dhs-cisa-executive-assistant-director-emergency-communications",
+                        "exec-dept-treasury-bep-director-bep",
+                        "exec-dept-treasury-fiscal-commissioner-fiscal-service"):
+            self.assertNotIn("positionCurrentListing", by_id[node_id], node_id)
+
 if __name__ == "__main__":
     unittest.main()

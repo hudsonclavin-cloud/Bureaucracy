@@ -133,6 +133,11 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  matched under an office named for the post {report['positions_matched_under_an_office_named_for_the_post']}  "
           f"matched by the organisation their title names {report['positions_matched_by_the_organisation_their_title_names']} "
           f"(no placement claimed; {report['titles_naming_several_organisations']} titles name several organisations)")
+    print(f"  matched by a title naming the office it is filed under "
+          f"{report['positions_matched_by_a_title_naming_the_office_it_is_filed_under']}  "
+          f"refused because the U.S. Code contradicts the listing {len(report['positions_refused_code_contradicts_listing'])}")
+    for item in report["positions_refused_code_contradicts_listing"]:
+        print("  refused, the Code contradicts the listing:", item)
     print(f"  matched by pay plan: {report['positions_by_pay_plan']}")
     for item in report["samples"]:
         print("  match:", item)

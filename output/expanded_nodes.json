@@ -30464,6 +30464,34 @@
     "budget": null,
     "color": "#666666",
     "children": [],
+    "sourceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "sourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "employee_weight",
+    "cost_validation": "treasury_pool_negative",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
     "verificationUnread": {
       "kind": "page_below_readable_floor",
       "url": "https://www.whitehouse.gov/ondcp/",
@@ -30472,15 +30500,8 @@
       "attempts": 1,
       "detail": "no_readable_text"
     },
-    "sourceUrls": [
-      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-    ],
     "evidenceUrls": [
       "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-    ],
-    "sourceTypes": [
-      "opm_plum_current_export",
-      "official_site"
     ],
     "positionCurrentListing": {
       "source": "opm_plum_current_export",
@@ -30505,21 +30526,8 @@
       "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
       "scopeRule": "title_names_its_organisation"
     },
-    "lastVerified": "2026-09-21T03:02:16Z",
     "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
     "verificationMethod": "listed_in_opm_current_plum_export",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "opm_plum_current_export",
-      "official_site"
-    ],
-    "existsProven": true,
-    "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
     "positionPayRate": {
       "source": "opm_executive_schedule",
       "method": "rate_for_the_level_reported_in_the_plum_archive",
@@ -30625,14 +30633,6 @@
         ]
       }
     },
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "employee_weight",
-    "cost_validation": "treasury_pool_negative",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
     "parentId": "exec-eop-ondcp"
   },
   {
@@ -34600,12 +34600,33 @@
     "sourceUrls": [
       "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
-    "evidenceUrls": [
-      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-    ],
     "sourceTypes": [
       "opm_plum_current_export",
       "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
     "positionCurrentListing": {
       "source": "opm_plum_current_export",
@@ -34630,21 +34651,8 @@
       "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
       "scopeRule": "title_names_its_organisation"
     },
-    "lastVerified": "2026-09-21T03:02:16Z",
     "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
     "verificationMethod": "listed_in_opm_current_plum_export",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "opm_plum_current_export",
-      "official_site"
-    ],
-    "existsProven": true,
-    "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
     "positionPayRate": {
       "source": "opm_executive_schedule",
       "method": "rate_for_the_level_reported_in_the_plum_archive",
@@ -34750,14 +34758,6 @@
         ]
       }
     },
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "subtree_weight",
-    "cost_validation": "post_is_not_a_budget_unit",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
     "parentId": "exec-dept-treasury-irs"
   },
   {
@@ -35294,12 +35294,33 @@
     "sourceUrls": [
       "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
-    "evidenceUrls": [
-      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-    ],
     "sourceTypes": [
       "opm_plum_current_export",
       "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
     "positionCurrentListing": {
       "source": "opm_plum_current_export",
@@ -35324,21 +35345,8 @@
       "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
       "scopeRule": "title_names_its_organisation"
     },
-    "lastVerified": "2026-09-21T03:02:16Z",
     "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
     "verificationMethod": "listed_in_opm_current_plum_export",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "opm_plum_current_export",
-      "official_site"
-    ],
-    "existsProven": true,
-    "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
     "positionCurrentPay": {
       "source": "opm_plum_current_export",
       "sourceLabel": "OPM's current PLUM Reporting export",
@@ -35374,14 +35382,6 @@
         ]
       }
     },
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "subtree_weight",
-    "cost_validation": "post_is_not_a_budget_unit",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
     "parentId": "exec-dept-treasury-bep"
   },
   {
@@ -36265,12 +36265,33 @@
     "sourceUrls": [
       "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
-    "evidenceUrls": [
-      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-    ],
     "sourceTypes": [
       "opm_plum_current_export",
       "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
     "positionCurrentListing": {
       "source": "opm_plum_current_export",
@@ -36295,21 +36316,8 @@
       "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
       "scopeRule": "title_names_its_organisation"
     },
-    "lastVerified": "2026-09-21T03:02:16Z",
     "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
     "verificationMethod": "listed_in_opm_current_plum_export",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "opm_plum_current_export",
-      "official_site"
-    ],
-    "existsProven": true,
-    "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
     "positionCurrentPay": {
       "source": "opm_plum_current_export",
       "sourceLabel": "OPM's current PLUM Reporting export",
@@ -36345,14 +36353,6 @@
         ]
       }
     },
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "subtree_weight",
-    "cost_validation": "post_is_not_a_budget_unit",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
     "parentId": "exec-dept-treasury-ofac"
   },
   {
@@ -36367,12 +36367,33 @@
     "sourceUrls": [
       "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
-    "evidenceUrls": [
-      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-    ],
     "sourceTypes": [
       "opm_plum_current_export",
       "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
     "positionCurrentListing": {
       "source": "opm_plum_current_export",
@@ -36397,21 +36418,8 @@
       "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
       "scopeRule": "title_names_its_organisation"
     },
-    "lastVerified": "2026-09-21T03:02:16Z",
     "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
     "verificationMethod": "listed_in_opm_current_plum_export",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "opm_plum_current_export",
-      "official_site"
-    ],
-    "existsProven": true,
-    "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
     "positionCurrentPay": {
       "source": "opm_plum_current_export",
       "sourceLabel": "OPM's current PLUM Reporting export",
@@ -36447,14 +36455,6 @@
         ]
       }
     },
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "subtree_weight",
-    "cost_validation": "post_is_not_a_budget_unit",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
     "parentId": "exec-dept-treasury-ofac"
   },
   {
@@ -36469,12 +36469,33 @@
     "sourceUrls": [
       "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
-    "evidenceUrls": [
-      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-    ],
     "sourceTypes": [
       "opm_plum_current_export",
       "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
     "positionCurrentListing": {
       "source": "opm_plum_current_export",
@@ -36499,21 +36520,8 @@
       "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
       "scopeRule": "title_names_its_organisation"
     },
-    "lastVerified": "2026-09-21T03:02:16Z",
     "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
     "verificationMethod": "listed_in_opm_current_plum_export",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "opm_plum_current_export",
-      "official_site"
-    ],
-    "existsProven": true,
-    "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
     "positionGradePay": {
       "source": "opm_salary_table_range",
       "method": "pay_system_range_for_the_pay_plan_reported_in_the_plum_archive",
@@ -36584,14 +36592,6 @@
         ]
       }
     },
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "subtree_weight",
-    "cost_validation": "post_is_not_a_budget_unit",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
     "parentId": "exec-dept-treasury-ofac"
   },
   {
@@ -36672,12 +36672,33 @@
     "sourceUrls": [
       "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
-    "evidenceUrls": [
-      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-    ],
     "sourceTypes": [
       "opm_plum_current_export",
       "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
     "positionCurrentListing": {
       "source": "opm_plum_current_export",
@@ -36702,21 +36723,8 @@
       "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
       "scopeRule": "title_names_its_organisation"
     },
-    "lastVerified": "2026-09-21T03:02:16Z",
     "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
     "verificationMethod": "listed_in_opm_current_plum_export",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "opm_plum_current_export",
-      "official_site"
-    ],
-    "existsProven": true,
-    "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
     "positionPayRate": {
       "source": "opm_executive_schedule",
       "method": "rate_for_the_level_reported_in_the_plum_archive",
@@ -36822,14 +36830,6 @@
         ]
       }
     },
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "subtree_weight",
-    "cost_validation": "post_is_not_a_budget_unit",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
     "parentId": "exec-dept-treasury-ofr"
   },
   {
@@ -93707,12 +93707,33 @@
     "sourceUrls": [
       "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
-    "evidenceUrls": [
-      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-    ],
     "sourceTypes": [
       "opm_plum_current_export",
       "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
     "positionCurrentListing": {
       "source": "opm_plum_current_export",
@@ -93737,21 +93758,8 @@
       "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
       "scopeRule": "title_names_its_organisation"
     },
-    "lastVerified": "2026-09-21T03:02:16Z",
     "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
     "verificationMethod": "listed_in_opm_current_plum_export",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "opm_plum_current_export",
-      "official_site"
-    ],
-    "existsProven": true,
-    "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
     "positionPayRate": {
       "source": "opm_executive_schedule",
       "method": "rate_for_the_level_reported_in_the_plum_archive",
@@ -93857,14 +93865,6 @@
         ]
       }
     },
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "subtree_weight",
-    "cost_validation": "post_is_not_a_budget_unit",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
     "parentId": "exec-ind-misc-equal-employment-opportunity-commission-eeoc"
   },
   {
@@ -93879,12 +93879,33 @@
     "sourceUrls": [
       "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
-    "evidenceUrls": [
-      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-    ],
     "sourceTypes": [
       "opm_plum_current_export",
       "official_site"
+    ],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
     "positionCurrentListing": {
       "source": "opm_plum_current_export",
@@ -93909,21 +93930,8 @@
       "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
       "scopeRule": "title_names_its_organisation"
     },
-    "lastVerified": "2026-09-21T03:02:16Z",
     "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
     "verificationMethod": "listed_in_opm_current_plum_export",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "opm_plum_current_export",
-      "official_site"
-    ],
-    "existsProven": true,
-    "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
     "positionPayRate": {
       "source": "opm_executive_schedule",
       "method": "rate_for_the_level_reported_in_the_plum_archive",
@@ -94029,14 +94037,6 @@
         ]
       }
     },
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "subtree_weight",
-    "cost_validation": "post_is_not_a_budget_unit",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
     "parentId": "exec-ind-misc-equal-employment-opportunity-commission-eeoc"
   },
   {

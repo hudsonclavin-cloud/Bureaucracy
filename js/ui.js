@@ -1767,6 +1767,11 @@ function renderCurrentListing(data) {
     // node for; the title itself names the unit the post is drawn under.
     // No placement is claimed from it.
     add(" — a unit this graph has no node for; the title itself names the unit this post is drawn under, so the listing is matched by its title and claims nothing about where the post sits");
+  } else if (listing.scopeRule === "title_names_the_office_it_is_filed_under") {
+    // The export files the row under the very office its title names —
+    // "Director, Bureau of Competition" under "Bureau of Competition" — and
+    // this graph draws that office's head directly under the agency.
+    add(" — the office this title names, which this graph has no node for; the office's head is drawn directly under the agency here");
   }
   if (listing.positionStatus) {
     add(`, ${String(listing.positionStatus).toLowerCase()}`);
