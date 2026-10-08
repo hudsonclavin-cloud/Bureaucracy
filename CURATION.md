@@ -5428,3 +5428,40 @@ CLAUDE.md: the old networks do not map onto the new ones (§10), facility
 placement is still ongoing by the VA's own FAQ, and re-homing would write about
 430 template nodes no document names. The 90 priced posts among them stay priced
 and are shown with the replaced units.
+
+### 19.24 The owner's inline current-export leads (2026-10-08)
+
+The owner pasted about thirty posts the committed current Plum Book export
+lists, and five files (A11–A15, 1,211 rows). The files are almost wholly
+`unknown | — | none`; their five rows with a figure are shapes already declined —
+the Board of Veterans' Appeals' judges on OPM's AA table (38 U.S.C. 7101A names a
+pay system, §19.18) and the FISC's judges (50 U.S.C. 1803 states no pay, §19.18).
+
+- **Built:** the fourth `plum_current` pass, `title_names_the_office_it_is_filed_under`
+  (CLAUDE.md). Six priced: the FTC's Competition and Consumer Protection
+  directors ($197,200); FERC's Electric Reliability and Energy Market Regulation
+  directors ($228,000); the FTC's Bureau of Economics and the NRC's NSIR directors,
+  vacant, at the SES range $151,661–$228,000.
+- **Refused by the Code (§19.20 upheld):** the NRC's directors of Nuclear Reactor
+  Regulation, Nuclear Material Safety and Safeguards and Nuclear Regulatory
+  Research (§5315 Level IV against the export's ES $228,000), and OPM's Associate
+  Director for Merit System Accountability and Compliance (§5316's counted class
+  against ES $228,000) — found by the measurement, not the leads.
+- **Not built, recorded:** reaching beneath the agency rather than its direct
+  children adds USDA's Veterinary Services deputy (vacant), the Forest Service's
+  Deputy Chief for the National Forest System (vacant) and NCI's Director (OT
+  $350,000). It reached nothing wrong, and is wider than the analogous rules.
+- **Declined as spelling (rename candidates, none taken):** the Office of
+  Science's six Associate Directors (the export prints "…, OFFICE OF <program>");
+  CISA's Executive Assistant Director for Emergency Communications and Census's
+  two Associate Directors (the export prints "FOR" where the graph has "—";
+  Census's are also filed under Commerce); "Director, BEP" and "Commissioner,
+  Fiscal Service" (the graph's abbreviations).
+- **Declined as placement:** EERE's four technology-office directors are filed
+  under the Office of Critical Minerals and Energy Innovation, which the graph
+  lacks, and spelled "… Technologies Office"; Wind has no row. APHIS's Plant
+  Protection and Quarantine deputy: the sub-organisation reads "… SERVICE" and the
+  node sits under APHIS.
+- **Declined as multi-post:** SSA's regional commissioners, the NRC's and CISA's
+  regional directors — rows per region at differing rates. USPS's AD rows print no
+  figure; the Board's stipend stays declined (§19.18).

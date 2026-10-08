@@ -2151,6 +2151,35 @@ Administrator and the Archivist as tier-reference rows (**45 → 47** published)
 — see "Titles the Code prints with a footnote mark" below.
 `CURATION.md` §19.20 carries every cluster and every decline.
 
+**A title naming the office it is filed under (since 2026-10-08, the
+fourteenth batch).** The owner's inline leads named about thirty posts the
+committed export lists and no pass reached. For ten the cause was one shape: the
+export files the row under a sub-organisation this graph has no node for, the
+title's half after its last comma IS that sub-organisation ("DIRECTOR, BUREAU OF
+COMPETITION" under the FTC's "BUREAU OF COMPETITION"), and the graph draws the
+office's head directly under the agency under the whole title. The fourth pass,
+`SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER`, is the office-named-for-the-post
+rule one step over: there the office is named for the title, here the title
+names the office. The two halves must match by canonical-key equality with no
+fold, the half after the comma needs two tokens, and the WHOLE title must answer
+to exactly one direct child of the agency node, under every refusal the main
+pass makes; the placement claimed is under the agency. Measured on the whole
+export: ten posts, all direct children of the NRC, FERC, the FTC or OPM, nothing
+wrong; reaching anywhere beneath the agency measured thirteen and was not built.
+Four of the ten are refused by id in `CODE_CONTRADICTED_LISTINGS`, the record
+`CURATION.md` §19.20 made: §5315 places the NRC's three statutory office
+directors at Level IV and §5316 OPM's Associate Directors in a Level V class,
+and the export lists each on the ES plan at $228,000 — two figures for one post
+is published as neither. Published: the FTC's Competition and Consumer
+Protection directors at $197,200, FERC's Electric Reliability and Energy Market
+Regulation directors at $228,000, and the vacant FTC Economics and NRC Nuclear
+Security and Incident Response directors at the SES range. Pay claims **1,242 →
+1,248**, unpriced **3,349 → 3,343**. The rest of the leads are spelling
+differences (the Office of Science's Associate Directors, Census, CISA, BEP,
+Fiscal Service — rename candidates, none taken), a placement the graph does not
+draw (EERE's technology offices sit under an office the graph lacks), or regional
+rows at differing rates (§19.24).
+
 **The level half, from current law instead of a closed archive (since
 2026-09-18).** Every Executive Schedule rate this project published took its
 *level* from one place: OPM's PLUM archive of the **previous** administration
@@ -4660,8 +4689,9 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **1,242** of the
-4,591 positions carry a pay claim an official source states (1,231 before the
+parent's total" opts back in. The exception is a real salary — **1,248** of the
+4,591 positions carry a pay claim an official source states (1,242 before the
+fourteenth batch, 1,231 before the
 thirteenth batch of 2026-10-08, 1,196 before the
 owner's six decisions of 2026-10-07, 1,193 before the
 Code title scan's three rows landed later on 2026-10-06, 1,158 before the
@@ -4796,8 +4826,8 @@ trial judges and the two Deputy Directors, 1,110 with the five posts the
 govinfo sections priced, 1,111 with the President, 1,158 with the
 twelfth batch's current-export rules and rows, 1,193 with its later
 clusters the next morning, 1,196 with the Code title scan's three rows
-later that morning, 1,231 with the owner's six decisions of 2026-10-07, and
-1,242 with the thirteenth batch of 2026-10-08.
+later that morning, 1,231 with the owner's six decisions of 2026-10-07, 1,242 with the
+thirteenth batch of 2026-10-08, and 1,248 with the fourteenth the same day.
 The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
