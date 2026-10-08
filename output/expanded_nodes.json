@@ -53485,7 +53485,104 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-doc-ita"
+    "parentId": "exec-dept-doc-ita",
+    "positionTierReferencePay": {
+      "source": "statutory_tier_reference_pay",
+      "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
+      "method": "pay_set_by_reference_to_an_executive_schedule_level_joined_to_opm_table",
+      "amount": 209600.0,
+      "rateText": "$209,600",
+      "level": "III",
+      "levelText": "Level III",
+      "levelRateText": "$209,600",
+      "levelAmount": 209600.0,
+      "percent": 0,
+      "arithmetic": null,
+      "office": "Under Secretary for International Trade",
+      "statute": "Reorganization Plan No. 3 of 1979",
+      "statuteQuote": "There shall be in the Department an Under Secretary for International Trade appointed by the President, by and with the advice and consent of the Senate. The Under Secretary for International Trade shall receive compensation at the rate payable for Level III of the Executive Schedule [5 U.S.C. 5314], and shall perform such duties and exercise such powers as the Secretary may from time to time prescribe.",
+      "identification": {
+        "kind": "reviewed_row",
+        "nodeName": "Under Secretary for International Trade",
+        "office": "Under Secretary for International Trade"
+      },
+      "derivation": "Reorganization Plan No. 3 of 1979 §2(c): “There shall be in the Department an Under Secretary for International Trade appointed by the President, by and with the advice and consent of the Senate. The Under Secretary for International Trade shall receive compensation at the rate payable for Level III of the Executive Schedule [5 U.S.C. 5314], and shall perform such duties and exercise such powers as the Secretary may from time to time prescribe.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600",
+      "quote": "Reorganization Plan No. 3 of 1979 §2(c): “There shall be in the Department an Under Secretary for International Trade appointed by the President, by and with the advice and consent of the Senate. The Under Secretary for International Trade shall receive compensation at the rate payable for Level III of the Executive Schedule [5 U.S.C. 5314], and shall perform such duties and exercise such powers as the Secretary may from time to time prescribe.” · Salary Table No. 2026-EX, Effective January 2026: Level III $209,600",
+      "documents": [
+        {
+          "role": "sets this post's basic pay by reference to Executive Schedule Level III",
+          "citation": "Reorganization Plan No. 3 of 1979, §2(c)",
+          "publisher": "U.S. Government Publishing Office",
+          "edition": "2024 edition of the United States Code",
+          "title": "Reorganization Plan No. 3 of 1979, as printed in 5 U.S.C. App., Reorganization Plans",
+          "quote": "There shall be in the Department an Under Secretary for International Trade appointed by the President, by and with the advice and consent of the Senate. The Under Secretary for International Trade shall receive compensation at the rate payable for Level III of the Executive Schedule [5 U.S.C. 5314], and shall perform such duties and exercise such powers as the Secretary may from time to time prescribe.",
+          "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+          "documentSha256": "71eadef8ca108d8da8faac8033fe8476475ee9beec0e391d3c20145b6528c398",
+          "retrievedAt": "2026-10-06T04:16:55Z",
+          "statesTheFigure": false,
+          "instrumentKind": "reorganization_plan",
+          "instrumentName": "Reorganization Plan No. 3 of 1979",
+          "instrumentIssuer": "the President",
+          "instrumentDate": "September 25, 1979"
+        },
+        {
+          "role": "states what that Executive Schedule level pays",
+          "citation": "Salary Table No. 2026-EX, Effective January 2026",
+          "publisher": "U.S. Office of Personnel Management",
+          "title": "Salary Table No. 2026-EX",
+          "quote": "Level III $209,600",
+          "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+          "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+          "retrievedAt": "2026-09-11T03:05:36Z",
+          "statesTheFigure": false
+        }
+      ],
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III",
+      "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+      "tableUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-10-06T04:16:55Z",
+      "instrument": {
+        "id": "reorganization-plan-no-3-of-1979",
+        "kind": "reorganization_plan",
+        "kindWords": "a Reorganization Plan, transmitted by the President under chapter 9 of Title 5 and in effect, which the United States Code prints in Title 5's Appendix rather than as a section of the Code",
+        "name": "Reorganization Plan No. 3 of 1979",
+        "heading": "REORGANIZATION PLAN NO. 3 OF 1979",
+        "issuer": "the President",
+        "date": "September 25, 1979",
+        "effective": "44 F.R. 69273, 93 Stat. 1381, as amended Pub. L. 97–195, §1(c)(6), June 16, 1982, 96 Stat. 115; Pub. L. 97–377, title I, §122, Dec. 21, 1982, 96 Stat. 1913; Pub. L. 117–328, div. BB, title VI, §604, Dec. 29, 2022, 136 Stat. 5566",
+        "printedIn": "5 U.S.C. App., Reorganization Plans",
+        "publisher": "U.S. Government Publishing Office",
+        "edition": "2024 edition of the United States Code",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm",
+        "documentSha256": "71eadef8ca108d8da8faac8033fe8476475ee9beec0e391d3c20145b6528c398",
+        "retrievedAt": "2026-10-06T04:16:55Z"
+      },
+      "verification": {
+        "documents": 2,
+        "documentsStatingTheFigure": 0,
+        "percent": 80,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "The percentage measures how much official documentation this figure rests on, not the chance that it is right. No document here states the figure for this post: an instrument the United States Code prints outside its sections -- a Reorganization Plan, or a chamber's pay order reprinted in a Statutory Note -- sets its pay by reference to an Executive Schedule level, and OPM's table states what that level pays.",
+        "documentRoles": [
+          {
+            "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title5/html/USCODE-2024-title5-app-reorganiz.htm"
+          },
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-dept-doc-bea",
@@ -53765,14 +53862,17 @@
     "color": "#666666",
     "children": [],
     "sourceUrls": [
-      "https://www.bea.gov/about/leadership"
+      "https://www.bea.gov/about/leadership",
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "opm_plum_current_export"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "opm_plum_current_export"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -53786,19 +53886,78 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
     "lastVerified": "2026-09-21T03:52:23+00:00",
     "verificationMatchedText": "Deputy Director",
     "evidenceUrls": [
-      "https://www.bea.gov/about/leadership"
+      "https://www.bea.gov/about/leadership",
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
     ],
     "evidenceVerifiedAt": "2026-09-21T03:52:23+00:00",
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-dept-doc-bea",
-    "parentId": "exec-dept-doc-bea"
+    "parentId": "exec-dept-doc-bea",
+    "positionCurrentListing": {
+      "source": "opm_plum_current_export",
+      "method": "listed_in_opm_current_plum_export",
+      "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+      "listedTitle": "DEPUTY DIRECTOR, BUREAU OF ECONOMIC ANALYSIS",
+      "agency": "DEPARTMENT OF COMMERCE",
+      "organization": "OFFICE OF THE DIRECTOR",
+      "positionStatus": "Filled",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$228,000",
+      "payLevel": null,
+      "reportedPay": 228000.0,
+      "reportedPayText": "$228,000",
+      "payPlanAndLevelOnOneRow": true,
+      "rows": 1,
+      "rowsListed": 1,
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "scopeRule": "title_names_its_organisation"
+    },
+    "positionCurrentPay": {
+      "source": "opm_plum_current_export",
+      "sourceLabel": "OPM's current PLUM Reporting export",
+      "method": "rate_of_basic_pay_stated_in_opm_current_plum_export",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "payPlan": "ES",
+      "listedTitle": "DEPUTY DIRECTOR, BUREAU OF ECONOMIC ANALYSIS",
+      "agency": "DEPARTMENT OF COMMERCE",
+      "organization": "OFFICE OF THE DIRECTOR",
+      "positionStatus": "Filled",
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "DEPUTY DIRECTOR, BUREAU OF ECONOMIC ANALYSIS",
+      "quote": "DEPUTY DIRECTOR, BUREAU OF ECONOMIC ANALYSIS; DEPARTMENT OF COMMERCE; OFFICE OF THE DIRECTOR; Pay Plan ES; Level, Grade, or Pay $228,000; Position Status Filled",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "verification": {
+        "documents": 1,
+        "documentsStatingTheFigure": 1,
+        "percent": 70,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right -- and a row in that export is an incumbency, not the post's own rate.",
+        "documentRoles": [
+          {
+            "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+            "role": "prints the rate for the one row listed under this title now"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "exec-dept-doc-ntia",

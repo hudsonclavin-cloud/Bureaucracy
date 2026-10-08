@@ -1203,8 +1203,10 @@ class PublishedGraphTests(unittest.TestCase):
             self.assertEqual(0, block["verification"]["documentsStatingTheFigure"], node_id)
         self.assertEqual("2 U.S.C. 4575(f)", priced[CBO_DIRECTOR_ID][FIELD]["viaStatute"])
         self.assertEqual(EXECUTIVE_SCHEDULE_RATES["II"], priced[CBO_DIRECTOR_ID][FIELD]["amount"])
-        # 59 with the seven instrument rows below (same day, the reader).
-        self.assertEqual(59, len(priced), sorted(priced))
+        # 59 with the seven instrument rows below (same day, the reader); 60
+        # since 2026-10-08 with the Under Secretary for International Trade
+        # (Reorganization Plan No. 3 of 1979, §2(c), Level III).
+        self.assertEqual(60, len(priced), sorted(priced))
         # 54 since 2026-10-07 (passes only after the coordinator's regenerate):
         # seven posts whose pay an instrument the Code prints outside its
         # sections sets -- NOAA's Deputy Administrator and Chief Scientist

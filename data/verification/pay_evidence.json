@@ -18,9 +18,9 @@
     "file": "data/verification/position_evidence.json",
     "current_export_file": "data/verification/plum_current_evidence.json",
     "rule": "the current export's listing supplies the level where it lists the post; the archive's otherwise; each record's levelClaim.source names which",
-    "from_current": 255,
+    "from_current": 265,
     "from_archive": 11,
-    "either_reports_a_rate": 155
+    "either_reports_a_rate": 159
   },
   "report": {
     "source": "opm_executive_schedule",
@@ -40,22 +40,22 @@
     "footnotes": [
       "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
     ],
-    "listings_considered": 266,
-    "priced": 69,
+    "listings_considered": 276,
+    "priced": 74,
     "refused": {
       "a_listing_reports_a_rate": 10,
-      "archive_reports_a_rate": 145,
-      "no_level_reported": 41,
+      "archive_reports_a_rate": 149,
+      "no_level_reported": 42,
       "pay_plan_is_gs_not_executive_schedule": 1
     },
     "priced_by_level": {
       "I": 3,
-      "II": 10,
-      "III": 15,
-      "IV": 33,
-      "V": 8
+      "II": 11,
+      "III": 17,
+      "IV": 34,
+      "V": 9
     },
-    "validated": 69,
+    "validated": 74,
     "rejected": [],
     "conflicts": [],
     "double_counted": []
@@ -1909,6 +1909,94 @@
       ],
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
+    "exec-dept-treasury-irs-chief-counsel": {
+      "nodeId": "exec-dept-treasury-irs-chief-counsel",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 184900.0,
+      "amountRaw": "184,900",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level V $184,900",
+      "quote": "Level V $184,900",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level V",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level V",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "payLevel": "V",
+        "payPlan": "EX",
+        "listedTitle": "CHIEF COUNSEL, INTERNAL REVENUE SERVICE",
+        "source": "opm_plum_current_export",
+        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+        "period": null,
+        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+        "checkedAt": "2026-09-21T03:02:16Z",
+        "valuesFrom": "current_export"
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$184,900",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-dept-treasury-ofr-director-ofr": {
+      "nodeId": "exec-dept-treasury-ofr-director-ofr",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 209600.0,
+      "amountRaw": "209,600",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level III $209,600",
+      "quote": "Level III $209,600",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level III",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level III",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "payLevel": "III",
+        "payPlan": "EX",
+        "listedTitle": "DIRECTOR, OFFICE OF FINANCIAL RESEARCH",
+        "source": "opm_plum_current_export",
+        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+        "period": null,
+        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+        "checkedAt": "2026-09-21T03:02:16Z",
+        "valuesFrom": "current_export"
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$209,600",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
     "exec-dept-usda-chief-financial-officer": {
       "nodeId": "exec-dept-usda-chief-financial-officer",
       "financialEvidenceStatus": "partial",
@@ -2305,6 +2393,50 @@
       ],
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
+    "exec-eop-ondcp-deputy-director": {
+      "nodeId": "exec-eop-ondcp-deputy-director",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 228000.0,
+      "amountRaw": "228,000",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level II $228,000",
+      "quote": "Level II $228,000",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level II",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level II",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "payLevel": "II",
+        "payPlan": "EX",
+        "listedTitle": "DEPUTY DIRECTOR, OFFICE OF NATIONAL DRUG CONTROL POLICY",
+        "source": "opm_plum_current_export",
+        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+        "period": null,
+        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+        "checkedAt": "2026-09-21T03:02:16Z",
+        "valuesFrom": "current_export"
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$228,000",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
     "exec-eop-ondcp-director-drug-czar": {
       "nodeId": "exec-eop-ondcp-director-drug-czar",
       "financialEvidenceStatus": "partial",
@@ -2520,6 +2652,94 @@
       "table": "Salary Table No. 2026-EX",
       "effectiveText": "Effective January 2026",
       "rateText": "$197,200",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-ind-misc-equal-employment-opportunity-commission-eeoc-deputy-director-vice-chair": {
+      "nodeId": "exec-ind-misc-equal-employment-opportunity-commission-eeoc-deputy-director-vice-chair",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 197200.0,
+      "amountRaw": "197,200",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level IV $197,200",
+      "quote": "Level IV $197,200",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level IV",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level IV",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "payLevel": "IV",
+        "payPlan": "EX",
+        "listedTitle": "VICE CHAIR, EQUAL EMPLOYMENT OPPORTUNITY COMMISSION",
+        "source": "opm_plum_current_export",
+        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+        "period": null,
+        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+        "checkedAt": "2026-09-21T03:02:16Z",
+        "valuesFrom": "current_export"
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$197,200",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-ind-misc-equal-employment-opportunity-commission-eeoc-director-administrator-chair-equal-employment-opportunity-commission": {
+      "nodeId": "exec-ind-misc-equal-employment-opportunity-commission-eeoc-director-administrator-chair-equal-employment-opportunity-commission",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 209600.0,
+      "amountRaw": "209,600",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level III $209,600",
+      "quote": "Level III $209,600",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level III",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level III",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "payLevel": "III",
+        "payPlan": "EX",
+        "listedTitle": "CHAIR, EQUAL EMPLOYMENT OPPORTUNITY COMMISSION",
+        "source": "opm_plum_current_export",
+        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+        "period": null,
+        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+        "checkedAt": "2026-09-21T03:02:16Z",
+        "valuesFrom": "current_export"
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$209,600",
       "tableFootnotes": [
         "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
       ],
