@@ -330,6 +330,12 @@ def _tree():
             {"id": "exec-dept-doc", "name": "Department of Commerce (DOC)", "type": "Cabinet Department", "children": [
                 {"id": "exec-dept-doc-deputy-secretary-of-department-of-commerce",
                  "name": "Deputy Secretary of Department of Commerce", "type": "Position"},
+                {"id": "exec-dept-doc-ita", "name": "International Trade Administration (ITA)", "type": "Bureau",
+                 "children": [
+                     {"id": "exec-dept-doc-ita-under-secretary-for-international-trade",
+                      "name": "Under Secretary for International Trade", "type": "Position"},
+                     {"id": "exec-dept-doc-ita-deputy-under-secretary", "name": "Deputy Under Secretary", "type": "Position"},
+                 ]},
                 {"id": "exec-dept-doc-noaa", "name": "NOAA — National Oceanic & Atmospheric Administration", "type": "Bureau",
                  "children": [
                      {"id": "exec-dept-doc-noaa-deputy-administrator", "name": "Deputy Administrator", "type": "Position"},
@@ -427,14 +433,15 @@ class MirrorTests(unittest.TestCase):
 
 
 class BuildTests(unittest.TestCase):
-    def test_the_seven_instrument_rows_are_priced_at_the_level_their_instrument_states(self):
+    def test_the_eight_instrument_rows_are_priced_at_the_level_their_instrument_states(self):
         records, report = _records()
         self.assertEqual(set(INSTRUMENT_PROVISIONS), {k for k, v in records.items() if v.get("instrument")})
-        self.assertEqual(7, report["pricedByInstrument"])
+        self.assertEqual(8, report["pricedByInstrument"])
         expected = {
             "exec-dept-doc-noaa-deputy-administrator": "IV",
             "exec-dept-doc-noaa-chief-scientist": "V",
             "exec-dept-doc-deputy-secretary-of-department-of-commerce": "II",
+            "exec-dept-doc-ita-under-secretary-for-international-trade": "III",
             "leg-senate-admin-secretary-secretary-of-the-senate": "II",
             "leg-senate-admin-saa-sergeant-at-arms": "II",
             "leg-house-clerk-clerk-of-the-house": "II",

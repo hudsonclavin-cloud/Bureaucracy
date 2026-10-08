@@ -797,9 +797,7 @@ INSTRUMENT_PROVISIONS: dict[str, dict[str, Any]] = {
     # Reorganization Plan No. 3 of 1979, §2(b)(1): the Deputy Secretary of
     # Commerce, an office the Executive Schedule does not print (CURATION.md
     # §8, §19.7), paid at the rate for Level II. The graph's name is still the
-    # template CURATION.md §8 left; the row is keyed by id. The same section's
-    # Under Secretary for International Trade (Level III, §2(c)) has no node
-    # here and none is added.
+    # template CURATION.md §8 left; the row is keyed by id.
     "exec-dept-doc-deputy-secretary-of-department-of-commerce": {
         "nodeName": "Deputy Secretary of Department of Commerce",
         "office": "Deputy Secretary of Commerce",
@@ -813,6 +811,33 @@ INSTRUMENT_PROVISIONS: dict[str, dict[str, Any]] = {
             "Secretary appointed by the President, by and with the advice and consent of the Senate. The Deputy "
             "Secretary shall receive compensation at the rate payable for Level II of the Executive Schedule "
             "[5 U.S.C. 5313], and shall perform such duties and exercise such powers as the Secretary may from "
+            "time to time prescribe."
+        ),
+    },
+    # The same Plan, §2(c): the Under Secretary for International Trade, at
+    # the rate for Level III. Added 2026-10-08 (the thirteenth batch): the
+    # comment above once said this office had no node here; it has one, under
+    # the International Trade Administration, named exactly as §2(c) names the
+    # office. 5 U.S.C. 5314 prints no "Under Secretary of Commerce for
+    # International Trade" (it prints a bare "Under Secretary of Commerce",
+    # the office §2(b)(2) of this Plan abolished), so no reviewed Schedule row
+    # can reach it and none is attempted: the Plan sets the pay by reference.
+    # OPM's current export lists "UNDER SECRETARY FOR INTERNATIONAL TRADE" at
+    # EX-III under "OFFICE OF THE UNDER SECRETARY", a sub-organisation this
+    # graph has no node for -- it corroborates the level and reaches no node.
+    "exec-dept-doc-ita-under-secretary-for-international-trade": {
+        "nodeName": "Under Secretary for International Trade",
+        "office": "Under Secretary for International Trade",
+        "instrument": "reorganization-plan-no-3-of-1979",
+        "citation": "Reorganization Plan No. 3 of 1979",
+        "subsection": "§2(c)",
+        "level": "III",
+        "percent": 0,
+        "quote": (
+            "There shall be in the Department an Under Secretary for International Trade appointed by the "
+            "President, by and with the advice and consent of the Senate. The Under Secretary for International "
+            "Trade shall receive compensation at the rate payable for Level III of the Executive Schedule "
+            "[5 U.S.C. 5314], and shall perform such duties and exercise such powers as the Secretary may from "
             "time to time prescribe."
         ),
     },

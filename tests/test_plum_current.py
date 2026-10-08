@@ -899,5 +899,204 @@ class NamedOfficeGateTests(_GateHarness):
         self.assertEqual(code, 1, out)
         self.assertIn("but its parent in the tree is", out)
 
+
+# ---- since 2026-10-08: a title that names its own organisation -------------
+
+TFI = "UNDER SECRETARY FOR TERRORISM AND FINANCIAL INTELLIGENCE"
+
+
+def _base_with_fac() -> dict:
+    """BASE with a unit under the Department of Energy that the export's rows
+    name only in their titles, filed under a sub-organisation with no node."""
+    base = json.loads(json.dumps(BASE))
+    doe = next(n for n in _walk(base) if n["id"] == "exec-dept-doe")
+    doe["children"].append({"id": "doe-fac", "name": "Office of Foreign Assets Control (OFAC)", "type": "Bureau", "children": [
+        P("doe-fac-director", "Director, OFAC"),
+        P("doe-fac-deputy", "Deputy Director"),
+        P("doe-fac-counsel", "Chief Counsel"),
+    ]})
+    return base
+
+
+TITLE_ROWS = [
+    row(DOE, TFI, "DIRECTOR, FOREIGN ASSETS CONTROL", "Filled", "NA", "$228,000", "ES"),
+    row(DOE, TFI, "DEPUTY DIRECTOR, OFFICE OF FOREIGN ASSETS CONTROL", "Filled", "CA", "$221,000", "ES"),
+]
+
+
+class TitleNamesItsOrganisationTests(FixtureTestCase):
+    """The third pass: the export's own title names the unit; the filing names
+    no node. Pinned both ways."""
+
+    def setUp(self) -> None:
+        super().setUp()
+        self.base = _base_with_fac()
+        self.node_map, self.parent_map = index_tree(self.base)
+
+    def test_a_title_naming_its_organisation_reaches_that_organisations_post(self) -> None:
+        write_fixture(self.tmp, ROWS + TITLE_ROWS)
+        _, records, report = self._match()
+        director, deputy = records["doe-fac-director"], records["doe-fac-deputy"]
+        rule = plum_current.SCOPE_TITLE_NAMES_ITS_ORGANISATION
+        self.assertEqual((director["scopeRule"], deputy["scopeRule"]), (rule, rule))
+        # The "Office of" on the node's name is folded, the fold office_named_for_key makes.
+        self.assertEqual(director["listedTitle"], "DIRECTOR, FOREIGN ASSETS CONTROL")
+        self.assertEqual(director["organization"], TFI)
+        self.assertEqual(director["reportedPayText"], "$228,000")
+        self.assertEqual(deputy["reportedPayText"], "$221,000")
+        # No placement: the export files the row under TFI's office, not under OFAC.
+        self.assertNotIn("placement", director)
+        self.assertNotIn("doe-fac-counsel", records)
+        self.assertEqual(report["positions_matched_by_the_organisation_their_title_names"], 2)
+
+    def test_a_bare_title_under_the_same_filing_reaches_nothing(self) -> None:
+        # The broad sub-organisation fallback stays refused: "DIRECTOR" with no
+        # organisation in it says nothing about whose Director it is.
+        write_fixture(self.tmp, ROWS + [row(DOE, TFI, "DIRECTOR", "Filled", "NA", "$228,000", "ES"),
+                                        row(DOE, TFI, "CHIEF COUNSEL", "Filled", "NA", "$228,000", "ES")])
+        _, records, report = self._match()
+        self.assertNotIn("doe-fac-director", records)
+        self.assertNotIn("doe-fac-counsel", records)
+        self.assertEqual(report["positions_matched_by_the_organisation_their_title_names"], 0)
+
+    def test_a_one_token_organisation_half_is_refused(self) -> None:
+        write_fixture(self.tmp, ROWS + [row(DOE, TFI, "DIRECTOR, OFAC", "Filled", "NA", "$228,000", "ES")])
+        _, records, _ = self._match()
+        self.assertNotIn("doe-fac-director", records)
+        self.assertIsNone(plum_current.title_named_organisation("DIRECTOR, OFAC"))
+        self.assertIsNone(plum_current.title_named_organisation("DIRECTOR"))
+
+    def test_an_organisation_outside_the_agency_is_never_reached(self) -> None:
+        # NASA's rows may not name a unit beneath the Department of Energy.
+        write_fixture(self.tmp, ROWS + [row(NASA, "OFFICE OF THE ADMINISTRATOR", "DIRECTOR, FOREIGN ASSETS CONTROL",
+                                            "Filled", "NA", "$228,000", "ES")])
+        _, records, _ = self._match()
+        self.assertNotIn("doe-fac-director", records)
+
+    def test_a_title_filed_under_two_sub_organisations_claims_neither(self) -> None:
+        write_fixture(self.tmp, ROWS + TITLE_ROWS[:1] + [
+            row(DOE, "GENERAL COUNSEL", "DIRECTOR, FOREIGN ASSETS CONTROL", "Vacant", "NA", "", "ES")])
+        _, records, report = self._match()
+        self.assertNotIn("doe-fac-director", records)
+        self.assertTrue(any(item["id"] == "doe-fac-director" for item in report["positions_title_in_several_groups"]))
+
+    def test_a_row_in_a_group_that_names_a_node_is_left_to_the_main_pass(self) -> None:
+        # Filed under the Office of Science, a matched group: the title's tail is
+        # read only by archive_title_keys, and only against the Office of Science.
+        write_fixture(self.tmp, ROWS + [row(DOE, "OFFICE OF SCIENCE", "DIRECTOR, FOREIGN ASSETS CONTROL",
+                                            "Filled", "NA", "$228,000", "ES")])
+        _, records, _ = self._match()
+        self.assertNotIn("doe-fac-director", records)
+
+    def test_the_gates_mirrors_are_the_modules(self) -> None:
+        for title in ("DIRECTOR, FOREIGN ASSETS CONTROL", "DEPUTY DIRECTOR, OFFICE OF FOREIGN ASSETS CONTROL",
+                      "CHIEF COUNSEL, BUREAU OF ENGRAVING AND PRINTING", "DIRECTOR, OFAC", "DIRECTOR",
+                      "DEPUTY ADMINISTRATOR (POLICY AND PROGRAMMING), AGENCY FOR INTERNATIONAL DEVELOPMENT",
+                      "CHAIR, EQUAL EMPLOYMENT OPPORTUNITY COMMISSION", "SPECIAL ASSISTANT, NPS", ", OFFICE OF SCIENCE"):
+            self.assertEqual(gate.plum_title_named_organisation(title), plum_current.title_named_organisation(title), title)
+        for name in ("Office of Foreign Assets Control (OFAC)", "Bureau of Engraving & Printing (BEP)",
+                     "Department of Energy (DOE)", "Office of the Secretary", "AMERICA&#039;S HERITAGE", ""):
+            self.assertEqual(gate.plum_org_fold_keys(name), plum_current.organisation_fold_keys(name), name)
+            self.assertEqual(gate.plum_title_names_this_organisation("DIRECTOR, FOREIGN ASSETS CONTROL", name),
+                             plum_current.title_names_this_organisation("DIRECTOR, FOREIGN ASSETS CONTROL", name), name)
+        self.assertEqual(gate.PLUM_CURRENT_SCOPE_TITLE_NAMES_ITS_ORGANISATION,
+                         plum_current.SCOPE_TITLE_NAMES_ITS_ORGANISATION)
+
+
+class TitleNamesItsOrganisationGateTests(_GateHarness):
+    """The same rule end to end, and every way of faking it refused by the gate."""
+
+    FIXTURE_ROWS = ROWS + TITLE_ROWS
+
+    def setUp(self) -> None:
+        super().setUp()
+        self.base.write_text(json.dumps(_base_with_fac()), encoding="utf-8")
+
+    def test_the_block_carries_the_rule_claims_no_placement_and_the_gate_passes(self) -> None:
+        code, out = self._derive()
+        self.assertEqual(code, 0, out)
+        self.assertIn("matched by the organisation their title names 2", out)
+        result = self._build()
+        graph = json.loads(result.graph_path.read_text(encoding="utf-8"))
+        node = index_tree(graph)[0]["doe-fac-director"]
+        self.assertEqual(node["positionCurrentListing"]["scopeRule"], plum_current.SCOPE_TITLE_NAMES_ITS_ORGANISATION)
+        self.assertEqual(node["positionCurrentPay"]["rateText"], "$228,000")
+        self.assertNotIn("placementMethod", node)
+        self.assertNotIn("placementVerified", node)
+        code, out = self._gate(result.graph_path)
+        self.assertEqual(code, 0, out)
+
+    def test_the_gate_refuses_a_placement_claimed_from_such_a_listing(self) -> None:
+        code, out = self._corrupt(node_id="doe-fac-director", node_fields={
+            "placementMethod": PLACEMENT_METHOD, "placementVerified": True, "placementUrl": CSV_URL,
+            "placementVerifiedAt": FETCHED_AT, "placementParentId": "doe-fac",
+            "placementMatchedText": "DIRECTOR, FOREIGN ASSETS CONTROL"})
+        self.assertEqual(code, 1, out)
+        self.assertIn("claims a placement from a current PLUM listing the export files under", out)
+
+    def test_the_gate_refuses_the_block_moved_under_a_unit_the_title_does_not_name(self) -> None:
+        def move(graph, by_id):
+            by_id["doe-fac"]["children"].remove(by_id["doe-fac-deputy"])
+            by_id["doe-science"]["children"].append(by_id["doe-fac-deputy"])
+        code, out = self._corrupt(node_id="doe-fac-deputy", mutate=move)
+        self.assertEqual(code, 1, out)
+        self.assertIn("names its own organisation, but the title does not name its parent in the tree", out)
+
+    def test_the_gate_refuses_the_listing_without_the_rule(self) -> None:
+        code, out = self._corrupt(node_id="doe-fac-director", listing_fields={"scopeRule": None})
+        self.assertEqual(code, 1, out)
+        self.assertIn("is filed by the export under '{}', but its parent in the tree is".format(TFI), out)
+
+    def test_the_gate_refuses_the_rule_on_a_row_filed_under_the_agency_itself(self) -> None:
+        code, out = self._corrupt(node_id="doe-fac-director", listing_fields={"organization": DOE})
+        self.assertEqual(code, 1, out)
+        self.assertIn("claims the title-names-its-organisation rule for a row filed under the agency itself", out)
+
+    def test_the_gate_refuses_a_title_naming_another_unit(self) -> None:
+        code, out = self._corrupt(node_id="doe-fac-director", listing_fields={"listedTitle": "DIRECTOR, OFFICE OF SCIENCE"})
+        self.assertEqual(code, 1, out)
+        self.assertIn("the title does not name its parent in the tree", out)
+
+
+
+PUBLISHED_GRAPH = Path(__file__).resolve().parents[1] / "output" / "graph.json"
+#: The ten posts the title-names-its-organisation rule reaches on the committed
+#: export (2026-10-08), each with the printed rate where its row prints one.
+TITLE_RULE_POSTS = {
+    "exec-dept-treasury-ofac-director-ofac": "$228,000",
+    "exec-dept-treasury-ofac-deputy-director": "$228,000",
+    "exec-dept-treasury-ofac-chief-counsel": None,
+    "exec-dept-treasury-bep-chief-counsel": "$228,000",
+    "exec-dept-doc-bea-deputy-director": "$228,000",
+    "exec-dept-treasury-irs-chief-counsel": None,
+    "exec-dept-treasury-ofr-director-ofr": None,
+    "exec-eop-ondcp-deputy-director": None,
+    "exec-ind-misc-equal-employment-opportunity-commission-eeoc-director-administrator-chair-equal-employment-opportunity-commission": None,
+    "exec-ind-misc-equal-employment-opportunity-commission-eeoc-deputy-director-vice-chair": None,
+}
+
+
+class PublishedTitleRuleTests(unittest.TestCase):
+    """Pass only after a regenerate: exactly these ten listings carry the rule,
+    none claims a placement, and the printed rates are the export's own."""
+
+    @unittest.skipUnless(PUBLISHED_GRAPH.exists(), "no published graph")
+    def test_the_rule_reaches_exactly_the_measured_posts(self) -> None:
+        by_id = index_tree(json.loads(PUBLISHED_GRAPH.read_text(encoding="utf-8")))[0]
+        carrying = {i for i, n in by_id.items()
+                    if (n.get("positionCurrentListing") or {}).get("scopeRule") == plum_current.SCOPE_TITLE_NAMES_ITS_ORGANISATION}
+        self.assertEqual(set(TITLE_RULE_POSTS), carrying)
+        for node_id, text in TITLE_RULE_POSTS.items():
+            node = by_id[node_id]
+            self.assertNotEqual(PLACEMENT_METHOD, node.get("placementMethod"), node_id)
+            self.assertEqual(text, (node.get("positionCurrentPay") or {}).get("rateText"), node_id)
+        # The leads the rule does NOT reach, each for its own reason (CURATION.md §19.23).
+        for node_id in ("exec-dept-treasury-ofac-associate-director-compliance-enforcement",
+                        "exec-dept-treasury-ofac-associate-director-global-targeting",
+                        "exec-ind-sba-associate-administrator-capital-access",
+                        "exec-dept-usda-nrcs-deputy-chief"):
+            self.assertNotIn("positionCurrentListing", by_id[node_id], node_id)
+
+
 if __name__ == "__main__":
     unittest.main()

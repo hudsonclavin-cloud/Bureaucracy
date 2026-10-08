@@ -1617,6 +1617,13 @@ PLUM_CURRENT_PLACEMENT_METHOD = "listed_under_organization_in_opm_current_plum_e
 #: files under a sub-organisation named for the title itself, scoped to the
 #: agency's own children because this graph has no node for that office.
 PLUM_CURRENT_SCOPE_OFFICE_NAMED_FOR_THE_POST = "office_named_for_the_post"
+#: plum_current.SCOPE_TITLE_NAMES_ITS_ORGANISATION mirrored: a listing whose
+#: title names its own organisation after its last comma ("DIRECTOR, FOREIGN
+#: ASSETS CONTROL"), filed by the export under a sub-organisation this graph
+#: has no node for. The unit the title names must be the node's tree parent,
+#: and no placement may be claimed from such a listing.
+PLUM_CURRENT_SCOPE_TITLE_NAMES_ITS_ORGANISATION = "title_names_its_organisation"
+PLUM_CURRENT_SCOPE_RULES = (PLUM_CURRENT_SCOPE_OFFICE_NAMED_FOR_THE_POST, PLUM_CURRENT_SCOPE_TITLE_NAMES_ITS_ORGANISATION)
 #: whitehouse_pay.RANK_PREFIXES mirrored, in the gate's own key form.
 PLUM_RANK_PREFIXES = (
     "deputy assistant to the president and ",
@@ -3555,6 +3562,54 @@ def plum_office_named_for_key(organization):
     return _re.sub(r"^(?:immediate )?office of (?:the )?", "", canonical_key(_html.unescape(str(organization or "")))).strip()
 
 
+def _plum_fold_office_of(key):
+    import re as _re
+
+    return _re.sub(r"^(?:immediate )?office of (?:the )?", "", key).strip()
+
+
+def plum_title_named_organisation(title):
+    """plum_current.title_named_organisation mirrored: (the office half's key,
+    the folded keys of the organisation named after the LAST comma), or None
+    when there is no comma, the office half is empty or the organisation half
+    is under two tokens."""
+    import html as _html
+
+    text = _html.unescape(str(title or "")).strip()
+    if "," not in text:
+        return None
+    office, tail = text.rsplit(",", 1)
+    office_key = canonical_key(office)
+    if not office_key or len(canonical_key(tail).split()) < 2:
+        return None
+    keys = {_plum_fold_office_of(k) for k in plum_org_keys(tail)} - {""}
+    return (office_key, keys) if keys else None
+
+
+def plum_org_fold_keys(name):
+    """plum_current.organisation_fold_keys mirrored: positions.parent_qualifier_keys
+    (the name with the department tolerance, and each parenthetical acronym)
+    with a leading 'Office of (the)' folded off each."""
+    import html as _html
+
+    text = _html.unescape(str(name or ""))
+    keys = set(plum_org_keys(text))
+    for inner in re.findall(r"\(([^)]*)\)", text):
+        key = canonical_key(inner)
+        if key:
+            keys.add(key)
+    return {_plum_fold_office_of(k) for k in keys} - {""}
+
+
+def plum_title_names_this_organisation(title, organisation_name):
+    """plum_current.title_names_this_organisation mirrored."""
+    parsed = plum_title_named_organisation(title)
+    if parsed is None:
+        return None
+    office_key, keys = parsed
+    return office_key if keys & plum_org_fold_keys(organisation_name) else None
+
+
 def plum_agency_unit(agency):
     """The unit an agency string denotes: the whole string, or the half after
     ' - ' in the export's own '<parent> - <unit>' form."""
@@ -3616,22 +3671,38 @@ def current_listing_violations(node, listing, today, label, parent_name, parent_
     if fetched != export["fetched_at"]:
         say("dates the export {!r}; its fetch record says {!r}".format(fetched, export["fetched_at"]))
     agency, organization, title = (str(listing.get(k) or "") for k in ("agency", "organization", "listedTitle"))
+    rule = listing.get("scopeRule")
+    title_names_parent = str(rule or "") == PLUM_CURRENT_SCOPE_TITLE_NAMES_ITS_ORGANISATION
     # The parent: the organisation the export files the title under must be
     # the node's parent in the tree the gate is walking. Checked before the
     # row is looked up, so a block filed under the wrong organisation is
     # named as such rather than only as a row the export does not carry.
-    if not ((plum_org_keys(parent_name) | set(parent_alias_keys)) & plum_listing_parent_keys(listing)):
+    # Under the title-names-its-organisation rule it is the unit the TITLE
+    # names that must be the parent, checked below instead.
+    if not title_names_parent and not ((plum_org_keys(parent_name) | set(parent_alias_keys)) & plum_listing_parent_keys(listing)):
         say("is filed by the export under {!r}, but its parent in the tree is {!r}".format(organization or agency, parent_name))
-    rule = listing.get("scopeRule")
+    title_keys = set(plum_export_title_keys(title, organization))
     if rule is not None:
-        if str(rule) != PLUM_CURRENT_SCOPE_OFFICE_NAMED_FOR_THE_POST:
+        if str(rule) not in PLUM_CURRENT_SCOPE_RULES:
             say("names a scoping rule {!r} this pipeline does not produce".format(rule))
         elif plum_org_keys(organization) & (plum_org_keys(agency) | plum_org_keys(plum_agency_unit(agency))):
-            say("claims the office-named-for-the-post rule for a row filed under the agency itself ({!r})".format(organization))
+            say("claims the {} rule for a row filed under the agency itself ({!r})".format(
+                "title-names-its-organisation" if title_names_parent else "office-named-for-the-post", organization))
+        elif title_names_parent:
+            office_key = plum_title_names_this_organisation(title, parent_name)
+            if office_key is None:
+                say("claims its title {!r} names its own organisation, but the title does not name its parent in the "
+                    "tree, {!r}".format(title, parent_name))
+                title_keys = set()
+            else:
+                title_keys = {office_key}
+            if str(node.get("placementMethod") or "") == PLUM_CURRENT_PLACEMENT_METHOD:
+                say("claims a placement from a current PLUM listing the export files under {!r}, not under the unit "
+                    "its title names".format(organization))
         elif plum_office_named_for_key(organization) != canonical_key(title):
             say("claims the export files {!r} under a unit named for it, but that unit is {!r}".format(title, organization))
     # The name: the title must still be one the node's name answers to.
-    if not (position_title_keys(node.get("name"), parent_name) & set(plum_export_title_keys(title, organization))):
+    if not (position_title_keys(node.get("name"), parent_name) & title_keys):
         say("is listed as {!r}, which does not name it".format(title))
     # The row, by the block's own keys and nothing about who holds it.
     entry = export["index"].get((agency, organization, title))
@@ -4995,6 +5066,16 @@ TIER_REFERENCE_INSTRUMENT_ROWS = {
         "Secretary appointed by the President, by and with the advice and consent of the Senate. The Deputy "
         "Secretary shall receive compensation at the rate payable for Level II of the Executive Schedule "
         "[5 U.S.C. 5313], and shall perform such duties and exercise such powers as the Secretary may from "
+        "time to time prescribe.",
+        None,
+    ),
+    "exec-dept-doc-ita-under-secretary-for-international-trade": (
+        "Under Secretary for International Trade", "Under Secretary for International Trade",
+        "Reorganization Plan No. 3 of 1979", "reorganization-plan-no-3-of-1979", "§2(c)", "III",
+        "There shall be in the Department an Under Secretary for International Trade appointed by the "
+        "President, by and with the advice and consent of the Senate. The Under Secretary for International "
+        "Trade shall receive compensation at the rate payable for Level III of the Executive Schedule "
+        "[5 U.S.C. 5314], and shall perform such duties and exercise such powers as the Secretary may from "
         "time to time prescribe.",
         None,
     ),

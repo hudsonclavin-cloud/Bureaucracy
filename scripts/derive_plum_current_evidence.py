@@ -130,6 +130,9 @@ def main(argv: list[str] | None = None) -> int:
           f"with a rate printed {report['positions_with_a_rate']}  under an aliased agency {report['positions_under_an_aliased_agency']}  placements {placements}  "
           f"unmatched {report['positions_unmatched']}  shared title {len(report['positions_shared_title'])}  "
           f"alternatives ambiguous {len(report['positions_ambiguous_alternatives'])}  export title ambiguous {len(report['positions_title_ambiguous_in_export'])}")
+    print(f"  matched under an office named for the post {report['positions_matched_under_an_office_named_for_the_post']}  "
+          f"matched by the organisation their title names {report['positions_matched_by_the_organisation_their_title_names']} "
+          f"(no placement claimed; {report['titles_naming_several_organisations']} titles name several organisations)")
     print(f"  matched by pay plan: {report['positions_by_pay_plan']}")
     for item in report["samples"]:
         print("  match:", item)

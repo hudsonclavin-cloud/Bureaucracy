@@ -97,6 +97,7 @@ from data_pipeline.verification.positions import (
     STATUS_LISTED,
     archive_title_keys,
     organisation_name_keys,
+    parent_qualifier_keys,
     position_name_alternatives,
     split_level_grade_pay,
 )
@@ -122,6 +123,23 @@ PLACEMENT_METHOD = "listed_under_organization_in_opm_current_plum_export"
 #: lands an Under Secretary's Chief of Staff on the Secretary's.
 SCOPE_OFFICE_NAMED_FOR_THE_POST = "office_named_for_the_post"
 _OFFICE_OF = re.compile(r"^(?:immediate )?office of (?:the )?")
+#: Since 2026-10-08 (the thirteenth batch): a title that NAMES ITS OWN
+#: ORGANISATION after its last comma -- "DIRECTOR, FOREIGN ASSETS CONTROL",
+#: "CHIEF COUNSEL, BUREAU OF ENGRAVING AND PRINTING" -- filed under a
+#: sub-organisation this graph has no node for (the Under Secretary for
+#: Terrorism and Financial Intelligence's office; Treasury's General Counsel).
+#: `archive_title_keys` already reads that trailing organisation back when it
+#: is the organisation the row is filed under; this reads it back when the
+#: filing names no node, and only then, so the title itself says whose post
+#: it is. The organisation half must reduce (a leading "Office of (the)"
+#: folded on both sides, the fold `office_named_for_key` already makes) to
+#: exactly one organisation at or beneath the agency the row is filed under,
+#: carry at least two tokens, and that organisation must carry exactly one
+#: direct child whose name answers to the office half. No placement is
+#: claimed: the export files the row under the sub-organisation, not under
+#: the unit the title names. Measured on the committed export before it was
+#: built: 10 posts, none of them reachable by a bare title.
+SCOPE_TITLE_NAMES_ITS_ORGANISATION = "title_names_its_organisation"
 PAY_SOURCE = "opm_plum_current_export"
 PAY_SOURCE_TYPE = "opm_plum_current_export"
 PAY_METHOD = "rate_of_basic_pay_stated_in_opm_current_plum_export"
@@ -310,6 +328,44 @@ def office_named_for_key(organization: Any) -> str:
     "Office of the General Counsel" -> "general counsel"; a name carrying no
     such prefix is its own key ("General Counsel" -> "general counsel")."""
     return _OFFICE_OF.sub("", canonical_name_key(unescape(organization))).strip()
+
+
+def _fold_office_of(key: str) -> str:
+    return _OFFICE_OF.sub("", key).strip()
+
+
+def title_named_organisation(title: Any) -> tuple[str, set[str]] | None:
+    """("director", {"foreign assets control"}) for "DIRECTOR, FOREIGN ASSETS
+    CONTROL": the office half's key and the folded keys of the organisation
+    the title names after its LAST comma. None when there is no comma, the
+    office half is empty, or the organisation half's key is under two tokens
+    ("DIRECTORATE HEAD, BIO" names nothing this rule may read)."""
+    text = unescape(title).strip()
+    if "," not in text:
+        return None
+    office, tail = text.rsplit(",", 1)
+    office_key = canonical_name_key(office)
+    tail_key = canonical_name_key(tail)
+    if not office_key or len(tail_key.split()) < 2:
+        return None
+    keys = {_fold_office_of(k) for k in organisation_name_keys(tail)} - {""}
+    return (office_key, keys) if keys else None
+
+
+def organisation_fold_keys(name: Any) -> set[str]:
+    """`parent_qualifier_keys` (the name, the department tolerance, the
+    parenthetical acronym) with a leading "Office of (the)" folded off each."""
+    return {_fold_office_of(k) for k in parent_qualifier_keys(unescape(name))} - {""}
+
+
+def title_names_this_organisation(title: Any, organisation_name: Any) -> str | None:
+    """The office half's key when `title` names `organisation_name` after its
+    last comma, else None. The rename guard and the gate's mirror use it."""
+    parsed = title_named_organisation(title)
+    if parsed is None:
+        return None
+    office_key, keys = parsed
+    return office_key if keys & organisation_fold_keys(organisation_name) else None
 
 
 def agency_unit_name(agency: Any) -> str:
@@ -742,6 +798,103 @@ def match_positions(
             report["positions_by_pay_plan"][plan] = report["positions_by_pay_plan"].get(plan, 0) + 1
             if record.get("reportedPay") is not None:
                 report["positions_with_a_rate"] += 1
+    # A third pass, since 2026-10-08: rows whose TITLE names their own
+    # organisation, filed under a sub-organisation that names no node here
+    # (SCOPE_TITLE_NAMES_ITS_ORGANISATION). The organisation the title names
+    # must be exactly one organisation at or beneath the agency node; within
+    # it, exactly one direct child may answer to the office half, under the
+    # same refusals as above. No placement: the export does not file the row
+    # under the unit the title names.
+    report["positions_matched_by_the_organisation_their_title_names"] = 0
+    report["titles_naming_several_organisations"] = 0
+    orgs_by_fold: dict[str, list[str]] = {}
+    for org_id, org_node in node_map.items():
+        if org_id == root_id or not _is_organisation(org_node):
+            continue
+        for key in organisation_fold_keys(org_node.get("name")):
+            orgs_by_fold.setdefault(key, []).append(org_id)
+    by_named_org: dict[str, dict[str, dict[tuple[str, str], list[dict[str, Any]]]]] = {}
+    for (agency, organization), org_rows in groups.items():
+        if (agency, organization) in group_nodes or agency not in agency_nodes:
+            continue
+        agency_id = agency_nodes[agency]
+        for r in org_rows:
+            parsed = title_named_organisation(r["title"])
+            if parsed is None:
+                continue
+            office_key, tail_keys = parsed
+            found = {n for k in tail_keys for n in orgs_by_fold.get(k, [])
+                     if n == agency_id or agency_id in _ancestors_of(n, parent_map)}
+            if len(found) != 1:
+                if found:
+                    report["titles_naming_several_organisations"] += 1
+                continue
+            by_named_org.setdefault(next(iter(found)), {}).setdefault(office_key, {}).setdefault(
+                (agency, organization), []).append(r)
+    for named_id, by_office in sorted(by_named_org.items()):
+        named_node = node_map[named_id]
+        children = [i for i in positions if parent_map.get(i) == named_id and i not in records]
+        if not children:
+            continue
+        alternatives = {i: position_name_alternatives(positions[i].get("name"), named_node.get("name")) for i in children}
+        shared = Counter(k for keys in alternatives.values() for k in keys)
+        for node_id in sorted(children):
+            keys = alternatives[node_id]
+            hits = [k for k in keys if k in by_office]
+            if not hits:
+                continue
+            if any(shared[k] > 1 for k in keys):
+                report["positions_shared_title"].append({"id": node_id, "name": positions[node_id].get("name"), "organization": named_id})
+                continue
+            if len(hits) > 1:
+                report["positions_ambiguous_alternatives"].append({"id": node_id, "name": positions[node_id].get("name"), "titles": sorted(hits)})
+                continue
+            filings = by_office[hits[0]]
+            if len(filings) != 1:
+                report["positions_title_in_several_groups"].append({"id": node_id, "name": positions[node_id].get("name"), "groups": sorted(filings)})
+                continue
+            (agency, organization), rows = next(iter(filings.items()))
+            spellings = sorted({r["title"] for r in rows})
+            if len(spellings) > 1:
+                report["positions_title_ambiguous_in_export"].append({"id": node_id, "name": positions[node_id].get("name"), "titles": spellings})
+                continue
+            listed_title = spellings[0]
+            agency_id = agency_nodes[agency]
+            agency_alias = alias_hits.get(agency_id)
+            record = {
+                "source": SOURCE,
+                "method": METHOD,
+                "edition": label,
+                "listedTitle": listed_title,
+                "agency": agency,
+                "organization": organization,
+                "agencyMatchedBy": "scoped_prefix" if split_scoped_agency(agency) and not (export_agency_keys(agency) & {canonical_name_key(node_map[agency_id].get("name"))}) else "name",
+                "scopeRule": SCOPE_TITLE_NAMES_ITS_ORGANISATION,
+                **describe_listing(rows),
+                "exportFetchedAt": export.get("fetched_at"),
+                "url": export.get("url"),
+                "documentSha256": export.get("sha256"),
+                # Deliberately no "placement": the export files the row under
+                # `organization`, not under the unit the title names.
+            }
+            if len(keys) > 1:
+                record["matchedAlternative"] = hits[0]
+            if agency_alias is not None:
+                record["organisationNameAlias"] = {"alias": agency_alias.alias, "basis": agency_alias.basis, "organisationId": agency_id}
+                report["positions_under_an_aliased_agency"] = report.get("positions_under_an_aliased_agency", 0) + 1
+            records[node_id] = record
+            report["positions_matched"] += 1
+            report["positions_matched_by_the_organisation_their_title_names"] += 1
+            name = str(positions[node_id].get("name") or "")
+            if unmatched_titles.get(name):
+                unmatched_titles[name] -= 1
+                report["positions_unmatched"] -= 1
+                if unmatched_titles[name] <= 0:
+                    del unmatched_titles[name]
+            plan = str(record.get("payPlan") or "?")
+            report["positions_by_pay_plan"][plan] = report["positions_by_pay_plan"].get(plan, 0) + 1
+            if record.get("reportedPay") is not None:
+                report["positions_with_a_rate"] += 1
     report["unmatched_titles_top"] = unmatched_titles.most_common(25)
     live_by_agency: Counter[str] = Counter()
     for (agency, _), rows in groups.items():
@@ -922,7 +1075,15 @@ def apply_current_listing(
         parent = node_map.get(str(parent_map.get(node_id) or ""))
         recorded_parent = node_map.get(str((placement or {}).get("parentId") or ""))
         parent_names = [(parent or {}).get("name"), (recorded_parent or {}).get("name"), record.get("organization")]
-        if not listed_title_still_names(node.get("name"), parent_names, record.get("listedTitle")):
+        if record.get("scopeRule") == SCOPE_TITLE_NAMES_ITS_ORGANISATION:
+            # The title names the unit; that unit must still be the node's
+            # parent in the tree, and the office half must still name the node.
+            office_key = title_names_this_organisation(record.get("listedTitle"), (parent or {}).get("name"))
+            still_names = office_key is not None and office_key in position_name_alternatives(
+                node.get("name"), (parent or {}).get("name"))
+        else:
+            still_names = listed_title_still_names(node.get("name"), parent_names, record.get("listedTitle"))
+        if not still_names:
             stats["stale_name"] += 1
             continue
         agency_alias = record.get("organisationNameAlias")

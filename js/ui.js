@@ -1734,6 +1734,11 @@ function renderCurrentListing(data) {
     // "Office of the General Counsel" / "General Counsel" — that this graph
     // draws no node for; the post sits directly under the agency here.
     add(" — a unit named for this very post, which this graph has no node for; the post is drawn directly under the agency here");
+  } else if (listing.scopeRule === "title_names_its_organisation") {
+    // The export files the row under a sub-organisation this graph has no
+    // node for; the title itself names the unit the post is drawn under.
+    // No placement is claimed from it.
+    add(" — a unit this graph has no node for; the title itself names the unit this post is drawn under, so the listing is matched by its title and claims nothing about where the post sits");
   }
   if (listing.positionStatus) {
     add(`, ${String(listing.positionStatus).toLowerCase()}`);
