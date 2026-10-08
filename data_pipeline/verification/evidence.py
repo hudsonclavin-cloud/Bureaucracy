@@ -224,6 +224,8 @@ EVIDENCE_OWNED_FIELDS = (
     "positionEmployer",
     "employeesOfficial",
     "employeesOfficialSource",
+    # FedScope payroll beside the headcount (fedscope_payroll.py).
+    "payrollOfficial",
     # Written by pay_tables.py. It is a gloss on positionListing directly
     # above — the rate the salary table pays the level that listing reports —
     # so it must be withdrawn on the same build the listing is, or a rate

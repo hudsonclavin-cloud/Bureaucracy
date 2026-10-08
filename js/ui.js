@@ -3600,6 +3600,36 @@ function renderChildrenList(nodeObj, children, showAll) {
   dom.childrenList.appendChild(fragment);
 }
 
+// OPM FedScope payroll: the civilian staff's total annualized adjusted basic
+// pay (this repository's sum of the table's printed rows) on an organisation,
+// and, on an UNPRICED post, one context line read off the parent's block,
+// never a figure for the post itself. Nothing here writes to the data.
+function payrollStatRows(nodeObj) {
+  const rows = [];
+  const data = nodeObj?.data || {};
+  const fmt = (n) => `$${Math.round(n).toLocaleString()}`;
+  const block = data.payrollOfficial;
+  if (block && typeof block === "object" && typeof block.totalAnnualPay === "number") {
+    const range = Array.isArray(block.rowAverageRange)
+      ? `; sub-agency averages ${fmt(block.rowAverageRange[0])}–${fmt(block.rowAverageRange[1])}`
+      : "";
+    rows.push([
+      `PAY OF CIVILIAN STAFF — OPM FedScope (${block.period}; annualized adjusted basic pay, not the cost)`,
+      `${fmt(block.totalAnnualPay)} for ${block.employees.toLocaleString()} staff, average ${fmt(block.average)}${range}. ` +
+        "Civilians in an active pay status only; USPS and intelligence agencies excluded; sum of OPM's printed row averages.",
+    ]);
+  }
+  const parentBlock = nodeObj?.parent?.data?.payrollOfficial;
+  if (isPostType(data) && !costStandInOf(data) && !data.positionEmployer &&
+      parentBlock && typeof parentBlock.average === "number") {
+    rows.push([
+      "STAFF PAY CONTEXT",
+      `Staff of ${nodeObj.parent.data.name} earn on average ${fmt(parentBlock.average)} (OPM FedScope, ${parentBlock.period}); this is not this post's pay.`,
+    ]);
+  }
+  return rows;
+}
+
 function renderInfoPanel(nodeObj) {
   if (!nodeObj) {
     return;
@@ -3658,6 +3688,7 @@ function renderInfoPanel(nodeObj) {
     const period = official.period ? ` (${official.period})` : "";
     statRows.push([`EMPLOYEES — OPM FedScope${period}`, data.employeesOfficial.toLocaleString()]);
   }
+  statRows.push(...payrollStatRows(nodeObj));
   // USAspending File A, under its own heading so it can never read as the
   // cost: gross outlays, fiscal-year-to-date, from a different system.
   const auditedRow = data.auditedNetCost;

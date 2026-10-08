@@ -219,7 +219,7 @@ MINIMAL_GRAPH_FIELDS = (
     # the Government Manual's own description of the unit beside it
     "desc", "descriptionSource", "descriptionOfficial",
     # the figures the panel prints beside the name
-    "budget", "employees", "employeesOfficial", "employeesOfficialSource",
+    "budget", "employees", "employeesOfficial", "employeesOfficialSource", "payrollOfficial",
     # cost badge, amount and the note explaining which of the two it is
     "cost_status", "resolved_total_amount", "cost_basis", "cost_validation",
     "costVerificationStatus", "cost_weight_dispute", "rollup_total_amount",
@@ -3034,6 +3034,11 @@ def build_graph(
     validation["headcount_evidence"] = apply_headcount_evidence(
         graph, load_headcount_evidence(resolved_headcount_path) if resolved_headcount_path else {}, index_tree=index_tree,
     )
+    # What those civilians are paid, off the same FedScope rows: only beside a
+    # headcount stamped just above, so every one of its refusals binds here.
+    from data_pipeline.verification.fedscope_payroll import apply_payroll_evidence  # noqa: E402
+
+    validation["payroll_evidence"] = apply_payroll_evidence(graph, index_tree=index_tree)
     resolved_position_path = DEFAULT_POSITION_EVIDENCE_PATH if position_evidence_path == "default" else position_evidence_path
     validation["position_evidence"] = apply_position_evidence(
         graph, load_position_evidence(resolved_position_path) if resolved_position_path else {}, index_tree=index_tree,

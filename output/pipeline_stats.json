@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-08T05:01:23.175493+00:00",
+  "timestamp": "2026-10-08T16:08:04.730584+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5481,
@@ -27,7 +27,7 @@
     "unverified": 4491
   },
   "average_confidence_score": 0.76,
-  "verified_node_count": 549,
+  "verified_node_count": 558,
   "treasury_total_fetched": false,
   "build_validation": {
     "initial_node_count": 1066,
@@ -53,7 +53,7 @@
       "verified": 558,
       "unverified": 4491
     },
-    "verified_node_count": 549,
+    "verified_node_count": 558,
     "dropped_placeholder_nodes": 0,
     "average_confidence_score": 0.76,
     "pipeline_summary": {
@@ -433,6 +433,13 @@
       "undated": 0,
       "outside_stated_coverage": 1,
       "below_its_subtree": 0
+    },
+    "payroll_evidence": {
+      "published": 178,
+      "no_matching_rows": 0,
+      "post_refused": 0,
+      "measured_equal_refused": 0,
+      "total_annual_pay": 322101594591
     },
     "position_evidence": {
       "listed": 138,
