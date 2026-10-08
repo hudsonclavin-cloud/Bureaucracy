@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-08T00:05:38Z",
+ "url": "https://www.govinfo.gov/link/uscode/10/8045?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleC-partI-chap806-sec8045.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/10/8045",
+ "bytes": 4103,
+ "sha256": "73c992dda10ce05b103453a672aaa02964401fbeff87dc006e5e6b6ae36e5c02",
+ "error": null
+}

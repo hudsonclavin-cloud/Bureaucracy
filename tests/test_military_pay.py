@@ -185,6 +185,53 @@ class ProvisionTests(unittest.TestCase):
             self.assertFalse(re.search(r"cocom-(usafricom|uscentcom|useucom|usindopacom|usnorthcom|ussouthcom|usspacecom|usstratcom|ustranscom)", node_id), node_id)
 
 
+class ThirteenthBatchDeclineTests(unittest.TestCase):
+    """The leads the thirteenth batch cited dfas.mil for, declined because the
+    section that would have to fix the grade does not -- pinned against the
+    committed bytes in both directions, so neither the decline nor its reason
+    rests on anybody's memory of a search."""
+
+    def test_14_usc_305_designates_coast_guard_vice_admirals_and_names_no_area_commander(self):
+        operative = load_section("uscg_14_usc_305_govinfo2024.html")["operative"]
+        self.assertIn("The President may— (A) designate, within the Coast Guard, no more than five positions", operative)
+        self.assertIn("shall have the grade of vice admiral", operative)
+        for word in ("Atlantic", "Pacific", "Area"):
+            self.assertNotIn(word, operative)
+
+    def test_the_reserve_and_guard_heads_are_appointed_from_general_officers_at_no_fixed_grade(self):
+        cases = {
+            "army_10_usc_7038_govinfo2024.html": "shall appoint the Chief of Army Reserve from general officers of the Army Reserve",
+            "marines_10_usc_8084_govinfo2024.html": "shall appoint the Commander, Marine Forces Reserve, from general officers of the Marine Corps Reserve",
+            "ngb_10_usc_10506_govinfo2024.html": "shall appoint the Director, Army National Guard, from general officers of the Army National Guard",
+        }
+        for fixture, appointment in cases.items():
+            with self.subTest(fixture):
+                operative = load_section(fixture)["operative"]
+                self.assertIn(appointment, operative)
+                self.assertNotIn("grade of general", operative)
+                self.assertNotIn("grade of lieutenant general", operative)
+                self.assertNotIn("grade of vice admiral", operative)
+                self.assertNotIn("has the grade", operative)
+        # The statute's office is the Director, not the graph's "Chief".
+        self.assertNotIn("Chief, Army National Guard", load_section("ngb_10_usc_10506_govinfo2024.html")["operative"])
+
+    def test_the_service_staff_sections_state_a_class_or_a_floor_never_one_grade(self):
+        self.assertIn("shall be general officers detailed to those positions",
+                      load_section("army_10_usc_7035_govinfo2024.html")["operative"])
+        self.assertIn("shall be general officers detailed to those positions",
+                      load_section("af_10_usc_9035_govinfo2024.html")["operative"])
+        self.assertIn("serving in grades above captain", load_section("navy_10_usc_8036_govinfo2024.html")["operative"])
+        self.assertNotIn("grade", load_section("marines_10_usc_8045_govinfo2024.html")["operative"])
+
+    def test_the_declined_posts_are_recorded_and_in_no_grade_row(self):
+        for node_id in ("exec-dept-dhs-uscg-commander-atlantic-area", "exec-dept-dhs-uscg-commander-pacific-area",
+                        "exec-dept-defense-army-chief-army-reserve", "exec-dept-defense-army-chief-army-national-guard",
+                        "exec-dept-defense-marines-commanding-general-marine-corps-reserve"):
+            with self.subTest(node_id):
+                self.assertIn(node_id, NOT_PRICED)
+                self.assertNotIn(node_id, GRADE_PROVISIONS)
+
+
 class RecordTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

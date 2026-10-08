@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-08T00:05:33Z",
+ "url": "https://www.govinfo.gov/link/uscode/10/8036?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleC-partI-chap805-sec8036.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/10/8036",
+ "bytes": 5052,
+ "sha256": "95820fbf384eeb775d61132fc5105a349c39882ae49a4b90fb074d0eaca3789b",
+ "error": null
+}

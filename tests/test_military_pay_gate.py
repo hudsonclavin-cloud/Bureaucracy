@@ -126,7 +126,10 @@ class MirrorTests(unittest.TestCase):
         node_map, _ = index_tree(load_base_graph(DEFAULT_BASE_GRAPH))
         module_node_ids = {key for key in mp.NOT_PRICED if key in node_map}
         # 2026-10-07: 2 -> 1; the Space Force's adviser was renamed and priced.
-        self.assertEqual(1, len(module_node_ids), module_node_ids)
+        # 2026-10-08: 1 -> 6; the thirteenth batch's two Coast Guard Area
+        # Commanders and three reserve and Guard heads, whose grade no
+        # section fixes.
+        self.assertEqual(6, len(module_node_ids), module_node_ids)
         self.assertNotIn("exec-dept-defense-sf-senior-enlisted-advisor", gate.MILITARY_NOT_PRICED_NODE_IDS)
         self.assertTrue(module_node_ids <= gate.MILITARY_NOT_PRICED_NODE_IDS)
         # The nine combatant commanders without a grade statute and the six
@@ -136,7 +139,7 @@ class MirrorTests(unittest.TestCase):
         copies = {i for i in gate.MILITARY_NOT_PRICED_NODE_IDS if i.startswith("exec-dept-defense-jcs-")}
         self.assertEqual(9, len(commanders))
         self.assertEqual(6, len(copies))
-        self.assertEqual(16, len(gate.MILITARY_NOT_PRICED_NODE_IDS))  # 17 until 2026-10-07
+        self.assertEqual(21, len(gate.MILITARY_NOT_PRICED_NODE_IDS))  # 17 until 2026-10-07, 16 until 2026-10-08
         for node_id in gate.MILITARY_NOT_PRICED_NODE_IDS:
             with self.subTest(node=node_id):
                 self.assertIn(node_id, node_map)

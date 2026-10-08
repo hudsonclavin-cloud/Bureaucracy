@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-08T00:04:54Z",
+ "url": "https://www.govinfo.gov/link/uscode/10/8084?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleC-partI-chap809-sec8084.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/10/8084",
+ "bytes": 11226,
+ "sha256": "e5e212687bfc24ac0f18e9b750edd64c4843cb40a7338dfe944abbe6d2708775",
+ "error": null
+}

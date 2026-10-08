@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-08T00:04:49Z",
+ "url": "https://www.govinfo.gov/link/uscode/10/7038?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title10/html/USCODE-2024-title10-subtitleB-partI-chap705-sec7038.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/10/7038",
+ "bytes": 12798,
+ "sha256": "314745b522714a9ccf7401f85e65dfdc143a6032de32e7a64eb6802e77fa86e4",
+ "error": null
+}
