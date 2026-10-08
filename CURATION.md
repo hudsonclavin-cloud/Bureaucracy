@@ -5529,14 +5529,16 @@ publisher's own major object classes, every minor class with obligations and
 gross outlays, and `staffPay`, the sum of object classes 11.x (personnel
 compensation) and 12.x (personnel benefits), listed by code.
 
-- **Reach, not widened.** Only the toptier keys of the phase-2 crosswalk that
-  `usaspending.py` applies (name equality, or one of its reviewed aliases —
-  AmeriCorps through CNCS). The crosswalk was built for organisations with no
-  measured Treasury line, so it holds 22 toptier keys and no department; an
-  agency-level breakdown is never stamped on a bureau. 22 matched, **21
-  published**.
+- **Reach, widened 2026-10-08 by the owner's decision.** Every toptier row of
+  the committed list whose name reduces by canonical-key equality to exactly
+  one organisation node (no other toptier row sharing the key), plus the
+  reviewed toptier aliases of `USASPENDING_NAME_ALIASES` (AmeriCorps, CSB);
+  never a bureau. The crosswalk's 22 toptier keys stay a subset. **91 matched,
+  86 published**, all fifteen departments included.
 - **Three fixtures per agency**, under `tests/fixtures/usaspending/object_class/`
-  (`minor/`, `major/`, `personnel/`, 66 files with `.meta.json`):
+  (`minor/`, `major/`, `personnel/`, 273 files with `.meta.json`; 207 fetched
+  2026-10-08 for the widened reach, one Railroad Retirement Board fetch reset
+  by the peer and fetched again):
   `/api/v2/agency/<code>/object_class/?fiscal_year=2025`,
   `/api/v2/financial_spending/major_object_class/` and its minor classes under
   major class 10. robots.txt answers 404; fetched 2026-10-08.
@@ -5555,14 +5557,16 @@ compensation) and 12.x (personnel benefits), listed by code.
   download's columns, not to this endpoint's field names. The block quotes the
   elements and says so; it is weaker than the File A rule, where the
   dictionary names the API field itself.
-- **Measured:** staff pay across the 21 agencies $2,029,415,393.45 of FY2025
-  obligations. Largest: FCC $340.7m (2.9% of $11.7bn, the rest Universal
-  Service grants), USAGM $307.7m (40.3%), FTC $292.5m (68.3%), CFTC $234.7m
-  (64.1%), AmeriCorps $179.8m (11.0%).
-- **Open, for the owner:** the departments, where most of the money is. Their
-  toptier rows each reduce by name to exactly one organisation here (89 of the
-  111 toptier rows do), but no crosswalk row proposes them, so reaching them
-  means widening the reach, which this pass did not do.
+- **Also declined:** the NCUA (major group 10 does not equal its own minor
+  rows), and the Interagency Council on Homelessness, the National Council on
+  Disability and the Kennedy Center, whose FY2025 obligations total zero —
+  zero is never published.
+- **Measured:** staff pay across the 86 agencies $594,969,961,790.88 of
+  $10,085,995,837,456.71 FY2025 obligations. Largest: Defense $323.8bn (22.3%;
+  military pay 11.7 and military benefits 12.2 are in 11.x/12.x and listed),
+  VA $73.6bn (17.8%), DHS $47.5bn (27.7%), Justice $22.6bn (44.7%), HHS
+  $17.9bn (0.6%). The departments carry measured Treasury costs; no block
+  equals one to the cent, and the gate keeps refusing one that would.
 
 ## 21. What an organisation's civilian staff are paid, from FedScope (2026-10-08)
 

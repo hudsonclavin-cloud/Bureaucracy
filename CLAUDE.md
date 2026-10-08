@@ -5409,14 +5409,20 @@ obligations and gross outlays as printed, and `staffPay`: the sum of classes
 11.x (personnel compensation) and 12.x (personnel benefits), listed by code,
 13.0 "Benefits for former personnel" excluded and said to be. Three fixtures
 per agency are committed under `tests/fixtures/usaspending/object_class/`
-(`minor/`, `major/`, `personnel/`), digests recomputed; the reach is exactly
-the toptier keys `usaspending.py` applies, by name equality or its reviewed
-aliases, never a bureau. 22 matched and **21 published**; the Appalachian
-Regional Commission is refused because two of the publisher's endpoints
-disagree ($190.2m of minor classes against $9.2m of major groups). Staff pay
-across the 21 is **$2,029,415,393.45**; largest the FCC ($340.7m, 2.9% of
-$11.7bn), USAGM ($307.7m), FTC ($292.5m), CFTC ($234.7m) and AmeriCorps
-($179.8m). The scale rests on the Data Dictionary's two File B elements,
+(`minor/`, `major/`, `personnel/`), digests recomputed. The reach, widened on
+2026-10-08 by the owner's decision: every toptier row whose name reduces by
+canonical-key equality (or a reviewed `USASPENDING_NAME_ALIASES` row) to
+exactly one organisation node, unique both ways, never a bureau; the
+crosswalk's 22 are a subset. 91 matched and **86 published**, the fifteen
+departments among them; refused: the Appalachian Regional Commission
+($190.2m of minor classes against $9.2m of major groups), the NCUA (major
+group 10 disagrees with its own rows), and three whose FY2025 obligations
+total zero (USICH, the National Council on Disability, the Kennedy Center).
+Staff pay across the 86 is **$594,969,961,790.88** of **$10.09tn** of
+obligations; largest Defense ($323.8bn, military classes 11.7 and 12.2
+included and listed), VA ($73.6bn), DHS ($47.5bn), Justice ($22.6bn) and
+HHS ($17.9bn). The departments carry measured Treasury costs and the gate
+still refuses any figure equal to one to the cent. The scale rests on the Data Dictionary's two File B elements,
 which it maps to the account download's columns rather than to this
 endpoint's fields, and the block says so. Nothing writes a cost field,
 `sourceUrls` or a verification method; the field is in
@@ -5427,9 +5433,7 @@ re-reads all three fixtures and refuses a block on a post, on a node the
 crosswalk does not reach, with any figure or class row the fixtures do not
 print, a staff pay that is not the sum of its listed 11.x/12.x rows, no
 fiscal year, or a figure equal to the measured cost;
-`tests/test_object_class.py` pins both directions. The departments are not
-reached: the crosswalk proposes none of them, though all fifteen reduce by
-name to one node each (`CURATION.md` §20).
+`tests/test_object_class.py` pins both directions (`CURATION.md` §20).
 
 **The thirteenth research batch (2026-10-08), built by five agents against the
 repository's own documents.** The owner pasted per-node answers for 627 posts

@@ -46,6 +46,19 @@ class ModuleTests(unittest.TestCase):
         store = json.loads(object_class.DEFAULT_EVIDENCE_PATH.read_text(encoding="utf-8"))
         self.assertEqual(store["nodes"], self.records)
 
+    def test_the_crosswalks_toptier_keys_are_a_subset(self):
+        before = {"exec-regulatory-fcc", "exec-regulatory-ftc", "exec-ind-misc-americorps",
+                  "exec-ind-misc-chemical-safety-hazard-investigation-board-csb", "jud-specialized-cavc"}
+        matched, _refused = object_class.matched_agencies(index_tree(load_base_graph(BASE))[0])
+        self.assertTrue(before <= set(matched))
+        self.assertIn("exec-dept-usda", matched)
+        self.assertNotIn("exec-dept-dot-phmsa", matched)  # a bureau alias is never reached
+
+    def test_the_reach_is_unique_both_ways(self):
+        matched, _refused = object_class.matched_agencies(index_tree(load_base_graph(BASE))[0])
+        codes = [v[0] for v in matched.values()]
+        self.assertEqual(len(codes), len(set(codes)))
+
     def test_endpoints_that_disagree_are_refused(self):
         reason = self.report["refused"]["exec-ind-misc-appalachian-regional-commission-arc"]
         self.assertTrue(reason.startswith("endpoints_disagree"))
@@ -97,7 +110,7 @@ class GateTests(unittest.TestCase):
         self.corrupt(lambda b: None, lambda n: n.update(type="Position"))
 
     def test_on_a_node_the_crosswalk_does_not_reach(self):
-        self.corrupt(lambda b: None, lambda n: n.update(id="exec-dept-usda"))
+        self.corrupt(lambda b: None, lambda n: n.update(id="exec-dept-dot-phmsa"))
 
     def test_staff_pay_not_the_sum(self):
         self.corrupt(lambda b: b["staffPay"].update(amount=b["staffPay"]["amount"] + 1))

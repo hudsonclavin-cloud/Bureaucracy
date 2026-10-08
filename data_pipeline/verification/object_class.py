@@ -8,14 +8,16 @@ contracts and services, grants, equipment -- and USAspending publishes it per
 agency. This module reads it for the agencies `usaspending.py` already
 matches to a node, and nothing wider.
 
-**Which agencies.** Exactly the toptier keys of the phase-2 crosswalk that
-`usaspending.py` applies: a crosswalk identifier with no bureau slug, whose
-name in the committed toptier list reduces to the node's canonical name, or
-which carries one of `usaspending.USASPENDING_NAME_ALIASES`. The object-class
-endpoints are toptier-only, so a bureau key never reaches this module -- an
-agency's breakdown stamped on one of its bureaus would publish a bigger
-unit's spending as the bureau's. `usaspending.BROADER_API_ENTITY` is
-honoured for the same reason.
+**Which agencies.** Every row of USAspending's committed toptier list whose
+name reduces (canonical key equality) to exactly one organisation node, the
+row's key being carried by no other toptier row, plus the toptier rows a
+reviewed `usaspending.USASPENDING_NAME_ALIASES` entry names (AmeriCorps
+through CNCS, the CSB). Widened on 2026-10-08 by the owner's decision from
+the phase-2 crosswalk's 22 toptier keys, which remain a subset, so the
+departments are reached. The object-class endpoints are toptier-only, so a
+bureau never is -- an agency's breakdown stamped on one of its bureaus
+would publish a bigger unit's spending as the bureau's.
+`usaspending.BROADER_API_ENTITY` is honoured for the same reason.
 
 **What is read, three documents per agency, each committed verbatim** under
 `tests/fixtures/usaspending/object_class/` with its `.meta.json`, digest
@@ -146,36 +148,69 @@ def load_dictionary_rows() -> list[dict[str, str]]:
     return rows
 
 
-def matched_agencies(node_map: dict[str, dict[str, Any]], crosswalk: dict[str, dict[str, Any]]):
-    """node id -> (toptier code, the API's name, alias or None), by usaspending.py's own rules."""
+def matched_agencies(node_map: dict[str, dict[str, Any]], crosswalk: dict[str, dict[str, Any]] | None = None):
+    """node id -> (toptier code, the API's name, alias or None).
+
+    One reach rule (since 2026-10-08, the owner's decision): a row of the
+    committed toptier list reaches an organisation node when the two names
+    reduce to the same canonical key, or when the node carries one of
+    `usaspending.USASPENDING_NAME_ALIASES` naming that row -- and only when
+    the match is unique both ways: the row's key names exactly one
+    organisation here, and no other toptier row reduces to the same key. A
+    bureau is never reached: these endpoints are toptier-only. The phase-2
+    crosswalk's 22 toptier keys are a subset of what this reaches; the
+    argument is accepted for the callers that still pass it and not read.
+    """
     out: dict[str, tuple[str, str, dict[str, str] | None]] = {}
     refused: dict[str, str] = {}
     data, _meta = _load(_us.TOPTIER_FIXTURE)
-    for node_id, identifier in sorted(crosswalk.items()):
-        code, slug = _us.key_parts(identifier.get("key"))
-        if slug is not None or not code:
+    rows = [r for r in data.get("results") or [] if isinstance(r, dict)]
+    orgs: dict[str, list[str]] = {}
+    for node_id, node in node_map.items():
+        if is_organisation(node) and not node.get("synthetic"):
+            orgs.setdefault(canonical_name_key(str(node.get("name") or "")), []).append(node_id)
+    row_keys: dict[str, int] = {}
+    for row in rows:
+        key = canonical_name_key(str(row.get("agency_name") or ""))
+        row_keys[key] = row_keys.get(key, 0) + 1
+    by_name = {str(r.get("agency_name") or ""): r for r in rows}
+    for row in rows:
+        api_name = str(row.get("agency_name") or "")
+        code = str(row.get("toptier_code") or "")
+        key = canonical_name_key(api_name)
+        nodes = orgs.get(key) or []
+        if not key or not code or not nodes:
             continue
+        if len(nodes) > 1:
+            for node_id in nodes:
+                refused[node_id] = f"toptier {code} name reaches {len(nodes)} organisations"
+            continue
+        if row_keys[key] != 1:
+            refused[nodes[0]] = f"{row_keys[key]} toptier rows reduce to this name"
+            continue
+        if nodes[0] in _us.BROADER_API_ENTITY:
+            refused[nodes[0]] = "api_entity_is_broader"
+            continue
+        out[nodes[0]] = (code, api_name, None)
+    for node_id, alias in sorted(_us.USASPENDING_NAME_ALIASES.items()):
         node = node_map.get(node_id)
-        if node is None or not is_organisation(node):
+        row = by_name.get(alias.get("apiName") or "")
+        if node is None or row is None or node_id in out:
+            continue
+        if not is_organisation(node) or node.get("synthetic"):
             refused[node_id] = "not_an_organisation_in_this_graph"
             continue
-        rows = [r for r in data.get("results") or [] if str(r.get("toptier_code")) == code]
-        if len(rows) != 1:
-            refused[node_id] = f"toptier {code} matches {len(rows)} rows"
+        if canonical_name_key(alias["graphName"]) != canonical_name_key(node.get("name") or ""):
+            refused[node_id] = "alias_names_a_different_node_name"
             continue
-        api_name = str(rows[0].get("agency_name") or "")
-        if canonical_name_key(api_name) == canonical_name_key(node.get("name") or ""):
-            out[node_id] = (code, api_name, None)
+        if row_keys[canonical_name_key(alias["apiName"])] != 1:
+            refused[node_id] = "alias_row_not_unique"
             continue
-        if node_id in _us.BROADER_API_ENTITY:
-            refused[node_id] = "api_entity_is_broader"
+        claimed = [n for n, v in out.items() if v[0] == str(row.get("toptier_code"))]
+        if claimed:
+            refused[node_id] = f"toptier row already reached by {claimed[0]}"
             continue
-        alias = _us.USASPENDING_NAME_ALIASES.get(node_id)
-        if (alias and alias["apiName"] == api_name
-                and canonical_name_key(alias["graphName"]) == canonical_name_key(node.get("name") or "")):
-            out[node_id] = (code, api_name, alias)
-        else:
-            refused[node_id] = "name_not_equal"
+        out[node_id] = (str(row.get("toptier_code")), alias["apiName"], alias)
     return out, refused
 
 

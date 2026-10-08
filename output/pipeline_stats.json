@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-08T16:22:02.051110+00:00",
+  "timestamp": "2026-10-08T19:47:06.097285+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5481,
@@ -682,7 +682,7 @@
       }
     },
     "object_class_evidence": {
-      "applied": 21,
+      "applied": 86,
       "unknown_node": 0,
       "not_an_organisation": 0,
       "stale_name": 0,
