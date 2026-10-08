@@ -8,13 +8,13 @@ checkable claim. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is generated from this
 same list in the same run.
 
 - position nodes in the published graph: **4,591**
-- carrying a pay claim an official document supports: **1,231**
-- carrying none: **3,360**
+- carrying a pay claim an official document supports: **1,242**
+- carrying none: **3,349**
 
 | reason | count | what it means |
 |---|---|---|
-| `unreached` | 2,184 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
-| `multiplicity` | 614 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 43 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
+| `unreached` | 2,176 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
+| `multiplicity` | 611 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 46 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
 | `beneath_replaced_unit` | 432 | the post sits beneath a unit the government has replaced, and research on it is paused. The owner's decision of 2026-10-07: these posts (the eighteen former VA networks' medical-centre posts and network officers, CURATION.md §10) are not asked about in any research pack until a VA document maps medical centres to the five current networks and they are re-homed. What pays a medical-centre post does not depend on which network it reports to, so the question is not lost; it is waiting on curation, not on research. |
 | `not_federally_paid` | 112 | an official document establishes the post is not on a federal pay schedule. The owner's decision of 2026-10-07: where a committed official document establishes that a post's holder is not paid by the federal government (a laboratory DOE states is operated by a contractor), the post carries `positionEmployer` saying so and is no longer research work. No federal pay figure exists for it to find. |
 | `listed_no_rate` | 18 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
@@ -1204,21 +1204,6 @@ same list in the same run.
 - `exec-dept-dhs-usss-special-agent-protective-detail-multiple` — Special Agent — Protective Detail (×multiple) — `multiplicity`
 - `exec-dept-dhs-usss-uniformed-division-officer-multiple` — Uniformed Division Officer (×multiple) — `multiplicity`
 
-## All 94 District Courts — Standard Structure  — 10 unpriced
-
-`jud-district-structure`
-
-- `jud-district-structure-chief-judge` — Chief Judge — `unreached`
-- `jud-district-structure-chief-pretrial-services-officer` — Chief Pretrial Services Officer — `unreached`
-- `jud-district-structure-chief-u-s-probation-officer` — Chief U.S. Probation Officer — `unreached`
-- `jud-district-structure-clerk-of-court` — Clerk of Court — `unreached`
-- `jud-district-structure-court-reporter-ecro` — Court Reporter / ECRO — `unreached`
-- `jud-district-structure-court-security-officer-cso` — Court Security Officer (CSO) — `unreached`
-- `jud-district-structure-courtroom-deputy-clerk` — Courtroom Deputy Clerk — `unreached`
-- `jud-district-structure-district-judge-varies-per-district` — District Judge (×varies per district) — `multiplicity`
-- `jud-district-structure-law-clerk-2-4-per-judge` — Law Clerk (×2-4 per judge) — `multiplicity`
-- `jud-district-structure-u-s-probation-officer-multiple` — U.S. Probation Officer (×multiple) — `multiplicity`
-
 ## Centers for Medicare & Medicaid Services (CMS)  — 10 unpriced
 
 `exec-dept-hhs-cms`
@@ -1594,6 +1579,20 @@ same list in the same run.
 - `exec-dept-defense-cocom-ustranscom-j6-communications-ustranscom` — J6 — Communications, USTRANSCOM — `unreached`
 - `exec-dept-defense-cocom-ustranscom-joint-intelligence-center-director-ustranscom` — Joint Intelligence Center Director, USTRANSCOM — `unreached`
 
+## All 94 District Courts — Standard Structure  — 9 unpriced
+
+`jud-district-structure`
+
+- `jud-district-structure-chief-judge` — Chief Judge — `unreached`
+- `jud-district-structure-chief-pretrial-services-officer` — Chief Pretrial Services Officer — `unreached`
+- `jud-district-structure-chief-u-s-probation-officer` — Chief U.S. Probation Officer — `unreached`
+- `jud-district-structure-clerk-of-court` — Clerk of Court — `unreached`
+- `jud-district-structure-court-reporter-ecro` — Court Reporter / ECRO — `unreached`
+- `jud-district-structure-court-security-officer-cso` — Court Security Officer (CSO) — `unreached`
+- `jud-district-structure-courtroom-deputy-clerk` — Courtroom Deputy Clerk — `unreached`
+- `jud-district-structure-law-clerk-2-4-per-judge` — Law Clerk (×2-4 per judge) — `multiplicity`
+- `jud-district-structure-u-s-probation-officer-multiple` — U.S. Probation Officer (×multiple) — `multiplicity`
+
 ## Ames Research Center (ARC)  — 9 unpriced
 
 `exec-ind-nasa-ames-research-center-arc`
@@ -1846,20 +1845,6 @@ same list in the same run.
 - `jud-scotus-reporter-of-decisions` — Reporter of Decisions — `unreached`
 - `jud-scotus-supreme-court-police-chief` — Supreme Court Police Chief — `unreached`
 
-## U.S. Attorneys Office (USAO — 94 Districts)  — 9 unpriced
-
-`exec-dept-doj-usao`
-
-- `exec-dept-doj-usao-assistant-u-s-attorney-civil-multiple` — Assistant U.S. Attorney — Civil (×multiple) — `multiplicity`
-- `exec-dept-doj-usao-assistant-u-s-attorney-criminal-multiple` — Assistant U.S. Attorney — Criminal (×multiple) — `multiplicity`
-- `exec-dept-doj-usao-civil-division-chief` — Civil Division Chief — `unreached`
-- `exec-dept-doj-usao-criminal-division-chief` — Criminal Division Chief — `unreached`
-- `exec-dept-doj-usao-first-assistant-u-s-attorney` — First Assistant U.S. Attorney — `unreached`
-- `exec-dept-doj-usao-national-security-coordinator` — National Security Coordinator — `unreached`
-- `exec-dept-doj-usao-paralegal-specialist-multiple` — Paralegal Specialist (×multiple) — `multiplicity`
-- `exec-dept-doj-usao-u-s-attorney-94-appointed-by-president` — U.S. Attorney (×94, appointed by President) — `multiplicity`
-- `exec-dept-doj-usao-victim-witness-coordinator` — Victim-Witness Coordinator — `unreached`
-
 ## U.S. Geological Survey (USGS)  — 9 unpriced
 
 `exec-dept-doi-usgs`
@@ -1955,19 +1940,6 @@ same list in the same run.
 - `exec-ind-smithsonian-anacostia-community-museum-head-of-collections-management` — Head of Collections Management — `unreached`
 - `exec-ind-smithsonian-anacostia-community-museum-head-of-education` — Head of Education — `unreached`
 - `exec-ind-smithsonian-anacostia-community-museum-head-of-facilities` — Head of Facilities — `unreached`
-
-## Bureau of Engraving & Printing  — 8 unpriced
-
-`exec-dept-treasury-bep`
-
-- `exec-dept-treasury-bep-associate-director-for-management` — Associate Director for Management — `unreached`
-- `exec-dept-treasury-bep-associate-director-for-product-technology` — Associate Director for Product & Technology — `unreached`
-- `exec-dept-treasury-bep-chief-counsel` — Chief Counsel — `unreached`
-- `exec-dept-treasury-bep-chief-financial-officer` — Chief Financial Officer — `unreached`
-- `exec-dept-treasury-bep-deputy-director` — Deputy Director — `unreached`
-- `exec-dept-treasury-bep-director-bep` — Director, BEP — `unreached`
-- `exec-dept-treasury-bep-superintendent-dc-facility` — Superintendent, DC Facility — `unreached`
-- `exec-dept-treasury-bep-superintendent-fort-worth-facility` — Superintendent, Fort Worth Facility — `unreached`
 
 ## Commodity Futures Trading Commission (CFTC)  — 8 unpriced
 
@@ -2485,6 +2457,18 @@ same list in the same run.
 - `exec-dept-doe-brookhaven-national-laboratory-laboratory-director-brookhaven-national-laboratory` — Laboratory Director, Brookhaven National Laboratory — `not_federally_paid`
 - `exec-dept-doe-brookhaven-national-laboratory-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `not_federally_paid`
 - `exec-dept-doe-brookhaven-national-laboratory-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `not_federally_paid`
+
+## Bureau of Engraving & Printing  — 7 unpriced
+
+`exec-dept-treasury-bep`
+
+- `exec-dept-treasury-bep-associate-director-for-management` — Associate Director for Management — `unreached`
+- `exec-dept-treasury-bep-associate-director-for-product-technology` — Associate Director for Product & Technology — `unreached`
+- `exec-dept-treasury-bep-chief-financial-officer` — Chief Financial Officer — `unreached`
+- `exec-dept-treasury-bep-deputy-director` — Deputy Director — `unreached`
+- `exec-dept-treasury-bep-director-bep` — Director, BEP — `unreached`
+- `exec-dept-treasury-bep-superintendent-dc-facility` — Superintendent, DC Facility — `unreached`
+- `exec-dept-treasury-bep-superintendent-fort-worth-facility` — Superintendent, Fort Worth Facility — `unreached`
 
 ## Bureau of the Fiscal Service  — 7 unpriced
 
@@ -3026,6 +3010,18 @@ same list in the same run.
 - `exec-dept-doe-thomas-jefferson-national-accelerator-facility-postdoctoral-researcher-multiple` — Postdoctoral Researcher (×multiple) — `not_federally_paid`
 - `exec-dept-doe-thomas-jefferson-national-accelerator-facility-principal-scientist-researcher-multiple` — Principal Scientist / Researcher (×multiple) — `not_federally_paid`
 
+## U.S. Attorneys Office (USAO — 94 Districts)  — 7 unpriced
+
+`exec-dept-doj-usao`
+
+- `exec-dept-doj-usao-civil-division-chief` — Civil Division Chief — `unreached`
+- `exec-dept-doj-usao-criminal-division-chief` — Criminal Division Chief — `unreached`
+- `exec-dept-doj-usao-first-assistant-u-s-attorney` — First Assistant U.S. Attorney — `unreached`
+- `exec-dept-doj-usao-national-security-coordinator` — National Security Coordinator — `unreached`
+- `exec-dept-doj-usao-paralegal-specialist-multiple` — Paralegal Specialist (×multiple) — `multiplicity`
+- `exec-dept-doj-usao-u-s-attorney-94-appointed-by-president` — U.S. Attorney (×94, appointed by President) — `multiplicity`
+- `exec-dept-doj-usao-victim-witness-coordinator` — Victim-Witness Coordinator — `unreached`
+
 ## U.S. Court of Appeals for the D.C. Circuit  — 7 unpriced
 
 `jud-circuit-d-c-circuit`
@@ -3276,17 +3272,6 @@ same list in the same run.
 - `exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-museum-curator` — Museum Curator — `unreached`
 - `exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-supervisory-archivist` — Supervisory Archivist — `unreached`
 
-## Joint Economic Committee  — 6 unpriced
-
-`leg-joint-econ`
-
-- `leg-joint-econ-chair-alternates-senate-house` — Chair (alternates Senate/House) — `unreached`
-- `leg-joint-econ-chief-economist` — Chief Economist — `unreached`
-- `leg-joint-econ-executive-director` — Executive Director — `unreached`
-- `leg-joint-econ-policy-director` — Policy Director — `unreached`
-- `leg-joint-econ-senior-economist-4` — Senior Economist (×4) — `multiplicity`
-- `leg-joint-econ-vice-chair` — Vice Chair — `unreached`
-
 ## Lyndon B. Johnson Presidential Library (Austin, TX)  — 6 unpriced
 
 `exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx`
@@ -3330,17 +3315,6 @@ same list in the same run.
 - `exec-dept-doe-em-site-manager-oak-ridge-reservation-oak-ridge-tn` — Site Manager — Oak Ridge Reservation (Oak Ridge, TN) — `unreached`
 - `exec-dept-doe-em-site-manager-savannah-river-site-aiken-sc` — Site Manager — Savannah River Site (Aiken, SC) — `unreached`
 - `exec-dept-doe-em-site-manager-waste-isolation-pilot-plant-carlsbad-nm` — Site Manager — Waste Isolation Pilot Plant (Carlsbad, NM) — `unreached`
-
-## Office of Foreign Assets Control (OFAC)  — 6 unpriced
-
-`exec-dept-treasury-ofac`
-
-- `exec-dept-treasury-ofac-associate-director-compliance-enforcement` — Associate Director — Compliance & Enforcement — `unreached`
-- `exec-dept-treasury-ofac-associate-director-global-targeting` — Associate Director — Global Targeting — `unreached`
-- `exec-dept-treasury-ofac-chief-counsel` — Chief Counsel — `unreached`
-- `exec-dept-treasury-ofac-deputy-director` — Deputy Director — `unreached`
-- `exec-dept-treasury-ofac-director-ofac` — Director, OFAC — `unreached`
-- `exec-dept-treasury-ofac-sanctions-program-officer-multiple` — Sanctions Program Officer (×multiple) — `multiplicity`
 
 ## Office of Science & Technology Policy  — 6 unpriced
 
@@ -4248,14 +4222,14 @@ same list in the same run.
 - `leg-support-gao-international-affairs-trade-managing-director-international-affairs-trade` — Managing Director, International Affairs & Trade — `unreached`
 - `leg-support-gao-international-affairs-trade-senior-analyst-international-affairs-trade-multiple` — Senior Analyst, International Affairs & Trade (×multiple) — `multiplicity`
 
-## International Trade Administration (ITA)  — 4 unpriced
+## Joint Economic Committee  — 4 unpriced
 
-`exec-dept-doc-ita`
+`leg-joint-econ`
 
-- `exec-dept-doc-ita-commercial-officer-multiple` — Commercial Officer (×multiple) — `multiplicity`
-- `exec-dept-doc-ita-deputy-under-secretary` — Deputy Under Secretary — `unreached`
-- `exec-dept-doc-ita-director-100-export-assistance-centers` — Director — 100+ Export Assistance Centers — `unreached`
-- `exec-dept-doc-ita-under-secretary-for-international-trade` — Under Secretary for International Trade — `unreached`
+- `leg-joint-econ-chief-economist` — Chief Economist — `unreached`
+- `leg-joint-econ-executive-director` — Executive Director — `unreached`
+- `leg-joint-econ-policy-director` — Policy Director — `unreached`
+- `leg-joint-econ-senior-economist-4` — Senior Economist (×4) — `multiplicity`
 
 ## K-9 Unit  — 4 unpriced
 
@@ -4663,14 +4637,6 @@ same list in the same run.
 - `exec-dept-state-bureau-of-east-asian-pacific-affairs-foreign-service-officer-multiple` — Foreign Service Officer (×multiple) — `multiplicity`
 - `exec-dept-state-bureau-of-east-asian-pacific-affairs-office-director-multiple-bureau-of-east-asian-pacific-affairs` — Office Director (×multiple), Bureau of East Asian & Pacific Affairs — `multiplicity`
 
-## Bureau of Economic Analysis (BEA)  — 3 unpriced
-
-`exec-dept-doc-bea`
-
-- `exec-dept-doc-bea-chief-statistician` — Chief Statistician — `unreached`
-- `exec-dept-doc-bea-deputy-director` — Deputy Director — `unreached`
-- `exec-dept-doc-bea-national-accounts-economist-multiple` — National Accounts Economist (×multiple) — `multiplicity`
-
 ## Bureau of European & Eurasian Affairs  — 3 unpriced
 
 `exec-dept-state-bureau-of-european-eurasian-affairs`
@@ -5039,6 +5005,14 @@ same list in the same run.
 - `exec-dept-hhs-ihs-chief-medical-officer` — Chief Medical Officer — `unreached`
 - `exec-dept-hhs-ihs-chief-nursing-officer` — Chief Nursing Officer — `unreached`
 
+## International Trade Administration (ITA)  — 3 unpriced
+
+`exec-dept-doc-ita`
+
+- `exec-dept-doc-ita-commercial-officer-multiple` — Commercial Officer (×multiple) — `multiplicity`
+- `exec-dept-doc-ita-deputy-under-secretary` — Deputy Under Secretary — `unreached`
+- `exec-dept-doc-ita-director-100-export-assistance-centers` — Director — 100+ Export Assistance Centers — `unreached`
+
 ## NSC Directorate: Africa  — 3 unpriced
 
 `exec-eop-nsc-africa`
@@ -5311,6 +5285,14 @@ same list in the same run.
 - `exec-eop-omb-office-of-federal-procurement-policy-deputy-administrator-office-of-federal-procurement-policy` — Deputy Administrator, Office of Federal Procurement Policy — `unreached`
 - `exec-eop-omb-office-of-federal-procurement-policy-program-associate-director-multiple` — Program Associate Director (×multiple) — `multiplicity`
 
+## Office of Foreign Assets Control (OFAC)  — 3 unpriced
+
+`exec-dept-treasury-ofac`
+
+- `exec-dept-treasury-ofac-associate-director-compliance-enforcement` — Associate Director — Compliance & Enforcement — `unreached`
+- `exec-dept-treasury-ofac-associate-director-global-targeting` — Associate Director — Global Targeting — `unreached`
+- `exec-dept-treasury-ofac-sanctions-program-officer-multiple` — Sanctions Program Officer (×multiple) — `multiplicity`
+
 ## Office of Information and Regulatory Affairs (OIRA)  — 3 unpriced
 
 `exec-eop-omb-oira-office-of-information-regulatory-affairs`
@@ -5458,6 +5440,13 @@ same list in the same run.
 
 - `exec-ind-nsf-biological-sciences-bio-assistant-director-biological-sciences-bio` — Assistant Director, Biological Sciences (BIO) — `unreached`
 - `exec-ind-nsf-biological-sciences-bio-deputy-assistant-director` — Deputy Assistant Director — `unreached`
+
+## Bureau of Economic Analysis (BEA)  — 2 unpriced
+
+`exec-dept-doc-bea`
+
+- `exec-dept-doc-bea-chief-statistician` — Chief Statistician — `unreached`
+- `exec-dept-doc-bea-national-accounts-economist-multiple` — National Accounts Economist (×multiple) — `multiplicity`
 
 ## Computer & Information Science & Engineering (CISE)  — 2 unpriced
 

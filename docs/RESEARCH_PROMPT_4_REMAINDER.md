@@ -6,7 +6,7 @@ Do not edit by hand; regenerate it. The 100 largest title families are in
 
 ## What this covers
 
-- **Part A — 1,585 unpriced positions** in the 1,565 title families outside the top 100, across **15 shards**, whole organisations per shard.
+- **Part A — 1,578 unpriced positions** in the 1,558 title families outside the top 100, across **15 shards**, whole organisations per shard.
 - **Part B — 681 organisation nodes** that publish an apportioned estimate rather than a measured
   cost, across **7 shards**, whole parents per shard:
   - 240 — a committee or subcommittee (no Table 5 line can ever name one)
@@ -909,7 +909,7 @@ THE TITLES:
 - exec-dept-ed-fsa-financial-aid-specialist-multiple | Financial Aid Specialist (×multiple)  [×N]
 ```
 
-## Prompt A6 — 13 organisation(s), 109 title(s)
+## Prompt A6 — 13 organisation(s), 108 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -976,17 +976,6 @@ THE TITLES:
 - exec-dept-doc-noaa-meteorologist-in-charge-122-weather-forecast-offices | Meteorologist-in-Charge — 122 Weather Forecast Offices
 - exec-dept-doc-noaa-national-hurricane-center-director | National Hurricane Center Director
 - exec-dept-doc-noaa-oceanographer-multiple | Oceanographer (×multiple)  [×N]
-
-### U.S. Attorneys Office (USAO — 94 Districts)  [exec-dept-doj-usao]
-- exec-dept-doj-usao-assistant-u-s-attorney-civil-multiple | Assistant U.S. Attorney — Civil (×multiple)  [×N]
-- exec-dept-doj-usao-assistant-u-s-attorney-criminal-multiple | Assistant U.S. Attorney — Criminal (×multiple)  [×N]
-- exec-dept-doj-usao-civil-division-chief | Civil Division Chief
-- exec-dept-doj-usao-criminal-division-chief | Criminal Division Chief
-- exec-dept-doj-usao-first-assistant-u-s-attorney | First Assistant U.S. Attorney
-- exec-dept-doj-usao-national-security-coordinator | National Security Coordinator
-- exec-dept-doj-usao-paralegal-specialist-multiple | Paralegal Specialist (×multiple)  [×N]
-- exec-dept-doj-usao-u-s-attorney-94-appointed-by-president | U.S. Attorney (×94, appointed by President)  [×N]
-- exec-dept-doj-usao-victim-witness-coordinator | Victim-Witness Coordinator
 
 ### U.S. Marshals Service (USMS)  [exec-dept-doj-usms]
 - exec-dept-doj-usms-associate-director-operations | Associate Director — Operations  [OPM lists it; the row prints no rate]
@@ -1100,9 +1089,19 @@ THE TITLES:
 - jud-scotus-public-information-officer | Public Information Officer
 - jud-scotus-reporter-of-decisions | Reporter of Decisions
 - jud-scotus-supreme-court-police-chief | Supreme Court Police Chief
+
+### U.S. Geological Survey (USGS)  [exec-dept-doi-usgs]
+- exec-dept-doi-usgs-associate-director-climate-land-use-change | Associate Director — Climate & Land Use Change
+- exec-dept-doi-usgs-associate-director-core-science-systems | Associate Director — Core Science Systems
+- exec-dept-doi-usgs-associate-director-ecosystems | Associate Director — Ecosystems
+- exec-dept-doi-usgs-associate-director-energy-minerals | Associate Director — Energy & Minerals
+- exec-dept-doi-usgs-associate-director-natural-hazards | Associate Director — Natural Hazards
+- exec-dept-doi-usgs-associate-director-water-resources | Associate Director — Water Resources
+- exec-dept-doi-usgs-center-director-multiple-science-centers | Center Director (×multiple Science Centers)  [×N]
+- exec-dept-doi-usgs-research-geologist-hydrologist-biologist-multiple | Research Geologist / Hydrologist / Biologist (×multiple)  [×N]
 ```
 
-## Prompt A7 — 16 organisation(s), 109 title(s)
+## Prompt A7 — 16 organisation(s), 108 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -1158,16 +1157,6 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE TITLES:
-
-### U.S. Geological Survey (USGS)  [exec-dept-doi-usgs]
-- exec-dept-doi-usgs-associate-director-climate-land-use-change | Associate Director — Climate & Land Use Change
-- exec-dept-doi-usgs-associate-director-core-science-systems | Associate Director — Core Science Systems
-- exec-dept-doi-usgs-associate-director-ecosystems | Associate Director — Ecosystems
-- exec-dept-doi-usgs-associate-director-energy-minerals | Associate Director — Energy & Minerals
-- exec-dept-doi-usgs-associate-director-natural-hazards | Associate Director — Natural Hazards
-- exec-dept-doi-usgs-associate-director-water-resources | Associate Director — Water Resources
-- exec-dept-doi-usgs-center-director-multiple-science-centers | Center Director (×multiple Science Centers)  [×N]
-- exec-dept-doi-usgs-research-geologist-hydrologist-biologist-multiple | Research Geologist / Hydrologist / Biologist (×multiple)  [×N]
 
 ### Federal Deposit Insurance Corporation (FDIC)  [exec-regulatory-fdic]
 - exec-regulatory-fdic-bank-examiner-multiple | Bank Examiner (×multiple)  [×N]
@@ -1259,6 +1248,15 @@ THE TITLES:
 - exec-ind-ssa-deputy-commissioner-retirement-disability-policy | Deputy Commissioner — Retirement & Disability Policy
 - exec-ind-ssa-deputy-commissioner-systems-cio | Deputy Commissioner — Systems (CIO)
 
+### U.S. Attorneys Office (USAO — 94 Districts)  [exec-dept-doj-usao]
+- exec-dept-doj-usao-civil-division-chief | Civil Division Chief
+- exec-dept-doj-usao-criminal-division-chief | Criminal Division Chief
+- exec-dept-doj-usao-first-assistant-u-s-attorney | First Assistant U.S. Attorney
+- exec-dept-doj-usao-national-security-coordinator | National Security Coordinator
+- exec-dept-doj-usao-paralegal-specialist-multiple | Paralegal Specialist (×multiple)  [×N]
+- exec-dept-doj-usao-u-s-attorney-94-appointed-by-president | U.S. Attorney (×94, appointed by President)  [×N]
+- exec-dept-doj-usao-victim-witness-coordinator | Victim-Witness Coordinator
+
 ### U.S. Marine Corps  [exec-dept-defense-marines]
 - exec-dept-defense-marines-commanding-general-marforcom | Commanding General — MARFORCOM
 - exec-dept-defense-marines-commanding-general-marforpac | Commanding General — MARFORPAC
@@ -1267,14 +1265,6 @@ THE TITLES:
 - exec-dept-defense-marines-hqmc-dc-combat-development-integration | HQMC DC Combat Development & Integration
 - exec-dept-defense-marines-hqmc-dc-installations-logistics | HQMC DC Installations & Logistics
 - exec-dept-defense-marines-hqmc-dc-manpower-reserve-affairs | HQMC DC Manpower & Reserve Affairs
-
-### All 94 District Courts — Standard Structure  [jud-district-structure]
-- jud-district-structure-chief-judge | Chief Judge
-- jud-district-structure-chief-u-s-probation-officer | Chief U.S. Probation Officer
-- jud-district-structure-court-reporter-ecro | Court Reporter / ECRO
-- jud-district-structure-courtroom-deputy-clerk | Courtroom Deputy Clerk
-- jud-district-structure-district-judge-varies-per-district | District Judge (×varies per district)  [×N]
-- jud-district-structure-u-s-probation-officer-multiple | U.S. Probation Officer (×multiple)  [×N]
 
 ### Food and Nutrition Administration (FNA)  [exec-dept-usda-fns]
 - exec-dept-usda-fns-administrator-fns | Administrator, FNS
@@ -1299,9 +1289,17 @@ THE TITLES:
 - leg-joint-tax-director-of-refund-review-operations | Director of Refund Review Operations
 - leg-joint-tax-director-of-revenue-estimating | Director of Revenue Estimating
 - leg-joint-tax-director-of-tax-modeling | Director of Tax Modeling
+
+### Nuclear Regulatory Commission (NRC)  [exec-regulatory-nrc]
+- exec-regulatory-nrc-director-office-of-nuclear-material-safety-safeguards | Director — Office of Nuclear Material Safety & Safeguards
+- exec-regulatory-nrc-director-office-of-nuclear-reactor-regulation | Director — Office of Nuclear Reactor Regulation
+- exec-regulatory-nrc-director-office-of-nuclear-regulatory-research | Director — Office of Nuclear Regulatory Research
+- exec-regulatory-nrc-director-office-of-nuclear-security-incident-response | Director — Office of Nuclear Security & Incident Response
+- exec-regulatory-nrc-nuclear-reactor-regulation-specialist-multiple | Nuclear Reactor Regulation Specialist (×multiple)  [×N]
+- exec-regulatory-nrc-regional-director-4-regions | Regional Director — 4 Regions
 ```
 
-## Prompt A8 — 20 organisation(s), 107 title(s)
+## Prompt A8 — 20 organisation(s), 106 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -1358,14 +1356,6 @@ official-published or third-party-estimated.
 
 THE TITLES:
 
-### Nuclear Regulatory Commission (NRC)  [exec-regulatory-nrc]
-- exec-regulatory-nrc-director-office-of-nuclear-material-safety-safeguards | Director — Office of Nuclear Material Safety & Safeguards
-- exec-regulatory-nrc-director-office-of-nuclear-reactor-regulation | Director — Office of Nuclear Reactor Regulation
-- exec-regulatory-nrc-director-office-of-nuclear-regulatory-research | Director — Office of Nuclear Regulatory Research
-- exec-regulatory-nrc-director-office-of-nuclear-security-incident-response | Director — Office of Nuclear Security & Incident Response
-- exec-regulatory-nrc-nuclear-reactor-regulation-specialist-multiple | Nuclear Reactor Regulation Specialist (×multiple)  [×N]
-- exec-regulatory-nrc-regional-director-4-regions | Regional Director — 4 Regions
-
 ### Office of Energy Efficiency & Renewable Energy (EERE)  [exec-dept-doe-eere]
 - exec-dept-doe-eere-director-building-technologies | Director — Building Technologies
 - exec-dept-doe-eere-director-hydrogen-fuel-cell-technologies | Director — Hydrogen & Fuel Cell Technologies
@@ -1413,6 +1403,13 @@ THE TITLES:
 - exec-ind-usps-deputy-postmaster-general | Deputy Postmaster General  [OPM lists it; the row prints no rate]
 - exec-ind-usps-postmaster-general-pmg | Postmaster General (PMG)
 - exec-ind-usps-usps-board-of-governors-9-members | USPS Board of Governors (9 members)
+
+### All 94 District Courts — Standard Structure  [jud-district-structure]
+- jud-district-structure-chief-judge | Chief Judge
+- jud-district-structure-chief-u-s-probation-officer | Chief U.S. Probation Officer
+- jud-district-structure-court-reporter-ecro | Court Reporter / ECRO
+- jud-district-structure-courtroom-deputy-clerk | Courtroom Deputy Clerk
+- jud-district-structure-u-s-probation-officer-multiple | U.S. Probation Officer (×multiple)  [×N]
 
 ### Animal & Plant Health Inspection Service (APHIS)  [exec-dept-usda-aphis]
 - exec-dept-usda-aphis-deputy-administrator-plant-protection-quarantine | Deputy Administrator — Plant Protection & Quarantine
@@ -1816,18 +1813,6 @@ THE TITLES:
 - leg-support-gao-international-affairs-trade-managing-director-international-affairs-trade | Managing Director, International Affairs & Trade
 - leg-support-gao-international-affairs-trade-senior-analyst-international-affairs-trade-multiple | Senior Analyst, International Affairs & Trade (×multiple)  [×N]
 
-### International Trade Administration (ITA)  [exec-dept-doc-ita]
-- exec-dept-doc-ita-commercial-officer-multiple | Commercial Officer (×multiple)  [×N]
-- exec-dept-doc-ita-deputy-under-secretary | Deputy Under Secretary
-- exec-dept-doc-ita-director-100-export-assistance-centers | Director — 100+ Export Assistance Centers
-- exec-dept-doc-ita-under-secretary-for-international-trade | Under Secretary for International Trade
-
-### Joint Economic Committee  [leg-joint-econ]
-- leg-joint-econ-chair-alternates-senate-house | Chair (alternates Senate/House)
-- leg-joint-econ-policy-director | Policy Director
-- leg-joint-econ-senior-economist-4 | Senior Economist (×4)  [×N]
-- leg-joint-econ-vice-chair | Vice Chair
-
 ### K-9 Unit  [leg-support-uscp-k-9-unit]
 - leg-support-uscp-k-9-unit-commander-k-9-unit | Commander, K-9 Unit
 - leg-support-uscp-k-9-unit-lieutenant-k-9-unit-multiple | Lieutenant, K-9 Unit (×multiple)  [×N]
@@ -1882,12 +1867,6 @@ THE TITLES:
 - exec-eop-onadm-director-of-mail-messenger-operations | Director of Mail & Messenger Operations
 - exec-eop-onadm-director-office-of-administration | Director, Office of Administration
 
-### Office of Foreign Assets Control (OFAC)  [exec-dept-treasury-ofac]
-- exec-dept-treasury-ofac-associate-director-compliance-enforcement | Associate Director — Compliance & Enforcement
-- exec-dept-treasury-ofac-associate-director-global-targeting | Associate Director — Global Targeting
-- exec-dept-treasury-ofac-director-ofac | Director, OFAC
-- exec-dept-treasury-ofac-sanctions-program-officer-multiple | Sanctions Program Officer (×multiple)  [×N]
-
 ### Office of National Drug Control Policy  [exec-eop-ondcp]
 - exec-eop-ondcp-director-demand-reduction | Director — Demand Reduction
 - exec-eop-ondcp-director-research-data-evaluation | Director — Research/Data/Evaluation
@@ -1941,9 +1920,27 @@ THE TITLES:
 - exec-ind-sba-associate-administrator-disaster-assistance | Associate Administrator — Disaster Assistance
 - exec-ind-sba-associate-administrator-entrepreneurial-development | Associate Administrator — Entrepreneurial Development
 - exec-ind-sba-associate-administrator-government-contracting-business-development | Associate Administrator — Government Contracting & Business Development
+
+### Strategic Issues  [leg-support-gao-strategic-issues]
+- leg-support-gao-strategic-issues-analyst-strategic-issues-multiple | Analyst, Strategic Issues (×multiple)  [×N]
+- leg-support-gao-strategic-issues-assistant-director-strategic-issues | Assistant Director, Strategic Issues
+- leg-support-gao-strategic-issues-managing-director-strategic-issues | Managing Director, Strategic Issues
+- leg-support-gao-strategic-issues-senior-analyst-strategic-issues-multiple | Senior Analyst, Strategic Issues (×multiple)  [×N]
+
+### Substance Abuse and Mental Health Services Administration (SAMHSA)  [exec-dept-hhs-samhsa]
+- exec-dept-hhs-samhsa-administrator-samhsa | Administrator, SAMHSA
+- exec-dept-hhs-samhsa-director-center-for-mental-health-services | Director — Center for Mental Health Services
+- exec-dept-hhs-samhsa-director-center-for-substance-abuse-prevention | Director — Center for Substance Abuse Prevention
+- exec-dept-hhs-samhsa-director-center-for-substance-abuse-treatment | Director — Center for Substance Abuse Treatment
+
+### Tax Analysis Division  [leg-support-cbo-tax-analysis-division]
+- leg-support-cbo-tax-analysis-division-analyst-tax-analysis-division-multiple | Analyst, Tax Analysis Division (×multiple)  [×N]
+- leg-support-cbo-tax-analysis-division-chief-tax-analysis-division | Chief, Tax Analysis Division
+- leg-support-cbo-tax-analysis-division-deputy-chief-tax-analysis-division | Deputy Chief, Tax Analysis Division
+- leg-support-cbo-tax-analysis-division-senior-analyst-tax-analysis-division-multiple | Senior Analyst, Tax Analysis Division (×multiple)  [×N]
 ```
 
-## Prompt A11 — 35 organisation(s), 109 title(s)
+## Prompt A11 — 36 organisation(s), 109 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -1999,24 +1996,6 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE TITLES:
-
-### Strategic Issues  [leg-support-gao-strategic-issues]
-- leg-support-gao-strategic-issues-analyst-strategic-issues-multiple | Analyst, Strategic Issues (×multiple)  [×N]
-- leg-support-gao-strategic-issues-assistant-director-strategic-issues | Assistant Director, Strategic Issues
-- leg-support-gao-strategic-issues-managing-director-strategic-issues | Managing Director, Strategic Issues
-- leg-support-gao-strategic-issues-senior-analyst-strategic-issues-multiple | Senior Analyst, Strategic Issues (×multiple)  [×N]
-
-### Substance Abuse and Mental Health Services Administration (SAMHSA)  [exec-dept-hhs-samhsa]
-- exec-dept-hhs-samhsa-administrator-samhsa | Administrator, SAMHSA
-- exec-dept-hhs-samhsa-director-center-for-mental-health-services | Director — Center for Mental Health Services
-- exec-dept-hhs-samhsa-director-center-for-substance-abuse-prevention | Director — Center for Substance Abuse Prevention
-- exec-dept-hhs-samhsa-director-center-for-substance-abuse-treatment | Director — Center for Substance Abuse Treatment
-
-### Tax Analysis Division  [leg-support-cbo-tax-analysis-division]
-- leg-support-cbo-tax-analysis-division-analyst-tax-analysis-division-multiple | Analyst, Tax Analysis Division (×multiple)  [×N]
-- leg-support-cbo-tax-analysis-division-chief-tax-analysis-division | Chief, Tax Analysis Division
-- leg-support-cbo-tax-analysis-division-deputy-chief-tax-analysis-division | Deputy Chief, Tax Analysis Division
-- leg-support-cbo-tax-analysis-division-senior-analyst-tax-analysis-division-multiple | Senior Analyst, Tax Analysis Division (×multiple)  [×N]
 
 ### U.S. Sentencing Commission (USSC)  [jud-support-ussc]
 - jud-support-ussc-commissioner-6 | Commissioner (×6)  [×N]
@@ -2083,6 +2062,11 @@ THE TITLES:
 - exec-dept-hhs-ihs-area-director-12-ihs-areas | Area Director — 12 IHS Areas
 - exec-dept-hhs-ihs-chief-medical-officer | Chief Medical Officer
 - exec-dept-hhs-ihs-chief-nursing-officer | Chief Nursing Officer
+
+### International Trade Administration (ITA)  [exec-dept-doc-ita]
+- exec-dept-doc-ita-commercial-officer-multiple | Commercial Officer (×multiple)  [×N]
+- exec-dept-doc-ita-deputy-under-secretary | Deputy Under Secretary
+- exec-dept-doc-ita-director-100-export-assistance-centers | Director — 100+ Export Assistance Centers
 
 ### Maritime Administration (MARAD)  [exec-dept-dot-marad]
 - exec-dept-dot-marad-associate-administrator-environment-compliance | Associate Administrator — Environment & Compliance
@@ -2178,9 +2162,24 @@ THE TITLES:
 - exec-eop-nsc-western-hemisphere-deputy-director-western-hemisphere | Deputy Director, Western Hemisphere
 - exec-eop-nsc-western-hemisphere-director-western-hemisphere-multiple | Director, Western Hemisphere (×multiple)  [×N]
 - exec-eop-nsc-western-hemisphere-senior-director-western-hemisphere | Senior Director, Western Hemisphere
+
+### Office of Community Planning & Development (CPD)  [exec-dept-hud-cpd]
+- exec-dept-hud-cpd-director-cdbg-program | Director — CDBG Program
+- exec-dept-hud-cpd-director-home-program | Director — HOME Program
+- exec-dept-hud-cpd-director-homeless-assistance-programs | Director — Homeless Assistance Programs
+
+### Office of Elementary & Secondary Education (OESE)  [exec-dept-ed-oese]
+- exec-dept-ed-oese-director-school-improvement | Director — School Improvement
+- exec-dept-ed-oese-director-title-i-program | Director — Title I Program
+- exec-dept-ed-oese-education-program-specialist-multiple | Education Program Specialist (×multiple)  [×N]
+
+### Office of Foreign Assets Control (OFAC)  [exec-dept-treasury-ofac]
+- exec-dept-treasury-ofac-associate-director-compliance-enforcement | Associate Director — Compliance & Enforcement
+- exec-dept-treasury-ofac-associate-director-global-targeting | Associate Director — Global Targeting
+- exec-dept-treasury-ofac-sanctions-program-officer-multiple | Sanctions Program Officer (×multiple)  [×N]
 ```
 
-## Prompt A12 — 51 organisation(s), 110 title(s)
+## Prompt A12 — 52 organisation(s), 110 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -2236,16 +2235,6 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE TITLES:
-
-### Office of Community Planning & Development (CPD)  [exec-dept-hud-cpd]
-- exec-dept-hud-cpd-director-cdbg-program | Director — CDBG Program
-- exec-dept-hud-cpd-director-home-program | Director — HOME Program
-- exec-dept-hud-cpd-director-homeless-assistance-programs | Director — Homeless Assistance Programs
-
-### Office of Elementary & Secondary Education (OESE)  [exec-dept-ed-oese]
-- exec-dept-ed-oese-director-school-improvement | Director — School Improvement
-- exec-dept-ed-oese-director-title-i-program | Director — Title I Program
-- exec-dept-ed-oese-education-program-specialist-multiple | Education Program Specialist (×multiple)  [×N]
 
 ### Office of the Chief of Protocol  [exec-dept-state-office-of-the-chief-of-protocol]
 - exec-dept-state-office-of-the-chief-of-protocol-assistant-secretary-office-of-the-chief-of-protocol | Assistant Secretary, Office of the Chief of Protocol
@@ -2448,6 +2437,18 @@ THE TITLES:
 ### Government Accountability Office (GAO)  [leg-support-gao]
 - leg-support-gao-chief-administrative-officer | Chief Administrative Officer
 - leg-support-gao-director-of-congressional-relations | Director of Congressional Relations
+
+### Hirshhorn Museum & Sculpture Garden  [exec-ind-smithsonian-hirshhorn-museum-sculpture-garden]
+- exec-ind-smithsonian-hirshhorn-museum-sculpture-garden-deputy-director-hirshhorn-museum-sculpture-garden | Deputy Director, Hirshhorn Museum & Sculpture Garden
+- exec-ind-smithsonian-hirshhorn-museum-sculpture-garden-director-hirshhorn-museum-sculpture-garden | Director, Hirshhorn Museum & Sculpture Garden
+
+### House Committee on Agriculture  [leg-house-cmte-agriculture]
+- leg-house-cmte-agriculture-minority-staff-director-agriculture | Minority Staff Director, Agriculture
+- leg-house-cmte-agriculture-staff-director-agriculture | Staff Director, Agriculture
+
+### House Committee on Budget  [leg-house-cmte-budget]
+- leg-house-cmte-budget-minority-staff-director-budget | Minority Staff Director, Budget
+- leg-house-cmte-budget-staff-director-budget | Staff Director, Budget
 ```
 
 ## Prompt A13 — 55 organisation(s), 110 title(s)
@@ -2506,18 +2507,6 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE TITLES:
-
-### Hirshhorn Museum & Sculpture Garden  [exec-ind-smithsonian-hirshhorn-museum-sculpture-garden]
-- exec-ind-smithsonian-hirshhorn-museum-sculpture-garden-deputy-director-hirshhorn-museum-sculpture-garden | Deputy Director, Hirshhorn Museum & Sculpture Garden
-- exec-ind-smithsonian-hirshhorn-museum-sculpture-garden-director-hirshhorn-museum-sculpture-garden | Director, Hirshhorn Museum & Sculpture Garden
-
-### House Committee on Agriculture  [leg-house-cmte-agriculture]
-- leg-house-cmte-agriculture-minority-staff-director-agriculture | Minority Staff Director, Agriculture
-- leg-house-cmte-agriculture-staff-director-agriculture | Staff Director, Agriculture
-
-### House Committee on Budget  [leg-house-cmte-budget]
-- leg-house-cmte-budget-minority-staff-director-budget | Minority Staff Director, Budget
-- leg-house-cmte-budget-staff-director-budget | Staff Director, Budget
 
 ### House Committee on Education & the Workforce  [leg-house-cmte-education-the-workforce]
 - leg-house-cmte-education-the-workforce-minority-staff-director-education-the-workforce | Minority Staff Director, Education & the Workforce
@@ -2582,6 +2571,10 @@ THE TITLES:
 ### House Permanent Select Committee on Intelligence  [leg-house-cmte-permanent-select-committee-on-intelligence]
 - leg-house-cmte-permanent-select-committee-on-intelligence-minority-staff-director-permanent-select-committee-on-intelligence | Minority Staff Director, Permanent Select Committee on Intelligence
 - leg-house-cmte-permanent-select-committee-on-intelligence-staff-director-permanent-select-committee-on-intelligence | Staff Director, Permanent Select Committee on Intelligence
+
+### Joint Economic Committee  [leg-joint-econ]
+- leg-joint-econ-policy-director | Policy Director
+- leg-joint-econ-senior-economist-4 | Senior Economist (×4)  [×N]
 
 ### Legislative Reference Division  [exec-eop-omb-legislative-reference-division]
 - exec-eop-omb-legislative-reference-division-administrator-chief-legislative-reference-division | Administrator / Chief, Legislative Reference Division
@@ -2726,9 +2719,17 @@ THE TITLES:
 ### Senate Committee on Indian Affairs  [leg-senate-cmte-indian-affairs]
 - leg-senate-cmte-indian-affairs-minority-staff-director-indian-affairs | Minority Staff Director, Indian Affairs
 - leg-senate-cmte-indian-affairs-staff-director-indian-affairs | Staff Director, Indian Affairs
+
+### Senate Committee on Rules & Administration  [leg-senate-cmte-rules-administration]
+- leg-senate-cmte-rules-administration-minority-staff-director-rules-administration | Minority Staff Director, Rules & Administration
+- leg-senate-cmte-rules-administration-staff-director-rules-administration | Staff Director, Rules & Administration
+
+### Senate Committee on Small Business & Entrepreneurship  [leg-senate-cmte-small-business-entrepreneurship]
+- leg-senate-cmte-small-business-entrepreneurship-minority-staff-director-small-business-entrepreneurship | Minority Staff Director, Small Business & Entrepreneurship
+- leg-senate-cmte-small-business-entrepreneurship-staff-director-small-business-entrepreneurship | Staff Director, Small Business & Entrepreneurship
 ```
 
-## Prompt A14 — 94 organisation(s), 110 title(s)
+## Prompt A14 — 96 organisation(s), 110 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -2784,14 +2785,6 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE TITLES:
-
-### Senate Committee on Rules & Administration  [leg-senate-cmte-rules-administration]
-- leg-senate-cmte-rules-administration-minority-staff-director-rules-administration | Minority Staff Director, Rules & Administration
-- leg-senate-cmte-rules-administration-staff-director-rules-administration | Staff Director, Rules & Administration
-
-### Senate Committee on Small Business & Entrepreneurship  [leg-senate-cmte-small-business-entrepreneurship]
-- leg-senate-cmte-small-business-entrepreneurship-minority-staff-director-small-business-entrepreneurship | Minority Staff Director, Small Business & Entrepreneurship
-- leg-senate-cmte-small-business-entrepreneurship-staff-director-small-business-entrepreneurship | Staff Director, Small Business & Entrepreneurship
 
 ### Senate Committee on Veterans' Affairs  [leg-senate-cmte-veterans-affairs]
 - leg-senate-cmte-veterans-affairs-minority-staff-director-veterans-affairs | Minority Staff Director, Veterans' Affairs
@@ -3082,9 +3075,21 @@ THE TITLES:
 
 ### Glenn Research Center (GRC)  [exec-ind-nasa-glenn-research-center-grc]
 - exec-ind-nasa-glenn-research-center-grc-center-director-glenn-research-center-grc | Center Director, Glenn Research Center (GRC)
+
+### Goddard Space Flight Center (GSFC)  [exec-ind-nasa-goddard-space-flight-center-gsfc]
+- exec-ind-nasa-goddard-space-flight-center-gsfc-center-director-goddard-space-flight-center-gsfc | Center Director, Goddard Space Flight Center (GSFC)
+
+### Harry S. Truman Presidential Library (Independence, MO)  [exec-ind-nara-harry-s-truman-presidential-library-independence-mo]
+- exec-ind-nara-harry-s-truman-presidential-library-independence-mo-director-harry-s-truman-presidential-library | Director, Harry S. Truman Presidential Library
+
+### Health Care  [leg-senate-cmte-finance-sub-health-care]
+- leg-senate-cmte-finance-sub-health-care-staff-director-subcommittee-on-health-care | Staff Director, Subcommittee on Health Care
+
+### Herbert Hoover Presidential Library (West Branch, IA)  [exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia]
+- exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-director-herbert-hoover-presidential-library | Director, Herbert Hoover Presidential Library
 ```
 
-## Prompt A15 — 91 organisation(s), 91 title(s)
+## Prompt A15 — 87 organisation(s), 87 title(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -3140,18 +3145,6 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE TITLES:
-
-### Goddard Space Flight Center (GSFC)  [exec-ind-nasa-goddard-space-flight-center-gsfc]
-- exec-ind-nasa-goddard-space-flight-center-gsfc-center-director-goddard-space-flight-center-gsfc | Center Director, Goddard Space Flight Center (GSFC)
-
-### Harry S. Truman Presidential Library (Independence, MO)  [exec-ind-nara-harry-s-truman-presidential-library-independence-mo]
-- exec-ind-nara-harry-s-truman-presidential-library-independence-mo-director-harry-s-truman-presidential-library | Director, Harry S. Truman Presidential Library
-
-### Health Care  [leg-senate-cmte-finance-sub-health-care]
-- leg-senate-cmte-finance-sub-health-care-staff-director-subcommittee-on-health-care | Staff Director, Subcommittee on Health Care
-
-### Herbert Hoover Presidential Library (West Branch, IA)  [exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia]
-- exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-director-herbert-hoover-presidential-library | Director, Herbert Hoover Presidential Library
 
 ### Homeland Security  [leg-senate-cmte-appropriations-sub-homeland-security]
 - leg-senate-cmte-appropriations-sub-homeland-security-staff-director-subcommittee-on-homeland-security | Staff Director, Subcommittee on Homeland Security

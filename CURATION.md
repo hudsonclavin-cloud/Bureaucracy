@@ -5296,3 +5296,135 @@ accepted as written):
    disbursed over a quarter and a half-year: different periods and not the
    whole of a committee's cost, so no ratio is published, but the gap is more
    than an order of magnitude and points at the subtree-size apportionment.
+
+### 19.23 The thirteenth batch, and the two decisions left to the repository (2026-10-08)
+
+The owner pasted per-node answers for 627 posts (639 rows) and wrote "just
+continue on filling all positions, make the decisions yourself for the two next
+steps". The rows split three ways before anything was checked: 334 named no
+document at all (`unknown | — | none`); 253 named a pay system and a URL but no
+figure (administratively determined plans, Title 37 by grade, the chambers'
+staff, Foreign Service classes, SES); 52 carried a figure. Five agents worked the
+rows that had a document behind them, each building only in an existing shape
+on committed bytes. Eleven posts were priced; pay claims **1,231 → 1,242**,
+unpriced **3,360 → 3,349**.
+
+**Priced.**
+
+- `jud-district-structure-district-judge-varies-per-district`, District Judges
+  tier from uscourts.gov's Judicial Compensation table, $249,900 for each holder
+  (unstated count), partial/proxy. Neither the name nor the description counts
+  senior judges in (28 U.S.C. 371(b)(2)). `jud-district-structure-chief-judge`
+  stays refused by id: one post standing for 94 offices.
+- `leg-joint-econ-chair-alternates-senate-house` and `leg-joint-econ-vice-chair`,
+  $174,000 from Schedule 6's two seat rows together. The §19.14/§19.15 refusal
+  ("which chamber is a fact about the holder") is withdrawn: the figure does not
+  depend on the chamber. The batch's congress.gov citation (CRS RL30064) was not
+  needed. That the JEC's officers are Members is the member-seat rule's reviewed
+  premise; 15 U.S.C. 1024 was not fetched.
+- `exec-dept-doc-ita-under-secretary-for-international-trade`, Level III
+  ($209,600), tier-reference instrument row from Reorganization Plan No. 3 of
+  1979 §2(c), two documents, neither stating the figure. The research said
+  §5314 prints the title; it prints only the bare "Under Secretary of Commerce",
+  which §2(b)(2) of the same Plan abolished. The current export's EX-III row
+  under "OFFICE OF THE UNDER SECRETARY" corroborates the level and reaches no node.
+- OFAC's Director and Deputy Director, BEA's Deputy Director and BEP's Chief
+  Counsel at the export's printed $228,000 each, and OFAC's Chief Counsel (a
+  vacant ES row) at the SES range — the new `title_names_its_organisation` rule
+  (CLAUDE.md). The same rule gives five reviewed Schedule rows a corroborating EX
+  listing (IRS Chief Counsel, OFR Director, ONDCP Deputy Director, EEOC Chair
+  and Vice Chair) without changing any figure.
+- `exec-dept-doj-usao-assistant-u-s-attorney-civil-multiple` and
+  `-criminal-multiple`, the AD chart's AUSA table, AD-21 to AD-29,
+  $63,163–$165,209 before locality (the 2025 tables, effective January 12, 2025;
+  no 2026 chart is published there). That these nodes are that title is a
+  reviewed identification; the salary page says the AD plan pays Assistant
+  United States Attorneys.
+
+**Declined, one line each.**
+
+- *Coast Guard Area Commanders*: 14 U.S.C. 305(a)(1)(A) lets the President
+  "designate … no more than five positions" whose holders have the grade of vice
+  admiral, and names neither Area — the 10 U.S.C. 601(a) designation rule.
+- *Chief, Army Reserve* (10 U.S.C. 7038), *Commanding General — Marine Corps
+  Reserve* (8084), *Chief, Army National Guard* (10506, whose office is "Director,
+  Army National Guard"): each appointed "from general officers"; no grade fixed.
+- *Army G-staff, Air Force A-staff, OPNAV N-codes, HQMC Deputy Commandants*:
+  7035(a) and 9035(a) "general officers detailed", 8036(a) "grades above
+  captain", 8045 no grade — a class or a floor, never one grade.
+- *JCS J1–J8, the major commands of every service, Coast Guard districts,
+  Sector Commander, Chief of Naval Research, Defense Attaché*: designation, or a
+  grade no section read fixes; only O-9 and O-10 are flat rows. 10 U.S.C. 8022,
+  8023, 155 and 14 U.S.C. 306 were read and are not committed (nothing on point).
+  The research's dfas.mil and militarypay.defense.gov figures were not used; those
+  hosts refuse robots and the page (`tests/fixtures/dfas/README.md`).
+- *Senate officers under the Secretary and the Sergeant at Arms (31 + 1)*: the
+  Order of the President pro tempore of March 25, 2024 states only ceilings —
+  sec. 4(b), and sec. 2(c) "shall not exceed" for the Assistant Secretary.
+- *House CAO and Clerk deputies and directors (17)*: the Order of the Speaker of
+  January 17, 2025 names the Clerk and the CAO in sec. 1(a), not their deputies;
+  its general sec. 2(a) is a maximum.
+- *Offices the orders do rate but which have no post node here*: the Senate's
+  Secretaries for the Majority and Minority, Deputy Legislative Counsel, Senior
+  Counsels, Chaplain, Legal Counsel and Deputy; the House's Sergeant-at-Arms,
+  Chaplain, General Counsel, Inspector General, Director of Interparliamentary
+  Affairs and Attending Physician. Curating a post node for any of them would let
+  the order price it; a test flags the first such node.
+- *Director, NEC* and *Director, Office of Administration*: the 2026 roster's one
+  row for each already prices the White House Office node named as the report
+  prints the title; the EOP-unit nodes are the same offices drawn twice. Curation
+  lead: merge the duplicates (§3, `merge_duplicate_nodes.py`).
+- *Deputy Director, NEC (×2)*: the roster prints the title three times and those
+  rows price the White House Office's ×3 node. *National Security Advisor
+  (Chair)*: the roster's rate is $0.00.
+- *The 51 White House leads citing the 2025 report*: no 2025 report was added.
+  Under the committed 2026 report: 27 several people at different rates, 8 (6
+  ids) outside the White House Office, 6 $0.00, 5 not printed as the node spells
+  it, 2 an unstated "×multiple", 2 printed only with a rank, 1 under several
+  spellings.
+- *OFAC's two Associate Directors*: the export lists none.
+- *SBA's four Associate Administrators*: the §19.20 decision stands — the export
+  files them under offices named for the post's QUALIFIER, which the
+  office-named rule does not read, the node names ("— Capital Access") do not
+  equal the export's ("for Capital Access"), and the Code contradiction stands.
+- *NSC Legal Advisor*: no committed document lists it; the 2024 GPO Plum Book
+  the research cites is not committed.
+- *NCA Deputy Under Secretary for Field Programs*: the export prints "…FIELD
+  PROGRAMS AND CEMETERY"; containment is refused.
+- *NRCS Deputy Chief*: a bare title against five listed Deputy Chiefs.
+- *U.S. Marshal (94 districts)*: per-district rows on two pay plans at differing
+  rates; no figure is every holder's.
+- *USAO supervisory posts, First Assistant, U.S. Attorney*: the chart's second
+  table names no post and prints "$0" and "n/a" cells; it prints no row for U.S.
+  Attorneys.
+- *GAO's 32 team posts*: www.gao.gov answers robots.txt and the 2023 pay-table
+  PDF with 403 (`tests/fixtures/gao/README.md`). 31 U.S.C. 732(c) and
+  733(a)(3)(A) were read and committed as the record; they bound GAO's pay
+  systems and name no Managing Director, Assistant Director or band.
+- *Everything else with a URL and no figure* — the Fed's and the SEC's
+  administratively determined staff, the Capitol Police's LP scale, CBO and GAO
+  "administratively determined", House personal staff (a maximum), Foreign
+  Service classes, the CBP, BOP, ICE, DEA, FBI and NIH career pages, NRCS's
+  series checklist, the VA cemetery caretaker vacancy, CDC's EIS "GS-12 step 3"
+  (an equivalence, not a GS appointment), OPM's "SES designee" (a range for a
+  pay plan the node's curated name asserts and no document assigns) — names a
+  pay SYSTEM and no document naming the post, the reason every earlier batch's
+  copies were declined.
+- *The top-100 family ledger repeated at the head of the paste*: as §19.22.
+
+**Decision 1, taken: committee shares follow the chamber's payouts.** Within
+each chamber the committees now divide their pool by what the chamber's own
+statement paid out for each (`disbursement_weight`), only when one statement
+printed every weighted sibling for one period. The pool itself is unchanged — the
+committees' share of the chamber, by subtree size — and that is the larger
+distortion: $1.61bn to the House's committees beside $55m to the 435
+Representatives' offices. Fixing it means weighting member offices, officers and
+leadership by the same statement, whose member-office organisations are named for
+the Member; that is recorded here as the next decision, not taken. 236 nodes
+moved, none outside the two committee groupings.
+
+**Decision 2, taken: no re-homing of the VA medical-centre posts.** Reasons in
+CLAUDE.md: the old networks do not map onto the new ones (§10), facility
+placement is still ongoing by the VA's own FAQ, and re-homing would write about
+430 template nodes no document names. The 90 priced posts among them stay priced
+and are shown with the replaced units.

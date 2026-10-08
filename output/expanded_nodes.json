@@ -493,7 +493,7 @@
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
-    "child_cost_basis": "subtree",
+    "child_cost_basis": "disbursements",
     "costVerificationStatus": "unverified",
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
@@ -512,6 +512,7 @@
     "placementVerified": false,
     "placementParentId": "leg-senate",
     "placementVerifiedAt": "2026-09-21T05:26:27+00:00",
+    "child_cost_basis_implied": true,
     "parentId": "leg-senate"
   },
   {
@@ -30455,6 +30456,186 @@
     "parentId": "exec-eop-ondcp"
   },
   {
+    "id": "exec-eop-ondcp-deputy-director",
+    "name": "Deputy Director",
+    "type": "Position",
+    "desc": "Federal position: Deputy Director",
+    "employees": null,
+    "budget": null,
+    "color": "#666666",
+    "children": [],
+    "verificationUnread": {
+      "kind": "page_below_readable_floor",
+      "url": "https://www.whitehouse.gov/ondcp/",
+      "host": "www.whitehouse.gov",
+      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "attempts": 1,
+      "detail": "no_readable_text"
+    },
+    "sourceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "sourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "positionCurrentListing": {
+      "source": "opm_plum_current_export",
+      "method": "listed_in_opm_current_plum_export",
+      "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+      "listedTitle": "DEPUTY DIRECTOR, OFFICE OF NATIONAL DRUG CONTROL POLICY",
+      "agency": "EXECUTIVE OFFICE OF THE PRESIDENT - OFFICE OF NATIONAL DRUG CONTROL POLICY",
+      "organization": "OFFICE OF THE DIRECTOR",
+      "positionStatus": "Vacant",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "II",
+      "payLevel": "II",
+      "reportedPay": null,
+      "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
+      "rows": 1,
+      "rowsListed": 1,
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "scopeRule": "title_names_its_organisation"
+    },
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+    "verificationMethod": "listed_in_opm_current_plum_export",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "II",
+      "payPlan": "EX",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level II",
+      "quote": "Level II $228,000",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_current_export",
+        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+        "period": null,
+        "listedTitle": "DEPUTY DIRECTOR, OFFICE OF NATIONAL DRUG CONTROL POLICY",
+        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+        "checkedAt": "2026-09-21T03:02:16Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 2,
+        "documentsStatingTheFigure": 1,
+        "percent": 80,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and the other states which level this post is at. The percentage measures how much official documentation the figure rests on, not the chance that it is right, and neither document is dated now: the level comes from a listing and the rate from a table that took effect afterwards.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+            "role": "states the level this post is at"
+          }
+        ]
+      }
+    },
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+      "identification": {
+        "nodeName": "Deputy Director",
+        "basis": "the same office: 21 U.S.C. 1703(a)(1)(B) creates one Deputy Director of the Office of National Drug Control Policy, reporting to the Director the same section puts at the head of the Office, and 5 U.S.C. 5313 places the Deputy Director of National Drug Control Policy at Level II; the graph names the post by its bare title under the Office",
+        "basisCitation": "21 U.S.C. 1703",
+        "basisQuote": "There shall be a Deputy Director who shall report directly to the Director, and who shall be appointed by the President, and shall serve at the pleasure of the President.",
+        "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title21-section1703&num=0&edition=prelim",
+        "basisSha256": "c34fe23282a63b08b5c428b75928e9a3f203cfe18c2a4955110b12dde9bc96fd",
+        "basisCheckedAt": "2026-09-28T19:03:19Z"
+      },
+      "payLevel": "II",
+      "citation": "5 U.S.C. §5313",
+      "statutoryTitle": "Deputy Director of National Drug Control Policy",
+      "scopedOffice": null,
+      "scopedOrganisation": null,
+      "scopedOrganisationId": null,
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:08Z",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level II",
+      "quote": "Level II $228,000",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 1,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+            "role": "places this post at that level"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title21-section1703&num=0&edition=prelim",
+            "role": "identifies this post as the office the Code places at that level"
+          }
+        ]
+      }
+    },
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "employee_weight",
+    "cost_validation": "treasury_pool_negative",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "parentId": "exec-eop-ondcp"
+  },
+  {
     "id": "exec-eop-ondcp-general-counsel",
     "name": "General Counsel",
     "type": "Position",
@@ -34408,6 +34589,178 @@
     "parentId": "exec-dept-treasury-irs"
   },
   {
+    "id": "exec-dept-treasury-irs-chief-counsel",
+    "name": "Chief Counsel",
+    "type": "Position",
+    "desc": "Federal position: Chief Counsel",
+    "employees": null,
+    "budget": null,
+    "color": "#666666",
+    "children": [],
+    "sourceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "sourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "positionCurrentListing": {
+      "source": "opm_plum_current_export",
+      "method": "listed_in_opm_current_plum_export",
+      "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+      "listedTitle": "CHIEF COUNSEL, INTERNAL REVENUE SERVICE",
+      "agency": "DEPARTMENT OF THE TREASURY",
+      "organization": "INTERNAL REVENUE SERVICE CHIEF COUNSEL",
+      "positionStatus": "Vacant",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "V",
+      "payLevel": "V",
+      "reportedPay": null,
+      "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
+      "rows": 1,
+      "rowsListed": 1,
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "scopeRule": "title_names_its_organisation"
+    },
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+    "verificationMethod": "listed_in_opm_current_plum_export",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "V",
+      "payPlan": "EX",
+      "amount": 184900.0,
+      "rateText": "$184,900",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level V",
+      "quote": "Level V $184,900",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_current_export",
+        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+        "period": null,
+        "listedTitle": "CHIEF COUNSEL, INTERNAL REVENUE SERVICE",
+        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+        "checkedAt": "2026-09-21T03:02:16Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 2,
+        "documentsStatingTheFigure": 1,
+        "percent": 80,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and the other states which level this post is at. The percentage measures how much official documentation the figure rests on, not the chance that it is right, and neither document is dated now: the level comes from a listing and the rate from a table that took effect afterwards.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+            "role": "states the level this post is at"
+          }
+        ]
+      }
+    },
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+      "identification": {
+        "nodeName": "Chief Counsel",
+        "basis": "the same office: 26 U.S.C. 7803(b)(1) creates the Chief Counsel for the Internal Revenue Service in the Department of the Treasury, and 5 U.S.C. 5316 places the Chief Counsel for the Internal Revenue Service, Department of the Treasury at Level V; the graph files the post under the Internal Revenue Service under the bare title 'Chief Counsel', a stamped title nine bureaus carry here, so the row is keyed to the Service's node alone",
+        "basisCitation": "26 U.S.C. 7803",
+        "basisQuote": "There shall be in the Department of the Treasury a Chief Counsel for the Internal Revenue Service who shall be appointed by the President, by and with the consent of the Senate.",
+        "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7803&num=0&edition=prelim",
+        "basisSha256": "83e9c1ffb0ce72f3f116da333a37c9cbd4480cac9ab6186507126a128d3f0d02",
+        "basisCheckedAt": "2026-09-27T21:27:32Z"
+      },
+      "payLevel": "V",
+      "citation": "5 U.S.C. §5316",
+      "statutoryTitle": "Chief Counsel for the Internal Revenue Service, Department of the Treasury",
+      "scopedOffice": null,
+      "scopedOrganisation": null,
+      "scopedOrganisationId": null,
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5316&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:37Z",
+      "amount": 184900.0,
+      "rateText": "$184,900",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level V",
+      "quote": "Level V $184,900",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 1,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5316&num=0&edition=prelim",
+            "role": "places this post at that level"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7803&num=0&edition=prelim",
+            "role": "identifies this post as the office the Code places at that level"
+          }
+        ]
+      }
+    },
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-treasury-irs"
+  },
+  {
     "id": "exec-dept-treasury-irs-commissioner-tax-exempt-government-entities-division",
     "name": "Commissioner, Tax Exempt & Government Entities Division",
     "type": "Position",
@@ -34928,6 +35281,108 @@
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
     "parentId": "exec-dept-treasury"
+  },
+  {
+    "id": "exec-dept-treasury-bep-chief-counsel",
+    "name": "Chief Counsel",
+    "type": "Position",
+    "desc": "Federal position: Chief Counsel",
+    "employees": null,
+    "budget": null,
+    "color": "#666666",
+    "children": [],
+    "sourceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "sourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "positionCurrentListing": {
+      "source": "opm_plum_current_export",
+      "method": "listed_in_opm_current_plum_export",
+      "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+      "listedTitle": "CHIEF COUNSEL, BUREAU OF ENGRAVING AND PRINTING",
+      "agency": "DEPARTMENT OF THE TREASURY",
+      "organization": "GENERAL COUNSEL",
+      "positionStatus": "Filled",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$228,000",
+      "payLevel": null,
+      "reportedPay": 228000.0,
+      "reportedPayText": "$228,000",
+      "payPlanAndLevelOnOneRow": true,
+      "rows": 1,
+      "rowsListed": 1,
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "scopeRule": "title_names_its_organisation"
+    },
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+    "verificationMethod": "listed_in_opm_current_plum_export",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "positionCurrentPay": {
+      "source": "opm_plum_current_export",
+      "sourceLabel": "OPM's current PLUM Reporting export",
+      "method": "rate_of_basic_pay_stated_in_opm_current_plum_export",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "payPlan": "ES",
+      "listedTitle": "CHIEF COUNSEL, BUREAU OF ENGRAVING AND PRINTING",
+      "agency": "DEPARTMENT OF THE TREASURY",
+      "organization": "GENERAL COUNSEL",
+      "positionStatus": "Filled",
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "CHIEF COUNSEL, BUREAU OF ENGRAVING AND PRINTING",
+      "quote": "CHIEF COUNSEL, BUREAU OF ENGRAVING AND PRINTING; DEPARTMENT OF THE TREASURY; GENERAL COUNSEL; Pay Plan ES; Level, Grade, or Pay $228,000; Position Status Filled",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "verification": {
+        "documents": 1,
+        "documentsStatingTheFigure": 1,
+        "percent": 70,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right -- and a row in that export is an incumbency, not the post's own rate.",
+        "documentRoles": [
+          {
+            "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+            "role": "prints the rate for the one row listed under this title now"
+          }
+        ]
+      }
+    },
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-treasury-bep"
   },
   {
     "id": "exec-dept-treasury-mint",
@@ -35799,6 +36254,347 @@
     "parentId": "exec-dept-treasury"
   },
   {
+    "id": "exec-dept-treasury-ofac-director-ofac",
+    "name": "Director, OFAC",
+    "type": "Position",
+    "desc": "Federal position: Director, OFAC",
+    "employees": null,
+    "budget": null,
+    "color": "#666666",
+    "children": [],
+    "sourceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "sourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "positionCurrentListing": {
+      "source": "opm_plum_current_export",
+      "method": "listed_in_opm_current_plum_export",
+      "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+      "listedTitle": "DIRECTOR, FOREIGN ASSETS CONTROL",
+      "agency": "DEPARTMENT OF THE TREASURY",
+      "organization": "UNDER SECRETARY FOR TERRORISM AND FINANCIAL INTELLIGENCE",
+      "positionStatus": "Filled",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$228,000",
+      "payLevel": null,
+      "reportedPay": 228000.0,
+      "reportedPayText": "$228,000",
+      "payPlanAndLevelOnOneRow": true,
+      "rows": 1,
+      "rowsListed": 1,
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "scopeRule": "title_names_its_organisation"
+    },
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+    "verificationMethod": "listed_in_opm_current_plum_export",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "positionCurrentPay": {
+      "source": "opm_plum_current_export",
+      "sourceLabel": "OPM's current PLUM Reporting export",
+      "method": "rate_of_basic_pay_stated_in_opm_current_plum_export",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "payPlan": "ES",
+      "listedTitle": "DIRECTOR, FOREIGN ASSETS CONTROL",
+      "agency": "DEPARTMENT OF THE TREASURY",
+      "organization": "UNDER SECRETARY FOR TERRORISM AND FINANCIAL INTELLIGENCE",
+      "positionStatus": "Filled",
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "DIRECTOR, FOREIGN ASSETS CONTROL",
+      "quote": "DIRECTOR, FOREIGN ASSETS CONTROL; DEPARTMENT OF THE TREASURY; UNDER SECRETARY FOR TERRORISM AND FINANCIAL INTELLIGENCE; Pay Plan ES; Level, Grade, or Pay $228,000; Position Status Filled",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "verification": {
+        "documents": 1,
+        "documentsStatingTheFigure": 1,
+        "percent": 70,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right -- and a row in that export is an incumbency, not the post's own rate.",
+        "documentRoles": [
+          {
+            "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+            "role": "prints the rate for the one row listed under this title now"
+          }
+        ]
+      }
+    },
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-treasury-ofac"
+  },
+  {
+    "id": "exec-dept-treasury-ofac-deputy-director",
+    "name": "Deputy Director",
+    "type": "Position",
+    "desc": "Federal position: Deputy Director",
+    "employees": null,
+    "budget": null,
+    "color": "#666666",
+    "children": [],
+    "sourceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "sourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "positionCurrentListing": {
+      "source": "opm_plum_current_export",
+      "method": "listed_in_opm_current_plum_export",
+      "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+      "listedTitle": "DEPUTY DIRECTOR, OFFICE OF FOREIGN ASSETS CONTROL",
+      "agency": "DEPARTMENT OF THE TREASURY",
+      "organization": "UNDER SECRETARY FOR TERRORISM AND FINANCIAL INTELLIGENCE",
+      "positionStatus": "Filled",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$228,000",
+      "payLevel": null,
+      "reportedPay": 228000.0,
+      "reportedPayText": "$228,000",
+      "payPlanAndLevelOnOneRow": true,
+      "rows": 1,
+      "rowsListed": 1,
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "scopeRule": "title_names_its_organisation"
+    },
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+    "verificationMethod": "listed_in_opm_current_plum_export",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "positionCurrentPay": {
+      "source": "opm_plum_current_export",
+      "sourceLabel": "OPM's current PLUM Reporting export",
+      "method": "rate_of_basic_pay_stated_in_opm_current_plum_export",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "payPlan": "ES",
+      "listedTitle": "DEPUTY DIRECTOR, OFFICE OF FOREIGN ASSETS CONTROL",
+      "agency": "DEPARTMENT OF THE TREASURY",
+      "organization": "UNDER SECRETARY FOR TERRORISM AND FINANCIAL INTELLIGENCE",
+      "positionStatus": "Filled",
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "DEPUTY DIRECTOR, OFFICE OF FOREIGN ASSETS CONTROL",
+      "quote": "DEPUTY DIRECTOR, OFFICE OF FOREIGN ASSETS CONTROL; DEPARTMENT OF THE TREASURY; UNDER SECRETARY FOR TERRORISM AND FINANCIAL INTELLIGENCE; Pay Plan ES; Level, Grade, or Pay $228,000; Position Status Filled",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "verification": {
+        "documents": 1,
+        "documentsStatingTheFigure": 1,
+        "percent": 70,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right -- and a row in that export is an incumbency, not the post's own rate.",
+        "documentRoles": [
+          {
+            "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+            "role": "prints the rate for the one row listed under this title now"
+          }
+        ]
+      }
+    },
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-treasury-ofac"
+  },
+  {
+    "id": "exec-dept-treasury-ofac-chief-counsel",
+    "name": "Chief Counsel",
+    "type": "Position",
+    "desc": "Federal position: Chief Counsel",
+    "employees": null,
+    "budget": null,
+    "color": "#666666",
+    "children": [],
+    "sourceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "sourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "positionCurrentListing": {
+      "source": "opm_plum_current_export",
+      "method": "listed_in_opm_current_plum_export",
+      "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+      "listedTitle": "CHIEF COUNSEL, OFFICE OF FOREIGN ASSETS CONTROL",
+      "agency": "DEPARTMENT OF THE TREASURY",
+      "organization": "GENERAL COUNSEL",
+      "positionStatus": "Vacant",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
+      "rows": 1,
+      "rowsListed": 1,
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "scopeRule": "title_names_its_organisation"
+    },
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+    "verificationMethod": "listed_in_opm_current_plum_export",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "positionGradePay": {
+      "source": "opm_salary_table_range",
+      "method": "pay_system_range_for_the_pay_plan_reported_in_the_plum_archive",
+      "kind": "senior_executive_service",
+      "payPlan": "ES",
+      "grade": null,
+      "minimum": 151661.0,
+      "minimumPrinted": "151,661",
+      "maximum": 228000.0,
+      "maximumPrinted": "228,000",
+      "table": "Salary Table No. 2026-ES",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+      "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000 | Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "listingSource": {
+        "source": "opm_plum_current_export",
+        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+        "period": null,
+        "listedTitle": "CHIEF COUNSEL, OFFICE OF FOREIGN ASSETS CONTROL",
+        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+        "checkedAt": "2026-09-21T03:02:16Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+      "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+      "checkedAt": "2026-09-21T03:00:01Z",
+      "rows": [
+        {
+          "label": "Agencies with a Certified SES Performance Appraisal System",
+          "minimum": 151661.0,
+          "minimumRaw": "151,661",
+          "maximum": 228000.0,
+          "maximumRaw": "228,000",
+          "rowText": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000"
+        },
+        {
+          "label": "Agencies without a Certified SES Performance Appraisal System",
+          "minimum": 151661.0,
+          "minimumRaw": "151,661",
+          "maximum": 209600.0,
+          "maximumRaw": "209,600",
+          "rowText": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600"
+        }
+      ],
+      "verification": {
+        "documents": 2,
+        "documentsStatingTheFigure": 1,
+        "percent": 80,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document prints the bounds and the other states which pay plan this post is on. The percentage measures how much official documentation the range rests on, not the chance that it is right -- and a range is not a rate: neither document says what this post is paid.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+            "role": "states the pay system's or grade's printed bounds"
+          },
+          {
+            "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+            "role": "states the pay plan this post is on"
+          }
+        ]
+      }
+    },
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-treasury-ofac"
+  },
+  {
     "id": "exec-dept-treasury-ofr",
     "name": "Office of Financial Research (OFR)",
     "type": "Bureau",
@@ -35863,6 +36659,178 @@
     "placementMatchedText": "Financial Research Office",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
     "parentId": "exec-dept-treasury"
+  },
+  {
+    "id": "exec-dept-treasury-ofr-director-ofr",
+    "name": "Director, OFR",
+    "type": "Position",
+    "desc": "Federal position: Director, OFR",
+    "employees": null,
+    "budget": null,
+    "color": "#666666",
+    "children": [],
+    "sourceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "sourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "positionCurrentListing": {
+      "source": "opm_plum_current_export",
+      "method": "listed_in_opm_current_plum_export",
+      "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+      "listedTitle": "DIRECTOR, OFFICE OF FINANCIAL RESEARCH",
+      "agency": "DEPARTMENT OF THE TREASURY",
+      "organization": "UNDER SECRETARY FOR DOMESTIC FINANCE",
+      "positionStatus": "Vacant",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "III",
+      "payLevel": "III",
+      "reportedPay": null,
+      "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
+      "rows": 1,
+      "rowsListed": 1,
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "scopeRule": "title_names_its_organisation"
+    },
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+    "verificationMethod": "listed_in_opm_current_plum_export",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "III",
+      "payPlan": "EX",
+      "amount": 209600.0,
+      "rateText": "$209,600",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III",
+      "quote": "Level III $209,600",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_current_export",
+        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+        "period": null,
+        "listedTitle": "DIRECTOR, OFFICE OF FINANCIAL RESEARCH",
+        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+        "checkedAt": "2026-09-21T03:02:16Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 2,
+        "documentsStatingTheFigure": 1,
+        "percent": 80,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and the other states which level this post is at. The percentage measures how much official documentation the figure rests on, not the chance that it is right, and neither document is dated now: the level comes from a listing and the rate from a table that took effect afterwards.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+            "role": "states the level this post is at"
+          }
+        ]
+      }
+    },
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+      "identification": {
+        "nodeName": "Director, OFR",
+        "basis": "the same office: 12 U.S.C. 5342 puts a Director at the head of the Office of Financial Research in the Department of the Treasury and itself compensates that Director at Level III of the Executive Schedule, the level 5 U.S.C. 5314 prints for it; the graph names the Office by its acronym",
+        "basisCitation": "12 U.S.C. 5342",
+        "basisQuote": "The Office shall be headed by a Director, who shall be appointed by the President, by and with the advice and consent of the Senate.",
+        "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section5342&num=0&edition=prelim",
+        "basisSha256": "7ed75c985410d01d919f42500057337b5377e7b9cd2566f7a069a952376656ba",
+        "basisCheckedAt": "2026-09-28T22:24:21Z"
+      },
+      "payLevel": "III",
+      "citation": "5 U.S.C. §5314",
+      "statutoryTitle": "Director of the Office of Financial Research",
+      "scopedOffice": null,
+      "scopedOrganisation": null,
+      "scopedOrganisationId": null,
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:21Z",
+      "amount": 209600.0,
+      "rateText": "$209,600",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III",
+      "quote": "Level III $209,600",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 1,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+            "role": "places this post at that level"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title12-section5342&num=0&edition=prelim",
+            "role": "identifies this post as the office the Code places at that level"
+          }
+        ]
+      }
+    },
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-treasury-ofr"
   },
   {
     "id": "exec-dept-treasury-ttb",
@@ -53470,22 +54438,6 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2025-12-31",
-    "evidenceUrls": [
-      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-262"
-    ],
-    "govmanListing": {
-      "source": "us_government_manual",
-      "listedTitle": "UNDER SECRETARY FOR INTERNATIONAL TRADE",
-      "listedUnder": "International Trade Administration",
-      "edition": "2025-12-31",
-      "package": "GOVMAN-2025-12-31",
-      "granule": "GOVMAN-2025-12-31-262",
-      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-262",
-      "tableFooter": "The above list of key personnel was updated 10–2021."
-    },
-    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-    "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-doc-ita",
     "positionTierReferencePay": {
       "source": "statutory_tier_reference_pay",
       "sourceLabel": "a statute setting the post's pay by reference to an Executive Schedule level, joined to OPM's table",
@@ -53582,7 +54534,23 @@
           }
         ]
       }
-    }
+    },
+    "evidenceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-262"
+    ],
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "UNDER SECRETARY FOR INTERNATIONAL TRADE",
+      "listedUnder": "International Trade Administration",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-262",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-262",
+      "tableFooter": "The above list of key personnel was updated 10–2021."
+    },
+    "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+    "evidenceVerifiedAt": "2025-12-31",
+    "parentId": "exec-dept-doc-ita"
   },
   {
     "id": "exec-dept-doc-bea",
@@ -53899,7 +54867,6 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-dept-doc-bea",
-    "parentId": "exec-dept-doc-bea",
     "positionCurrentListing": {
       "source": "opm_plum_current_export",
       "method": "listed_in_opm_current_plum_export",
@@ -53957,7 +54924,8 @@
           }
         ]
       }
-    }
+    },
+    "parentId": "exec-dept-doc-bea"
   },
   {
     "id": "exec-dept-doc-ntia",
@@ -92726,6 +93694,350 @@
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
     "parentId": "exec-ind-misc"
+  },
+  {
+    "id": "exec-ind-misc-equal-employment-opportunity-commission-eeoc-director-administrator-chair-equal-employment-opportunity-commission",
+    "name": "Director / Administrator / Chair, Equal Employment Opportunity Commission",
+    "type": "Position",
+    "desc": "Federal position: Director / Administrator / Chair, Equal Employment Opportunity Commission",
+    "employees": null,
+    "budget": null,
+    "color": "#666666",
+    "children": [],
+    "sourceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "sourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "positionCurrentListing": {
+      "source": "opm_plum_current_export",
+      "method": "listed_in_opm_current_plum_export",
+      "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+      "listedTitle": "CHAIR, EQUAL EMPLOYMENT OPPORTUNITY COMMISSION",
+      "agency": "EQUAL EMPLOYMENT OPPORTUNITY COMMISSION",
+      "organization": "OFFICE OF THE CHAIR",
+      "positionStatus": "Filled",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "III",
+      "payLevel": "III",
+      "reportedPay": null,
+      "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
+      "rows": 1,
+      "rowsListed": 1,
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "scopeRule": "title_names_its_organisation"
+    },
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+    "verificationMethod": "listed_in_opm_current_plum_export",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "III",
+      "payPlan": "EX",
+      "amount": 209600.0,
+      "rateText": "$209,600",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III",
+      "quote": "Level III $209,600",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_current_export",
+        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+        "period": null,
+        "listedTitle": "CHAIR, EQUAL EMPLOYMENT OPPORTUNITY COMMISSION",
+        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+        "checkedAt": "2026-09-21T03:02:16Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 2,
+        "documentsStatingTheFigure": 1,
+        "percent": 80,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and the other states which level this post is at. The percentage measures how much official documentation the figure rests on, not the chance that it is right, and neither document is dated now: the level comes from a listing and the rate from a table that took effect afterwards.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+            "role": "states the level this post is at"
+          }
+        ]
+      }
+    },
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+      "identification": {
+        "nodeName": "Director / Administrator / Chair, Equal Employment Opportunity Commission",
+        "basis": "the same office: 42 U.S.C. 2000e-4(a) has the President designate one member of the Commission as its Chairman, and 5 U.S.C. 5314 places 'Chairman, Equal Employment Opportunity Commission' at Level III; the graph's stamped 'Director / Administrator / Chair' template stands for that Chairman, the only one of the three offices the Act creates",
+        "basisCitation": "42 U.S.C. 2000e-4",
+        "basisQuote": "The President shall designate one member to serve as Chairman of the Commission, and one member to serve as Vice Chairman.",
+        "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section2000e-4&num=0&edition=prelim",
+        "basisSha256": "01f16d9b67f8947475dddc359ab70346178b9da5295231701fbfc5dd7588f9eb",
+        "basisCheckedAt": "2026-09-30T05:08:06Z"
+      },
+      "payLevel": "III",
+      "citation": "5 U.S.C. §5314",
+      "statutoryTitle": "Chairman, Equal Employment Opportunity Commission",
+      "scopedOffice": null,
+      "scopedOrganisation": null,
+      "scopedOrganisationId": null,
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:21Z",
+      "amount": 209600.0,
+      "rateText": "$209,600",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III",
+      "quote": "Level III $209,600",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 1,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5314&num=0&edition=prelim",
+            "role": "places this post at that level"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section2000e-4&num=0&edition=prelim",
+            "role": "identifies this post as the office the Code places at that level"
+          }
+        ]
+      }
+    },
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc-equal-employment-opportunity-commission-eeoc"
+  },
+  {
+    "id": "exec-ind-misc-equal-employment-opportunity-commission-eeoc-deputy-director-vice-chair",
+    "name": "Deputy Director / Vice Chair",
+    "type": "Position",
+    "desc": "Federal position: Deputy Director / Vice Chair",
+    "employees": null,
+    "budget": null,
+    "color": "#666666",
+    "children": [],
+    "sourceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "evidenceUrls": [
+      "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+    ],
+    "sourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "positionCurrentListing": {
+      "source": "opm_plum_current_export",
+      "method": "listed_in_opm_current_plum_export",
+      "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+      "listedTitle": "VICE CHAIR, EQUAL EMPLOYMENT OPPORTUNITY COMMISSION",
+      "agency": "EQUAL EMPLOYMENT OPPORTUNITY COMMISSION",
+      "organization": "OFFICE OF THE VICE CHAIR",
+      "positionStatus": "Vacant",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "IV",
+      "payLevel": "IV",
+      "reportedPay": null,
+      "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
+      "rows": 1,
+      "rowsListed": 1,
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "checkedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "scopeRule": "title_names_its_organisation"
+    },
+    "lastVerified": "2026-09-21T03:02:16Z",
+    "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+    "verificationMethod": "listed_in_opm_current_plum_export",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "opm_plum_current_export",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "IV",
+      "payPlan": "EX",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_current_export",
+        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+        "period": null,
+        "listedTitle": "VICE CHAIR, EQUAL EMPLOYMENT OPPORTUNITY COMMISSION",
+        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+        "checkedAt": "2026-09-21T03:02:16Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 2,
+        "documentsStatingTheFigure": 1,
+        "percent": 80,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and the other states which level this post is at. The percentage measures how much official documentation the figure rests on, not the chance that it is right, and neither document is dated now: the level comes from a listing and the rate from a table that took effect afterwards.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+            "role": "states the level this post is at"
+          }
+        ]
+      }
+    },
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316_to_the_office_a_second_statute_identifies_this_post_as",
+      "identification": {
+        "nodeName": "Deputy Director / Vice Chair",
+        "basis": "a Vice Chairman is a member of the Commission: 42 U.S.C. 2000e-4(a) has the President designate one member as Vice Chairman, 5 U.S.C. 5315 places the four members other than the Chairman at Level IV as 'Members, Equal Employment Opportunity Commission (4)', and only the Chairman is placed separately (5314); the graph's stamped 'Deputy Director / Vice Chair' template stands for that Vice Chairman, the one such office the Act creates",
+        "basisCitation": "42 U.S.C. 2000e-4",
+        "basisQuote": "The President shall designate one member to serve as Chairman of the Commission, and one member to serve as Vice Chairman.",
+        "basisUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section2000e-4&num=0&edition=prelim",
+        "basisSha256": "01f16d9b67f8947475dddc359ab70346178b9da5295231701fbfc5dd7588f9eb",
+        "basisCheckedAt": "2026-09-30T05:08:06Z"
+      },
+      "payLevel": "IV",
+      "citation": "5 U.S.C. §5315",
+      "statutoryTitle": "Members, Equal Employment Opportunity Commission (4)",
+      "scopedOffice": null,
+      "scopedOrganisation": null,
+      "scopedOrganisationId": null,
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:27Z",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z",
+      "verification": {
+        "documents": 3,
+        "documentsStatingTheFigure": 1,
+        "percent": 90,
+        "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+        "caution": "One document states the rate and another is the statute that puts this post at that level; where a third is listed, it is the statute that says this post is the office the Code names, because the Code's title is not this node's name. The percentage measures how much official documentation the figure rests on, not the chance that it is right.",
+        "documentRoles": [
+          {
+            "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+            "role": "states what that Executive Schedule level pays"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+            "role": "places this post at that level"
+          },
+          {
+            "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title42-section2000e-4&num=0&edition=prelim",
+            "role": "identifies this post as the office the Code places at that level"
+          }
+        ]
+      }
+    },
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc-equal-employment-opportunity-commission-eeoc"
   },
   {
     "id": "exec-ind-misc-equal-employment-opportunity-commission-eeoc-general-counsel",

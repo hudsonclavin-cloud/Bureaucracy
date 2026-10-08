@@ -2473,10 +2473,15 @@ current-export rules and its nineteen reviewed and tier-reference rows later
 that night, which took it to 1,158, and 1,158 before the batch's later
 clusters the next morning, which took it to 1,193, and 1,193 before the Code
 title scan's three rows later that morning, which took it to 1,196, and 1,196
-before the owner's six decisions of 2026-10-07, which took it to 1,231);
-**3,360 do not** (3,480 before that night, 3,433 before the morning, 3,398
-before the scan's rows, 3,395 before the decisions), and `scripts/report_unpriced_positions.py`
-says why for every one of them:
+before the owner's six decisions of 2026-10-07, which took it to 1,231, and
+1,231 before the thirteenth batch of 2026-10-08, which took it to 1,242);
+**3,349 do not** (3,480 before that night, 3,433 before the morning, 3,398
+before the scan's rows, 3,395 before the decisions, 3,360 before the thirteenth
+batch), and `scripts/report_unpriced_positions.py` says why for every one of
+them — the figures below are as of 2026-10-07 and the generated
+`docs/UNPRICED_POSITIONS.md` carries the current split (2,176 unreached, 611
+multiplicity, 432 beneath a replaced unit, 112 not on a federal pay schedule,
+18 listed with no rate):
 
 - **2,592** — no pay document this project has read names the title at all.
   Not a coverage gap somebody has not got to. (2,710 before the
@@ -4655,8 +4660,9 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **1,231** of the
-4,591 positions carry a pay claim an official source states (1,196 before the
+parent's total" opts back in. The exception is a real salary — **1,242** of the
+4,591 positions carry a pay claim an official source states (1,231 before the
+thirteenth batch of 2026-10-08, 1,196 before the
 owner's six decisions of 2026-10-07, 1,193 before the
 Code title scan's three rows landed later on 2026-10-06, 1,158 before the
 twelfth batch's later clusters landed on the morning of 2026-10-06, 1,111
@@ -4790,7 +4796,8 @@ trial judges and the two Deputy Directors, 1,110 with the five posts the
 govinfo sections priced, 1,111 with the President, 1,158 with the
 twelfth batch's current-export rules and rows, 1,193 with its later
 clusters the next morning, 1,196 with the Code title scan's three rows
-later that morning, and 1,231 with the owner's six decisions of 2026-10-07.
+later that morning, 1,231 with the owner's six decisions of 2026-10-07, and
+1,242 with the thirteenth batch of 2026-10-08.
 The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
@@ -5279,6 +5286,96 @@ reported sibling or beside its own block, a payout weight on a measured figure,
 and shares that are not one rate per dollar paid; `tests/test_cost_cascade_units.py`
 (`CommitteePayoutWeightTests`) and `tests/test_committee_disbursements.py`
 (`PayoutWeightGateTests`) pin both directions.
+
+**The thirteenth research batch (2026-10-08), built by five agents against the
+repository's own documents.** The owner pasted per-node answers for 627 posts
+and asked for every position to be filled and for the two pending decisions to
+be taken without them. 334 of the 639 answer rows named no document, 253 named
+a pay system and no figure, and 52 carried a figure; eleven posts were priced
+and everything else is declined in `CURATION.md` §19.23 with its reason. Pay
+claims **1,231 → 1,242** of 4,591, unpriced **3,360 → 3,349**.
+
+- **The district template's bench.** `judicial_pay.classify_seat` refused every
+  node under "All 94 District Courts — Standard Structure" by its id prefix, a
+  rule written for the template's chief judge (one post standing for 94
+  offices) that also caught `District Judge (×varies per district)`, a bench.
+  That bench is priced by id (`DISTRICT_STRUCTURE_BENCH_ID`) at the table's
+  District Judges tier, $249,900, with an unstated `holders` block — the
+  reading SDNY's active bench and the template's own `Bankruptcy Judge
+  (×varies)` already take — and the senior-judge marker is read off the
+  description as well as the name, because on a template the description says
+  what the count covers. The chief judge stays refused.
+- **A joint committee's chair and vice chair.** The member-seat rule refused
+  the Joint Economic Committee's `Chair (alternates Senate/House)` and `Vice
+  Chair` because a record named one chamber's row. Schedule 6 prints 174,000 on
+  both "Senators" and "Members of the House of Representatives", so a
+  joint-committee post (single post, directly under a committee beneath
+  `leg-joint` and neither chamber, named for a role in `MEMBER_JOINT_ROLES`) is
+  priced from both rows together, names no chamber (`chamber: "joint"`), and is
+  refused outright if the two rows ever differ; the gate
+  (`member_seat_joint_violations`) refuses a joint block quoting one row or
+  naming a chamber. The chambers' pay orders were read in full for the same
+  batch: they set a RATE for no further post node, and the 49 posts beneath the
+  Secretary of the Senate, the Senate Sergeant at Arms, the Clerk and the CAO
+  are reached only by a ceiling ("shall not exceed", "in excess of",
+  "maximum"), declined in `tier_reference_pay.INSTRUMENT_CEILINGS` with the
+  order's words re-found on every run.
+- **The Under Secretary for International Trade**, at Level III ($209,600) from
+  Reorganization Plan No. 3 of 1979 §2(c), a tier-reference instrument row in
+  the Deputy Secretary of Commerce's shape. §5314 prints no title for the office
+  — only the bare "Under Secretary of Commerce" the same Plan abolished — so a
+  reviewed Schedule row was impossible.
+- **A current-export title that names its own organisation.**
+  `plum_current`'s third pass (`scopeRule: title_names_its_organisation`) reads
+  a trailing ", <organisation>" back when the row is filed under a
+  sub-organisation that names no node: the organisation half must carry two
+  tokens and reduce, with "Office of (the)" folded on both sides, to exactly one
+  organisation at or beneath the agency, which must carry exactly one direct
+  child answering to the office half, under every refusal the main pass makes.
+  No placement is claimed. 10 posts: four printed rates ($228,000 each: OFAC's
+  Director and Deputy Director, BEA's Deputy Director, BEP's Chief Counsel), one
+  SES range (OFAC's Chief Counsel, vacant), and five EX listings corroborating
+  reviewed Schedule rows. The broad sub-organisation fallback stays refused,
+  and a test pins that a bare "DIRECTOR" under the same filing reaches nothing.
+- **The U.S. Attorneys' AD pay plan chart, a second source for a range.** The
+  chart on www.justice.gov prints a table headed "Assistant United States
+  Attorneys (AUSA)", AD-21 to AD-29, and says "These tables are for 2025 and are
+  effective as of January 12, 2025. The tables below do not include locality
+  based comparability adjustments"; the salary page above it says the AD plan
+  "is a component-specific compensation system for Assistant United States
+  Attorneys, …". `doj_ad_pay.py` publishes $63,163–$165,209 on the two
+  `Assistant U.S. Attorney (×multiple)` nodes as `positionTierPay` — an
+  office-rate range field, so the `holders` block is worded for a range — on
+  two documents, one printing the bounds, `proxy`/`partial`. It is the 2025
+  table, because the page carries no 2026 chart, and the panel prints the year.
+  Supervisory posts, the First Assistant and the U.S. Attorney are declined:
+  the second table names no post and prints "$0" and "n/a" cells.
+
+Declined, with the sections committed as the record: the 76 uniformed leads
+(eight Title 10 and 14 sections read from govinfo — 14 U.S.C. 305 is a
+designation naming no Area Commander; 7038, 8084 and 10506 appoint "from
+general officers"; 7035 and 9035 detail "general officers"; 8036 "grades above
+captain"; 8045 states no grade; `military_pay.NOT_PRICED` and the gate now
+refuse 21 ids); GAO's 32 team posts (`www.gao.gov` answers robots.txt and the
+pay-table PDF with 403, `tests/fixtures/gao/README.md`; 31 U.S.C. 732–733 name
+no post or band); and the NEC's and the Office of Administration's directors,
+which are the same offices as White House Office nodes the roster already
+prices, so the row on both would state one salary as two (the `exec-vp` rule;
+merging the duplicates is curation).
+
+**The VA's medical-centre posts stay where they are (decided 2026-10-08, on
+the owner's delegation).** Re-homing them under the five current VISNs was the
+second pending decision, and it is declined. The 432 posts are eighteen
+template copies of one medical-centre family, one copy beneath each superseded
+network. `CURATION.md` §10 records that the territories were redrawn rather
+than renumbered, so no old network maps onto one new one, and the RISE FAQ
+says placement below Network Director is still ongoing. Re-homing would mean
+either choosing five of the eighteen copies, which would say those networks'
+centres are the new networks', or writing five new copies — about 430 template
+nodes no document names. It would buy visibility, not evidence: the 90 priced
+posts among them are already priced and are drawn when the reader ticks "also
+show units the government has replaced". What would change it: the VA
+publishing which medical centres sit in which new network.
 
 ### Names that state a count
 
