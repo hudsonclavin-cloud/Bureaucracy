@@ -728,5 +728,136 @@ class PublishedGraphTests(unittest.TestCase):
                 self.assertIn("later order", block["instrument"]["laterOrderCaution"])
 
 
+# ---------------------------------------------------------------------------
+# The chambers' pay orders read in full (2026-10-08): every post node beneath
+# the four officers they price is reached only by a ceiling, and each is
+# declined with the order's own words, re-found on every run.
+
+from data_pipeline.exporter.build_graph import DEFAULT_BASE_GRAPH, load_base_graph  # noqa: E402
+from data_pipeline.verification.tier_reference_pay import INSTRUMENT_CEILINGS, ceiling_reason  # noqa: E402
+
+#: The thirteenth batch's uscode.house.gov leads, every one a post the orders
+#: reach only by a ceiling.
+BATCH_13_SENATE_IDS = (
+    "leg-senate-admin-saa-assistant-saa-capitol-division",
+    "leg-senate-admin-saa-assistant-saa-senate-division",
+    "leg-senate-admin-saa-capitol-police-liaison-officer",
+    "leg-senate-admin-saa-deputy-sergeant-at-arms",
+    "leg-senate-admin-saa-director-of-capitol-services",
+    "leg-senate-admin-saa-director-of-doorkeeper-operations",
+    "leg-senate-admin-saa-director-of-id-credentialing",
+    "leg-senate-admin-saa-director-of-mailing-services",
+    "leg-senate-admin-saa-director-of-senate-hair-care-services",
+    "leg-senate-admin-saa-director-of-senate-parking",
+    "leg-senate-admin-saa-director-of-senate-photo-studio",
+    "leg-senate-admin-saa-director-of-senate-post-office",
+    "leg-senate-admin-saa-director-of-senate-recording-studio",
+    "leg-senate-admin-saa-director-of-telecommunications",
+    "leg-senate-admin-saa-director-of-web-technology-innovation",
+    "leg-senate-admin-secretary-assistant-secretary-of-the-senate",
+    "leg-senate-admin-secretary-bill-clerk",
+    "leg-senate-admin-secretary-deputy-secretary-of-the-senate",
+    "leg-senate-admin-secretary-director-of-public-records",
+    "leg-senate-admin-secretary-director-of-the-capitol-printing-folding-room",
+    "leg-senate-admin-secretary-director-of-the-page-program",
+    "leg-senate-admin-secretary-enrolling-clerk",
+    "leg-senate-admin-secretary-executive-clerk",
+    "leg-senate-admin-secretary-journal-clerk",
+    "leg-senate-admin-secretary-legislative-information-officer",
+    "leg-senate-admin-secretary-senate-curator",
+    "leg-senate-admin-secretary-senate-historian",
+    "leg-senate-admin-secretary-senate-librarian",
+)
+
+#: The offices each order states a RATE for beyond the four priced, which this
+#: graph carries as no post node (an Office node, or nothing). If a post node
+#: of one of these names is ever curated under a chamber, this test says so,
+#: since the order would then price it.
+RATE_OFFICES_WITH_NO_POST_NODE = (
+    "Secretary for the Majority", "Secretary for the Minority", "Deputy Legislative Counsel", "Senior Counsel",
+    "Chaplain", "Senate Legal Counsel", "Deputy Senate Legal Counsel", "General Counsel to the House",
+    "Director of Interparliamentary Affairs", "Attending Physician",
+)
+
+
+def _base_tree():
+    return load_base_graph(DEFAULT_BASE_GRAPH)
+
+
+class OrderCeilingDeclineTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.tree = _base_tree()
+        cls.nodes, cls.parents = index_tree(cls.tree)
+        cls.records, cls.report = _records(tree=cls.tree)
+
+    def test_each_ceiling_is_the_order_s_own_words_and_is_a_ceiling(self):
+        for group_id, group in INSTRUMENT_CEILINGS.items():
+            with self.subTest(group=group_id):
+                instrument = ni.load_instrument(group["instrument"])
+                self.assertEqual(ni.KIND_CHAMBER_PAY_ORDER, instrument["kind"])
+                self.assertIsNone(ni.where_is(instrument, group["quote"]))
+                self.assertTrue(any(word in group["quote"] for word in ("maximum", "shall not exceed", "in excess of")))
+                # The quote states no rate: "shall each be equal to" is the
+                # orders' rate wording, and a ceiling group never quotes it.
+                self.assertNotIn("shall each be equal to", group["quote"])
+
+    def test_each_declined_node_is_a_single_post_in_the_office_its_group_names(self):
+        seen = set()
+        for group_id, group in INSTRUMENT_CEILINGS.items():
+            for node_id in group["nodes"]:
+                with self.subTest(group=group_id, node=node_id):
+                    self.assertNotIn(node_id, seen, "declined twice")
+                    seen.add(node_id)
+                    node = self.nodes[node_id]
+                    self.assertEqual("Position", node["type"])
+                    self.assertNotIn("representsPosts", node)
+                    self.assertIn(self.parents[node_id], group["office"])
+                    self.assertNotIn(node_id, INSTRUMENT_PROVISIONS)
+                    self.assertNotIn(node_id, INSTRUMENT_NOT_PRICED)
+        # Every unpriced post the four offices carry is accounted for.
+        offices = {office for group in INSTRUMENT_CEILINGS.values() for office in group["office"]}
+        for node_id, parent in self.parents.items():
+            if parent in offices and self.nodes[node_id]["type"] == "Position" and node_id not in INSTRUMENT_PROVISIONS:
+                self.assertIn(node_id, seen, node_id)
+
+    def test_the_batch_s_senate_leads_are_all_declined_and_none_priced(self):
+        for node_id in BATCH_13_SENATE_IDS:
+            with self.subTest(node=node_id):
+                self.assertNotIn(node_id, self.records)
+                self.assertIn(node_id, self.report["notPriced"])
+                self.assertIn("a ceiling is not a rate", self.report["notPriced"][node_id])
+
+    def test_the_derive_records_each_decline_with_the_order_s_words(self):
+        for group_id, group in INSTRUMENT_CEILINGS.items():
+            name = ni.INSTRUMENTS[group["instrument"]]["name"]
+            for node_id in group["nodes"]:
+                with self.subTest(node=node_id):
+                    self.assertEqual(ceiling_reason(group, name), self.report["notPriced"][node_id])
+                    self.assertIn(group["quote"], self.report["notPriced"][node_id])
+        self.assertFalse([k for k in self.report["refused"] if k in INSTRUMENT_CEILINGS])
+
+    def test_a_ceiling_the_order_no_longer_prints_is_a_refusal_not_a_silent_decline(self):
+        needle = "be paid gross compensation at an annual rate that is in excess of the annual rate for level II"
+        tmp = _doctored(SENATE, lambda raw: raw.replace(needle, "be paid at a rate set by the Secretary", 1))
+        _, report = _records(tree=self.tree, directory=tmp)
+        self.assertIn("senate-order-sec-4b", report["refused"])
+        self.assertIn("does not carry the ceiling", report["refused"]["senate-order-sec-4b"])
+        for node_id in INSTRUMENT_CEILINGS["senate-order-sec-4b"]["nodes"]:
+            self.assertNotIn(node_id, report["notPriced"])
+        # The other groups are untouched.
+        for node_id in INSTRUMENT_CEILINGS["senate-order-sec-2c"]["nodes"]:
+            self.assertIn(node_id, report["notPriced"])
+
+    def test_the_offices_the_orders_set_a_rate_for_have_no_post_node_here(self):
+        for node_id, node in self.nodes.items():
+            if not node_id.startswith(("leg-senate", "leg-house")) or node.get("type") != "Position":
+                continue
+            name = str(node.get("name") or "")
+            for office in RATE_OFFICES_WITH_NO_POST_NODE:
+                with self.subTest(node=node_id, office=office):
+                    self.assertNotEqual(office.casefold(), name.casefold())
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -88,14 +88,26 @@ keeping the premise.
 **Which row.** The chamber is read off the tree, never off the name: a post
 whose ancestors include `leg-senate` is priced from the row "Senators" and
 one under `leg-house` from "Members of the House of Representatives". The
-two joint-committee posts (the Joint Economic Committee's Chair, which
-alternates between the chambers by Congress, and its Vice Chair) sit under
-neither and are refused: the figure would be the same either way, since the
-schedule prints one figure for both rows, but a record names one row, and
-which chamber the current holder sits in is a fact about a person this
-project never reads. The House rows for Delegates and the Resident
-Commissioner print the same 174,000, and every House record says so, since a
-subcommittee chair could in principle be a Delegate.
+House rows for Delegates and the Resident Commissioner print the same
+174,000, and every House record says so, since a subcommittee chair could in
+principle be a Delegate.
+
+**A joint committee's chair and vice chair (since 2026-10-08).** The Joint
+Economic Committee's `Chair (alternates Senate/House)` and `Vice Chair` sit
+under `leg-joint`, beneath neither chamber, and were refused by name until
+then: a record named one row, and which chamber the holder sits in is a fact
+about a person this project never reads. Neither half of that needs the
+holder: Schedule 6 prints 174,000 on BOTH seat rows, so the figure is the
+same whichever chamber the holder sits in. A **joint-committee post** is a
+single-post Position directly under a node typed Committee or Subcommittee
+whose ancestors include `leg-joint` and neither chamber, named for a role in
+`MEMBER_JOINT_ROLES` (the name with any trailing parenthetical set aside is
+the role, or the role followed by ", "). Its record quotes both rows, names
+no chamber (`chamber: "joint"`, no single `row`, both in `rows`), and is
+refused outright if the two rows ever print different figures; its basis says
+in words that the figure is the same either way and that neither the chamber
+nor the holder is read. The other joint committees here carry staff posts
+only, so the rule reaches the JEC's two.
 
 **Which posts.** Two shapes, both structural. A **committee post** is a
 single-post Position whose name begins `Chair, ` or `Ranking Member, ` and
@@ -109,7 +121,8 @@ policy, steering and campaign committee chairs -- the "eleven Senate
 leadership roles" the fourth batch reported) and the House's fourteen. The
 table is reviewed by id, the shape `SCHEDULE_6_NODE_ROWS` already takes,
 because those names are the graph's own and no rule distinguishes
-"Republican Study Committee Chair" from a staff title. Two leadership nodes
+"Republican Study Committee Chair" from a staff title. A **joint-committee
+post** is the third shape, above. Two leadership nodes
 are refused by name in `MEMBER_SEATS_NOT_PRICED`: the Problem Solvers
 Caucus's "Co-Chairs" node stands for two people in a form the multi-post
 rule cannot read, and the Senate's "President of the Senate (Vice
@@ -126,7 +139,9 @@ this post. The gate mirrors the rule rather than 461 ids -- the method, the
 two chamber rows, the role prefixes, the committee types and the leadership
 table -- reads the parent and the chamber off the tree it is walking, and
 refuses a member-seat block on a leadership office that has its own
-Schedule 6 row, on a node outside both chambers, on a post whose name has no
+Schedule 6 row, on a node outside both chambers and every joint committee,
+on a joint-committee post that quotes one chamber's row or names a chamber,
+on a post whose name has no
 Member-role prefix, under a parent that is not a committee, on a node that
 stands for several posts, at the other chamber's row, or with a basis that
 does not carry the schedule's own reason.
@@ -293,15 +308,35 @@ MEMBER_SEATS_NOT_PRICED = {
     "leg-senate-leadership-president-of-the-senate-vice-president": (
         "the office exec-vp already carries at Schedule 6's own Vice President row; one officer, one salary"
     ),
-    "leg-joint-econ-chair-alternates-senate-house": (
-        "the chair alternates between the chambers by Congress; which row applies is a fact about the "
-        "holder, whom this project never reads"
-    ),
-    "leg-joint-econ-vice-chair": (
-        "the vice chair is from whichever chamber does not hold the chair; which row applies is a fact "
-        "about the holder, whom this project never reads"
-    ),
 }
+#: A joint committee's own posts (since 2026-10-08): the grouping its
+#: committees sit under, the roles a post's name may be, the two seat rows a
+#: record quotes together, and the tier string the block carries in place of
+#: one chamber's row. Mirrored in the gate, pinned equal by
+#: tests/test_us_code_pay_schedules.py.
+MEMBER_JOINT_ROOT = "leg-joint"
+MEMBER_JOINT_CHAMBER = "joint"
+MEMBER_JOINT_CHAMBER_NAME = "a joint committee of the Senate and the House of Representatives"
+MEMBER_JOINT_ROLES = ("Vice Chair", "Ranking Member", "Chair")
+MEMBER_JOINT_SEAT_ROWS = ("Senators", "Members of the House of Representatives")
+MEMBER_JOINT_SEAT_TIER = "senators; members of the house of representatives"
+#: The sentence every joint record's basis carries, and the gate requires.
+JOINT_SEAT_ROWS_NOTE = (
+    "Schedule 6 prints the same 174,000 for Senators and for Members of the House of Representatives, "
+    "so the figure is the same whichever chamber the holder sits in."
+)
+_TRAILING_PARENTHETICAL = re.compile(r"\s*\([^()]*\)\s*$")
+
+
+def joint_role_of(name: str) -> str | None:
+    """The role a joint-committee post's name states, or None: the name with
+    any trailing parenthetical set aside ("Chair (alternates Senate/House)")
+    must be a role in `MEMBER_JOINT_ROLES` or begin with one and ", "."""
+    base = _TRAILING_PARENTHETICAL.sub("", str(name or "")).strip()
+    for role in MEMBER_JOINT_ROLES:
+        if base == role or base.startswith(role + ", "):
+            return role
+    return None
 #: The schedule's own reason, quoted in every record's basis and required by
 #: the gate: the offices Schedule 6 does price separately.
 SEPARATE_RATES_SENTENCE = (
@@ -490,11 +525,32 @@ def chamber_of(node_id: str, parent_map: Mapping[str, str]) -> str | None:
     return None
 
 
+def under_joint_root(node_id: str, parent_map: Mapping[str, str]) -> bool:
+    """Whether `MEMBER_JOINT_ROOT` is among a node's ancestors, off the tree."""
+    seen: set[str] = set()
+    current = parent_map.get(node_id)
+    while current and current not in seen:
+        if current == MEMBER_JOINT_ROOT:
+            return True
+        seen.add(current)
+        current = parent_map.get(current)
+    return False
+
+
 def member_seat_basis(kind: str, role: str, body: str, chamber_id: str, name: str) -> str:
     """The reason the seat rate applies, in words the panel prints. Every
     sentence names the reviewed rule and the schedule's own list of the
     offices it does price separately; nothing here is a quotation of a
     document saying this post is a Member's."""
+    if kind == "joint_committee_post":
+        return " ".join([
+            f"The {role} of the {body} is a Senator or a Member of the House of Representatives: a joint "
+            "committee is composed of Members of both chambers (a reviewed rule, not a document naming this post).",
+            f"{SEPARATE_RATES_SENTENCE}, and none for a joint committee's {role.casefold()}, so this post is "
+            "priced at the seat's rate and nothing is added for holding it.",
+            JOINT_SEAT_ROWS_NOTE,
+            "Which chamber the holder sits in, and which Member holds the post, is never read.",
+        ])
     seat = CHAMBER_SEAT_WORDS[chamber_id]
     chamber = CHAMBER_NAMES[chamber_id]
     if kind == "committee_post":
@@ -569,7 +625,25 @@ def match_member_seats(
             continue
         chamber_id = chamber_of(node_id, parent_map)
         if chamber_id is None:
-            refuse(node_id, "chamber_not_determinable_from_the_tree")
+            if kind != "committee_post" or not under_joint_root(node_id, parent_map):
+                refuse(node_id, "chamber_not_determinable_from_the_tree")
+                continue
+            # A joint committee's own post: no chamber is read, and the record
+            # quotes both seat rows (see the module docstring).
+            role = joint_role_of(name)
+            if role is None:
+                refuse(node_id, "name_is_not_a_joint_committee_role")
+                continue
+            body = str(node_map[parent_map[node_id]].get("name") or "")
+            matches[node_id] = {
+                "kind": "joint_committee_post",
+                "role": role,
+                "body": body,
+                "chamber": MEMBER_JOINT_CHAMBER,
+                "chamberName": MEMBER_JOINT_CHAMBER_NAME,
+                "rows": list(MEMBER_JOINT_SEAT_ROWS),
+                "basis": member_seat_basis("joint_committee_post", role, body, MEMBER_JOINT_CHAMBER, name),
+            }
             continue
         if kind == "leadership_office":
             if MEMBER_LEADERSHIP_NODES[node_id] != chamber_id:
@@ -687,14 +761,24 @@ def build_records(
     if parent_map is not None:
         member_matches, member_refusals, _ = match_member_seats(node_map, parent_map)
         for node_id, match in sorted(member_matches.items()):
-            row = by_office.get(match["row"])
-            if row is None:
+            joint = match["kind"] == "joint_committee_post"
+            seat_rows = [by_office.get(office) for office in (match["rows"] if joint else [match["row"]])]
+            if any(r is None for r in seat_rows):
                 refuse("schedule_does_not_print_the_seat_row")
                 continue
+            if joint and len({r["amount"] for r in seat_rows}) != 1:
+                # The joint record's whole claim is that the chamber does not
+                # matter; two figures would make it matter.
+                refuse("joint_post_seat_rows_print_different_figures")
+                continue
+            row = seat_rows[0]
             if node_id in records:
                 refuse("already_priced_at_its_own_schedule_6_row")
                 continue
             quote = _quote_for(schedule, row)
+            if joint:
+                quote += " · {} {}".format(seat_rows[1]["office"], seat_rows[1]["printed"])
+            scope = "; ".join(r["office"] for r in seat_rows)
             record = {
                 "nodeId": node_id,
                 "financialEvidenceStatus": "partial",
@@ -708,7 +792,7 @@ def build_records(
                 "fiscalYear": int(year),
                 "periodCoverage": "annual_rate",
                 "periodAsOf": f"{year}-01-01",
-                "amountScope": match["row"],
+                "amountScope": scope,
                 # A class of seats, not this post: proxy, never exact.
                 "scopeMatch": "proxy",
                 "rollupRole": "line",
@@ -717,7 +801,7 @@ def build_records(
                 "documentSha256": sha256,
                 "retrievedAt": retrieved_at,
                 "locator": {"page": "5 U.S.C. 5332 note", "section": SCHEDULE_LABEL},
-                "role": match["row"].casefold(),
+                "role": scope.casefold(),
                 "year": year,
                 "rateText": "${} ({}, {})".format(row["amountRaw"], SCHEDULE_LABEL, schedule["effective"].strip("()")),
                 "method": METHOD_MEMBER_SEAT,
@@ -727,7 +811,8 @@ def build_records(
                     "body": match["body"],
                     "chamber": match["chamber"],
                     "chamberName": match["chamberName"],
-                    "row": match["row"],
+                    # A joint post names no chamber's row: it carries both.
+                    **({"rows": list(match["rows"])} if joint else {"row": match["row"]}),
                     "basis": match["basis"],
                 },
             }
@@ -797,7 +882,11 @@ def build_records(
 
     considered = {row["office"] for row in schedule["rows"]}
     priced_offices = {SCHEDULE_6_NODE_ROWS[node_id] for node_id in records if node_id in SCHEDULE_6_NODE_ROWS}
-    priced_offices |= {match["row"] for node_id, match in member_matches.items() if node_id in records}
+    priced_offices |= {
+        office
+        for node_id, match in member_matches.items() if node_id in records
+        for office in (match.get("rows") or [match["row"]])
+    }
     report = {
         "source": PAY_SOURCE,
         "year": year,
@@ -823,11 +912,11 @@ def build_records(
             "priced": sum(1 for node_id in member_matches if node_id in records),
             "byKind": {
                 kind: sum(1 for n, m in member_matches.items() if n in records and m["kind"] == kind)
-                for kind in ("committee_post", "leadership_office")
+                for kind in ("committee_post", "leadership_office", "joint_committee_post")
             },
             "byChamber": {
                 chamber: sum(1 for n, m in member_matches.items() if n in records and m["chamber"] == chamber)
-                for chamber in CHAMBER_SEAT_ROWS
+                for chamber in (*CHAMBER_SEAT_ROWS, MEMBER_JOINT_CHAMBER)
             },
             "refused": member_refusals,
             "treeGiven": parent_map is not None,
