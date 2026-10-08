@@ -761,6 +761,21 @@ function describePay(node) {
       }${holdersNote(military)}${payDocuments(military)}`,
     });
   }
+  // A band a pay schedule prints beside a title it names: the VA's Title 38
+  // ranges, or the U.S. Attorneys' AD pay plan chart (doj_ad_pay.py). Headed
+  // as a RANGE, never as pay received and never as a cost.
+  const tier = node.positionTierPay;
+  if (tier && typeof tier === "object" && typeof tier.minimum === "number" && typeof tier.maximum === "number") {
+    const range = `$${Math.round(tier.minimum).toLocaleString("en-US")} – $${Math.round(tier.maximum).toLocaleString("en-US")}`;
+    const adPlan = tier.source === "doj_usao_ad_pay_plan";
+    blocks.push({
+      heading: adPlan ? "Pay range — AD pay plan, before locality, not a rate" : "Pay range — Title 38, not a rate",
+      notARate: true,
+      text: adPlan
+        ? `${tier.sourceLabel || "The U.S. Attorneys' AD pay plan chart"} prints, under the table headed "${tier.table}", grades ${tier.gradeLow} to ${tier.gradeHigh}: from ${range} a year, base pay before locality pay ("${String(tier.effectiveText || "").trim()}"). A range, not a rate: the chart publishes no figure for any holder, and this node is matched to the title by a reviewed row. ${String(tier.scopeNote || "").trim()}${holdersNote(tier)}${payDocuments(tier)}`
+        : `${tier.sourceLabel || "An official pay schedule"} places "${tier.coverageTitle || "this title"}" in tier ${tier.tier}, ${range} a year (${tier.effectiveText || tier.effective || "undated"}). A range, not a rate: the schedule publishes no figure for any holder.${holdersNote(tier)}${payDocuments(tier)}`,
+    });
+  }
   const reported = node.positionReportedPay;
   if (reported && typeof reported === "object" && typeof reported.amount === "number") {
     const printed = reported.rateText || `$${reported.amount.toLocaleString("en-US")}`;
@@ -802,6 +817,9 @@ function holdersNote(block) {
   if (!holders || typeof holders !== "object") return "";
   const count = Number.isInteger(holders.count) ? holders.count : null;
   const who = count !== null ? `${count} posts` : `several posts (${String(holders.text || "").trim()})`;
+  if (typeof block.minimum === "number" && typeof block.maximum === "number" && !("amount" in block)) {
+    return ` Stands for ${who}; the range is the band printed for the title and bounds each holder alike, not a rate any of them is paid.`;
+  }
   return holders.uniformRate === true
     ? ` Stands for ${who}, every one listed at this same rate.`
     : ` Stands for ${who}; the rate is the tier's and applies to each holder alike, not one person's pay and not the group's total.`;

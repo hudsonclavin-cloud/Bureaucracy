@@ -238,13 +238,28 @@ PAY_DOCUMENT_FIELDS: dict[str, dict[str, Any]] = {
         ),
     },
     "positionTierPay": {
-        "urlKeys": ("url",),
+        # The second key is present only on a band from the U.S. Attorneys'
+        # AD pay plan chart (doj_ad_pay.py, since 2026-10-08): the salary page
+        # that says which titles the plan pays. A VA band carries `url` alone
+        # and still counts one.
+        "urlKeys": ("url", ("planDocument", "url")),
         "roles": {"url": "prints the tier's minimum and maximum"},
         "statesTheFigure": 1,
         "caution": (
             "One document prints the bounds. The percentage measures how much official "
             "documentation the band rests on, not the chance that it is right -- and a band is "
             "not a rate: the schedule publishes no figure for any holder."
+        ),
+        "adPlanRoles": {
+            "url": "prints each grade's minimum and maximum under a table headed with this title",
+            ("planDocument", "url"): "states that the Administratively Determined pay plan pays this title",
+        },
+        "adPlanCaution": (
+            "One document prints the bounds under a table headed with the title, and the other says "
+            "the pay plan pays that title. That this node is that title is a reviewed identification. "
+            "The percentage measures how much official documentation the band rests on, not the "
+            "chance that it is right -- and a band is not a rate: neither document says what any "
+            "holder is paid, and the bounds are base pay before locality."
         ),
     },
     "positionDerivedPay": {
@@ -439,6 +454,11 @@ def _vacancy_listing(block: Mapping[str, Any]) -> bool:
     return isinstance(source, Mapping) and source.get("source") == "usajobs_vacancy_announcements"
 
 
+def _ad_pay_plan(block: Mapping[str, Any]) -> bool:
+    """A band from the U.S. Attorneys' AD pay plan chart names its source."""
+    return block.get("source") == "doj_usao_ad_pay_plan"
+
+
 def _uniform_roster(block: Mapping[str, Any]) -> bool:
     """A roster block that lists every holder at one rate says so in `holders`."""
     holders = block.get("holders")
@@ -471,6 +491,8 @@ def count_documents(field: str, block: Mapping[str, Any]) -> tuple[int, list[dic
         role_words = spec["statesOfficeRoles"]
     elif _vacancy_listing(block) and spec.get("vacancyRoles"):
         role_words = spec["vacancyRoles"]
+    elif _ad_pay_plan(block) and spec.get("adPlanRoles"):
+        role_words = spec["adPlanRoles"]
     for key in spec["urlKeys"]:
         for url in _urls_at(block, key):
             if url in seen:
@@ -522,6 +544,7 @@ def annotate_pay_documents(root: dict[str, Any]) -> dict[str, int]:
                     else (spec.get("footnoteCaution") or spec["caution"]) if _named_in_footnote(block)
                     else (spec.get("instrumentCaution") or spec["caution"]) if _instrument_based(block)
                     else (spec.get("vacancyCaution") or spec["caution"]) if _vacancy_listing(block)
+                    else (spec.get("adPlanCaution") or spec["caution"]) if _ad_pay_plan(block)
                     else spec["caution"]
                 ),
                 "documentRoles": roles,

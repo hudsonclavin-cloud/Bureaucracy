@@ -1122,9 +1122,34 @@ function tierPayOf(node) {
   return typeof pay.minimum === "number" && typeof pay.maximum === "number" ? pay : null;
 }
 
+// The same field from a second schedule: the U.S. Attorneys' AD pay plan
+// chart (doj_ad_pay.py), whose first table is headed with the title it pays.
+// Its sentence names the grades, says the bounds are BEFORE locality pay, names
+// the second table it does not include, and quotes the salary page.
+function isAdPlanBand(pay) {
+  return Boolean(pay) && pay.source === "doj_usao_ad_pay_plan";
+}
+
+function renderAdPlanBand(pay, add) {
+  const range = formatGradeRange(pay);
+  add(` Separately, ${pay.sourceLabel || "an official pay chart"} prints, under the table headed "${pay.table}", grades ${pay.gradeLow} to ${pay.gradeHigh}: from ${range} a year, base pay before locality pay ("${String(pay.effectiveText || "").trim()}").`);
+  add(" That is a RANGE, not a rate: the chart states the bounds of each grade, the grade depends on years of experience, and it publishes no figure for any holder. It is not this unit's cost.");
+  if (pay.scopeNote) add(` ${String(pay.scopeNote).trim()}`);
+  add(" This post is matched to that title by a reviewed row naming this node, not by the chart naming it; the chart names the title only.");
+  add(holdersSentence(pay));
+  add(payDocumentsSentence(pay));
+  const plan = pay.planDocument && typeof pay.planDocument === "object" ? pay.planDocument : null;
+  if (plan && plan.quote) add(` The salary page's own words: "${String(plan.quote).trim()}"${plan.temporaryPromotionQuote ? ` "${String(plan.temporaryPromotionQuote).trim()}"` : ""}`);
+  if (pay.quote) add(` The chart's own words: "${String(pay.quote).trim()}"`);
+}
+
 function renderTierPay(data, add) {
   const pay = tierPayOf(data);
   if (!pay) return;
+  if (isAdPlanBand(pay)) {
+    renderAdPlanBand(pay, add);
+    return;
+  }
   const range = `$${Math.round(pay.minimum).toLocaleString()} – $${Math.round(pay.maximum).toLocaleString()}`;
   add(` Separately, ${pay.sourceLabel || "an official pay schedule"} place "${pay.coverageTitle}" in tier ${pay.tier}, ${range} a year (${pay.effectiveText || pay.effective}).`);
   add(" That is a RANGE, not a rate: the schedule states the bounds within which an appointment may be set and does not publish what any holder is paid. It is not this unit's cost.");
@@ -1621,6 +1646,9 @@ function holdersSentence(block) {
   const who = count !== null ? `${count} posts` : text ? `several posts (${text})` : "several posts";
   if (holders.uniformRate === true) {
     return ` This node stands for ${who}, and the report lists every one of them at this same rate: the figure is each listed person's pay, not one person's and not the group's combined pay.`;
+  }
+  if (typeof block.minimum === "number" && typeof block.maximum === "number" && !("amount" in block)) {
+    return ` This node stands for ${who}. The range is the band the source prints for the title and bounds each holder alike; it is not a rate any of them is paid, not one person's pay and not the group's combined pay.`;
   }
   return ` This node stands for ${who}. The figure is the rate the source states for the office or tier and applies to each holder alike; it is not one person's pay and not the group's combined pay.`;
 }
@@ -2950,6 +2978,12 @@ function standInHeading(standIn) {
     case "range":
       return { label: block.kind === "general_schedule_grade" ? "BASE PAY RANGE, BEFORE LOCALITY" : "PAY SYSTEM RANGE", period: null };
     case "tier":
+      if (isAdPlanBand(block)) {
+        return {
+          label: "AD PAY PLAN RANGE, BEFORE LOCALITY — NOT A RATE",
+          period: `the U.S. Attorneys' AD pay plan chart, grades ${block.gradeLow || "?"} to ${block.gradeHigh || "?"}, tables for ${String(block.effective || "").slice(0, 4) || "an unstated year"} — bounds for a grade, not a rate and not a cost`,
+        };
+      }
       return {
         label: "TITLE 38 PAY RANGE, NOT A RATE",
         period: `the VA's ${block.table || "Title 38 pay table"}${block.effectiveText ? `, ${lowerEffective(block.effectiveText)}` : ""} — bounds for an appointment, not a rate and not a cost`,
@@ -3003,7 +3037,9 @@ function standInBadgeLabel(standIn) {
     case "range":
       return "No cost known; a base-pay range is shown";
     case "tier":
-      return "No cost known; a Title 38 pay range is shown";
+      return isAdPlanBand(standIn.block)
+        ? "No cost known; an AD pay plan range is shown"
+        : "No cost known; a Title 38 pay range is shown";
     case "fileA":
     case "omb":
     case "audited":
@@ -3075,6 +3111,10 @@ function standInNote(standIn) {
         : ` What is shown instead is the range OPM's ${block.table} states for the pay system the listing files this post on; not this unit's cost and not necessarily what the post pays now.`;
       break;
     case "tier":
+      if (isAdPlanBand(block)) {
+        note = ` What is shown instead is a pay RANGE: the U.S. Attorneys' AD pay plan chart prints, under the table headed "${block.table}", grades ${block.gradeLow} to ${block.gradeHigh} from ${printed}, base pay before locality, for ${String(block.effective || "").slice(0, 4)}. The chart publishes no rate for anybody, and the range is not what this unit costs.`;
+        break;
+      }
       note = ` What is shown instead is a Title 38 pay RANGE: the VA's ${block.table || "pay table"}${block.effectiveText ? ` (${lowerEffective(block.effectiveText)})` : ""} names "${block.coverageTitle || "this title"}" at Tier ${block.tier} and bounds an appointment between ${printed}. The schedule publishes no rate for anybody, and the range is not what this unit costs.`;
       break;
     case "fileA": {

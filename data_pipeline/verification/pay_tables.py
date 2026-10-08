@@ -588,7 +588,26 @@ def is_class_title_block(field: str, block: Any) -> bool:
     return field == CLASS_TITLE_PAY_FIELD and isinstance(block, dict) and block.get("classTitle") is True
 
 
-def holders_for(represents: Mapping[str, Any]) -> dict[str, Any]:
+#: The holders sentence for a BAND (a block carrying `minimum` and `maximum`
+#: and no `amount`): it bounds each holder, it is not a rate any holder is paid.
+BAND_HOLDERS_NOTE = (
+    "This node stands for several posts. The range is the band the source prints for the title, "
+    "and it bounds each holder alike; it is not a rate any of them is paid, not one person's pay "
+    "and not the group's combined pay."
+)
+
+
+def is_band_block(block: Any) -> bool:
+    """A pay block that states bounds rather than a figure."""
+    return (
+        isinstance(block, Mapping)
+        and isinstance(block.get("minimum"), (int, float))
+        and isinstance(block.get("maximum"), (int, float))
+        and "amount" not in block
+    )
+
+
+def holders_for(represents: Mapping[str, Any], *, band: bool = False) -> dict[str, Any]:
     """The `holders` block an office-rate pay claim carries on a multi-post
     node: the multiplicity as the node's own name states it, and the sentence
     that keeps the figure from reading as one holder's pay."""
@@ -596,7 +615,7 @@ def holders_for(represents: Mapping[str, Any]) -> dict[str, Any]:
         "text": str(represents.get("text") or ""),
         "kind": str(represents.get("kind") or ""),
         "appliesToEachHolder": True,
-        "note": (
+        "note": BAND_HOLDERS_NOTE if band else (
             "This node stands for several posts. The figure is the rate the source states for the "
             "office or tier, and it applies to each holder alike; it is not one person's pay and "
             "not the group's combined pay."
@@ -666,7 +685,7 @@ def withdraw_pay_from_multi_post_nodes(root: dict[str, Any]) -> int:
             for field in OFFICE_RATE_PAY_FIELDS:
                 block = node.get(field)
                 if isinstance(block, dict):
-                    block["holders"] = holders_for(represents)
+                    block["holders"] = holders_for(represents, band=is_band_block(block))
             for field in UNIFORM_ROSTER_PAY_FIELDS:
                 block = node.get(field)
                 if not isinstance(block, dict):

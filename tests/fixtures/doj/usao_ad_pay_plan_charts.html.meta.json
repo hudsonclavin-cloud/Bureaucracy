@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-08T00:04:19Z",
+ "url": "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts",
+ "status": 200,
+ "final_url": "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts",
+ "content_type": "text/html; charset=UTF-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /usao/career-center/salary-information/administratively-determined-pay-plan-charts",
+ "bytes": 103014,
+ "sha256": "ae022a954ab6f1c6c34969bfa46c88710d6e865c981588d2ee15d55e2f688495",
+ "error": null
+}

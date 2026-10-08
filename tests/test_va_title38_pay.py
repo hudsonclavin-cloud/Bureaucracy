@@ -317,8 +317,13 @@ class PublishedGraphTests(unittest.TestCase):
 
     def test_the_bands_reach_the_published_graph(self):
         banded = [n for n in self.nodes if isinstance(n.get("positionTierPay"), dict)]
-        self.assertEqual(len(banded), 72)
-        self.assertEqual({n["positionTierPay"]["source"] for n in banded}, {"va_title38_pay_ranges"})
+        # The field has a second source since 2026-10-08, the U.S. Attorneys'
+        # AD pay plan chart (tests/test_doj_ad_pay.py); the VA's count is its own.
+        va = [n for n in banded if n["positionTierPay"]["source"] == "va_title38_pay_ranges"]
+        self.assertEqual(len(va), 72)
+        self.assertEqual(
+            {n["positionTierPay"]["source"] for n in banded}, {"va_title38_pay_ranges", "doj_usao_ad_pay_plan"}
+        )
 
     def test_no_banded_node_gained_a_va_pay_url_among_its_sources(self):
         for node in self.nodes:
