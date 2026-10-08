@@ -1122,6 +1122,9 @@ OFFICE_ROWS = [
     row(DOE, OER, "DIRECTOR, OFFICE OF ELECTRIC RELIABILITY", "Filled", "CA", "$228,000", "ES"),
     row(DOE, BOC, "DIRECTOR, BUREAU OF COMPETITION", "Vacant", "CA", "", "ES"),
 ]
+#: A row the fifth pass reaches: its office names no node, and the post is
+#: drawn beneath the Office of Science, not directly under the agency.
+BENEATH_ROWS = [row(DOE, OBES, "DIRECTOR, OFFICE OF BASIC ENERGY SCIENCES", "Filled", "CA", "$226,664", "ES")]
 
 
 class TitleNamesTheOfficeItIsFiledUnderTests(FixtureTestCase):
@@ -1165,12 +1168,55 @@ class TitleNamesTheOfficeItIsFiledUnderTests(FixtureTestCase):
         _, records, _ = self._match()
         self.assertNotIn("doe-oer-director", records)
 
-    def test_a_post_beneath_the_agency_but_not_its_direct_child_is_never_reached(self) -> None:
-        # Reaching beneath the agency was measured (13 posts) and not built.
-        write_fixture(self.tmp, ROWS + [row(DOE, OBES, "DIRECTOR, OFFICE OF BASIC ENERGY SCIENCES",
-                                            "Filled", "CA", "$226,664", "ES")])
-        _, records, _ = self._match()
+    def test_a_post_beneath_the_agency_is_reached_by_the_fifth_pass_with_no_placement(self) -> None:
+        # Since 2026-10-08 the wider rule reaches a post anywhere beneath the
+        # agency, under a scope rule of its own, and claims no placement.
+        write_fixture(self.tmp, ROWS + BENEATH_ROWS)
+        _, records, report = self._match()
+        record = records["doe-science-bes"]
+        self.assertEqual(record["scopeRule"], plum_current.SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER_BENEATH_THE_AGENCY)
+        self.assertEqual(record["agencyNodeId"], "exec-dept-doe")
+        self.assertEqual(record["reportedPayText"], "$226,664")
+        self.assertNotIn("placement", record)
+        self.assertEqual(report["positions_matched_by_a_title_naming_the_office_it_is_filed_under_beneath_the_agency"], 1)
+        # A direct child stays the fourth pass's.
+        self.assertEqual(report["positions_matched_by_a_title_naming_the_office_it_is_filed_under"], 0)
+
+    def test_two_posts_of_the_title_anywhere_beneath_the_agency_claim_neither(self) -> None:
+        by_id = {n["id"]: n for n in _walk(self.base)}
+        by_id["exec-dept-doe"]["children"].append({"id": "doe-other", "name": "Office of Something Else", "type": "Office",
+                                                   "children": [P("doe-other-bes", "Director — Office of Basic Energy Sciences")]})
+        self.node_map, self.parent_map = index_tree(self.base)
+        write_fixture(self.tmp, ROWS + BENEATH_ROWS)
+        _, records, report = self._match()
         self.assertNotIn("doe-science-bes", records)
+        self.assertNotIn("doe-other-bes", records)
+        self.assertEqual([sorted(i["ids"]) for i in report["titles_naming_their_office_answered_by_several_posts_beneath_the_agency"]],
+                         [["doe-other-bes", "doe-science-bes"]])
+
+    def test_a_contradicted_post_beneath_the_agency_is_refused_by_node_id(self) -> None:
+        write_fixture(self.tmp, ROWS + BENEATH_ROWS)
+        saved = dict(plum_current.CODE_CONTRADICTED_LISTINGS)
+        plum_current.CODE_CONTRADICTED_LISTINGS["doe-science-bes"] = ("Director of Basic Energy Sciences", "5 U.S.C. 5315")
+        try:
+            _, records, report = self._match()
+        finally:
+            plum_current.CODE_CONTRADICTED_LISTINGS.clear()
+            plum_current.CODE_CONTRADICTED_LISTINGS.update(saved)
+        self.assertNotIn("doe-science-bes", records)
+        self.assertEqual([i["id"] for i in report["positions_refused_code_contradicts_listing"]], ["doe-science-bes"])
+
+    def test_a_post_beneath_another_agency_is_never_reached(self) -> None:
+        # The row is filed under the Department of Energy; a post of that name
+        # beneath NASA is not beneath the agency the export names.
+        by_id = {n["id"]: n for n in _walk(self.base)}
+        by_id["doe-science"]["children"] = [c for c in by_id["doe-science"]["children"] if c["id"] != "doe-science-bes"]
+        by_id["exec-ind-nasa"]["children"].append({"id": "nasa-sci", "name": "Science Mission Directorate", "type": "Office",
+                                                   "children": [P("nasa-bes", "Director — Office of Basic Energy Sciences")]})
+        self.node_map, self.parent_map = index_tree(self.base)
+        write_fixture(self.tmp, ROWS + BENEATH_ROWS)
+        _, records, _ = self._match()
+        self.assertNotIn("nasa-bes", records)
 
     def test_a_title_filed_under_two_spellings_of_its_office_claims_neither(self) -> None:
         write_fixture(self.tmp, ROWS + OFFICE_ROWS[:1] + [
@@ -1202,6 +1248,9 @@ class TitleNamesTheOfficeItIsFiledUnderTests(FixtureTestCase):
                              plum_current.title_names_the_office_it_is_filed_under(title, org), (title, org))
         self.assertEqual(gate.PLUM_CURRENT_SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER,
                          plum_current.SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER)
+        self.assertEqual(gate.PLUM_CURRENT_SCOPE_TITLE_NAMES_THE_OFFICE_BENEATH_THE_AGENCY,
+                         plum_current.SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER_BENEATH_THE_AGENCY)
+        self.assertIn(plum_current.SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER_BENEATH_THE_AGENCY, gate.PLUM_CURRENT_SCOPE_RULES)
         self.assertEqual(gate.PLUM_CURRENT_CODE_CONTRADICTED, frozenset(plum_current.CODE_CONTRADICTED_LISTINGS))
 
     def test_each_code_contradiction_is_printed_by_the_committed_section(self) -> None:
@@ -1275,6 +1324,100 @@ class TitleNamesTheOfficeItIsFiledUnderGateTests(_GateHarness):
         self.assertIn("carries a current PLUM listing the U.S. Code's Executive Schedule contradicts", out)
 
 
+class BeneathTheAgencyGateTests(_GateHarness):
+    """The fifth pass end to end: a post beneath the agency, no placement, and
+    every way of faking it refused."""
+
+    FIXTURE_ROWS = ROWS + OFFICE_ROWS + BENEATH_ROWS
+
+    def setUp(self) -> None:
+        super().setUp()
+        self.base.write_text(json.dumps(_base_with_office_heads()), encoding="utf-8")
+
+    def test_the_block_carries_the_rule_claims_no_placement_and_the_gate_passes(self) -> None:
+        code, out = self._derive()
+        self.assertEqual(code, 0, out)
+        self.assertIn("beneath the agency 1", out)
+        result = self._build()
+        graph = json.loads(result.graph_path.read_text(encoding="utf-8"))
+        node = index_tree(graph)[0]["doe-science-bes"]
+        self.assertEqual(node["positionCurrentListing"]["scopeRule"],
+                         plum_current.SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER_BENEATH_THE_AGENCY)
+        self.assertEqual(node["positionCurrentPay"]["rateText"], "$226,664")
+        self.assertNotIn("placementMethod", node)
+        self.assertNotEqual(node.get("placementVerified"), True)
+        code, out = self._gate(result.graph_path)
+        self.assertEqual(code, 0, out)
+
+    def test_the_gate_refuses_a_placement_claimed_from_it(self) -> None:
+        code, out = self._corrupt(node_id="doe-science-bes", node_fields={"placementMethod": PLACEMENT_METHOD})
+        self.assertEqual(code, 1, out)
+        self.assertIn("claims a placement from a current PLUM listing the export files under", out)
+
+    def test_the_gate_refuses_the_rule_on_a_direct_child_of_the_agency(self) -> None:
+        def move(graph, by_id):
+            by_id["doe-science"]["children"].remove(by_id["doe-science-bes"])
+            by_id["exec-dept-doe"]["children"].append(by_id["doe-science-bes"])
+        code, out = self._corrupt(node_id="doe-science-bes", mutate=move)
+        self.assertEqual(code, 1, out)
+        self.assertIn("claims the beneath-the-agency rule, but its parent in the tree is the agency", out)
+
+    def test_the_gate_refuses_the_block_moved_beneath_another_agency(self) -> None:
+        def move(graph, by_id):
+            by_id["doe-science"]["children"].remove(by_id["doe-science-bes"])
+            by_id["exec-ind-nasa"]["children"].append(
+                {"id": "nasa-sci", "name": "Science Mission Directorate", "type": "Office", "children": [by_id["doe-science-bes"]]})
+        code, out = self._corrupt(node_id="doe-science-bes", mutate=move)
+        self.assertEqual(code, 1, out)
+        self.assertIn("which is not among its ancestors in the tree", out)
+
+    def test_the_gate_refuses_when_two_posts_beneath_the_agency_answer(self) -> None:
+        def add(graph, by_id):
+            by_id["exec-dept-doe"]["children"].append({"id": "doe-other", "name": "Office of Something Else", "type": "Office",
+                                                       "children": [P("doe-other-bes", "Director — Office of Basic Energy Sciences")]})
+        code, out = self._corrupt(node_id="doe-science-bes", mutate=add)
+        self.assertEqual(code, 1, out)
+        self.assertIn("but 2 posts beneath that agency answer to the whole title", out)
+
+    def test_the_gate_requires_the_whole_title(self) -> None:
+        code, out = self._corrupt(node_id="doe-science-bes", node_fields={"name": "Director"})
+        self.assertEqual(code, 1, out)
+        self.assertIn("is listed as 'DIRECTOR, OFFICE OF BASIC ENERGY SCIENCES', which does not name it", out)
+
+    def test_the_gate_refuses_a_listing_on_a_post_the_code_contradicts(self) -> None:
+        saved = gate.PLUM_CURRENT_CODE_CONTRADICTED
+        gate.PLUM_CURRENT_CODE_CONTRADICTED = saved | {"doe-science-bes"}
+        try:
+            code, out = self._corrupt(node_id="doe-science-bes")
+        finally:
+            gate.PLUM_CURRENT_CODE_CONTRADICTED = saved
+        self.assertEqual(code, 1, out)
+        self.assertIn("carries a current PLUM listing the U.S. Code's Executive Schedule contradicts", out)
+
+
+#: The three posts the fifth pass reaches on the committed export (2026-10-08).
+BENEATH_RULE_POSTS = {
+    "exec-dept-hhs-nih-director-national-cancer-institute-nci": "$350,000",
+    "exec-dept-usda-aphis-deputy-administrator-veterinary-services": None,
+    "exec-dept-usda-fs-deputy-chief-national-forest-system": None,
+}
+
+
+class PublishedBeneathRuleTests(unittest.TestCase):
+    @unittest.skipUnless(PUBLISHED_GRAPH.exists(), "no published graph")
+    def test_the_rule_reaches_exactly_the_measured_posts_with_no_placement(self) -> None:
+        by_id = index_tree(json.loads(PUBLISHED_GRAPH.read_text(encoding="utf-8")))[0]
+        rule = plum_current.SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER_BENEATH_THE_AGENCY
+        carrying = {i for i, n in by_id.items() if (n.get("positionCurrentListing") or {}).get("scopeRule") == rule}
+        self.assertEqual(set(BENEATH_RULE_POSTS), carrying)
+        for node_id, text in BENEATH_RULE_POSTS.items():
+            node = by_id[node_id]
+            self.assertEqual(text, (node.get("positionCurrentPay") or {}).get("rateText"), node_id)
+            self.assertNotEqual(PLACEMENT_METHOD, node.get("placementMethod"), node_id)
+            if text is None:
+                self.assertEqual("senior_executive_service", node["positionGradePay"]["kind"], node_id)
+
+
 #: The six posts the fourth pass reaches on the committed export (2026-10-08),
 #: each with the printed rate where its row prints one.
 OFFICE_RULE_POSTS = {
@@ -1306,14 +1449,16 @@ class PublishedOfficeRuleTests(unittest.TestCase):
         for node_id in plum_current.CODE_CONTRADICTED_LISTINGS:
             self.assertNotIn("positionCurrentListing", by_id[node_id], node_id)
         # Leads declined for their own reasons (CURATION.md §19.24).
+        for node_id in ("exec-dept-doe-eere-director-vehicle-technologies",
+                        "exec-dept-doc-census-associate-director-economic-programs"):
+            self.assertNotIn("positionCurrentListing", by_id[node_id], node_id)
+        # The spelling leads renamed on 2026-10-08 (CURATION.md §19.25) are
+        # reached by the main pass, under their own organisation.
         for node_id in ("exec-dept-doe-sc-associate-director-basic-energy-sciences",
-                        "exec-dept-doe-eere-director-vehicle-technologies",
-                        "exec-dept-usda-aphis-deputy-administrator-veterinary-services",
-                        "exec-dept-doc-census-associate-director-economic-programs",
                         "exec-dept-dhs-cisa-executive-assistant-director-emergency-communications",
                         "exec-dept-treasury-bep-director-bep",
                         "exec-dept-treasury-fiscal-commissioner-fiscal-service"):
-            self.assertNotIn("positionCurrentListing", by_id[node_id], node_id)
+            self.assertIsNone(by_id[node_id]["positionCurrentListing"].get("scopeRule"), node_id)
 
 if __name__ == "__main__":
     unittest.main()

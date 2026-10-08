@@ -12,7 +12,8 @@
   "section's OPERATIVE text, 'singular' must be that title's plural noun phrase with its trailing 's'",
   "removed, 'to' must be the singular, a separator from statutory_schedule.COUNTED_CLASS_SEPARATORS and the",
   "qualifier the node already carries after the same separator, and 'composedBy' (a second section) must",
-  "print its quote in its operative text. No more rows may cite one class than the class title counts."
+  "print its quote in its operative text. No more rows may cite one class than the class title counts.",
+  "'opm_current_plum_export_title' (since 2026-10-08) -- 'printed' must be a title OPM's committed current PLUM export prints verbatim on exactly one live (Filled or Vacant) listing filed under the row's 'agency' and 'organization', read through plum_current.load_plum_export (READ_COLUMNS only, digest recomputed), and 'to' must reduce to it under canonical_name_key."
  ],
  "renames": [
   {
@@ -76,6 +77,123 @@
    },
    "basis": "The owner's decision (2026-10-07): 'USTR' is the graph's abbreviation of the office 5 U.S.C. 5314 prints as the class 'Deputy United States Trade Representatives (3)' and 19 U.S.C. 2171(b)(2) establishes. Only the abbreviation is spelled out; the qualifier after the dash is the graph's own and stays uncited.",
    "addedOn": "2026-10-07"
+  },
+  {
+   "id": "exec-dept-doe-sc-associate-director-advanced-scientific-computing-research",
+   "from": "Associate Director — Advanced Scientific Computing Research",
+   "to": "Associate Director, Office of Advanced Scientific Computing Research",
+   "parentId": "exec-dept-doe-sc",
+   "licence": "opm_current_plum_export_title",
+   "fixture": "tests/fixtures/opm/plum/escs_pbpub_download-data.csv",
+   "agency": "DEPARTMENT OF ENERGY",
+   "organization": "OFFICE OF SCIENCE",
+   "printed": "ASSOCIATE DIRECTOR, OFFICE OF ADVANCED SCIENTIFIC COMPUTING RESEARCH",
+   "basis": "The owner's decision (2026-10-08, CURATION.md §19.25): OPM's current Plum Book export lists this post under the Department of Energy's Office of Science as 'ASSOCIATE DIRECTOR, OFFICE OF ADVANCED SCIENTIFIC COMPUTING RESEARCH'; the graph's 'Associate Director — Advanced Scientific Computing Research' is the same office with 'Office of' and the comma dropped. The export prints the title; the casing is the reviewer's. The operative text of 5 U.S.C. 5312-5316 prints the Office's Director (5315) and no Associate Director of it.",
+   "addedOn": "2026-10-08"
+  },
+  {
+   "id": "exec-dept-doe-sc-associate-director-basic-energy-sciences",
+   "from": "Associate Director — Basic Energy Sciences",
+   "to": "Associate Director, Office of Basic Energy Sciences",
+   "parentId": "exec-dept-doe-sc",
+   "licence": "opm_current_plum_export_title",
+   "fixture": "tests/fixtures/opm/plum/escs_pbpub_download-data.csv",
+   "agency": "DEPARTMENT OF ENERGY",
+   "organization": "OFFICE OF SCIENCE",
+   "printed": "ASSOCIATE DIRECTOR, OFFICE OF BASIC ENERGY SCIENCES",
+   "basis": "The owner's decision (2026-10-08, CURATION.md §19.25): OPM's current Plum Book export lists this post under the Department of Energy's Office of Science as 'ASSOCIATE DIRECTOR, OFFICE OF BASIC ENERGY SCIENCES'; the graph's 'Associate Director — Basic Energy Sciences' is the same office with 'Office of' and the comma dropped. The export prints the title; the casing is the reviewer's. The operative text of 5 U.S.C. 5312-5316 prints the Office's Director (5315) and no Associate Director of it.",
+   "addedOn": "2026-10-08"
+  },
+  {
+   "id": "exec-dept-doe-sc-associate-director-biological-environmental-research",
+   "from": "Associate Director — Biological & Environmental Research",
+   "to": "Associate Director, Office of Biological and Environmental Research",
+   "parentId": "exec-dept-doe-sc",
+   "licence": "opm_current_plum_export_title",
+   "fixture": "tests/fixtures/opm/plum/escs_pbpub_download-data.csv",
+   "agency": "DEPARTMENT OF ENERGY",
+   "organization": "OFFICE OF SCIENCE",
+   "printed": "ASSOCIATE DIRECTOR, OFFICE OF BIOLOGICAL AND ENVIRONMENTAL RESEARCH",
+   "basis": "The owner's decision (2026-10-08, CURATION.md §19.25): OPM's current Plum Book export lists this post under the Department of Energy's Office of Science as 'ASSOCIATE DIRECTOR, OFFICE OF BIOLOGICAL AND ENVIRONMENTAL RESEARCH'; the graph's 'Associate Director — Biological & Environmental Research' is the same office with 'Office of' and the comma dropped. The export prints the title; the casing is the reviewer's. The operative text of 5 U.S.C. 5312-5316 prints the Office's Director (5315) and no Associate Director of it.",
+   "addedOn": "2026-10-08"
+  },
+  {
+   "id": "exec-dept-doe-sc-associate-director-fusion-energy-sciences",
+   "from": "Associate Director — Fusion Energy Sciences",
+   "to": "Associate Director, Office of Fusion Energy Sciences",
+   "parentId": "exec-dept-doe-sc",
+   "licence": "opm_current_plum_export_title",
+   "fixture": "tests/fixtures/opm/plum/escs_pbpub_download-data.csv",
+   "agency": "DEPARTMENT OF ENERGY",
+   "organization": "OFFICE OF SCIENCE",
+   "printed": "ASSOCIATE DIRECTOR, OFFICE OF FUSION ENERGY SCIENCES",
+   "basis": "The owner's decision (2026-10-08, CURATION.md §19.25): OPM's current Plum Book export lists this post under the Department of Energy's Office of Science as 'ASSOCIATE DIRECTOR, OFFICE OF FUSION ENERGY SCIENCES'; the graph's 'Associate Director — Fusion Energy Sciences' is the same office with 'Office of' and the comma dropped. The export prints the title; the casing is the reviewer's. The operative text of 5 U.S.C. 5312-5316 prints the Office's Director (5315) and no Associate Director of it.",
+   "addedOn": "2026-10-08"
+  },
+  {
+   "id": "exec-dept-doe-sc-associate-director-high-energy-physics",
+   "from": "Associate Director — High Energy Physics",
+   "to": "Associate Director, Office of High Energy Physics",
+   "parentId": "exec-dept-doe-sc",
+   "licence": "opm_current_plum_export_title",
+   "fixture": "tests/fixtures/opm/plum/escs_pbpub_download-data.csv",
+   "agency": "DEPARTMENT OF ENERGY",
+   "organization": "OFFICE OF SCIENCE",
+   "printed": "ASSOCIATE DIRECTOR, OFFICE OF HIGH ENERGY PHYSICS",
+   "basis": "The owner's decision (2026-10-08, CURATION.md §19.25): OPM's current Plum Book export lists this post under the Department of Energy's Office of Science as 'ASSOCIATE DIRECTOR, OFFICE OF HIGH ENERGY PHYSICS'; the graph's 'Associate Director — High Energy Physics' is the same office with 'Office of' and the comma dropped. The export prints the title; the casing is the reviewer's. The operative text of 5 U.S.C. 5312-5316 prints the Office's Director (5315) and no Associate Director of it.",
+   "addedOn": "2026-10-08"
+  },
+  {
+   "id": "exec-dept-doe-sc-associate-director-nuclear-physics",
+   "from": "Associate Director — Nuclear Physics",
+   "to": "Associate Director, Office of Nuclear Physics",
+   "parentId": "exec-dept-doe-sc",
+   "licence": "opm_current_plum_export_title",
+   "fixture": "tests/fixtures/opm/plum/escs_pbpub_download-data.csv",
+   "agency": "DEPARTMENT OF ENERGY",
+   "organization": "OFFICE OF SCIENCE",
+   "printed": "ASSOCIATE DIRECTOR, OFFICE OF NUCLEAR PHYSICS",
+   "basis": "The owner's decision (2026-10-08, CURATION.md §19.25): OPM's current Plum Book export lists this post under the Department of Energy's Office of Science as 'ASSOCIATE DIRECTOR, OFFICE OF NUCLEAR PHYSICS'; the graph's 'Associate Director — Nuclear Physics' is the same office with 'Office of' and the comma dropped. The export prints the title; the casing is the reviewer's. The operative text of 5 U.S.C. 5312-5316 prints the Office's Director (5315) and no Associate Director of it.",
+   "addedOn": "2026-10-08"
+  },
+  {
+   "id": "exec-dept-dhs-cisa-executive-assistant-director-emergency-communications",
+   "from": "Executive Assistant Director — Emergency Communications",
+   "to": "Executive Assistant Director for Emergency Communications",
+   "parentId": "exec-dept-dhs-cisa",
+   "licence": "opm_current_plum_export_title",
+   "fixture": "tests/fixtures/opm/plum/escs_pbpub_download-data.csv",
+   "agency": "DEPARTMENT OF HOMELAND SECURITY",
+   "organization": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY",
+   "printed": "EXECUTIVE ASSISTANT DIRECTOR FOR EMERGENCY COMMUNICATIONS",
+   "basis": "The owner's decision (2026-10-08, CURATION.md §19.25): the export lists the post under CISA as 'EXECUTIVE ASSISTANT DIRECTOR FOR EMERGENCY COMMUNICATIONS', the title 6 U.S.C. 571(b) gives the head of the Emergency Communications Division (committed as cisa_6_usc_571_govinfo2024.html). Checked before the row was written: unlike 6 U.S.C. 653 and 654 for CISA's other two Executive Assistant Directors, section 571 states no level, and the operative text of 5 U.S.C. 5312-5316 prints no 'Assistant Director for Emergency Communications' item for 571(g)'s deeming rule to reach, so the export's ES listing contradicts no Code provision.",
+   "addedOn": "2026-10-08"
+  },
+  {
+   "id": "exec-dept-treasury-bep-director-bep",
+   "from": "Director, BEP",
+   "to": "Director, Bureau of Engraving and Printing",
+   "parentId": "exec-dept-treasury-bep",
+   "licence": "opm_current_plum_export_title",
+   "fixture": "tests/fixtures/opm/plum/escs_pbpub_download-data.csv",
+   "agency": "DEPARTMENT OF THE TREASURY",
+   "organization": "BUREAU OF ENGRAVING AND PRINTING",
+   "printed": "DIRECTOR, BUREAU OF ENGRAVING AND PRINTING",
+   "basis": "The owner's decision (2026-10-08, CURATION.md §19.25): 'BEP' is the graph's abbreviation of the bureau the export files the post under and names in its title, 'DIRECTOR, BUREAU OF ENGRAVING AND PRINTING'. The operative text of 5 U.S.C. 5312-5316 prints no title naming the Bureau of Engraving and Printing, so the export's ES listing contradicts no Code provision.",
+   "addedOn": "2026-10-08"
+  },
+  {
+   "id": "exec-dept-treasury-fiscal-commissioner-fiscal-service",
+   "from": "Commissioner, Fiscal Service",
+   "to": "Commissioner, Bureau of the Fiscal Service",
+   "parentId": "exec-dept-treasury-fiscal",
+   "licence": "opm_current_plum_export_title",
+   "fixture": "tests/fixtures/opm/plum/escs_pbpub_download-data.csv",
+   "agency": "DEPARTMENT OF THE TREASURY",
+   "organization": "BUREAU OF THE FISCAL SERVICE",
+   "printed": "COMMISSIONER, BUREAU OF THE FISCAL SERVICE",
+   "basis": "The owner's decision (2026-10-08, CURATION.md §19.25): 'Fiscal Service' is the graph's shortening of the bureau the export files the post under and names in its title, 'COMMISSIONER, BUREAU OF THE FISCAL SERVICE'. The operative text of 5 U.S.C. 5312-5316 prints no Commissioner of the Fiscal Service (5316's 'Fiscal Assistant Secretary of the Treasury' is a different office), so the export's ES listing contradicts no Code provision.",
+   "addedOn": "2026-10-08"
   }
  ]
 }

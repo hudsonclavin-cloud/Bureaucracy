@@ -1631,8 +1631,15 @@ PLUM_CURRENT_SCOPE_TITLE_NAMES_ITS_ORGANISATION = "title_names_its_organisation"
 #: WHOLE title. The placement it claims is the office-named-for-the-post
 #: rule's, under the agency.
 PLUM_CURRENT_SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER = "title_names_the_office_it_is_filed_under"
+#: plum_current.SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER_BENEATH_THE_AGENCY
+#: mirrored: the fourth pass's listing reaching a post beneath the agency, not
+#: its direct child. The agency must be among the post's ancestors above its
+#: parent, the WHOLE title must answer to exactly one post beneath that
+#: agency, and no placement may be claimed from such a listing.
+PLUM_CURRENT_SCOPE_TITLE_NAMES_THE_OFFICE_BENEATH_THE_AGENCY = "title_names_the_office_it_is_filed_under_beneath_the_agency"
 PLUM_CURRENT_SCOPE_RULES = (PLUM_CURRENT_SCOPE_OFFICE_NAMED_FOR_THE_POST, PLUM_CURRENT_SCOPE_TITLE_NAMES_ITS_ORGANISATION,
-                            PLUM_CURRENT_SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER)
+                            PLUM_CURRENT_SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER,
+                            PLUM_CURRENT_SCOPE_TITLE_NAMES_THE_OFFICE_BENEATH_THE_AGENCY)
 #: plum_current.CODE_CONTRADICTED_LISTINGS mirrored by node id: posts whose
 #: export listing the U.S. Code's Executive Schedule contradicts (CURATION.md
 #: §19.20). No current PLUM listing may be published on any of them.
@@ -3680,7 +3687,31 @@ def plum_listing_parent_keys(listing):
     return org_keys
 
 
-def current_listing_violations(node, listing, today, label, parent_name, parent_alias_keys=()):
+def plum_posts_answering_beneath(agency_id, title_key, pairs, tree_parents, name_by_id, _cache={}):
+    """How many posts anywhere beneath `agency_id` answer to `title_key`,
+    each post's name read against its own tree parent -- the uniqueness the
+    beneath-the-agency rule requires, recomputed off the tree the gate walks."""
+    cache_key = (id(pairs), agency_id)
+    if cache_key not in _cache:
+        answering = {}
+        for node, _parent in pairs:
+            node_id = str(node.get("id") or "")
+            if not is_post(node):
+                continue
+            cursor = tree_parents.get(node_id)
+            while cursor and cursor != agency_id:
+                cursor = tree_parents.get(cursor)
+            if cursor != agency_id:
+                continue
+            for key in position_title_keys(node.get("name"), name_by_id.get(tree_parents.get(node_id))):
+                answering[key] = answering.get(key, 0) + 1
+        _cache.clear()
+        _cache[cache_key] = answering
+    return _cache[cache_key].get(title_key, 0)
+
+
+def current_listing_violations(node, listing, today, label, parent_name, parent_alias_keys=(), ancestors_above=(),
+                               posts_answering_beneath=None):
     """Everything that must be true of a listing from OPM's current PLUM
     export: a post, dated by the fetch, citing the committed file byte for
     byte, a Filled or Vacant row -- never Historical -- carrying every value
@@ -3719,14 +3750,32 @@ def current_listing_violations(node, listing, today, label, parent_name, parent_
     agency, organization, title = (str(listing.get(k) or "") for k in ("agency", "organization", "listedTitle"))
     rule = listing.get("scopeRule")
     title_names_parent = str(rule or "") == PLUM_CURRENT_SCOPE_TITLE_NAMES_ITS_ORGANISATION
-    title_names_office = str(rule or "") == PLUM_CURRENT_SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER
+    beneath_agency = str(rule or "") == PLUM_CURRENT_SCOPE_TITLE_NAMES_THE_OFFICE_BENEATH_THE_AGENCY
+    title_names_office = beneath_agency or str(rule or "") == PLUM_CURRENT_SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER
     # The parent: the organisation the export files the title under must be
     # the node's parent in the tree the gate is walking. Checked before the
     # row is looked up, so a block filed under the wrong organisation is
     # named as such rather than only as a row the export does not carry.
     # Under the title-names-its-organisation rule it is the unit the TITLE
     # names that must be the parent, checked below instead.
-    if not title_names_parent and not ((plum_org_keys(parent_name) | set(parent_alias_keys)) & plum_listing_parent_keys(listing)):
+    agency_keys = plum_org_keys(agency) | plum_org_keys(plum_agency_unit(agency))
+    if beneath_agency:
+        # The agency is an ancestor above the parent, never the parent itself
+        # (that is the fourth pass's shape, which claims a placement).
+        agency_ancestor = next((a for a in ancestors_above if (plum_org_keys(a[1]) | set(a[2])) & agency_keys), None)
+        if (plum_org_keys(parent_name) | set(parent_alias_keys)) & agency_keys:
+            say("claims the beneath-the-agency rule, but its parent in the tree is the agency {!r} itself".format(parent_name))
+        elif agency_ancestor is None:
+            say("is filed by the export under the agency {!r}, which is not among its ancestors in the tree".format(agency))
+        elif posts_answering_beneath is not None:
+            answering = posts_answering_beneath(agency_ancestor[0], canonical_key(_plum_unescape(title)))
+            if answering != 1:
+                say("claims {!r} beneath {!r}, but {} posts beneath that agency answer to the whole title".format(
+                    title, agency_ancestor[1], answering))
+        if str(node.get("placementMethod") or "") == PLUM_CURRENT_PLACEMENT_METHOD:
+            say("claims a placement from a current PLUM listing the export files under {!r}, not under its parent in "
+                "the tree".format(organization))
+    elif not title_names_parent and not ((plum_org_keys(parent_name) | set(parent_alias_keys)) & plum_listing_parent_keys(listing)):
         say("is filed by the export under {!r}, but its parent in the tree is {!r}".format(organization or agency, parent_name))
     title_keys = set(plum_export_title_keys(title, organization))
     if rule is not None:
@@ -3735,6 +3784,7 @@ def current_listing_violations(node, listing, today, label, parent_name, parent_
         elif plum_org_keys(organization) & (plum_org_keys(agency) | plum_org_keys(plum_agency_unit(agency))):
             say("claims the {} rule for a row filed under the agency itself ({!r})".format(
                 "title-names-its-organisation" if title_names_parent
+                else "title-names-the-office-it-is-filed-under-beneath-the-agency" if beneath_agency
                 else "title-names-the-office-it-is-filed-under" if title_names_office
                 else "office-named-for-the-post", organization))
         elif title_names_office:
@@ -9388,9 +9438,16 @@ def main(argv):
         current_listing = node.get("positionCurrentListing")
         if current_listing is not None:
             _parent_id = tree_parents.get(str(node.get("id") or ""))
+            _above = []
+            _cursor = tree_parents.get(_parent_id or "")
+            while _cursor:
+                _above.append((_cursor, name_by_id.get(_cursor), alias_keys_for(_cursor, by_id)))
+                _cursor = tree_parents.get(_cursor)
             bad_current_listing.extend(current_listing_violations(
                 node, current_listing, today, label, name_by_id.get(_parent_id),
-                alias_keys_for(_parent_id, by_id)))
+                alias_keys_for(_parent_id, by_id), ancestors_above=_above,
+                posts_answering_beneath=lambda agency_id, key: plum_posts_answering_beneath(
+                    agency_id, key, pairs, tree_parents, name_by_id)))
         current_pay = node.get("positionCurrentPay")
         if current_pay is not None:
             bad_current_pay.extend(current_pay_violations(node, current_pay, current_listing, today, label))

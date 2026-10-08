@@ -6,13 +6,13 @@ organisation that publishes an estimate are in `docs/RESEARCH_PROMPT_4_REMAINDER
 
 ## The biggest clusters
 
-- **2,799** positions carry no pay claim and are research work, in **1,652** title families.
+- **2,789** positions carry no pay claim and are research work, in **1,642** title families.
 - **432** more carry none and are not asked about here: the post sits beneath a unit the government has replaced, and research on it is paused.
 - **112** more carry none and are not asked about here: an official document establishes the post is not on a federal pay schedule.
 - The largest family is **Chief Financial Officer**: 60 unpriced posts in 60 organisation(s).
 - The largest single grouping by name is **White House Office**: 60 unpriced posts sit directly beneath groupings of that name.
 - The first run of this prompt, answered on 2026-10-07 against the ranking of that morning, is ledgered family by family in `CURATION.md` §19.22, with what it settled and what it left unknown. Codes are renumbered on every render; the ledger names families, not codes.
-- The 100 families below hold **1,227** of the 2,799 (44%). The other 1,552 families hold 1,572, most of them a title that exists once.
+- The 100 families below hold **1,227** of the 2,789 (44%). The other 1,542 families hold 1,562, most of them a title that exists once.
 
 ## How the families were formed and ranked
 

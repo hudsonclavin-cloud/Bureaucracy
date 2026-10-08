@@ -8,16 +8,16 @@ checkable claim. `docs/PAY_SOURCE_RESEARCH_PROMPT_3.md` is generated from this
 same list in the same run.
 
 - position nodes in the published graph: **4,591**
-- carrying a pay claim an official document supports: **1,248**
-- carrying none: **3,343**
+- carrying a pay claim an official document supports: **1,258**
+- carrying none: **3,333**
 
 | reason | count | what it means |
 |---|---|---|
-| `unreached` | 2,170 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
+| `unreached` | 2,158 | no source this project has read names the title at all. Not a coverage gap somebody has not got to: no pay document in the repository names this title under this organisation, so nothing could have reached it. |
 | `multiplicity` | 611 | the node states a multiplicity (×N) and no claim that holds for every holder has reached it. Since 2026-09-23 a claim that holds for each holder by its own terms IS published on such a node with a `holders` block -- a tier or parity rate paid to every judge of the tier, a band every holder is within, or a roster listing every holder at one rate -- and 46 such nodes carry one. What stays refused is an incumbency-shaped claim (one listing's level, one row of the current export), because that is one appointment's figure and not the group's. For these nodes no office-rate claim has reached them at all. Knowing which pay system governs the title is still useful -- it is what would let the graph carry the schedule rather than a rate -- so these are listed and asked about. |
 | `beneath_replaced_unit` | 432 | the post sits beneath a unit the government has replaced, and research on it is paused. The owner's decision of 2026-10-07: these posts (the eighteen former VA networks' medical-centre posts and network officers, CURATION.md §10) are not asked about in any research pack until a VA document maps medical centres to the five current networks and they are re-homed. What pays a medical-centre post does not depend on which network it reports to, so the question is not lost; it is waiting on curation, not on research. |
 | `not_federally_paid` | 112 | an official document establishes the post is not on a federal pay schedule. The owner's decision of 2026-10-07: where a committed official document establishes that a post's holder is not paid by the federal government (a laboratory DOE states is operated by a contractor), the post carries `positionEmployer` saying so and is no longer research work. No federal pay figure exists for it to find. |
-| `listed_no_rate` | 18 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
+| `listed_no_rate` | 20 | OPM lists the position and the row prints no rate. The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. |
 
 ---
 
@@ -689,27 +689,6 @@ same list in the same run.
 - `exec-regulatory-sec-secretary-of-the-commission` — Secretary of the Commission — `unreached`
 - `exec-regulatory-sec-senior-staff-attorney-multiple` — Senior Staff Attorney (×multiple) — `multiplicity`
 
-## National Institutes of Health (NIH)  — 16 unpriced
-
-`exec-dept-hhs-nih`
-
-- `exec-dept-hhs-nih-director-fogarty-international-center-fic` — Director — Fogarty International Center (FIC) — `unreached`
-- `exec-dept-hhs-nih-director-nih-clinical-center-cc` — Director — NIH Clinical Center (CC) — `unreached`
-- `exec-dept-hhs-nih-director-national-cancer-institute-nci` — Director — National Cancer Institute (NCI) — `unreached`
-- `exec-dept-hhs-nih-director-national-heart-lung-blood-institute-nhlbi` — Director — National Heart, Lung & Blood Institute (NHLBI) — `unreached`
-- `exec-dept-hhs-nih-director-national-human-genome-research-institute-nhgri` — Director — National Human Genome Research Institute (NHGRI) — `unreached`
-- `exec-dept-hhs-nih-director-national-institute-of-allergy-infectious-diseases-niaid` — Director — National Institute of Allergy & Infectious Diseases (NIAID) — `unreached`
-- `exec-dept-hhs-nih-director-national-institute-of-diabetes-digestive-kidney-diseases-niddk` — Director — National Institute of Diabetes, Digestive & Kidney Diseases (NIDDK) — `unreached`
-- `exec-dept-hhs-nih-director-national-institute-of-mental-health-nimh` — Director — National Institute of Mental Health (NIMH) — `unreached`
-- `exec-dept-hhs-nih-director-national-institute-of-neurological-disorders-stroke-ninds` — Director — National Institute of Neurological Disorders & Stroke (NINDS) — `unreached`
-- `exec-dept-hhs-nih-director-national-institute-on-aging-nia` — Director — National Institute on Aging (NIA) — `unreached`
-- `exec-dept-hhs-nih-director-national-institute-on-drug-abuse-nida` — Director — National Institute on Drug Abuse (NIDA) — `unreached`
-- `exec-dept-hhs-nih-director-national-library-of-medicine-nlm` — Director — National Library of Medicine (NLM) — `unreached`
-- `exec-dept-hhs-nih-investigator-principal-investigator-multiple` — Investigator / Principal Investigator (×multiple) — `multiplicity`
-- `exec-dept-hhs-nih-principal-deputy-director` — Principal Deputy Director — `unreached`
-- `exec-dept-hhs-nih-program-officer-multiple` — Program Officer (×multiple) — `multiplicity`
-- `exec-dept-hhs-nih-scientific-review-officer-multiple` — Scientific Review Officer (×multiple) — `multiplicity`
-
 ## Secretary of the Senate  — 16 unpriced
 
 `leg-senate-admin-secretary`
@@ -812,6 +791,26 @@ same list in the same run.
 - `leg-house-offices-scheduler` — Scheduler — `unreached`
 - `leg-house-offices-senior-legislative-assistant-2` — Senior Legislative Assistant (×2) — `multiplicity`
 - `leg-house-offices-staff-assistant` — Staff Assistant — `unreached`
+
+## National Institutes of Health (NIH)  — 15 unpriced
+
+`exec-dept-hhs-nih`
+
+- `exec-dept-hhs-nih-director-fogarty-international-center-fic` — Director — Fogarty International Center (FIC) — `unreached`
+- `exec-dept-hhs-nih-director-nih-clinical-center-cc` — Director — NIH Clinical Center (CC) — `unreached`
+- `exec-dept-hhs-nih-director-national-heart-lung-blood-institute-nhlbi` — Director — National Heart, Lung & Blood Institute (NHLBI) — `unreached`
+- `exec-dept-hhs-nih-director-national-human-genome-research-institute-nhgri` — Director — National Human Genome Research Institute (NHGRI) — `unreached`
+- `exec-dept-hhs-nih-director-national-institute-of-allergy-infectious-diseases-niaid` — Director — National Institute of Allergy & Infectious Diseases (NIAID) — `unreached`
+- `exec-dept-hhs-nih-director-national-institute-of-diabetes-digestive-kidney-diseases-niddk` — Director — National Institute of Diabetes, Digestive & Kidney Diseases (NIDDK) — `unreached`
+- `exec-dept-hhs-nih-director-national-institute-of-mental-health-nimh` — Director — National Institute of Mental Health (NIMH) — `unreached`
+- `exec-dept-hhs-nih-director-national-institute-of-neurological-disorders-stroke-ninds` — Director — National Institute of Neurological Disorders & Stroke (NINDS) — `unreached`
+- `exec-dept-hhs-nih-director-national-institute-on-aging-nia` — Director — National Institute on Aging (NIA) — `unreached`
+- `exec-dept-hhs-nih-director-national-institute-on-drug-abuse-nida` — Director — National Institute on Drug Abuse (NIDA) — `unreached`
+- `exec-dept-hhs-nih-director-national-library-of-medicine-nlm` — Director — National Library of Medicine (NLM) — `unreached`
+- `exec-dept-hhs-nih-investigator-principal-investigator-multiple` — Investigator / Principal Investigator (×multiple) — `multiplicity`
+- `exec-dept-hhs-nih-principal-deputy-director` — Principal Deputy Director — `unreached`
+- `exec-dept-hhs-nih-program-officer-multiple` — Program Officer (×multiple) — `multiplicity`
+- `exec-dept-hhs-nih-scientific-review-officer-multiple` — Scientific Review Officer (×multiple) — `multiplicity`
 
 ## Customs & Border Protection (CBP)  — 14 unpriced
 
@@ -2071,19 +2070,6 @@ same list in the same run.
 - `exec-dept-dhs-fema-federal-coordinating-officer-fco-disaster-deployments` — Federal Coordinating Officer (FCO) — disaster deployments — `unreached`
 - `exec-dept-dhs-fema-regional-administrator-10-fema-regions` — Regional Administrator — 10 FEMA Regions — `unreached`
 
-## Forest Service (USFS)  — 8 unpriced
-
-`exec-dept-usda-fs`
-
-- `exec-dept-usda-fs-chief-forest-service` — Chief, Forest Service — `unreached`
-- `exec-dept-usda-fs-deputy-chief-national-forest-system` — Deputy Chief — National Forest System — `unreached`
-- `exec-dept-usda-fs-deputy-chief-research-development` — Deputy Chief — Research & Development — `unreached`
-- `exec-dept-usda-fs-district-ranger-multiple` — District Ranger (×multiple) — `multiplicity`
-- `exec-dept-usda-fs-firefighter-hotshot-smokejumper-engine-crew` — Firefighter (Hotshot/Smokejumper/Engine crew) — `unreached`
-- `exec-dept-usda-fs-forest-supervisor-154-national-forests` — Forest Supervisor — 154 National Forests — `unreached`
-- `exec-dept-usda-fs-law-enforcement-officer` — Law Enforcement Officer — `unreached`
-- `exec-dept-usda-fs-regional-forester-9-regions` — Regional Forester — 9 Regions — `unreached`
-
 ## Hirshhorn Museum & Sculpture Garden  — 8 unpriced
 
 `exec-ind-smithsonian-hirshhorn-museum-sculpture-garden`
@@ -2453,7 +2439,7 @@ same list in the same run.
 - `exec-dept-treasury-bep-associate-director-for-product-technology` — Associate Director for Product & Technology — `unreached`
 - `exec-dept-treasury-bep-chief-financial-officer` — Chief Financial Officer — `unreached`
 - `exec-dept-treasury-bep-deputy-director` — Deputy Director — `unreached`
-- `exec-dept-treasury-bep-director-bep` — Director, BEP — `unreached`
+- `exec-dept-treasury-bep-director-bep` — Director, Bureau of Engraving and Printing — `listed_no_rate`
 - `exec-dept-treasury-bep-superintendent-dc-facility` — Superintendent, DC Facility — `unreached`
 - `exec-dept-treasury-bep-superintendent-fort-worth-facility` — Superintendent, Fort Worth Facility — `unreached`
 
@@ -2462,7 +2448,7 @@ same list in the same run.
 `exec-dept-treasury-fiscal`
 
 - `exec-dept-treasury-fiscal-chief-information-officer` — Chief Information Officer — `unreached`
-- `exec-dept-treasury-fiscal-commissioner-fiscal-service` — Commissioner, Fiscal Service — `unreached`
+- `exec-dept-treasury-fiscal-commissioner-fiscal-service` — Commissioner, Bureau of the Fiscal Service — `listed_no_rate`
 - `exec-dept-treasury-fiscal-deputy-commissioner` — Deputy Commissioner — `unreached`
 - `exec-dept-treasury-fiscal-director-debt-management-services` — Director, Debt Management Services — `unreached`
 - `exec-dept-treasury-fiscal-director-finance-administration` — Director, Finance & Administration — `unreached`
@@ -2696,6 +2682,18 @@ same list in the same run.
 - `exec-dept-usda-fns-deputy-administrator` — Deputy Administrator — `unreached`
 - `exec-dept-usda-fns-nutritionist-multiple` — Nutritionist (×multiple) — `multiplicity`
 - `exec-dept-usda-fns-regional-administrator-7-regions` — Regional Administrator — 7 Regions — `unreached`
+
+## Forest Service (USFS)  — 7 unpriced
+
+`exec-dept-usda-fs`
+
+- `exec-dept-usda-fs-chief-forest-service` — Chief, Forest Service — `unreached`
+- `exec-dept-usda-fs-deputy-chief-research-development` — Deputy Chief — Research & Development — `unreached`
+- `exec-dept-usda-fs-district-ranger-multiple` — District Ranger (×multiple) — `multiplicity`
+- `exec-dept-usda-fs-firefighter-hotshot-smokejumper-engine-crew` — Firefighter (Hotshot/Smokejumper/Engine crew) — `unreached`
+- `exec-dept-usda-fs-forest-supervisor-154-national-forests` — Forest Supervisor — 154 National Forests — `unreached`
+- `exec-dept-usda-fs-law-enforcement-officer` — Law Enforcement Officer — `unreached`
+- `exec-dept-usda-fs-regional-forester-9-regions` — Regional Forester — 9 Regions — `unreached`
 
 ## Government Accountability Office (GAO)  — 7 unpriced
 
@@ -3093,17 +3091,6 @@ same list in the same run.
 - `exec-dept-defense-marines-hqmc-dc-installations-logistics` — HQMC DC Installations & Logistics — `unreached`
 - `exec-dept-defense-marines-hqmc-dc-manpower-reserve-affairs` — HQMC DC Manpower & Reserve Affairs — `unreached`
 
-## Animal & Plant Health Inspection Service (APHIS)  — 6 unpriced
-
-`exec-dept-usda-aphis`
-
-- `exec-dept-usda-aphis-area-director-multiple` — Area Director (×multiple) — `multiplicity`
-- `exec-dept-usda-aphis-deputy-administrator-plant-protection-quarantine` — Deputy Administrator — Plant Protection & Quarantine — `unreached`
-- `exec-dept-usda-aphis-deputy-administrator-veterinary-services` — Deputy Administrator — Veterinary Services — `unreached`
-- `exec-dept-usda-aphis-deputy-administrator-wildlife-services` — Deputy Administrator — Wildlife Services — `unreached`
-- `exec-dept-usda-aphis-plant-protection-quarantine-officer` — Plant Protection & Quarantine Officer — `unreached`
-- `exec-dept-usda-aphis-veterinary-medical-officer-multiple` — Veterinary Medical Officer (×multiple) — `multiplicity`
-
 ## Barack Obama Presidential Library (Chicago, IL)  — 6 unpriced
 
 `exec-ind-nara-barack-obama-presidential-library-chicago-il`
@@ -3291,17 +3278,6 @@ same list in the same run.
 - `exec-eop-ostp-deputy-director-for-technology-innovation` — Deputy Director for Technology & Innovation — `unreached`
 - `exec-eop-ostp-general-counsel` — General Counsel — `unreached`
 
-## Office of Science (SC)  — 6 unpriced
-
-`exec-dept-doe-sc`
-
-- `exec-dept-doe-sc-associate-director-advanced-scientific-computing-research` — Associate Director — Advanced Scientific Computing Research — `unreached`
-- `exec-dept-doe-sc-associate-director-basic-energy-sciences` — Associate Director — Basic Energy Sciences — `unreached`
-- `exec-dept-doe-sc-associate-director-biological-environmental-research` — Associate Director — Biological & Environmental Research — `unreached`
-- `exec-dept-doe-sc-associate-director-fusion-energy-sciences` — Associate Director — Fusion Energy Sciences — `unreached`
-- `exec-dept-doe-sc-associate-director-high-energy-physics` — Associate Director — High Energy Physics — `unreached`
-- `exec-dept-doe-sc-associate-director-nuclear-physics` — Associate Director — Nuclear Physics — `unreached`
-
 ## Richard Nixon Presidential Library and Museum  — 6 unpriced
 
 `exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca`
@@ -3377,6 +3353,16 @@ same list in the same run.
 - `exec-ind-misc-american-battle-monuments-commission-abmc-general-counsel` — General Counsel — `unreached`
 - `exec-ind-misc-american-battle-monuments-commission-abmc-inspector-general` — Inspector General — `unreached`
 
+## Animal & Plant Health Inspection Service (APHIS)  — 5 unpriced
+
+`exec-dept-usda-aphis`
+
+- `exec-dept-usda-aphis-area-director-multiple` — Area Director (×multiple) — `multiplicity`
+- `exec-dept-usda-aphis-deputy-administrator-plant-protection-quarantine` — Deputy Administrator — Plant Protection & Quarantine — `unreached`
+- `exec-dept-usda-aphis-deputy-administrator-wildlife-services` — Deputy Administrator — Wildlife Services — `unreached`
+- `exec-dept-usda-aphis-plant-protection-quarantine-officer` — Plant Protection & Quarantine Officer — `unreached`
+- `exec-dept-usda-aphis-veterinary-medical-officer-multiple` — Veterinary Medical Officer (×multiple) — `multiplicity`
+
 ## Bureau of Indian Affairs (BIA)  — 5 unpriced
 
 `exec-dept-doi-bia`
@@ -3446,16 +3432,6 @@ same list in the same run.
 - `jud-specialized-caaf-chief-judge-coast-guard-court-of-criminal-appeals` — Chief Judge — Coast Guard Court of Criminal Appeals — `unreached`
 - `jud-specialized-caaf-chief-judge-navy-marine-court-of-criminal-appeals` — Chief Judge — Navy-Marine Court of Criminal Appeals — `unreached`
 - `jud-specialized-caaf-clerk-of-the-court` — Clerk of the Court — `unreached`
-
-## Cybersecurity & Infrastructure Security Agency (CISA)  — 5 unpriced
-
-`exec-dept-dhs-cisa`
-
-- `exec-dept-dhs-cisa-cybersecurity-advisor-multiple` — Cybersecurity Advisor (×multiple) — `multiplicity`
-- `exec-dept-dhs-cisa-executive-assistant-director-emergency-communications` — Executive Assistant Director — Emergency Communications — `unreached`
-- `exec-dept-dhs-cisa-executive-assistant-director-stakeholder-engagement` — Executive Assistant Director — Stakeholder Engagement — `unreached`
-- `exec-dept-dhs-cisa-infrastructure-security-advisor-multiple` — Infrastructure Security Advisor (×multiple) — `multiplicity`
-- `exec-dept-dhs-cisa-regional-director-10-cisa-regions` — Regional Director — 10 CISA Regions — `unreached`
 
 ## Farm Service Agency (FSA)  — 5 unpriced
 
@@ -3774,6 +3750,15 @@ same list in the same run.
 - `leg-support-uscp-criminal-investigative-division-lieutenant-criminal-investigative-division-multiple` — Lieutenant, Criminal Investigative Division (×multiple) — `multiplicity`
 - `leg-support-uscp-criminal-investigative-division-officer-criminal-investigative-division-multiple` — Officer, Criminal Investigative Division (×multiple) — `multiplicity`
 - `leg-support-uscp-criminal-investigative-division-sergeant-criminal-investigative-division-multiple` — Sergeant, Criminal Investigative Division (×multiple) — `multiplicity`
+
+## Cybersecurity & Infrastructure Security Agency (CISA)  — 4 unpriced
+
+`exec-dept-dhs-cisa`
+
+- `exec-dept-dhs-cisa-cybersecurity-advisor-multiple` — Cybersecurity Advisor (×multiple) — `multiplicity`
+- `exec-dept-dhs-cisa-executive-assistant-director-stakeholder-engagement` — Executive Assistant Director — Stakeholder Engagement — `unreached`
+- `exec-dept-dhs-cisa-infrastructure-security-advisor-multiple` — Infrastructure Security Advisor (×multiple) — `multiplicity`
+- `exec-dept-dhs-cisa-regional-director-10-cisa-regions` — Regional Director — 10 CISA Regions — `unreached`
 
 ## Defense Capabilities & Management  — 4 unpriced
 

@@ -2165,8 +2165,8 @@ fold, the half after the comma needs two tokens, and the WHOLE title must answer
 to exactly one direct child of the agency node, under every refusal the main
 pass makes; the placement claimed is under the agency. Measured on the whole
 export: ten posts, all direct children of the NRC, FERC, the FTC or OPM, nothing
-wrong; reaching anywhere beneath the agency measured thirteen and was not built.
-Four of the ten are refused by id in `CODE_CONTRADICTED_LISTINGS`, the record
+wrong; reaching anywhere beneath the agency measured thirteen and was built the
+same day as a fifth pass (below). Four of the ten are refused by id in `CODE_CONTRADICTED_LISTINGS`, the record
 `CURATION.md` §19.20 made: §5315 places the NRC's three statutory office
 directors at Level IV and §5316 OPM's Associate Directors in a Level V class,
 and the export lists each on the ES plan at $228,000 — two figures for one post
@@ -2176,9 +2176,65 @@ Regulation directors at $228,000, and the vacant FTC Economics and NRC Nuclear
 Security and Incident Response directors at the SES range. Pay claims **1,242 →
 1,248**, unpriced **3,349 → 3,343**. The rest of the leads are spelling
 differences (the Office of Science's Associate Directors, Census, CISA, BEP,
-Fiscal Service — rename candidates, none taken), a placement the graph does not
-draw (EERE's technology offices sit under an office the graph lacks), or regional
-rows at differing rates (§19.24).
+Fiscal Service — renamed the same day, below, except Census), a placement the
+graph does not draw (EERE's technology offices sit under an office the graph
+lacks), or regional rows at differing rates (§19.24).
+
+**The spelling leads renamed, and the fourth pass reaching beneath the agency
+(since 2026-10-08, the owner's decision: "do the renames and build the wider
+reach rule").** `scripts/rename_posts_to_printed_titles.py` gained a third
+licence, `opm_current_plum_export_title`: a row names the agency, the
+organization and the verbatim title of the committed current export; every run
+reads the CSV through `plum_current.load_plum_export` (digest recomputed,
+`READ_COLUMNS` only, Historical rows dropped), requires exactly ONE live listing
+of that title under exactly that filing, and refuses the rename unless the
+proposed name reduces under `canonical_name_key` to the printed title — the
+casing is the reviewer's, the words are the export's — beside every refusal the
+other two licences make. Nine renames applied: the Office of Science's six
+Associate Directors to "Associate Director, Office of <program>", CISA's
+"Executive Assistant Director for Emergency Communications", "Director, Bureau
+of Engraving and Printing" and "Commissioner, Bureau of the Fiscal Service".
+Each was checked against the Code before its row was written: the operative
+text of §§5312–5316 names none of the nine offices, and 6 U.S.C. 571 (committed
+from govinfo as the record of that check), unlike 653 and 654 for CISA's other
+two Executive Assistant Directors, states no level, and its 571(g) deeming rule
+reaches no item on the Schedule. The main pass reaches all nine under their own
+organisation, with placement, and OPM's archive of the previous administration
+reaches all nine too (129 → 138 records; `tests/test_positions.py` pins it),
+since it prints the same titles. Seven gain a pay claim: four printed rates and
+two SES ranges from the current export, and CISA's rate. The Bureau of Engraving
+and Printing's Director and the Fiscal Service's Commissioner do not: the
+current export lists both vacant, and the archive prints a former incumbent's
+rate for each ($221,900, $185,100), which by the existing rule refuses the SES
+range (`a_listing_reports_a_rate`) and is not itself counted as a pay claim —
+the same position 20 other archive-rate-only posts are in. Census's two Associate Directors were declined:
+the export files them under Commerce in an office named for the post, beside an
+"Assistant Director" row of the same office at another rate, and no pass
+reaches a post beneath Census from there. A per-node diff of `graph.json`
+before and after showed nothing lost: none of the nine carried a page, Manual,
+archive or signature claim, and CISA's `verificationUnread` stays.
+
+The fifth `plum_current` pass, `title_names_the_office_it_is_filed_under_beneath_the_agency`,
+takes the fourth pass's rows and reaches a post ANYWHERE beneath the agency
+node. It is narrower than it reads: the WHOLE title must answer to exactly one
+post in the agency's entire subtree, each post's name read against its own
+parent, so a second post of that name anywhere beneath the agency refuses both;
+a direct child stays the fourth pass's; every other refusal and
+`CODE_CONTRADICTED_LISTINGS` still apply; and **no placement is claimed**,
+because the export files the row under an office this graph has no node for and
+the post's tree parent is a unit the export does not name. The gate
+(`PLUM_CURRENT_SCOPE_TITLE_NAMES_THE_OFFICE_BENEATH_THE_AGENCY`, stdlib, pinned
+equal) requires the agency among the node's ancestors above its parent, refuses
+the rule on a direct child, recounts the posts beneath that agency answering to
+the whole title off the tree it walks and refuses any count but one, and
+refuses a placement claimed from such a listing. Measured on the whole export
+after the renames: three posts, each right — NCI's Director (filed under HHS's
+"NATIONAL CANCER INSTITUTE", drawn under NIH; OT $350,000), APHIS's Deputy
+Administrator for Veterinary Services and the Forest Service's Deputy Chief for
+the National Forest System (both vacant ES, the SES range); no title was
+answered by two posts and none of the three is on the Schedule. Pay claims
+**1,248 → 1,258**, unpriced **3,343 → 3,333**; twelve nodes changed and nothing
+else (CURATION.md §19.25).
 
 **The level half, from current law instead of a closed archive (since
 2026-09-18).** Every Executive Schedule rate this project published took its
@@ -4202,7 +4258,7 @@ The PLUM archive is the previous administration's reported positions
 record and every proposed panel sentence names the archive and its period
 and says nothing about who holds a post now: the incumbent columns are
 never read. 91 of the graph's 4,382 position nodes matched a listed title
-under their own organisation when this was written (129 of 4,591 now); none
+under their own organisation when this was written (138 of 4,591 now); none
 matched across organisations.
 
 Everything this module writes is listed in `EVIDENCE_OWNED_FIELDS`, with
@@ -4689,8 +4745,9 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **1,248** of the
-4,591 positions carry a pay claim an official source states (1,242 before the
+parent's total" opts back in. The exception is a real salary — **1,258** of the
+4,591 positions carry a pay claim an official source states (1,248 before the
+renames and the wider reach rule of 2026-10-08, 1,242 before the
 fourteenth batch, 1,231 before the
 thirteenth batch of 2026-10-08, 1,196 before the
 owner's six decisions of 2026-10-07, 1,193 before the
@@ -4827,7 +4884,8 @@ govinfo sections priced, 1,111 with the President, 1,158 with the
 twelfth batch's current-export rules and rows, 1,193 with its later
 clusters the next morning, 1,196 with the Code title scan's three rows
 later that morning, 1,231 with the owner's six decisions of 2026-10-07, 1,242 with the
-thirteenth batch of 2026-10-08, and 1,248 with the fourteenth the same day.
+thirteenth batch of 2026-10-08, 1,248 with the fourteenth the same day, and
+1,258 with the renames and the wider reach rule that evening.
 The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read

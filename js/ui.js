@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261008c";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261008c";
+import { createGovernmentGraph } from "./graph.js?v=20261008d";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261008d";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1772,6 +1772,11 @@ function renderCurrentListing(data) {
     // "Director, Bureau of Competition" under "Bureau of Competition" — and
     // this graph draws that office's head directly under the agency.
     add(" — the office this title names, which this graph has no node for; the office's head is drawn directly under the agency here");
+  } else if (listing.scopeRule === "title_names_the_office_it_is_filed_under_beneath_the_agency") {
+    // The same shape one level further down: this graph draws the office's
+    // head beneath another unit of the agency, which the export does not
+    // name. No placement is claimed from it.
+    add(" — the office this title names, which this graph has no node for; the post is drawn beneath another unit of the agency here, so the listing is matched by its whole title and claims nothing about where the post sits");
   }
   if (listing.positionStatus) {
     add(`, ${String(listing.positionStatus).toLowerCase()}`);

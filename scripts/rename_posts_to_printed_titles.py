@@ -42,6 +42,14 @@ printed for every one that does not:
       * `schedule_8_footnote_title` -- `printed` is one printed item of
         Schedule 8's enlisted footnote, parsed by `military_pay.load_schedule_8`
         exactly as the pay route parses it, and `to` IS that item;
+      * `opm_current_plum_export_title` (since 2026-10-08) -- `printed` is
+        a title OPM's committed current PLUM export prints, verbatim, on ONE
+        live (Filled or Vacant) listing filed under exactly the row's
+        `agency` and `organization`, read through
+        `plum_current.load_plum_export` (`READ_COLUMNS` only, never the
+        incumbent columns) with the file's digest recomputed; `to` must
+        reduce under `canonical_name_key` to it -- the casing is the
+        reviewer's, the words are the export's;
       * `us_code_counted_class_title` -- `printed` is a counted class title
         ("... (N)") in the section's OPERATIVE text (never the publisher's
         notes beneath it, which print repealed and superseded titles); the
@@ -59,7 +67,8 @@ printed for every one that does not:
 
 It is idempotent: a row whose node already carries the proposed name is
 reported as already applied and touches nothing. It reads no person's name:
-the fixtures it reads are a statute's text and a pay schedule.
+the fixtures it reads are a statute's text, a pay schedule and the current
+PLUM export's seven READ_COLUMNS, which name no person.
 
 What a rename costs is measured, not assumed: evidence keyed on the old name
 (a page check, a PLUM listing, a Government Manual row) stops applying under
@@ -91,6 +100,10 @@ from data_pipeline.json_io import write_json_file  # noqa: E402
 from data_pipeline.verification.aliases import GENERIC_NAMES  # noqa: E402
 from data_pipeline.verification.derived_pay import Unreadable as SectionUnreadable  # noqa: E402
 from data_pipeline.verification.military_pay import load_schedule_8  # noqa: E402
+from data_pipeline.verification.plum_current import (  # noqa: E402
+    Unreadable as ExportUnreadable,
+    load_plum_export,
+)
 from data_pipeline.verification.statutory_schedule import (  # noqa: E402
     COUNTED_CLASS_SEPARATORS,
     Unreadable as ScheduleUnreadable,
@@ -102,7 +115,8 @@ DEFAULT_TABLE = PROJECT_ROOT / "data" / "curation" / "post_renames.json"
 
 LICENCE_FOOTNOTE = "schedule_8_footnote_title"
 LICENCE_COUNTED_CLASS = "us_code_counted_class_title"
-LICENCES = (LICENCE_FOOTNOTE, LICENCE_COUNTED_CLASS)
+LICENCE_CURRENT_EXPORT = "opm_current_plum_export_title"
+LICENCES = (LICENCE_FOOTNOTE, LICENCE_COUNTED_CLASS, LICENCE_CURRENT_EXPORT)
 
 #: What this script stamps on a node it renames, per licence, so the site and
 #: a reviewer can see where the name came from -- the same two fields the
@@ -110,6 +124,7 @@ LICENCES = (LICENCE_FOOTNOTE, LICENCE_COUNTED_CLASS)
 NAME_SOURCES = {
     LICENCE_FOOTNOTE: "named_in_schedule_8_of_the_pay_adjustment_order",
     LICENCE_COUNTED_CLASS: "office_spelled_as_the_executive_schedule_class_title_prints_it",
+    LICENCE_CURRENT_EXPORT: "title_as_the_opm_current_plum_export_prints_it",
 }
 
 #: One token is a word, not an office.
@@ -208,6 +223,44 @@ def check_footnote(row: dict[str, Any], root: Path, cache: dict[str, Any]) -> tu
     return {"url": loaded["url"], "sha256": loaded["sha256"], "fetchedAt": loaded["fetched_at"]}
 
 
+def check_current_export(row: dict[str, Any], root: Path, cache: dict[str, Any]) -> tuple[str, str] | dict[str, Any]:
+    """A row of OPM's committed current PLUM export, read through
+    `plum_current.load_plum_export` -- its digest recomputed from the bytes,
+    `READ_COLUMNS` only, Historical rows dropped -- must carry exactly the
+    row's agency, organization and title verbatim, as ONE listing (one pay
+    plan and level; several rows for one position fold into one), and the
+    proposed name must reduce under `canonical_name_key` to that title. The
+    casing is the reviewer's; the words are the export's."""
+    path = _resolve(row["fixture"], root)
+    cache_key = f"export:{path}"
+    if cache_key not in cache:
+        try:
+            cache[cache_key] = load_plum_export(path)
+        except (ExportUnreadable, OSError, ValueError) as error:
+            cache[cache_key] = error
+    loaded = cache[cache_key]
+    if isinstance(loaded, Exception):
+        return "document_unreadable", f"{path.name}: {loaded}"
+    agency = str(row.get("agency") or "")
+    organization = str(row.get("organization") or "")
+    printed = str(row["printed"])
+    if not agency or not organization:
+        return "row_is_incomplete", "an export row needs the 'agency' and 'organization' it is filed under"
+    group = (loaded.get("groups") or {}).get((agency, organization))
+    if not group:
+        return "document_does_not_print_the_title", f"the export has no live rows filed under {agency!r} / {organization!r}"
+    listings = [r for r in group if r["title"] == printed]
+    if not listings:
+        return "document_does_not_print_the_title", f"no Filled or Vacant row under {organization!r} prints {printed!r}"
+    if len(listings) != 1:
+        return "export_lists_the_title_more_than_once", (
+            f"{len(listings)} listings under {organization!r} print {printed!r} at different pay plans or levels")
+    if canonical_name_key(str(row["to"])) != canonical_name_key(printed):
+        return "proposed_name_is_not_the_printed_title", (
+            f"{row['to']!r} reduces to {canonical_name_key(row['to'])!r}; the export prints {printed!r}")
+    return {"url": loaded["url"], "sha256": loaded["sha256"], "fetchedAt": loaded["fetched_at"]}
+
+
 def _section(fixture: str, root: Path, cache: dict[str, Any]) -> dict[str, Any] | Exception:
     path = _resolve(fixture, root)
     cache_key = f"section:{path}"
@@ -292,6 +345,8 @@ def adjudicate(root_node: dict[str, Any], rows: list[dict[str, Any]], *, apply: 
                                 "detail": f"{per_class[str(row['printed'])]} rows cite {row['printed']!r}"})
                 continue
             found = check_counted_class(row, str(node.get("name") or ""), project_root, cache)
+        elif licence == LICENCE_CURRENT_EXPORT:
+            found = check_current_export(row, project_root, cache)
         else:
             found = check_footnote(row, project_root, cache)
         if isinstance(found, tuple):

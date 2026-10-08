@@ -514,10 +514,12 @@ class RealFixtureTests(unittest.TestCase):
         # (SAMHSA, USAGM and two NSF directorates, whose organisations now
         # carry the names the archive and their own pages use) and lost one,
         # the FNS Administrator, since the archive still files that bureau as
-        # the Food and Nutrition Service.
+        # the Food and Nutrition Service. 129 until 2026-10-08: the nine
+        # posts renamed to the current export's printed titles (CURATION.md
+        # §19.25) carry the same titles in the archive.
         self.assertEqual((r["positions_matched"], r["positions_unmatched"], len(r["positions_shared_title"]), len(r["positions_ambiguous_alternatives"]), len(r["positions_title_ambiguous_in_archive"])),
-                         (129, 975, 0, 0, 5))
-        self.assertEqual(len(self.records), 129)
+                         (138, 966, 0, 0, 5))
+        self.assertEqual(len(self.records), 138)
         self.assertEqual(self.records["exec-dept-dhs-cisa-chief-of-staff"]["listedTitle"], "CHIEF OF STAFF")
         self.assertEqual(self.records["exec-dept-dhs-cisa-chief-of-staff"]["placement"]["parentId"], "exec-dept-dhs-cisa")
 
@@ -656,7 +658,9 @@ class ReportedPayTests(unittest.TestCase):
         records, _ = match_positions(archive, node_map, parent_map, root_id=ROOT_ID)
         rates = [r for r in records.values() if r.get("reportedPay")]
         ranks = [r for r in records.values() if r.get("payLevel")]
-        self.assertEqual((len(rates), len(ranks)), (46, 31))
+        # 46 until 2026-10-08: seven of the nine posts renamed that day carry
+        # a rate the archive prints (CURATION.md §19.25).
+        self.assertEqual((len(rates), len(ranks)), (53, 31))
         for record in rates:
             self.assertIsNone(record["payLevel"], "a rate was published as a level")
             self.assertIn("$", record["reportedPayText"])

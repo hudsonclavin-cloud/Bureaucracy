@@ -135,6 +135,9 @@ def main(argv: list[str] | None = None) -> int:
           f"(no placement claimed; {report['titles_naming_several_organisations']} titles name several organisations)")
     print(f"  matched by a title naming the office it is filed under "
           f"{report['positions_matched_by_a_title_naming_the_office_it_is_filed_under']}  "
+          f"beneath the agency {report['positions_matched_by_a_title_naming_the_office_it_is_filed_under_beneath_the_agency']} "
+          f"(no placement claimed; {len(report['titles_naming_their_office_answered_by_several_posts_beneath_the_agency'])} "
+          f"titles answered by several posts)  "
           f"refused because the U.S. Code contradicts the listing {len(report['positions_refused_code_contradicts_listing'])}")
     for item in report["positions_refused_code_contradicts_listing"]:
         print("  refused, the Code contradicts the listing:", item)

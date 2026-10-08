@@ -158,9 +158,22 @@ SCOPE_TITLE_NAMES_ITS_ORGANISATION = "title_names_its_organisation"
 #: the committed export before it was built: 10 posts, every one a direct
 #: child of NRC, FERC, FTC or OPM; four are then refused by
 #: `CODE_CONTRADICTED_LISTINGS`. Reaching beneath the agency rather than its
-#: direct children was measured at 13 (USDA's Veterinary Services and
-#: National Forest System deputies, NCI's Director) and NOT built.
+#: direct children is the fifth pass, below, under a rule of its own.
 SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER = "title_names_the_office_it_is_filed_under"
+#: Since 2026-10-08 (the owner's decision, the fifteenth batch): the fourth
+#: pass's rows, reaching a post ANYWHERE beneath the agency node, not only its
+#: direct children -- USDA's Veterinary Services deputy under APHIS, the
+#: Forest Service's Deputy Chief for the National Forest System, NCI's
+#: Director under NIH. Narrower than it reads: the WHOLE title must answer to
+#: exactly ONE post in the agency's entire subtree (its name read against its
+#: own parent; a second post of that name anywhere beneath the agency refuses
+#: both), a direct child stays the fourth pass's, every other refusal is the
+#: fourth pass's and `CODE_CONTRADICTED_LISTINGS` still applies. NO placement
+#: is claimed: the export files the row under an office this graph has no
+#: node for, and the post's tree parent is a unit the export does not name.
+#: The record carries `agencyNodeId`, the agency node the export's agency
+#: reached, which must stay among the post's ancestors.
+SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER_BENEATH_THE_AGENCY = "title_names_the_office_it_is_filed_under_beneath_the_agency"
 #: Posts whose listing in the export contradicts the U.S. Code's own Executive
 #: Schedule, refused by node id from every pass (CURATION.md §19.20): the Code
 #: places the office at a level and the export lists it on the ES plan, and a
@@ -1044,6 +1057,101 @@ def match_positions(
             report["positions_by_pay_plan"][plan] = report["positions_by_pay_plan"].get(plan, 0) + 1
             if record.get("reportedPay") is not None:
                 report["positions_with_a_rate"] += 1
+    # A fifth pass, since 2026-10-08 (SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER_BENEATH_THE_AGENCY):
+    # the fourth pass's rows, reaching a post ANYWHERE beneath the agency node
+    # rather than only its direct children. The WHOLE title must answer to
+    # exactly one post in the agency's entire subtree -- every post beneath
+    # it, at any depth, its name read against its own parent, direct children
+    # included -- so a second post of that name anywhere beneath the agency
+    # refuses both. A direct child is the fourth pass's and is never taken
+    # here. Every other refusal is the fourth pass's, and CODE_CONTRADICTED_LISTINGS
+    # still applies. No placement is claimed: the export files the row under
+    # an office this graph has no node for, beneath the agency, and the post's
+    # tree parent is some other unit, which the export does not name.
+    report["positions_matched_by_a_title_naming_the_office_it_is_filed_under_beneath_the_agency"] = 0
+    report["titles_naming_their_office_answered_by_several_posts_beneath_the_agency"] = []
+    for agency_id, by_title in sorted(filed.items()):
+        beneath = [i for i in positions if agency_id in _ancestors_of(i, parent_map)]
+        alternatives = {
+            i: position_name_alternatives(positions[i].get("name"), (node_map.get(str(parent_map.get(i) or "")) or {}).get("name"))
+            for i in beneath
+        }
+        answering: dict[str, set[str]] = {}
+        for i, keys in alternatives.items():
+            for k in keys:
+                answering.setdefault(k, set()).add(i)
+        for title_key, filings in sorted(by_title.items()):
+            found = answering.get(title_key) or set()
+            if len(found) > 1:
+                report["titles_naming_their_office_answered_by_several_posts_beneath_the_agency"].append(
+                    {"agency": agency_id, "title": title_key, "ids": sorted(found)})
+                continue
+            if not found:
+                continue
+            node_id = next(iter(found))
+            parent_id = str(parent_map.get(node_id) or "")
+            if parent_id == agency_id or node_id in records:
+                continue
+            keys = alternatives[node_id]
+            siblings = [i for i in beneath if i != node_id and parent_map.get(i) == parent_id]
+            if any(k in alternatives[s] for s in siblings for k in keys):
+                report["positions_shared_title"].append({"id": node_id, "name": positions[node_id].get("name"), "organization": parent_id})
+                continue
+            hits = [k for k in keys if k in by_title]
+            if len(hits) > 1:
+                report["positions_ambiguous_alternatives"].append({"id": node_id, "name": positions[node_id].get("name"), "titles": sorted(hits)})
+                continue
+            if len(filings) != 1:
+                report["positions_title_in_several_groups"].append({"id": node_id, "name": positions[node_id].get("name"), "groups": sorted(filings)})
+                continue
+            (agency, organization), rows = next(iter(filings.items()))
+            spellings = sorted({r["title"] for r in rows})
+            if len(spellings) > 1:
+                report["positions_title_ambiguous_in_export"].append({"id": node_id, "name": positions[node_id].get("name"), "titles": spellings})
+                continue
+            listed_title = spellings[0]
+            agency_node = node_map[agency_id]
+            agency_alias = alias_hits.get(agency_id)
+            record = {
+                "source": SOURCE,
+                "method": METHOD,
+                "edition": label,
+                "listedTitle": listed_title,
+                "agency": agency,
+                "organization": organization,
+                "agencyMatchedBy": "scoped_prefix" if split_scoped_agency(agency) and not (export_agency_keys(agency) & {canonical_name_key(agency_node.get("name"))}) else "name",
+                "scopeRule": SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER_BENEATH_THE_AGENCY,
+                # The agency node the export's agency reached, so the build
+                # and the gate can check it is still among the post's ancestors.
+                "agencyNodeId": agency_id,
+                **describe_listing(rows),
+                "exportFetchedAt": export.get("fetched_at"),
+                "url": export.get("url"),
+                "documentSha256": export.get("sha256"),
+                # Deliberately no "placement": the post's tree parent is not
+                # the unit the export files the row under.
+            }
+            if agency_alias is not None:
+                record["organisationNameAlias"] = {"alias": agency_alias.alias, "basis": agency_alias.basis, "organisationId": agency_id}
+                report["positions_under_an_aliased_agency"] = report.get("positions_under_an_aliased_agency", 0) + 1
+            if node_id in CODE_CONTRADICTED_LISTINGS:
+                report["positions_refused_code_contradicts_listing"].append(
+                    {"id": node_id, "listedTitle": listed_title, "codeTitle": CODE_CONTRADICTED_LISTINGS[node_id][0],
+                     "codeSection": CODE_CONTRADICTED_LISTINGS[node_id][1]})
+                continue
+            records[node_id] = record
+            report["positions_matched"] += 1
+            report["positions_matched_by_a_title_naming_the_office_it_is_filed_under_beneath_the_agency"] += 1
+            name = str(positions[node_id].get("name") or "")
+            if unmatched_titles.get(name):
+                unmatched_titles[name] -= 1
+                report["positions_unmatched"] -= 1
+                if unmatched_titles[name] <= 0:
+                    del unmatched_titles[name]
+            plan = str(record.get("payPlan") or "?")
+            report["positions_by_pay_plan"][plan] = report["positions_by_pay_plan"].get(plan, 0) + 1
+            if record.get("reportedPay") is not None:
+                report["positions_with_a_rate"] += 1
     report["unmatched_titles_top"] = unmatched_titles.most_common(25)
     live_by_agency: Counter[str] = Counter()
     for (agency, _), rows in groups.items():
@@ -1233,7 +1341,8 @@ def apply_current_listing(
             office_key = title_names_this_organisation(record.get("listedTitle"), (parent or {}).get("name"))
             still_names = office_key is not None and office_key in position_name_alternatives(
                 node.get("name"), (parent or {}).get("name"))
-        elif record.get("scopeRule") == SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER:
+        elif record.get("scopeRule") in (SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER,
+                                         SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER_BENEATH_THE_AGENCY):
             # The WHOLE title must still name the node, and the title must
             # still name the office the export files it under.
             still_names = (
@@ -1241,6 +1350,13 @@ def apply_current_listing(
                 and canonical_name_key(unescape(record.get("listedTitle"))) in position_name_alternatives(
                     node.get("name"), (parent or {}).get("name"))
             )
+            if still_names and record.get("scopeRule") == SCOPE_TITLE_NAMES_THE_OFFICE_IT_IS_FILED_UNDER_BENEATH_THE_AGENCY:
+                # The agency the export's agency reached must still be among
+                # the post's ancestors, and not its parent (that is the
+                # fourth pass's shape, which claims a placement).
+                agency_id = str(record.get("agencyNodeId") or "")
+                ancestors = _ancestors_of(node_id, parent_map)
+                still_names = bool(agency_id) and agency_id in ancestors[1:]
         else:
             still_names = listed_title_still_names(node.get("name"), parent_names, record.get("listedTitle"))
         if not still_names:

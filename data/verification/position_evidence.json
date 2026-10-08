@@ -4019,7 +4019,7 @@
     "positions_in_graph": 4591,
     "positions_under_matched_agency_node": 607,
     "positions_under_matched_organization": 1109,
-    "positions_matched": 129,
+    "positions_matched": 138,
     "positions_shared_title": [],
     "positions_ambiguous_alternatives": [],
     "positions_title_ambiguous_in_archive": [
@@ -4065,7 +4065,7 @@
         ]
       }
     ],
-    "positions_unmatched": 975,
+    "positions_unmatched": 966,
     "positions_unmatched_sample": [
       {
         "id": "exec-dept-dhs-cbp-assistant-commissioner-air-marine-operations",
@@ -4135,11 +4135,6 @@
       {
         "id": "exec-dept-dhs-cisa-executive-assistant-director-cybersecurity",
         "name": "Executive Assistant Director — Cybersecurity",
-        "listed_under": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY"
-      },
-      {
-        "id": "exec-dept-dhs-cisa-executive-assistant-director-emergency-communications",
-        "name": "Executive Assistant Director — Emergency Communications",
         "listed_under": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY"
       },
       {
@@ -4266,6 +4261,11 @@
         "id": "exec-dept-dhs-tsa-assistant-administrator-security-operations",
         "name": "Assistant Administrator — Security Operations",
         "listed_under": "TRANSPORTATION SECURITY ADMINISTRATION"
+      },
+      {
+        "id": "exec-dept-dhs-tsa-behavior-detection-officer-bdo",
+        "name": "Behavior Detection Officer (BDO)",
+        "listed_under": "TRANSPORTATION SECURITY ADMINISTRATION"
       }
     ],
     "samples": [
@@ -4310,6 +4310,13 @@
         "listedTitle": "DIRECTOR, CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY",
         "appointmentType": "PAS",
         "status": "Vacant"
+      },
+      {
+        "id": "exec-dept-dhs-cisa-executive-assistant-director-emergency-communications",
+        "name": "Executive Assistant Director for Emergency Communications",
+        "listedTitle": "EXECUTIVE ASSISTANT DIRECTOR FOR EMERGENCY COMMUNICATIONS",
+        "appointmentType": "CA",
+        "status": "Filled"
       },
       {
         "id": "exec-dept-dhs-fema-chief-of-staff",
@@ -4365,13 +4372,6 @@
         "name": "Associate Director — Refugee, Asylum & International Operations",
         "listedTitle": "ASSOCIATE DIRECTOR, REFUGEE, ASYLUM AND INTERNATIONAL OPERATIONS",
         "appointmentType": "CA",
-        "status": "Filled"
-      },
-      {
-        "id": "exec-dept-dhs-uscis-chief-of-staff",
-        "name": "Chief of Staff",
-        "listedTitle": "CHIEF OF STAFF",
-        "appointmentType": "NA",
         "status": "Filled"
       }
     ]
@@ -4533,6 +4533,34 @@
       "payLevel": "II",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dhs-cisa",
+        "parentListedName": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-dhs-cisa-executive-assistant-director-emergency-communications": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "EXECUTIVE ASSISTANT DIRECTOR FOR EMERGENCY COMMUNICATIONS",
+      "listedAgency": "DEPARTMENT OF HOMELAND SECURITY",
+      "listedOrganization": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY",
+      "incumbencies": 1,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$218,594",
+      "payLevel": null,
+      "reportedPay": 218594.0,
+      "reportedPayText": "$218,594",
       "payPlanAndLevelOnOneRow": true,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
@@ -4932,6 +4960,174 @@
         "status": "listed",
         "parentId": "exec-dept-doc-bea",
         "parentListedName": "BUREAU OF ECONOMIC ANALYSIS"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-doe-sc-associate-director-advanced-scientific-computing-research": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF ADVANCED SCIENTIFIC COMPUTING RESEARCH",
+      "listedAgency": "DEPARTMENT OF ENERGY",
+      "listedOrganization": "OFFICE OF SCIENCE",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$214,697",
+      "payLevel": null,
+      "reportedPay": 214697.0,
+      "reportedPayText": "$214,697",
+      "payPlanAndLevelOnOneRow": true,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doe-sc",
+        "parentListedName": "OFFICE OF SCIENCE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-doe-sc-associate-director-basic-energy-sciences": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF BASIC ENERGY SCIENCES",
+      "listedAgency": "DEPARTMENT OF ENERGY",
+      "listedOrganization": "OFFICE OF SCIENCE",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$220,062",
+      "payLevel": null,
+      "reportedPay": 220062.0,
+      "reportedPayText": "$220,062",
+      "payPlanAndLevelOnOneRow": true,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doe-sc",
+        "parentListedName": "OFFICE OF SCIENCE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-doe-sc-associate-director-biological-environmental-research": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF BIOLOGICAL AND ENVIRONMENTAL RESEARCH",
+      "listedAgency": "DEPARTMENT OF ENERGY",
+      "listedOrganization": "OFFICE OF SCIENCE",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$219,011",
+      "payLevel": null,
+      "reportedPay": 219011.0,
+      "reportedPayText": "$219,011",
+      "payPlanAndLevelOnOneRow": true,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doe-sc",
+        "parentListedName": "OFFICE OF SCIENCE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-doe-sc-associate-director-fusion-energy-sciences": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF FUSION ENERGY SCIENCES",
+      "listedAgency": "DEPARTMENT OF ENERGY",
+      "listedOrganization": "OFFICE OF SCIENCE",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doe-sc",
+        "parentListedName": "OFFICE OF SCIENCE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-doe-sc-associate-director-high-energy-physics": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF HIGH ENERGY PHYSICS",
+      "listedAgency": "DEPARTMENT OF ENERGY",
+      "listedOrganization": "OFFICE OF SCIENCE",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doe-sc",
+        "parentListedName": "OFFICE OF SCIENCE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-doe-sc-associate-director-nuclear-physics": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF NUCLEAR PHYSICS",
+      "listedAgency": "DEPARTMENT OF ENERGY",
+      "listedOrganization": "OFFICE OF SCIENCE",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doe-sc",
+        "parentListedName": "OFFICE OF SCIENCE"
       },
       "period": "January 21, 2021 - January 20, 2025",
       "periodStart": "2021-01-21",
@@ -7049,6 +7245,34 @@
       "periodStart": "2021-01-21",
       "periodEnd": "2025-01-20"
     },
+    "exec-dept-treasury-bep-director-bep": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DIRECTOR, BUREAU OF ENGRAVING AND PRINTING",
+      "listedAgency": "DEPARTMENT OF THE TREASURY",
+      "listedOrganization": "BUREAU OF ENGRAVING AND PRINTING",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$221,900",
+      "payLevel": null,
+      "reportedPay": 221900.0,
+      "reportedPayText": "$221,900",
+      "payPlanAndLevelOnOneRow": true,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury-bep",
+        "parentListedName": "BUREAU OF ENGRAVING AND PRINTING"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
     "exec-dept-treasury-fincen-deputy-director": {
       "source": "opm_plum_archive",
       "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
@@ -7100,6 +7324,34 @@
         "status": "listed",
         "parentId": "exec-dept-treasury-fincen",
         "parentListedName": "FINANCIAL CRIMES ENFORCEMENT NETWORK"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-treasury-fiscal-commissioner-fiscal-service": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "COMMISSIONER, BUREAU OF THE FISCAL SERVICE",
+      "listedAgency": "DEPARTMENT OF THE TREASURY",
+      "listedOrganization": "BUREAU OF THE FISCAL SERVICE",
+      "incumbencies": 1,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$185,100",
+      "payLevel": null,
+      "reportedPay": 185100.0,
+      "reportedPayText": "$185,100",
+      "payPlanAndLevelOnOneRow": true,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury-fiscal",
+        "parentListedName": "BUREAU OF THE FISCAL SERVICE"
       },
       "period": "January 21, 2021 - January 20, 2025",
       "periodStart": "2021-01-21",

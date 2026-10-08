@@ -108034,25 +108034,35 @@
                   "children": [
                     {
                       "id": "exec-dept-treasury-bep-director-bep",
-                      "name": "Director, BEP",
+                      "name": "Director, Bureau of Engraving and Printing",
                       "type": "Position",
                       "desc": "Federal position: Director, BEP",
                       "employees": null,
                       "budget": null,
                       "color": "#666666",
                       "children": [],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "nameSource": "title_as_the_opm_current_plum_export_prints_it",
+                      "nameSourceDetail": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                      "nameMatchedText": "DIRECTOR, BUREAU OF ENGRAVING AND PRINTING",
+                      "sourceUrls": [
+                        "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "sourceTypes": [
+                        "opm_plum_archive",
+                        "official_site",
+                        "opm_plum_current_export"
+                      ],
+                      "proofSourceCount": 3,
+                      "proofSourceTypes": [
+                        "opm_plum_archive",
+                        "official_site",
+                        "opm_plum_current_export"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": null,
                       "cost_status": "unavailable",
                       "cost_basis": "subtree_weight",
@@ -108060,7 +108070,66 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.0,
                       "costVerificationReason": "missing_cost",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 2,
+                      "confidenceScore": 0.8,
+                      "verificationStatus": "verified",
+                      "lastVerified": "2026-09-21T03:02:16Z",
+                      "evidenceUrls": [
+                        "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "positionListing": {
+                        "source": "opm_plum_archive",
+                        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+                        "period": "January 21, 2021 - January 20, 2025",
+                        "listedTitle": "DIRECTOR, BUREAU OF ENGRAVING AND PRINTING",
+                        "listedAgency": "DEPARTMENT OF THE TREASURY",
+                        "listedOrganization": "BUREAU OF ENGRAVING AND PRINTING",
+                        "appointmentType": "CA",
+                        "status": "Filled",
+                        "payPlan": "ES",
+                        "level": "$221,900",
+                        "payLevel": null,
+                        "reportedPay": 221900.0,
+                        "reportedPayText": "$221,900",
+                        "payPlanAndLevelOnOneRow": true,
+                        "incumbencies": 2,
+                        "standing": 1,
+                        "valuesFrom": "standing_listings",
+                        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "checkedAt": "2026-09-08T19:49:47Z"
+                      },
+                      "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                      "verificationMethod": "listed_in_opm_plum_archive",
+                      "placementVerified": true,
+                      "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                      "placementVerifiedAt": "2026-09-08T19:49:47Z",
+                      "placementParentId": "exec-dept-treasury-bep",
+                      "placementMatchedText": "DIRECTOR, BUREAU OF ENGRAVING AND PRINTING",
+                      "placementMethod": "listed_under_organization_in_opm_plum_archive",
+                      "positionCurrentListing": {
+                        "source": "opm_plum_current_export",
+                        "method": "listed_in_opm_current_plum_export",
+                        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                        "listedTitle": "DIRECTOR, BUREAU OF ENGRAVING AND PRINTING",
+                        "agency": "DEPARTMENT OF THE TREASURY",
+                        "organization": "BUREAU OF ENGRAVING AND PRINTING",
+                        "positionStatus": "Vacant",
+                        "appointmentType": "CA",
+                        "payPlan": "ES",
+                        "level": null,
+                        "payLevel": null,
+                        "reportedPay": null,
+                        "reportedPayText": null,
+                        "payPlanAndLevelOnOneRow": false,
+                        "rows": 1,
+                        "rowsListed": 1,
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
+                      }
                     },
                     {
                       "id": "exec-dept-treasury-bep-deputy-director",
@@ -108982,25 +109051,35 @@
                   "children": [
                     {
                       "id": "exec-dept-treasury-fiscal-commissioner-fiscal-service",
-                      "name": "Commissioner, Fiscal Service",
+                      "name": "Commissioner, Bureau of the Fiscal Service",
                       "type": "Position",
                       "desc": "Federal position: Commissioner, Fiscal Service",
                       "employees": null,
                       "budget": null,
                       "color": "#666666",
                       "children": [],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "nameSource": "title_as_the_opm_current_plum_export_prints_it",
+                      "nameSourceDetail": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                      "nameMatchedText": "COMMISSIONER, BUREAU OF THE FISCAL SERVICE",
+                      "sourceUrls": [
+                        "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "sourceTypes": [
+                        "opm_plum_archive",
+                        "official_site",
+                        "opm_plum_current_export"
+                      ],
+                      "proofSourceCount": 3,
+                      "proofSourceTypes": [
+                        "opm_plum_archive",
+                        "official_site",
+                        "opm_plum_current_export"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": null,
                       "cost_status": "unavailable",
                       "cost_basis": "subtree_weight",
@@ -109008,7 +109087,66 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.0,
                       "costVerificationReason": "missing_cost",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 2,
+                      "confidenceScore": 0.8,
+                      "verificationStatus": "verified",
+                      "lastVerified": "2026-09-21T03:02:16Z",
+                      "evidenceUrls": [
+                        "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "positionListing": {
+                        "source": "opm_plum_archive",
+                        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+                        "period": "January 21, 2021 - January 20, 2025",
+                        "listedTitle": "COMMISSIONER, BUREAU OF THE FISCAL SERVICE",
+                        "listedAgency": "DEPARTMENT OF THE TREASURY",
+                        "listedOrganization": "BUREAU OF THE FISCAL SERVICE",
+                        "appointmentType": "CA",
+                        "status": "Filled",
+                        "payPlan": "ES",
+                        "level": "$185,100",
+                        "payLevel": null,
+                        "reportedPay": 185100.0,
+                        "reportedPayText": "$185,100",
+                        "payPlanAndLevelOnOneRow": true,
+                        "incumbencies": 1,
+                        "standing": 1,
+                        "valuesFrom": "standing_listings",
+                        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "checkedAt": "2026-09-08T19:49:47Z"
+                      },
+                      "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                      "verificationMethod": "listed_in_opm_plum_archive",
+                      "placementVerified": true,
+                      "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                      "placementVerifiedAt": "2026-09-08T19:49:47Z",
+                      "placementParentId": "exec-dept-treasury-fiscal",
+                      "placementMatchedText": "COMMISSIONER, BUREAU OF THE FISCAL SERVICE",
+                      "placementMethod": "listed_under_organization_in_opm_plum_archive",
+                      "positionCurrentListing": {
+                        "source": "opm_plum_current_export",
+                        "method": "listed_in_opm_current_plum_export",
+                        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                        "listedTitle": "COMMISSIONER, BUREAU OF THE FISCAL SERVICE",
+                        "agency": "DEPARTMENT OF THE TREASURY",
+                        "organization": "BUREAU OF THE FISCAL SERVICE",
+                        "positionStatus": "Vacant",
+                        "appointmentType": "CA",
+                        "payPlan": "ES",
+                        "level": null,
+                        "payLevel": null,
+                        "reportedPay": null,
+                        "reportedPayText": null,
+                        "payPlanAndLevelOnOneRow": false,
+                        "rows": 1,
+                        "rowsListed": 1,
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
+                      }
                     },
                     {
                       "id": "exec-dept-treasury-fiscal-deputy-commissioner",
@@ -149591,18 +149729,22 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "sourceUrls": [
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "sourceTypes": [
+                        "opm_plum_current_export",
+                        "official_site"
+                      ],
+                      "proofSourceCount": 2,
+                      "proofSourceTypes": [
+                        "opm_plum_current_export",
+                        "official_site"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": null,
                       "cost_status": "unavailable",
                       "cost_basis": "subtree_weight",
@@ -149610,7 +149752,109 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.0,
                       "costVerificationReason": "missing_cost",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-21T03:02:16Z",
+                      "evidenceUrls": [
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "positionCurrentListing": {
+                        "source": "opm_plum_current_export",
+                        "method": "listed_in_opm_current_plum_export",
+                        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                        "listedTitle": "DEPUTY CHIEF, NATIONAL FOREST SYSTEM",
+                        "agency": "DEPARTMENT OF AGRICULTURE",
+                        "organization": "NATIONAL FOREST SYSTEM",
+                        "positionStatus": "Vacant",
+                        "appointmentType": "CA",
+                        "payPlan": "ES",
+                        "level": null,
+                        "payLevel": null,
+                        "reportedPay": null,
+                        "reportedPayText": null,
+                        "payPlanAndLevelOnOneRow": false,
+                        "rows": 1,
+                        "rowsListed": 1,
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                        "scopeRule": "title_names_the_office_it_is_filed_under_beneath_the_agency"
+                      },
+                      "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                      "verificationMethod": "listed_in_opm_current_plum_export",
+                      "positionGradePay": {
+                        "source": "opm_salary_table_range",
+                        "method": "pay_system_range_for_the_pay_plan_reported_in_the_plum_archive",
+                        "kind": "senior_executive_service",
+                        "payPlan": "ES",
+                        "grade": null,
+                        "minimum": 151661.0,
+                        "minimumPrinted": "151,661",
+                        "maximum": 228000.0,
+                        "maximumPrinted": "228,000",
+                        "table": "Salary Table No. 2026-ES",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+                        "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000 | Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+                        "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "listingSource": {
+                          "source": "opm_plum_current_export",
+                          "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                          "period": null,
+                          "listedTitle": "DEPUTY CHIEF, NATIONAL FOREST SYSTEM",
+                          "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                          "checkedAt": "2026-09-21T03:02:16Z"
+                        },
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+                        "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+                        "checkedAt": "2026-09-21T03:00:01Z",
+                        "rows": [
+                          {
+                            "label": "Agencies with a Certified SES Performance Appraisal System",
+                            "minimum": 151661.0,
+                            "minimumRaw": "151,661",
+                            "maximum": 228000.0,
+                            "maximumRaw": "228,000",
+                            "rowText": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000"
+                          },
+                          {
+                            "label": "Agencies without a Certified SES Performance Appraisal System",
+                            "minimum": 151661.0,
+                            "minimumRaw": "151,661",
+                            "maximum": 209600.0,
+                            "maximumRaw": "209,600",
+                            "rowText": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600"
+                          }
+                        ],
+                        "verification": {
+                          "documents": 2,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 80,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document prints the bounds and the other states which pay plan this post is on. The percentage measures how much official documentation the range rests on, not the chance that it is right -- and a range is not a rate: neither document says what this post is paid.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+                              "role": "states the pay system's or grade's printed bounds"
+                            },
+                            {
+                              "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                              "role": "states the pay plan this post is on"
+                            }
+                          ]
+                        }
+                      }
                     },
                     {
                       "id": "exec-dept-usda-fs-deputy-chief-research-development",
@@ -150361,18 +150605,22 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "sourceUrls": [
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "sourceTypes": [
+                        "opm_plum_current_export",
+                        "official_site"
+                      ],
+                      "proofSourceCount": 2,
+                      "proofSourceTypes": [
+                        "opm_plum_current_export",
+                        "official_site"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": null,
                       "cost_status": "unavailable",
                       "cost_basis": "subtree_weight",
@@ -150380,7 +150628,109 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.0,
                       "costVerificationReason": "missing_cost",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-21T03:02:16Z",
+                      "evidenceUrls": [
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "positionCurrentListing": {
+                        "source": "opm_plum_current_export",
+                        "method": "listed_in_opm_current_plum_export",
+                        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                        "listedTitle": "DEPUTY ADMINISTRATOR, VETERINARY SERVICES",
+                        "agency": "DEPARTMENT OF AGRICULTURE",
+                        "organization": "VETERINARY SERVICES",
+                        "positionStatus": "Vacant",
+                        "appointmentType": "CA",
+                        "payPlan": "ES",
+                        "level": null,
+                        "payLevel": null,
+                        "reportedPay": null,
+                        "reportedPayText": null,
+                        "payPlanAndLevelOnOneRow": false,
+                        "rows": 1,
+                        "rowsListed": 1,
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                        "scopeRule": "title_names_the_office_it_is_filed_under_beneath_the_agency"
+                      },
+                      "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                      "verificationMethod": "listed_in_opm_current_plum_export",
+                      "positionGradePay": {
+                        "source": "opm_salary_table_range",
+                        "method": "pay_system_range_for_the_pay_plan_reported_in_the_plum_archive",
+                        "kind": "senior_executive_service",
+                        "payPlan": "ES",
+                        "grade": null,
+                        "minimum": 151661.0,
+                        "minimumPrinted": "151,661",
+                        "maximum": 228000.0,
+                        "maximumPrinted": "228,000",
+                        "table": "Salary Table No. 2026-ES",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+                        "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000 | Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+                        "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "listingSource": {
+                          "source": "opm_plum_current_export",
+                          "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                          "period": null,
+                          "listedTitle": "DEPUTY ADMINISTRATOR, VETERINARY SERVICES",
+                          "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                          "checkedAt": "2026-09-21T03:02:16Z"
+                        },
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+                        "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+                        "checkedAt": "2026-09-21T03:00:01Z",
+                        "rows": [
+                          {
+                            "label": "Agencies with a Certified SES Performance Appraisal System",
+                            "minimum": 151661.0,
+                            "minimumRaw": "151,661",
+                            "maximum": 228000.0,
+                            "maximumRaw": "228,000",
+                            "rowText": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000"
+                          },
+                          {
+                            "label": "Agencies without a Certified SES Performance Appraisal System",
+                            "minimum": 151661.0,
+                            "minimumRaw": "151,661",
+                            "maximum": 209600.0,
+                            "maximumRaw": "209,600",
+                            "rowText": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600"
+                          }
+                        ],
+                        "verification": {
+                          "documents": 2,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 80,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document prints the bounds and the other states which pay plan this post is on. The percentage measures how much official documentation the range rests on, not the chance that it is right -- and a range is not a rate: neither document says what this post is paid.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+                              "role": "states the pay system's or grade's printed bounds"
+                            },
+                            {
+                              "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                              "role": "states the pay plan this post is on"
+                            }
+                          ]
+                        }
+                      }
                     },
                     {
                       "id": "exec-dept-usda-aphis-deputy-administrator-plant-protection-quarantine",
@@ -165804,18 +166154,22 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "sourceUrls": [
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "sourceTypes": [
+                        "opm_plum_current_export",
+                        "official_site"
+                      ],
+                      "proofSourceCount": 2,
+                      "proofSourceTypes": [
+                        "opm_plum_current_export",
+                        "official_site"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": null,
                       "cost_status": "unavailable",
                       "cost_basis": "subtree_weight",
@@ -165823,7 +166177,74 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.0,
                       "costVerificationReason": "missing_cost",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-21T03:02:16Z",
+                      "evidenceUrls": [
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "positionCurrentListing": {
+                        "source": "opm_plum_current_export",
+                        "method": "listed_in_opm_current_plum_export",
+                        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                        "listedTitle": "DIRECTOR, NATIONAL CANCER INSTITUTE",
+                        "agency": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+                        "organization": "NATIONAL CANCER INSTITUTE",
+                        "positionStatus": "Filled",
+                        "appointmentType": "PA",
+                        "payPlan": "OT",
+                        "level": "$350,000",
+                        "payLevel": null,
+                        "reportedPay": 350000.0,
+                        "reportedPayText": "$350,000",
+                        "payPlanAndLevelOnOneRow": true,
+                        "rows": 1,
+                        "rowsListed": 1,
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                        "scopeRule": "title_names_the_office_it_is_filed_under_beneath_the_agency"
+                      },
+                      "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                      "verificationMethod": "listed_in_opm_current_plum_export",
+                      "positionCurrentPay": {
+                        "source": "opm_plum_current_export",
+                        "sourceLabel": "OPM's current PLUM Reporting export",
+                        "method": "rate_of_basic_pay_stated_in_opm_current_plum_export",
+                        "amount": 350000.0,
+                        "rateText": "$350,000",
+                        "payPlan": "OT",
+                        "listedTitle": "DIRECTOR, NATIONAL CANCER INSTITUTE",
+                        "agency": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+                        "organization": "NATIONAL CANCER INSTITUTE",
+                        "positionStatus": "Filled",
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "DIRECTOR, NATIONAL CANCER INSTITUTE",
+                        "quote": "DIRECTOR, NATIONAL CANCER INSTITUTE; DEPARTMENT OF HEALTH AND HUMAN SERVICES; NATIONAL CANCER INSTITUTE; Pay Plan OT; Level, Grade, or Pay $350,000; Position Status Filled",
+                        "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "verification": {
+                          "documents": 1,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 70,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right -- and a row in that export is an incumbency, not the post's own rate.",
+                          "documentRoles": [
+                            {
+                              "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                              "role": "prints the rate for the one row listed under this title now"
+                            }
+                          ]
+                        }
+                      }
                     },
                     {
                       "id": "exec-dept-hhs-nih-director-national-heart-lung-blood-institute-nhlbi",
@@ -182541,25 +182962,35 @@
                     },
                     {
                       "id": "exec-dept-doe-sc-associate-director-advanced-scientific-computing-research",
-                      "name": "Associate Director — Advanced Scientific Computing Research",
+                      "name": "Associate Director, Office of Advanced Scientific Computing Research",
                       "type": "Position",
                       "desc": "Federal position: Associate Director — Advanced Scientific Computing Research",
                       "employees": null,
                       "budget": null,
                       "color": "#666666",
                       "children": [],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "nameSource": "title_as_the_opm_current_plum_export_prints_it",
+                      "nameSourceDetail": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                      "nameMatchedText": "ASSOCIATE DIRECTOR, OFFICE OF ADVANCED SCIENTIFIC COMPUTING RESEARCH",
+                      "sourceUrls": [
+                        "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "sourceTypes": [
+                        "opm_plum_archive",
+                        "official_site",
+                        "opm_plum_current_export"
+                      ],
+                      "proofSourceCount": 3,
+                      "proofSourceTypes": [
+                        "opm_plum_archive",
+                        "official_site",
+                        "opm_plum_current_export"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": null,
                       "cost_status": "unavailable",
                       "cost_basis": "subtree_weight",
@@ -182567,29 +182998,133 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.0,
                       "costVerificationReason": "missing_cost",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 2,
+                      "confidenceScore": 0.8,
+                      "verificationStatus": "verified",
+                      "lastVerified": "2026-09-21T03:02:16Z",
+                      "evidenceUrls": [
+                        "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "positionListing": {
+                        "source": "opm_plum_archive",
+                        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+                        "period": "January 21, 2021 - January 20, 2025",
+                        "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF ADVANCED SCIENTIFIC COMPUTING RESEARCH",
+                        "listedAgency": "DEPARTMENT OF ENERGY",
+                        "listedOrganization": "OFFICE OF SCIENCE",
+                        "appointmentType": "CA",
+                        "status": "Filled",
+                        "payPlan": "ES",
+                        "level": "$214,697",
+                        "payLevel": null,
+                        "reportedPay": 214697.0,
+                        "reportedPayText": "$214,697",
+                        "payPlanAndLevelOnOneRow": true,
+                        "incumbencies": 2,
+                        "standing": 1,
+                        "valuesFrom": "standing_listings",
+                        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "checkedAt": "2026-09-08T19:49:47Z"
+                      },
+                      "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                      "verificationMethod": "listed_in_opm_plum_archive",
+                      "placementVerified": true,
+                      "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                      "placementVerifiedAt": "2026-09-08T19:49:47Z",
+                      "placementParentId": "exec-dept-doe-sc",
+                      "placementMatchedText": "ASSOCIATE DIRECTOR, OFFICE OF ADVANCED SCIENTIFIC COMPUTING RESEARCH",
+                      "placementMethod": "listed_under_organization_in_opm_plum_archive",
+                      "positionCurrentListing": {
+                        "source": "opm_plum_current_export",
+                        "method": "listed_in_opm_current_plum_export",
+                        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                        "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF ADVANCED SCIENTIFIC COMPUTING RESEARCH",
+                        "agency": "DEPARTMENT OF ENERGY",
+                        "organization": "OFFICE OF SCIENCE",
+                        "positionStatus": "Filled",
+                        "appointmentType": "CA",
+                        "payPlan": "ES",
+                        "level": "$220,723",
+                        "payLevel": null,
+                        "reportedPay": 220723.0,
+                        "reportedPayText": "$220,723",
+                        "payPlanAndLevelOnOneRow": true,
+                        "rows": 1,
+                        "rowsListed": 1,
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
+                      },
+                      "positionCurrentPay": {
+                        "source": "opm_plum_current_export",
+                        "sourceLabel": "OPM's current PLUM Reporting export",
+                        "method": "rate_of_basic_pay_stated_in_opm_current_plum_export",
+                        "amount": 220723.0,
+                        "rateText": "$220,723",
+                        "payPlan": "ES",
+                        "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF ADVANCED SCIENTIFIC COMPUTING RESEARCH",
+                        "agency": "DEPARTMENT OF ENERGY",
+                        "organization": "OFFICE OF SCIENCE",
+                        "positionStatus": "Filled",
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "ASSOCIATE DIRECTOR, OFFICE OF ADVANCED SCIENTIFIC COMPUTING RESEARCH",
+                        "quote": "ASSOCIATE DIRECTOR, OFFICE OF ADVANCED SCIENTIFIC COMPUTING RESEARCH; DEPARTMENT OF ENERGY; OFFICE OF SCIENCE; Pay Plan ES; Level, Grade, or Pay $220,723; Position Status Filled",
+                        "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "verification": {
+                          "documents": 1,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 70,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right -- and a row in that export is an incumbency, not the post's own rate.",
+                          "documentRoles": [
+                            {
+                              "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                              "role": "prints the rate for the one row listed under this title now"
+                            }
+                          ]
+                        }
+                      }
                     },
                     {
                       "id": "exec-dept-doe-sc-associate-director-basic-energy-sciences",
-                      "name": "Associate Director — Basic Energy Sciences",
+                      "name": "Associate Director, Office of Basic Energy Sciences",
                       "type": "Position",
                       "desc": "Federal position: Associate Director — Basic Energy Sciences",
                       "employees": null,
                       "budget": null,
                       "color": "#666666",
                       "children": [],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "nameSource": "title_as_the_opm_current_plum_export_prints_it",
+                      "nameSourceDetail": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                      "nameMatchedText": "ASSOCIATE DIRECTOR, OFFICE OF BASIC ENERGY SCIENCES",
+                      "sourceUrls": [
+                        "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "sourceTypes": [
+                        "opm_plum_archive",
+                        "official_site",
+                        "opm_plum_current_export"
+                      ],
+                      "proofSourceCount": 3,
+                      "proofSourceTypes": [
+                        "opm_plum_archive",
+                        "official_site",
+                        "opm_plum_current_export"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": null,
                       "cost_status": "unavailable",
                       "cost_basis": "subtree_weight",
@@ -182597,29 +183132,133 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.0,
                       "costVerificationReason": "missing_cost",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 2,
+                      "confidenceScore": 0.8,
+                      "verificationStatus": "verified",
+                      "lastVerified": "2026-09-21T03:02:16Z",
+                      "evidenceUrls": [
+                        "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "positionListing": {
+                        "source": "opm_plum_archive",
+                        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+                        "period": "January 21, 2021 - January 20, 2025",
+                        "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF BASIC ENERGY SCIENCES",
+                        "listedAgency": "DEPARTMENT OF ENERGY",
+                        "listedOrganization": "OFFICE OF SCIENCE",
+                        "appointmentType": "CA",
+                        "status": "Filled",
+                        "payPlan": "ES",
+                        "level": "$220,062",
+                        "payLevel": null,
+                        "reportedPay": 220062.0,
+                        "reportedPayText": "$220,062",
+                        "payPlanAndLevelOnOneRow": true,
+                        "incumbencies": 2,
+                        "standing": 1,
+                        "valuesFrom": "standing_listings",
+                        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "checkedAt": "2026-09-08T19:49:47Z"
+                      },
+                      "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                      "verificationMethod": "listed_in_opm_plum_archive",
+                      "placementVerified": true,
+                      "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                      "placementVerifiedAt": "2026-09-08T19:49:47Z",
+                      "placementParentId": "exec-dept-doe-sc",
+                      "placementMatchedText": "ASSOCIATE DIRECTOR, OFFICE OF BASIC ENERGY SCIENCES",
+                      "placementMethod": "listed_under_organization_in_opm_plum_archive",
+                      "positionCurrentListing": {
+                        "source": "opm_plum_current_export",
+                        "method": "listed_in_opm_current_plum_export",
+                        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                        "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF BASIC ENERGY SCIENCES",
+                        "agency": "DEPARTMENT OF ENERGY",
+                        "organization": "OFFICE OF SCIENCE",
+                        "positionStatus": "Filled",
+                        "appointmentType": "CA",
+                        "payPlan": "ES",
+                        "level": "$226,664",
+                        "payLevel": null,
+                        "reportedPay": 226664.0,
+                        "reportedPayText": "$226,664",
+                        "payPlanAndLevelOnOneRow": true,
+                        "rows": 1,
+                        "rowsListed": 1,
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
+                      },
+                      "positionCurrentPay": {
+                        "source": "opm_plum_current_export",
+                        "sourceLabel": "OPM's current PLUM Reporting export",
+                        "method": "rate_of_basic_pay_stated_in_opm_current_plum_export",
+                        "amount": 226664.0,
+                        "rateText": "$226,664",
+                        "payPlan": "ES",
+                        "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF BASIC ENERGY SCIENCES",
+                        "agency": "DEPARTMENT OF ENERGY",
+                        "organization": "OFFICE OF SCIENCE",
+                        "positionStatus": "Filled",
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "ASSOCIATE DIRECTOR, OFFICE OF BASIC ENERGY SCIENCES",
+                        "quote": "ASSOCIATE DIRECTOR, OFFICE OF BASIC ENERGY SCIENCES; DEPARTMENT OF ENERGY; OFFICE OF SCIENCE; Pay Plan ES; Level, Grade, or Pay $226,664; Position Status Filled",
+                        "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "verification": {
+                          "documents": 1,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 70,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right -- and a row in that export is an incumbency, not the post's own rate.",
+                          "documentRoles": [
+                            {
+                              "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                              "role": "prints the rate for the one row listed under this title now"
+                            }
+                          ]
+                        }
+                      }
                     },
                     {
                       "id": "exec-dept-doe-sc-associate-director-biological-environmental-research",
-                      "name": "Associate Director — Biological & Environmental Research",
+                      "name": "Associate Director, Office of Biological and Environmental Research",
                       "type": "Position",
                       "desc": "Federal position: Associate Director — Biological & Environmental Research",
                       "employees": null,
                       "budget": null,
                       "color": "#666666",
                       "children": [],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "nameSource": "title_as_the_opm_current_plum_export_prints_it",
+                      "nameSourceDetail": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                      "nameMatchedText": "ASSOCIATE DIRECTOR, OFFICE OF BIOLOGICAL AND ENVIRONMENTAL RESEARCH",
+                      "sourceUrls": [
+                        "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "sourceTypes": [
+                        "opm_plum_archive",
+                        "official_site",
+                        "opm_plum_current_export"
+                      ],
+                      "proofSourceCount": 3,
+                      "proofSourceTypes": [
+                        "opm_plum_archive",
+                        "official_site",
+                        "opm_plum_current_export"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": null,
                       "cost_status": "unavailable",
                       "cost_basis": "subtree_weight",
@@ -182627,29 +183266,133 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.0,
                       "costVerificationReason": "missing_cost",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 2,
+                      "confidenceScore": 0.8,
+                      "verificationStatus": "verified",
+                      "lastVerified": "2026-09-21T03:02:16Z",
+                      "evidenceUrls": [
+                        "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "positionListing": {
+                        "source": "opm_plum_archive",
+                        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+                        "period": "January 21, 2021 - January 20, 2025",
+                        "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF BIOLOGICAL AND ENVIRONMENTAL RESEARCH",
+                        "listedAgency": "DEPARTMENT OF ENERGY",
+                        "listedOrganization": "OFFICE OF SCIENCE",
+                        "appointmentType": "CA",
+                        "status": "Filled",
+                        "payPlan": "ES",
+                        "level": "$219,011",
+                        "payLevel": null,
+                        "reportedPay": 219011.0,
+                        "reportedPayText": "$219,011",
+                        "payPlanAndLevelOnOneRow": true,
+                        "incumbencies": 2,
+                        "standing": 1,
+                        "valuesFrom": "standing_listings",
+                        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "checkedAt": "2026-09-08T19:49:47Z"
+                      },
+                      "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                      "verificationMethod": "listed_in_opm_plum_archive",
+                      "placementVerified": true,
+                      "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                      "placementVerifiedAt": "2026-09-08T19:49:47Z",
+                      "placementParentId": "exec-dept-doe-sc",
+                      "placementMatchedText": "ASSOCIATE DIRECTOR, OFFICE OF BIOLOGICAL AND ENVIRONMENTAL RESEARCH",
+                      "placementMethod": "listed_under_organization_in_opm_plum_archive",
+                      "positionCurrentListing": {
+                        "source": "opm_plum_current_export",
+                        "method": "listed_in_opm_current_plum_export",
+                        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                        "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF BIOLOGICAL AND ENVIRONMENTAL RESEARCH",
+                        "agency": "DEPARTMENT OF ENERGY",
+                        "organization": "OFFICE OF SCIENCE",
+                        "positionStatus": "Filled",
+                        "appointmentType": "CA",
+                        "payPlan": "ES",
+                        "level": "$228,000",
+                        "payLevel": null,
+                        "reportedPay": 228000.0,
+                        "reportedPayText": "$228,000",
+                        "payPlanAndLevelOnOneRow": true,
+                        "rows": 1,
+                        "rowsListed": 1,
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
+                      },
+                      "positionCurrentPay": {
+                        "source": "opm_plum_current_export",
+                        "sourceLabel": "OPM's current PLUM Reporting export",
+                        "method": "rate_of_basic_pay_stated_in_opm_current_plum_export",
+                        "amount": 228000.0,
+                        "rateText": "$228,000",
+                        "payPlan": "ES",
+                        "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF BIOLOGICAL AND ENVIRONMENTAL RESEARCH",
+                        "agency": "DEPARTMENT OF ENERGY",
+                        "organization": "OFFICE OF SCIENCE",
+                        "positionStatus": "Filled",
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "ASSOCIATE DIRECTOR, OFFICE OF BIOLOGICAL AND ENVIRONMENTAL RESEARCH",
+                        "quote": "ASSOCIATE DIRECTOR, OFFICE OF BIOLOGICAL AND ENVIRONMENTAL RESEARCH; DEPARTMENT OF ENERGY; OFFICE OF SCIENCE; Pay Plan ES; Level, Grade, or Pay $228,000; Position Status Filled",
+                        "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "verification": {
+                          "documents": 1,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 70,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right -- and a row in that export is an incumbency, not the post's own rate.",
+                          "documentRoles": [
+                            {
+                              "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                              "role": "prints the rate for the one row listed under this title now"
+                            }
+                          ]
+                        }
+                      }
                     },
                     {
                       "id": "exec-dept-doe-sc-associate-director-fusion-energy-sciences",
-                      "name": "Associate Director — Fusion Energy Sciences",
+                      "name": "Associate Director, Office of Fusion Energy Sciences",
                       "type": "Position",
                       "desc": "Federal position: Associate Director — Fusion Energy Sciences",
                       "employees": null,
                       "budget": null,
                       "color": "#666666",
                       "children": [],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "nameSource": "title_as_the_opm_current_plum_export_prints_it",
+                      "nameSourceDetail": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                      "nameMatchedText": "ASSOCIATE DIRECTOR, OFFICE OF FUSION ENERGY SCIENCES",
+                      "sourceUrls": [
+                        "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "sourceTypes": [
+                        "opm_plum_archive",
+                        "official_site",
+                        "opm_plum_current_export"
+                      ],
+                      "proofSourceCount": 3,
+                      "proofSourceTypes": [
+                        "opm_plum_archive",
+                        "official_site",
+                        "opm_plum_current_export"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": null,
                       "cost_status": "unavailable",
                       "cost_basis": "subtree_weight",
@@ -182657,29 +183400,168 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.0,
                       "costVerificationReason": "missing_cost",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 2,
+                      "confidenceScore": 0.8,
+                      "verificationStatus": "verified",
+                      "lastVerified": "2026-09-21T03:02:16Z",
+                      "evidenceUrls": [
+                        "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "positionListing": {
+                        "source": "opm_plum_archive",
+                        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+                        "period": "January 21, 2021 - January 20, 2025",
+                        "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF FUSION ENERGY SCIENCES",
+                        "listedAgency": "DEPARTMENT OF ENERGY",
+                        "listedOrganization": "OFFICE OF SCIENCE",
+                        "appointmentType": "CA",
+                        "status": "Vacant",
+                        "payPlan": "ES",
+                        "level": null,
+                        "payLevel": null,
+                        "reportedPay": null,
+                        "reportedPayText": null,
+                        "payPlanAndLevelOnOneRow": false,
+                        "incumbencies": 2,
+                        "standing": 1,
+                        "valuesFrom": "standing_listings",
+                        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "checkedAt": "2026-09-08T19:49:47Z"
+                      },
+                      "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                      "verificationMethod": "listed_in_opm_plum_archive",
+                      "placementVerified": true,
+                      "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                      "placementVerifiedAt": "2026-09-08T19:49:47Z",
+                      "placementParentId": "exec-dept-doe-sc",
+                      "placementMatchedText": "ASSOCIATE DIRECTOR, OFFICE OF FUSION ENERGY SCIENCES",
+                      "placementMethod": "listed_under_organization_in_opm_plum_archive",
+                      "positionCurrentListing": {
+                        "source": "opm_plum_current_export",
+                        "method": "listed_in_opm_current_plum_export",
+                        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                        "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF FUSION ENERGY SCIENCES",
+                        "agency": "DEPARTMENT OF ENERGY",
+                        "organization": "OFFICE OF SCIENCE",
+                        "positionStatus": "Vacant",
+                        "appointmentType": "CA",
+                        "payPlan": "ES",
+                        "level": null,
+                        "payLevel": null,
+                        "reportedPay": null,
+                        "reportedPayText": null,
+                        "payPlanAndLevelOnOneRow": false,
+                        "rows": 1,
+                        "rowsListed": 1,
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
+                      },
+                      "positionGradePay": {
+                        "source": "opm_salary_table_range",
+                        "method": "pay_system_range_for_the_pay_plan_reported_in_the_plum_archive",
+                        "kind": "senior_executive_service",
+                        "payPlan": "ES",
+                        "grade": null,
+                        "minimum": 151661.0,
+                        "minimumPrinted": "151,661",
+                        "maximum": 228000.0,
+                        "maximumPrinted": "228,000",
+                        "table": "Salary Table No. 2026-ES",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+                        "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000 | Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+                        "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "listingSource": {
+                          "source": "opm_plum_current_export",
+                          "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                          "period": null,
+                          "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF FUSION ENERGY SCIENCES",
+                          "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                          "checkedAt": "2026-09-21T03:02:16Z"
+                        },
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+                        "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+                        "checkedAt": "2026-09-21T03:00:01Z",
+                        "rows": [
+                          {
+                            "label": "Agencies with a Certified SES Performance Appraisal System",
+                            "minimum": 151661.0,
+                            "minimumRaw": "151,661",
+                            "maximum": 228000.0,
+                            "maximumRaw": "228,000",
+                            "rowText": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000"
+                          },
+                          {
+                            "label": "Agencies without a Certified SES Performance Appraisal System",
+                            "minimum": 151661.0,
+                            "minimumRaw": "151,661",
+                            "maximum": 209600.0,
+                            "maximumRaw": "209,600",
+                            "rowText": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600"
+                          }
+                        ],
+                        "verification": {
+                          "documents": 2,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 80,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document prints the bounds and the other states which pay plan this post is on. The percentage measures how much official documentation the range rests on, not the chance that it is right -- and a range is not a rate: neither document says what this post is paid.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+                              "role": "states the pay system's or grade's printed bounds"
+                            },
+                            {
+                              "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                              "role": "states the pay plan this post is on"
+                            }
+                          ]
+                        }
+                      }
                     },
                     {
                       "id": "exec-dept-doe-sc-associate-director-high-energy-physics",
-                      "name": "Associate Director — High Energy Physics",
+                      "name": "Associate Director, Office of High Energy Physics",
                       "type": "Position",
                       "desc": "Federal position: Associate Director — High Energy Physics",
                       "employees": null,
                       "budget": null,
                       "color": "#666666",
                       "children": [],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "nameSource": "title_as_the_opm_current_plum_export_prints_it",
+                      "nameSourceDetail": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                      "nameMatchedText": "ASSOCIATE DIRECTOR, OFFICE OF HIGH ENERGY PHYSICS",
+                      "sourceUrls": [
+                        "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "sourceTypes": [
+                        "opm_plum_archive",
+                        "official_site",
+                        "opm_plum_current_export"
+                      ],
+                      "proofSourceCount": 3,
+                      "proofSourceTypes": [
+                        "opm_plum_archive",
+                        "official_site",
+                        "opm_plum_current_export"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": null,
                       "cost_status": "unavailable",
                       "cost_basis": "subtree_weight",
@@ -182687,29 +183569,133 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.0,
                       "costVerificationReason": "missing_cost",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 2,
+                      "confidenceScore": 0.8,
+                      "verificationStatus": "verified",
+                      "lastVerified": "2026-09-21T03:02:16Z",
+                      "evidenceUrls": [
+                        "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "positionListing": {
+                        "source": "opm_plum_archive",
+                        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+                        "period": "January 21, 2021 - January 20, 2025",
+                        "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF HIGH ENERGY PHYSICS",
+                        "listedAgency": "DEPARTMENT OF ENERGY",
+                        "listedOrganization": "OFFICE OF SCIENCE",
+                        "appointmentType": "CA",
+                        "status": "Filled",
+                        "payPlan": "ES",
+                        "level": "$225,700",
+                        "payLevel": null,
+                        "reportedPay": 225700.0,
+                        "reportedPayText": "$225,700",
+                        "payPlanAndLevelOnOneRow": true,
+                        "incumbencies": 2,
+                        "standing": 1,
+                        "valuesFrom": "standing_listings",
+                        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "checkedAt": "2026-09-08T19:49:47Z"
+                      },
+                      "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                      "verificationMethod": "listed_in_opm_plum_archive",
+                      "placementVerified": true,
+                      "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                      "placementVerifiedAt": "2026-09-08T19:49:47Z",
+                      "placementParentId": "exec-dept-doe-sc",
+                      "placementMatchedText": "ASSOCIATE DIRECTOR, OFFICE OF HIGH ENERGY PHYSICS",
+                      "placementMethod": "listed_under_organization_in_opm_plum_archive",
+                      "positionCurrentListing": {
+                        "source": "opm_plum_current_export",
+                        "method": "listed_in_opm_current_plum_export",
+                        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                        "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF HIGH ENERGY PHYSICS",
+                        "agency": "DEPARTMENT OF ENERGY",
+                        "organization": "OFFICE OF SCIENCE",
+                        "positionStatus": "Filled",
+                        "appointmentType": "CA",
+                        "payPlan": "ES",
+                        "level": "$228,000",
+                        "payLevel": null,
+                        "reportedPay": 228000.0,
+                        "reportedPayText": "$228,000",
+                        "payPlanAndLevelOnOneRow": true,
+                        "rows": 1,
+                        "rowsListed": 1,
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
+                      },
+                      "positionCurrentPay": {
+                        "source": "opm_plum_current_export",
+                        "sourceLabel": "OPM's current PLUM Reporting export",
+                        "method": "rate_of_basic_pay_stated_in_opm_current_plum_export",
+                        "amount": 228000.0,
+                        "rateText": "$228,000",
+                        "payPlan": "ES",
+                        "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF HIGH ENERGY PHYSICS",
+                        "agency": "DEPARTMENT OF ENERGY",
+                        "organization": "OFFICE OF SCIENCE",
+                        "positionStatus": "Filled",
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "ASSOCIATE DIRECTOR, OFFICE OF HIGH ENERGY PHYSICS",
+                        "quote": "ASSOCIATE DIRECTOR, OFFICE OF HIGH ENERGY PHYSICS; DEPARTMENT OF ENERGY; OFFICE OF SCIENCE; Pay Plan ES; Level, Grade, or Pay $228,000; Position Status Filled",
+                        "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "verification": {
+                          "documents": 1,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 70,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right -- and a row in that export is an incumbency, not the post's own rate.",
+                          "documentRoles": [
+                            {
+                              "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                              "role": "prints the rate for the one row listed under this title now"
+                            }
+                          ]
+                        }
+                      }
                     },
                     {
                       "id": "exec-dept-doe-sc-associate-director-nuclear-physics",
-                      "name": "Associate Director — Nuclear Physics",
+                      "name": "Associate Director, Office of Nuclear Physics",
                       "type": "Position",
                       "desc": "Federal position: Associate Director — Nuclear Physics",
                       "employees": null,
                       "budget": null,
                       "color": "#666666",
                       "children": [],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "nameSource": "title_as_the_opm_current_plum_export_prints_it",
+                      "nameSourceDetail": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                      "nameMatchedText": "ASSOCIATE DIRECTOR, OFFICE OF NUCLEAR PHYSICS",
+                      "sourceUrls": [
+                        "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "sourceTypes": [
+                        "opm_plum_archive",
+                        "official_site",
+                        "opm_plum_current_export"
+                      ],
+                      "proofSourceCount": 3,
+                      "proofSourceTypes": [
+                        "opm_plum_archive",
+                        "official_site",
+                        "opm_plum_current_export"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": null,
                       "cost_status": "unavailable",
                       "cost_basis": "subtree_weight",
@@ -182717,7 +183703,136 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.0,
                       "costVerificationReason": "missing_cost",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 2,
+                      "confidenceScore": 0.8,
+                      "verificationStatus": "verified",
+                      "lastVerified": "2026-09-21T03:02:16Z",
+                      "evidenceUrls": [
+                        "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "positionListing": {
+                        "source": "opm_plum_archive",
+                        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+                        "period": "January 21, 2021 - January 20, 2025",
+                        "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF NUCLEAR PHYSICS",
+                        "listedAgency": "DEPARTMENT OF ENERGY",
+                        "listedOrganization": "OFFICE OF SCIENCE",
+                        "appointmentType": "CA",
+                        "status": "Vacant",
+                        "payPlan": "ES",
+                        "level": null,
+                        "payLevel": null,
+                        "reportedPay": null,
+                        "reportedPayText": null,
+                        "payPlanAndLevelOnOneRow": false,
+                        "incumbencies": 2,
+                        "standing": 1,
+                        "valuesFrom": "standing_listings",
+                        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "checkedAt": "2026-09-08T19:49:47Z"
+                      },
+                      "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                      "verificationMethod": "listed_in_opm_plum_archive",
+                      "placementVerified": true,
+                      "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                      "placementVerifiedAt": "2026-09-08T19:49:47Z",
+                      "placementParentId": "exec-dept-doe-sc",
+                      "placementMatchedText": "ASSOCIATE DIRECTOR, OFFICE OF NUCLEAR PHYSICS",
+                      "placementMethod": "listed_under_organization_in_opm_plum_archive",
+                      "positionCurrentListing": {
+                        "source": "opm_plum_current_export",
+                        "method": "listed_in_opm_current_plum_export",
+                        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                        "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF NUCLEAR PHYSICS",
+                        "agency": "DEPARTMENT OF ENERGY",
+                        "organization": "OFFICE OF SCIENCE",
+                        "positionStatus": "Vacant",
+                        "appointmentType": "CA",
+                        "payPlan": "ES",
+                        "level": null,
+                        "payLevel": null,
+                        "reportedPay": null,
+                        "reportedPayText": null,
+                        "payPlanAndLevelOnOneRow": false,
+                        "rows": 1,
+                        "rowsListed": 1,
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
+                      },
+                      "positionGradePay": {
+                        "source": "opm_salary_table_range",
+                        "method": "pay_system_range_for_the_pay_plan_reported_in_the_plum_archive",
+                        "kind": "senior_executive_service",
+                        "payPlan": "ES",
+                        "grade": null,
+                        "minimum": 151661.0,
+                        "minimumPrinted": "151,661",
+                        "maximum": 228000.0,
+                        "maximumPrinted": "228,000",
+                        "table": "Salary Table No. 2026-ES",
+                        "effectiveText": "Effective January 2026",
+                        "effective": "2026-01-01",
+                        "fiscalYear": 2026,
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "Senior Executive Service pay system, Agencies with a Certified SES Performance Appraisal System / Agencies without a Certified SES Performance Appraisal System",
+                        "quote": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000 | Agencies without a Certified SES Performance Appraisal System $151,661 $209,600",
+                        "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+                        "footnotes": [
+                          "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+                        ],
+                        "listingSource": {
+                          "source": "opm_plum_current_export",
+                          "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                          "period": null,
+                          "listedTitle": "ASSOCIATE DIRECTOR, OFFICE OF NUCLEAR PHYSICS",
+                          "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                          "checkedAt": "2026-09-21T03:02:16Z"
+                        },
+                        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+                        "documentSha256": "202c3f63db65c9584d7ae37f7f40d58337762517f149c37b587ed71c09e53026",
+                        "checkedAt": "2026-09-21T03:00:01Z",
+                        "rows": [
+                          {
+                            "label": "Agencies with a Certified SES Performance Appraisal System",
+                            "minimum": 151661.0,
+                            "minimumRaw": "151,661",
+                            "maximum": 228000.0,
+                            "maximumRaw": "228,000",
+                            "rowText": "Agencies with a Certified SES Performance Appraisal System $151,661 $228,000"
+                          },
+                          {
+                            "label": "Agencies without a Certified SES Performance Appraisal System",
+                            "minimum": 151661.0,
+                            "minimumRaw": "151,661",
+                            "maximum": 209600.0,
+                            "maximumRaw": "209,600",
+                            "rowText": "Agencies without a Certified SES Performance Appraisal System $151,661 $209,600"
+                          }
+                        ],
+                        "verification": {
+                          "documents": 2,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 80,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document prints the bounds and the other states which pay plan this post is on. The percentage measures how much official documentation the range rests on, not the chance that it is right -- and a range is not a rate: neither document says what this post is paid.",
+                          "documentRoles": [
+                            {
+                              "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/ES.aspx",
+                              "role": "states the pay system's or grade's printed bounds"
+                            },
+                            {
+                              "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                              "role": "states the pay plan this post is on"
+                            }
+                          ]
+                        }
+                      }
                     }
                   ],
                   "sourceUrls": [
@@ -237407,13 +238522,47 @@
                     },
                     {
                       "id": "exec-dept-dhs-cisa-executive-assistant-director-emergency-communications",
-                      "name": "Executive Assistant Director — Emergency Communications",
+                      "name": "Executive Assistant Director for Emergency Communications",
                       "type": "Position",
                       "desc": "Federal position: Executive Assistant Director — Emergency Communications",
                       "employees": null,
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "nameSource": "title_as_the_opm_current_plum_export_prints_it",
+                      "nameSourceDetail": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                      "nameMatchedText": "EXECUTIVE ASSISTANT DIRECTOR FOR EMERGENCY COMMUNICATIONS",
+                      "sourceUrls": [
+                        "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "sourceTypes": [
+                        "opm_plum_archive",
+                        "official_site",
+                        "opm_plum_current_export"
+                      ],
+                      "proofSourceCount": 3,
+                      "proofSourceTypes": [
+                        "opm_plum_archive",
+                        "official_site",
+                        "opm_plum_current_export"
+                      ],
+                      "existsProven": true,
+                      "parentProven": true,
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
+                      "resolved_total_amount": null,
+                      "cost_status": "unavailable",
+                      "cost_basis": "subtree_weight",
+                      "cost_validation": "post_is_not_a_budget_unit",
+                      "costVerificationStatus": "unverified",
+                      "costConfidenceScore": 0.0,
+                      "costVerificationReason": "missing_cost",
+                      "costSourceCount": 0,
+                      "sourceCount": 2,
+                      "confidenceScore": 0.8,
+                      "verificationStatus": "verified",
+                      "lastVerified": "2026-09-21T03:02:16Z",
                       "verificationUnread": {
                         "kind": "host_refuses_crawler",
                         "url": "https://www.cisa.gov/",
@@ -237422,26 +238571,96 @@
                         "attempts": 1,
                         "detail": "PermissionError: robots.txt disallows this path (www.cisa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
                       },
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
-                      "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
-                      "resolved_total_amount": null,
-                      "cost_status": "unavailable",
-                      "cost_basis": "subtree_weight",
-                      "cost_validation": "post_is_not_a_budget_unit",
-                      "costVerificationStatus": "unverified",
-                      "costConfidenceScore": 0.0,
-                      "costVerificationReason": "missing_cost",
-                      "costSourceCount": 0
+                      "evidenceUrls": [
+                        "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "positionListing": {
+                        "source": "opm_plum_archive",
+                        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+                        "period": "January 21, 2021 - January 20, 2025",
+                        "listedTitle": "EXECUTIVE ASSISTANT DIRECTOR FOR EMERGENCY COMMUNICATIONS",
+                        "listedAgency": "DEPARTMENT OF HOMELAND SECURITY",
+                        "listedOrganization": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY",
+                        "appointmentType": "CA",
+                        "status": "Filled",
+                        "payPlan": "ES",
+                        "level": "$218,594",
+                        "payLevel": null,
+                        "reportedPay": 218594.0,
+                        "reportedPayText": "$218,594",
+                        "payPlanAndLevelOnOneRow": true,
+                        "incumbencies": 1,
+                        "standing": 1,
+                        "valuesFrom": "standing_listings",
+                        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                        "checkedAt": "2026-09-08T19:49:47Z"
+                      },
+                      "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                      "verificationMethod": "listed_in_opm_plum_archive",
+                      "placementVerified": true,
+                      "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+                      "placementVerifiedAt": "2026-09-08T19:49:47Z",
+                      "placementParentId": "exec-dept-dhs-cisa",
+                      "placementMatchedText": "EXECUTIVE ASSISTANT DIRECTOR FOR EMERGENCY COMMUNICATIONS",
+                      "placementMethod": "listed_under_organization_in_opm_plum_archive",
+                      "positionCurrentListing": {
+                        "source": "opm_plum_current_export",
+                        "method": "listed_in_opm_current_plum_export",
+                        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                        "listedTitle": "EXECUTIVE ASSISTANT DIRECTOR FOR EMERGENCY COMMUNICATIONS",
+                        "agency": "DEPARTMENT OF HOMELAND SECURITY",
+                        "organization": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY",
+                        "positionStatus": "Filled",
+                        "appointmentType": "CA",
+                        "payPlan": "ES",
+                        "level": "$220,780",
+                        "payLevel": null,
+                        "reportedPay": 220780.0,
+                        "reportedPayText": "$220,780",
+                        "payPlanAndLevelOnOneRow": true,
+                        "rows": 1,
+                        "rowsListed": 1,
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
+                      },
+                      "positionCurrentPay": {
+                        "source": "opm_plum_current_export",
+                        "sourceLabel": "OPM's current PLUM Reporting export",
+                        "method": "rate_of_basic_pay_stated_in_opm_current_plum_export",
+                        "amount": 220780.0,
+                        "rateText": "$220,780",
+                        "payPlan": "ES",
+                        "listedTitle": "EXECUTIVE ASSISTANT DIRECTOR FOR EMERGENCY COMMUNICATIONS",
+                        "agency": "DEPARTMENT OF HOMELAND SECURITY",
+                        "organization": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY",
+                        "positionStatus": "Filled",
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "EXECUTIVE ASSISTANT DIRECTOR FOR EMERGENCY COMMUNICATIONS",
+                        "quote": "EXECUTIVE ASSISTANT DIRECTOR FOR EMERGENCY COMMUNICATIONS; DEPARTMENT OF HOMELAND SECURITY; CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY; Pay Plan ES; Level, Grade, or Pay $220,780; Position Status Filled",
+                        "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "verification": {
+                          "documents": 1,
+                          "documentsStatingTheFigure": 1,
+                          "percent": 70,
+                          "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                          "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right -- and a row in that export is an incumbency, not the post's own rate.",
+                          "documentRoles": [
+                            {
+                              "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                              "role": "prints the rate for the one row listed under this title now"
+                            }
+                          ]
+                        }
+                      }
                     },
                     {
                       "id": "exec-dept-dhs-cisa-executive-assistant-director-stakeholder-engagement",
@@ -297291,6 +298510,34 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "sourceUrls": [
+                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                  ],
+                  "sourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": null,
+                  "cost_status": "unavailable",
+                  "cost_basis": "subtree_weight",
+                  "cost_validation": "post_is_not_a_budget_unit",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.0,
+                  "costVerificationReason": "missing_cost",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-21T03:02:16Z",
                   "verificationUnread": {
                     "kind": "host_refuses_crawler",
                     "url": "https://www.ftc.gov/about-ftc",
@@ -297299,15 +298546,8 @@
                     "attempts": 1,
                     "detail": "PermissionError: robots.txt disallows this path (www.ftc.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
                   },
-                  "sourceUrls": [
-                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-                  ],
                   "evidenceUrls": [
                     "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-                  ],
-                  "sourceTypes": [
-                    "opm_plum_current_export",
-                    "official_site"
                   ],
                   "positionCurrentListing": {
                     "source": "opm_plum_current_export",
@@ -297332,7 +298572,6 @@
                     "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
                     "scopeRule": "title_names_the_office_it_is_filed_under"
                   },
-                  "lastVerified": "2026-09-21T03:02:16Z",
                   "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
                   "verificationMethod": "listed_in_opm_current_plum_export",
                   "placementVerified": true,
@@ -297341,18 +298580,6 @@
                   "placementParentId": "exec-regulatory-ftc",
                   "placementMatchedText": "DIRECTOR, BUREAU OF COMPETITION",
                   "placementMethod": "listed_under_organization_in_opm_current_plum_export",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "proofSourceCount": 2,
-                  "proofSourceTypes": [
-                    "opm_plum_current_export",
-                    "official_site"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "positionCurrentPay": {
                     "source": "opm_plum_current_export",
                     "sourceLabel": "OPM's current PLUM Reporting export",
@@ -297387,15 +298614,7 @@
                         }
                       ]
                     }
-                  },
-                  "resolved_total_amount": null,
-                  "cost_status": "unavailable",
-                  "cost_basis": "subtree_weight",
-                  "cost_validation": "post_is_not_a_budget_unit",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.0,
-                  "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-regulatory-ftc-director-bureau-of-consumer-protection",
@@ -297406,6 +298625,34 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "sourceUrls": [
+                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                  ],
+                  "sourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": null,
+                  "cost_status": "unavailable",
+                  "cost_basis": "subtree_weight",
+                  "cost_validation": "post_is_not_a_budget_unit",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.0,
+                  "costVerificationReason": "missing_cost",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-21T03:02:16Z",
                   "verificationUnread": {
                     "kind": "host_refuses_crawler",
                     "url": "https://www.ftc.gov/about-ftc",
@@ -297414,15 +298661,8 @@
                     "attempts": 1,
                     "detail": "PermissionError: robots.txt disallows this path (www.ftc.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
                   },
-                  "sourceUrls": [
-                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-                  ],
                   "evidenceUrls": [
                     "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-                  ],
-                  "sourceTypes": [
-                    "opm_plum_current_export",
-                    "official_site"
                   ],
                   "positionCurrentListing": {
                     "source": "opm_plum_current_export",
@@ -297447,7 +298687,6 @@
                     "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
                     "scopeRule": "title_names_the_office_it_is_filed_under"
                   },
-                  "lastVerified": "2026-09-21T03:02:16Z",
                   "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
                   "verificationMethod": "listed_in_opm_current_plum_export",
                   "placementVerified": true,
@@ -297456,18 +298695,6 @@
                   "placementParentId": "exec-regulatory-ftc",
                   "placementMatchedText": "DIRECTOR, BUREAU OF CONSUMER PROTECTION",
                   "placementMethod": "listed_under_organization_in_opm_current_plum_export",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "proofSourceCount": 2,
-                  "proofSourceTypes": [
-                    "opm_plum_current_export",
-                    "official_site"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "positionCurrentPay": {
                     "source": "opm_plum_current_export",
                     "sourceLabel": "OPM's current PLUM Reporting export",
@@ -297502,15 +298729,7 @@
                         }
                       ]
                     }
-                  },
-                  "resolved_total_amount": null,
-                  "cost_status": "unavailable",
-                  "cost_basis": "subtree_weight",
-                  "cost_validation": "post_is_not_a_budget_unit",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.0,
-                  "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-regulatory-ftc-director-bureau-of-economics",
@@ -297521,6 +298740,34 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "sourceUrls": [
+                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                  ],
+                  "sourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": null,
+                  "cost_status": "unavailable",
+                  "cost_basis": "subtree_weight",
+                  "cost_validation": "post_is_not_a_budget_unit",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.0,
+                  "costVerificationReason": "missing_cost",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-21T03:02:16Z",
                   "verificationUnread": {
                     "kind": "host_refuses_crawler",
                     "url": "https://www.ftc.gov/about-ftc",
@@ -297529,15 +298776,8 @@
                     "attempts": 1,
                     "detail": "PermissionError: robots.txt disallows this path (www.ftc.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
                   },
-                  "sourceUrls": [
-                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-                  ],
                   "evidenceUrls": [
                     "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-                  ],
-                  "sourceTypes": [
-                    "opm_plum_current_export",
-                    "official_site"
                   ],
                   "positionCurrentListing": {
                     "source": "opm_plum_current_export",
@@ -297562,7 +298802,6 @@
                     "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
                     "scopeRule": "title_names_the_office_it_is_filed_under"
                   },
-                  "lastVerified": "2026-09-21T03:02:16Z",
                   "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
                   "verificationMethod": "listed_in_opm_current_plum_export",
                   "placementVerified": true,
@@ -297571,18 +298810,6 @@
                   "placementParentId": "exec-regulatory-ftc",
                   "placementMatchedText": "DIRECTOR, BUREAU OF ECONOMICS",
                   "placementMethod": "listed_under_organization_in_opm_current_plum_export",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "proofSourceCount": 2,
-                  "proofSourceTypes": [
-                    "opm_plum_current_export",
-                    "official_site"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "positionGradePay": {
                     "source": "opm_salary_table_range",
                     "method": "pay_system_range_for_the_pay_plan_reported_in_the_plum_archive",
@@ -297652,15 +298879,7 @@
                         }
                       ]
                     }
-                  },
-                  "resolved_total_amount": null,
-                  "cost_status": "unavailable",
-                  "cost_basis": "subtree_weight",
-                  "cost_validation": "post_is_not_a_budget_unit",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.0,
-                  "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-regulatory-ftc-general-counsel",
@@ -298586,12 +299805,33 @@
                   "sourceUrls": [
                     "https://escs.opm.gov/escs-net/api/pbpub/download-data"
                   ],
-                  "evidenceUrls": [
-                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-                  ],
                   "sourceTypes": [
                     "opm_plum_current_export",
                     "official_site"
+                  ],
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": null,
+                  "cost_status": "unavailable",
+                  "cost_basis": "subtree_weight",
+                  "cost_validation": "post_is_not_a_budget_unit",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.0,
+                  "costVerificationReason": "missing_cost",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-21T03:02:16Z",
+                  "evidenceUrls": [
+                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
                   ],
                   "positionCurrentListing": {
                     "source": "opm_plum_current_export",
@@ -298616,7 +299856,6 @@
                     "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
                     "scopeRule": "title_names_the_office_it_is_filed_under"
                   },
-                  "lastVerified": "2026-09-21T03:02:16Z",
                   "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
                   "verificationMethod": "listed_in_opm_current_plum_export",
                   "placementVerified": true,
@@ -298625,18 +299864,6 @@
                   "placementParentId": "exec-regulatory-nrc",
                   "placementMatchedText": "DIRECTOR, OFFICE OF NUCLEAR SECURITY AND INCIDENT RESPONSE",
                   "placementMethod": "listed_under_organization_in_opm_current_plum_export",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "proofSourceCount": 2,
-                  "proofSourceTypes": [
-                    "opm_plum_current_export",
-                    "official_site"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "positionGradePay": {
                     "source": "opm_salary_table_range",
                     "method": "pay_system_range_for_the_pay_plan_reported_in_the_plum_archive",
@@ -298706,15 +299933,7 @@
                         }
                       ]
                     }
-                  },
-                  "resolved_total_amount": null,
-                  "cost_status": "unavailable",
-                  "cost_basis": "subtree_weight",
-                  "cost_validation": "post_is_not_a_budget_unit",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.0,
-                  "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-regulatory-nrc-general-counsel",
@@ -299831,6 +301050,34 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "sourceUrls": [
+                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                  ],
+                  "sourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": null,
+                  "cost_status": "unavailable",
+                  "cost_basis": "subtree_weight",
+                  "cost_validation": "post_is_not_a_budget_unit",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.0,
+                  "costVerificationReason": "missing_cost",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-21T03:02:16Z",
                   "verificationUnread": {
                     "kind": "host_refuses_crawler",
                     "url": "https://www.ferc.gov/about/what-ferc",
@@ -299839,15 +301086,8 @@
                     "attempts": 1,
                     "detail": "HTTPError: HTTP Error 403: Forbidden"
                   },
-                  "sourceUrls": [
-                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-                  ],
                   "evidenceUrls": [
                     "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-                  ],
-                  "sourceTypes": [
-                    "opm_plum_current_export",
-                    "official_site"
                   ],
                   "positionCurrentListing": {
                     "source": "opm_plum_current_export",
@@ -299872,7 +301112,6 @@
                     "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
                     "scopeRule": "title_names_the_office_it_is_filed_under"
                   },
-                  "lastVerified": "2026-09-21T03:02:16Z",
                   "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
                   "verificationMethod": "listed_in_opm_current_plum_export",
                   "placementVerified": true,
@@ -299881,18 +301120,6 @@
                   "placementParentId": "exec-regulatory-ferc",
                   "placementMatchedText": "DIRECTOR, OFFICE OF ENERGY MARKET REGULATION",
                   "placementMethod": "listed_under_organization_in_opm_current_plum_export",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "proofSourceCount": 2,
-                  "proofSourceTypes": [
-                    "opm_plum_current_export",
-                    "official_site"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "positionCurrentPay": {
                     "source": "opm_plum_current_export",
                     "sourceLabel": "OPM's current PLUM Reporting export",
@@ -299927,15 +301154,7 @@
                         }
                       ]
                     }
-                  },
-                  "resolved_total_amount": null,
-                  "cost_status": "unavailable",
-                  "cost_basis": "subtree_weight",
-                  "cost_validation": "post_is_not_a_budget_unit",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.0,
-                  "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-regulatory-ferc-director-office-of-electric-reliability",
@@ -299946,6 +301165,34 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "sourceUrls": [
+                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                  ],
+                  "sourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "opm_plum_current_export",
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": null,
+                  "cost_status": "unavailable",
+                  "cost_basis": "subtree_weight",
+                  "cost_validation": "post_is_not_a_budget_unit",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.0,
+                  "costVerificationReason": "missing_cost",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-21T03:02:16Z",
                   "verificationUnread": {
                     "kind": "host_refuses_crawler",
                     "url": "https://www.ferc.gov/about/what-ferc",
@@ -299954,15 +301201,8 @@
                     "attempts": 1,
                     "detail": "HTTPError: HTTP Error 403: Forbidden"
                   },
-                  "sourceUrls": [
-                    "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-                  ],
                   "evidenceUrls": [
                     "https://escs.opm.gov/escs-net/api/pbpub/download-data"
-                  ],
-                  "sourceTypes": [
-                    "opm_plum_current_export",
-                    "official_site"
                   ],
                   "positionCurrentListing": {
                     "source": "opm_plum_current_export",
@@ -299987,7 +301227,6 @@
                     "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
                     "scopeRule": "title_names_the_office_it_is_filed_under"
                   },
-                  "lastVerified": "2026-09-21T03:02:16Z",
                   "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
                   "verificationMethod": "listed_in_opm_current_plum_export",
                   "placementVerified": true,
@@ -299996,18 +301235,6 @@
                   "placementParentId": "exec-regulatory-ferc",
                   "placementMatchedText": "DIRECTOR, OFFICE OF ELECTRIC RELIABILITY",
                   "placementMethod": "listed_under_organization_in_opm_current_plum_export",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "proofSourceCount": 2,
-                  "proofSourceTypes": [
-                    "opm_plum_current_export",
-                    "official_site"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "positionCurrentPay": {
                     "source": "opm_plum_current_export",
                     "sourceLabel": "OPM's current PLUM Reporting export",
@@ -300042,15 +301269,7 @@
                         }
                       ]
                     }
-                  },
-                  "resolved_total_amount": null,
-                  "cost_status": "unavailable",
-                  "cost_basis": "subtree_weight",
-                  "cost_validation": "post_is_not_a_budget_unit",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.0,
-                  "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-regulatory-ferc-director-office-of-enforcement",

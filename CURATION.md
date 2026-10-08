@@ -5465,3 +5465,56 @@ pay system, §19.18) and the FISC's judges (50 U.S.C. 1803 states no pay, §19.1
 - **Declined as multi-post:** SSA's regional commissioners, the NRC's and CISA's
   regional directors — rows per region at differing rates. USPS's AD rows print no
   figure; the Board's stipend stays declined (§19.18).
+
+### 19.25 The spelling leads renamed, and the fourth pass widened (2026-10-08)
+
+The owner decided §19.24's two open items: "do the renames and build the wider
+reach rule".
+
+- **Renamed** by `scripts/rename_posts_to_printed_titles.py` under its new
+  `opm_current_plum_export_title` licence (rows in `data/curation/post_renames.json`),
+  each to the title one live listing of the committed export prints under the
+  named agency and organization, every one reached by the main pass under its own
+  organisation afterwards:
+  - the Office of Science's six Associate Directors → "Associate Director, Office
+    of Advanced Scientific Computing Research" ($220,723), "… Basic Energy Sciences"
+    ($226,664), "… Biological and Environmental Research" ($228,000), "… High
+    Energy Physics" ($228,000), "… Fusion Energy Sciences" and "… Nuclear
+    Physics" (both vacant, SES range);
+  - CISA's "Executive Assistant Director for Emergency Communications" ($220,780).
+    Checked first: 6 U.S.C. 571 (committed, `cisa_6_usc_571_govinfo2024.html`)
+    makes the Executive Assistant Director the Division's head and states no
+    level, unlike 653(a)(2)(A) and 654 for the other two, and §§5312–5316 print no
+    "Assistant Director for Emergency Communications" for 571(g)'s deeming rule to
+    reach, so the export's ES listing contradicts no Code provision;
+  - "Director, Bureau of Engraving and Printing" and "Commissioner, Bureau of the
+    Fiscal Service" (both vacant, SES range); the Schedule names neither office
+    (§5316's "Fiscal Assistant Secretary of the Treasury" is another).
+- **Declined:** Census's Associate Directors for Economic and Demographic
+  Programs. The export files each under Commerce in an office named for the post
+  ("ASSOCIATE DIRECTOR FOR ECONOMIC PROGRAMS"), beside an "ASSISTANT DIRECTOR"
+  row of the same office at a different rate; the office-named-for-the-post pass
+  reaches only the agency's direct children and the posts sit under Census, so a
+  rename would buy nothing. Widening that pass was not decided.
+- **Evidence lost by the renames:** none. A per-node diff of `graph.json` before
+  and after: the nine carried no page, Manual, archive or signature claim, and
+  CISA's `verificationUnread` (a page fetch that failed) is unchanged.
+- **Built:** the fifth `plum_current` pass, `title_names_the_office_it_is_filed_under_beneath_the_agency`
+  (CLAUDE.md). The whole title must answer to exactly one post anywhere beneath
+  the agency; no placement is claimed. It reaches exactly the three §19.24
+  measured: NCI's Director (OT $350,000, filed under HHS's "NATIONAL CANCER
+  INSTITUTE", drawn under NIH), APHIS's Deputy Administrator for Veterinary
+  Services and the Forest Service's Deputy Chief for the National Forest System
+  (vacant, SES range). Each is the office the title names, under the unit the
+  graph draws it beneath; none is on the Schedule; no title was answered by two
+  posts.
+- **The archive too:** OPM's PLUM archive of the previous administration prints
+  the same nine titles, so `positions.py` reaches all nine on re-derivation
+  (129 → 138). For the Bureau of Engraving and Printing's Director ($221,900) and
+  the Fiscal Service's Commissioner ($185,100) the archive prints a former
+  incumbent's rate while the current export lists the post vacant; by the
+  existing rule a stated rate refuses the SES range, and an archive rate alone is
+  not counted as a pay claim, so those two gain listings and no pay claim.
+- **Counts:** pay claims 1,248 → 1,258; unpriced 3,343 → 3,333; current-export
+  listings 271 → 283; archive listings 129 → 138. Twelve nodes changed and
+  nothing else.

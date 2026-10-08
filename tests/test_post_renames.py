@@ -31,6 +31,23 @@ USTR = (
 NOTE = "tests/fixtures/uscode/pay_schedules_5_usc_5332.html"
 SCHEDULE = "tests/fixtures/uscode/exec_schedule_5314.html"
 COMPOSING = "tests/fixtures/uscode/ustr_19_usc_2171_govinfo2024.html"
+EXPORT = "tests/fixtures/opm/plum/escs_pbpub_download-data.csv"
+#: The rows licensed by a title OPM's current PLUM export prints (2026-10-08).
+EXPORT_ROWS = {
+    "exec-dept-doe-sc-associate-director-advanced-scientific-computing-research":
+        "Associate Director, Office of Advanced Scientific Computing Research",
+    "exec-dept-doe-sc-associate-director-basic-energy-sciences": "Associate Director, Office of Basic Energy Sciences",
+    "exec-dept-doe-sc-associate-director-biological-environmental-research":
+        "Associate Director, Office of Biological and Environmental Research",
+    "exec-dept-doe-sc-associate-director-fusion-energy-sciences": "Associate Director, Office of Fusion Energy Sciences",
+    "exec-dept-doe-sc-associate-director-high-energy-physics": "Associate Director, Office of High Energy Physics",
+    "exec-dept-doe-sc-associate-director-nuclear-physics": "Associate Director, Office of Nuclear Physics",
+    "exec-dept-dhs-cisa-executive-assistant-director-emergency-communications":
+        "Executive Assistant Director for Emergency Communications",
+    "exec-dept-treasury-bep-director-bep": "Director, Bureau of Engraving and Printing",
+    "exec-dept-treasury-fiscal-commissioner-fiscal-service": "Commissioner, Bureau of the Fiscal Service",
+}
+BEP = "exec-dept-treasury-bep-director-bep"
 
 
 def _rows():
@@ -60,7 +77,7 @@ class _TempFixtures:
 
     def __enter__(self):
         self.dir = Path(tempfile.mkdtemp())
-        for rel in (NOTE, SCHEDULE, COMPOSING):
+        for rel in (NOTE, SCHEDULE, COMPOSING, EXPORT):
             for suffix in ("", ".meta.json"):
                 source = PROJECT_ROOT / (rel + suffix)
                 target = self.dir / (rel + suffix)
@@ -84,9 +101,13 @@ class _TempFixtures:
 
 
 class TableTests(unittest.TestCase):
-    def test_the_table_names_the_four_rows_the_owner_decided(self):
+    def test_the_table_names_the_rows_the_owner_decided(self):
         rows = _by_id(_rows())
-        self.assertEqual({SEA, *USTR}, set(rows))
+        self.assertEqual({SEA, *USTR, *EXPORT_ROWS}, set(rows))
+        for node_id, proposed in EXPORT_ROWS.items():
+            self.assertEqual(writer.LICENCE_CURRENT_EXPORT, rows[node_id]["licence"])
+            self.assertEqual(proposed, rows[node_id]["to"])
+            self.assertEqual(EXPORT, rows[node_id]["fixture"])
         self.assertEqual("Chief Master Sergeant of the Space Force", rows[SEA]["to"])
         for node_id in USTR:
             row = rows[node_id]
@@ -117,7 +138,9 @@ class ApplyTests(unittest.TestCase):
                 self.assertEqual(row["to"], node["name"])
                 self.assertEqual(writer.NAME_SOURCES[row["licence"]], node["nameSource"])
                 self.assertEqual(row["printed"], node["nameMatchedText"])
-                self.assertTrue(node["nameSourceDetail"].startswith("https://uscode.house.gov/"))
+                expected_host = ("https://escs.opm.gov/" if row["licence"] == writer.LICENCE_CURRENT_EXPORT
+                                 else "https://uscode.house.gov/")
+                self.assertTrue(node["nameSourceDetail"].startswith(expected_host))
                 # It only renames: type, children and description are untouched.
                 self.assertEqual("Position", node["type"])
                 self.assertEqual([], node.get("children") or [])
@@ -248,11 +271,134 @@ class RefusalTests(unittest.TestCase):
         self.assertTrue(results[SEA]["applied"])
 
 
+class CurrentExportLicenceTests(unittest.TestCase):
+    """The third licence, since 2026-10-08: a title OPM's committed current
+    PLUM export prints on one live listing, pinned in both directions."""
+
+    def _one(self, row_id, mutate_row=None, project_root=writer.PROJECT_ROOT):
+        rows = copy.deepcopy(_rows())
+        tree = _unrenamed_tree(rows)
+        if mutate_row:
+            mutate_row(next(r for r in rows if r["id"] == row_id))
+        before = copy.deepcopy(tree)
+        result = _by_id(writer.adjudicate(tree, rows, apply=True, project_root=project_root))[row_id]
+        if not result["applied"]:
+            self.assertEqual(index_tree(before)[0][row_id]["name"], index_tree(tree)[0][row_id]["name"])
+        return result
+
+    def test_every_export_row_applies_and_cites_the_committed_export(self):
+        for node_id in EXPORT_ROWS:
+            with self.subTest(node_id):
+                result = self._one(node_id)
+                self.assertTrue(result["applied"], result)
+                self.assertEqual(writer.LICENCE_CURRENT_EXPORT, result["licence"])
+                meta = json.loads((PROJECT_ROOT / (EXPORT + ".meta.json")).read_text(encoding="utf-8"))
+                self.assertEqual(meta["sha256"], result["sha256"])
+
+    def test_the_casing_is_the_reviewers_but_the_words_are_the_exports(self):
+        def recase(row):
+            row["to"] = row["to"].upper()
+        self.assertTrue(self._one(BEP, recase)["applied"])
+
+        def other_words(row):
+            row["to"] = "Director, Bureau of Engraving"
+        self.assertEqual("proposed_name_is_not_the_printed_title", self._one(BEP, other_words)["reason"])
+
+    def test_a_title_the_export_does_not_print_under_that_filing_refuses(self):
+        def other_title(row):
+            row["printed"] = "DIRECTOR, BUREAU OF ENGRAVING"
+            row["to"] = "Director, Bureau of Engraving"
+        self.assertEqual("document_does_not_print_the_title", self._one(BEP, other_title)["reason"])
+
+        def other_organization(row):
+            row["organization"] = "GENERAL COUNSEL"
+        self.assertEqual("document_does_not_print_the_title", self._one(BEP, other_organization)["reason"])
+
+        def other_agency(row):
+            row["agency"] = "DEPARTMENT OF COMMERCE"
+        self.assertEqual("document_does_not_print_the_title", self._one(BEP, other_agency)["reason"])
+
+        def no_filing(row):
+            row.pop("organization")
+        self.assertEqual("row_is_incomplete", self._one(BEP, no_filing)["reason"])
+
+    def test_a_doctored_export_refuses_the_row(self):
+        with _TempFixtures() as fixtures:
+            fixtures.doctor(EXPORT, "DIRECTOR, BUREAU OF ENGRAVING AND PRINTING", "DIRECTOR, BUREAU OF PRINTING",
+                            fix_digest=False)
+            self.assertEqual("document_unreadable", self._one(BEP, project_root=fixtures.dir)["reason"])
+        with _TempFixtures() as fixtures:
+            # A re-hashed edit is read, and the title it no longer prints refuses.
+            fixtures.doctor(EXPORT, "DIRECTOR, BUREAU OF ENGRAVING AND PRINTING", "DIRECTOR, BUREAU OF PRINTING")
+            self.assertEqual("document_does_not_print_the_title", self._one(BEP, project_root=fixtures.dir)["reason"])
+
+    def _synthetic(self, lines):
+        """A project root holding a small export of the committed file's shape,
+        with a person's name planted in every incumbent column."""
+        directory = Path(tempfile.mkdtemp())
+        path = directory / EXPORT
+        path.parent.mkdir(parents=True, exist_ok=True)
+        header = ('Agency,Organization,Position Title,Position Status,Appointment Type,Expiration Date,'
+                  '"Level, Grade, or Pay",Duty Location,First Name,Last Name,Individual Unique ID,Pay Plan,Tenure,Begin Date,Vacate Date')
+        body = ("\ufeff" + header + "\r\n" + "\r\n".join(lines) + "\r\n").encode("utf-8")
+        path.write_bytes(body)
+        (directory / (EXPORT + ".meta.json")).write_text(json.dumps({
+            "fetched_at": "2026-09-21T03:02:16Z", "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+            "final_url": "https://escs.opm.gov/escs-net/api/pbpub/download-data", "status": 200,
+            "sha256": hashlib.sha256(body).hexdigest(), "error": None}), encoding="utf-8")
+        return directory
+
+    @staticmethod
+    def _line(status, level, plan="ES"):
+        return ('DEPARTMENT OF THE TREASURY,BUREAU OF ENGRAVING AND PRINTING,"DIRECTOR, BUREAU OF ENGRAVING AND PRINTING",'
+                f'{status},CA,,"{level}","Washington, DC",SENTINELNAME,SENTINELNAME,SENTINELNAME9,{plan},5.0,01/21/2025,')
+
+    def test_a_historical_row_alone_licenses_nothing(self):
+        root = self._synthetic([self._line("Historical", "$228,000")])
+        try:
+            self.assertEqual("document_does_not_print_the_title", self._one(BEP, project_root=root)["reason"])
+        finally:
+            shutil.rmtree(root, ignore_errors=True)
+
+    def test_a_title_listed_on_two_listings_licenses_nothing(self):
+        root = self._synthetic([self._line("Filled", "$228,000"), self._line("Vacant", "$197,200")])
+        try:
+            self.assertEqual("export_lists_the_title_more_than_once", self._one(BEP, project_root=root)["reason"])
+        finally:
+            shutil.rmtree(root, ignore_errors=True)
+
+    def test_one_listing_folded_from_several_rows_licenses_and_no_name_is_read(self):
+        root = self._synthetic([self._line("Filled", "$228,000"), self._line("Filled", "$228,000")])
+        try:
+            rows = copy.deepcopy(_rows())
+            tree = _unrenamed_tree(rows)
+            results = writer.adjudicate(tree, rows, apply=True, project_root=root)
+            result = _by_id(results)[BEP]
+            self.assertTrue(result["applied"], result)
+            self.assertNotIn("SENTINELNAME", json.dumps(results))
+            self.assertNotIn("SENTINELNAME", json.dumps(index_tree(tree)[0][BEP]))
+        finally:
+            shutil.rmtree(root, ignore_errors=True)
+
+    def test_the_static_refusals_hold_for_this_licence_too(self):
+        def stale(row):
+            row["from"] = "Director, Bureau of Engraving & Printing (old)"
+        self.assertEqual("curated_name_has_changed", self._one(BEP, stale)["reason"])
+
+        def moved(row):
+            row["parentId"] = "exec-dept-treasury"
+        self.assertEqual("node_has_moved", self._one(BEP, moved)["reason"])
+
+
 class NoPersonTests(unittest.TestCase):
     def test_the_writer_reads_no_persons_name(self):
         source = (PROJECT_ROOT / "scripts" / "rename_posts_to_printed_titles.py").read_text(encoding="utf-8")
-        for marker in ("First Name", "Last Name", "NameColumnValue", "plum", "whitehouse"):
+        for marker in ("First Name", "Last Name", "Individual Unique ID", "NameColumnValue", "whitehouse"):
             self.assertNotIn(marker, source)
+        # The current export is read only through plum_current's READ_COLUMNS
+        # projection; the writer opens no CSV of its own.
+        self.assertIn("load_plum_export", source)
+        self.assertNotIn("import csv", source)
 
 
 if __name__ == "__main__":

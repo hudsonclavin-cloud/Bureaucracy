@@ -18,9 +18,9 @@
     "file": "data/verification/position_evidence.json",
     "current_export_file": "data/verification/plum_current_evidence.json",
     "rule": "the current export's listing supplies the level where it lists the post; the archive's otherwise; each record's levelClaim.source names which",
-    "from_current": 271,
+    "from_current": 283,
     "from_archive": 11,
-    "either_reports_a_rate": 163
+    "either_reports_a_rate": 171
   },
   "report": {
     "source": "opm_executive_schedule",
@@ -40,12 +40,12 @@
     "footnotes": [
       "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
     ],
-    "listings_considered": 282,
+    "listings_considered": 294,
     "priced": 74,
     "refused": {
-      "a_listing_reports_a_rate": 10,
-      "archive_reports_a_rate": 153,
-      "no_level_reported": 44,
+      "a_listing_reports_a_rate": 12,
+      "archive_reports_a_rate": 159,
+      "no_level_reported": 48,
       "pay_plan_is_gs_not_executive_schedule": 1
     },
     "priced_by_level": {

@@ -718,7 +718,9 @@ class ScriptAndGateTestCase(unittest.TestCase):
         code, out = self._derive("--dry-run")
         self.assertEqual(code, 0, out)
         self.assertFalse(self.out.exists())
-        self.assertIn("ranged 3", out)
+        # Three of the records the real listings yield reach this small base
+        # graph; "ranged N" counts every record the listings yield.
+        self.assertIn("validated 3", out)
 
     def test_a_multi_post_node_is_not_ranged_by_a_real_build(self):
         base = json.loads(json.dumps(BASE))
