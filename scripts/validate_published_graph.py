@@ -2161,6 +2161,11 @@ STATUTORY_PAY_NODE_TIERS = {
     # necessarily the tier's current rate.
     "jud-scotus-associate-justice-8": "associate justices",
     "jud-district-sdny-district-judge-28-active": "district judges",
+    # The standard district structure's own bench, since 2026-10-08: the
+    # table's District Judges tier for each holder, refused below when its
+    # name or its description counts senior judges in. The template's chief
+    # judge stays absent on purpose (one post standing for 94 offices).
+    "jud-district-structure-district-judge-varies-per-district": "district judges",
     "leg-senate-leadership-president-pro-tempore": "president pro tempore",
     "leg-senate-leadership-majority-leader": "majority leader",
     "leg-senate-leadership-minority-leader": "minority leader",
@@ -4467,6 +4472,9 @@ CLASS_TITLE_PAY_FIELD = "positionSchedulePay"
 #: adjusted under §461 -- so the tier's current rate cannot be claimed for
 #: each holder.
 SENIOR_JUDGE_MARKER = re.compile(r"\bsenior\b", re.IGNORECASE)
+#: The standard district structure's bench, whose DESCRIPTION is read for the
+#: marker as well (judicial_pay.DISTRICT_STRUCTURE_BENCH_ID, pinned equal).
+DISTRICT_STRUCTURE_BENCH_ID = "jud-district-structure-district-judge-varies-per-district"
 
 
 def holders_violations(node, pay, field, label):
@@ -6564,6 +6572,11 @@ def statutory_pay_violations(node, pay, today, label, tree_parents=None, type_by
     if SENIOR_JUDGE_MARKER.search(str(node.get("name") or "")) and str(pay.get("source") or "") == "uscourts_judicial_compensation":
         say("bundles senior judges, whose salary 28 U.S.C. 371(b)(2) sets by reference to a past year "
             "(adjusted under \u00a7461), not necessarily the tier's current rate")
+    if (str(node.get("id") or "") == DISTRICT_STRUCTURE_BENCH_ID
+            and SENIOR_JUDGE_MARKER.search(str(node.get("desc") or ""))
+            and str(pay.get("source") or "") == "uscourts_judicial_compensation"):
+        say("is the district-structure template's bench and its description counts senior judges in, "
+            "whose salary 28 U.S.C. 371(b)(2) sets apart from the tier's current rate")
 
     source = str(pay.get("source") or "")
     mirror = STATUTORY_PAY_SOURCES.get(source)

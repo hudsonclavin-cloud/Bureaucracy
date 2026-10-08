@@ -404,6 +404,53 @@ class BuildRecordTests(unittest.TestCase):
             self.assertEqual(fe.classify(out), "partial", node_id)
 
 
+class EopUnitDirectorDeclineTests(unittest.TestCase):
+    """Declined 2026-10-08 (thirteenth batch), pinned against the committed
+    report and the curated file. The report prints one row whose title names
+    the National Economic Council's directorship and one naming the Office of
+    Administration's, each held by exactly one person at a non-zero rate --
+    so uniqueness is not why they are refused. They are refused because each
+    row already prices the White House Office node named as the report prints
+    the title, and the curated `Director, NEC` / `Director, Office of
+    Administration` under the EOP units is the same office drawn a second
+    time. Publishing one listed person's rate on both would state one salary
+    as two (the `exec-vp` rule). The unit nodes sit outside the report's
+    scope and stay unpriced by this module; merging the duplicates is
+    curation."""
+
+    PAIRS = {
+        "ASSISTANT TO THE PRESIDENT FOR ECONOMIC POLICY AND DIRECTOR OF THE NATIONAL ECONOMIC COUNCIL": (
+            "exec-eop-who-assistant-to-the-president-for-economic-policy-and-director-of-the-national-economic-council",
+            "exec-eop-nec-director-nec",
+        ),
+        "ASSISTANT TO THE PRESIDENT AND DIRECTOR OF MANAGEMENT AND ADMINISTRATION AND DIRECTOR OF THE OFFICE OF ADMINISTRATION": (
+            "exec-eop-who-assistant-to-the-president-and-director-of-management-and-administration-and-director-of-the-office-of-administration",
+            "exec-eop-onadm-director-office-of-administration",
+        ),
+    }
+
+    def test_each_row_prices_the_white_house_office_node_and_never_the_unit_s_director(self):
+        from data_pipeline.exporter.build_graph import DEFAULT_BASE_GRAPH, index_tree, load_base_graph
+
+        loaded = load_staff_report()
+        rows = loaded["report"]["rows"]
+        root = load_base_graph(DEFAULT_BASE_GRAPH)
+        node_map, _ = index_tree(root)
+        records, _ = build_records(
+            node_map, loaded["report"], url=loaded["url"], sha256=loaded["sha256"],
+            retrieved_at=loaded["fetched_at"], scope_ids=scoped_node_ids(root),
+        )
+        for printed, (who_id, unit_director_id) in self.PAIRS.items():
+            with self.subTest(title=printed):
+                held = [r for r in rows if r["title"] == printed]
+                self.assertEqual(len(held), 1)
+                self.assertGreater(float(held[0]["amount"]), 0)
+                self.assertIn(who_id, records)
+                self.assertEqual(records[who_id]["reportedTitle"], printed)
+                self.assertIn(unit_director_id, node_map)
+                self.assertNotIn(unit_director_id, records)
+
+
 class ApplyTests(unittest.TestCase):
     def setUp(self):
         from data_pipeline.exporter.build_graph import index_tree
