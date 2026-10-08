@@ -5242,8 +5242,43 @@ centrally, the House's earlier-year accounts, hearing-room and support
 offices), so nothing here says by how much the estimates are wrong — but the
 gap is more than an order of magnitude, and it is the subtree-size apportionment
 this file already records as its weakest point. The gate refuses a block equal
-to its node's estimate to the cent; whether the cascade should ever weight
-committees by these figures is the owner's decision, not taken here.
+to its node's estimate to the cent.
+
+**The payouts divide the committees' pool, not the chamber's (since
+2026-10-08, decided on the owner's delegation).** The owner left this decision
+to the repository, and it was taken half-way on purpose. Within one chamber
+the payouts are comparable — one statement, one period, one basis — and
+subtree size is not evidence of spending at all, so `get_node_weight` now reads
+`committeeDisbursements.amount` as a fourth weight class, `disbursements`
+(`disbursement_weight`, and `implied_disbursement_weight` for a sibling the
+statement does not print), ranked above the uncited curated dollar figures in
+`WEIGHT_CLASS_PRIORITY`. `resolve_sibling_weights` uses it only when one
+statement printed every weighted sibling for one period
+(`disbursement_document_key`: the document's digest and the period's start
+and end); a House quarter and a Senate half-year are never compared, and a set
+that mixes them falls back to what each sibling would carry without the block.
+What it does not touch is the pool: each chamber's committees still take their
+share of the chamber by subtree size, so the House's committees hold $1.61bn of
+the House's estimate beside $55m for the 435 Representatives' offices — the
+distortion that matters most, left in place because fixing it means weighting
+the chamber's other groupings (member offices, officers, leadership) by the
+same statement, whose member-office organisations are named for the Member,
+and this project does not read names. The panel's estimate sentence says the
+payouts set how the committees divide their pool and that the pool is still
+divided by size.
+
+Measured on the rebuild: 40 committee shares weighted by a payout, the Senate
+Appropriations Committee implied at its siblings' rate ($138.8m → $161.0m),
+196 descendants moved with them, **nothing outside the two committee groupings
+changed** and no cost status changed. The House Agriculture Committee fell from
+$88.2m to $56.1m and Budget rose from $18.4m to $39.9m — subtree size had given
+the Budget Committee, which has no subcommittees, the smallest share in the House (tied with the China select committee). The gate
+(`disbursement_weight_violations`) refuses a payout weight with no block behind
+it, two statements or periods in one sibling set, an implied payout with no
+reported sibling or beside its own block, a payout weight on a measured figure,
+and shares that are not one rate per dollar paid; `tests/test_cost_cascade_units.py`
+(`CommitteePayoutWeightTests`) and `tests/test_committee_disbursements.py`
+(`PayoutWeightGateTests`) pin both directions.
 
 ### Names that state a count
 
