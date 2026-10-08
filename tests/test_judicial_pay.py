@@ -20,6 +20,7 @@ from data_pipeline.exporter.build_graph import build_graph, index_tree
 from data_pipeline.verification.evidence import EVIDENCE_OWNED_FIELDS, apply_evidence_to_tree
 from data_pipeline.verification.judicial_pay import (
     DEFAULT_TABLE_HTML,
+    DISTRICT_STRUCTURE_BENCH_ID,
     DISTRICT_STRUCTURE_TEMPLATE_ID,
     Unreadable,
     apply_pay_evidence,
@@ -408,6 +409,110 @@ class GateTests(unittest.TestCase):
         }
         violations = statutory_pay_violations(node, node["positionStatutoryPay"], "2026-09-15", _label)
         self.assertTrue(any("stands for several posts" in v for v in violations))
+
+
+def _template_tree(bench_name="District Judge (\u00d7varies per district)",
+                   bench_desc="Article III judge with lifetime appointment."):
+    """BASE plus the district-structure template's bench and two siblings,
+    shaped as the curated file carries them."""
+    tree = json.loads(json.dumps(BASE))
+    template = index_tree(tree)[0]["jud-district-structure"]
+    template["children"][0]["desc"] = "Senior active judge; administrative head of the district."
+    template["children"].append({
+        "id": DISTRICT_STRUCTURE_BENCH_ID, "name": bench_name, "type": "Position", "desc": bench_desc,
+        "representsPosts": {"text": "\u00d7varies per district", "kind": "unstated", "as_written": "varies per district"},
+        "children": [],
+    })
+    template["children"].append({
+        "id": "jud-district-structure-clerk-of-court", "name": "Clerk of Court", "type": "Position",
+        "desc": "Administrative head of the clerk's office.", "children": [],
+    })
+    return tree
+
+
+class DistrictStructureBenchTests(unittest.TestCase):
+    """Since 2026-10-08: the template's own bench of district judges is
+    priced at the table's District Judges tier for each holder; the
+    template's chief judge and every other template node stay refused, and a
+    bench whose name or description counts senior judges in is refused on 28
+    U.S.C. 371(b)(2)."""
+
+    def _priced(self, tree):
+        table = parse_judicial_compensation(PAGE)
+        node_map = index_tree(tree)[0]
+        records, report = build_records(node_map, table, url=TABLE_URL, sha256="a" * 64, retrieved_at="2026-09-14T00:00:00Z")
+        return records, report
+
+    def test_the_gate_mirrors_the_module_s_bench_id(self):
+        from scripts.validate_published_graph import DISTRICT_STRUCTURE_BENCH_ID as GATE_ID
+
+        self.assertEqual(GATE_ID, DISTRICT_STRUCTURE_BENCH_ID)
+        self.assertEqual(STATUTORY_PAY_NODE_TIERS[DISTRICT_STRUCTURE_BENCH_ID], "district judges")
+        self.assertNotIn(DISTRICT_STRUCTURE_TEMPLATE_ID, STATUTORY_PAY_NODE_TIERS)
+
+    def test_the_template_bench_is_priced_at_the_district_tier(self):
+        records, report = self._priced(_template_tree())
+        self.assertIn(DISTRICT_STRUCTURE_BENCH_ID, records)
+        record = records[DISTRICT_STRUCTURE_BENCH_ID]
+        self.assertEqual(record["amount"], 249_900.0)
+        self.assertEqual(record["seatTier"], "district judges")
+        self.assertEqual(record["seatReason"], "every_district_judge_of_the_standard_district_structure")
+        self.assertEqual(record["scopeMatch"], "proxy")
+        # The chief-judge template and the clerk stay refused by the prefix.
+        self.assertNotIn(DISTRICT_STRUCTURE_TEMPLATE_ID, records)
+        self.assertNotIn("jud-district-structure-clerk-of-court", records)
+        self.assertEqual(report["refused"]["generic_structure_template_not_a_specific_court"], 2)
+
+    def test_the_chief_judge_template_is_still_refused_whatever_its_description(self):
+        tree = _template_tree()
+        node = index_tree(tree)[0][DISTRICT_STRUCTURE_TEMPLATE_ID]
+        node["desc"] = "Article III judge with lifetime appointment."
+        column, reason = classify_seat(DISTRICT_STRUCTURE_TEMPLATE_ID, node)
+        self.assertIsNone(column)
+        self.assertEqual(reason, "generic_structure_template_not_a_specific_court")
+
+    def test_a_bench_whose_name_or_description_counts_senior_judges_in_is_refused(self):
+        senior = "bundles_senior_judges_whose_salary_28_usc_371b2_sets_apart_from_the_tier_rate"
+        for name, desc in (
+            ("District Judge (\u00d7varies per district, active + senior judges)", "Article III judge with lifetime appointment."),
+            ("District Judge (\u00d7varies per district)", "Article III judge; includes judges who have taken senior status."),
+        ):
+            with self.subTest(name=name, desc=desc):
+                tree = _template_tree(bench_name=name, bench_desc=desc)
+                node = index_tree(tree)[0][DISTRICT_STRUCTURE_BENCH_ID]
+                self.assertEqual(classify_seat(DISTRICT_STRUCTURE_BENCH_ID, node), (None, senior))
+                records, _ = self._priced(tree)
+                self.assertNotIn(DISTRICT_STRUCTURE_BENCH_ID, records)
+
+    def _published(self):
+        tree = _template_tree()
+        records, _ = self._priced(tree)
+        apply_pay_evidence(tree, records)
+        withdraw_pay_from_multi_post_nodes(tree)
+        node = index_tree(tree)[0][DISTRICT_STRUCTURE_BENCH_ID]
+        return node, node["positionStatutoryPay"]
+
+    def test_the_sweep_keeps_it_with_an_unstated_holders_block_and_the_gate_passes_it(self):
+        node, pay = self._published()
+        self.assertEqual(pay["holders"]["kind"], "unstated")
+        self.assertTrue(pay["holders"]["appliesToEachHolder"])
+        self.assertEqual(statutory_pay_violations(node, pay, "2026-10-08", _label), [])
+
+    def test_the_gate_refuses_each_corruption(self):
+        node, pay = self._published()
+        cases = {
+            "description counts senior judges in": ({**node, "desc": "Article III judge, active and senior."}, pay),
+            "name counts senior judges in": ({**node, "name": "District Judge (\u00d7varies, incl. senior judges)"}, pay),
+            "circuit tier claimed": (node, {**pay, "seatTier": "circuit judges", "amount": 264_900.0, "rateText": "$264,900"}),
+            "holders block dropped": (node, {k: v for k, v in pay.items() if k != "holders"}),
+            "moved onto the chief-judge template": (
+                {"id": DISTRICT_STRUCTURE_TEMPLATE_ID, "name": "Chief Judge", "type": "Position",
+                 "desc": "Senior active judge; administrative head of the district."},
+                {k: v for k, v in pay.items() if k != "holders"}),
+        }
+        for name, (bad_node, bad_pay) in cases.items():
+            with self.subTest(case=name):
+                self.assertTrue(statutory_pay_violations(bad_node, bad_pay, "2026-10-08", _label), name)
 
 
 class DeriveScriptTests(unittest.TestCase):

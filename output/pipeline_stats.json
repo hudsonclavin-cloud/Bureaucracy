@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-06T18:03:01.406009+00:00",
+  "timestamp": "2026-10-08T00:08:06.841681+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5481,
@@ -513,7 +513,7 @@
       "priced_class_title": 9
     },
     "judicial_pay_evidence": {
-      "priced": 17,
+      "priced": 18,
       "unknown_node": 0,
       "not_a_position": 0,
       "stands_for_many_posts_after_pruning": 0
@@ -683,10 +683,10 @@
       "not_capped_other_evidence": 1
     },
     "pay_documents": {
-      "annotated": 1325,
+      "annotated": 1326,
       "no_document": 0,
       "positionDerivedPay": 18,
-      "positionStatutoryPay": 488,
+      "positionStatutoryPay": 489,
       "positionCurrentPay": 128,
       "positionSchedulePay": 241,
       "positionTierReferencePay": 59,

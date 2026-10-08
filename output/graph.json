@@ -307492,6 +307492,44 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "uscourts_judicial_compensation",
+                    "sourceLabel": "the U.S. Courts' own Judicial Compensation table",
+                    "method": "rate_for_the_tier_this_post_holds",
+                    "amount": 249900.0,
+                    "rateText": "$249,900",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "District Judges",
+                    "seatTier": "district judges",
+                    "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                    "footnotes": [],
+                    "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-14T15:20:14Z",
+                    "holders": {
+                      "text": "×varies per district",
+                      "kind": "unstated",
+                      "appliesToEachHolder": true,
+                      "note": "This node stands for several posts. The figure is the rate the source states for the office or tier, and it applies to each holder alike; it is not one person's pay and not the group's combined pay.",
+                      "as_written": "varies per district"
+                    },
+                    "verification": {
+                      "documents": 1,
+                      "documentsStatingTheFigure": 1,
+                      "percent": 70,
+                      "scale": "this project's own source arithmetic (normalize_nodes.verify_node_sources): 0.4 for the first official document, +0.3 because it is an official site, +0.1 for each further one, capped at 0.3",
+                      "caution": "One document states the figure outright. The percentage measures how much official documentation it rests on, not the chance that it is right, and the source names a tier or a group of roles rather than this post by name.",
+                      "documentRoles": [
+                        {
+                          "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                          "role": "states what this seat or role is paid"
+                        }
+                      ]
+                    }
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,

@@ -39,7 +39,32 @@ It will not price:
   Courts — Standard Structure" that describes what every district's
   organisation looks like rather than naming one district's actual chief
   judge. It carries no count in its own name, so the multi-post guard above
-  does not catch it; this module refuses it by id.
+  does not catch it; this module refuses it by id. One post standing for 94
+  different offices reads as one chief judge's pay, which it is not.
+
+## The template's own bench, priced since 2026-10-08
+
+The same template carries `District Judge (×varies per district)`, described
+as "Article III judge with lifetime appointment." It was refused with every
+other node under the template's id prefix, and that refusal was about the
+chief-judge shape, not this one. This node states a multiplicity, so the
+multi-post sweep stamps `holders` (an unstated count) and the panel prints
+the figure as each holder's, never one person's or the group's. The table
+prices one tier, "District Judges", at one rate for every judge of it, which
+is the reading already applied to SDNY's `District Judge (×28 active)` and,
+by `derived_pay.py`, to the template's own `Bankruptcy Judge (×varies)`
+sibling. So the bench is priced at the District Judges column, by id
+(`DISTRICT_STRUCTURE_BENCH_ID`), on one condition the statute sets: nothing
+in its name OR its description may count senior judges in. 28 U.S.C.
+371(b)(2) sets an uncertified senior judge's salary by reference to a past
+year, so the current tier rate is not each holder's on a node that bundles
+them (the `SENIOR_JUDGE_MARKER` refusal below, here applied to the
+description as well, since a template's description is the only place it
+says what its count covers). The node does not itself say "active", as
+SDNY's does; what it says is "District Judge", which is the table's own
+tier, and a judge counted in under any other description is refused.
+Every other node under the template stays refused by the prefix, the chief
+judge by id.
 - the specialized Article I courts (Tax Court, Court of Federal Claims,
   Court of International Trade, CAAF, CAVC). Their judges' pay follows other
   statutory provisions this module has not read a source for; pricing them
@@ -91,6 +116,11 @@ EXPECTED_COLUMNS = ("year", "district judges", "circuit judges", "associate just
 #: it names no count, but it is a template describing every district's
 #: structure, not one district's actual chief judge.
 DISTRICT_STRUCTURE_TEMPLATE_ID = "jud-district-structure-chief-judge"
+#: The template's bench of district judges, priced at the District Judges
+#: tier for each holder (see the module docstring) unless its name or its
+#: description counts senior judges in. The one exception to the prefix
+#: refusal below; pinned in the gate's STATUTORY_PAY_NODE_TIERS.
+DISTRICT_STRUCTURE_BENCH_ID = "jud-district-structure-district-judge-varies-per-district"
 #: Every node under the "All 94 District Courts -- Standard Structure"
 #: template describes what a district looks like rather than any district's
 #: actual bench, so none of them is a seat this table prices.
@@ -336,6 +366,13 @@ def classify_seat(node_id: str, node: Mapping[str, Any]) -> tuple[str | None, st
         return "chief justice", "the_chief_justice"
     if node_id == ASSOCIATE_JUSTICES_ID:
         return "associate justices", "every_associate_justice"
+    if node_id == DISTRICT_STRUCTURE_BENCH_ID:
+        # The template's bench: one tier, one rate, every holder alike. Its
+        # description is read for the senior-judge marker too, because on a
+        # template the description is what says what the count covers.
+        if SENIOR_JUDGE_MARKER.search(str(node.get("desc") or "")):
+            return None, "bundles_senior_judges_whose_salary_28_usc_371b2_sets_apart_from_the_tier_rate"
+        return "district judges", "every_district_judge_of_the_standard_district_structure"
     if node_id.startswith(DISTRICT_STRUCTURE_TEMPLATE_PREFIX):
         return None, "generic_structure_template_not_a_specific_court"
     if "-chief-judge-" in node_id:
