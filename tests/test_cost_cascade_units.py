@@ -39,6 +39,89 @@ def _run(children: list[dict]) -> dict:
     return tree
 
 
+def _payout(amount: float, sha: str = "doc-a", start: str = "2026-04-01", end: str = "2026-06-30") -> dict:
+    return {
+        "amount": amount,
+        "document": {"sha256": sha},
+        "period": {"start": start, "end": end},
+    }
+
+
+class CommitteePayoutWeightTests(unittest.TestCase):
+    """Committees divide their pool by what one statement says each was paid."""
+
+    def test_payouts_from_one_statement_divide_the_pool_in_proportion(self) -> None:
+        tree = _run(
+            [
+                {"id": "a", "name": "A", "type": "Committee", "committeeDisbursements": _payout(3_000.0), "children": []},
+                {
+                    "id": "b",
+                    "name": "B",
+                    "type": "Committee",
+                    "committeeDisbursements": _payout(1_000.0),
+                    # Size would have given b two thirds; the payouts give it a quarter.
+                    "children": [{"id": "b1", "name": "B1", "children": []}],
+                },
+            ]
+        )
+        amounts = {child["id"]: child["resolved_total_amount"] for child in tree["children"]}
+        self.assertAlmostEqual(amounts["a"], TOTAL * 0.75, places=2)
+        self.assertAlmostEqual(amounts["b"], TOTAL * 0.25, places=2)
+        self.assertEqual({c["cost_basis"] for c in tree["children"]}, {"disbursement_weight"})
+        self.assertEqual(tree["child_cost_basis"], "disbursements")
+
+    def test_a_committee_the_statement_does_not_print_is_implied_at_the_reported_rate(self) -> None:
+        tree = _run(
+            [
+                {"id": "a", "name": "A", "type": "Committee", "committeeDisbursements": _payout(2_000.0), "children": []},
+                {"id": "c", "name": "C", "type": "Committee", "children": [{"id": "c1", "name": "C1", "children": []}]},
+            ]
+        )
+        bases = {child["id"]: child["cost_basis"] for child in tree["children"]}
+        self.assertEqual(bases, {"a": "disbursement_weight", "c": "implied_disbursement_weight"})
+        amounts = {child["id"]: child["resolved_total_amount"] for child in tree["children"]}
+        # 2,000 per node; c is two nodes, so 2,000 : 4,000.
+        self.assertAlmostEqual(amounts["a"], TOTAL / 3, places=2)
+        self.assertTrue(tree["child_cost_basis_implied"])
+
+    def test_payouts_from_two_statements_are_never_compared(self) -> None:
+        tree = _run(
+            [
+                {"id": "h", "name": "H", "type": "Committee", "committeeDisbursements": _payout(9_000.0, sha="house"), "children": []},
+                {
+                    "id": "s",
+                    "name": "S",
+                    "type": "Committee",
+                    "committeeDisbursements": _payout(1_000.0, sha="senate", start="2025-10-01", end="2026-03-31"),
+                    "children": [],
+                },
+            ]
+        )
+        # A quarter beside a half-year: neither weights the other; size decides.
+        self.assertEqual({c["cost_basis"] for c in tree["children"]}, {"subtree_weight"})
+        amounts = {child["id"]: child["resolved_total_amount"] for child in tree["children"]}
+        self.assertAlmostEqual(amounts["h"], TOTAL / 2, places=2)
+
+    def test_a_block_without_its_document_weights_nothing(self) -> None:
+        tree = _run(
+            [
+                {"id": "a", "name": "A", "type": "Committee", "committeeDisbursements": {"amount": 9_000.0}, "children": []},
+                {"id": "b", "name": "B", "type": "Committee", "children": []},
+            ]
+        )
+        self.assertEqual({c["cost_basis"] for c in tree["children"]}, {"subtree_weight"})
+
+    def test_a_payout_outranks_an_uncited_curated_budget(self) -> None:
+        tree = _run(
+            [
+                {"id": "a", "name": "A", "type": "Committee", "committeeDisbursements": _payout(1_000.0), "children": []},
+                {"id": "b", "name": "B", "type": "Committee", "budget": "$5B", "children": []},
+            ]
+        )
+        bases = {child["id"]: child["cost_basis"] for child in tree["children"]}
+        self.assertEqual(bases, {"a": "disbursement_weight", "b": "implied_disbursement_weight"})
+
+
 class SiblingWeightUnitTests(unittest.TestCase):
     def test_mixed_units_imply_the_missing_figures_at_the_reported_rate(self) -> None:
         tree = _run(

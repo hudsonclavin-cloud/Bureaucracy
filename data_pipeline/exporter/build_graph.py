@@ -752,6 +752,8 @@ def get_node_official_total(node: dict[str, Any]) -> float | None:
 # essentially the whole parent total (the IRS at $385B beside the Secretary of the
 # Treasury at $32; 120 published nodes at $0.00).
 WEIGHT_BASIS_CLASSES = {
+    "disbursement_weight": "disbursements",
+    "implied_disbursement_weight": "disbursements",
     "annual_budget_weight": "dollars",
     "budget_weight": "dollars",
     "direct_outlay_weight": "dollars",
@@ -767,7 +769,33 @@ def get_subtree_weight(node: dict[str, Any], subtree_sizes: dict[str, int]) -> f
     return float(max(subtree_sizes.get(node_id, 1), 1))
 
 
-WEIGHT_CLASS_PRIORITY = ("dollars", "employees", "subtree")
+# Disbursements first: they are the one dollar weight a document states (the
+# chamber's own statement of what it paid out for a committee's account),
+# where every other dollar weight is an uncited curated figure.
+WEIGHT_CLASS_PRIORITY = ("disbursements", "dollars", "employees", "subtree")
+
+IMPLIED_WEIGHT_BASES = {
+    "disbursements": "implied_disbursement_weight",
+    "dollars": "implied_budget_weight",
+    "employees": "implied_employee_weight",
+}
+
+
+def disbursement_document_key(node: dict[str, Any]) -> tuple[str, str, str] | None:
+    """The statement and period a committee's disbursements were read from.
+
+    Two committees' disbursements divide one pool only when one statement
+    printed both for one period: a House quarter beside a Senate half-year
+    would weight one chamber's committees against the other's by the length
+    of the period each document happens to cover.
+    """
+    block = node.get("committeeDisbursements")
+    if not isinstance(block, dict):
+        return None
+    document = block.get("document") if isinstance(block.get("document"), dict) else {}
+    period = block.get("period") if isinstance(block.get("period"), dict) else {}
+    key = (str(document.get("sha256") or ""), str(period.get("start") or ""), str(period.get("end") or ""))
+    return key if all(key) else None
 
 
 def resolve_sibling_weights(
@@ -788,6 +816,21 @@ def resolve_sibling_weights(
     """
     if not weighted_children:
         return weighted_children, None, False
+    # Disbursements weight a sibling set only when one statement printed every
+    # one of them for one period; otherwise each such sibling falls back to the
+    # weight it would have carried without the block.
+    documents = {
+        disbursement_document_key(child)
+        for child, _, basis in weighted_children
+        if basis == "disbursement_weight"
+    }
+    if len(documents) > 1:
+        weighted_children = [
+            (child, *get_node_weight(child, subtree_sizes, use_disbursements=False))
+            if basis == "disbursement_weight"
+            else (child, weight, basis)
+            for child, weight, basis in weighted_children
+        ]
     classes = {WEIGHT_BASIS_CLASSES.get(basis, "subtree") for _, _, basis in weighted_children}
     if len(classes) == 1:
         return weighted_children, next(iter(classes)), False
@@ -806,7 +849,7 @@ def resolve_sibling_weights(
         for child, weight in reported
     ]
     rate_per_node = math.exp(sum(log_rates) / len(log_rates)) if log_rates else 1.0
-    implied_basis = f"implied_{'budget' if dominant == 'dollars' else 'employee'}_weight"
+    implied_basis = IMPLIED_WEIGHT_BASES[dominant]
     resolved: list[tuple[dict[str, Any], float, str]] = []
     for child, weight, basis in weighted_children:
         if WEIGHT_BASIS_CLASSES.get(basis, "subtree") == dominant:
@@ -861,7 +904,19 @@ def note_headcount_dispute(child: dict[str, Any], basis: str) -> bool:
     return True
 
 
-def get_node_weight(node: dict[str, Any], subtree_sizes: dict[str, int]) -> tuple[float, str]:
+def get_node_weight(
+    node: dict[str, Any],
+    subtree_sizes: dict[str, int],
+    use_disbursements: bool = True,
+) -> tuple[float, str]:
+    # What the chamber paid out for a committee's account over one period
+    # (committee_disbursements.py). Only a committee carries the block, and
+    # resolve_sibling_weights compares it only with siblings read from the
+    # same statement for the same period.
+    if use_disbursements and disbursement_document_key(node) is not None:
+        amount = parse_cost_amount(node["committeeDisbursements"].get("amount"))
+        if amount is not None and amount > 0:
+            return amount, "disbursement_weight"
     for key, basis in (
         ("annual_budget", "annual_budget_weight"),
         ("budget", "budget_weight"),

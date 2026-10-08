@@ -2480,6 +2480,8 @@ const COST_BASIS_PHRASES = {
   direct_outlay_weight: "reported outlays",
   implied_budget_weight: "a budget implied from its siblings' reported budgets and its size",
   implied_employee_weight: "a staff count implied from its siblings' reported staff and its size",
+  disbursement_weight: "what the chamber's own statement says it paid out for each committee over one period",
+  implied_disbursement_weight: "a payout implied from its sibling committees' reported payouts and its size",
 };
 
 const COST_STATUS_COPY = {
@@ -3346,6 +3348,13 @@ function describeCost(node) {
         ` The headcount used is the base graph's uncited ${Number(dispute.curatedEmployeesParsed).toLocaleString()};` +
         ` OPM's employment file${period} reports ${dispute.officialEmployees.toLocaleString()} for the same unit.` +
         " The share was not recomputed from OPM's number: the two can count different populations, and neither figure is corrected against the other.";
+    }
+    // The payouts decide how the committees divide their pool, not how large
+    // the pool is: that is still the committees' share of the chamber, which
+    // the cascade divides by subtree size.
+    if (basis === "disbursement_weight" || basis === "implied_disbursement_weight") {
+      caveat +=
+        " The payouts set how the committees divide their pool; the pool itself is still the committees' share of the chamber, divided by how many units sit beneath each part.";
     }
     return {
       ...copy,

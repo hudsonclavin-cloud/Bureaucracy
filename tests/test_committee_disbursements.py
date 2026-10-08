@@ -438,3 +438,64 @@ class FullGateTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PayoutWeightGateTests(unittest.TestCase):
+    """The gate's check on committee shares divided by their payouts."""
+
+    @staticmethod
+    def _committee(node_id, amount, share, sha="doc", basis="disbursement_weight", start="2026-04-01"):
+        node = {"id": node_id, "name": node_id, "cost_status": "allocated", "cost_basis": basis,
+                "resolved_total_amount": share}
+        if amount is not None:
+            node["committeeDisbursements"] = {"amount": amount, "document": {"sha256": sha},
+                                              "period": {"start": start, "end": "2026-06-30"}}
+        return node
+
+    def _check(self, nodes):
+        parents = {str(n["id"]): "grouping" for n in nodes}
+        return gate.disbursement_weight_violations(nodes, parents, lambda n: n["id"])
+
+    def test_proportional_shares_from_one_statement_pass(self):
+        nodes = [self._committee("a", 3000.0, 750.0), self._committee("b", 1000.0, 250.0),
+                 self._committee("c", None, 500.0, basis="implied_disbursement_weight")]
+        self.assertEqual(self._check(nodes), [])
+
+    def test_shares_out_of_proportion_fail(self):
+        nodes = [self._committee("a", 3000.0, 500.0), self._committee("b", 1000.0, 500.0)]
+        self.assertTrue(any("proportion" in v for v in self._check(nodes)))
+
+    def test_two_statements_in_one_set_fail(self):
+        nodes = [self._committee("a", 3000.0, 750.0), self._committee("b", 1000.0, 250.0, sha="other")]
+        self.assertTrue(any("different statements" in v for v in self._check(nodes)))
+
+    def test_a_payout_weight_without_its_block_fails(self):
+        nodes = [self._committee("a", 3000.0, 750.0), self._committee("b", None, 250.0)]
+        self.assertTrue(any("does not carry" in v for v in self._check(nodes)))
+
+    def test_an_implied_payout_with_nothing_to_imply_it_from_fails(self):
+        nodes = [self._committee("c", None, 500.0, basis="implied_disbursement_weight")]
+        self.assertTrue(any("no sibling" in v for v in self._check(nodes)))
+
+    def test_an_implied_payout_beside_its_own_block_fails(self):
+        nodes = [self._committee("a", 3000.0, 750.0),
+                 self._committee("b", 1000.0, 250.0, basis="implied_disbursement_weight")]
+        self.assertTrue(any("given an implied one" in v for v in self._check(nodes)))
+
+    def test_a_payout_weight_on_a_measured_figure_fails(self):
+        node = self._committee("a", 3000.0, 750.0)
+        node["cost_status"] = "official"
+        self.assertTrue(any("payout weight on" in v for v in self._check([node])))
+
+    def test_the_published_graph_passes(self):
+        graph_path = Path(__file__).resolve().parents[1] / "output" / "graph.json"
+        graph = json.loads(graph_path.read_text(encoding="utf-8"))
+        nodes, parents, stack = [], {}, [graph]
+        while stack:
+            node = stack.pop()
+            nodes.append(node)
+            for child in node.get("children") or []:
+                parents[str(child["id"])] = str(node["id"])
+                stack.append(child)
+        self.assertEqual(gate.disbursement_weight_violations(nodes, parents, lambda n: n["id"]), [])
+        self.assertEqual(sum(1 for n in nodes if n.get("cost_basis") == "disbursement_weight"), 40)

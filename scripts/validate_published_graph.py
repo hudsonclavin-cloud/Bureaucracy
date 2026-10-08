@@ -1972,7 +1972,7 @@ SENATE_LEADERSHIP_ROLE_PHRASES = {
 KNOWN_COST_BASES = {
     "annual_budget_weight", "budget_weight", "direct_outlay_weight",
     "implied_budget_weight", "employee_weight", "implied_employee_weight",
-    "subtree_weight",
+    "subtree_weight", "disbursement_weight", "implied_disbursement_weight",
 }
 
 
@@ -7048,6 +7048,72 @@ def _disbursement_chamber(node_id, tree_parents):
     return None
 
 
+def disbursement_weight_violations(nodes, tree_parents, label):
+    """An estimate divided by committee payouts, checked against the payouts.
+
+    The cascade weights a sibling set of committees by what the chamber's own
+    statement says it paid out for each, but only when one statement printed
+    every one of them for one period; a sibling it did not print is given an
+    implied payout. So: a `disbursement_weight` share sits on a node carrying
+    the block it was weighted by; every such share in one sibling set was read
+    from one document for one period; an implied payout sits beside at least
+    one reported one; and the shares divided by payouts are one rate, since the
+    split is proportional (no committee carries a Treasury floor today; one
+    that did would make its share a floor plus a proportional part, and this
+    check would say so rather than pass it unexamined).
+    """
+    out = []
+    groups = {}
+    for node in nodes:
+        basis = str(node.get("cost_basis") or "")
+        if basis not in ("disbursement_weight", "implied_disbursement_weight"):
+            continue
+        if str(node.get("cost_status") or "") != "allocated":
+            out.append("{} carries a payout weight on a {!r} figure".format(label(node), node.get("cost_status")))
+            continue
+        groups.setdefault(tree_parents.get(str(node.get("id") or "")), []).append(node)
+    for parent_id, members in groups.items():
+        reported = [n for n in members if n.get("cost_basis") == "disbursement_weight"]
+        if not reported:
+            out.append("{} carries an implied payout weight with no sibling's payout to imply it from".format(
+                ", ".join(label(n) for n in members)))
+            continue
+        keys = set()
+        rates = []
+        for node in reported:
+            block = node.get("committeeDisbursements")
+            if not isinstance(block, dict):
+                out.append("{} is weighted by a payout it does not carry".format(label(node)))
+                continue
+            document = block.get("document") if isinstance(block.get("document"), dict) else {}
+            period = block.get("period") if isinstance(block.get("period"), dict) else {}
+            keys.add((document.get("sha256"), period.get("start"), period.get("end")))
+            amount = block.get("amount")
+            share = node.get("resolved_total_amount")
+            if not isinstance(amount, (int, float)) or isinstance(amount, bool) or amount <= 0:
+                out.append("{} is weighted by a payout that is not a positive figure".format(label(node)))
+                continue
+            if isinstance(share, (int, float)) and not isinstance(share, bool):
+                rates.append((float(share) / float(amount), node))
+        if len(keys) > 1:
+            out.append("committees under {} are weighted by payouts from {} different statements or periods".format(
+                parent_id, len(keys)))
+        if rates:
+            low = min(rate for rate, _ in rates)
+            high = max(rate for rate, _ in rates)
+            if low <= 0 or (high - low) / low > 1e-4:
+                out.append("committees under {} are not divided in proportion to their payouts ({:.6g} to {:.6g} per dollar paid)".format(
+                    parent_id, low, high))
+        for node in members:
+            if node.get("cost_basis") == "implied_disbursement_weight" and isinstance(node.get("committeeDisbursements"), dict):
+                block = node["committeeDisbursements"]
+                document = block.get("document") if isinstance(block.get("document"), dict) else {}
+                period = block.get("period") if isinstance(block.get("period"), dict) else {}
+                if (document.get("sha256"), period.get("start"), period.get("end")) in keys:
+                    out.append("{} carries its own payout from the same statement and is given an implied one".format(label(node)))
+    return out
+
+
 def committee_disbursement_violations(node, block, docs, label, tree_parents, by_id):
     """Everything a `committeeDisbursements` block may claim, re-derived."""
     out = []
@@ -9525,6 +9591,15 @@ def main(argv):
     for node in nodes:
         if "committeeDisbursements" in node and not isinstance(node.get("committeeDisbursements"), dict):
             disbursement_violations.append("{} carries a committeeDisbursements that is not a block".format(label(node)))
+    payout_weight_violations = disbursement_weight_violations(nodes, tree_parents, label)
+    gate.check(
+        "committees weighted by payouts are weighted by one statement's, in proportion",
+        payout_weight_violations,
+        " — {} committee share(s) weighted by a payout, {} implied".format(
+            sum(1 for n in nodes if n.get("cost_basis") == "disbursement_weight"),
+            sum(1 for n in nodes if n.get("cost_basis") == "implied_disbursement_weight"),
+        ) if not payout_weight_violations else "",
+    )
     gate.check(
         "a committee's disbursements are the chamber's own printed totals, and never the cost",
         disbursement_violations,
