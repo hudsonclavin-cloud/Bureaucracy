@@ -31,7 +31,7 @@ CLAUDE.md.
 | Staff payroll (OPM FedScope, Mar 2025, civilian basic pay) | 178 orgs; top-level $185.1bn for 1.65M civilians |
 | Spending by object class (USAspending, FY2025 obligations) | 86 agencies incl. all 15 departments; staff pay (11.x+12.x) $595.0bn of $10.09tn obligations |
 
-Cache stamp: `?v=20261008e` (bump index.html, js/ui.js, js/graph.js together
+Cache stamp: `?v=20261012a` (bump index.html, js/ui.js, js/graph.js together
 on any JS change).
 
 ## Next actions, in order
@@ -65,6 +65,30 @@ on any JS change).
 5. **Viewer size margin** is ~141 KB (`graph.min.json` must stay under half of
    `graph.json`). Next field added may trip it; the planned fix is to store the
    461 member-seat blocks once (`SHARED_DOCUMENT_BLOCKS`), never to loosen the rule.
+
+## Design system (2026-10-12, three slices, all on main)
+
+Both views now share one look, "Ledger ink", in `css/shell.css` (tokens +
+the universe shell) and `css/atlas.css` (the directory on the same tokens):
+ground #0A0E14, gold #D4B25A / #EDD27E, the branch hues the data draws,
+Playfair for names and headline figures, IBM Plex Sans for reading text,
+Plex Mono for numbers and labels, nothing under 12px. The shell is a 60px
+top bar (`#topbar`: wordmark, `#search-wrap`, `#view-switcher`, `#stats`),
+a 264px left rail (`#left-stack`, now holding `#depth-ctrl` and `#legend`
+in its flow), the full-window `#canvas`, and a 400px `#info-panel`. Every
+id and class the JS and the smoke check query is unchanged. `ui.js`'s
+`renderChildrenList` lists units before posts with a figure per row by the
+headline's own rule; `graph.js` paints its badges and clear colour in the
+same language. Cache stamp: `?v=20261012a`.
+
+Left deliberately undone: a fiscal-anchor chip in the top bar (the figure
+lives in `#data-provenance`, computed from the graph — a static chip would
+go stale on the next statement); collapsing the long provenance prose
+blocks in the inspector into `<details>` (the smoke check reads them with
+`innerText`, so hidden text would fail its assertions until those checks
+read `textContent`); and any camera offset for the rail and inspector.
+The design canvas the slices were built from is in Hudson's Claude
+artifacts ("Bureaucracy — Unified Explorer").
 
 ## Non-negotiable rules (short form — CLAUDE.md has the reasons)
 
