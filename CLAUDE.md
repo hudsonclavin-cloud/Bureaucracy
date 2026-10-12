@@ -6,6 +6,9 @@ This file was lost in the 2026-08-04 merge and rewritten from the code on
 
 ## Start here
 
+**`HANDOFF.md` first**: the current state, headline numbers and the ordered
+next actions as of the last session's close (2026-10-12).
+
 `docs/GO.md` is the standing instruction for agent work on this repository.
 When the owner says **go**, read it and follow it from Step 0; it decides
 which of the three phases the work is currently in by reading state off disk,
