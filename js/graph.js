@@ -91,7 +91,7 @@ export function createGovernmentGraph({
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setClearColor(0x020408, 1);
+  renderer.setClearColor(0x0a0e14, 1); // the shell's ink ground (css/shell.css --ink)
   renderer.outputColorSpace = THREE.SRGBColorSpace;
 
   const scene = new THREE.Scene();
@@ -562,20 +562,22 @@ export function createGovernmentGraph({
 
     const { context, canvas, texture } = label;
     context.clearRect(0, 0, canvas.width, canvas.height);
-    context.fillStyle = options.fillStyle || "rgba(2, 4, 8, 0.84)";
-    context.strokeStyle = options.strokeStyle || `${color}cc`;
-    context.lineWidth = options.lineWidth || 3;
+    // The badge is drawn in the shell's own language (css/shell.css): ink
+    // panel, hairline in the node's hue, a serif name over a mono count.
+    context.fillStyle = options.fillStyle || "rgba(13, 18, 26, 0.92)";
+    context.strokeStyle = options.strokeStyle || `${color}b3`;
+    context.lineWidth = options.lineWidth || 2;
     context.beginPath();
-    context.roundRect(6, 8, canvas.width - 12, canvas.height - 16, 28);
+    context.roundRect(6, 8, canvas.width - 12, canvas.height - 16, 18);
     context.fill();
     context.stroke();
 
     context.textAlign = "center";
-    context.fillStyle = options.titleColor || "#f7f1dd";
-    context.font = options.titleFont || "700 32px Georgia";
-    context.fillText(title, canvas.width / 2, 64, canvas.width - 44);
+    context.fillStyle = options.titleColor || "#EDE6D8";
+    context.font = options.titleFont || "600 32px 'Playfair Display', Georgia, serif";
+    context.fillText(title, canvas.width / 2, 66, canvas.width - 44);
     context.fillStyle = options.subtitleColor || color;
-    context.font = options.subtitleFont || "600 24px Georgia";
+    context.font = options.subtitleFont || "500 22px 'IBM Plex Mono', Menlo, monospace";
     context.fillText(subtitle, canvas.width / 2, 108, canvas.width - 44);
 
     texture.needsUpdate = true;
@@ -589,12 +591,12 @@ export function createGovernmentGraph({
 
   function drawHaloLabel(label, title, subtitle, color) {
     drawTextBadge(label, title, subtitle, color, {
-      fillStyle: "rgba(2, 6, 12, 0.72)",
-      strokeStyle: `${color}aa`,
+      fillStyle: "rgba(13, 18, 26, 0.82)",
+      strokeStyle: `${color}99`,
       lineWidth: 2,
-      titleFont: "700 34px Georgia",
-      subtitleFont: "600 22px Georgia",
-      subtitleColor: "#cfd8ea",
+      titleFont: "600 34px 'Playfair Display', Georgia, serif",
+      subtitleFont: "500 22px 'IBM Plex Mono', Menlo, monospace",
+      subtitleColor: "#B8AE9A",
     });
   }
 
