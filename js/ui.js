@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261012a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261012a";
+import { createGovernmentGraph } from "./graph.js?v=20261012b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261012b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -4168,7 +4168,9 @@ function expandProgressively(targetDepth, scopeObj = null) {
       // Only when the expansion was scoped to a node: a depth button expands
       // the whole tree and has no brood to frame.
       if (scopeObj) {
-        state.graph.frameBroodOf(scopeObj);
+        // The whole expanded subtree, not the first generation alone: the
+        // deeper shells were landing outside a frame fitted to the brood.
+        state.graph.frameSubtreeOf(scopeObj);
       }
       return;
     }

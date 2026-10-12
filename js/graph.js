@@ -1,5 +1,5 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20261012a";
+import { createLodManager } from "./lodManager.js?v=20261012b";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
@@ -26,6 +26,15 @@ const EXPANSION_CHILD_BUDGET = MAX_BATCH;
 const EXPANSION_PARENT_BATCH = MAX_BATCH;
 const CLUSTER_CAPACITY = 16384;
 const CLUSTER_LABEL_CAPACITY = 256;
+// The selected node's own children are the brood a reader just asked to see;
+// each gets a name badge, up to this many, before the overlap pass thins them.
+const BROOD_LABEL_CAPACITY = 48;
+// Everything outside the selection, its ancestors and its brood is tinted
+// toward the ink so the brood reads as the subject and the rest as context.
+// A tint is a selection state, never a fact about a node: the base colour
+// and the size are untouched.
+const FOCUS_DIM = new THREE.Color(0.4, 0.42, 0.46);
+const FOCUS_FULL = new THREE.Color(1, 1, 1);
 const MIN_CLUSTER_DISTANCE = 6;
 const REPULSION = -60;
 const LINK_DISTANCE = 30;
@@ -206,6 +215,7 @@ export function createGovernmentGraph({
   const clusterColor = new THREE.Color(0xc8a84a);
   const clusterAccentColor = new THREE.Color(0x5a7bb8);
   const whiteColor = new THREE.Color(0xffffff);
+  const inkColor = new THREE.Color(0x0a0e14);
   const desiredCameraPosition = new THREE.Vector3();
 
   const state = {
@@ -230,6 +240,9 @@ export function createGovernmentGraph({
     clusterLabels: [],
     haloMeshes: [],
     haloLabels: [],
+    broodLabels: [],
+    focusIds: new Set(),
+    focusKey: "",
     edgeBatch: null,
     allNodes: new Set(),
     allEdges: new Set(),
@@ -600,6 +613,115 @@ export function createGovernmentGraph({
     });
   }
 
+  function drawBroodLabel(label, title, subtitle, color) {
+    drawTextBadge(label, title, subtitle, color, {
+      fillStyle: "rgba(13, 18, 26, 0.9)",
+      strokeStyle: `${color}8c`,
+      lineWidth: 2,
+      titleFont: "500 34px 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif",
+      subtitleFont: "500 22px 'IBM Plex Mono', Menlo, monospace",
+      subtitleColor: "#8A8270",
+    });
+  }
+
+  function ensureBroodLabelPool(count) {
+    while (state.broodLabels.length < Math.min(count, BROOD_LABEL_CAPACITY)) {
+      state.broodLabels.push(createTextSprite());
+    }
+  }
+
+  // What a brood badge says beneath the name: how much sits beneath the
+  // child, or that it is a post. Never a figure: the panel's cost rules are
+  // the only place a number is allowed to appear, with its badge beside it.
+  function broodSubtitle(childObj) {
+    const data = childObj.data || {};
+    const type = String(data.type || "");
+    const beneath = Array.isArray(data.children) ? data.children.length : 0;
+    if (beneath > 0) {
+      return `${type} · ${beneath.toLocaleString()} beneath`;
+    }
+    return type || "Unit";
+  }
+
+  // Name badges for the selected node's own children, and for the selected
+  // node where no halo already names it. Pressing Expand is a request to see
+  // the children; until this they were drawn as unlabelled dots, so a reader
+  // saw a fan of edges ending in nothing they could name. Bounded to one
+  // brood, never a subtree, the bound the LOD exemption already uses.
+  function updateBroodLabels(protectedIds = getProtectedNodeIds()) {
+    const selected = state.selectedNode;
+    const candidates = [];
+    const subjects = [];
+    if (selected && !selected.isCluster && selected.renderVisible && !selected.clustered) {
+      if (!state.lod.haloNodeIds?.has(selected.data?.id)) {
+        subjects.push({ nodeObj: selected, priority: 1_200_000 });
+      }
+      for (const childObj of selected.childObjs || []) {
+        if (!childObj.renderVisible || childObj.clustered || childObj.culled) {
+          continue;
+        }
+        // Units before posts, the order the panel's own list uses, so the
+        // overlap pass keeps the children that carry structure.
+        const isPost = /position|role|office holder/i.test(String(childObj.data?.type || ""));
+        subjects.push({ nodeObj: childObj, priority: 400_000 + (isPost ? 0 : 50_000) + (protectedIds.has(childObj.data?.id) ? 100_000 : 0) });
+      }
+    }
+    subjects.sort((a, b) => b.priority - a.priority);
+    const shown = subjects.slice(0, BROOD_LABEL_CAPACITY);
+    ensureBroodLabelPool(shown.length);
+    for (let i = 0; i < shown.length; i += 1) {
+      const { nodeObj, priority } = shown[i];
+      const label = state.broodLabels[i];
+      const color = getNodeColor(nodeObj.data);
+      drawBroodLabel(label, nodeObj.data.name, nodeObj === selected ? "selected" : broodSubtitle(nodeObj), color);
+      label.sprite.visible = true;
+      label.sprite.position.copy(nodeObj.pos);
+      const labelScale = getLabelDistanceScale(label.sprite.position);
+      label.sprite.position.y += NODE_RADIUS * 1.6 + 3.8 * labelScale;
+      label.sprite.scale.set(24 * labelScale, 7.4 * labelScale, 1);
+      candidates.push({ sprite: label.sprite, priority, brood: true });
+    }
+    for (let i = shown.length; i < state.broodLabels.length; i += 1) {
+      state.broodLabels[i].sprite.visible = false;
+    }
+    return candidates;
+  }
+
+  // The focus set: the selection, its ancestors and its own children. Nodes
+  // outside it are tinted toward the ink and their edges dimmed, so an
+  // expansion reads as one subject against a quiet field rather than one
+  // more handful of dots among thousands. Recomputed only when the selection
+  // or its brood changes; the tint rides on the instance colour, which
+  // multiplies the batch material and changes nothing about the data.
+  function refreshFocus() {
+    const selected = state.selectedNode && !state.selectedNode.isCluster ? state.selectedNode : null;
+    const key = selected ? `${selected.data.id}:${(selected.childObjs || []).length}` : "";
+    if (key === state.focusKey) {
+      return;
+    }
+    state.focusKey = key;
+    const focus = new Set();
+    if (selected) {
+      let cursor = selected;
+      while (cursor) {
+        focus.add(cursor.data.id);
+        cursor = cursor.parent;
+      }
+      for (const childObj of selected.childObjs || []) {
+        focus.add(childObj.data.id);
+      }
+    }
+    state.focusIds = focus;
+    state.highlightVersion += 1;
+    for (const nodeObj of state.allNodes) {
+      if (!nodeObj.batch || nodeObj.slot < 0) {
+        continue;
+      }
+      nodeObj.batch.mesh.setColorAt(nodeObj.slot, focus.size === 0 || focus.has(nodeObj.data.id) ? FOCUS_FULL : FOCUS_DIM);
+      nodeObj.batch.dirty = true;
+    }
+  }
+
   function getLabelDistanceScale(worldPosition) {
     const distance = Math.max(camera.position.distanceTo(worldPosition), 1);
     return THREE.MathUtils.clamp(distance * 0.006, 0.5, 4);
@@ -933,9 +1055,35 @@ export function createGovernmentGraph({
     return rects;
   }
 
+  // The screen rectangle the selected node's brood occupies, padded: a
+  // context cluster's badge is kept out of it, so collapsed siblings never
+  // sit over the children a reader just asked to see. Their rings stay.
+  function broodScreenBounds(candidates) {
+    let bounds = null;
+    for (const candidate of candidates) {
+      if (!candidate.brood || !candidate.sprite.visible) {
+        continue;
+      }
+      const b = measureLabelBounds(candidate.sprite, candidate.priority);
+      if (!bounds) {
+        bounds = { left: b.left, right: b.right, top: b.top, bottom: b.bottom };
+      } else {
+        bounds.left = Math.min(bounds.left, b.left);
+        bounds.right = Math.max(bounds.right, b.right);
+        bounds.top = Math.min(bounds.top, b.top);
+        bounds.bottom = Math.max(bounds.bottom, b.bottom);
+      }
+    }
+    if (bounds) {
+      bounds.left -= 24; bounds.right += 24; bounds.top -= 24; bounds.bottom += 24;
+    }
+    return bounds;
+  }
+
   function suppressOverlappingLabels(candidates) {
     const accepted = [];
     const chrome = getChromeRects();
+    const broodBounds = broodScreenBounds(candidates);
     candidates.sort((a, b) => b.priority - a.priority);
     for (const candidate of candidates) {
       if (!candidate.sprite.visible) {
@@ -943,7 +1091,11 @@ export function createGovernmentGraph({
       }
       const bounds = measureLabelBounds(candidate.sprite, candidate.priority);
       let blocked = false;
+      if (candidate.context && broodBounds && labelBoundsIntersect(bounds, broodBounds)) {
+        blocked = true;
+      }
       for (const chromeBounds of chrome) {
+        if (blocked) break;
         if (labelBoundsIntersect(bounds, chromeBounds)) {
           blocked = true;
           break;
@@ -1418,6 +1570,16 @@ export function createGovernmentGraph({
 
   function refreshEdgeColor(edge) {
     edge.color.copy(edge.baseColor);
+    if (state.focusIds.size > 0) {
+      const selected = state.selectedNode;
+      if (edge.type === "hierarchy" && selected && edge.from === selected) {
+        // The brood's own edges carry the child's hue, so the fan a reader
+        // asked for is the brightest thing on the stage.
+        edge.color.set(getNodeColor(edge.to.data)).lerp(whiteColor, 0.1);
+      } else if (!(state.focusIds.has(edge.from.data.id) && state.focusIds.has(edge.to.data.id))) {
+        edge.color.lerp(inkColor, 0.62);
+      }
+    }
     if (state.highlightedPathEdgeSlots.has(edge.slot)) {
       const highlightHex = edge.type === "hierarchy" ? getNodeColor(edge.to.data) : "#8fc2ff";
       edge.color.set(highlightHex).lerp(whiteColor, 0.18);
@@ -2136,6 +2298,61 @@ export function createGovernmentGraph({
     state.renderDirty = true;
   }
 
+  // Frame what "Expand All Below" put on the stage: the node, its children
+  // and every visible descendant, bounded, rather than the first generation
+  // alone -- the grandchildren sit on larger shells and were landing outside
+  // a frame fitted to the brood. Same rule as frameBroodOf otherwise: only an
+  // explicit expansion may pull the camera back.
+  function frameSubtreeOf(nodeObj, maxNodes = 900) {
+    if (!nodeObj || state.flyMode) {
+      frameBroodOf(nodeObj);
+      return;
+    }
+    const points = [];
+    const queue = [nodeObj];
+    while (queue.length && points.length < maxNodes) {
+      const current = queue.shift();
+      // `visible` only, never `culled`: culling is last frame's frustum
+      // result, and a child the old camera could not see is exactly the one
+      // the new frame has to hold.
+      if (current !== nodeObj && !current.visible) {
+        continue;
+      }
+      points.push(current.targetPos && current.targetPos.lengthSq() > 0 ? current.targetPos : current.pos);
+      for (const childObj of current.childObjs || []) {
+        queue.push(childObj);
+      }
+    }
+    if (points.length < 2) {
+      frameBroodOf(nodeObj);
+      return;
+    }
+    state.lastUserDrillAt = performance.now();
+    const centroid = new THREE.Vector3();
+    for (const point of points) {
+      centroid.add(point);
+    }
+    centroid.divideScalar(points.length);
+    // Pulled a third of the way back toward the node itself: a deep subtree's
+    // centroid sits among the grandchildren, and the node the reader expanded
+    // was landing on the frame's edge.
+    centroid.lerp(nodeObj.pos, 0.35);
+    let reach = 0;
+    for (const point of points) {
+      reach = Math.max(reach, point.distanceTo(centroid));
+    }
+    if (reach <= 0) {
+      frameBroodOf(nodeObj);
+      return;
+    }
+    state.camFocusTarget.copy(centroid);
+    const halfFov = THREE.MathUtils.degToRad(camera.fov) / 2;
+    const fitDistance = (reach * 1.15) / Math.max(Math.tan(halfFov), 0.05);
+    const fitZoom = CAMERA_DISTANCE / Math.max(fitDistance, 1);
+    state.targetZoom = THREE.MathUtils.clamp(fitZoom, 0.28, 10);
+    state.renderDirty = true;
+  }
+
   function setDepthFilter(depth) {
     state.manualDepthFilter = Number.isFinite(depth) ? Math.min(depth, MAX_DEPTH) : MAX_DEPTH;
     updateLodState();
@@ -2549,8 +2766,16 @@ export function createGovernmentGraph({
     return clusterObj;
   }
 
+  // A cluster outside the focus set is context: its ring is tinted toward the
+  // ink and drawn at three quarters, so a selected node's own brood reads
+  // over the collapsed siblings beside it instead of under their rings.
+  function clusterIsContext(clusterObj) {
+    return state.focusIds.size > 0 && !state.focusIds.has(clusterObj?.data?.sourceId);
+  }
+
   function setClusterSlot(slot, clusterObj) {
-    const scale = Math.max(2.4, clusterObj.displayRadius || clusterObj.radius);
+    const context = clusterIsContext(clusterObj);
+    const scale = Math.max(2.4, clusterObj.displayRadius || clusterObj.radius) * (context ? 0.72 : 1);
     tempQuat.copy(camera.quaternion);
     tempMat4.compose(
       clusterObj.displayPos || clusterObj.pos,
@@ -2560,7 +2785,7 @@ export function createGovernmentGraph({
     state.clusterBatch.mesh.setMatrixAt(slot, tempMat4);
     state.clusterBatch.mesh.setColorAt(
       slot,
-      tempClusterColor.set(clusterObj.color || clusterColor).lerp(clusterAccentColor, 0.08),
+      tempClusterColor.set(clusterObj.color || clusterColor).lerp(clusterAccentColor, 0.08).lerp(inkColor, context ? 0.55 : 0),
     );
     state.clusterBatch.clustersBySlot[slot] = clusterObj;
     state.clusterBatch.dirty = true;
@@ -2586,11 +2811,12 @@ export function createGovernmentGraph({
       const label = state.clusterLabels[labelIndex];
       const title = clusterObj.data.clusterLabel || clusterObj.data.name;
       const subtitle = clusterObj.data.clusterCountLabel || getClusterCountLabel(clusterObj);
+      const context = clusterIsContext(clusterObj);
       drawClusterLabel(label, title, subtitle, clusterObj.color || "#d3c29a");
       label.sprite.visible = true;
       label.sprite.position.copy(clusterObj.pos);
-      label.sprite.position.y += Math.max(8, clusterObj.radius + 5);
-      const labelScale = getLabelDistanceScale(label.sprite.position);
+      label.sprite.position.y += Math.max(8, clusterObj.radius + 5) * (context ? 0.72 : 1);
+      const labelScale = getLabelDistanceScale(label.sprite.position) * (context ? 0.72 : 1);
       label.sprite.scale.set(28 * labelScale, 8.4 * labelScale, 1);
       let priority = clusterObj.count || 0;
       if (state.selectedNode?.data?.id === clusterObj.data.sourceId) {
@@ -2602,7 +2828,7 @@ export function createGovernmentGraph({
       if (state.highlightedPathIds.has(clusterObj.data.sourceId)) {
         priority += 150_000;
       }
-      candidates.push({ sprite: label.sprite, priority });
+      candidates.push({ sprite: label.sprite, priority, context });
       labelIndex += 1;
     }
 
@@ -2820,7 +3046,7 @@ export function createGovernmentGraph({
     const clustersSettling = recomputeClusters();
     const baseEdgeOpacity = state.lod.level <= 1 ? 0.34 : state.zoom <= 1 ? 0.24 : 0.3;
     state.edgeBatch.lines.material.opacity =
-      state.highlightedPathEdgeSlots.size > 0 ? Math.max(baseEdgeOpacity, 0.42) : baseEdgeOpacity;
+      state.highlightedPathEdgeSlots.size > 0 || state.focusIds.size > 0 ? Math.max(baseEdgeOpacity, 0.5) : baseEdgeOpacity;
     const nodeCandidates = [];
 
     for (const nodeObj of state.allNodes) {
@@ -2896,9 +3122,11 @@ export function createGovernmentGraph({
     state.clusterBatch.lastActiveCount = clusterSlot;
     state.clusterBatch.mesh.count = clusterSlot;
 
+    refreshFocus();
     const clusterLabelCandidates = updateClusterLabels(protectedIds);
     const haloLabelCandidates = updateHaloNodes(protectedIds);
-    suppressOverlappingLabels([...clusterLabelCandidates, ...haloLabelCandidates]);
+    const broodLabelCandidates = updateBroodLabels(protectedIds);
+    suppressOverlappingLabels([...clusterLabelCandidates, ...haloLabelCandidates, ...broodLabelCandidates]);
 
     for (const edge of state.allEdges) {
       applyEdgeVisibility(edge);
@@ -3430,6 +3658,7 @@ export function createGovernmentGraph({
     },
     focusNode,
     frameBroodOf,
+    frameSubtreeOf,
     setFlyMode(enabled) {
       const nextEnabled = Boolean(enabled);
       if (nextEnabled === state.flyMode) {

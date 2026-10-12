@@ -31,7 +31,7 @@ CLAUDE.md.
 | Staff payroll (OPM FedScope, Mar 2025, civilian basic pay) | 178 orgs; top-level $185.1bn for 1.65M civilians |
 | Spending by object class (USAspending, FY2025 obligations) | 86 agencies incl. all 15 departments; staff pay (11.x+12.x) $595.0bn of $10.09tn obligations |
 
-Cache stamp: `?v=20261012a` (bump index.html, js/ui.js, js/graph.js together
+Cache stamp: `?v=20261012b` (bump index.html, js/ui.js, js/graph.js together
 on any JS change).
 
 ## Next actions, in order
@@ -79,7 +79,17 @@ in its flow), the full-window `#canvas`, and a 400px `#info-panel`. Every
 id and class the JS and the smoke check query is unchanged. `ui.js`'s
 `renderChildrenList` lists units before posts with a figure per row by the
 headline's own rule; `graph.js` paints its badges and clear colour in the
-same language. Cache stamp: `?v=20261012a`.
+same language. A fourth slice made an expansion legible: the selected
+node's children carry name badges (`updateBroodLabels`, 48 at most, thinned
+by the overlap pass; type and count beneath, never a figure), everything
+outside the selection, its ancestors and its brood is tinted toward the ink
+through the instance colour (`refreshFocus`, a selection state, never a data
+claim — base colours and sizes are untouched), brood edges draw in the
+child's hue, collapsed sibling clusters shrink, dim and keep their badges out
+of the brood's screen area, and "Expand All Below" frames the whole subtree
+it drew (`frameSubtreeOf`; it reads `visible`, never `culled`, which is last
+frame's frustum and left 137 of the White House Office's 249 out of the fit
+on the first try). Cache stamp: `?v=20261012b`.
 
 Left deliberately undone: a fiscal-anchor chip in the top bar (the figure
 lives in `#data-provenance`, computed from the graph — a static chip would
