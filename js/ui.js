@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261008e";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261008e";
+import { createGovernmentGraph } from "./graph.js?v=20261012a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261012a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -403,7 +403,7 @@ function readingGuidePoints(count) {
       "Reading a panel",
       `On a cost, a solid badge means measured and an outlined one means estimated — filled against `
       + `hollow, so the difference survives colourblindness. A box's colour is the branch it belongs `
-      + `to; the key is bottom-right. "Placement" is a separate line, because "this page lists it" and `
+      + `to; the key is in the left column. "Placement" is a separate line, because "this page lists it" and `
       + `"this thing exists" are different claims.`,
     ],
   ];
@@ -502,7 +502,7 @@ function showLoadFailure(message) {
     loadFill.style.background = "#c85a4a";
   }
   setText(dom.loadStatus, message);
-  dom.loadStatus.style.color = "#e09090";
+  dom.loadStatus.style.color = "var(--signal)";
 
   if (!dom.loading.querySelector("[data-reload-button='true']")) {
     const reloadButton = document.createElement("button");
@@ -576,9 +576,9 @@ function ensureOriginUi() {
 
   const originLabel = document.createElement("div");
   originLabel.textContent = "ORIGIN PATH";
-  originLabel.style.fontSize = "10px";
+  originLabel.style.fontSize = "12px";
   originLabel.style.letterSpacing = "0.12em";
-  originLabel.style.color = "#8f7a5d";
+  originLabel.style.color = "var(--text-3)";
   originLabel.style.marginBottom = "6px";
   originWrap.appendChild(originLabel);
 
@@ -615,18 +615,18 @@ function ensureVerificationUi() {
   verificationWrap.style.padding = "10px";
   // Every other line in the panel is 8-10px; without this the status,
   // confidence and source lines inherit the browser's 16px default.
-  verificationWrap.style.fontSize = "9px";
+  verificationWrap.style.fontSize = "12px";
   verificationWrap.style.lineHeight = "1.6";
-  verificationWrap.style.color = "#9a8a6a";
+  verificationWrap.style.color = "var(--text-2)";
   verificationWrap.style.border = "1px solid rgba(200,168,74,0.14)";
   verificationWrap.style.background = "rgba(20,16,12,0.72)";
   verificationWrap.style.borderRadius = "10px";
 
   const title = document.createElement("div");
   title.textContent = "DATA VERIFICATION";
-  title.style.fontSize = "10px";
+  title.style.fontSize = "12px";
   title.style.letterSpacing = "0.12em";
-  title.style.color = "#8f7a5d";
+  title.style.color = "var(--text-3)";
   title.style.marginBottom = "8px";
   verificationWrap.appendChild(title);
 
@@ -636,7 +636,7 @@ function ensureVerificationUi() {
   badge.style.padding = "2px 6px";
   badge.style.marginBottom = "6px";
   badge.style.borderRadius = "999px";
-  badge.style.fontSize = "9px";
+  badge.style.fontSize = "12px";
   badge.style.letterSpacing = "0.08em";
   badge.style.fontWeight = "600";
   const confidence = document.createElement("div");
@@ -731,8 +731,8 @@ function ensureVerificationToggles() {
     label.style.display = "flex";
     label.style.alignItems = "center";
     label.style.gap = "8px";
-    label.style.fontSize = "10px";
-    label.style.color = "#d4c4a1";
+    label.style.fontSize = "12px";
+    label.style.color = "var(--text-2)";
     label.style.pointerEvents = "auto";
 
     const checkbox = document.createElement("input");
@@ -779,8 +779,8 @@ function ensureVerificationLegend() {
   title.id = "legend-verification-label";
   title.dataset.verificationLegend = "true";
   title.textContent = "Verification";
-  title.style.fontSize = "10px";
-  title.style.color = "#8f7a5d";
+  title.style.fontSize = "12px";
+  title.style.color = "var(--text-3)";
   title.style.letterSpacing = "0.2em";
   title.style.textTransform = "uppercase";
   title.style.margin = "10px 0 5px";
@@ -863,8 +863,8 @@ function renderHeadcountProvenance(data) {
   if (!line && dom.infoStats) {
     line = document.createElement("div");
     line.id = "info-headcount-provenance";
-    line.style.fontSize = "9px";
-    line.style.color = "#8f7a5d";
+    line.style.fontSize = "12px";
+    line.style.color = "var(--text-3)";
     line.style.letterSpacing = "0.06em";
     line.style.margin = "2px 0 8px";
     dom.infoStats.insertAdjacentElement("afterend", line);
@@ -969,8 +969,8 @@ function renderCountProvenance(data) {
   if (!line && dom.infoStats) {
     line = document.createElement("div");
     line.id = "info-count-provenance";
-    line.style.fontSize = "9px";
-    line.style.color = "#8f7a5d";
+    line.style.fontSize = "12px";
+    line.style.color = "var(--text-3)";
     line.style.letterSpacing = "0.06em";
     line.style.margin = "2px 0 8px";
     dom.infoStats.insertAdjacentElement("afterend", line);
@@ -1033,8 +1033,8 @@ function renderPositionListing(data) {
   if (!line && dom.infoStats) {
     line = document.createElement("div");
     line.id = "info-position-listing";
-    line.style.fontSize = "9px";
-    line.style.color = "#8f7a5d";
+    line.style.fontSize = "12px";
+    line.style.color = "var(--text-3)";
     line.style.letterSpacing = "0.06em";
     line.style.margin = "2px 0 8px";
     dom.infoStats.insertAdjacentElement("afterend", line);
@@ -1240,8 +1240,8 @@ function renderSchedulePay(data) {
   if (!line && dom.infoStats) {
     line = document.createElement("div");
     line.id = "info-schedule-pay";
-    line.style.fontSize = "9px";
-    line.style.color = "#8f7a5d";
+    line.style.fontSize = "12px";
+    line.style.color = "var(--text-3)";
     line.style.letterSpacing = "0.06em";
     line.style.margin = "2px 0 8px";
     dom.infoStats.insertAdjacentElement("afterend", line);
@@ -1330,8 +1330,8 @@ function renderStatutoryPay(data) {
   if (!line && dom.infoStats) {
     line = document.createElement("div");
     line.id = "info-statutory-pay";
-    line.style.fontSize = "9px";
-    line.style.color = "#8f7a5d";
+    line.style.fontSize = "12px";
+    line.style.color = "var(--text-3)";
     line.style.letterSpacing = "0.06em";
     line.style.margin = "2px 0 8px";
     dom.infoStats.insertAdjacentElement("afterend", line);
@@ -1416,8 +1416,8 @@ function renderTierReferencePay(data) {
   if (!line && dom.infoStats) {
     line = document.createElement("div");
     line.id = "info-tier-reference-pay";
-    line.style.fontSize = "9px";
-    line.style.color = "#8f7a5d";
+    line.style.fontSize = "12px";
+    line.style.color = "var(--text-3)";
     line.style.letterSpacing = "0.06em";
     line.style.margin = "2px 0 8px";
     dom.infoStats.insertAdjacentElement("afterend", line);
@@ -1498,8 +1498,8 @@ function renderMilitaryPay(data) {
   if (!line && dom.infoStats) {
     line = document.createElement("div");
     line.id = "info-military-pay";
-    line.style.fontSize = "9px";
-    line.style.color = "#8f7a5d";
+    line.style.fontSize = "12px";
+    line.style.color = "var(--text-3)";
     line.style.letterSpacing = "0.06em";
     line.style.margin = "2px 0 8px";
     dom.infoStats.insertAdjacentElement("afterend", line);
@@ -1560,8 +1560,8 @@ function renderDerivedPay(data) {
   if (!line && dom.infoStats) {
     line = document.createElement("div");
     line.id = "info-derived-pay";
-    line.style.fontSize = "9px";
-    line.style.color = "#8f7a5d";
+    line.style.fontSize = "12px";
+    line.style.color = "var(--text-3)";
     line.style.letterSpacing = "0.06em";
     line.style.margin = "2px 0 8px";
     dom.infoStats.insertAdjacentElement("afterend", line);
@@ -1675,8 +1675,8 @@ function renderReportedPay(data) {
   if (!line && dom.infoStats) {
     line = document.createElement("div");
     line.id = "info-reported-pay";
-    line.style.fontSize = "9px";
-    line.style.color = "#8f7a5d";
+    line.style.fontSize = "12px";
+    line.style.color = "var(--text-3)";
     line.style.letterSpacing = "0.06em";
     line.style.margin = "2px 0 8px";
     dom.infoStats.insertAdjacentElement("afterend", line);
@@ -1739,8 +1739,8 @@ function renderCurrentListing(data) {
   if (!line && dom.infoStats) {
     line = document.createElement("div");
     line.id = "info-current-listing";
-    line.style.fontSize = "9px";
-    line.style.color = "#8f7a5d";
+    line.style.fontSize = "12px";
+    line.style.color = "var(--text-3)";
     line.style.letterSpacing = "0.06em";
     line.style.margin = "2px 0 8px";
     dom.infoStats.insertAdjacentElement("afterend", line);
@@ -1818,8 +1818,8 @@ function renderVacancyListing(data) {
   if (!line && dom.infoStats) {
     line = document.createElement("div");
     line.id = "info-vacancy-listing";
-    line.style.fontSize = "9px";
-    line.style.color = "#8f7a5d";
+    line.style.fontSize = "12px";
+    line.style.color = "var(--text-3)";
     line.style.letterSpacing = "0.06em";
     line.style.margin = "2px 0 8px";
     dom.infoStats.insertAdjacentElement("afterend", line);
@@ -1848,8 +1848,8 @@ function renderDescriptionProvenance(data, isClusteredView) {
   if (!line && dom.infoDesc) {
     line = document.createElement("div");
     line.id = "info-desc-provenance";
-    line.style.fontSize = "9px";
-    line.style.color = "#8f7a5d";
+    line.style.fontSize = "12px";
+    line.style.color = "var(--text-3)";
     line.style.letterSpacing = "0.08em";
     line.style.margin = "4px 0 8px";
     dom.infoDesc.insertAdjacentElement("afterend", line);
@@ -1904,8 +1904,8 @@ function renderOfficialDescription(data, isClusteredView) {
     if (!anchor) return;
     host = document.createElement("div");
     host.id = "info-desc-official";
-    host.style.fontSize = "10px";
-    host.style.color = "#9a8a6a";
+    host.style.fontSize = "12px";
+    host.style.color = "var(--text-2)";
     host.style.lineHeight = "1.7";
     host.style.margin = "0 0 12px";
     anchor.insertAdjacentElement("afterend", host);
@@ -1919,8 +1919,8 @@ function renderOfficialDescription(data, isClusteredView) {
   }
   host.style.display = "";
   const heading = document.createElement("div");
-  heading.style.fontSize = "9px";
-  heading.style.color = "#8f7a5d";
+  heading.style.fontSize = "12px";
+  heading.style.color = "var(--text-3)";
   heading.style.letterSpacing = "0.08em";
   heading.style.margin = "0 0 4px";
   heading.textContent = `OFFICIAL DESCRIPTION — U.S. Government Manual, ${block.edition || "edition not stated"}`;
@@ -1930,8 +1930,8 @@ function renderOfficialDescription(data, isClusteredView) {
   quote.textContent = block.text;
   host.appendChild(quote);
   const note = document.createElement("div");
-  note.style.fontSize = "9px";
-  note.style.color = "#8f7a5d";
+  note.style.fontSize = "12px";
+  note.style.color = "var(--text-3)";
   note.style.margin = "4px 0 0";
   const which = block.kind === "mission_statement"
     ? "the Manual's own mission statement for this unit"
@@ -1976,9 +1976,9 @@ function renderSupersededNotice(data) {
     (quote ? ` ${hostnameOf(source.url)} says: "${quote}"` : "") +
     " It is kept, with its sources, as a record of what the government used to be.";
   existing.style.display = "block";
-  existing.style.fontSize = "9px";
+  existing.style.fontSize = "12px";
   existing.style.lineHeight = "1.5";
-  existing.style.color = "#d99a6c";
+  existing.style.color = "var(--estimate)";
   existing.style.margin = "6px 0";
   if (!host && dom.infoPanel && dom.infoPanel.firstChild) {
     dom.infoPanel.insertBefore(existing, dom.infoPanel.firstChild.nextSibling);
@@ -2403,13 +2403,13 @@ function renderVerificationPanel(data, isRoot = false) {
   const sourcesLabel = document.createElement("div");
   sourcesLabel.textContent = "Sources";
   sourcesLabel.style.marginTop = "6px";
-  sourcesLabel.style.color = "#d4c4a1";
+  sourcesLabel.style.color = "var(--text-2)";
   dom.verificationSources.appendChild(sourcesLabel);
 
   if (linkableSources.length === 0) {
     const empty = document.createElement("div");
     empty.textContent = "No confirming sources recorded.";
-    empty.style.color = "#8f7a5d";
+    empty.style.color = "var(--text-3)";
     dom.verificationSources.appendChild(empty);
     return;
   }
@@ -2421,7 +2421,7 @@ function renderVerificationPanel(data, isRoot = false) {
     link.target = "_blank";
     link.rel = "noreferrer noopener";
     link.textContent = `• ${parsed.hostname}`;
-    link.style.color = "#d4c4a1";
+    link.style.color = "var(--text-2)";
     dom.verificationSources.appendChild(link);
   }
   // sourceTypes is a set of labels, not a list parallel to sourceUrls.
@@ -2429,7 +2429,7 @@ function renderVerificationPanel(data, isRoot = false) {
   if (typeLabels.length > 0) {
     const types = document.createElement("div");
     types.textContent = `Source types: ${typeLabels.join(", ")}`;
-    types.style.color = "#8f7a5d";
+    types.style.color = "var(--text-3)";
     dom.verificationSources.appendChild(types);
   }
 }
@@ -2496,8 +2496,8 @@ function renderOriginTrace(nodeObj) {
     if (index === originTrace.length - 1) {
       const here = document.createElement("span");
       here.textContent = "(this node)";
-      here.style.color = "#9a8a6a";
-      here.style.fontSize = "9px";
+      here.style.color = "var(--text-2)";
+      here.style.fontSize = "12px";
       here.style.marginLeft = "4px";
       row.appendChild(here);
     }
@@ -2508,8 +2508,8 @@ function renderOriginTrace(nodeObj) {
   dom.originList.appendChild(fragment);
 
   const confirmation = document.createElement("div");
-  confirmation.style.color = "#9a8a6a";
-  confirmation.style.fontSize = "9px";
+  confirmation.style.color = "var(--text-2)";
+  confirmation.style.fontSize = "12px";
   confirmation.style.lineHeight = "1.5";
   confirmation.style.marginTop = "4px";
   confirmation.textContent = `${originTrace.length} step${originTrace.length === 1 ? "" : "s"} from the root; the same path is highlighted in the scene above.`;
@@ -3312,10 +3312,10 @@ function buildHeaderSumLines(node) {
   list.style.listStyle = "none";
   list.style.margin = "4px 0 0";
   list.style.padding = "0 0 0 10px";
-  list.style.borderLeft = "1px solid rgba(154,138,106,0.35)";
-  list.style.fontSize = "9px";
+  list.style.borderLeft = "1px solid var(--line-strong)";
+  list.style.fontSize = "12px";
   list.style.lineHeight = "1.6";
-  list.style.color = "#9a8a6a";
+  list.style.color = "var(--text-2)";
   for (const component of node.treasury_component_rows) {
     const item = document.createElement("li");
     const amount = toFiniteAmount(component.amount);
@@ -3546,8 +3546,8 @@ function buildCostBlock(node) {
   if (period.label && amountText !== null) {
     const periodLine = document.createElement("div");
     periodLine.className = "info-cost-period";
-    periodLine.style.fontSize = "9px";
-    periodLine.style.color = "#9a8a6a";
+    periodLine.style.fontSize = "12px";
+    periodLine.style.color = "var(--text-2)";
     periodLine.style.lineHeight = "1.6";
     periodLine.style.marginTop = "3px";
     periodLine.textContent = period.label;
@@ -3601,6 +3601,25 @@ function buildCostBlock(node) {
 // of them could not be reached from the panel at all. The list scrolls.
 const CHILD_LIST_PREVIEW = 8;
 
+// A short figure for a list row: the same honest rule the panel's headline
+// follows (formatCostAmount: a measured line in full, an estimate only when
+// the reader asked for estimates, a salary where a post has one, nothing
+// otherwise), compressed to three figures so forty rows scan as a column.
+function rowFigure(child) {
+  const text = formatCostAmount(child);
+  if (!text) return null;
+  const approx = text.startsWith("≈");
+  const money = /-?\$[\d,]+(?:\.\d+)?/.exec(text);
+  if (!money) return { text, kind: "pay" };
+  const amount = Number(money[0].replace(/[$,]/g, ""));
+  if (!Number.isFinite(amount)) return { text, kind: "pay" };
+  const compact = formatApproximateCost(amount)
+    .replace(" trillion", "T").replace(" billion", "B").replace(" million", "M").replace(" thousand", "K");
+  if (approx) return { text: `${compact} ~`, kind: "estimate" };
+  if (costStandInOf(child)) return { text: compact, kind: "pay" };
+  return { text: compact, kind: "measured" };
+}
+
 function renderChildrenList(nodeObj, children, showAll) {
   dom.childrenList.replaceChildren();
   if (children.length === 0) {
@@ -3608,11 +3627,32 @@ function renderChildrenList(nodeObj, children, showAll) {
     return;
   }
   dom.childrenLabel.style.display = "block";
+  // Offices and agencies first, then posts, each group in the curated order:
+  // a department lists its sixteen officers before its five bureaus, so the
+  // eight-row preview used to show only posts and never the units with money.
+  const units = children.filter((child) => !isPostType(child));
+  const posts = children.filter((child) => isPostType(child));
+  const ordered = [...units, ...posts];
+  setText(
+    dom.childrenLabel,
+    units.length && posts.length
+      ? `Sub-units — ${units.length.toLocaleString()} ${units.length === 1 ? "unit" : "units"}, ${posts.length.toLocaleString()} ${posts.length === 1 ? "post" : "posts"}`
+      : posts.length ? `Positions — ${posts.length.toLocaleString()}` : "Sub-units",
+  );
   const fragment = document.createDocumentFragment();
-  const shown = showAll ? children : children.slice(0, CHILD_LIST_PREVIEW);
+  const shown = showAll ? ordered : ordered.slice(0, CHILD_LIST_PREVIEW);
+  let firstPostDrawn = false;
   for (const child of shown) {
     const item = document.createElement("div");
     item.className = "child-item";
+    const isPost = isPostType(child);
+    if (isPost) {
+      item.classList.add("is-post");
+      if (!firstPostDrawn && units.length > 0) {
+        item.classList.add("child-group-start");
+        firstPostDrawn = true;
+      }
+    }
 
     const dot = document.createElement("div");
     dot.className = "child-dot";
@@ -3620,8 +3660,24 @@ function renderChildrenList(nodeObj, children, showAll) {
     item.appendChild(dot);
 
     const label = document.createElement("span");
+    label.className = "child-name";
     label.textContent = child.name;
     item.appendChild(label);
+
+    const figure = rowFigure(child);
+    if (figure) {
+      const amount = document.createElement("span");
+      amount.className = `child-figure is-${figure.kind}`;
+      amount.textContent = figure.text;
+      item.appendChild(amount);
+    }
+    const grandchildren = (child.children || []).length;
+    if (grandchildren > 0) {
+      const count = document.createElement("span");
+      count.className = "child-count";
+      count.textContent = `${grandchildren.toLocaleString()} ›`;
+      item.appendChild(count);
+    }
 
     makeInteractiveRow(item, `Open ${child.name}`, () => {
       const childObj = state.graph.getNodeById(child.id);
@@ -3636,7 +3692,7 @@ function renderChildrenList(nodeObj, children, showAll) {
     fragment.appendChild(item);
   }
 
-  if (!showAll && children.length > CHILD_LIST_PREVIEW) {
+  if (!showAll && ordered.length > CHILD_LIST_PREVIEW) {
     const more = document.createElement("div");
     more.className = "child-item child-item-more";
     more.id = "info-children-more";
@@ -3645,10 +3701,11 @@ function renderChildrenList(nodeObj, children, showAll) {
     dot.style.background = "#555";
     more.appendChild(dot);
     const label = document.createElement("span");
-    const rest = children.length - CHILD_LIST_PREVIEW;
-    label.textContent = `+ ${rest.toLocaleString()} more — show all ${children.length.toLocaleString()}`;
+    label.className = "child-name";
+    const rest = ordered.length - CHILD_LIST_PREVIEW;
+    label.textContent = `+ ${rest.toLocaleString()} more — show all ${ordered.length.toLocaleString()}`;
     more.appendChild(label);
-    makeInteractiveRow(more, `Show all ${children.length} sub-units`, () => {
+    makeInteractiveRow(more, `Show all ${ordered.length} sub-units`, () => {
       renderChildrenList(nodeObj, children, true);
       const first = dom.childrenList.children[CHILD_LIST_PREVIEW];
       if (first && typeof first.focus === "function") first.focus();

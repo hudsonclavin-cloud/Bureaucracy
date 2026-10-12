@@ -118,7 +118,8 @@ a { color: var(--gold); } a:hover { color: var(--gold-bright); }
   margin-left: auto; display: flex; align-items: center; gap: 14px; flex: 0 1 auto; min-width: 0; overflow: hidden;
   font: 12px/1 var(--mono); color: var(--text-3); letter-spacing: 0.04em; white-space: nowrap;
 }
-#stats .stat-item { padding-left: 14px; border-left: 1px solid var(--line); overflow: hidden; text-overflow: ellipsis; max-width: 240px; }
+#stats .stat-item { padding-left: 14px; border-left: 1px solid var(--line); overflow: hidden; text-overflow: ellipsis; max-width: 300px; flex: 0 1 auto; }
+#stats .stat-item:first-child { flex: 0 0 auto; max-width: none; }
 #stats .stat-item:first-child { padding-left: 0; border-left: 0; }
 #stats.panel-closed { right: auto; }
 
@@ -318,3 +319,18 @@ a { color: var(--gold); } a:hover { color: var(--gold-bright); }
   #reading-guide { padding: 12px; }
   #reading-guide-card { padding: 22px 18px; }
 }
+
+/* ---------- Sub-unit rows (slice 2) ---------- */
+.child-name { flex: 1 1 auto; min-width: 0; }
+.child-figure { font: 500 12px/1 var(--mono); white-space: nowrap; }
+.child-figure.is-measured { color: var(--gold-bright); }
+.child-figure.is-estimate { color: var(--estimate); }
+.child-figure.is-pay { color: var(--text-2); }
+.child-count { font: 12px/1 var(--mono); color: var(--text-3); white-space: nowrap; }
+.child-item.child-group-start { margin-top: 22px; position: relative; }
+.child-item.child-group-start::before {
+  content: "Positions"; position: absolute; top: -18px; left: 0;
+  font: 500 11px/1.4 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-3);
+}
+#btn-expand-all { background: transparent; color: var(--gold-bright); border-color: rgba(212, 178, 90, 0.55); }
+#btn-expand-all:hover { background: rgba(212, 178, 90, 0.12); }
