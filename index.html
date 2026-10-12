@@ -4,282 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23141414'/%3E%3Ccircle cx='16' cy='8' r='3' fill='%23c8a84a'/%3E%3Ccircle cx='8' cy='23' r='3' fill='%234a8ac8'/%3E%3Ccircle cx='24' cy='23' r='3' fill='%23c84a4a'/%3E%3Cpath d='M16 11v6M14 19l-4 2M18 19l4 2' stroke='%236a6a6a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="./css/atlas.css?v=20261008e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="./css/shell.css?v=20261012a">
+<link rel="stylesheet" href="./css/atlas.css?v=20261012a">
 <title>U.S. Federal Government — 3D Explorer</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
-
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{
-  /* --text-dim and --gold-dim were #6a5a3a (3.06:1) and #7a6030 (3.46:1)
-     against --bg, used at 8-9px, where WCAG AA asks 4.5:1. These are the same
-     hues a step lighter: 5.82:1 and 6.25:1, computed with the WCAG
-     relative-luminance formula, not eyeballed. */
-  --gold:#c8a84a;--gold-dim:#a88a48;--gold-bright:#e8c86a;
-  --bg:#020408;--bg2:#060c14;--text:#e8dcc8;--text-dim:#9a8660;
-  --leg:#8a4ac8;--exec:#c84a4a;--jud:#4a8ac8;--ind:#4ac88a;--reg:#c8884a;
-}
-body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;overflow:hidden;cursor:grab;}
-body.dragging{cursor:grabbing;}
-#canvas{display:block;position:fixed;inset:0;}
-#loading{
-  position:fixed;inset:0;background:var(--bg);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  z-index:200;transition:opacity 0.6s ease;
-}
-#loading h1{font-family:'Playfair Display',serif;font-size:32px;color:var(--text);margin-bottom:8px;letter-spacing:0.04em;}
-#loading p{font-size:10px;color:var(--gold-dim);letter-spacing:0.3em;text-transform:uppercase;margin-bottom:28px;}
-.load-bar{width:240px;height:1px;background:rgba(200,168,74,0.12);}
-.load-fill{height:100%;background:var(--gold);width:0;animation:loadAnim 1.8s cubic-bezier(.4,0,.2,1) forwards;}
-@keyframes loadAnim{to{width:100%;}}
-#load-status{font-size:9px;color:var(--gold-dim);margin-top:12px;letter-spacing:0.15em;}
-/* The title block and the depth control share the top-left corner. Stacking them in one
-   flex column means the control always sits below the title, however many lines the
-   provenance note wraps to — a fixed top offset assumed a height it did not control. */
-#left-stack{position:fixed;top:28px;left:32px;z-index:20;display:flex;flex-direction:column;gap:14px;pointer-events:none;}
-#title-panel{pointer-events:none;}
-#title-panel h1{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--text);line-height:1.4;text-shadow:0 0 60px rgba(200,168,74,0.3);}
-#title-panel p{font-size:9px;color:var(--gold-dim);letter-spacing:0.25em;text-transform:uppercase;margin-top:4px;}
-#node-counter{font-size:9px;color:var(--gold-dim);margin-top:2px;letter-spacing:0.1em;}
-#data-provenance{font-size:9px;color:var(--gold-dim);margin-top:3px;letter-spacing:0.08em;max-width:340px;line-height:1.5;}
-#search-wrap{position:fixed;top:28px;left:50%;transform:translateX(-50%);z-index:20;pointer-events:auto;}
-#search-input{
-  background:rgba(4,8,16,0.88);border:1px solid rgba(200,168,74,0.2);
-  color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;
-  padding:8px 14px;width:280px;outline:none;letter-spacing:0.05em;
-  backdrop-filter:blur(12px);transition:border-color 0.2s;
-}
-#search-input:focus{border-color:rgba(200,168,74,0.5);}
-#search-input::placeholder{color:var(--gold-dim);}
-#search-results{
-  background:rgba(4,8,16,0.96);border:1px solid rgba(200,168,74,0.15);
-  border-top:none;max-height:260px;overflow-y:auto;display:none;
-}
-.sr-item{
-  padding:7px 14px;font-size:10px;cursor:pointer;
-  border-bottom:1px solid rgba(200,168,74,0.06);
-  display:flex;flex-direction:column;gap:2px;
-  transition:background 0.15s;
-}
-.sr-item:hover{background:rgba(200,168,74,0.08);}
-.sr-name{color:var(--text);letter-spacing:0.03em;}
-.sr-path{color:var(--gold-dim);font-size:9px;letter-spacing:0.08em;}
-.sr-type{font-size:10px;padding:1px 5px;border:1px solid;display:inline-block;margin-top:1px;}
-#info-panel{
-  position:fixed;top:28px;right:32px;width:290px;
-  background:rgba(4,8,16,0.94);border:1px solid rgba(200,168,74,0.18);
-  padding:18px;z-index:20;pointer-events:auto;
-  transform:translateX(340px);transition:transform 0.45s cubic-bezier(.16,1,.3,1);
-  backdrop-filter:blur(16px);max-height:calc(100vh - 56px);overflow-y:auto;
-}
-#info-panel.open{transform:translateX(0);}
-#info-panel::-webkit-scrollbar{width:3px;}
-#info-panel::-webkit-scrollbar-thumb{background:rgba(200,168,74,0.2);}
-#info-name{font-family:'Playfair Display',serif;font-size:15px;color:var(--gold-bright);line-height:1.35;margin-bottom:4px;}
-#info-type{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-dim);padding-bottom:10px;border-bottom:1px solid rgba(200,168,74,0.1);margin-bottom:10px;}
-#info-desc{font-size:10px;color:#9a8a6a;line-height:1.7;margin-bottom:12px;}
-.info-stat{display:flex;justify-content:space-between;font-size:9px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
-.info-stat-label{color:var(--gold-dim);letter-spacing:0.1em;}
-.info-stat-val{color:var(--text);}
-.info-cost{padding:8px 0 10px;border-bottom:1px solid rgba(255,255,255,0.04);}
-.info-cost-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
-.info-cost-label{font-size:9px;color:var(--gold-dim);letter-spacing:0.1em;}
-.info-cost-amount{font-size:12px;color:var(--text);white-space:nowrap;text-align:right;}
-/* The same measured figure to three figures, set under the exact one. */
-.info-cost-compact{display:block;font-size:9px;color:var(--text-dim);letter-spacing:0.04em;margin-top:2px;font-weight:300;}
-.info-cost-badge{
-  font-size:10px;letter-spacing:0.12em;text-transform:uppercase;
-  padding:2px 6px;border:1px solid;display:inline-block;margin-top:7px;
-}
-/* Filled vs outline, not hue alone: green and amber measure 1.26:1 under
-   deuteranopia, so a colourblind reader cannot tell them apart by colour.
-   A measured figure is a solid block; a derived one is an empty outline. */
-.info-cost-badge.is-measured{color:#020408;border-color:#4ac88a;background:#4ac88a;font-weight:500;}
-.info-cost-badge.is-reported{color:#020408;border-color:#4a8ac8;background:#4a8ac8;font-weight:500;}
-.info-cost-badge.is-estimate{color:#c8884a;border-color:#c8884a;background:transparent;}
-.info-cost-badge.is-none{color:#9a8a6a;border-color:rgba(154,138,106,0.7);border-style:dashed;background:transparent;}
-.info-cost-note{font-size:9px;color:#9a8a6a;line-height:1.6;margin-top:6px;}
-/* Where the money goes: one bar per object-class group, staff pay filled. */
-.info-spend{margin-top:10px;padding-top:8px;border-top:1px solid rgba(200,168,74,0.15);}
-.info-spend-staff{font-size:11px;color:var(--text);margin:4px 0 6px;}
-.info-spend-row{margin:4px 0;}
-.info-spend-label{font-size:9px;color:var(--text-dim);letter-spacing:0.04em;}
-.info-spend-track{height:5px;background:rgba(154,138,106,0.18);margin-top:2px;}
-.info-spend-bar{height:100%;background:var(--gold-dim);}
-.info-spend-bar.is-staff{background:var(--gold-bright);}
-.info-cost-reveal{display:inline-block;margin-top:6px;padding:3px 8px;font:inherit;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:#c8884a;background:transparent;border:1px solid #c8884a;border-radius:3px;cursor:pointer;}
-.info-cost-reveal:hover,.info-cost-reveal:focus-visible{color:#020408;background:#c8884a;outline:none;}
-#info-children-label{font-size:9px;color:var(--gold-dim);letter-spacing:0.15em;text-transform:uppercase;margin:12px 0 6px;}
-#info-children-list{display:flex;flex-direction:column;gap:3px;max-height:180px;overflow-y:auto;}
-#info-children-list::-webkit-scrollbar{width:2px;}
-#info-children-list::-webkit-scrollbar-thumb{background:rgba(200,168,74,0.15);}
-.child-item{
-  font-size:9px;color:#7a9a7a;padding:4px 8px;
-  border:1px solid rgba(100,160,100,0.15);background:rgba(100,160,100,0.04);
-  cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:6px;
-}
-.child-item:hover{background:rgba(100,160,100,0.12);color:#aadaaa;}
-.child-item-more{color:var(--text-dim);border-style:dashed;}
-.child-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
-#info-actions{margin-top:14px;display:flex;flex-direction:column;gap:6px;}
-.btn{
-  width:100%;padding:8px;font-family:'IBM Plex Mono',monospace;font-size:9px;
-  letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;
-  border:1px solid;transition:all 0.2s;background:transparent;
-}
-.btn-expand{border-color:rgba(200,168,74,0.4);color:var(--gold);}
-.btn-expand:hover{background:rgba(200,168,74,0.1);}
-.btn-expand:disabled{opacity:0.3;cursor:default;}
-.btn-focus{border-color:rgba(200,200,200,0.2);color:#aaa;}
-.btn-focus:hover{background:rgba(255,255,255,0.05);}
-.btn-collapse{border-color:rgba(200,80,80,0.3);color:#c87a7a;}
-.btn-collapse:hover{background:rgba(200,80,80,0.08);}
-.btn-cancel{border-color:rgba(200,80,80,0.55);color:#e09090;}
-.btn-cancel:hover{background:rgba(200,80,80,0.15);}
-#breadcrumb{position:fixed;bottom:28px;left:32px;z-index:20;pointer-events:auto;max-width:60vw;}
-#bc-label{font-size:10px;color:var(--gold-dim);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:5px;}
-#bc-items{display:flex;align-items:center;flex-wrap:wrap;gap:0;}
-.bc-item{
-  font-size:9px;color:var(--gold);cursor:pointer;padding:3px 8px;
-  border:1px solid rgba(200,168,74,0.25);background:rgba(200,168,74,0.04);
-  transition:all 0.15s;white-space:nowrap;
-}
-.bc-item:hover{background:rgba(200,168,74,0.12);}
-.bc-sep{font-size:9px;color:var(--text-dim);padding:0 2px;}
-/* The open panel spans the viewport's height at 1400x900, so a key fixed at
-   right:32px sat inside it. It shifts left with the depth control. */
-#legend{position:fixed;bottom:28px;right:32px;z-index:20;pointer-events:none;text-align:right;transition:right 0.45s cubic-bezier(.16,1,.3,1);}
-#legend.panel-open{right:338px;}
-#legend-label{font-size:10px;color:var(--gold-dim);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:5px;}
-.leg-item{display:flex;align-items:center;justify-content:flex-end;gap:7px;font-size:9px;color:var(--text-dim);margin-bottom:3px;}
-.leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
-/* Below the breadcrumb's and the legend's baseline (both bottom:28px): with the
-   legend beside the open panel the two shared a row and their text collided. */
-#controls-hint{
-  position:fixed;bottom:8px;left:50%;transform:translateX(-50%);
-  font-size:10px;color:var(--text-dim);letter-spacing:0.2em;text-transform:uppercase;
-  pointer-events:none;z-index:10;
-}
-#depth-ctrl{
-  position:fixed;top:50%;right:32px;transform:translateY(-50%);
-  z-index:20;pointer-events:auto;display:flex;flex-direction:column;
-  align-items:center;gap:4px;
-}
-#depth-ctrl.panel-open{right:338px;}
-.depth-btn{
-  width:28px;height:28px;background:rgba(4,8,16,0.8);
-  border:1px solid rgba(200,168,74,0.15);color:var(--gold-dim);
-  font-family:'IBM Plex Mono',monospace;font-size:10px;
-  cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;
-}
-.depth-btn:hover,.depth-btn.active{background:rgba(200,168,74,0.12);color:var(--gold);border-color:rgba(200,168,74,0.4);}
-.depth-btn:disabled,.depth-btn-unavailable{opacity:0.28;cursor:not-allowed;}
-.depth-btn:disabled:hover{background:rgba(4,8,16,0.8);color:var(--gold-dim);border-color:rgba(200,168,74,0.15);}
-#depth-label{font-size:10px;color:var(--gold-dim);letter-spacing:0.1em;writing-mode:vertical-rl;margin:4px 0;}
-#tooltip{
-  position:fixed;background:rgba(4,8,16,0.97);border:1px solid rgba(200,168,74,0.25);
-  color:var(--gold);font-size:10px;padding:5px 10px;pointer-events:none;
-  display:none;z-index:30;white-space:nowrap;backdrop-filter:blur(8px);
-}
-#stats{position:fixed;top:66px;right:340px;z-index:10;pointer-events:none;text-align:right;}
-#stats.panel-closed{right:32px;}
-.stat-item{font-size:10px;color:var(--gold-dim);letter-spacing:0.1em;margin-bottom:2px;}
-#expand-loader{
-  position:fixed;bottom:72px;left:50%;transform:translateX(-50%);
-  background:rgba(4,8,16,0.94);border:1px solid rgba(200,168,74,0.35);
-  color:var(--gold);font-size:9px;padding:6px 18px;letter-spacing:0.22em;
-  text-transform:uppercase;z-index:30;pointer-events:none;display:none;
-  backdrop-filter:blur(10px);animation:expandPulse 0.9s ease infinite alternate;
-}
-@keyframes expandPulse{to{border-color:rgba(200,168,74,0.8);color:var(--gold-bright);}}
-#depth-expand-ctrl{pointer-events:auto;}
-#verification-toggles{display:flex;flex-direction:column;gap:6px;margin-top:10px;}
-#depth-expand-label{font-size:10px;color:var(--gold-dim);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:5px;}
-#depth-expand-btns{display:flex;gap:4px;}
-.depth-expand-btn{
-  width:28px;height:28px;background:rgba(4,8,16,0.8);
-  border:1px solid rgba(200,168,74,0.15);color:var(--gold-dim);
-  font-family:'IBM Plex Mono',monospace;font-size:10px;
-  cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;
-}
-.depth-expand-btn:hover,.depth-expand-btn.active{
-  background:rgba(200,168,74,0.12);color:var(--gold);border-color:rgba(200,168,74,0.4);
-}
-.depth-expand-btn:disabled,.depth-expand-btn.depth-btn-unavailable{opacity:0.28;cursor:not-allowed;}
-.depth-expand-btn:disabled:hover{background:rgba(4,8,16,0.8);color:var(--gold-dim);border-color:rgba(200,168,74,0.15);}
-/* "How to read this" — the first-visit explainer.
-   Every claim this site makes is hedged precisely, in the info panel, in
-   nine-pixel type. That is correct and it is not readable by someone who
-   has just arrived: the provenance line alone is six clauses joined by
-   middots. This card says the same things in plain sentences, once, before
-   the reader touches anything — and its numbers are computed from the
-   loaded graph by the same tree walk that writes the provenance line, so
-   the two can never disagree and neither can go stale. It is shown on a
-   first visit and remembered as dismissed after that; the "How to read
-   this" button beside the title reopens it. */
-#reading-guide{
-  position:fixed;inset:0;z-index:120;display:none;
-  align-items:center;justify-content:center;padding:24px;
-  background:rgba(2,4,8,0.82);backdrop-filter:blur(6px);
-}
-#reading-guide.open{display:flex;}
-#reading-guide-card{
-  background:rgba(6,12,20,0.98);border:1px solid rgba(200,168,74,0.28);
-  padding:26px 28px;max-width:560px;max-height:calc(100vh - 48px);overflow-y:auto;
-  box-shadow:0 0 80px rgba(0,0,0,0.7);
-}
-#reading-guide-card::-webkit-scrollbar{width:3px;}
-#reading-guide-card::-webkit-scrollbar-thumb{background:rgba(200,168,74,0.2);}
-#reading-guide h2{
-  font-family:'Playfair Display',serif;font-size:19px;font-weight:600;
-  color:var(--gold-bright);margin-bottom:3px;letter-spacing:0.02em;
-}
-#reading-guide .rg-sub{
-  font-size:9px;color:var(--gold-dim);letter-spacing:0.22em;text-transform:uppercase;
-  padding-bottom:13px;border-bottom:1px solid rgba(200,168,74,0.12);margin-bottom:15px;
-}
-.rg-point{margin-bottom:13px;}
-.rg-point h3{
-  font-size:10px;color:var(--gold);letter-spacing:0.13em;text-transform:uppercase;
-  margin-bottom:4px;font-weight:500;
-}
-.rg-point p{font-size:11px;color:#b6a684;line-height:1.75;}
-.rg-point em{color:var(--text);font-style:normal;}
-#reading-guide .rg-foot{
-  font-size:10px;color:#8a7a5a;line-height:1.7;
-  padding-top:13px;border-top:1px solid rgba(200,168,74,0.12);margin-top:16px;
-}
-#btn-reading-guide-close{
-  margin-top:16px;width:100%;padding:9px;
-  font-family:'IBM Plex Mono',monospace;font-size:9px;
-  letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;
-  background:transparent;border:1px solid rgba(200,168,74,0.45);color:var(--gold);
-  transition:all 0.2s;
-}
-#btn-reading-guide-close:hover{background:rgba(200,168,74,0.12);}
-#btn-reading-guide{
-  pointer-events:auto;margin-top:6px;padding:3px 8px;
-  font-family:'IBM Plex Mono',monospace;font-size:10px;
-  letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;
-  background:transparent;border:1px solid rgba(200,168,74,0.3);color:var(--gold-dim);
-  transition:all 0.2s;align-self:flex-start;
-}
-#btn-reading-guide:hover{background:rgba(200,168,74,0.1);color:var(--gold);}
-@media (max-width: 900px){
-  #info-panel{top:auto;right:16px;left:16px;bottom:16px;width:auto;max-height:40vh;transform:translateY(110%);}
-  #info-panel.open{transform:translateY(0);}
-  #depth-ctrl{right:16px;top:auto;bottom:180px;transform:none;}
-  #depth-ctrl.panel-open{right:16px;}
-  #legend,#legend.panel-open{display:none;}
-  #stats{display:none;}
-  #left-stack,#breadcrumb{left:16px;}
-  #search-wrap{top:16px;width:calc(100vw - 32px);}
-  #search-input{width:100%;}
-  #controls-hint{display:none;}
-  #reading-guide{padding:12px;}
-  #reading-guide-card{padding:20px 18px;}
-}
-</style>
 </head>
 <body>
 <div id="loading">
@@ -291,12 +21,32 @@ body.dragging{cursor:grabbing;}
 
 <canvas id="canvas"></canvas>
 
-<!-- The WebGL universe remains the main simulation. The evidence directory is
-     an alternate six-generation view reached explicitly from this control. -->
-<nav id="view-switcher" aria-label="Choose explorer view">
-  <button type="button" class="view-switch" data-view="atlas" aria-pressed="false">Directory</button>
-  <button type="button" class="view-switch active" data-view="universe" aria-pressed="true">3D universe</button>
-</nav>
+<!-- The one strip both views share: wordmark, global search, the view
+     switch and the live counts. The WebGL universe remains the main
+     simulation; the evidence directory is an alternate six-generation view
+     reached explicitly from the switch. -->
+<header id="topbar">
+  <a id="wordmark" href="./" aria-label="Bureaucracy — U.S. federal government explorer">
+    <span class="mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#D4B25A" stroke-width="1.4"><circle cx="8" cy="3" r="1.8" fill="#D4B25A" stroke="none"></circle><circle cx="3" cy="12.5" r="1.8" fill="#5C96D9" stroke="none"></circle><circle cx="13" cy="12.5" r="1.8" fill="#D95C5C" stroke="none"></circle><path d="M8 5v3M7 9.5l-3 1.8M9 9.5l3 1.8"></path></svg></span>
+    <span class="name">Bureaucracy</span>
+    <span class="sub">U.S. Federal</span>
+  </a>
+  <div id="search-wrap">
+    <label for="search-input" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search any position, agency, office</label>
+    <input id="search-input" type="text" placeholder="Search any position, agency, office…" autocomplete="off">
+    <kbd id="search-kbd" aria-hidden="true">/</kbd>
+    <div id="search-results"></div>
+  </div>
+  <nav id="view-switcher" aria-label="Choose explorer view">
+    <button type="button" class="view-switch" data-view="atlas" aria-pressed="false">Directory</button>
+    <button type="button" class="view-switch active" data-view="universe" aria-pressed="true">Universe</button>
+  </nav>
+  <div id="stats" class="panel-closed">
+    <div class="stat-item" id="stats-total">0 total nodes</div>
+    <div class="stat-item" id="stats-loaded">0 currently loaded</div>
+    <div class="stat-item" id="stats-depth">Depth filter: All</div>
+  </div>
+</header>
 
 <main id="atlas" aria-label="Federal government directory">
   <header class="atlas-hero">
@@ -345,8 +95,8 @@ body.dragging{cursor:grabbing;}
 
 <div id="left-stack">
 <div id="title-panel">
-  <h1>Government of the<br>United States</h1>
-  <p>3D Organizational Explorer</p>
+  <h1>Government of the United States</h1>
+  <p>Universe view</p>
   <div id="node-counter">0 / 0 nodes loaded</div>
   <div id="data-provenance">Reading the published graph…</div>
   <button id="btn-reading-guide" type="button" aria-label="Open the guide to reading this graph">How to read this</button>
@@ -365,11 +115,37 @@ body.dragging{cursor:grabbing;}
     <button class="depth-expand-btn" data-target="12" title="Show depth 12" aria-label="Progressively expand the graph to depth 12">12</button>
   </div>
 </div>
+
+<div id="depth-ctrl">
+  <div id="depth-label">Limit visible depth</div>
+  <div class="depth-grid">
+  <button class="depth-btn active" data-depth="all" title="Show all expanded" aria-label="Show all expanded depths">∞</button>
+  <button class="depth-btn" data-depth="1" title="Depth 1" aria-label="Limit the visible graph to depth 1">1</button>
+  <button class="depth-btn" data-depth="2" title="Depth 2" aria-label="Limit the visible graph to depth 2">2</button>
+  <button class="depth-btn" data-depth="3" title="Depth 3" aria-label="Limit the visible graph to depth 3">3</button>
+  <button class="depth-btn" data-depth="4" title="Depth 4" aria-label="Limit the visible graph to depth 4">4</button>
+  <button class="depth-btn" data-depth="5" title="Depth 5" aria-label="Limit the visible graph to depth 5">5</button>
+  <button class="depth-btn" data-depth="6" title="Depth 6" aria-label="Limit the visible graph to depth 6">6</button>
+  <button class="depth-btn" data-depth="8" title="Depth 8" aria-label="Limit the visible graph to depth 8">8</button>
+  <button class="depth-btn" data-depth="12" title="Depth 12" aria-label="Limit the visible graph to depth 12">12</button>
+  </div>
 </div>
 
-<div id="search-wrap">
-  <input id="search-input" type="text" placeholder="Search any position, agency, office...">
-  <div id="search-results"></div>
+<div id="legend">
+  <div id="legend-label">Branch</div>
+  <div class="leg-items">
+  <div class="leg-item"><span>Constitution</span><div class="leg-dot" style="background:#c8a84a"></div></div>
+  <div class="leg-item"><span>Legislative</span><div class="leg-dot" style="background:#8a4ac8"></div></div>
+  <div class="leg-item"><span>Executive</span><div class="leg-dot" style="background:#c84a4a"></div></div>
+  <div class="leg-item"><span>Judicial</span><div class="leg-dot" style="background:#4a8ac8"></div></div>
+  <div class="leg-item"><span>Independent</span><div class="leg-dot" style="background:#4ac88a"></div></div>
+  <div class="leg-item"><span>Regulatory</span><div class="leg-dot" style="background:#c8884a"></div></div>
+  <div class="leg-item"><span>Position / Office</span><div class="leg-dot" style="background:#666666"></div></div>
+  <!-- A receipts line is neither a position nor an office; it took the position
+       grey by default and the key above was naming it one. -->
+  <div class="leg-item"><span>Treasury accounting line</span><div class="leg-dot" style="background:#8aa0b0"></div></div>
+  </div>
+</div>
 </div>
 
 <div id="info-panel">
@@ -390,44 +166,11 @@ body.dragging{cursor:grabbing;}
 </div>
 
 <div id="breadcrumb">
-  <div id="bc-label">Navigation Path</div>
+  <div id="bc-label">Lineage</div>
   <div id="bc-items"></div>
 </div>
 
-<div id="depth-ctrl">
-  <div id="depth-label">DEPTH</div>
-  <button class="depth-btn active" data-depth="all" title="Show all expanded" aria-label="Show all expanded depths">∞</button>
-  <button class="depth-btn" data-depth="1" title="Depth 1" aria-label="Limit the visible graph to depth 1">1</button>
-  <button class="depth-btn" data-depth="2" title="Depth 2" aria-label="Limit the visible graph to depth 2">2</button>
-  <button class="depth-btn" data-depth="3" title="Depth 3" aria-label="Limit the visible graph to depth 3">3</button>
-  <button class="depth-btn" data-depth="4" title="Depth 4" aria-label="Limit the visible graph to depth 4">4</button>
-  <button class="depth-btn" data-depth="5" title="Depth 5" aria-label="Limit the visible graph to depth 5">5</button>
-  <button class="depth-btn" data-depth="6" title="Depth 6" aria-label="Limit the visible graph to depth 6">6</button>
-  <button class="depth-btn" data-depth="8" title="Depth 8" aria-label="Limit the visible graph to depth 8">8</button>
-  <button class="depth-btn" data-depth="12" title="Depth 12" aria-label="Limit the visible graph to depth 12">12</button>
-</div>
-
-<div id="legend">
-  <div id="legend-label">Branch</div>
-  <div class="leg-item"><span>Constitution</span><div class="leg-dot" style="background:#c8a84a"></div></div>
-  <div class="leg-item"><span>Legislative</span><div class="leg-dot" style="background:#8a4ac8"></div></div>
-  <div class="leg-item"><span>Executive</span><div class="leg-dot" style="background:#c84a4a"></div></div>
-  <div class="leg-item"><span>Judicial</span><div class="leg-dot" style="background:#4a8ac8"></div></div>
-  <div class="leg-item"><span>Independent</span><div class="leg-dot" style="background:#4ac88a"></div></div>
-  <div class="leg-item"><span>Regulatory</span><div class="leg-dot" style="background:#c8884a"></div></div>
-  <div class="leg-item"><span>Position / Office</span><div class="leg-dot" style="background:#666666"></div></div>
-  <!-- A receipts line is neither a position nor an office; it took the position
-       grey by default and the key above was naming it one. -->
-  <div class="leg-item"><span>Treasury accounting line</span><div class="leg-dot" style="background:#8aa0b0"></div></div>
-</div>
-
-<div id="stats" class="panel-closed">
-  <div class="stat-item" id="stats-total">0 total nodes</div>
-  <div class="stat-item" id="stats-loaded">0 currently loaded</div>
-  <div class="stat-item" id="stats-depth">Depth filter: All</div>
-</div>
-
-<div id="controls-hint">Drag orbit · Shift+Drag pan · Scroll zoom · Click focus · Fly mode: WASD + Q/E</div>
+<div id="controls-hint">Drag orbit · ⇧ Drag pan · Scroll zoom · Click focus · Fly: WASD + Q/E</div>
 <div id="expand-loader">Loading branch…</div>
 <div id="tooltip"></div>
 
