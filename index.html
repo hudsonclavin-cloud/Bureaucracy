@@ -7,8 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="./css/shell.css?v=20261012b">
-<link rel="stylesheet" href="./css/atlas.css?v=20261012b">
+<link rel="stylesheet" href="./css/shell.css?v=20261014a">
+<link rel="stylesheet" href="./css/atlas.css?v=20261014a">
 <title>U.S. Federal Government — 3D Explorer</title>
 </head>
 <body>
@@ -100,6 +100,17 @@
   <div id="node-counter">0 / 0 nodes loaded</div>
   <div id="data-provenance">Reading the published graph…</div>
   <button id="btn-reading-guide" type="button" aria-label="Open the guide to reading this graph">How to read this</button>
+</div>
+
+<div id="lens-ctrl" role="group" aria-label="Choose what the picture answers">
+  <div id="lens-label">Lens <span id="lens-keys" aria-hidden="true">keys 1–4</span></div>
+  <div id="lens-btns">
+    <button class="lens-btn active" data-lens="structure" aria-pressed="true" title="What exists, and how it nests (key 1)">Structure</button>
+    <button class="lens-btn" data-lens="money" aria-pressed="false" title="Where the measured money is (key 2)">Money</button>
+    <button class="lens-btn" data-lens="evidence" aria-pressed="false" title="Which of this a document confirmed (key 3)">Evidence</button>
+    <button class="lens-btn" data-lens="pay" aria-pressed="false" title="What the posts are paid (key 4)">Pay</button>
+  </div>
+  <p id="lens-note">Branch hue, uniform size. The default drawing.</p>
 </div>
 
 <div id="depth-expand-ctrl">
@@ -238,8 +249,8 @@ window.setTimeout(function () {
   }
 }, 20000);
 </script>
-<script type="module" src="./js/atlas.js?v=20261012b"></script>
-<script type="module" src="./js/ui.js?v=20261012b"
+<script type="module" src="./js/atlas.js?v=20261014a"></script>
+<script type="module" src="./js/ui.js?v=20261014a"
   onerror="window.__graphBootFailed('Failed to load application scripts (network or CDN unreachable). Check your connection and reload.')"></script>
 </body>
 </html>

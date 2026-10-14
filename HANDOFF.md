@@ -91,6 +91,43 @@ it drew (`frameSubtreeOf`; it reads `visible`, never `culled`, which is last
 frame's frustum and left 137 of the White House Office's 249 out of the fit
 on the first try). Cache stamp: `?v=20261012b`.
 
+**Lenses (2026-10-14, slice 5).** The universe answers four questions,
+switched by `#lens-ctrl` in the left rail or keys 1–4 (never while typing):
+**Structure** is the branch-hue drawing above, unchanged; **Money**,
+**Evidence** and **Pay** recolour every node from one published field,
+with a key that says what each colour is (`LENS_LEGENDS` in `ui.js`) and
+the brood badges saying the verdict in the panel's own words. Each is one
+reader in `graph.js` — `evidenceVerdict` (verificationStatus, with
+checked-not-found, host-refused and never-checked told apart as `ui.js`
+tells them apart), `payVerdict` (the claim `PAY_STAND_IN_ORDER` would head
+the figure with: office-rate, incumbency, a range, not federally paid,
+unpriced; a unit is dark, "a unit has no salary"), `moneyVerdict`
+(cost_status; an estimate takes a colour only while the estimates box is
+ticked, which `ui.js` forwards through `setShowEstimateFigures`) — and the
+colour, the badge and the size all draw from that one verdict so they cannot
+disagree. Under a lens the batch materials go neutral and the instance
+colour carries the verdict (`applyLensMaterials`); Structure restores the
+verification profile exactly. **Money is the only lens that changes a
+size**, and only for a figure a record states or an estimate the reader
+opted into: radius ∝ the fourth root of the figure, clamped 0.7–2.6, the
+root untouched; everything else draws at 0.7. Subtree count is never a
+size, which CLAUDE.md records as the dishonest proxy. Under Evidence a
+hierarchy edge is the placement claim for that edge: bright where
+`placementVerified`, dark where the parent has no page, grey where nothing
+checked it. The lens is remembered per browser (`lens` in the prefs blob)
+and `window.__bureaucracy_lens_verdict__(id)` exposes the verdict so the
+smoke check compares the picture with the served graph (one section,
+examples picked from the data). Cache stamp: `?v=20261014a`. Orbits, the
+fifth concept on the design canvas, was dropped on the owner's decision.
+Also fixed in passing: `rowFigure` read "$1.27 billion" as $1, so every
+estimate in the inspector's child list printed "$1 ~"; and `frameSubtreeOf`
+stamped `lastUserDrillAt`, which let the camera-driven auto-expansion open
+nodes outside the subtree for four seconds after "Expand All Below" — on
+the Interior, the Council of Economic Advisers' 95-node brood. The smoke's
+subtree check compares loaded ids now, not counts, and waits for the
+expansion queue to drain before it measures (`__bureaucracy_loaded_node_ids__`,
+`__bureaucracy_pending_expansions__`).
+
 Left deliberately undone: a fiscal-anchor chip in the top bar (the figure
 lives in `#data-provenance`, computed from the graph — a static chip would
 go stale on the next statement); collapsing the long provenance prose

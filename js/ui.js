@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261012b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261012b";
+import { createGovernmentGraph } from "./graph.js?v=20261014a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261014a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -798,6 +798,143 @@ function ensureVerificationLegend() {
     row.dataset.verificationLegend = "true";
     row.innerHTML = `<span>${labelText}</span><div class="leg-dot" style="background:${color}"></div>`;
     dom.legend.appendChild(row);
+  });
+}
+
+// --- Lenses. A lens is a question the picture answers (graph.js LENSES):
+// Structure is the branch-hue drawing, and the other three recolour every
+// node from one published field — verification status, the kind of pay
+// claim, cost_status — with a key that says what each colour is. The key
+// swaps with the lens; the branch key and the verification key come back
+// under Structure. Only the picture changes: the panel's rules decide every
+// figure as before, and the lens is remembered per browser like the toggles.
+const LENS_KEYS = { Digit1: "structure", Digit2: "money", Digit3: "evidence", Digit4: "pay" };
+
+const LENS_LEGENDS = {
+  structure: null,
+  money: {
+    label: "Money",
+    note: "Larger = more measured money (fourth root of the figure, so not to scale). Estimates take a colour only when the estimates box is ticked.",
+    items: [
+      ["Measured — a Treasury line names it", "#EDD27E"],
+      ["The statement's own receipts line (negative)", "#8AA0B0"],
+      ["Estimate, shown because you asked", "#8C7A44"],
+      ["No figure — every post, and the estimates withheld", "#2E3542"],
+    ],
+  },
+  evidence: {
+    label: "Evidence",
+    note: "Colour is the verification status. A bright edge means the parent's own page or an official list places the child; a dark edge means nothing checked it.",
+    items: [
+      ["Verified — two official documents", "#4FBF8C"],
+      ["Partial — one document", "#E0A83C"],
+      ["Checked, not found", "#E06A4F"],
+      ["Host refuses the crawler", "#9A86CF"],
+      ["No source recorded", "#6E7079"],
+      ["Treasury accounting line", "#8AA0B0"],
+    ],
+  },
+  pay: {
+    label: "Pay claim",
+    note: "Posts only — a unit has no salary and is drawn dark. The badge under a post gives the figure with the claim it is; never a cost.",
+    items: [
+      ["Stated for the office (statute, Schedule)", "#EDD27E"],
+      ["Stated for one incumbency (Plum, roster)", "#D4B25A"],
+      ["A range, not a rate", "#A8893F"],
+      ["Not on a federal pay schedule", "#7A8A99"],
+      ["No document names the title", "#5A5E66"],
+      ["Unit — no salary", "#2E3542"],
+    ],
+  },
+};
+
+function ensureLensLegend() {
+  if (!dom.legend || dom.legend.querySelector("[data-lens-legend='true']")) {
+    return;
+  }
+  const grid = document.createElement("div");
+  grid.className = "leg-items";
+  grid.id = "legend-lens-items";
+  grid.dataset.lensLegend = "true";
+  grid.hidden = true;
+  dom.legend.appendChild(grid);
+  const note = document.createElement("p");
+  note.id = "legend-lens-note";
+  note.dataset.lensLegend = "true";
+  note.hidden = true;
+  note.style.margin = "0";
+  note.style.font = "12px/1.4 var(--sans)";
+  note.style.color = "var(--text-3)";
+  dom.legend.appendChild(note);
+}
+
+function applyLens(name, { persist = true } = {}) {
+  const lens = name in LENS_LEGENDS ? name : "structure";
+  if (state.graph && typeof state.graph.setLens === "function") {
+    state.graph.setLens(lens);
+  }
+  document.querySelectorAll(".lens-btn").forEach((button) => {
+    const active = button.dataset.lens === lens;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  });
+  const note = document.getElementById("lens-note");
+  const legend = LENS_LEGENDS[lens];
+  if (note) {
+    note.textContent = legend ? legend.note : "Branch hue, uniform size. The default drawing.";
+  }
+  if (dom.legend) {
+    ensureLensLegend();
+    const label = document.getElementById("legend-label");
+    const branchItems = dom.legend.querySelector(".leg-items:not([data-lens-legend])");
+    const lensItems = document.getElementById("legend-lens-items");
+    const lensNote = document.getElementById("legend-lens-note");
+    const verificationRows = dom.legend.querySelectorAll("[data-verification-legend='true']");
+    if (legend) {
+      if (label) label.textContent = legend.label;
+      if (branchItems) branchItems.hidden = true;
+      verificationRows.forEach((row) => { row.hidden = true; });
+      if (lensItems) {
+        lensItems.innerHTML = legend.items
+          .map(([text, color]) => `<div class="leg-item"><span>${text}</span><div class="leg-dot" style="background:${color}"></div></div>`)
+          .join("");
+        lensItems.hidden = false;
+      }
+      if (lensNote) {
+        lensNote.textContent = legend.note;
+        lensNote.hidden = false;
+      }
+    } else {
+      if (label) label.textContent = "Branch";
+      if (branchItems) branchItems.hidden = false;
+      verificationRows.forEach((row) => { row.hidden = false; });
+      if (lensItems) lensItems.hidden = true;
+      if (lensNote) lensNote.hidden = true;
+    }
+  }
+  if (persist) {
+    writeStoredPrefs({ lens });
+  }
+}
+
+function isTypingTarget(target) {
+  if (!target || !(target instanceof Element)) return false;
+  const tag = target.tagName;
+  return tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || target.isContentEditable;
+}
+
+function bindLensControls() {
+  document.querySelectorAll(".lens-btn").forEach((button) => {
+    button.addEventListener("click", () => applyLens(button.dataset.lens));
+  });
+  // Keys 1–4, when the reader is not typing and holds no modifier, so the
+  // search box and the browser's own shortcuts keep theirs.
+  document.addEventListener("keydown", (event) => {
+    if (event.metaKey || event.ctrlKey || event.altKey || isTypingTarget(event.target)) return;
+    const lens = LENS_KEYS[event.code];
+    if (!lens) return;
+    event.preventDefault();
+    applyLens(lens);
   });
 }
 
@@ -3609,9 +3746,12 @@ function rowFigure(child) {
   const text = formatCostAmount(child);
   if (!text) return null;
   const approx = text.startsWith("≈");
-  const money = /-?\$[\d,]+(?:\.\d+)?/.exec(text);
+  // An estimate is printed in words ("≈ $1.27 billion"), so the magnitude
+  // word is part of the figure: read without it, $1.27 billion was $1.
+  const money = /(-?\$[\d,]+(?:\.\d+)?)(?:\s+(trillion|billion|million|thousand))?/.exec(text);
   if (!money) return { text, kind: "pay" };
-  const amount = Number(money[0].replace(/[$,]/g, ""));
+  const magnitude = { trillion: 1e12, billion: 1e9, million: 1e6, thousand: 1e3 }[money[2] || ""] || 1;
+  const amount = Number(money[1].replace(/[$,]/g, "")) * magnitude;
   if (!Number.isFinite(amount)) return { text, kind: "pay" };
   const compact = formatApproximateCost(amount)
     .replace(" trillion", "T").replace(" billion", "B").replace(" million", "M").replace(" thousand", "K");
@@ -4229,6 +4369,9 @@ function bindControls() {
   if (dom.toggleExactCosts) {
     dom.toggleExactCosts.addEventListener("change", () => {
       state.exactCostsOnly = !dom.toggleExactCosts.checked;
+      if (typeof state.graph.setShowEstimateFigures === "function") {
+        state.graph.setShowEstimateFigures(dom.toggleExactCosts.checked);
+      }
       // Re-render the open panel so the figure changes with the switch.
       const selected = state.graph.getSelectedNode();
       if (selected) {
@@ -4381,7 +4524,9 @@ function initUI() {
   ensureVerificationUi();
   ensureVerificationToggles();
   ensureVerificationLegend();
+  ensureLensLegend();
   bindControls();
+  bindLensControls();
   safeUiCall("updateStats", updateStats, state.graph.getStats());
 }
 
@@ -4413,6 +4558,12 @@ function restorePersistedState(requestedNodeId) {
   if (typeof prefs.showEstimates === "boolean" && dom.toggleExactCosts) {
     dom.toggleExactCosts.checked = prefs.showEstimates;
     state.exactCostsOnly = !prefs.showEstimates;
+    if (typeof state.graph.setShowEstimateFigures === "function") {
+      state.graph.setShowEstimateFigures(prefs.showEstimates);
+    }
+  }
+  if (typeof prefs.lens === "string" && prefs.lens !== "structure") {
+    applyLens(prefs.lens, { persist: false });
   }
   if (typeof prefs.showCandidates === "boolean" && dom.toggleCandidates) {
     dom.toggleCandidates.checked = prefs.showCandidates;
@@ -4455,6 +4606,13 @@ async function initGraphApp() {
   // The renderer's drawn-node set, for the regression check that a still
   // camera draws a still picture. Read-only, and nothing in the page uses it.
   window.__bureaucracy_drawn_node_ids__ = () => state.graph?.getDrawnNodeIds?.() || [];
+  // The lens verdict the renderer drew a node from, so the smoke check can
+  // compare the picture with the published field it claims to show.
+  window.__bureaucracy_lens_verdict__ = (nodeId) => state.graph?.lensVerdictFor?.(nodeId) || null;
+  // How many expansions are still queued, so a check can wait for the boot
+  // expansion to finish before it measures what a button added.
+  window.__bureaucracy_loaded_node_ids__ = () => state.graph?.getLoadedNodeIds?.() || [];
+  window.__bureaucracy_pending_expansions__ = () => Number(state.graph?.getStats?.().pendingExpansions || 0);
   state.graph = createGovernmentGraph({
     canvas: dom.canvas,
     onSelect: (nodeObj) => {

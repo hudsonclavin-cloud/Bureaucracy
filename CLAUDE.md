@@ -4596,6 +4596,27 @@ headed by it), a negative OMB figure, a unit beneath a negative pool and a
 measured node carrying an OMB block, and holds the card's count to the served
 graph.
 
+**Four lenses on one picture (since 2026-10-14).** `#lens-ctrl` and keys
+1–4 switch the universe between Structure (the branch-hue drawing), Money,
+Evidence and Pay. A lens is a question, not a look: each of the three
+recolours every node from one published field through one reader in
+`graph.js` (`evidenceVerdict`, `payVerdict`, `moneyVerdict`), and the
+colour, the brood badge and — for Money alone — the size all draw from that
+one verdict. The key swaps with the lens (`LENS_LEGENDS` in `ui.js`), the
+badge says the verdict in the panel's own words with a figure only beside
+the claim it is ("$253,100 · Executive Schedule", "≈ $1.3B · estimate", "a
+range, not a rate"), and a node with nothing to say under a lens draws dark
+rather than invented: every post under Money, every unit under Pay. Money
+sizes a node by the fourth root of a figure a record states, or of an
+estimate the reader ticked the estimates box for — the one opt-in the panel
+already uses, forwarded through `setShowEstimateFigures` — and nothing
+else; the paragraph below still holds for Structure, Evidence and Pay, and
+subtree count is a size under no lens. Under Evidence a hierarchy edge
+carries the placement claim for that edge (`placementVerified`, or the
+parent has no page, or unchecked). The lens is a per-browser preference and
+`scripts/frontend_smoke.mjs` reads `window.__bureaucracy_lens_verdict__`
+to compare each verdict with the served graph's own field.
+
 **Still true and deliberately not changed: every node is the same size.**
 `nodeRadiusForDepth` takes a depth and returns the constant `NODE_RADIUS`, so
 the most available visual channel in the scene encodes nothing — the 159

@@ -1884,13 +1884,48 @@ try {
     await openByName(interior.name);
     await page.waitForTimeout(4500);
     const loadedNow = async () => Number((/^([\d,]+) \//.exec(await text("#node-counter")) || [])[1]?.replace(/,/g, "") || 0);
-    const before = await loadedNow();
+    // The boot expansion and the auto-expansion that follows a selection
+    // both run in batches with pauses between them, and on a slow renderer
+    // the counter is still climbing at 4.5 s (63 loaded at the selection,
+    // 904 a few seconds later, 999 at rest); a `before` read mid-climb
+    // counts the rest of it as the button's doing — 161 added against a
+    // 93-node subtree, measured on both HEAD and the working tree on
+    // 2026-10-14. Read it once the count has held still for three seconds.
+    // (A still counter is not enough either: with 186 loaded the queue
+    // held still for three seconds and the button then finished the boot
+    // expansion's own queue, 879 nodes. So wait for the queue to drain.)
+    const pending = () => page.evaluate(() => window.__bureaucracy_pending_expansions__?.() ?? 0);
+    const waitStart = Date.now();
+    while (Date.now() - waitStart < 120000 && (await pending()) > 0) {
+      await page.waitForTimeout(1000);
+    }
+    let before = await loadedNow();
+    let held = 0;
+    for (let i = 0; i < 60 && held < 3; i += 1) {
+      await page.waitForTimeout(1000);
+      const next = await loadedNow();
+      held = next === before ? held + 1 : 0;
+      before = next;
+    }
+    const loadedBefore = new Set(await page.evaluate(() => window.__bureaucracy_loaded_node_ids__?.() || []));
+    measurements.interiorLoadedBeforeExpandAll = `${before} loaded, ${await pending()} expansions still queued, after ${Math.round((Date.now() - waitStart) / 1000)}s`;
     await page.locator("#btn-expand-all").click();
     await page.waitForFunction(() => document.getElementById("btn-expand-all").textContent === "Expand All Below", null, { timeout: 60000 });
     await page.waitForTimeout(500);
     const after = await loadedNow();
     check("Expand All Below loads the selection's whole subtree", after >= subtreeSize, `${after} loaded, subtree is ${subtreeSize}`);
-    check("Expand All Below opens no more than the selection's subtree", after - before <= subtreeSize, `${after - before} added, subtree is ${subtreeSize}`);
+    // Exact rather than counted: the ids the button added, against the ids
+    // in the selection's subtree. A count hides which side a stray node is
+    // on; on 2026-10-14 the counter's steady state after the selection was
+    // 904 on one run and 999 on another, and the difference read as 68
+    // nodes the button had opened outside the subtree.
+    const subtreeIds = new Set();
+    const collectIds = (item) => { subtreeIds.add(String(item.id)); for (const child of item.children || []) collectIds(child); };
+    collectIds(interior);
+    const loadedAfter = await page.evaluate(() => window.__bureaucracy_loaded_node_ids__?.() || []);
+    const strays = loadedAfter.filter((id) => !subtreeIds.has(id) && !loadedBefore.has(id));
+    measurements.interiorExpandAllStrays = strays.slice(0, 12);
+    check("Expand All Below opens no more than the selection's subtree", strays.length === 0, `${strays.length} nodes added outside the subtree (${after - before} added, subtree is ${subtreeSize}): ${strays.slice(0, 6).join(", ")}`);
     check("Expand All Below does not open the rest of the graph", after < allNodes.length * 0.6, `${after} loaded of ${allNodes.length}`);
   }
 
@@ -2005,6 +2040,95 @@ try {
       `${broodDrawn} of ${brood.length} children drawn after expanding their parent, once settled`);
     await page.fill("#search-input", "");
     await page.waitForTimeout(300);
+  }
+
+  // The lenses (slice 5). Each recolours the picture from one published
+  // field; the check reads the verdict the renderer drew a node from and
+  // compares it with that field in the served graph, so the picture cannot
+  // claim something the data does not say. The examples are picked FROM the
+  // data, as above.
+  {
+    const verdictOf = (id) => page.evaluate((nodeId) => window.__bureaucracy_lens_verdict__?.(nodeId) || null, id);
+    const activeLens = () => page.evaluate(() => document.querySelector(".lens-btn.active")?.dataset.lens || null);
+    const legendLabel = async () => (await text("#legend-label")).toLowerCase();
+    check("the lens control offers the four lenses", (await page.locator(".lens-btn").count()) === 4, `${await page.locator(".lens-btn").count()} buttons`);
+    check("Structure is the default lens", (await activeLens()) === "structure", String(await activeLens()));
+
+    const isPost = (n) => /position|\brole\b|office holder/i.test(String(n.type || ""));
+    const measuredOrg = allNodes.find((n) => n.cost_status === "official" && !isPost(n) && !n.synthetic && Number(n.resolved_total_amount) > 1e9 && n.__depth > 0);
+    const verifiedOrg = allNodes.find((n) => n.verificationStatus === "verified" && (n.sourceUrls || []).length >= 2 && !isPost(n));
+    const unsourced = allNodes.find((n) => !n.lastVerified && !(n.sourceUrls || []).length && !n.verificationUnread && !n.synthetic);
+    const statutoryPost = allNodes.find((n) => isPost(n) && n.positionStatutoryPay && Number(n.positionStatutoryPay.amount) > 0 && !n.representsPosts);
+    const unpricedPost = allNodes.find((n) => isPost(n) && !n.positionStatutoryPay && !n.positionSchedulePay && !n.positionTierReferencePay && !n.positionDerivedPay && !n.positionMilitaryPay && !n.positionReportedPay && !n.positionCurrentPay && !n.positionPayRate && !n.positionGradePay && !n.positionTierPay && !n.positionEmployer);
+    const estimateOrg = allNodes.find((n) => n.cost_status === "allocated" && !isPost(n) && Number(n.resolved_total_amount) > 0);
+
+    await page.click('.lens-btn[data-lens="evidence"]');
+    await page.waitForTimeout(600);
+    check("the Evidence button takes the lens", (await activeLens()) === "evidence", String(await activeLens()));
+    check("the key swaps to the Evidence key", (await legendLabel()) === "evidence", await legendLabel());
+    if (verifiedOrg) {
+      const v = await verdictOf(verifiedOrg.id);
+      check("under Evidence a verified unit draws as verified", v && v.key === "verified" && v.color === "#4FBF8C", JSON.stringify(v));
+    }
+    if (unsourced) {
+      const v = await verdictOf(unsourced.id);
+      check("under Evidence an unsourced node says no source recorded", v && v.key === "unsourced" && /no source recorded/.test(v.text), JSON.stringify(v));
+    }
+
+    await page.keyboard.press("Digit4");
+    await page.waitForTimeout(600);
+    check("key 4 takes the Pay lens", (await activeLens()) === "pay", String(await activeLens()));
+    if (statutoryPost) {
+      const v = await verdictOf(statutoryPost.id);
+      const amount = Number(statutoryPost.positionStatutoryPay.amount);
+      check("under Pay a statutory rate draws as an office-rate claim with its figure", v && v.key === "office" && v.amount === amount && /statute/.test(v.text), JSON.stringify(v));
+    }
+    if (unpricedPost) {
+      const v = await verdictOf(unpricedPost.id);
+      check("under Pay an unpriced post says no document names the title", v && v.key === "unpriced", JSON.stringify(v));
+    }
+    if (measuredOrg) {
+      const v = await verdictOf(measuredOrg.id);
+      check("under Pay a unit takes no salary", v && v.key === "unit" && v.scale === 1, JSON.stringify(v));
+    }
+
+    await page.keyboard.press("Digit2");
+    await page.waitForTimeout(600);
+    check("key 2 takes the Money lens", (await activeLens()) === "money", String(await activeLens()));
+    const estimatesOn = await page.evaluate(() => {
+      const box = [...document.querySelectorAll("#verification-toggles input")].find((i) => /estimated/i.test(i.parentElement.textContent));
+      return box ? box.checked : null;
+    });
+    if (measuredOrg) {
+      const v = await verdictOf(measuredOrg.id);
+      const amount = Number(measuredOrg.resolved_total_amount);
+      check("under Money a measured unit draws from its measured figure, larger than a bare node", v && v.key === "measured" && v.amount === amount && v.scale > 1, JSON.stringify(v));
+      measurements.moneyLensMeasuredExample = `${measuredOrg.name}: scale ${v && v.scale}`;
+    }
+    if (estimateOrg && estimatesOn === false) {
+      const v = await verdictOf(estimateOrg.id);
+      check("under Money an estimate stays withheld until the estimates box is ticked", v && v.key === "none" && v.scale < 1 && /withheld/.test(v.text), JSON.stringify(v));
+    }
+    if (unpricedPost) {
+      const v = await verdictOf(unpricedPost.id);
+      check("under Money a post has no figure and never a size", v && v.key === "none" && v.scale < 1, JSON.stringify(v));
+    }
+    // Typing a digit into the search box must not change the lens.
+    await page.fill("#search-input", "");
+    await page.locator("#search-input").focus();
+    await page.keyboard.press("Digit3");
+    await page.waitForTimeout(300);
+    check("a digit typed into the search box does not switch the lens", (await activeLens()) === "money", String(await activeLens()));
+    await page.fill("#search-input", "");
+    await page.keyboard.press("Escape");
+    await page.click('.lens-btn[data-lens="structure"]');
+    await page.waitForTimeout(600);
+    check("Structure restores the branch key", (await legendLabel()) === "branch", await legendLabel());
+    const branchRowsVisible = await page.evaluate(() => {
+      const row = [...document.querySelectorAll("#legend .leg-item")].find((el) => /Treasury accounting line/.test(el.textContent));
+      return row ? getComputedStyle(row).display !== "none" && !row.closest("[hidden]") : false;
+    });
+    check("the branch key's rows are visible again under Structure", branchRowsVisible, "hidden");
   }
 
   await page.fill("#search-input", "");

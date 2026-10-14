@@ -144,6 +144,23 @@ a { color: var(--gold); } a:hover { color: var(--gold-bright); }
 }
 #btn-reading-guide:hover { border-color: var(--gold); color: var(--gold-bright); }
 
+/* The lens: four questions the picture can answer. Styled as the depth
+   controls are, so the column reads as one instrument. */
+#lens-ctrl { display: flex; flex-direction: column; gap: 8px; pointer-events: auto; }
+#lens-label {
+  font: 500 11px/1.4 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3);
+  display: flex; justify-content: space-between; align-items: baseline; margin: 0;
+}
+#lens-keys { letter-spacing: 0; text-transform: none; color: var(--text-3); opacity: 0.8; }
+#lens-btns { display: flex; padding: 3px; border-radius: var(--r-m); background: var(--ink-3); border: 1px solid var(--line-strong); gap: 2px; }
+.lens-btn {
+  flex: 1 1 0; height: 30px; border-radius: var(--r-s); cursor: pointer; border: 1px solid transparent;
+  background: transparent; color: var(--text-2); font: 500 12px/1 var(--sans); transition: all 0.15s;
+}
+.lens-btn:hover { color: var(--gold-bright); }
+.lens-btn.active { background: var(--gold); color: var(--ink); font-weight: 600; }
+#lens-note { margin: 0; font-size: 12px; line-height: 1.4; color: var(--text-3); }
+
 #depth-expand-ctrl, #depth-ctrl { display: flex; flex-direction: column; gap: 8px; pointer-events: auto; }
 #depth-expand-label, #depth-label {
   font: 500 11px/1.4 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3);

@@ -1,5 +1,5 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20261012b";
+import { createLodManager } from "./lodManager.js?v=20261014a";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
@@ -35,6 +35,43 @@ const BROOD_LABEL_CAPACITY = 48;
 // and the size are untouched.
 const FOCUS_DIM = new THREE.Color(0.4, 0.42, 0.46);
 const FOCUS_FULL = new THREE.Color(1, 1, 1);
+// A lens is a question, not a look. Each one changes which published field
+// drives a node's colour (and, for Money alone, its size) and nothing about
+// what the data says: the panel's rules still decide every figure, and a
+// node with nothing to say under a lens is drawn dark rather than invented.
+// Structure is the default and is exactly the branch-hue drawing above.
+export const LENSES = ["structure", "money", "evidence", "pay"];
+const LENS_INK = "#2E3542";
+// Evidence: verificationStatus, with the two states ui.js already tells
+// apart from a bare "unverified" — never checked at all, and a host that
+// refused the crawler (verificationUnread).
+const EVIDENCE_COLORS = {
+  verified: "#4FBF8C",
+  partial: "#E0A83C",
+  notFound: "#E06A4F",
+  unread: "#9A86CF",
+  unsourced: "#6E7079",
+  treasuryLine: "#8AA0B0",
+};
+// Pay: the kind of claim the panel would head the post's figure with, in
+// the order ui.js's PAY_STAND_IN_ORDER reads them. A unit has no salary and
+// is drawn as context.
+const PAY_COLORS = {
+  office: "#EDD27E",
+  incumbency: "#D4B25A",
+  range: "#A8893F",
+  notFederal: "#7A8A99",
+  unpriced: "#5A5E66",
+  unit: LENS_INK,
+};
+// Money: cost_status. An estimate takes a colour only when the reader has
+// ticked "Also show estimated shares", the same opt-in the panel uses.
+const MONEY_COLORS = {
+  measured: "#EDD27E",
+  receipts: "#8AA0B0",
+  estimate: "#8C7A44",
+  none: LENS_INK,
+};
 const MIN_CLUSTER_DISTANCE = 6;
 const REPULSION = -60;
 const LINK_DISTANCE = 30;
@@ -243,6 +280,8 @@ export function createGovernmentGraph({
     broodLabels: [],
     focusIds: new Set(),
     focusKey: "",
+    lens: "structure",
+    showEstimateFigures: false,
     edgeBatch: null,
     allNodes: new Set(),
     allEdges: new Set(),
@@ -437,6 +476,257 @@ export function createGovernmentGraph({
     return "verified";
   }
 
+  // --- Lens readers. Each reads published fields the same way js/ui.js
+  // does and returns a small verdict the colour, the size and the brood
+  // badge all draw from, so the three can never disagree about a node.
+
+  function isPostData(data) {
+    return /position|\brole\b|office holder/i.test(String(data?.type || ""));
+  }
+
+  function isTreasuryLineData(data) {
+    return Boolean(data?.synthetic) || /treasury accounting line/i.test(String(data?.type || ""));
+  }
+
+  function finiteAmount(value) {
+    return typeof value === "number" && Number.isFinite(value) ? value : null;
+  }
+
+  function blockAmount(block) {
+    if (!block || typeof block !== "object") {
+      return null;
+    }
+    const amount = finiteAmount(block.amount);
+    return amount !== null && amount > 0 ? amount : null;
+  }
+
+  function blockRange(block) {
+    if (!block || typeof block !== "object") {
+      return null;
+    }
+    const min = finiteAmount(block.minimum);
+    const max = finiteAmount(block.maximum);
+    return min !== null && max !== null && max > 0 ? { min, max } : null;
+  }
+
+  // Evidence: one of six words. "notFound" is the checked-and-failed state
+  // (a date and no source), "unread" the host that refused the crawler, and
+  // "unsourced" that nothing was ever checked — ui.js's isNeverChecked.
+  function evidenceVerdict(data) {
+    if (isTreasuryLineData(data)) {
+      return { key: "treasuryLine", text: "the statement's own line" };
+    }
+    const sources = Number(data?.sourceCount || (Array.isArray(data?.sourceUrls) ? data.sourceUrls.length : 0));
+    const status = String(data?.verificationStatus || "").toLowerCase();
+    if (sources > 0 && status === "verified") {
+      return { key: "verified", text: `verified · ${sources} official ${sources === 1 ? "source" : "sources"}` };
+    }
+    if (sources > 0 && status === "partial") {
+      return { key: "partial", text: "partial · one official source" };
+    }
+    if (data?.verificationUnread) {
+      return { key: "unread", text: "host refuses the crawler" };
+    }
+    if (sources === 0 && data?.lastVerified) {
+      return { key: "notFound", text: "checked, not found" };
+    }
+    if (sources > 0) {
+      return { key: "partial", text: "source recorded, unverified" };
+    }
+    return { key: "unsourced", text: "no source recorded" };
+  }
+
+  // Pay: the claim the panel heads a post's figure with, in the order
+  // ui.js's PAY_STAND_IN_ORDER reads it — a figure a document states for
+  // the office, then for one incumbency, then a range. A range is never
+  // written as a rate. Never on a unit.
+  const PAY_READERS = [
+    ["office", "statute", (d) => blockAmount(d.positionStatutoryPay)],
+    ["office", "Executive Schedule", (d) => blockAmount(d.positionSchedulePay)],
+    ["office", "set by reference to a level", (d) => blockAmount(d.positionTierReferencePay)],
+    ["office", "derived, stated by no document", (d) => blockAmount(d.positionDerivedPay)],
+    ["office", "12 × monthly basic pay", (d) => blockAmount(d.positionMilitaryPay)],
+    ["incumbency", "White House roster", (d) => blockAmount(d.positionReportedPay)],
+    ["incumbency", "current Plum Book", (d) => blockAmount(d.positionCurrentPay)],
+    ["incumbency", "listed level, OPM table", (d) => blockAmount(d.positionPayRate)],
+  ];
+
+  function payVerdict(data) {
+    if (!isPostData(data)) {
+      return { key: "unit", text: "a unit has no salary" };
+    }
+    for (const [key, basis, read] of PAY_READERS) {
+      const amount = read(data);
+      if (amount !== null) {
+        const holders = data.positionStatutoryPay?.holders || data.positionDerivedPay?.holders || data.positionTierReferencePay?.holders || data.positionMilitaryPay?.holders || data.positionSchedulePay?.holders || data.positionReportedPay?.holders;
+        const each = holders && typeof holders === "object" ? " · each holder" : "";
+        return { key, amount, text: `${formatDollars(amount)} · ${basis}${each}` };
+      }
+    }
+    const range = blockRange(data.positionGradePay) || blockRange(data.positionTierPay);
+    if (range) {
+      return { key: "range", text: `${formatDollars(range.min)}–${formatDollars(range.max)} · a range, not a rate` };
+    }
+    const employer = data.positionEmployer;
+    if (employer && typeof employer === "object" && employer.federallyPaid === false) {
+      return { key: "notFederal", text: "not on a federal pay schedule" };
+    }
+    return { key: "unpriced", text: "no document names the title" };
+  }
+
+  // Money: cost_status, read as the panel reads it. An estimate is a
+  // verdict only while the reader has opted in; otherwise it is "none" and
+  // draws exactly like a node with no figure, which is what the default
+  // view publishes.
+  function moneyVerdict(data) {
+    const status = String(data?.cost_status || "").toLowerCase();
+    const amount = finiteAmount(data?.resolved_total_amount);
+    if ((status === "official" || status === "root_total") && amount !== null && amount !== 0) {
+      if (isTreasuryLineData(data) || amount < 0) {
+        return { key: "receipts", amount, text: `${formatDollars(amount)} · the statement's line` };
+      }
+      return { key: "measured", amount, text: `${formatDollars(amount)} · measured` };
+    }
+    if (status === "allocated" && amount !== null && amount !== 0 && state.showEstimateFigures) {
+      return { key: "estimate", amount, text: `≈ ${formatDollars(amount)} · estimate` };
+    }
+    if (isPostData(data)) {
+      return { key: "none", text: "a post is not a budget unit" };
+    }
+    if (status === "allocated") {
+      return { key: "none", text: "estimate withheld" };
+    }
+    return { key: "none", text: "no figure" };
+  }
+
+  function formatDollars(amount) {
+    const abs = Math.abs(amount);
+    const sign = amount < 0 ? "−" : "";
+    if (abs >= 1e12) {
+      return `${sign}$${(abs / 1e12).toFixed(2)}T`;
+    }
+    if (abs >= 1e9) {
+      return `${sign}$${(abs / 1e9).toFixed(abs >= 1e11 ? 0 : 1)}B`;
+    }
+    if (abs >= 1e6) {
+      return `${sign}$${(abs / 1e6).toFixed(abs >= 1e8 ? 0 : 1)}M`;
+    }
+    return `${sign}$${Math.round(abs).toLocaleString("en-US")}`;
+  }
+
+  function lensVerdict(data) {
+    if (state.lens === "evidence") {
+      return evidenceVerdict(data);
+    }
+    if (state.lens === "pay") {
+      return payVerdict(data);
+    }
+    if (state.lens === "money") {
+      return moneyVerdict(data);
+    }
+    return null;
+  }
+
+  const lensColorCache = new Map();
+
+  function lensColorHex(data) {
+    const verdict = lensVerdict(data);
+    if (!verdict) {
+      return null;
+    }
+    if (state.lens === "evidence") {
+      return EVIDENCE_COLORS[verdict.key] || EVIDENCE_COLORS.unsourced;
+    }
+    if (state.lens === "pay") {
+      return PAY_COLORS[verdict.key] || PAY_COLORS.unpriced;
+    }
+    return MONEY_COLORS[verdict.key] || MONEY_COLORS.none;
+  }
+
+  function lensColor(hex) {
+    let color = lensColorCache.get(hex);
+    if (!color) {
+      color = new THREE.Color(hex);
+      lensColorCache.set(hex, color);
+    }
+    return color;
+  }
+
+  // Money alone changes a size, and only for a figure a record states or
+  // an estimate the reader opted into: the radius grows with the fourth
+  // root of the figure, so a $1B line draws at 0.9× and the largest
+  // measured line at the cap. Everything else draws slightly smaller, so
+  // the measured money is what the eye lands on. A size is never read off
+  // subtree count, which this project records as the dishonest proxy.
+  function lensScaleOf(nodeObj) {
+    return lensScaleForData(nodeObj.data, nodeObj === state.rootObj);
+  }
+
+  function lensScaleForData(data, isRoot) {
+    if (state.lens !== "money" || isRoot) {
+      return 1;
+    }
+    const verdict = moneyVerdict(data);
+    if (verdict.key === "none") {
+      return 0.7;
+    }
+    const scale = Math.pow(Math.abs(verdict.amount) / 1e9, 0.25) * 0.9;
+    const clamped = THREE.MathUtils.clamp(scale, 0.7, 2.6);
+    return verdict.key === "estimate" ? clamped * 0.85 : clamped;
+  }
+
+  // Under a lens the batch materials go neutral and the instance colour
+  // carries the verdict; under Structure the verification profile is
+  // restored exactly. The verification style (a partial node's 0.64
+  // opacity, an unverified one's wireframe) stays on the material either
+  // way, so Evidence shows it twice over and the others do not hide it.
+  function applyLensMaterials() {
+    const neutral = state.lens !== "structure";
+    for (const batch of state.nodeBatches.values()) {
+      const material = batch.mesh.material;
+      if (neutral) {
+        // Emissive is not multiplied by the instance colour, so a white
+        // glow would grey every verdict evenly; the ambient light carries
+        // the colour instead.
+        material.color.set(0xffffff);
+        material.emissive.set(0x000000);
+        material.emissiveIntensity = 0;
+      } else {
+        material.color.copy(batch.profile.color);
+        material.emissive.copy(batch.profile.emissive);
+        material.emissiveIntensity = batch.profile.emissiveIntensity;
+      }
+      material.needsUpdate = true;
+      batch.dirty = true;
+    }
+  }
+
+  function setLens(name) {
+    const next = LENSES.includes(name) ? name : "structure";
+    if (next === state.lens) {
+      return;
+    }
+    state.lens = next;
+    applyLensMaterials();
+    state.focusKey = "";
+    state.highlightVersion += 1;
+    state.renderDirty = true;
+    state.forceFullRenderRefresh = true;
+  }
+
+  function setShowEstimateFigures(enabled) {
+    const next = Boolean(enabled);
+    if (next === state.showEstimateFigures) {
+      return;
+    }
+    state.showEstimateFigures = next;
+    if (state.lens === "money") {
+      state.focusKey = "";
+      state.renderDirty = true;
+      state.forceFullRenderRefresh = true;
+    }
+  }
+
   function getVerificationBadgeColor(data) {
     const styleKey = getVerificationStyleKey(data);
     if (styleKey === "partial") {
@@ -569,7 +859,7 @@ export function createGovernmentGraph({
   }
 
   function drawTextBadge(label, title, subtitle, color, options = {}) {
-    if (label.text === title && label.subtext === subtitle) {
+    if (label.text === title && label.subtext === subtitle && label.hue === color) {
       return;
     }
 
@@ -596,6 +886,7 @@ export function createGovernmentGraph({
     texture.needsUpdate = true;
     label.text = title;
     label.subtext = subtitle;
+    label.hue = color;
   }
 
   function drawClusterLabel(label, title, subtitle, color) {
@@ -630,11 +921,19 @@ export function createGovernmentGraph({
     }
   }
 
-  // What a brood badge says beneath the name: how much sits beneath the
-  // child, or that it is a post. Never a figure: the panel's cost rules are
-  // the only place a number is allowed to appear, with its badge beside it.
+  // What a brood badge says beneath the name. Under Structure: how much sits
+  // beneath the child, or that it is a post — never a figure, since the
+  // panel's cost rules are the only place a number appears with its badge.
+  // Under a lens the badge says the lens's own verdict, in the panel's own
+  // words, and a figure is written only with the claim it is ("· statute",
+  // "· estimate", "a range, not a rate"), the same labels the panel heads it
+  // with, so the badge can never claim more than the panel does.
   function broodSubtitle(childObj) {
     const data = childObj.data || {};
+    const verdict = lensVerdict(data);
+    if (verdict) {
+      return verdict.text;
+    }
     const type = String(data.type || "");
     const beneath = Array.isArray(data.children) ? data.children.length : 0;
     if (beneath > 0) {
@@ -661,9 +960,11 @@ export function createGovernmentGraph({
           continue;
         }
         // Units before posts, the order the panel's own list uses, so the
-        // overlap pass keeps the children that carry structure.
+        // overlap pass keeps the children that carry structure — except
+        // under the Pay lens, whose question is about the posts.
         const isPost = /position|role|office holder/i.test(String(childObj.data?.type || ""));
-        subjects.push({ nodeObj: childObj, priority: 400_000 + (isPost ? 0 : 50_000) + (protectedIds.has(childObj.data?.id) ? 100_000 : 0) });
+        const leads = state.lens === "pay" ? isPost : !isPost;
+        subjects.push({ nodeObj: childObj, priority: 400_000 + (leads ? 50_000 : 0) + (protectedIds.has(childObj.data?.id) ? 100_000 : 0) });
       }
     }
     subjects.sort((a, b) => b.priority - a.priority);
@@ -672,7 +973,7 @@ export function createGovernmentGraph({
     for (let i = 0; i < shown.length; i += 1) {
       const { nodeObj, priority } = shown[i];
       const label = state.broodLabels[i];
-      const color = getNodeColor(nodeObj.data);
+      const color = lensColorHex(nodeObj.data) || getNodeColor(nodeObj.data);
       drawBroodLabel(label, nodeObj.data.name, nodeObj === selected ? "selected" : broodSubtitle(nodeObj), color);
       label.sprite.visible = true;
       label.sprite.position.copy(nodeObj.pos);
@@ -693,9 +994,11 @@ export function createGovernmentGraph({
   // more handful of dots among thousands. Recomputed only when the selection
   // or its brood changes; the tint rides on the instance colour, which
   // multiplies the batch material and changes nothing about the data.
+  const tempLensColor = new THREE.Color();
+
   function refreshFocus() {
     const selected = state.selectedNode && !state.selectedNode.isCluster ? state.selectedNode : null;
-    const key = selected ? `${selected.data.id}:${(selected.childObjs || []).length}` : "";
+    const key = `${state.lens}:${state.showEstimateFigures ? 1 : 0}:${selected ? `${selected.data.id}:${(selected.childObjs || []).length}` : ""}`;
     if (key === state.focusKey) {
       return;
     }
@@ -717,7 +1020,16 @@ export function createGovernmentGraph({
       if (!nodeObj.batch || nodeObj.slot < 0) {
         continue;
       }
-      nodeObj.batch.mesh.setColorAt(nodeObj.slot, focus.size === 0 || focus.has(nodeObj.data.id) ? FOCUS_FULL : FOCUS_DIM);
+      const tint = focus.size === 0 || focus.has(nodeObj.data.id) ? FOCUS_FULL : FOCUS_DIM;
+      const hex = lensColorHex(nodeObj.data);
+      if (hex) {
+        // The verdict's colour, dimmed outside the focus the same way the
+        // branch hue is under Structure.
+        tempLensColor.copy(lensColor(hex)).multiply(tint);
+        nodeObj.batch.mesh.setColorAt(nodeObj.slot, tempLensColor);
+      } else {
+        nodeObj.batch.mesh.setColorAt(nodeObj.slot, tint);
+      }
       nodeObj.batch.dirty = true;
     }
   }
@@ -1329,6 +1641,7 @@ export function createGovernmentGraph({
       radius,
       color,
       styleKey,
+      profile,
       mesh,
       nodesBySlot: new Array(Math.max(capacity, 1)),
       nextSlot: 0,
@@ -1568,14 +1881,40 @@ export function createGovernmentGraph({
     return edge;
   }
 
+  // Under the Evidence lens a hierarchy edge is the placement claim for the
+  // edge itself: bright green where the parent's own page (or a directory)
+  // lists the child, grey where nothing checked it, and the ordinary dim
+  // where the parent has no page to check. The edge's hue under every other
+  // lens is the child's own verdict colour.
+  function edgeLensColor(edge) {
+    if (edge.type !== "hierarchy") {
+      return null;
+    }
+    if (state.lens === "evidence") {
+      const child = edge.to.data || {};
+      if (child.placementVerified === true) {
+        return EVIDENCE_COLORS.verified;
+      }
+      if (child.placementCheckable === false) {
+        return "#3A4150";
+      }
+      return "#5A5E66";
+    }
+    return lensColorHex(edge.to.data);
+  }
+
   function refreshEdgeColor(edge) {
     edge.color.copy(edge.baseColor);
+    const lensHex = edgeLensColor(edge);
+    if (lensHex) {
+      edge.color.set(lensHex);
+    }
     if (state.focusIds.size > 0) {
       const selected = state.selectedNode;
       if (edge.type === "hierarchy" && selected && edge.from === selected) {
         // The brood's own edges carry the child's hue, so the fan a reader
         // asked for is the brightest thing on the stage.
-        edge.color.set(getNodeColor(edge.to.data)).lerp(whiteColor, 0.1);
+        edge.color.set(lensHex || getNodeColor(edge.to.data)).lerp(whiteColor, 0.1);
       } else if (!(state.focusIds.has(edge.from.data.id) && state.focusIds.has(edge.to.data.id))) {
         edge.color.lerp(inkColor, 0.62);
       }
@@ -2327,7 +2666,13 @@ export function createGovernmentGraph({
       frameBroodOf(nodeObj);
       return;
     }
-    state.lastUserDrillAt = performance.now();
+    // Not a drill. `frameBroodOf` stamps `lastUserDrillAt` and this copied
+    // it, which let `ensureLodCoverage` open any unexpanded node within the
+    // auto-expand distance of the selection for four seconds after the
+    // camera pulled back — "Expand All Below" on the Interior finished by
+    // loading the Council of Economic Advisers' whole brood, 95 nodes
+    // outside the subtree the button promised (the smoke check that
+    // measures this now compares ids, not counts, and caught it).
     const centroid = new THREE.Vector3();
     for (const point of points) {
       centroid.add(point);
@@ -3087,7 +3432,7 @@ export function createGovernmentGraph({
         continue;
       }
       drawnCount += 1;
-      setNodeMatrix(nodeObj, 1);
+      setNodeMatrix(nodeObj, lensScaleOf(nodeObj));
     }
     for (const nodeObj of state.allNodes) {
       if (nodeObj.renderVisible && !nodeObj.culled && lodManager.shouldRenderHalo(nodeObj, state.lod)) {
@@ -3709,6 +4054,10 @@ export function createGovernmentGraph({
     // recomputed every frame from screen-tile membership, and when it is
     // unstable nodes blink in and out with nothing moving. The drawn COUNT is
     // not enough to catch that -- membership can churn while the count holds.
+    // Every node currently loaded into the scene, drawn or not.
+    getLoadedNodeIds() {
+      return [...state.nodeMap.keys()].map(String).sort();
+    },
     getDrawnNodeIds() {
       const ids = [];
       for (const nodeObj of state.visibleNodes) {
@@ -3741,6 +4090,26 @@ export function createGovernmentGraph({
     },
     getMaxDataDepth() {
       return state.maxDataDepth;
+    },
+    setLens(name) {
+      setLens(name);
+    },
+    getLens() {
+      return state.lens;
+    },
+    setShowEstimateFigures(enabled) {
+      setShowEstimateFigures(enabled);
+    },
+    // The lens's own verdict for a node, in the words the brood badge uses;
+    // null under Structure. Exposed so the smoke check can compare the
+    // picture with the data it is drawn from.
+    lensVerdictFor(nodeId) {
+      const data = state.dataMap.get(nodeId);
+      if (!data) {
+        return null;
+      }
+      const verdict = lensVerdict(data);
+      return verdict ? { ...verdict, color: lensColorHex(data), scale: lensScaleForData(data, state.rootObj?.data === data) } : null;
     },
     hasPendingExpansions() {
       return state.pendingExpansions.length > 0;
