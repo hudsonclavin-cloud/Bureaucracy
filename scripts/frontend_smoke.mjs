@@ -2051,7 +2051,7 @@ try {
     const verdictOf = (id) => page.evaluate((nodeId) => window.__bureaucracy_lens_verdict__?.(nodeId) || null, id);
     const activeLens = () => page.evaluate(() => document.querySelector(".lens-btn.active")?.dataset.lens || null);
     const legendLabel = async () => (await text("#legend-label")).toLowerCase();
-    check("the lens control offers the four lenses", (await page.locator(".lens-btn").count()) === 4, `${await page.locator(".lens-btn").count()} buttons`);
+    check("the lens control offers the five lenses", (await page.locator(".lens-btn").count()) === 5, `${await page.locator(".lens-btn").count()} buttons`);
     check("Structure is the default lens", (await activeLens()) === "structure", String(await activeLens()));
 
     const isPost = (n) => /position|\brole\b|office holder/i.test(String(n.type || ""));
@@ -2113,12 +2113,62 @@ try {
       const v = await verdictOf(unpricedPost.id);
       check("under Money a post has no figure and never a size", v && v.key === "none" && v.scale < 1, JSON.stringify(v));
     }
+    // Whole (key 5): every node drawn at once, the camera pulled back to
+    // hold all of it, and a branch's caption carrying this graph's own
+    // counts beneath it and its measured figure. Measured on the served
+    // graph, and the drawn count read once the camera has settled, since on
+    // a software renderer the pull-back takes most of a minute.
+    await page.keyboard.press("Digit5");
+    await page.waitForTimeout(500);
+    check("key 5 takes the Whole lens", (await activeLens()) === "whole", String(await activeLens()));
+    await page.waitForFunction(() => document.getElementById("btn-expand-all")?.textContent === "Expand All Below", null, { timeout: 180000 });
+    const wholeStart = Date.now();
+    let cam = null;
+    while (Date.now() - wholeStart < 180000) {
+      cam = await page.evaluate(() => window.__bureaucracy_camera__?.() || null);
+      if (cam && cam.targetZoom < 0.3 && Math.abs(cam.zoom - cam.targetZoom) < 0.01) break;
+      await page.waitForTimeout(2000);
+    }
+    await page.waitForTimeout(4000);
+    cam = await page.evaluate(() => window.__bureaucracy_camera__?.() || null);
+    const wholeLoaded = await page.evaluate(() => (window.__bureaucracy_loaded_node_ids__?.() || []).length);
+    measurements.wholeLens = { ...cam, loaded: wholeLoaded, total: allNodes.length, settledAfterMs: Date.now() - wholeStart };
+    // At least: the candidate toggle, when on, adds its unreviewed nodes.
+    check("Whole loads the entire graph", wholeLoaded >= allNodes.length, `${wholeLoaded} of ${allNodes.length}`);
+    check("Whole reports its own tier", cam && cam.lodLabel === "Whole Government", JSON.stringify(cam));
+    check("Whole pulls the camera back past the ordinary floor", cam && cam.targetZoom < 0.28, JSON.stringify(cam));
+    check("Whole draws nearly every node at once", cam && cam.drawn >= allNodes.length * 0.9, `${cam && cam.drawn} drawn of ${allNodes.length}`);
+    const executive = allNodes.find((n) => n.__depth === 1 && /executive/i.test(String(n.name)) && /branch/i.test(String(n.type)));
+    if (executive) {
+      let units = 0;
+      let posts = 0;
+      const countWalk = (item) => {
+        for (const child of item.children || []) {
+          if (isPost(child)) posts += 1;
+          else if (!child.synthetic && !/treasury accounting line/i.test(String(child.type || ""))) units += 1;
+          countWalk(child);
+        }
+      };
+      countWalk(executive);
+      const caption = await verdictOf(executive.id);
+      const expected = `${units.toLocaleString("en-US")} units · ${posts.toLocaleString("en-US")} posts in this graph`;
+      check("the Executive's caption carries this graph's own counts", caption && caption.text.startsWith(expected), `${caption && caption.text} — expected to start with ${expected}`);
+      measurements.wholeExecutiveCaption = caption && caption.text;
+    }
+    await page.keyboard.press("Digit1");
+    await page.waitForTimeout(3000);
+    const backCam = await page.evaluate(() => window.__bureaucracy_camera__?.() || null);
+    check("leaving Whole restores the distance tiers", backCam && backCam.lodLabel !== "Whole Government", JSON.stringify(backCam));
+    check("leaving Whole lets the tiers thin the far view again", backCam && backCam.drawn < allNodes.length * 0.5, JSON.stringify(backCam));
+    const storedLens = await page.evaluate(() => { try { return JSON.parse(window.localStorage.getItem("bureaucracy-view-prefs-v1") || "{}").lens; } catch (e) { return null; } });
+    check("Whole is never the remembered lens", storedLens !== "whole", String(storedLens));
+
     // Typing a digit into the search box must not change the lens.
     await page.fill("#search-input", "");
     await page.locator("#search-input").focus();
     await page.keyboard.press("Digit3");
     await page.waitForTimeout(300);
-    check("a digit typed into the search box does not switch the lens", (await activeLens()) === "money", String(await activeLens()));
+    check("a digit typed into the search box does not switch the lens", (await activeLens()) === "structure", String(await activeLens()));
     await page.fill("#search-input", "");
     await page.keyboard.press("Escape");
     await page.click('.lens-btn[data-lens="structure"]');

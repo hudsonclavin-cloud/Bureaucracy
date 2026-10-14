@@ -4596,9 +4596,17 @@ headed by it), a negative OMB figure, a unit beneath a negative pool and a
 measured node carrying an OMB block, and holds the card's count to the served
 graph.
 
-**Four lenses on one picture (since 2026-10-14).** `#lens-ctrl` and keys
-1–4 switch the universe between Structure (the branch-hue drawing), Money,
-Evidence and Pay. A lens is a question, not a look: each of the three
+**Five lenses on one picture (since 2026-10-14).** `#lens-ctrl` and keys
+1–5 switch the universe between Structure (the branch-hue drawing), Money,
+Evidence, Pay and Whole. Whole is the far view the LOD tiers exist to
+thin, asked for on purpose: every node loaded and drawn at once at one
+screen size, coloured by its branch, the tiers, clustering and density cap
+set aside (`WHOLE_LOD`), the camera pulled back past the ordinary zoom
+floor and framed to the stage the chrome leaves, and a caption at the
+centre of each branch's mass giving this graph's own unit and post counts
+beneath it and the branch's measured figure. The key says in words that
+the mass is curation depth, not the government's size; a count is never a
+cost and the caption never invents one. A lens is a question, not a look: each of the three
 recolours every node from one published field through one reader in
 `graph.js` (`evidenceVerdict`, `payVerdict`, `moneyVerdict`), and the
 colour, the brood badge and — for Money alone — the size all draw from that

@@ -128,6 +128,32 @@ subtree check compares loaded ids now, not counts, and waits for the
 expansion queue to drain before it measures (`__bureaucracy_loaded_node_ids__`,
 `__bureaucracy_pending_expansions__`).
 
+**Whole (2026-10-14, slice 6, the owner's ask: "to see how enormous each
+branch is").** Key 5. The LOD tiers exist to keep a far camera from
+drawing 5,510 dots; this lens is the reader asking for exactly that. It
+loads the rest of the tree (`expandProgressively(Infinity)`, a no-op when
+loaded), swaps the tier for `WHOLE_LOD` (no depth cap, no clustering, a
+density cap that never binds, halos on), draws every node at one SCREEN
+size (`WHOLE_NODE_SCALE` × a distance term, so dots do not become balls
+when the reader zooms in), colours every node — posts included, 83% of
+them — by the branch it sits under (`wholeHue`, cached), fades the 5,510
+edges to 0.1, lifts the zoom floor to 0.07 and the far plane to 20,000,
+and frames the tree to the stage the rail and the inspector leave
+uncovered (`frameWhole`: horizontal fit against the uncovered width, the
+focus shifted to its centre). A branch's caption sits at the centre of its
+mass (`wholeMassCentres`), not on the branch node beside the root where
+the four halos overlapped, and reads "536 units · 3,489 posts in this
+graph · $X measured" — `wholeCaption`, counted off the data; the figure
+only where a record states one, "≈ … estimate" only when the estimates
+box is ticked. The key's note says in words that a mass is this graph's
+depth of curation, not the government's size. Whole is never the
+remembered lens: a reload comes back to Structure. Two defects fixed on
+the way: `refreshFocus` keyed on the selection alone, so slots assigned by
+a later expansion kept the mesh's default white under any lens — the
+loaded count is in the key now; and `getLabelDistanceScale`'s ceiling of 4
+left a far caption unreadable (14 under Whole). Cache stamp:
+`?v=20261014b`.
+
 Left deliberately undone: a fiscal-anchor chip in the top bar (the figure
 lives in `#data-provenance`, computed from the graph — a static chip would
 go stale on the next statement); collapsing the long provenance prose

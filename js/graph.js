@@ -1,5 +1,5 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20261014a";
+import { createLodManager } from "./lodManager.js?v=20261014b";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
@@ -40,7 +40,38 @@ const FOCUS_FULL = new THREE.Color(1, 1, 1);
 // what the data says: the panel's rules still decide every figure, and a
 // node with nothing to say under a lens is drawn dark rather than invented.
 // Structure is the default and is exactly the branch-hue drawing above.
-export const LENSES = ["structure", "money", "evidence", "pay"];
+export const LENSES = ["structure", "money", "evidence", "pay", "whole"];
+// Whole: every node this graph carries, drawn at once in the branch hues,
+// so the three branches read as three masses. The LOD tiers exist to keep
+// a far camera from drawing 5,510 dots; this lens is the reader asking for
+// exactly that, so clustering, the density cap and the depth tier are set
+// aside and the node is drawn at one world size whatever the distance. A
+// manual depth filter is an explicit choice and still wins. The caption
+// under each branch halo says what the mass is — nodes in THIS graph,
+// which is its depth of curation and not the government's size — beside
+// the branch's measured figure, which is.
+const WHOLE_LOD = Object.freeze({
+  level: 4,
+  label: "Whole Government",
+  maxDepth: Infinity,
+  showHierarchyEdges: true,
+  showRelationshipEdges: false,
+  showHalos: true,
+  clusterHiddenDescendants: false,
+  clusterPositionsOnly: false,
+  pickRadius: 16,
+  nodeScale: 1,
+  tileSize: 84,
+  nodesPerTile: 1_000_000,
+  autoExpand: false,
+  autoExpandDistance: 0,
+  visibleNodeBudget: 1_000_000,
+});
+const WHOLE_NODE_SCALE = 1.5;
+// The ordinary floor on zoom keeps the camera within 1,000 units; the whole
+// tree is wider than that, so the Whole lens may pull back further.
+const MIN_ZOOM = 0.28;
+const WHOLE_MIN_ZOOM = 0.07;
 const LENS_INK = "#2E3542";
 // Evidence: verificationStatus, with the two states ui.js already tells
 // apart from a bare "unverified" — never checked at all, and a host that
@@ -615,6 +646,9 @@ export function createGovernmentGraph({
   }
 
   function lensVerdict(data) {
+    if (state.lens === "whole") {
+      return { key: "whole", text: wholeCaption(data) };
+    }
     if (state.lens === "evidence") {
       return evidenceVerdict(data);
     }
@@ -627,9 +661,82 @@ export function createGovernmentGraph({
     return null;
   }
 
+  // The caption under a branch halo in the Whole lens: how many nodes this
+  // graph carries beneath it, split into units and posts, and the branch's
+  // own measured figure where a record states one. Counted once per node
+  // off the data, never off what happens to be drawn.
+  const wholeCaptionCache = new Map();
+
+  function wholeCaption(data) {
+    const id = `${data?.id || ""}:${state.showEstimateFigures ? 1 : 0}`;
+    if (wholeCaptionCache.has(id)) {
+      return wholeCaptionCache.get(id);
+    }
+    let units = 0;
+    let posts = 0;
+    const walk = (node) => {
+      for (const child of node.children || []) {
+        if (isPostData(child)) {
+          posts += 1;
+        } else if (!isTreasuryLineData(child)) {
+          units += 1;
+        }
+        walk(child);
+      }
+    };
+    walk(data || {});
+    const parts = [`${units.toLocaleString("en-US")} units · ${posts.toLocaleString("en-US")} posts in this graph`];
+    const money = moneyVerdict(data || {});
+    if (money.key === "measured") {
+      parts.push(`${formatDollars(money.amount)} measured`);
+    } else if (money.key === "estimate") {
+      parts.push(money.text);
+    }
+    const caption = parts.join(" · ");
+    wholeCaptionCache.set(id, caption);
+    return caption;
+  }
+
   const lensColorCache = new Map();
 
+  // Whole: every node takes the hue of the branch it sits under, posts
+  // included — 83% of the nodes are posts, and drawn in the position grey
+  // the three masses would read as one grey cloud. A Treasury line keeps
+  // its own colour. Cached per node; the ancestry does not change.
+  const wholeHueCache = new Map();
+
+  function wholeHue(data) {
+    const id = String(data?.id || "");
+    if (wholeHueCache.has(id)) {
+      return wholeHueCache.get(id);
+    }
+    let hue = null;
+    if (isTreasuryLineData(data)) {
+      hue = getNodeColor(data);
+    } else {
+      let cursor = data;
+      let guard = 0;
+      while (cursor && guard < 64) {
+        if (cursor !== data && (normalizeClusterKey(cursor.type) === "branch" || !state.parentIdById.get(cursor.id))) {
+          hue = getNodeColor(cursor);
+          break;
+        }
+        const parentId = state.parentIdById.get(cursor.id);
+        cursor = parentId ? state.dataMap.get(parentId) : null;
+        guard += 1;
+      }
+      if (!hue) {
+        hue = getNodeColor(data);
+      }
+    }
+    wholeHueCache.set(id, hue);
+    return hue;
+  }
+
   function lensColorHex(data) {
+    if (state.lens === "whole") {
+      return wholeHue(data);
+    }
     const verdict = lensVerdict(data);
     if (!verdict) {
       return null;
@@ -707,11 +814,77 @@ export function createGovernmentGraph({
       return;
     }
     state.lens = next;
+    // The far plane sits at 3,000 units, inside the distance the Whole
+    // lens's zoom floor allows; pushed out while that lens is on, so the
+    // far side of the tree is drawn rather than clipped.
+    camera.far = next === "whole" ? 20000 : 3000;
+    camera.updateProjectionMatrix();
     applyLensMaterials();
     state.focusKey = "";
     state.highlightVersion += 1;
     state.renderDirty = true;
     state.forceFullRenderRefresh = true;
+    updateLodState();
+    refreshVisibility();
+  }
+
+  // Frame everything loaded: the Whole lens's camera, called by ui.js once
+  // the expansion it asked for has finished.
+  function frameWhole() {
+    if (!state.rootObj || state.flyMode) {
+      return;
+    }
+    frameSubtreeOf(state.rootObj, Infinity);
+    // `frameSubtreeOf` fits the subtree to the camera's VERTICAL field over
+    // the whole canvas. The whole tree is wider than it is tall, and the
+    // rail on the left and the inspector on the right cover the canvas's
+    // edges, so the Executive's mass was running under the panel. Refit to
+    // the stage the chrome leaves: the horizontal extent against the
+    // uncovered width, and the focus shifted so the tree's centre sits in
+    // the uncovered width's centre rather than the canvas's.
+    const width = renderer.domElement.clientWidth || window.innerWidth;
+    const height = renderer.domElement.clientHeight || window.innerHeight;
+    let left = 0;
+    let right = width;
+    for (const rect of getChromeRects()) {
+      const tall = rect.bottom - rect.top > height * 0.5;
+      if (!tall) {
+        continue;
+      }
+      if (rect.left <= 2 && rect.right < width * 0.5) {
+        left = Math.max(left, rect.right);
+      } else if (rect.right >= width - 2 && rect.left > width * 0.5) {
+        right = Math.min(right, rect.left);
+      }
+    }
+    const usable = Math.max(right - left, width * 0.3);
+    const points = [];
+    for (const nodeObj of state.visibleNodes) {
+      points.push(nodeObj.targetPos && nodeObj.targetPos.lengthSq() > 0 ? nodeObj.targetPos : nodeObj.pos);
+    }
+    if (points.length < 2) {
+      return;
+    }
+    const centroid = state.camFocusTarget.clone();
+    let reach = 0;
+    for (const point of points) {
+      reach = Math.max(reach, point.distanceTo(centroid));
+    }
+    const halfFov = THREE.MathUtils.degToRad(camera.fov) / 2;
+    const aspect = width / Math.max(height, 1);
+    const verticalFit = (reach * 1.1) / Math.max(Math.tan(halfFov), 0.05);
+    const horizontalFit = (reach * 1.1) / Math.max(Math.tan(halfFov) * aspect * (usable / width), 0.05);
+    const fitDistance = Math.max(verticalFit, horizontalFit);
+    state.targetZoom = THREE.MathUtils.clamp(CAMERA_DISTANCE / Math.max(fitDistance, 1), minZoom(), 10);
+    // Shift the focus so the stage's centre, not the canvas's, holds the
+    // tree: a positive offset moves the focus toward the camera's right,
+    // which moves the picture left.
+    const stageCentreOffsetPx = (left + right) / 2 - width / 2;
+    const visibleWidthAtDistance = 2 * Math.tan(halfFov) * aspect * fitDistance;
+    const shift = -(stageCentreOffsetPx / width) * visibleWidthAtDistance;
+    const rightVector = new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 0).normalize();
+    state.camFocusTarget.addScaledVector(rightVector, shift);
+    state.renderDirty = true;
   }
 
   function setShowEstimateFigures(enabled) {
@@ -930,7 +1103,7 @@ export function createGovernmentGraph({
   // with, so the badge can never claim more than the panel does.
   function broodSubtitle(childObj) {
     const data = childObj.data || {};
-    const verdict = lensVerdict(data);
+    const verdict = state.lens === "whole" ? null : lensVerdict(data);
     if (verdict) {
       return verdict.text;
     }
@@ -957,6 +1130,11 @@ export function createGovernmentGraph({
       }
       for (const childObj of selected.childObjs || []) {
         if (!childObj.renderVisible || childObj.clustered || childObj.culled) {
+          continue;
+        }
+        // Under Whole a branch's halo already names it, with the caption
+        // this lens exists for; a brood badge on top would cover it.
+        if (state.lens === "whole" && state.lod.haloNodeIds?.has(childObj.data?.id)) {
           continue;
         }
         // Units before posts, the order the panel's own list uses, so the
@@ -998,7 +1176,10 @@ export function createGovernmentGraph({
 
   function refreshFocus() {
     const selected = state.selectedNode && !state.selectedNode.isCluster ? state.selectedNode : null;
-    const key = `${state.lens}:${state.showEstimateFigures ? 1 : 0}:${selected ? `${selected.data.id}:${(selected.childObjs || []).length}` : ""}`;
+    // The loaded count is in the key: a slot assigned after the last pass
+    // carries the mesh's default white until this runs again, and an
+    // expansion under a lens was drawing its new nodes uncoloured.
+    const key = `${state.lens}:${state.showEstimateFigures ? 1 : 0}:${state.allNodes.size}:${selected ? `${selected.data.id}:${(selected.childObjs || []).length}` : ""}`;
     if (key === state.focusKey) {
       return;
     }
@@ -1020,7 +1201,8 @@ export function createGovernmentGraph({
       if (!nodeObj.batch || nodeObj.slot < 0) {
         continue;
       }
-      const tint = focus.size === 0 || focus.has(nodeObj.data.id) ? FOCUS_FULL : FOCUS_DIM;
+      // Under Whole nothing is context: the reader asked to see all of it.
+      const tint = state.lens === "whole" || focus.size === 0 || focus.has(nodeObj.data.id) ? FOCUS_FULL : FOCUS_DIM;
       const hex = lensColorHex(nodeObj.data);
       if (hex) {
         // The verdict's colour, dimmed outside the focus the same way the
@@ -1036,7 +1218,9 @@ export function createGovernmentGraph({
 
   function getLabelDistanceScale(worldPosition) {
     const distance = Math.max(camera.position.distanceTo(worldPosition), 1);
-    return THREE.MathUtils.clamp(distance * 0.006, 0.5, 4);
+    // The Whole lens sits far enough back that the ordinary ceiling leaves
+    // a branch's caption unreadable; it may grow further there.
+    return THREE.MathUtils.clamp(distance * 0.006, 0.5, state.lens === "whole" ? 14 : 4);
   }
 
   function hashString(input) {
@@ -1046,6 +1230,10 @@ export function createGovernmentGraph({
       hash = Math.imul(hash, 16777619);
     }
     return hash >>> 0;
+  }
+
+  function minZoom() {
+    return state.lens === "whole" ? WHOLE_MIN_ZOOM : MIN_ZOOM;
   }
 
   function nodeRadiusForDepth(depth) {
@@ -1104,6 +1292,10 @@ export function createGovernmentGraph({
       rootNode: state.rootObj,
       maxDepthFilter: state.manualDepthFilter,
     });
+    if (state.lens === "whole") {
+      const manualDepth = Number.isFinite(state.manualDepthFilter) ? Math.min(state.manualDepthFilter, MAX_DEPTH) : MAX_DEPTH;
+      state.lod = { ...state.lod, ...WHOLE_LOD, visibleDepth: manualDepth };
+    }
     state.maxVisibleDepth = state.lod.visibleDepth;
     return state.lod;
   }
@@ -1832,7 +2024,16 @@ export function createGovernmentGraph({
       MIN_ZOOM_NODE_SCALE,
       lodManager.getNodeScale(cameraDistance, state.lod) * distanceScale,
     );
-    const finalScale = scaleMultiplier * zoomScale;
+    // Under the Whole lens every node keeps one world size: the tier scale
+    // and the distance scale exist to thin a far view, and this lens is the
+    // reader asking to see all of it.
+    // Under the Whole lens a node keeps roughly one SCREEN size: the tier
+    // scale and the distance scale exist to thin a far view, and this lens
+    // is the reader asking to see all of it from far away; closer in, the
+    // dots shrink back toward the ordinary size rather than becoming balls.
+    const finalScale = state.lens === "whole"
+      ? WHOLE_NODE_SCALE * THREE.MathUtils.clamp(cameraDistance / 1400, 0.3, 1) * scaleMultiplier
+      : scaleMultiplier * zoomScale;
     if (nodeObj === state.rootObj) {
       rootCore.visible = nodeObj.visible !== false;
       rootCore.position.copy(nodeObj.pos);
@@ -1915,7 +2116,7 @@ export function createGovernmentGraph({
         // The brood's own edges carry the child's hue, so the fan a reader
         // asked for is the brightest thing on the stage.
         edge.color.set(lensHex || getNodeColor(edge.to.data)).lerp(whiteColor, 0.1);
-      } else if (!(state.focusIds.has(edge.from.data.id) && state.focusIds.has(edge.to.data.id))) {
+      } else if (state.lens !== "whole" && !(state.focusIds.has(edge.from.data.id) && state.focusIds.has(edge.to.data.id))) {
         edge.color.lerp(inkColor, 0.62);
       }
     }
@@ -2633,7 +2834,7 @@ export function createGovernmentGraph({
     const halfFov = THREE.MathUtils.degToRad(camera.fov) / 2;
     const fitDistance = (reach * 1.25) / Math.max(Math.tan(halfFov), 0.05);
     const fitZoom = CAMERA_DISTANCE / Math.max(fitDistance, 1);
-    state.targetZoom = THREE.MathUtils.clamp(fitZoom, 0.28, 10);
+    state.targetZoom = THREE.MathUtils.clamp(fitZoom, minZoom(), 10);
     state.renderDirty = true;
   }
 
@@ -2694,7 +2895,7 @@ export function createGovernmentGraph({
     const halfFov = THREE.MathUtils.degToRad(camera.fov) / 2;
     const fitDistance = (reach * 1.15) / Math.max(Math.tan(halfFov), 0.05);
     const fitZoom = CAMERA_DISTANCE / Math.max(fitDistance, 1);
-    state.targetZoom = THREE.MathUtils.clamp(fitZoom, 0.28, 10);
+    state.targetZoom = THREE.MathUtils.clamp(fitZoom, minZoom(), 10);
     state.renderDirty = true;
   }
 
@@ -3183,12 +3384,47 @@ export function createGovernmentGraph({
     return candidates;
   }
 
+  // Under the Whole lens a branch's caption sits at the centre of the mass
+  // it describes — the mean position of everything drawn beneath it —
+  // rather than on the branch node itself, which sits beside the root where
+  // the four halos overlap and the overlap pass kept only one of them.
+  function wholeMassCentres() {
+    const sums = new Map();
+    for (const nodeObj of state.visibleNodes) {
+      if (!nodeObj.renderVisible || nodeObj.culled || nodeObj.depth < 2) {
+        continue;
+      }
+      let cursor = nodeObj;
+      while (cursor && cursor.depth > 1) {
+        cursor = cursor.parent;
+      }
+      if (!cursor) {
+        continue;
+      }
+      let entry = sums.get(cursor.data.id);
+      if (!entry) {
+        entry = { sum: new THREE.Vector3(), count: 0 };
+        sums.set(cursor.data.id, entry);
+      }
+      entry.sum.add(nodeObj.pos);
+      entry.count += 1;
+    }
+    const centres = new Map();
+    for (const [id, entry] of sums) {
+      if (entry.count >= 8) {
+        centres.set(id, entry.sum.divideScalar(entry.count));
+      }
+    }
+    return centres;
+  }
+
   function updateHaloNodes(protectedIds = getProtectedNodeIds()) {
     const haloCandidates = [...state.visibleNodes].filter(
       (nodeObj) => nodeObj.renderVisible && lodManager.shouldRenderHalo(nodeObj, state.lod),
     );
     ensureHaloPool(haloCandidates.length);
     const labelCandidates = [];
+    const massCentres = state.lens === "whole" ? wholeMassCentres() : null;
 
     for (let i = 0; i < haloCandidates.length; i += 1) {
       const nodeObj = haloCandidates[i];
@@ -3203,13 +3439,18 @@ export function createGovernmentGraph({
       haloMesh.material.opacity = nodeObj === state.selectedNode ? 0.72 : 0.52;
       haloMesh.scale.setScalar(nodeObj.depth === 0 ? 1.22 : 1);
 
-      drawHaloLabel(haloLabel, nodeObj.data.name, nodeObj.data.type || "Institution", color);
+      drawHaloLabel(haloLabel, nodeObj.data.name, state.lens === "whole" ? wholeCaption(nodeObj.data) : nodeObj.data.type || "Institution", color);
       haloLabel.sprite.visible = true;
-      haloLabel.sprite.position.copy(nodeObj.pos);
-      haloLabel.sprite.position.y += haloRadius + 14;
+      const massCentre = massCentres && massCentres.get(nodeObj.data.id);
+      haloLabel.sprite.position.copy(massCentre || nodeObj.pos);
+      haloLabel.sprite.position.y += massCentre ? 0 : haloRadius + 14;
       const labelScale = getLabelDistanceScale(haloLabel.sprite.position);
       haloLabel.sprite.scale.set(22 * labelScale, 7 * labelScale, 1);
       let priority = 50_000;
+      if (massCentre) {
+        // The caption is what this lens is for: it wins over the root's.
+        priority += 400_000;
+      }
       if (nodeObj === state.selectedNode) {
         priority += 1_000_000;
       }
@@ -3391,7 +3632,11 @@ export function createGovernmentGraph({
     const clustersSettling = recomputeClusters();
     const baseEdgeOpacity = state.lod.level <= 1 ? 0.34 : state.zoom <= 1 ? 0.24 : 0.3;
     state.edgeBatch.lines.material.opacity =
-      state.highlightedPathEdgeSlots.size > 0 || state.focusIds.size > 0 ? Math.max(baseEdgeOpacity, 0.5) : baseEdgeOpacity;
+      state.lens === "whole"
+        // 5,510 edges at the ordinary opacity are a white web over the
+        // masses they connect; faint, they read as the shape of the tree.
+        ? 0.1
+        : state.highlightedPathEdgeSlots.size > 0 || state.focusIds.size > 0 ? Math.max(baseEdgeOpacity, 0.5) : baseEdgeOpacity;
     const nodeCandidates = [];
 
     for (const nodeObj of state.allNodes) {
@@ -3834,7 +4079,7 @@ export function createGovernmentGraph({
         } else {
           // Scroll down zooms out, scroll up zooms in (matches fly mode).
           state.targetZoom *= event.deltaY > 0 ? 0.9 : 1.1;
-          state.targetZoom = Math.max(0.28, Math.min(10, state.targetZoom));
+          state.targetZoom = Math.max(minZoom(), Math.min(10, state.targetZoom));
         }
         state.renderDirty = true;
         event.preventDefault();
@@ -4086,6 +4331,8 @@ export function createGovernmentGraph({
         showUnverifiedNodes: state.showUnverifiedNodes,
       showSupersededNodes: state.showSupersededNodes,
         showCandidateNodes: state.showCandidateNodes,
+        zoom: state.zoom,
+        targetZoom: state.targetZoom,
       };
     },
     getMaxDataDepth() {
@@ -4093,6 +4340,9 @@ export function createGovernmentGraph({
     },
     setLens(name) {
       setLens(name);
+    },
+    frameWhole() {
+      frameWhole();
     },
     getLens() {
       return state.lens;

@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261014a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261014a";
+import { createGovernmentGraph } from "./graph.js?v=20261014b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261014b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -808,7 +808,7 @@ function ensureVerificationLegend() {
 // swaps with the lens; the branch key and the verification key come back
 // under Structure. Only the picture changes: the panel's rules decide every
 // figure as before, and the lens is remembered per browser like the toggles.
-const LENS_KEYS = { Digit1: "structure", Digit2: "money", Digit3: "evidence", Digit4: "pay" };
+const LENS_KEYS = { Digit1: "structure", Digit2: "money", Digit3: "evidence", Digit4: "pay", Digit5: "whole" };
 
 const LENS_LEGENDS = {
   structure: null,
@@ -833,6 +833,13 @@ const LENS_LEGENDS = {
       ["No source recorded", "#6E7079"],
       ["Treasury accounting line", "#8AA0B0"],
     ],
+  },
+  // Whole keeps the branch key: the colours are Structure's. `items: null`
+  // says so to applyLens.
+  whole: {
+    label: "Branch",
+    items: null,
+    note: "Every node this graph carries, drawn at once. A branch's mass here is this graph's depth of curation, not the government's size — the Defense Department is drawn to the office, most bureaus as a six-post sketch. The caption under each branch carries its measured figure, which is.",
   },
   pay: {
     label: "Pay claim",
@@ -890,7 +897,16 @@ function applyLens(name, { persist = true } = {}) {
     const lensItems = document.getElementById("legend-lens-items");
     const lensNote = document.getElementById("legend-lens-note");
     const verificationRows = dom.legend.querySelectorAll("[data-verification-legend='true']");
-    if (legend) {
+    if (legend && !legend.items) {
+      if (label) label.textContent = legend.label;
+      if (branchItems) branchItems.hidden = false;
+      verificationRows.forEach((row) => { row.hidden = true; });
+      if (lensItems) lensItems.hidden = true;
+      if (lensNote) {
+        lensNote.textContent = legend.note;
+        lensNote.hidden = false;
+      }
+    } else if (legend) {
       if (label) label.textContent = legend.label;
       if (branchItems) branchItems.hidden = true;
       verificationRows.forEach((row) => { row.hidden = true; });
@@ -913,7 +929,15 @@ function applyLens(name, { persist = true } = {}) {
     }
   }
   if (persist) {
-    writeStoredPrefs({ lens });
+    // Whole is a request to load the entire tree, not a way of reading it;
+    // a reload comes back to Structure rather than expanding 5,510 nodes
+    // before the reader has asked.
+    writeStoredPrefs({ lens: lens === "whole" ? "structure" : lens });
+  }
+  // Whole asks for everything: load the rest of the tree (a no-op when it
+  // is already loaded) and, when that finishes, frame all of it.
+  if (lens === "whole" && state.graph && typeof state.graph.frameWhole === "function" && dom.btnExpandAll) {
+    expandProgressively(Infinity);
   }
 }
 
@@ -4311,6 +4335,8 @@ function expandProgressively(targetDepth, scopeObj = null) {
         // The whole expanded subtree, not the first generation alone: the
         // deeper shells were landing outside a frame fitted to the brood.
         state.graph.frameSubtreeOf(scopeObj);
+      } else if (state.graph.getLens && state.graph.getLens() === "whole") {
+        state.graph.frameWhole();
       }
       return;
     }
@@ -4612,6 +4638,7 @@ async function initGraphApp() {
   // How many expansions are still queued, so a check can wait for the boot
   // expansion to finish before it measures what a button added.
   window.__bureaucracy_loaded_node_ids__ = () => state.graph?.getLoadedNodeIds?.() || [];
+  window.__bureaucracy_camera__ = () => { const st = state.graph?.getStats?.() || {}; return { zoom: st.zoom, targetZoom: st.targetZoom, lodLabel: st.lodLabel, drawn: st.drawnNodeCount }; };
   window.__bureaucracy_pending_expansions__ = () => Number(state.graph?.getStats?.().pendingExpansions || 0);
   state.graph = createGovernmentGraph({
     canvas: dom.canvas,

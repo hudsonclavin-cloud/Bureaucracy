@@ -7,8 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="./css/shell.css?v=20261014a">
-<link rel="stylesheet" href="./css/atlas.css?v=20261014a">
+<link rel="stylesheet" href="./css/shell.css?v=20261014b">
+<link rel="stylesheet" href="./css/atlas.css?v=20261014b">
 <title>U.S. Federal Government — 3D Explorer</title>
 </head>
 <body>
@@ -103,12 +103,13 @@
 </div>
 
 <div id="lens-ctrl" role="group" aria-label="Choose what the picture answers">
-  <div id="lens-label">Lens <span id="lens-keys" aria-hidden="true">keys 1–4</span></div>
+  <div id="lens-label">Lens <span id="lens-keys" aria-hidden="true">keys 1–5</span></div>
   <div id="lens-btns">
     <button class="lens-btn active" data-lens="structure" aria-pressed="true" title="What exists, and how it nests (key 1)">Structure</button>
     <button class="lens-btn" data-lens="money" aria-pressed="false" title="Where the measured money is (key 2)">Money</button>
     <button class="lens-btn" data-lens="evidence" aria-pressed="false" title="Which of this a document confirmed (key 3)">Evidence</button>
     <button class="lens-btn" data-lens="pay" aria-pressed="false" title="What the posts are paid (key 4)">Pay</button>
+    <button class="lens-btn" data-lens="whole" aria-pressed="false" title="Every node at once — how big each branch is (key 5)">Whole</button>
   </div>
   <p id="lens-note">Branch hue, uniform size. The default drawing.</p>
 </div>
@@ -249,8 +250,8 @@ window.setTimeout(function () {
   }
 }, 20000);
 </script>
-<script type="module" src="./js/atlas.js?v=20261014a"></script>
-<script type="module" src="./js/ui.js?v=20261014a"
+<script type="module" src="./js/atlas.js?v=20261014b"></script>
+<script type="module" src="./js/ui.js?v=20261014b"
   onerror="window.__graphBootFailed('Failed to load application scripts (network or CDN unreachable). Check your connection and reload.')"></script>
 </body>
 </html>
