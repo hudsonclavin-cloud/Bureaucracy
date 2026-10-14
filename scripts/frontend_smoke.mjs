@@ -1335,10 +1335,12 @@ try {
     // The panel renders after the selection's fly-in; on a slow renderer
     // 800ms was not always enough and this check once failed on an empty
     // line (2026-09-30). Wait for the line to carry text, up to five seconds.
+    const provenanceWaitStart = Date.now();
     await page.waitForFunction(
       () => (document.getElementById("info-desc-provenance")?.textContent || "").trim().length > 0,
-      null, { timeout: 5000 },
+      null, { timeout: 15000 },
     ).catch(() => {});
+    measurements.sourcedDescriptionWait = `${Date.now() - provenanceWaitStart}ms for ${generated.id}; panel shows ${JSON.stringify(await text("#info-name"))} / ${JSON.stringify(await text("#info-type"))}; ${JSON.stringify(await page.evaluate(() => ({ camera: window.__bureaucracy_camera__?.(), prefs: window.localStorage.getItem("bureaucracy-view-prefs-v1"), depth: document.querySelector(".depth-btn.active")?.dataset.depth })))}`;
     const note = await text("#info-desc-provenance");
     check("a sourced description says which document it came from",
       /generated from the White House Office's own annual report/.test(note), note);

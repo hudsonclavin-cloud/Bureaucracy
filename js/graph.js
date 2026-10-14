@@ -1,5 +1,5 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20261014b";
+import { createLodManager } from "./lodManager.js?v=20261014c";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
@@ -343,6 +343,7 @@ export function createGovernmentGraph({
     targetZoom: 1,
     camFocus: new THREE.Vector3(),
     camFocusTarget: new THREE.Vector3(),
+    orbitPosition: new THREE.Vector3(0, 0, CAMERA_DISTANCE),
     lod: lodManager.updateLOD({
       cameraDistance: CAMERA_DISTANCE,
       rootNode: null,
@@ -842,22 +843,7 @@ export function createGovernmentGraph({
     // the stage the chrome leaves: the horizontal extent against the
     // uncovered width, and the focus shifted so the tree's centre sits in
     // the uncovered width's centre rather than the canvas's.
-    const width = renderer.domElement.clientWidth || window.innerWidth;
-    const height = renderer.domElement.clientHeight || window.innerHeight;
-    let left = 0;
-    let right = width;
-    for (const rect of getChromeRects()) {
-      const tall = rect.bottom - rect.top > height * 0.5;
-      if (!tall) {
-        continue;
-      }
-      if (rect.left <= 2 && rect.right < width * 0.5) {
-        left = Math.max(left, rect.right);
-      } else if (rect.right >= width - 2 && rect.left > width * 0.5) {
-        right = Math.min(right, rect.left);
-      }
-    }
-    const usable = Math.max(right - left, width * 0.3);
+    const { width, height, usable } = stageGeometry();
     const points = [];
     for (const nodeObj of state.visibleNodes) {
       points.push(nodeObj.targetPos && nodeObj.targetPos.lengthSq() > 0 ? nodeObj.targetPos : nodeObj.pos);
@@ -876,14 +862,6 @@ export function createGovernmentGraph({
     const horizontalFit = (reach * 1.1) / Math.max(Math.tan(halfFov) * aspect * (usable / width), 0.05);
     const fitDistance = Math.max(verticalFit, horizontalFit);
     state.targetZoom = THREE.MathUtils.clamp(CAMERA_DISTANCE / Math.max(fitDistance, 1), minZoom(), 10);
-    // Shift the focus so the stage's centre, not the canvas's, holds the
-    // tree: a positive offset moves the focus toward the camera's right,
-    // which moves the picture left.
-    const stageCentreOffsetPx = (left + right) / 2 - width / 2;
-    const visibleWidthAtDistance = 2 * Math.tan(halfFov) * aspect * fitDistance;
-    const shift = -(stageCentreOffsetPx / width) * visibleWidthAtDistance;
-    const rightVector = new THREE.Vector3().setFromMatrixColumn(camera.matrixWorld, 0).normalize();
-    state.camFocusTarget.addScaledVector(rightVector, shift);
     state.renderDirty = true;
   }
 
@@ -1283,7 +1261,10 @@ export function createGovernmentGraph({
       const anchor = state.selectedNode?.pos || state.rootObj?.pos;
       return Math.max(anchor ? camera.position.distanceTo(anchor) : camera.position.length(), 1);
     }
-    return Math.max(camera.position.distanceTo(state.camFocus), 1);
+    // The orbit position, not the rendered camera: the render camera sits
+    // one stage-shift to the side, and the tier is about how far the reader
+    // has pulled back, not where the picture was slid to.
+    return Math.max(state.orbitPosition.distanceTo(state.camFocus), 1);
   }
 
   function updateLodState() {
@@ -1557,6 +1538,60 @@ export function createGovernmentGraph({
     }
     chromeRectCache = { frame: state.frame, rects };
     return rects;
+  }
+
+  // The stage: the part of the canvas the rail on the left and the
+  // inspector on the right leave uncovered. The camera centres the
+  // selection in THIS, not in the canvas — with the inspector open, a brood
+  // laid in the Executive's sector (down and to the right) was landing
+  // under the panel on every expansion, so a reader saw edges leaving the
+  // frame and nothing at the end of them. A tall chrome rect hugging an
+  // edge is a column; anything else (the breadcrumb, the hint) is not.
+  function stageGeometry() {
+    const width = renderer.domElement.clientWidth || window.innerWidth;
+    const height = renderer.domElement.clientHeight || window.innerHeight;
+    let left = 0;
+    let right = width;
+    for (const rect of getChromeRects()) {
+      if (rect.bottom - rect.top <= height * 0.5) {
+        continue;
+      }
+      if (rect.left <= 2 && rect.right < width * 0.5) {
+        left = Math.max(left, rect.right);
+      } else if (rect.right >= width - 2 && rect.left > width * 0.5) {
+        right = Math.min(right, rect.left);
+      }
+    }
+    const usable = Math.max(right - left, width * 0.3);
+    return { width, height, left, right, usable, centreOffsetPx: (left + right) / 2 - width / 2 };
+  }
+
+  // The world-space translation that puts the camera's focus at the
+  // stage's centre rather than the canvas's: along the camera's own right
+  // vector, by the stage offset scaled to the visible width at the focus
+  // distance. Applied to the camera and its target together, so it is a
+  // pure slide of the picture and changes nothing about the view's angle.
+  const stageShiftVector = new THREE.Vector3();
+  const cameraRightVector = new THREE.Vector3();
+
+  // The distance at which a sphere of this reach fits both the vertical
+  // field and the stage's uncovered width — whichever is tighter.
+  function fitDistanceForReach(reach, halfFov) {
+    const stage = stageGeometry();
+    const aspect = stage.width / Math.max(stage.height, 1);
+    const vertical = reach / Math.max(Math.tan(halfFov), 0.05);
+    const horizontal = reach / Math.max(Math.tan(halfFov) * aspect * (stage.usable / stage.width), 0.05);
+    return Math.max(vertical, horizontal);
+  }
+
+  function stageShift(distance, out = stageShiftVector) {
+    const stage = stageGeometry();
+    const halfFov = THREE.MathUtils.degToRad(camera.fov) / 2;
+    const aspect = stage.width / Math.max(stage.height, 1);
+    const visibleWidth = 2 * Math.tan(halfFov) * aspect * distance;
+    const shift = -(stage.centreOffsetPx / stage.width) * visibleWidth;
+    cameraRightVector.setFromMatrixColumn(camera.matrixWorld, 0).normalize();
+    return out.copy(cameraRightVector).multiplyScalar(shift);
   }
 
   // The screen rectangle the selected node's brood occupies, padded: a
@@ -2031,9 +2066,18 @@ export function createGovernmentGraph({
     // scale and the distance scale exist to thin a far view, and this lens
     // is the reader asking to see all of it from far away; closer in, the
     // dots shrink back toward the ordinary size rather than becoming balls.
-    const finalScale = state.lens === "whole"
+    // A node nearer the camera than the focus looms: a brood is laid on a
+    // sphere, so its near side sits between the camera and the selection
+    // and, in perspective, a sibling a third of the way to the lens drew
+    // as a translucent disc three times the size of the one it stood
+    // beside. Nothing in the data is three times anything, so a node
+    // inside the focus distance keeps the screen size it would have AT
+    // the focus. Nodes beyond it are untouched.
+    const focusDistance = Math.max(camera.position.distanceTo(state.camFocus), 1);
+    const nearFactor = Math.min(1, cameraDistance / focusDistance);
+    const finalScale = (state.lens === "whole"
       ? WHOLE_NODE_SCALE * THREE.MathUtils.clamp(cameraDistance / 1400, 0.3, 1) * scaleMultiplier
-      : scaleMultiplier * zoomScale;
+      : scaleMultiplier * zoomScale) * nearFactor;
     if (nodeObj === state.rootObj) {
       rootCore.visible = nodeObj.visible !== false;
       rootCore.position.copy(nodeObj.pos);
@@ -2772,6 +2816,16 @@ export function createGovernmentGraph({
       setFlyLookAt(focusPoint);
       return;
     }
+    // A node whose children are already on the stage is framed WITH them:
+    // selecting the Cabinet from the search box used to zoom to the node
+    // itself at Position View, with its fifteen departments laid on a shell
+    // a hundred units out and every one of them outside the frame — the
+    // inspector listed fifteen sub-units and the picture showed fifteen
+    // edges leaving it. The children are what a reader selected it to see.
+    if (nodeObj.expanded && (nodeObj.childObjs || []).some((child) => child.visible)) {
+      frameBroodOf(nodeObj);
+      return;
+    }
     state.camFocusTarget.copy(nodeObj.pos);
     // Never pulls the camera outward: a reader who zoomed in stays in.
     state.targetZoom = Math.max(state.targetZoom, 1.45, zoomForDepth(nodeObj.depth));
@@ -2832,7 +2886,7 @@ export function createGovernmentGraph({
     // Vertical half-angle of the frustum, with a margin so the outermost
     // child sits inside the frame and not on its edge.
     const halfFov = THREE.MathUtils.degToRad(camera.fov) / 2;
-    const fitDistance = (reach * 1.25) / Math.max(Math.tan(halfFov), 0.05);
+    const fitDistance = fitDistanceForReach(reach * 1.25, halfFov);
     const fitZoom = CAMERA_DISTANCE / Math.max(fitDistance, 1);
     state.targetZoom = THREE.MathUtils.clamp(fitZoom, minZoom(), 10);
     state.renderDirty = true;
@@ -2893,7 +2947,7 @@ export function createGovernmentGraph({
     }
     state.camFocusTarget.copy(centroid);
     const halfFov = THREE.MathUtils.degToRad(camera.fov) / 2;
-    const fitDistance = (reach * 1.15) / Math.max(Math.tan(halfFov), 0.05);
+    const fitDistance = fitDistanceForReach(reach * 1.15, halfFov);
     const fitZoom = CAMERA_DISTANCE / Math.max(fitDistance, 1);
     state.targetZoom = THREE.MathUtils.clamp(fitZoom, minZoom(), 10);
     state.renderDirty = true;
@@ -3226,7 +3280,11 @@ export function createGovernmentGraph({
     const densityBoost = Math.min(3.5, Math.sqrt(Math.max(screenDensity, 1)) * 0.16);
     const rawRadius = base + Math.min(maxRadius, Math.sqrt(count) * factor + densityBoost);
     const pixelFootprint = worldUnitsToPixels(clusterObj.pos, rawRadius * 2, rawRadius * 2).width;
-    const maxPixelFootprint = clusterObj.kind === "positions" ? 72 : 92;
+    // A collapsed subtree's ring is a hint of how much sits folded beneath
+    // a node, and at 92px across fifteen of them in one brood were larger
+    // than the spacing between the siblings they stood beside — the Cabinet
+    // read as a pile of discs with the departments somewhere behind them.
+    const maxPixelFootprint = clusterObj.kind === "positions" ? 48 : 60;
     const clampedRadius = pixelFootprint > maxPixelFootprint
       ? rawRadius * (maxPixelFootprint / Math.max(pixelFootprint, 1))
       : rawRadius;
@@ -3321,7 +3379,7 @@ export function createGovernmentGraph({
 
   function setClusterSlot(slot, clusterObj) {
     const context = clusterIsContext(clusterObj);
-    const scale = Math.max(2.4, clusterObj.displayRadius || clusterObj.radius) * (context ? 0.72 : 1);
+    const scale = Math.max(2.4, clusterObj.displayRadius || clusterObj.radius) * (context ? 0.5 : 1);
     tempQuat.copy(camera.quaternion);
     tempMat4.compose(
       clusterObj.displayPos || clusterObj.pos,
@@ -3331,7 +3389,7 @@ export function createGovernmentGraph({
     state.clusterBatch.mesh.setMatrixAt(slot, tempMat4);
     state.clusterBatch.mesh.setColorAt(
       slot,
-      tempClusterColor.set(clusterObj.color || clusterColor).lerp(clusterAccentColor, 0.08).lerp(inkColor, context ? 0.55 : 0),
+      tempClusterColor.set(clusterObj.color || clusterColor).lerp(clusterAccentColor, 0.08).lerp(inkColor, context ? 0.72 : 0),
     );
     state.clusterBatch.clustersBySlot[slot] = clusterObj;
     state.clusterBatch.dirty = true;
@@ -3949,8 +4007,21 @@ export function createGovernmentGraph({
         state.camFocus.y + distance * Math.sin(state.rotX),
         state.camFocus.z + distance * Math.cos(state.rotY) * Math.cos(state.rotX),
       );
-      camera.position.lerp(desiredCameraPosition, ORBIT_CAMERA_LERP);
+      // The orbit position is lerped on its own and never carries the stage
+      // shift: the first version added the shift to camera.position after
+      // the lerp, and since the lerp only pulls 8% of the way back each
+      // frame the shift compounded twelve-fold — the camera settled far off
+      // to one side at a distance the LOD read as Office View, and a post
+      // selected from the search box rendered as a "Position Cluster".
+      state.orbitPosition.lerp(desiredCameraPosition, ORBIT_CAMERA_LERP);
+      camera.position.copy(state.orbitPosition);
       camera.lookAt(state.camFocus);
+      // Slide the picture so the focus sits in the uncovered stage. Read
+      // off the matrix the lookAt just set, then applied to both ends.
+      camera.updateMatrixWorld();
+      stageShift(distance);
+      camera.position.add(stageShiftVector);
+      camera.lookAt(tempVecD.copy(state.camFocus).add(stageShiftVector));
     }
     camera.updateMatrixWorld();
     updateLodState();

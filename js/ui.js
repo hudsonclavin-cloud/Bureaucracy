@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261014b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261014b";
+import { createGovernmentGraph } from "./graph.js?v=20261014c";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261014c";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -405,6 +405,17 @@ function readingGuidePoints(count) {
       + `hollow, so the difference survives colourblindness. A box's colour is the branch it belongs `
       + `to; the key is in the left column. "Placement" is a separate line, because "this page lists it" and `
       + `"this thing exists" are different claims.`,
+    ],
+    [
+      "Five lenses",
+      `The Lens control in the left column (keys 1–5) asks the picture a different question without `
+      + `changing the data. Structure is the branch-hue drawing. Money colours and sizes by measured `
+      + `figure — a post never takes a size, and an estimate takes a colour only when you tick the `
+      + `estimates box. Evidence colours by verification status. Pay colours the posts by the kind of `
+      + `pay claim behind them, and a unit goes dark because a unit has no salary. Whole draws every `
+      + `node at once so the three branches read as three masses; their size there is how deeply `
+      + `this graph is curated, not how big the government is, which is why each mass is captioned `
+      + `with its counts and its measured figure.`,
     ],
   ];
 }
@@ -2939,6 +2950,8 @@ function buildSpendingByKind(node) {
   staffLine.textContent = `Pay and benefits of staff: ${money(staff)} (${pct(staff)} of obligations)`;
   host.appendChild(staffLine);
   for (const group of groups) {
+    // A group the publisher prints at zero is not a place the money goes.
+    if (!(Number(group.obligations) > 0)) continue;
     const row = document.createElement("div");
     row.className = "info-spend-row";
     const label = document.createElement("div");
@@ -3640,12 +3653,72 @@ function describeCost(node) {
       caveat +=
         " The payouts set how the committees divide their pool; the pool itself is still the committees' share of the chamber, divided by how many units sit beneath each part.";
     }
+    // The one unmeasured child of a parent whose other children are all
+    // measured is not "divided" at all: it takes the whole remainder. The
+    // Executive Branch is that case, and its remainder exceeds the root's
+    // net total because the government-wide offsetting receipts (a negative
+    // line) sit beside it — a sentence about staff-count weighting there
+    // was false, and a reader who saw $7.15T under a $6.81T root with it
+    // had every right to call the arithmetic wrong.
+    // Where a sourced figure of another kind exists and disagrees with the
+    // estimate by more than threefold, say so beside the estimate: the
+    // Election Assistance Commission's apportioned share is ≈$550M, a
+    // subtree-size slice of the independent agencies' pool, and OMB's
+    // completed-year outlays for it are a twentieth of that. The estimate
+    // is still the cascade's honest arithmetic; the reader should know
+    // which figure to believe.
+    caveat += sourcedDisagreementNote(node);
+    const remainder = soleRemainderNote(node);
+    if (remainder) {
+      return { ...copy, note: remainder + caveat };
+    }
     return {
       ...copy,
       note: `Not a measured budget. Derived by dividing the parent's total, weighted by ${phrase}.${caveat}`,
     };
   }
   return copy;
+}
+
+let costParentData = null;
+
+function sourcedDisagreementNote(node) {
+  const estimate = toFiniteAmount(node.resolved_total_amount);
+  if (estimate === null || estimate <= 0) return "";
+  const candidates = [];
+  const omb = node.ombBudget;
+  if (omb && typeof omb === "object" && typeof omb.outlays === "number" && omb.outlays > 0) {
+    candidates.push([`OMB's FY${omb.fiscalYear} outlays for this unit`, omb.outlays]);
+  }
+  const fileA = node.usaspendingOutlays;
+  if (fileA && typeof fileA === "object" && typeof fileA.amount === "number" && fileA.amount > 0) {
+    candidates.push(["USAspending's gross outlays for this unit, fiscal year to date", fileA.amount]);
+  }
+  if (!candidates.length) return "";
+  const [label, figure] = candidates[0];
+  const ratio = estimate / figure;
+  if (ratio < 3 && ratio > 1 / 3) return "";
+  const times = ratio >= 1 ? `${ratio.toFixed(ratio >= 10 ? 0 : 1)}× larger` : `${(1 / ratio).toFixed(1 / ratio >= 10 ? 0 : 1)}× smaller`;
+  return ` A sourced figure disagrees: ${label} are ${formatApproximateCost(figure)}, and this estimate is ${times}. The estimate is a share of a pool divided among siblings; where the two differ this much, the sourced figure below is the one to read.`;
+}
+
+function soleRemainderNote(node) {
+  const parent = costParentData;
+  if (!parent || !Array.isArray(parent.children)) return null;
+  const siblings = parent.children.filter((c) => c && c.id !== node.id);
+  if (!siblings.length) return null;
+  const measured = siblings.filter((c) => ["official", "root_total"].includes(String(c.cost_status || "").toLowerCase()));
+  if (measured.length !== siblings.length) return null;
+  const parentAmount = toFiniteAmount(parent.resolved_total_amount);
+  const own = toFiniteAmount(node.resolved_total_amount);
+  if (parentAmount === null || own === null) return null;
+  const negatives = measured.filter((c) => (toFiniteAmount(c.resolved_total_amount) || 0) < 0);
+  let note =
+    `Not a measured budget: no Treasury line names this unit. It is the remainder of the parent's measured total after its measured siblings' lines are subtracted, and it is the only unmeasured sibling, so it takes the whole remainder.`;
+  if (own > parentAmount && negatives.length) {
+    note += ` It exceeds the parent's total because ${negatives.map((c) => `${c.name} (${formatApproximateCost(toFiniteAmount(c.resolved_total_amount))})`).join(", ")} ${negatives.length === 1 ? "is a negative line" : "are negative lines"} beside it: the parent's figure is net of those receipts, and this remainder is not.`;
+  }
+  return note;
 }
 
 function buildCostBlock(node) {
@@ -3954,7 +4027,12 @@ function renderInfoPanel(nodeObj) {
   }
 
   const statsFragment = document.createDocumentFragment();
+  // The parent's data, for the one estimate sentence that needs the
+  // siblings (soleRemainderNote). Read off the render node and never
+  // stored on the data, which the viewer copy would then carry.
+  costParentData = nodeObj && nodeObj.parent && nodeObj.parent.data ? nodeObj.parent.data : null;
   statsFragment.appendChild(buildCostBlock(data));
+  costParentData = null;
   const statRows = [];
   // The curated figure is uncited and mixes populations (civilians, uniformed
   // members, contractors); OPM's is sourced, dated, and civilians only. Both
@@ -3995,13 +4073,13 @@ function renderInfoPanel(nodeObj) {
     if (typeof omb.outlays === "number") {
       statRows.push([
         `OUTLAYS — OMB Public Budget Database (FY${omb.fiscalYear} actual; not the cost)`,
-        `$${Math.round(omb.outlays).toLocaleString()}`,
+        formatSignedWholeDollars(omb.outlays),
       ]);
     }
     if (typeof omb.budgetAuthority === "number") {
       statRows.push([
         `BUDGET AUTHORITY — OMB Public Budget Database (FY${omb.fiscalYear} actual)`,
-        `$${Math.round(omb.budgetAuthority).toLocaleString()}`,
+        formatSignedWholeDollars(omb.budgetAuthority),
       ]);
     }
   }

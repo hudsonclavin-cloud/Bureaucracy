@@ -154,6 +154,38 @@ loaded count is in the key now; and `getLabelDistanceScale`'s ceiling of 4
 left a far caption unreadable (14 under Whole). Cache stamp:
 `?v=20261014b`.
 
+**Presentation readiness (2026-10-14, slice 7).** The owner is showing this
+to a class; a pass over what a student clicking around would catch. Camera:
+the focus now sits in the UNCOVERED stage — `stageGeometry` reads the rail
+and the inspector off the DOM each frame and `stageShift` slides the picture
+so a selection is centred between them (it was centred in the canvas, so
+every Executive brood, laid down-right, landed under the inspector); the
+shift is applied to a copy, never to the lerped `orbitPosition`, because the
+first version compounded it twelve-fold through the 8% lerp and the LOD read
+the far-off camera as Office View. Selecting a node whose children are
+already on the stage frames the brood (`focusNode` → `frameBroodOf`), and
+both frame fits use the stage's width. A node nearer the camera than the
+focus no longer looms (`nearFactor` in `setNodeMatrix`): a sibling on the
+near side of a brood's shell drew as a disc three times its neighbour.
+Context cluster rings are half size and dimmer, and a ring's pixel ceiling
+fell 92 → 60. Panel: the Executive Branch's estimate (≈$7.15T under a $6.81T
+root) now says it is the one unmeasured sibling taking the whole remainder
+and names the −$358B receipts line that makes it exceed the parent, where it
+said "weighted by staff count" (`soleRemainderNote`); an estimate that a
+sourced figure contradicts by more than 3× says so beside it
+(`sourcedDisagreementNote` — the EAC's ≈$550M share against OMB's figure);
+OMB figures print with the sign leading; zero object-class rows are not
+printed; the reading guide has a "Five lenses" point. Known, left as is and
+worth saying to the class: the Executive Branch is `partial` (one document,
+whitehouse.gov; the Manual has no entry for a branch), "Deputy Secretary of
+Department of Commerce" is the one templated title no document in hand
+names, the CEA carries two nodes both named "Member, CEA", eight measured
+units publish negative net outlays as the Treasury prints them (GSA, TVA,
+FDIC, the Mint, the EOP…), and with the estimates box ticked the subtree-size
+shares under "Other Independent Agencies (25+)" are identical ≈$0.55B for
+units a twentieth of that — the box is off by default and the new caveat
+names the sourced figure. Cache stamp `?v=20261014c`.
+
 Left deliberately undone: a fiscal-anchor chip in the top bar (the figure
 lives in `#data-provenance`, computed from the graph — a static chip would
 go stale on the next statement); collapsing the long provenance prose
