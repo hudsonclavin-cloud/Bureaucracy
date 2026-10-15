@@ -229,10 +229,13 @@ crowded — was not built, because it would make a drawing choice look like a
 fact about the government. The smoke check samples 48 leaves, groups them by
 branch, asserts each branch's leaves sit on one shell (spread < 5) and that
 the shells order by leaf count. `docs/RESEARCH_PROMPT_5_DEEP_RESEARCH.md` is
-a hand-written deep-research prompt (Perplexity / GPT) in four sections —
-presentation, cash flow per branch, verification routes for every unsourced
-node, a pay document for every unpriced post — whose counts are as of this
-graph and are not test-pinned. Cache stamp `?v=20261015a`.
+four hand-written deep-research prompts (Perplexity / GPT): cash flow per
+branch, verification of unsourced units, verification of unsourced posts,
+and a pay document for every unpriced post. The first single-prompt version
+was declined by Perplexity for asking coverage counts without the node lists,
+so each prompt now names CSVs from `scripts/export_research_pack.py`
+(`output/research_pack/`, gitignored) to attach, and forbids estimated
+counts; `tests/test_export_research_pack.py` holds the lists to the graph. Cache stamp `?v=20261015a`.
 
 Left deliberately undone: a fiscal-anchor chip in the top bar (the figure
 lives in `#data-provenance`, computed from the graph — a static chip would
