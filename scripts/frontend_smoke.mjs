@@ -2137,6 +2137,22 @@ try {
     measurements.wholeLens = { ...cam, loaded: wholeLoaded, total: allNodes.length, settledAfterMs: Date.now() - wholeStart };
     // At least: the candidate toggle, when on, adds its unreviewed nodes.
     check("Whole loads the entire graph", wholeLoaded >= allNodes.length, `${wholeLoaded} of ${allNodes.length}`);
+    // The Whole lens lays the tree out as one sphere: every leaf on the
+    // crust, the root at the centre. Sampled from the served graph's leaves.
+    {
+      const leafIds = allNodes.filter((n) => !(n.children || []).length && String(n.lifecycle || "") !== "superseded").map((n) => n.id);
+      const sample = leafIds.filter((_, i) => i % Math.max(1, Math.floor(leafIds.length / 40)) === 0).slice(0, 40);
+      const radii = [];
+      for (const id of sample) {
+        const at = await page.evaluate((i) => window.__bureaucracy_node_screen__?.(i), id);
+        if (at) radii.push(Math.hypot(at.world.x, at.world.y, at.world.z));
+      }
+      const root = await page.evaluate(() => window.__bureaucracy_node_screen__?.("the-constitution-of-the-united-states"));
+      const spread = radii.length ? Math.max(...radii) - Math.min(...radii) : Infinity;
+      measurements.wholeSphere = { sampled: radii.length, minRadius: Math.round(Math.min(...radii)), maxRadius: Math.round(Math.max(...radii)), root: root && root.world };
+      check("Whole lays every sampled leaf on one sphere", radii.length >= 20 && spread < 5, JSON.stringify(measurements.wholeSphere));
+      check("Whole puts the Constitution at the sphere's centre", root && Math.hypot(root.world.x, root.world.y, root.world.z) < 1, JSON.stringify(root));
+    }
     check("Whole reports its own tier", cam && cam.lodLabel === "Whole Government", JSON.stringify(cam));
     check("Whole pulls the camera back past the ordinary floor", cam && cam.targetZoom < 0.28, JSON.stringify(cam));
     check("Whole draws nearly every node at once", cam && cam.drawn >= allNodes.length * 0.9, `${cam && cam.drawn} drawn of ${allNodes.length}`);
@@ -2146,6 +2162,8 @@ try {
       let posts = 0;
       const countWalk = (item) => {
         for (const child of item.children || []) {
+          // The Executive's two sectors are captioned as masses of their own.
+          if (child.id === "exec-independent" || child.id === "exec-regulatory") continue;
           if (isPost(child)) posts += 1;
           else if (!child.synthetic && !/treasury accounting line/i.test(String(child.type || ""))) units += 1;
           countWalk(child);
@@ -2162,6 +2180,15 @@ try {
     const backCam = await page.evaluate(() => window.__bureaucracy_camera__?.() || null);
     check("leaving Whole restores the distance tiers", backCam && backCam.lodLabel !== "Whole Government", JSON.stringify(backCam));
     check("leaving Whole lets the tiers thin the far view again", backCam && backCam.drawn < allNodes.length * 0.5, JSON.stringify(backCam));
+    // Back in Structure the sphere is undone: the independent establishments
+    // return to their own sector, out of the branches' plane on the
+    // Executive's side, and drawn in the independent green.
+    await page.waitForTimeout(1500);
+    const independent = await page.evaluate(() => window.__bureaucracy_node_screen__?.("exec-independent"));
+    measurements.independentSector = independent && independent.world;
+    check("leaving Whole restores the expansion layout", independent && Math.hypot(independent.world.x, independent.world.y, independent.world.z) < 400, JSON.stringify(independent));
+    check("the independent establishments sit out of the branches' plane, toward the viewer, on the Executive's side",
+      independent && independent.world.z > 60 && independent.world.x > 0, JSON.stringify(independent));
     const storedLens = await page.evaluate(() => { try { return JSON.parse(window.localStorage.getItem("bureaucracy-view-prefs-v1") || "{}").lens; } catch (e) { return null; } });
     check("Whole is never the remembered lens", storedLens !== "whole", String(storedLens));
 

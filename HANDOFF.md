@@ -186,6 +186,32 @@ shares under "Other Independent Agencies (25+)" are identical ≈$0.55B for
 units a twentieth of that — the box is off by default and the new caveat
 names the sourced figure. Cache stamp `?v=20261014c`.
 
+**The independent establishments, and Whole as a sphere (2026-10-14, slice
+8, the owner's ask).** "Independent Establishments & Government
+Corporations" swept across the Judiciary's sector as a reader orbited: its
+direction (−0.46, −0.68, 0.57) was blended a third of the way toward the
+Executive and again toward its anchor, landing it under the Constitution
+between the branches. It is now a sector of its own, `independent:
+(0.62, −0.28, 0.73)` — out of the branches' plane toward the viewer, on the
+Executive's side (straight +z was tried first and projected across the
+Constitution from the front) — with the regulatory commissions behind at
+−z; a sector root takes almost none of its parent's direction
+(`SECTOR_BRANCH_KEYS`). Its 49 units the curated file colours executive red
+draw independent green, and the regulatory commissions' two draw orange
+(`getNodeColor`, by id prefix; posts keep the grey). Under Whole the tree is
+laid out as one sphere (`applyWholeLayout`): an equal-area treemap in
+(longitude, height) — a rectangle's area there is its solid angle — split
+two ways by leaf count, so each branch and each Executive sector is one
+contiguous patch, every leaf on the crust at radius 760, every unit inside
+at a radius set by its depth, the Constitution at the centre. The forces
+are off while it stands, depth fog sinks the far hemisphere, it turns on its
+own until the reader takes hold of it and four seconds after they let go,
+captions sit over their own patch and rank branch > sector > root whatever
+is selected, and leaving Whole animates every node back to the layout it
+had (`restoreWholeLayout`). The smoke check samples 40 leaves (all at
+760) and reads the sector's position back in Structure. Cache stamp
+`?v=20261014d`.
+
 Left deliberately undone: a fiscal-anchor chip in the top bar (the figure
 lives in `#data-provenance`, computed from the graph — a static chip would
 go stale on the next statement); collapsing the long provenance prose

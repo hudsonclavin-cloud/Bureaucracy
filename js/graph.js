@@ -1,5 +1,5 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20261014c";
+import { createLodManager } from "./lodManager.js?v=20261014d";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
@@ -41,6 +41,11 @@ const FOCUS_FULL = new THREE.Color(1, 1, 1);
 // node with nothing to say under a lens is drawn dark rather than invented.
 // Structure is the default and is exactly the branch-hue drawing above.
 export const LENSES = ["structure", "money", "evidence", "pay", "whole"];
+// The two sectors beneath the Executive that are drawn as their own masses,
+// each in its own hue and out of the branches' plane.
+const SECTOR_BRANCH_KEYS = new Set(["independent", "regulatory"]);
+const SECTOR_ROOT_IDS = new Set(["exec-independent", "exec-regulatory"]);
+const EXECUTIVE_RED = "#c84a4a";
 // Whole: every node this graph carries, drawn at once in the branch hues,
 // so the three branches read as three masses. The LOD tiers exist to keep
 // a far camera from drawing 5,510 dots; this lens is the reader asking for
@@ -151,7 +156,19 @@ const branchSectorDirections = {
   legislative: new THREE.Vector3(-0.866, -0.5, 0.1).normalize(),
   executive: new THREE.Vector3(0.866, -0.5, 0.1).normalize(),
   judicial: new THREE.Vector3(0, 1, 0.1).normalize(),
-  independent: new THREE.Vector3(-0.46, -0.68, 0.57).normalize(),
+  // Independent Establishments sits OUT of the screen plane, toward the
+  // viewer, and the regulatory commissions behind it: both are the
+  // Executive's (so offset toward its side, +x), and neither may lie in
+  // the plane the three branches share. At (-0.46, -0.68, 0.57), blended
+  // a third of the way toward the Executive, the unit landed under the
+  // Constitution between the branches and swept across the Judiciary's
+  // sector as a reader orbited.
+  // Measured on the first try at (0.3, -0.22, 0.93): pointing almost
+  // straight at the camera, the unit sat between the camera and the
+  // focus and projected across the Constitution from the front. Tilted
+  // onto the Executive's own side, it stays out of the plane and on the
+  // Executive's half of the picture.
+  independent: new THREE.Vector3(0.62, -0.28, 0.73).normalize(),
   regulatory: new THREE.Vector3(0.58, -0.54, -0.61).normalize(),
   // The government-wide receipts line the Treasury nets against Total
   // Outlays sits beside the three branches, below the Constitution.
@@ -313,6 +330,8 @@ export function createGovernmentGraph({
     focusKey: "",
     lens: "structure",
     showEstimateFigures: false,
+    wholeLayoutApplied: false,
+    lastInteractionAt: 0,
     edgeBatch: null,
     allNodes: new Set(),
     allEdges: new Set(),
@@ -468,6 +487,20 @@ export function createGovernmentGraph({
 
   function getNodeColor(data) {
     if (typeof data?.color === "string" && data.color.length > 0) {
+      // A unit beneath the independent establishments or the regulatory
+      // commissions that the curated file coloured executive red takes its
+      // sector's hue, so the sector reads as one colour: 49 such units under
+      // the green Independent Establishments drew red among green siblings.
+      // Posts keep the position grey and Treasury lines their own colour.
+      if (data.color.toLowerCase() === EXECUTIVE_RED) {
+        const id = String(data.id || "").toLowerCase();
+        if (id.startsWith("exec-ind")) {
+          return branchColors.independent;
+        }
+        if (id.startsWith("exec-regulatory")) {
+          return branchColors.regulatory;
+        }
+      }
       return data.color;
     }
 
@@ -675,8 +708,15 @@ export function createGovernmentGraph({
     }
     let units = 0;
     let posts = 0;
+    let sectorsApart = 0;
     const walk = (node) => {
       for (const child of node.children || []) {
+        // A sector captioned on its own is not counted again in its
+        // branch's caption: the two captions describe two masses.
+        if (SECTOR_ROOT_IDS.has(String(child.id)) && !SECTOR_ROOT_IDS.has(String(data?.id))) {
+          sectorsApart += 1;
+          continue;
+        }
         if (isPostData(child)) {
           posts += 1;
         } else if (!isTreasuryLineData(child)) {
@@ -686,7 +726,7 @@ export function createGovernmentGraph({
       }
     };
     walk(data || {});
-    const parts = [`${units.toLocaleString("en-US")} units · ${posts.toLocaleString("en-US")} posts in this graph`];
+    const parts = [`${units.toLocaleString("en-US")} units · ${posts.toLocaleString("en-US")} posts in this graph${sectorsApart ? `, its ${sectorsApart} sectors captioned apart` : ""}`];
     const money = moneyVerdict(data || {});
     if (money.key === "measured") {
       parts.push(`${formatDollars(money.amount)} measured`);
@@ -718,7 +758,7 @@ export function createGovernmentGraph({
       let cursor = data;
       let guard = 0;
       while (cursor && guard < 64) {
-        if (cursor !== data && (normalizeClusterKey(cursor.type) === "branch" || !state.parentIdById.get(cursor.id))) {
+        if (cursor !== data && (normalizeClusterKey(cursor.type) === "branch" || SECTOR_ROOT_IDS.has(String(cursor.id)) || !state.parentIdById.get(cursor.id))) {
           hue = getNodeColor(cursor);
           break;
         }
@@ -814,6 +854,9 @@ export function createGovernmentGraph({
     if (next === state.lens) {
       return;
     }
+    if (state.lens === "whole" && next !== "whole") {
+      restoreWholeLayout();
+    }
     state.lens = next;
     // The far plane sits at 3,000 units, inside the distance the Whole
     // lens's zoom floor allows; pushed out while that lens is on, so the
@@ -829,11 +872,133 @@ export function createGovernmentGraph({
     refreshVisibility();
   }
 
+  // The Whole lens lays the tree out as one sphere you can turn in your
+  // hands, rather than the cones the expansion layout grows. Each node gets a
+  // patch of the sphere's surface — an equal-area treemap in (longitude,
+  // height) coordinates, where a rectangle's area is exactly its solid angle
+  // — in proportion to the leaves beneath it, so a branch or a sector is one
+  // contiguous region and the leaves (most of them posts) cover the surface
+  // evenly as its crust. A unit sits inside, along the centre of its patch,
+  // at a radius set by its depth, so the edges run outward like the spokes
+  // of a globe. A patch's area is this graph's count of leaves beneath the
+  // node — its depth of curation, which the key and the captions say — and
+  // never a figure.
+  const WHOLE_SPHERE_RADIUS = 760;
+
+  function applyWholeLayout() {
+    if (!state.rootObj) {
+      return;
+    }
+    const visibleChildren = (nodeObj) => (nodeObj.childObjs || []).filter((child) => child.visible);
+    const leaves = new Map();
+    let maxInternalDepth = 1;
+    const countLeaves = (nodeObj) => {
+      const kids = visibleChildren(nodeObj);
+      if (!kids.length) {
+        leaves.set(nodeObj, 1);
+        return 1;
+      }
+      maxInternalDepth = Math.max(maxInternalDepth, nodeObj.depth);
+      let total = 0;
+      for (const child of kids) {
+        total += countLeaves(child);
+      }
+      leaves.set(nodeObj, total);
+      return total;
+    };
+    countLeaves(state.rootObj);
+    const now = performance.now();
+    const moveTo = (nodeObj, x, y, z) => {
+      if (!nodeObj.wholeHome) {
+        nodeObj.wholeHome = nodeObj.targetPos.clone();
+      }
+      nodeObj.animFrom.copy(nodeObj.pos);
+      nodeObj.targetPos.set(x, y, z);
+      nodeObj.animStart = now;
+      nodeObj.animating = true;
+    };
+    const place = (nodeObj, lon0, lon1, h0, h1) => {
+      const lon = (lon0 + lon1) / 2;
+      const h = (h0 + h1) / 2;
+      const ring = Math.sqrt(Math.max(0, 1 - h * h));
+      const kids = visibleChildren(nodeObj);
+      const radius = nodeObj === state.rootObj
+        ? 0
+        : !kids.length
+          ? WHOLE_SPHERE_RADIUS
+          : WHOLE_SPHERE_RADIUS * 0.94 * Math.pow(nodeObj.depth / (maxInternalDepth + 1), 0.8);
+      moveTo(nodeObj, radius * ring * Math.cos(lon), radius * h, radius * ring * Math.sin(lon));
+      if (kids.length) {
+        split(kids, lon0, lon1, h0, h1);
+      }
+    };
+    // Split the sibling list into two halves of nearly equal leaf count and
+    // the patch along its longer side, recursively: a balanced binary
+    // treemap, which keeps 249 siblings from becoming 249 slivers.
+    const split = (list, lon0, lon1, h0, h1) => {
+      if (list.length === 1) {
+        place(list[0], lon0, lon1, h0, h1);
+        return;
+      }
+      const total = list.reduce((sum, nodeObj) => sum + leaves.get(nodeObj), 0);
+      let cut = 1;
+      let running = leaves.get(list[0]);
+      while (cut < list.length - 1 && running + leaves.get(list[cut]) / 2 < total / 2) {
+        running += leaves.get(list[cut]);
+        cut += 1;
+      }
+      const share = running / total;
+      const hMid = (h0 + h1) / 2;
+      const ring = Math.max(Math.sqrt(Math.max(0, 1 - hMid * hMid)), 0.2);
+      const wide = (lon1 - lon0) * ring >= (h1 - h0) / ring;
+      if (wide) {
+        const lonCut = lon0 + (lon1 - lon0) * share;
+        split(list.slice(0, cut), lon0, lonCut, h0, h1);
+        split(list.slice(cut), lonCut, lon1, h0, h1);
+      } else {
+        const hCut = h0 + (h1 - h0) * share;
+        split(list.slice(0, cut), lon0, lon1, h0, hCut);
+        split(list.slice(cut), lon0, lon1, hCut, h1);
+      }
+    };
+    place(state.rootObj, 0, Math.PI * 2, -1, 1);
+    state.wholeLayoutApplied = true;
+    state.renderDirty = true;
+    state.forceFullRenderRefresh = true;
+  }
+
+  // Back to the layout the expansion grew, for every node the sphere moved.
+  function restoreWholeLayout() {
+    if (!state.wholeLayoutApplied) {
+      return;
+    }
+    const now = performance.now();
+    for (const nodeObj of state.allNodes) {
+      if (!nodeObj.wholeHome) {
+        continue;
+      }
+      nodeObj.animFrom.copy(nodeObj.pos);
+      nodeObj.targetPos.copy(nodeObj.wholeHome);
+      nodeObj.wholeHome = null;
+      nodeObj.animStart = now;
+      nodeObj.animating = true;
+    }
+    state.wholeLayoutApplied = false;
+    state.renderDirty = true;
+    state.forceFullRenderRefresh = true;
+  }
+
   // Frame everything loaded: the Whole lens's camera, called by ui.js once
-  // the expansion it asked for has finished.
+  // the expansion it asked for has finished. The sphere is laid out first,
+  // so the frame fits the sphere and not the cones it replaces.
   function frameWhole() {
     if (!state.rootObj || state.flyMode) {
       return;
+    }
+    if (state.lens === "whole") {
+      applyWholeLayout();
+      state.camFocusTarget.set(0, 0, 0);
+      state.lastInteractionAt = 0;
     }
     frameSubtreeOf(state.rootObj, Infinity);
     // `frameSubtreeOf` fits the subtree to the camera's VERTICAL field over
@@ -858,8 +1023,11 @@ export function createGovernmentGraph({
     }
     const halfFov = THREE.MathUtils.degToRad(camera.fov) / 2;
     const aspect = width / Math.max(height, 1);
-    const verticalFit = (reach * 1.1) / Math.max(Math.tan(halfFov), 0.05);
-    const horizontalFit = (reach * 1.1) / Math.max(Math.tan(halfFov) * aspect * (usable / width), 0.05);
+    // 1.35, not 1.1: a sphere's silhouette subtends more than its radius
+    // does at the centre's distance, and the top bar covers the canvas's
+    // top 60px — at 1.1 the sphere's poles were clipped.
+    const verticalFit = (reach * 1.35) / Math.max(Math.tan(halfFov), 0.05);
+    const horizontalFit = (reach * 1.35) / Math.max(Math.tan(halfFov) * aspect * (usable / width), 0.05);
     const fitDistance = Math.max(verticalFit, horizontalFit);
     state.targetZoom = THREE.MathUtils.clamp(CAMERA_DISTANCE / Math.max(fitDistance, 1), minZoom(), 10);
     state.renderDirty = true;
@@ -958,6 +1126,9 @@ export function createGovernmentGraph({
       transparent: true,
       depthWrite: false,
       depthTest: false,
+      // A label is read, not placed in depth: the Whole lens's fog must not
+      // fade a caption that sits at the sphere's centre.
+      fog: false,
     });
     const sprite = new THREE.Sprite(material);
     sprite.visible = false;
@@ -1102,7 +1273,9 @@ export function createGovernmentGraph({
     const selected = state.selectedNode;
     const candidates = [];
     const subjects = [];
-    if (selected && !selected.isCluster && selected.renderVisible && !selected.clustered) {
+    // Under Whole the captions at the centre of each mass are the labels;
+    // a selection's brood badges would pile up in the sphere's middle.
+    if (selected && !selected.isCluster && selected.renderVisible && !selected.clustered && state.lens !== "whole") {
       if (!state.lod.haloNodeIds?.has(selected.data?.id)) {
         subjects.push({ nodeObj: selected, priority: 1_200_000 });
       }
@@ -1275,7 +1448,15 @@ export function createGovernmentGraph({
     });
     if (state.lens === "whole") {
       const manualDepth = Number.isFinite(state.manualDepthFilter) ? Math.min(state.manualDepthFilter, MAX_DEPTH) : MAX_DEPTH;
-      state.lod = { ...state.lod, ...WHOLE_LOD, visibleDepth: manualDepth };
+      // The two sectors are masses of their own on the sphere, so each gets
+      // a halo and a caption like a branch.
+      const haloNodeIds = new Set(state.lod.haloNodeIds || []);
+      for (const id of SECTOR_ROOT_IDS) {
+        if (state.nodeMap.has(id)) {
+          haloNodeIds.add(id);
+        }
+      }
+      state.lod = { ...state.lod, ...WHOLE_LOD, visibleDepth: manualDepth, haloNodeIds };
     }
     state.maxVisibleDepth = state.lod.visibleDepth;
     return state.lod;
@@ -2318,13 +2499,17 @@ export function createGovernmentGraph({
         : copyBranchBaseDirection(parentBranchKey, tempVecA);
     const branchBase = copyBranchBaseDirection(childBranchKey, tempVecB);
     const seeded = directionFromSeed(childSeed, parentObj.depth + 1);
+    // A sector of its own beneath a branch (the independent establishments,
+    // the regulatory commissions) keeps its own direction: blending it toward
+    // the Executive is what pulled it back into the branches' plane.
+    const opensSector = childBranchKey !== parentBranchKey && SECTOR_BRANCH_KEYS.has(childBranchKey);
 
     return tempVecC
       .copy(branchBase)
       // No blend toward the parent at depth 0: the sector triangle IS the
       // intended arrangement there, and pulling it toward the Constitution's +Y
       // axis only collapses it back toward the flat arc it replaced.
-      .lerp(parentDirection, parentObj.depth === 0 ? 0 : BRANCH_PARENT_BLEND)
+      .lerp(parentDirection, parentObj.depth === 0 ? 0 : opensSector ? 0.06 : BRANCH_PARENT_BLEND)
       .addScaledVector(seeded, childBranchKey === parentBranchKey ? 0.08 : 0.14)
       .normalize();
   }
@@ -2352,9 +2537,12 @@ export function createGovernmentGraph({
       const shellDirection = directionFromSeed(childSeed, depth);
       const branchDirection = getLayoutDirectionForChild(children[i], parentObj, childSeed).clone();
       getOrbitBasis(branchDirection);
+      const childOpensSector =
+        SECTOR_BRANCH_KEYS.has(resolveLayoutBranchKey(children[i], parentObj.layoutBranchKey || inferBranchKey(parentObj.data))) &&
+        !SECTOR_BRANCH_KEYS.has(parentObj.layoutBranchKey || inferBranchKey(parentObj.data));
       directionVec
         .copy(branchDirection)
-        .lerp(anchorDir, parentObj.depth > 0 ? 0.18 : 0.06)
+        .lerp(anchorDir, childOpensSector ? 0.02 : parentObj.depth > 0 ? 0.18 : 0.06)
         .addScaledVector(basisA, Math.cos(theta) * radial)
         .addScaledVector(basisB, Math.sin(theta) * radial)
         .addScaledVector(shellDirection, 0.12)
@@ -3452,11 +3640,13 @@ export function createGovernmentGraph({
       if (!nodeObj.renderVisible || nodeObj.culled || nodeObj.depth < 2) {
         continue;
       }
-      let cursor = nodeObj;
-      while (cursor && cursor.depth > 1) {
+      // The nearest captioned ancestor below the root: a branch, or one of
+      // the Executive's two sectors.
+      let cursor = nodeObj.parent;
+      while (cursor && cursor.depth > 0 && !state.lod.haloNodeIds?.has(cursor.data?.id)) {
         cursor = cursor.parent;
       }
-      if (!cursor) {
+      if (!cursor || cursor.depth === 0) {
         continue;
       }
       let entry = sums.get(cursor.data.id);
@@ -3470,7 +3660,15 @@ export function createGovernmentGraph({
     const centres = new Map();
     for (const [id, entry] of sums) {
       if (entry.count >= 8) {
-        centres.set(id, entry.sum.divideScalar(entry.count));
+        const centre = entry.sum.divideScalar(entry.count);
+        // On the sphere a patch's centroid sinks toward the middle, where
+        // every caption then fought over the same few pixels and the
+        // overlap pass dropped all but one. Push it out along its own
+        // direction, so each caption sits over its patch.
+        if (state.wholeLayoutApplied && centre.lengthSq() > 1) {
+          centre.normalize().multiplyScalar(WHOLE_SPHERE_RADIUS * 0.72);
+        }
+        centres.set(id, centre);
       }
     }
     return centres;
@@ -3505,6 +3703,15 @@ export function createGovernmentGraph({
       const labelScale = getLabelDistanceScale(haloLabel.sprite.position);
       haloLabel.sprite.scale.set(22 * labelScale, 7 * labelScale, 1);
       let priority = 50_000;
+      if (state.lens === "whole") {
+        // Under Whole the captions are the labels and the selection is
+        // incidental: a branch's caption first, then a sector's, then the
+        // root's, whatever is selected — with the old order a selected
+        // sector's caption knocked the Legislative Branch's off the sphere.
+        priority = nodeObj.depth === 1 ? 2_000_000 : massCentre ? 1_800_000 : 1_600_000;
+        labelCandidates.push({ sprite: haloLabel.sprite, priority });
+        continue;
+      }
       if (massCentre) {
         // The caption is what this lens is for: it wins over the root's.
         priority += 400_000;
@@ -3872,7 +4079,9 @@ export function createGovernmentGraph({
   }
 
   function applyWebForces() {
-    if (state.frame % 2 !== 0) {
+    // The sphere is an exact layout; the forces would pull each node back
+    // toward its expansion-layout shell.
+    if (state.frame % 2 !== 0 || state.wholeLayoutApplied) {
       return false;
     }
 
@@ -3992,6 +4201,13 @@ export function createGovernmentGraph({
 
     flushPendingExpansions();
 
+    // Under Whole the sphere turns slowly on its own until the reader takes
+    // hold of it, and again a few seconds after they let go — a presentation
+    // shows a sphere without anybody having to drag it.
+    if (state.wholeLayoutApplied && !state.flyMode && now - state.lastInteractionAt > 4000) {
+      state.targetRotY += Math.min(deltaSeconds, 0.05) * 0.12;
+      state.renderDirty = true;
+    }
     state.rotX += (state.targetRotX - state.rotX) * 0.07;
     state.rotY += (state.targetRotY - state.rotY) * 0.07;
     state.zoom += (state.targetZoom - state.zoom) * 0.07;
@@ -4024,6 +4240,18 @@ export function createGovernmentGraph({
       camera.lookAt(tempVecD.copy(state.camFocus).add(stageShiftVector));
     }
     camera.updateMatrixWorld();
+    // Depth fog on the sphere, so the far hemisphere sinks into the ink
+    // behind the near one instead of interleaving its colours with it.
+    if (state.wholeLayoutApplied) {
+      const centreDistance = camera.position.length();
+      if (!scene.fog) {
+        scene.fog = new THREE.Fog(0x0a0e14, 1, 2);
+      }
+      scene.fog.near = Math.max(1, centreDistance - WHOLE_SPHERE_RADIUS * 0.4);
+      scene.fog.far = centreDistance + WHOLE_SPHERE_RADIUS * 1.15;
+    } else if (scene.fog) {
+      scene.fog = null;
+    }
     updateLodState();
     ensureLodCoverage();
 
@@ -4081,6 +4309,7 @@ export function createGovernmentGraph({
     }
 
     if (event.buttons === 1 && state.isDragging) {
+      state.lastInteractionAt = performance.now();
       if (state.flyMode) {
         state.flyYawTarget += dx * 0.004 * FLY_TURN_MULTIPLIER;
         state.flyPitchTarget = THREE.MathUtils.clamp(
@@ -4112,6 +4341,7 @@ export function createGovernmentGraph({
 
   function attachEvents() {
     canvas.addEventListener("mousedown", (event) => {
+      state.lastInteractionAt = performance.now();
       state.isDragging = false;
       state.mouseDownPos = { x: event.clientX, y: event.clientY };
       state.prevMouse = { x: event.clientX, y: event.clientY };
@@ -4142,6 +4372,7 @@ export function createGovernmentGraph({
     canvas.addEventListener(
       "wheel",
       (event) => {
+        state.lastInteractionAt = performance.now();
         if (state.flyMode) {
           const forward = getForwardFromAngles(state.flyYaw, state.flyPitch, tempVecA);
           const zoomStep = event.deltaY > 0 ? -16 : 16;
@@ -4424,6 +4655,22 @@ export function createGovernmentGraph({
     // The lens's own verdict for a node, in the words the brood badge uses;
     // null under Structure. Exposed so the smoke check can compare the
     // picture with the data it is drawn from.
+    // Where a loaded node sits: world position and its projection to canvas
+    // pixels. Read-only, for the smoke check and layout measurements.
+    nodeScreenPosition(nodeId) {
+      const nodeObj = state.nodeMap.get(nodeId);
+      if (!nodeObj) {
+        return null;
+      }
+      const width = renderer.domElement.clientWidth || window.innerWidth;
+      const height = renderer.domElement.clientHeight || window.innerHeight;
+      const projected = nodeObj.pos.clone().project(camera);
+      return {
+        world: { x: nodeObj.pos.x, y: nodeObj.pos.y, z: nodeObj.pos.z },
+        screen: { x: (projected.x + 1) * width / 2, y: (1 - projected.y) * height / 2 },
+        drawn: Boolean(nodeObj.renderVisible && !nodeObj.culled && !nodeObj.clustered),
+      };
+    },
     lensVerdictFor(nodeId) {
       const data = state.dataMap.get(nodeId);
       if (!data) {

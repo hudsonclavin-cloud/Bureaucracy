@@ -4600,11 +4600,13 @@ graph.
 1–5 switch the universe between Structure (the branch-hue drawing), Money,
 Evidence, Pay and Whole. Whole is the far view the LOD tiers exist to
 thin, asked for on purpose: every node loaded and drawn at once at one
-screen size, coloured by its branch, the tiers, clustering and density cap
-set aside (`WHOLE_LOD`), the camera pulled back past the ordinary zoom
-floor and framed to the stage the chrome leaves, and a caption at the
-centre of each branch's mass giving this graph's own unit and post counts
-beneath it and the branch's measured figure. The key says in words that
+screen size, coloured by its branch or Executive sector, the tiers,
+clustering and density cap set aside (`WHOLE_LOD`), and — since slice 8 —
+laid out as one sphere (`applyWholeLayout`: an equal-area treemap by leaf
+count, leaves on the crust, units inside by depth, the Constitution at the
+centre; restored on leaving), turning on its own until touched, with a
+caption over each patch giving this graph's own unit and post counts
+beneath it and its measured figure. The key says in words that
 the mass is curation depth, not the government's size; a count is never a
 cost and the caption never invents one. A lens is a question, not a look: each of the three
 recolours every node from one published field through one reader in

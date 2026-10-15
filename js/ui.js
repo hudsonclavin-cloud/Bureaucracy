@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261014c";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261014c";
+import { createGovernmentGraph } from "./graph.js?v=20261014d";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261014d";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -412,10 +412,11 @@ function readingGuidePoints(count) {
       + `changing the data. Structure is the branch-hue drawing. Money colours and sizes by measured `
       + `figure — a post never takes a size, and an estimate takes a colour only when you tick the `
       + `estimates box. Evidence colours by verification status. Pay colours the posts by the kind of `
-      + `pay claim behind them, and a unit goes dark because a unit has no salary. Whole draws every `
-      + `node at once so the three branches read as three masses; their size there is how deeply `
-      + `this graph is curated, not how big the government is, which is why each mass is captioned `
-      + `with its counts and its measured figure.`,
+      + `pay claim behind them, and a unit goes dark because a unit has no salary. Whole lays every `
+      + `node out as one sphere you can turn — the Constitution at the centre, posts on the surface, `
+      + `each branch and the Executive's two sectors a patch of their own; a patch's size is how deeply `
+      + `this graph is curated, not how big the government is, which is why each is captioned with its `
+      + `counts and its measured figure.`,
     ],
   ];
 }
@@ -850,7 +851,7 @@ const LENS_LEGENDS = {
   whole: {
     label: "Branch",
     items: null,
-    note: "Every node this graph carries, drawn at once. A branch's mass here is this graph's depth of curation, not the government's size — the Defense Department is drawn to the office, most bureaus as a six-post sketch. The caption under each branch carries its measured figure, which is.",
+    note: "Every node this graph carries, laid out as one sphere: the Constitution at the centre, units inside, posts on the surface, each branch and the Executive's two sectors a patch of their own. Drag to turn it; it turns itself when left alone. A patch's size is this graph's depth of curation, not the government's size — the caption over each patch carries its measured figure, which is.",
   },
   pay: {
     label: "Pay claim",
@@ -4715,6 +4716,7 @@ async function initGraphApp() {
   window.__bureaucracy_lens_verdict__ = (nodeId) => state.graph?.lensVerdictFor?.(nodeId) || null;
   // How many expansions are still queued, so a check can wait for the boot
   // expansion to finish before it measures what a button added.
+  window.__bureaucracy_node_screen__ = (nodeId) => state.graph?.nodeScreenPosition?.(nodeId) || null;
   window.__bureaucracy_loaded_node_ids__ = () => state.graph?.getLoadedNodeIds?.() || [];
   window.__bureaucracy_camera__ = () => { const st = state.graph?.getStats?.() || {}; return { zoom: st.zoom, targetZoom: st.targetZoom, lodLabel: st.lodLabel, drawn: st.drawnNodeCount }; };
   window.__bureaucracy_pending_expansions__ = () => Number(state.graph?.getStats?.().pendingExpansions || 0);
