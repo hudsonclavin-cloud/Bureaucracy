@@ -4604,7 +4604,12 @@ screen size, coloured by its branch or Executive sector, the tiers,
 clustering and density cap set aside (`WHOLE_LOD`), and — since slice 8 —
 laid out as one sphere (`applyWholeLayout`: an equal-area treemap by leaf
 count, leaves on the crust, units inside by depth, the Constitution at the
-centre; restored on leaving), turning on its own until touched, with a
+centre; restored on leaving — and since 2026-10-15 the crust in relief,
+`WHOLE_SPHERE_RADIUS` 1,080 scaled per branch by `1 − WHOLE_RELIEF +
+WHOLE_RELIEF·√(its share of the leaves against the largest branch's)`, so
+the largest patch stands farthest out; an equal-area treemap makes density
+per unit of crust uniform by construction, so area and height are the two
+things that vary and both are leaf count), turning on its own until touched, with a
 caption over each patch giving this graph's own unit and post counts
 beneath it and its measured figure. The key says in words that
 the mass is curation depth, not the government's size; a count is never a

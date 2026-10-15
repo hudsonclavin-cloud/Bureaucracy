@@ -1,5 +1,5 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20261014d";
+import { createLodManager } from "./lodManager.js?v=20261015a";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
@@ -883,7 +883,15 @@ export function createGovernmentGraph({
   // of a globe. A patch's area is this graph's count of leaves beneath the
   // node — its depth of curation, which the key and the captions say — and
   // never a figure.
-  const WHOLE_SPHERE_RADIUS = 760;
+  //
+  // The crust is not one radius. Each branch's patch sits at a radius set by
+  // the branch's share of the graph's leaves (`WHOLE_RELIEF`: the largest
+  // branch at the full radius, the others drawn in proportionally), so the
+  // globe carries the same count a second way, as relief — the Executive's
+  // mass stands out from the sphere and the Judiciary's sits in. Both are
+  // this graph's depth of curation, which the key says.
+  const WHOLE_SPHERE_RADIUS = 1080;
+  const WHOLE_RELIEF = 0.2;
 
   function applyWholeLayout() {
     if (!state.rootObj) {
@@ -907,6 +915,24 @@ export function createGovernmentGraph({
       return total;
     };
     countLeaves(state.rootObj);
+    // Relief: a branch's crust radius from its share of the leaves. Only the
+    // root's own children carry a factor; every node beneath takes its
+    // branch's, so a patch is one continuous shell and the edges inside it
+    // stay radial.
+    const branchFactor = new Map();
+    const branches = visibleChildren(state.rootObj);
+    const largest = branches.reduce((most, child) => Math.max(most, leaves.get(child) || 0), 0) || 1;
+    for (const child of branches) {
+      const share = (leaves.get(child) || 0) / largest;
+      branchFactor.set(child, 1 - WHOLE_RELIEF + WHOLE_RELIEF * Math.sqrt(share));
+    }
+    const reliefOf = (nodeObj) => {
+      let walker = nodeObj;
+      while (walker && walker.parent && walker.parent !== state.rootObj) {
+        walker = walker.parent;
+      }
+      return (walker && branchFactor.get(walker)) || 1;
+    };
     const now = performance.now();
     const moveTo = (nodeObj, x, y, z) => {
       if (!nodeObj.wholeHome) {
@@ -922,11 +948,12 @@ export function createGovernmentGraph({
       const h = (h0 + h1) / 2;
       const ring = Math.sqrt(Math.max(0, 1 - h * h));
       const kids = visibleChildren(nodeObj);
+      const shell = WHOLE_SPHERE_RADIUS * (nodeObj === state.rootObj ? 1 : reliefOf(nodeObj));
       const radius = nodeObj === state.rootObj
         ? 0
         : !kids.length
-          ? WHOLE_SPHERE_RADIUS
-          : WHOLE_SPHERE_RADIUS * 0.94 * Math.pow(nodeObj.depth / (maxInternalDepth + 1), 0.8);
+          ? shell
+          : shell * 0.94 * Math.pow(nodeObj.depth / (maxInternalDepth + 1), 0.8);
       moveTo(nodeObj, radius * ring * Math.cos(lon), radius * h, radius * ring * Math.sin(lon));
       if (kids.length) {
         split(kids, lon0, lon1, h0, h1);

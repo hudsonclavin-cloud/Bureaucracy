@@ -130,10 +130,13 @@ try {
   const allNodes = [];
   // Each node is stamped with its depth (a harness-side field, never
   // published) so the deep-link checks below can say what they expect.
-  const walkGraph = (node, depth = 0) => {
+  const walkGraph = (node, depth = 0, branch = null) => {
     node.__depth = depth;
+    // The root's own child above the node: the Whole sphere's relief is per
+    // branch, and the check below samples leaves branch by branch.
+    node.__branch = depth === 1 ? node.id : branch;
     allNodes.push(node);
-    for (const child of node.children || []) walkGraph(child, depth + 1);
+    for (const child of node.children || []) walkGraph(child, depth + 1, node.__branch);
   };
   walkGraph(graphJson);
   const subtreeSizeOf = (node) => {
@@ -2137,20 +2140,38 @@ try {
     measurements.wholeLens = { ...cam, loaded: wholeLoaded, total: allNodes.length, settledAfterMs: Date.now() - wholeStart };
     // At least: the candidate toggle, when on, adds its unreviewed nodes.
     check("Whole loads the entire graph", wholeLoaded >= allNodes.length, `${wholeLoaded} of ${allNodes.length}`);
-    // The Whole lens lays the tree out as one sphere: every leaf on the
-    // crust, the root at the centre. Sampled from the served graph's leaves.
+    // The Whole lens lays the tree out as one globe: every leaf on its
+    // branch's crust, the root at the centre, and the crust in relief — the
+    // branch with the most leaves at the full radius, the others drawn in by
+    // their share. Sampled from the served graph's leaves, branch by branch:
+    // within a branch every leaf sits at one radius, and the largest
+    // branch's radius is the largest.
     {
-      const leafIds = allNodes.filter((n) => !(n.children || []).length && String(n.lifecycle || "") !== "superseded").map((n) => n.id);
-      const sample = leafIds.filter((_, i) => i % Math.max(1, Math.floor(leafIds.length / 40)) === 0).slice(0, 40);
-      const radii = [];
-      for (const id of sample) {
-        const at = await page.evaluate((i) => window.__bureaucracy_node_screen__?.(i), id);
-        if (at) radii.push(Math.hypot(at.world.x, at.world.y, at.world.z));
+      const leafNodes = allNodes.filter((n) => n.__branch && !(n.children || []).length && String(n.lifecycle || "") !== "superseded");
+      const leafCountByBranch = new Map();
+      for (const leaf of leafNodes) leafCountByBranch.set(leaf.__branch, (leafCountByBranch.get(leaf.__branch) || 0) + 1);
+      const sample = leafNodes.filter((_, i) => i % Math.max(1, Math.floor(leafNodes.length / 48)) === 0).slice(0, 48);
+      const radiiByBranch = new Map();
+      for (const leaf of sample) {
+        const at = await page.evaluate((i) => window.__bureaucracy_node_screen__?.(i), leaf.id);
+        if (!at) continue;
+        if (!radiiByBranch.has(leaf.__branch)) radiiByBranch.set(leaf.__branch, []);
+        radiiByBranch.get(leaf.__branch).push(Math.hypot(at.world.x, at.world.y, at.world.z));
       }
       const root = await page.evaluate(() => window.__bureaucracy_node_screen__?.("the-constitution-of-the-united-states"));
-      const spread = radii.length ? Math.max(...radii) - Math.min(...radii) : Infinity;
-      measurements.wholeSphere = { sampled: radii.length, minRadius: Math.round(Math.min(...radii)), maxRadius: Math.round(Math.max(...radii)), root: root && root.world };
-      check("Whole lays every sampled leaf on one sphere", radii.length >= 20 && spread < 5, JSON.stringify(measurements.wholeSphere));
+      const shells = {};
+      let sampled = 0;
+      let worstSpread = 0;
+      for (const [branch, radii] of radiiByBranch) {
+        sampled += radii.length;
+        worstSpread = Math.max(worstSpread, Math.max(...radii) - Math.min(...radii));
+        shells[branch] = { leaves: leafCountByBranch.get(branch), radius: Math.round(Math.min(...radii)) };
+      }
+      const ordered = Object.values(shells).sort((a, b) => b.leaves - a.leaves);
+      const reliefHolds = ordered.length >= 2 && ordered.every((shell, i) => i === 0 || shell.radius <= ordered[i - 1].radius) && ordered[0].radius > ordered[ordered.length - 1].radius;
+      measurements.wholeSphere = { sampled, worstSpread: Math.round(worstSpread * 10) / 10, shells, root: root && root.world };
+      check("Whole lays every sampled leaf on its branch's shell", sampled >= 20 && worstSpread < 5, JSON.stringify(measurements.wholeSphere));
+      check("Whole's relief follows each branch's leaf count", reliefHolds, JSON.stringify(shells));
       check("Whole puts the Constitution at the sphere's centre", root && Math.hypot(root.world.x, root.world.y, root.world.z) < 1, JSON.stringify(root));
     }
     check("Whole reports its own tier", cam && cam.lodLabel === "Whole Government", JSON.stringify(cam));

@@ -208,9 +208,31 @@ are off while it stands, depth fog sinks the far hemisphere, it turns on its
 own until the reader takes hold of it and four seconds after they let go,
 captions sit over their own patch and rank branch > sector > root whatever
 is selected, and leaving Whole animates every node back to the layout it
-had (`restoreWholeLayout`). The smoke check samples 40 leaves (all at
-760) and reads the sector's position back in Structure. Cache stamp
-`?v=20261014d`.
+had (`restoreWholeLayout`). The smoke check samples leaves by branch and
+reads the sector's position back in Structure.
+
+**The globe in relief (2026-10-15, slice 9, the owner's ask: "the radius of
+the sphere should be expanded to show the true density of certain
+branches").** `WHOLE_SPHERE_RADIUS` 760 → 1,080, so the crust breathes at
+the same frame, and the crust is no longer one radius: each of the root's
+children takes a factor `1 − WHOLE_RELIEF + WHOLE_RELIEF·√(share)` of its
+share of the leaves against the largest branch's (`WHOLE_RELIEF = 0.2`), and
+every node beneath it takes its branch's, so the Executive's patch stands at
+the full radius and the Judiciary's sits in — the same leaf count the patch
+area already carries, shown a second way. Note the honesty limit: an
+equal-area treemap puts one leaf per equal patch of crust by construction,
+so node density per unit of surface is uniform everywhere; what varies
+between branches is patch AREA and now HEIGHT, both this graph's curation
+depth, and the lens note and the reading guide say so. The alternative —
+equal angular lunes per branch, under which the Executive would read as
+crowded — was not built, because it would make a drawing choice look like a
+fact about the government. The smoke check samples 48 leaves, groups them by
+branch, asserts each branch's leaves sit on one shell (spread < 5) and that
+the shells order by leaf count. `docs/RESEARCH_PROMPT_5_DEEP_RESEARCH.md` is
+a hand-written deep-research prompt (Perplexity / GPT) in four sections —
+presentation, cash flow per branch, verification routes for every unsourced
+node, a pay document for every unpriced post — whose counts are as of this
+graph and are not test-pinned. Cache stamp `?v=20261015a`.
 
 Left deliberately undone: a fiscal-anchor chip in the top bar (the figure
 lives in `#data-provenance`, computed from the graph — a static chip would

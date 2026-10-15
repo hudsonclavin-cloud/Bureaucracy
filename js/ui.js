@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261014d";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261014d";
+import { createGovernmentGraph } from "./graph.js?v=20261015a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261015a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -414,7 +414,8 @@ function readingGuidePoints(count) {
       + `estimates box. Evidence colours by verification status. Pay colours the posts by the kind of `
       + `pay claim behind them, and a unit goes dark because a unit has no salary. Whole lays every `
       + `node out as one sphere you can turn — the Constitution at the centre, posts on the surface, `
-      + `each branch and the Executive's two sectors a patch of their own; a patch's size is how deeply `
+      + `each branch and the Executive's two sectors a patch of their own, and the crust in relief, the `
+      + `branch with the most nodes standing farthest out; a patch's size and height are how deeply `
       + `this graph is curated, not how big the government is, which is why each is captioned with its `
       + `counts and its measured figure.`,
     ],
@@ -851,7 +852,7 @@ const LENS_LEGENDS = {
   whole: {
     label: "Branch",
     items: null,
-    note: "Every node this graph carries, laid out as one sphere: the Constitution at the centre, units inside, posts on the surface, each branch and the Executive's two sectors a patch of their own. Drag to turn it; it turns itself when left alone. A patch's size is this graph's depth of curation, not the government's size — the caption over each patch carries its measured figure, which is.",
+    note: "Every node this graph carries, laid out as one sphere: the Constitution at the centre, units inside, posts on the surface, each branch and the Executive's two sectors a patch of their own, the crust in relief so the branch with the most nodes stands farthest out. Drag to turn it; it turns itself when left alone. A patch's size and height are this graph's depth of curation, not the government's size — the caption over each patch carries its measured figure, which is.",
   },
   pay: {
     label: "Pay claim",
