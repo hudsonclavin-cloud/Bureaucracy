@@ -35,11 +35,38 @@ half of the fiscal year. The graph's measured figures are the Treasury's net
 outlays for the fiscal year to date, and a committee has none of its own. The
 two never share a field, a period or a sentence.
 
-**Committees only.** The owner's decision of 2026-10-07: "committees only,
-subcommittees will mostly read 'parent only'." Neither document prints a
-subcommittee by name -- a committee's staff and accounts are the committee's
--- so a subcommittee is never given a figure, and the block is refused on any
-node not typed Committee.
+**Committees, and the House's own officers (since 2026-10-20).** The owner's
+decision of 2026-10-07: "committees only, subcommittees will mostly read
+'parent only'." Neither document prints a subcommittee by name -- a
+committee's staff and accounts are the committee's -- so a subcommittee is
+never given a figure. The House's summary file also prints an organisation
+for each of the House's own officers and support offices -- "CLERK OF THE
+HOUSE", "SERGEANT AT ARMS", "CHIEF ADMIN OFCR OF THE HOUSE", "LEGISLATIVE
+COUNSEL", "OFFICE OF ATTENDING PHYSICIAN", "OFFICE OF INSPECTOR GENERAL",
+"OFFICE OF THE PARLIAMENTARIAN" -- which this graph carries as nodes typed
+Office under "House Administrative Offices" (`leg-house-admin`), each
+publishing only an apportioned share of the House's pool by subtree size: six
+of the eight at an identical figure, because each is a sketch of one node. The
+fifth deep-research pass (CURATION.md §22) named three of them as reached by
+the House's detail file; the committed SUMMARY file already prints them, and
+no person is read. So the block sits on a House officer office too, under a
+reviewed row only (`HOUSE_OFFICE_ROWS`: the statement's labels do not reduce
+to the graph's names), and only where the node is typed Office and its tree
+parent is `leg-house-admin`; the gate mirrors both. The House Chaplain is
+printed nowhere in the file and takes an implied weight from its siblings.
+
+A House officer's organisation is printed in a different shape from a
+committee's: an OFFICE TOTALS line closes a RUN of programs (the Chief
+Administrative Officer's first office is fifty programs long), where a
+committee's each program is an office of its own. For an officer office the
+loader reads the runs (`offices` on each organisation), requires each OFFICE
+TOTALS figure to equal the sum of its run's program totals to the cent in the
+quarter column -- it does, for all 544 organisations in the file -- and the
+record's components are the OFFICE TOTALS lines, each naming the programs
+it closes. The quarter column is the one read; the file's year-to-date column
+is not (its period is printed nowhere in the file), and on one line the CAO's
+year-to-date office total differs from its programs' by three cents, which the
+quarter column does not.
 
 **Each figure is a sum of totals the chamber prints.** Neither document prints
 one total per committee for the period:
@@ -129,6 +156,10 @@ HOUSE_SOURCE_TYPE = "house_statement_of_disbursements"
 SENATE_SOURCE_TYPE = "senate_secretary_report"
 HOUSE_ROOT_ID = "leg-house"
 SENATE_ROOT_ID = "leg-senate"
+#: The House's own officers and support offices sit here, typed Office.
+HOUSE_OFFICE_PARENT_ID = "leg-house-admin"
+UNIT_COMMITTEE = "committee"
+UNIT_OFFICE = "house_officer_office"
 
 HOUSE_DOCUMENT_TITLE = "Statement of Disbursements of the House"
 SENATE_DOCUMENT_TITLE = "Report of the Secretary of the Senate"
@@ -284,6 +315,77 @@ REVIEWED_ROWS: dict[str, dict[str, Any]] = {
     },
 }
 
+#: The House's officers and support offices, keyed by node id: nodes typed
+#: Office under `leg-house-admin`, each reached by a reviewed row only. No
+#: name rule reaches them -- the statement abbreviates ("CHIEF ADMIN OFCR OF
+#: THE HOUSE") or drops the office word ("SERGEANT AT ARMS", "LEGISLATIVE
+#: COUNSEL") -- and the committee fold is granted to committees alone. Every
+#: label is re-checked against the file and every node against its name on
+#: every run. Not here, and why: the House Chaplain, which the file prints
+#: nowhere; and "OFFICE OF GENERAL COUNSEL", which the fifth research pass
+#: matched to `leg-house-counsel` -- that node is the Office of the
+#: LEGISLATIVE Counsel, which the file prints separately as "LEGISLATIVE
+#: COUNSEL", and the House's General Counsel has no node in this graph.
+HOUSE_OFFICE_ROWS: dict[str, dict[str, Any]] = {
+    "leg-house-clerk": {
+        "name": "Clerk of the House",
+        "labels": ("FISCAL YEAR 2026 CLERK OF THE HOUSE",),
+        "basis": "The statement prints the Clerk's organisation under the office's own title; the House has "
+                 "one Clerk, and 2 U.S.C. 104a makes the Clerk's accounts part of the statement.",
+    },
+    "leg-house-saa": {
+        "name": "Sergeant at Arms of the House",
+        "labels": ("FISCAL YEAR 2026 SERGEANT AT ARMS",),
+        "basis": "The statement prints the office by its title alone, without 'of the House'; the House "
+                 "has one Sergeant at Arms, and the statement is the House's own.",
+    },
+    "leg-house-cao": {
+        "name": "Chief Administrative Officer",
+        "labels": ("FISCAL YEAR 2026 CHIEF ADMIN OFCR OF THE HOUSE",),
+        "basis": "The statement abbreviates the office's title ('ADMIN OFCR'); the House has one Chief "
+                 "Administrative Officer, who publishes the statement. The file also prints House-wide "
+                 "accounts the CAO runs as organisations of their own (telecommunications, acquisitions, "
+                 "the recording studio); the row claims the CAO's own organisation only and the caveat says so.",
+        "caveat": "The statement prints House-wide accounts the Chief Administrative Officer runs as "
+                  "organisations of their own, and those are not in this figure; it is what the quarter "
+                  "charged to the officer's own organisation.",
+    },
+    "leg-house-parliamentarian": {
+        "name": "Office of the Parliamentarian",
+        "labels": ("FISCAL YEAR 2026 OFFICE OF THE PARLIAMENTARIAN",),
+        "basis": "The statement prints the office's own name. (Its one office total, read in thousands, "
+                 "would not exceed the statement's marked quarter, so the scale rule refuses the record; "
+                 "the row stands as the identification and the derive report records the refusal.)",
+    },
+    "leg-house-counsel": {
+        "name": "Office of the Legislative Counsel",
+        "labels": ("FISCAL YEAR 2026 LEGISLATIVE COUNSEL",),
+        "basis": "The statement prints the office without 'Office of the'; it prints the House's General "
+                 "Counsel as a separate organisation ('OFFICE OF GENERAL COUNSEL'), which is not this node.",
+    },
+    "leg-house-physician": {
+        "name": "Office of the Attending Physician",
+        "labels": ("FISCAL YEAR 2026 OFFICE OF ATTENDING PHYSICIAN",),
+        "basis": "The statement prints the office's name without the article. The Attending Physician "
+                 "serves both chambers; this is what the House's statement paid for the office, and the "
+                 "Senate's report is not read for it.",
+    },
+    "leg-house-ig": {
+        "name": "Inspector General of the House",
+        "labels": ("FISCAL YEAR 2026 OFFICE OF INSPECTOR GENERAL",),
+        "basis": "The statement prints the office as 'Office of Inspector General'; it is the House's own "
+                 "statement, so the office is the House's, and the House has one Inspector General.",
+    },
+}
+
+#: The caveat every officer-office record carries, before any row's own.
+HOUSE_OFFICE_CAVEAT = (
+    "The statement's summary file lists the office's current-year organisation only. Disbursements the "
+    "quarter charged to the office's earlier-year accounts are printed in the signed volumes beside named "
+    "payees and are not in this figure. An OFFICE TOTALS line in the file closes a run of programs, and "
+    "the figure is the sum of those lines, each checked against its programs' printed totals to the cent."
+)
+
 
 class Unreadable(RuntimeError):
     """A committed document is not the one this module was written against."""
@@ -403,16 +505,34 @@ def load_house_statement() -> dict[str, Any]:
     if tuple(header) != HOUSE_COLUMNS:
         raise Unreadable(f"the summary file's columns are {header}")
     organisations: dict[str, dict[str, Any]] = {}
+    # An OFFICE TOTALS line closes a run of programs: for a committee each
+    # run is one program, for a House officer's organisation it can be fifty.
+    # `offices` keeps the runs in file order, each with the program totals it
+    # closes, so the office route can check the printed office total against
+    # them; the committee route keeps reading `programs` as before.
+    run: list[dict[str, Any]] = []
+    run_org: str | None = None
     for row_number, row in enumerate(raw_rows[1:], start=2):
         if len(row) != len(HOUSE_COLUMNS):
             raise Unreadable(f"row {row_number} has {len(row)} cells")
         org, program, description, ytd, qtd = (cell.strip() for cell in row)
-        entry = organisations.setdefault(org, {"programs": {}})
+        entry = organisations.setdefault(org, {"programs": {}, "offices": []})
         program_entry = entry["programs"].setdefault(program, {"officeTotals": [], "programTotals": []})
+        if org != run_org:
+            if run:
+                raise Unreadable(f"row {row_number}: {run_org!r} ends without an OFFICE TOTALS line")
+            run_org = org
         if description == HOUSE_OFFICE_TOTAL:
-            program_entry["officeTotals"].append({"row": row_number, "ytd": ytd, "qtd": qtd, "printed": ",".join(row).rstrip()})
+            office = {"row": row_number, "ytd": ytd, "qtd": qtd, "printed": ",".join(row).rstrip()}
+            program_entry["officeTotals"].append(office)
+            entry["offices"].append({"closingProgram": program, "row": row_number, "qtd": qtd,
+                                     "printed": office["printed"], "programs": run})
+            run = []
         elif description == f"{program} TOTALS:":
             program_entry["programTotals"].append({"row": row_number, "qtd": qtd})
+            run.append({"program": program, "row": row_number, "qtd": qtd})
+    if run:
+        raise Unreadable(f"{run_org!r} ends without an OFFICE TOTALS line")
     return {
         "csv": csv_meta, "pdf": pdf_meta, "landing": landing_meta, "glossary": glossary_meta,
         "period": {
@@ -484,6 +604,17 @@ def chamber_committees(node_map: Mapping[str, Mapping[str, Any]], parent_map: Ma
     return out
 
 
+def house_officer_offices(node_map: Mapping[str, Mapping[str, Any]], parent_map: Mapping[str, Any]) -> dict[str, Mapping[str, Any]]:
+    """Nodes typed Office whose tree parent is the House's administrative
+    grouping: the House's officers and support offices, and nothing else."""
+    return {
+        node_id: node for node_id, node in node_map.items()
+        if str(node.get("type") or "").strip().casefold() == "office"
+        and parent_map.get(node_id) == HOUSE_OFFICE_PARENT_ID
+        and not node.get("synthetic")
+    }
+
+
 def _auto_match(labels: dict[str, str], committees: Mapping[str, Mapping[str, Any]],
                 claimed: set[str], report: dict[str, Any]) -> dict[str, list[tuple[str, str]]]:
     """label -> node by the two existing rules, one to one or nothing."""
@@ -510,9 +641,9 @@ def _auto_match(labels: dict[str, str], committees: Mapping[str, Mapping[str, An
 
 
 def _shared(node_id: str, node: Mapping[str, Any], chamber: str, document: dict[str, Any], period: dict[str, Any],
-            labels: list[str], rule: str, basis: str | None) -> dict[str, Any]:
+            labels: list[str], rule: str, basis: str | None, unit_kind: str = UNIT_COMMITTEE) -> dict[str, Any]:
     record = {
-        "nodeId": node_id, "nodeName": node.get("name"), "chamber": chamber,
+        "nodeId": node_id, "nodeName": node.get("name"), "chamber": chamber, "unitKind": unit_kind,
         "costBasis": BASIS, "document": document, "period": period,
         "listedNames": labels, "matchRule": rule,
         "scopeMatch": "proxy", "financialEvidenceStatus": "partial",
@@ -523,6 +654,7 @@ def _shared(node_id: str, node: Mapping[str, Any], chamber: str, document: dict[
 
 
 def _finish(record: dict[str, Any], components: list[dict[str, Any]], zeros: list[dict[str, Any]]) -> dict[str, Any]:
+    unit = "office" if record.get("unitKind") == UNIT_OFFICE else "committee"
     total_cents = sum(round(c["amount"] * 100) for c in components)
     record["components"] = components
     record["zeroComponents"] = zeros
@@ -531,13 +663,13 @@ def _finish(record: dict[str, Any], components: list[dict[str, Any]], zeros: lis
     record["documentsStatingTheFigure"] = 1 if len(components) == 1 else 0
     record["arithmetic"] = {
         "operation": "sum_of_printed_totals",
-        "note": ("The figure is the one total the document prints for this committee."
+        "note": (f"The figure is the one total the document prints for this {unit}."
                  if len(components) == 1 else
-                 f"The document prints no single total for this committee; the figure is the sum of the "
+                 f"The document prints no single total for this {unit}; the figure is the sum of the "
                  f"{len(components)} totals it prints, each listed with its printed text."),
     }
     record["notTheCost"] = (
-        "Cash the chamber's disbursing office paid out for the committee's account over the period. It is "
+        f"Cash the chamber's disbursing office paid out for the {unit}'s account over the period. It is "
         "not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
     )
     return record
@@ -553,11 +685,18 @@ def build_house_records(node_map, parent_map, statement=None) -> tuple[dict[str,
         parsed = HOUSE_ORG.match(org)
         if parsed:
             labels[org] = parsed.group(2)
+    offices = house_officer_offices(node_map, parent_map)
+    report["officer_offices_in_graph"] = len(offices)
     claimed = {label for row in REVIEWED_ROWS.values() if row["chamber"] == "house" for label in row["labels"]}
+    claimed |= {label for row in HOUSE_OFFICE_ROWS.values() for label in row["labels"]}
     reached = _auto_match(labels, committees, claimed, report)
     for node_id, row in REVIEWED_ROWS.items():
         if row["chamber"] != "house":
             continue
+        reached[node_id] = [(label, "reviewed_row") for label in row["labels"]]
+    for node_id, row in HOUSE_OFFICE_ROWS.items():
+        if node_id in reached:
+            raise Unreadable(f"{node_id} is in both reviewed tables")
         reached[node_id] = [(label, "reviewed_row") for label in row["labels"]]
     document = {"title": HOUSE_DOCUMENT_TITLE, "file": statement["csv"]["file"], "url": statement["csv"]["url"],
                 "sha256": statement["csv"]["sha256"], "fetchedAt": statement["csv"]["fetchedAt"],
@@ -572,14 +711,19 @@ def build_house_records(node_map, parent_map, statement=None) -> tuple[dict[str,
 
     for node_id, matches in reached.items():
         node = node_map.get(node_id)
-        if node is None or node_id not in committees:
+        office_row = HOUSE_OFFICE_ROWS.get(node_id)
+        if office_row is not None:
+            if node is None or node_id not in offices:
+                refuse("reviewed_node_is_not_a_house_officer_office", node_id)
+                continue
+        elif node is None or node_id not in committees:
             refuse("reviewed_node_is_not_a_house_committee", node_id)
             continue
         rules = {rule for _, rule in matches}
         if len(matches) > 1 and rules != {"reviewed_row"}:
             refuse("node_reached_by_several_labels_outside_a_reviewed_row", f"{node_id}: {[m[0] for m in matches]}")
             continue
-        row = REVIEWED_ROWS.get(node_id)
+        row = office_row or REVIEWED_ROWS.get(node_id)
         if row and canonical_name_key(node.get("name")) != canonical_name_key(row["name"]):
             refuse("reviewed_row_node_renamed", node_id)
             continue
@@ -588,18 +732,34 @@ def build_house_records(node_map, parent_map, statement=None) -> tuple[dict[str,
             refuse("label_not_in_the_document", f"{node_id}: {missing}")
             continue
         printed = []
-        for label, _ in matches:
-            for program, entry in statement["organisations"][label]["programs"].items():
-                offices, programs = entry["officeTotals"], entry["programTotals"]
-                if len(offices) != 1 or len(programs) != 1 or offices[0]["qtd"] != programs[0]["qtd"]:
-                    printed = None
+        if office_row is not None:
+            # An officer's organisation: each OFFICE TOTALS line closes a run
+            # of programs and must equal their printed totals to the cent.
+            for label, _ in matches:
+                for office in statement["organisations"][label]["offices"]:
+                    run_cents = sum(round(float(p["qtd"]) * 100) for p in office["programs"])
+                    if not office["programs"] or run_cents != round(float(office["qtd"]) * 100):
+                        printed = None
+                        break
+                    printed.append((label, office["closingProgram"], office))
+                if printed is None:
                     break
-                printed.append((label, program, offices[0]))
-            if printed is None:
-                break
-        if not printed:
-            refuse("office_totals_not_one_per_program", node_id)
-            continue
+            if not printed:
+                refuse("office_total_is_not_the_sum_of_its_programs", node_id)
+                continue
+        else:
+            for label, _ in matches:
+                for program, entry in statement["organisations"][label]["programs"].items():
+                    offices_of, programs = entry["officeTotals"], entry["programTotals"]
+                    if len(offices_of) != 1 or len(programs) != 1 or offices_of[0]["qtd"] != programs[0]["qtd"]:
+                        printed = None
+                        break
+                    printed.append((label, program, offices_of[0]))
+                if printed is None:
+                    break
+            if not printed:
+                refuse("office_totals_not_one_per_program", node_id)
+                continue
         nonzero = [p for p in printed if float(p[2]["qtd"]) != 0]
         if not nonzero:
             refuse("nothing_disbursed_in_the_quarter", node_id)
@@ -612,19 +772,26 @@ def build_house_records(node_map, parent_map, statement=None) -> tuple[dict[str,
             refuse("largest_office_total_too_small_to_bound_the_scale", node_id)
             continue
         rule = matches[0][1]
+        unit_kind = UNIT_OFFICE if office_row is not None else UNIT_COMMITTEE
+        unit_word = "office" if office_row is not None else "committee"
         record = _shared(node_id, node, "house", document, period, [m[0] for m in matches], rule,
-                         row["basis"] if row else None)
+                         row["basis"] if row else None, unit_kind=unit_kind)
         components, zeros = [], []
         try:
             for label, program, office in printed:
                 entry = {"label": label, "program": program, "printed": office["qtd"],
                          "locator": {"row": office["row"], "column": HOUSE_QTD_COLUMN,
                                      "organization": label, "program": program, "description": HOUSE_OFFICE_TOTAL}}
+                if office_row is not None:
+                    # The OFFICE TOTALS line closes a run of programs; list
+                    # them so the sum can be audited against the CSV.
+                    entry["programsInOffice"] = [
+                        {"program": p["program"], "row": p["row"], "printed": p["qtd"]} for p in office["programs"]]
                 if float(office["qtd"]) == 0:
                     zeros.append(entry)
                     continue
                 evidence = (f"{HOUSE_QTD_COLUMN}: {office['printed']} | statement total, {HOUSE_TOTAL_LABEL}: "
-                            f"{total_text} | largest office total in this column for the committee: {anchor_raw}")
+                            f"{total_text} | largest office total in this column for the {unit_word}: {anchor_raw}")
                 validated = fe.validate_record({
                     "nodeId": node_id, "financialEvidenceStatus": "partial", "costBasis": BASIS,
                     "sourceType": HOUSE_SOURCE_TYPE, "units": "usd", "normalizedMultiplier": 1,
@@ -646,11 +813,14 @@ def build_house_records(node_map, parent_map, statement=None) -> tuple[dict[str,
             continue
         record["unitsEvidence"] = {"kind": components[0]["unitsEvidenceKind"], "statementTotal": total_text,
                                    "columnAnchor": anchor_raw}
-        record["caveat"] = (
-            "The statement's summary file lists the committee's current-year organisation only. "
-            "Disbursements the quarter charged to the committee's earlier-year accounts are printed in the "
-            "signed volumes beside named payees and are not in this figure."
-        )
+        if office_row is not None:
+            record["caveat"] = HOUSE_OFFICE_CAVEAT + (" " + office_row["caveat"] if office_row.get("caveat") else "")
+        else:
+            record["caveat"] = (
+                "The statement's summary file lists the committee's current-year organisation only. "
+                "Disbursements the quarter charged to the committee's earlier-year accounts are printed in the "
+                "signed volumes beside named payees and are not in this figure."
+            )
         records[node_id] = _finish(record, components, zeros)
         report["matched"][node_id] = rule
     used = {label for record in records.values() for label in record["listedNames"]}
@@ -776,12 +946,16 @@ def apply_committee_disbursements_evidence(root: dict[str, Any], records: Mappin
 
     Withdrawn from every node first, so a record refused since the last build
     stops being published even though the exporter re-feeds graph.json. Never
-    on a node not typed Committee, and never after a rename.
+    on a node not typed Committee -- except a record marked for a House
+    officer's office, which goes only on a node typed Office whose tree
+    parent is `leg-house-admin` and whose id is in `HOUSE_OFFICE_ROWS` -- and
+    never after a rename.
     """
     if index_tree is None:
         from data_pipeline.exporter.build_graph import index_tree as _index_tree
         index_tree = _index_tree
-    node_map, _ = index_tree(root)
+    node_map, parent_map = index_tree(root)
+    offices = house_officer_offices(node_map, parent_map)
     applied = withdrawn = refused_type = refused_renamed = 0
     for node_id, node in node_map.items():
         if node.pop(FIELD, None) is not None:
@@ -789,7 +963,11 @@ def apply_committee_disbursements_evidence(root: dict[str, Any], records: Mappin
         record = records.get(node_id)
         if not record:
             continue
-        if str(node.get("type") or "").strip().casefold() != "committee":
+        if record.get("unitKind") == UNIT_OFFICE:
+            if node_id not in offices or node_id not in HOUSE_OFFICE_ROWS:
+                refused_type += 1
+                continue
+        elif str(node.get("type") or "").strip().casefold() != "committee":
             refused_type += 1
             continue
         if canonical_name_key(node.get("name")) != canonical_name_key(record.get("nodeName")):

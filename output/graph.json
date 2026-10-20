@@ -2606,6 +2606,7 @@
                     "nodeId": "leg-senate-cmte-agriculture-nutrition-and-forestry",
                     "nodeName": "Senate Committee on Agriculture, Nutrition, and Forestry",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -7703,6 +7704,7 @@
                     "nodeId": "leg-senate-cmte-armed-services",
                     "nodeName": "Senate Committee on Armed Services",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -9372,6 +9374,7 @@
                     "nodeId": "leg-senate-cmte-banking-housing-urban-affairs",
                     "nodeName": "Senate Committee on Banking, Housing & Urban Affairs",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -9733,6 +9736,7 @@
                     "nodeId": "leg-senate-cmte-budget",
                     "nodeName": "Senate Committee on the Budget",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -11900,6 +11904,7 @@
                     "nodeId": "leg-senate-cmte-commerce-science-transportation",
                     "nodeName": "Senate Committee on Commerce, Science & Transportation",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -13218,6 +13223,7 @@
                     "nodeId": "leg-senate-cmte-energy-natural-resources",
                     "nodeName": "Senate Committee on Energy & Natural Resources",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -14538,6 +14544,7 @@
                     "nodeId": "leg-senate-cmte-environment-public-works",
                     "nodeName": "Senate Committee on Environment & Public Works",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -16323,6 +16330,7 @@
                     "nodeId": "leg-senate-cmte-finance",
                     "nodeName": "Senate Committee on Finance",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -18420,6 +18428,7 @@
                     "nodeId": "leg-senate-cmte-foreign-relations",
                     "nodeName": "Senate Committee on Foreign Relations",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -19530,6 +19539,7 @@
                     "nodeId": "leg-senate-cmte-health-education-labor-pensions",
                     "nodeName": "Senate Committee on Health, Education, Labor & Pensions",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -20661,6 +20671,7 @@
                     "nodeId": "leg-senate-cmte-homeland-security-governmental-affairs",
                     "nodeName": "Senate Committee on Homeland Security & Governmental Affairs",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -22720,6 +22731,7 @@
                     "nodeId": "leg-senate-cmte-judiciary",
                     "nodeName": "United States Senate Committee on the Judiciary",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -23115,6 +23127,7 @@
                     "nodeId": "leg-senate-cmte-rules-administration",
                     "nodeName": "Senate Committee on Rules & Administration",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -23479,6 +23492,7 @@
                     "nodeId": "leg-senate-cmte-small-business-entrepreneurship",
                     "nodeName": "Senate Committee on Small Business & Entrepreneurship",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -23839,6 +23853,7 @@
                     "nodeId": "leg-senate-cmte-veterans-affairs",
                     "nodeName": "Senate Committee on Veterans' Affairs",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -24200,6 +24215,7 @@
                     "nodeId": "leg-senate-cmte-select-committee-on-intelligence",
                     "nodeName": "Senate Select Committee on Intelligence",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -24560,6 +24576,7 @@
                     "nodeId": "leg-senate-cmte-special-committee-on-aging",
                     "nodeName": "Senate Special Committee on Aging",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -24920,6 +24937,7 @@
                     "nodeId": "leg-senate-cmte-select-committee-on-ethics",
                     "nodeName": "U.S. Senate Select Committee on Ethics",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -25272,6 +25290,7 @@
                     "nodeId": "leg-senate-cmte-indian-affairs",
                     "nodeName": "Senate Committee on Indian Affairs",
                     "chamber": "senate",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Report of the Secretary of the Senate",
@@ -30516,6 +30535,7 @@
                     "nodeId": "leg-house-cmte-agriculture",
                     "nodeName": "House Committee on Agriculture",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -33390,6 +33410,7 @@
                     "nodeId": "leg-house-cmte-appropriations",
                     "nodeName": "House Committee on Appropriations",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -35058,6 +35079,7 @@
                     "nodeId": "leg-house-cmte-armed-services",
                     "nodeName": "House Committee on Armed Services",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -35389,6 +35411,7 @@
                     "nodeId": "leg-house-cmte-budget",
                     "nodeName": "House Committee on Budget",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -36500,6 +36523,7 @@
                     "nodeId": "leg-house-cmte-education-the-workforce",
                     "nodeName": "House Committee on Education & the Workforce",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -38100,6 +38124,7 @@
                     "nodeId": "leg-house-cmte-energy-commerce",
                     "nodeName": "House Committee on Energy & Commerce",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -39733,6 +39758,7 @@
                     "nodeId": "leg-house-cmte-financial-services",
                     "nodeName": "House Committee on Financial Services",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -41463,6 +41489,7 @@
                     "nodeId": "leg-house-cmte-foreign-affairs",
                     "nodeName": "House Committee on Foreign Affairs",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -43079,6 +43106,7 @@
                     "nodeId": "leg-house-cmte-homeland-security",
                     "nodeName": "House Committee on Homeland Security",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -43892,6 +43920,7 @@
                     "nodeId": "leg-house-cmte-house-administration",
                     "nodeName": "House Committee on House Administration",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -45740,6 +45769,7 @@
                     "nodeId": "leg-house-cmte-judiciary",
                     "nodeName": "House Committee on Judiciary",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -47136,6 +47166,7 @@
                     "nodeId": "leg-house-cmte-natural-resources",
                     "nodeName": "House Committee on Natural Resources",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -48940,6 +48971,7 @@
                     "nodeId": "leg-house-cmte-oversight-accountability",
                     "nodeName": "House Committee on Oversight and Government Reform",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -49700,6 +49732,7 @@
                     "nodeId": "leg-house-cmte-rules",
                     "nodeName": "House Committee on Rules",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -51082,6 +51115,7 @@
                     "nodeId": "leg-house-cmte-science-space-technology",
                     "nodeName": "House Committee on Science, Space & Technology",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -52483,6 +52517,7 @@
                     "nodeId": "leg-house-cmte-small-business",
                     "nodeName": "House Committee on Small Business",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -54093,6 +54128,7 @@
                     "nodeId": "leg-house-cmte-transportation-infrastructure",
                     "nodeName": "House Committee on Transportation & Infrastructure",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -55684,6 +55720,7 @@
                     "nodeId": "leg-house-cmte-veterans-affairs",
                     "nodeName": "House Committee on Veterans' Affairs",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -57464,6 +57501,7 @@
                     "nodeId": "leg-house-cmte-ways-means",
                     "nodeName": "House Committee on Ways & Means",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -57813,6 +57851,7 @@
                     "nodeId": "leg-house-cmte-select-committee-on-the-chinese-communist-party",
                     "nodeName": "Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -59198,6 +59237,7 @@
                     "nodeId": "leg-house-cmte-permanent-select-committee-on-intelligence",
                     "nodeName": "House Permanent Select Committee on Intelligence",
                     "chamber": "house",
+                    "unitKind": "committee",
                     "costBasis": "disbursements",
                     "document": {
                       "title": "Statement of Disbursements of the House",
@@ -60179,9 +60219,9 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "resolved_total_amount": 34220763.75,
+                  "resolved_total_amount": 14353321.49,
                   "cost_status": "allocated",
-                  "cost_basis": "subtree_weight",
+                  "cost_basis": "disbursement_weight",
                   "cost_validation": "estimated_from_parent",
                   "child_cost_basis": "subtree",
                   "costVerificationStatus": "unverified",
@@ -60205,7 +60245,134 @@
                   "placementParentId": "leg-house-admin",
                   "placementMatchedText": "Clerk of the House",
                   "placementMethod": "name_labelled_on_parent_official_page",
-                  "placementMatchedIn": "content"
+                  "placementMatchedIn": "content",
+                  "committeeDisbursements": {
+                    "nodeId": "leg-house-clerk",
+                    "nodeName": "Clerk of the House",
+                    "chamber": "house",
+                    "unitKind": "house_officer_office",
+                    "costBasis": "disbursements",
+                    "document": {
+                      "title": "Statement of Disbursements of the House",
+                      "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+                      "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+                      "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+                      "fetchedAt": "2026-10-06T16:20:22Z",
+                      "statementVolume": {
+                        "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+                        "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+                        "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+                      },
+                      "column": "QTD AMOUNT",
+                      "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+                      "statementTotal": {
+                        "text": "$ 449,333,548.30",
+                        "label": "Disbursements for salaries and expenses and canceled checks"
+                      }
+                    },
+                    "period": {
+                      "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+                      "start": "2026-04-01",
+                      "end": "2026-06-30",
+                      "coverage": "quarter"
+                    },
+                    "listedNames": [
+                      "FISCAL YEAR 2026 CLERK OF THE HOUSE"
+                    ],
+                    "matchRule": "reviewed_row",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "matchBasis": "The statement prints the Clerk's organisation under the office's own title; the House has one Clerk, and 2 U.S.C. 104a makes the Clerk's accounts part of the statement.",
+                    "unitsEvidence": {
+                      "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+                      "statementTotal": "$ 449,333,548.30",
+                      "columnAnchor": "8163818.57"
+                    },
+                    "caveat": "The statement's summary file lists the office's current-year organisation only. Disbursements the quarter charged to the office's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure. An OFFICE TOTALS line in the file closes a run of programs, and the figure is the sum of those lines, each checked against its programs' printed totals to the cent.",
+                    "components": [
+                      {
+                        "label": "FISCAL YEAR 2026 CLERK OF THE HOUSE",
+                        "program": "RECEPTIONS",
+                        "printed": "8163818.57",
+                        "locator": {
+                          "row": 275,
+                          "column": "QTD AMOUNT",
+                          "organization": "FISCAL YEAR 2026 CLERK OF THE HOUSE",
+                          "program": "RECEPTIONS",
+                          "description": "OFFICE TOTALS:"
+                        },
+                        "programsInOffice": [
+                          {
+                            "program": "SALARIES  OFFICERS & EMPLOYEES",
+                            "row": 269,
+                            "printed": "8158313.87"
+                          },
+                          {
+                            "program": "FAMILY ROOM",
+                            "row": 272,
+                            "printed": "4477.46"
+                          },
+                          {
+                            "program": "RECEPTIONS",
+                            "row": 274,
+                            "printed": "1027.24"
+                          }
+                        ],
+                        "amount": 8163818.57,
+                        "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+                      },
+                      {
+                        "label": "FISCAL YEAR 2026 CLERK OF THE HOUSE",
+                        "program": "EXERCISES ACTIVITY",
+                        "printed": "1635326.93",
+                        "locator": {
+                          "row": 402,
+                          "column": "QTD AMOUNT",
+                          "organization": "FISCAL YEAR 2026 CLERK OF THE HOUSE",
+                          "program": "EXERCISES ACTIVITY",
+                          "description": "OFFICE TOTALS:"
+                        },
+                        "programsInOffice": [
+                          {
+                            "program": "SALARIES  OFFICERS & EMPLOYEES",
+                            "row": 386,
+                            "printed": "456090.05"
+                          },
+                          {
+                            "program": "LIMS",
+                            "row": 389,
+                            "printed": "330242.11"
+                          },
+                          {
+                            "program": "ELECTRONIC VOTING SYSTEM",
+                            "row": 393,
+                            "printed": "14896.51"
+                          },
+                          {
+                            "program": "HOUSE MODERNIZATION INITIATIVE",
+                            "row": 396,
+                            "printed": "834098.26"
+                          },
+                          {
+                            "program": "EXERCISES ACTIVITY",
+                            "row": 401,
+                            "printed": "0"
+                          }
+                        ],
+                        "amount": 1635326.93,
+                        "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+                      }
+                    ],
+                    "zeroComponents": [],
+                    "amount": 9799145.5,
+                    "componentCount": 2,
+                    "documentsStatingTheFigure": 0,
+                    "arithmetic": {
+                      "operation": "sum_of_printed_totals",
+                      "note": "The document prints no single total for this office; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+                    },
+                    "notTheCost": "Cash the chamber's disbursing office paid out for the office's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+                  }
                 },
                 {
                   "id": "leg-house-saa",
@@ -60219,6 +60386,194 @@
                   "placementVerified": false,
                   "placementParentId": "leg-house-admin",
                   "placementVerifiedAt": "2026-09-21T05:26:27+00:00",
+                  "committeeDisbursements": {
+                    "nodeId": "leg-house-saa",
+                    "nodeName": "Sergeant at Arms of the House",
+                    "chamber": "house",
+                    "unitKind": "house_officer_office",
+                    "costBasis": "disbursements",
+                    "document": {
+                      "title": "Statement of Disbursements of the House",
+                      "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+                      "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+                      "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+                      "fetchedAt": "2026-10-06T16:20:22Z",
+                      "statementVolume": {
+                        "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+                        "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+                        "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+                      },
+                      "column": "QTD AMOUNT",
+                      "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+                      "statementTotal": {
+                        "text": "$ 449,333,548.30",
+                        "label": "Disbursements for salaries and expenses and canceled checks"
+                      }
+                    },
+                    "period": {
+                      "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+                      "start": "2026-04-01",
+                      "end": "2026-06-30",
+                      "coverage": "quarter"
+                    },
+                    "listedNames": [
+                      "FISCAL YEAR 2026 SERGEANT AT ARMS"
+                    ],
+                    "matchRule": "reviewed_row",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "matchBasis": "The statement prints the office by its title alone, without 'of the House'; the House has one Sergeant at Arms, and the statement is the House's own.",
+                    "unitsEvidence": {
+                      "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+                      "statementTotal": "$ 449,333,548.30",
+                      "columnAnchor": "6461056.32"
+                    },
+                    "caveat": "The statement's summary file lists the office's current-year organisation only. Disbursements the quarter charged to the office's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure. An OFFICE TOTALS line in the file closes a run of programs, and the figure is the sum of those lines, each checked against its programs' printed totals to the cent.",
+                    "components": [
+                      {
+                        "label": "FISCAL YEAR 2026 SERGEANT AT ARMS",
+                        "program": "RECEPTIONS",
+                        "printed": "4939240.82",
+                        "locator": {
+                          "row": 296,
+                          "column": "QTD AMOUNT",
+                          "organization": "FISCAL YEAR 2026 SERGEANT AT ARMS",
+                          "program": "RECEPTIONS",
+                          "description": "OFFICE TOTALS:"
+                        },
+                        "programsInOffice": [
+                          {
+                            "program": "PERSONNEL",
+                            "row": 286,
+                            "printed": "4614064.38"
+                          },
+                          {
+                            "program": "NON - PERSONNEL",
+                            "row": 291,
+                            "printed": "321563.52"
+                          },
+                          {
+                            "program": "CONVENTIONS",
+                            "row": 293,
+                            "printed": "3444.68"
+                          },
+                          {
+                            "program": "RECEPTIONS",
+                            "row": 295,
+                            "printed": "168.24"
+                          }
+                        ],
+                        "amount": 4939240.82,
+                        "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+                      },
+                      {
+                        "label": "FISCAL YEAR 2026 SERGEANT AT ARMS",
+                        "program": "JOINT AUDIBLE WARNING SYSTEM",
+                        "printed": "1517849.28",
+                        "locator": {
+                          "row": 433,
+                          "column": "QTD AMOUNT",
+                          "organization": "FISCAL YEAR 2026 SERGEANT AT ARMS",
+                          "program": "JOINT AUDIBLE WARNING SYSTEM",
+                          "description": "OFFICE TOTALS:"
+                        },
+                        "programsInOffice": [
+                          {
+                            "program": "NON - PERSONNEL",
+                            "row": 418,
+                            "printed": "167450.57"
+                          },
+                          {
+                            "program": "OVERSEAS TRVL CAP POLICE REIMB",
+                            "row": 421,
+                            "printed": "1179424.87"
+                          },
+                          {
+                            "program": "MEMB DSTOFF SECUR ASSMNT",
+                            "row": 424,
+                            "printed": "0"
+                          },
+                          {
+                            "program": "MEMB DSTOFF SECUR ASSMNT OTH",
+                            "row": 426,
+                            "printed": "0"
+                          },
+                          {
+                            "program": "RESIDENTIAL SECURITY CYBER",
+                            "row": 428,
+                            "printed": "0"
+                          },
+                          {
+                            "program": "RESIDENTIAL SECURITY PROGRAM",
+                            "row": 430,
+                            "printed": "12512.49"
+                          },
+                          {
+                            "program": "JOINT AUDIBLE WARNING SYSTEM",
+                            "row": 432,
+                            "printed": "158461.35"
+                          }
+                        ],
+                        "amount": 1517849.28,
+                        "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+                      },
+                      {
+                        "label": "FISCAL YEAR 2026 SERGEANT AT ARMS",
+                        "program": "RESIDENTIAL SECURITY PROGRAM",
+                        "printed": "6461056.32",
+                        "locator": {
+                          "row": 455,
+                          "column": "QTD AMOUNT",
+                          "organization": "FISCAL YEAR 2026 SERGEANT AT ARMS",
+                          "program": "RESIDENTIAL SECURITY PROGRAM",
+                          "description": "OFFICE TOTALS:"
+                        },
+                        "programsInOffice": [
+                          {
+                            "program": "NON - PERSONNEL",
+                            "row": 441,
+                            "printed": "489532.7"
+                          },
+                          {
+                            "program": "MEMB DSTOFF SECUR ASSMNT",
+                            "row": 445,
+                            "printed": "317893.61"
+                          },
+                          {
+                            "program": "RESIDENTIAL SECURITY CYBER",
+                            "row": 447,
+                            "printed": "0"
+                          },
+                          {
+                            "program": "SEC. AWARENESS BRIEFING- TRVL",
+                            "row": 449,
+                            "printed": "27071.92"
+                          },
+                          {
+                            "program": "DIST. SEC. SRVC. CENTER- TRVL",
+                            "row": 451,
+                            "printed": "8969.21"
+                          },
+                          {
+                            "program": "RESIDENTIAL SECURITY PROGRAM",
+                            "row": 454,
+                            "printed": "5617588.88"
+                          }
+                        ],
+                        "amount": 6461056.32,
+                        "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+                      }
+                    ],
+                    "zeroComponents": [],
+                    "amount": 12918146.42,
+                    "componentCount": 3,
+                    "documentsStatingTheFigure": 0,
+                    "arithmetic": {
+                      "operation": "sum_of_printed_totals",
+                      "note": "The document prints no single total for this office; the figure is the sum of the 3 totals it prints, each listed with its printed text."
+                    },
+                    "notTheCost": "Cash the chamber's disbursing office paid out for the office's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -60231,9 +60586,9 @@
                   "parentProven": true,
                   "proofStatus": "baseline",
                   "proofReason": "trusted_base_graph",
-                  "resolved_total_amount": 3802307.08,
+                  "resolved_total_amount": 18921885.45,
                   "cost_status": "allocated",
-                  "cost_basis": "subtree_weight",
+                  "cost_basis": "disbursement_weight",
                   "cost_validation": "estimated_from_parent",
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
@@ -60707,9 +61062,9 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "resolved_total_amount": 45627685.0,
+                  "resolved_total_amount": 52117872.06,
                   "cost_status": "allocated",
-                  "cost_basis": "subtree_weight",
+                  "cost_basis": "disbursement_weight",
                   "cost_validation": "estimated_from_parent",
                   "child_cost_basis": "subtree",
                   "costVerificationStatus": "unverified",
@@ -60733,7 +61088,354 @@
                   "placementParentId": "leg-house-admin",
                   "placementMatchedText": "Chief Administrative Officer",
                   "placementMethod": "name_labelled_on_parent_official_page",
-                  "placementMatchedIn": "content"
+                  "placementMatchedIn": "content",
+                  "committeeDisbursements": {
+                    "nodeId": "leg-house-cao",
+                    "nodeName": "Chief Administrative Officer",
+                    "chamber": "house",
+                    "unitKind": "house_officer_office",
+                    "costBasis": "disbursements",
+                    "document": {
+                      "title": "Statement of Disbursements of the House",
+                      "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+                      "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+                      "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+                      "fetchedAt": "2026-10-06T16:20:22Z",
+                      "statementVolume": {
+                        "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+                        "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+                        "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+                      },
+                      "column": "QTD AMOUNT",
+                      "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+                      "statementTotal": {
+                        "text": "$ 449,333,548.30",
+                        "label": "Disbursements for salaries and expenses and canceled checks"
+                      }
+                    },
+                    "period": {
+                      "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+                      "start": "2026-04-01",
+                      "end": "2026-06-30",
+                      "coverage": "quarter"
+                    },
+                    "listedNames": [
+                      "FISCAL YEAR 2026 CHIEF ADMIN OFCR OF THE HOUSE"
+                    ],
+                    "matchRule": "reviewed_row",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "matchBasis": "The statement abbreviates the office's title ('ADMIN OFCR'); the House has one Chief Administrative Officer, who publishes the statement. The file also prints House-wide accounts the CAO runs as organisations of their own (telecommunications, acquisitions, the recording studio); the row claims the CAO's own organisation only and the caveat says so.",
+                    "unitsEvidence": {
+                      "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+                      "statementTotal": "$ 449,333,548.30",
+                      "columnAnchor": "33719312.93"
+                    },
+                    "caveat": "The statement's summary file lists the office's current-year organisation only. Disbursements the quarter charged to the office's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure. An OFFICE TOTALS line in the file closes a run of programs, and the figure is the sum of those lines, each checked against its programs' printed totals to the cent. The statement prints House-wide accounts the Chief Administrative Officer runs as organisations of their own, and those are not in this figure; it is what the quarter charged to the officer's own organisation.",
+                    "components": [
+                      {
+                        "label": "FISCAL YEAR 2026 CHIEF ADMIN OFCR OF THE HOUSE",
+                        "program": "ACCESS INFO SYST TECH SERVICES",
+                        "printed": "33719312.93",
+                        "locator": {
+                          "row": 251,
+                          "column": "QTD AMOUNT",
+                          "organization": "FISCAL YEAR 2026 CHIEF ADMIN OFCR OF THE HOUSE",
+                          "program": "ACCESS INFO SYST TECH SERVICES",
+                          "description": "OFFICE TOTALS:"
+                        },
+                        "programsInOffice": [
+                          {
+                            "program": "SALARIES  OFFICERS & EMPLOYEES",
+                            "row": 88,
+                            "printed": "25067516.45"
+                          },
+                          {
+                            "program": "NEW MEMBER FURNITURE PROGRAM",
+                            "row": 91,
+                            "printed": "14055.95"
+                          },
+                          {
+                            "program": "ADMIN AND OPS",
+                            "row": 99,
+                            "printed": "1691649.31"
+                          },
+                          {
+                            "program": "CONGRESSIONAL EXCELLENCE PRGM",
+                            "row": 103,
+                            "printed": "79007.21"
+                          },
+                          {
+                            "program": "CHILD CARE CENTER TRAINING",
+                            "row": 105,
+                            "printed": "1500"
+                          },
+                          {
+                            "program": "LIBRARY OF CONGRESS MAILREIMB",
+                            "row": 109,
+                            "printed": "468778"
+                          },
+                          {
+                            "program": "AOC MAIL IPAC",
+                            "row": 113,
+                            "printed": "246518.31"
+                          },
+                          {
+                            "program": "CAO SAFETY PROGRAM",
+                            "row": 118,
+                            "printed": "20794.59"
+                          },
+                          {
+                            "program": "CUSTOMER EXPERIENCE MANAGEMENT",
+                            "row": 120,
+                            "printed": "7066.6"
+                          },
+                          {
+                            "program": "CONGRESSIONAL STAFF ACADEMY",
+                            "row": 127,
+                            "printed": "66922.41"
+                          },
+                          {
+                            "program": "WEB SOLUTIONS",
+                            "row": 130,
+                            "printed": "605018.05"
+                          },
+                          {
+                            "program": "PEOPLESOFT FINANCIALS",
+                            "row": 133,
+                            "printed": "358905.16"
+                          },
+                          {
+                            "program": "REMEDY/CTS ACTIVITY",
+                            "row": 136,
+                            "printed": "54000"
+                          },
+                          {
+                            "program": "ENTERPRISE TECHNOLOGY SYSTEMS",
+                            "row": 138,
+                            "printed": "211862.36"
+                          },
+                          {
+                            "program": "SUBSCRIPTIONS",
+                            "row": 140,
+                            "printed": "252000"
+                          },
+                          {
+                            "program": "RECEPTIONS",
+                            "row": 142,
+                            "printed": "0"
+                          },
+                          {
+                            "program": "ENTERPRISE DATA STORAGE",
+                            "row": 146,
+                            "printed": "559918.1"
+                          },
+                          {
+                            "program": "ESCALATIONS OPERATIONS",
+                            "row": 148,
+                            "printed": "44467.46"
+                          },
+                          {
+                            "program": "ENTERPRISE INFRASTRUCTURE TECH",
+                            "row": 151,
+                            "printed": "62876.72"
+                          },
+                          {
+                            "program": "ENTERPRISE LICENSES",
+                            "row": 154,
+                            "printed": "156800.17"
+                          },
+                          {
+                            "program": "HOUSE LOGISTICS PROJECT MGMT",
+                            "row": 156,
+                            "printed": "197933.51"
+                          },
+                          {
+                            "program": "HOUSE INTERIOR DESIGN",
+                            "row": 158,
+                            "printed": "58137.7"
+                          },
+                          {
+                            "program": "ENTERPRISE DIGITAL AUTOMATION",
+                            "row": 161,
+                            "printed": "79388.82"
+                          },
+                          {
+                            "program": "HOUSE INTERN RESOURCE OFFICE",
+                            "row": 164,
+                            "printed": "2102.96"
+                          },
+                          {
+                            "program": "OFFICE OF TALENT & DEVELOPMENT",
+                            "row": 170,
+                            "printed": "7022.39"
+                          },
+                          {
+                            "program": "ASSET OPERATIONS",
+                            "row": 174,
+                            "printed": "16526.08"
+                          },
+                          {
+                            "program": "IDENTITY ACCESS MANAGEMENT",
+                            "row": 178,
+                            "printed": "64144.81"
+                          },
+                          {
+                            "program": "CABINET & FINISHING SERVICES",
+                            "row": 182,
+                            "printed": "98400.85"
+                          },
+                          {
+                            "program": "TELEPHONE OPERATORS",
+                            "row": 184,
+                            "printed": "0"
+                          },
+                          {
+                            "program": "CAO IT SERVICE MANAGEMENT",
+                            "row": 186,
+                            "printed": "63896"
+                          },
+                          {
+                            "program": "SUPPORT SYSTEMS OPERATIONS",
+                            "row": 189,
+                            "printed": "25678.79"
+                          },
+                          {
+                            "program": "DIGITAL SERVICE",
+                            "row": 191,
+                            "printed": "107743.86"
+                          },
+                          {
+                            "program": "ENTERPRISE MOBILITY AND E-FAX",
+                            "row": 193,
+                            "printed": "199071.06"
+                          },
+                          {
+                            "program": "HRS COMMITTEE BROADCAST OPS",
+                            "row": 195,
+                            "printed": "19902.63"
+                          },
+                          {
+                            "program": "FURNITURE AND REFURBISHMENT",
+                            "row": 198,
+                            "printed": "122540.05"
+                          },
+                          {
+                            "program": "HOUSE RECORDING STUDIO OPS",
+                            "row": 200,
+                            "printed": "316308"
+                          },
+                          {
+                            "program": "CAO CONFERENCES AND EVENTS",
+                            "row": 205,
+                            "printed": "138584.48"
+                          },
+                          {
+                            "program": "HOUSE WELLNESS PROGRAM",
+                            "row": 210,
+                            "printed": "53438.17"
+                          },
+                          {
+                            "program": "WORKFLOW COORDINATION",
+                            "row": 212,
+                            "printed": "98890"
+                          },
+                          {
+                            "program": "ENTERPRISE ARCHITECTURE",
+                            "row": 215,
+                            "printed": "73399.86"
+                          },
+                          {
+                            "program": "TELECOMMUNICATIONS",
+                            "row": 220,
+                            "printed": "558640.84"
+                          },
+                          {
+                            "program": "NETWORK SERVICES",
+                            "row": 224,
+                            "printed": "459811.05"
+                          },
+                          {
+                            "program": "WIDE AREA NETWORK",
+                            "row": 229,
+                            "printed": "465616.84"
+                          },
+                          {
+                            "program": "CAMPUS NETWORKING",
+                            "row": 233,
+                            "printed": "174896.19"
+                          },
+                          {
+                            "program": "CONSOLIDATED SERVICE CENTER",
+                            "row": 235,
+                            "printed": "27178.55"
+                          },
+                          {
+                            "program": "CARPET SERVICES",
+                            "row": 239,
+                            "printed": "165017.25"
+                          },
+                          {
+                            "program": "DRAPERY & UPHOLSTERY SERVICES",
+                            "row": 243,
+                            "printed": "101785.3"
+                          },
+                          {
+                            "program": "FINISH SCHEDULE",
+                            "row": 246,
+                            "printed": "49602.04"
+                          },
+                          {
+                            "program": "BENEFITS AND COMPENSATION",
+                            "row": 248,
+                            "printed": "0"
+                          },
+                          {
+                            "program": "ACCESS INFO SYST TECH SERVICES",
+                            "row": 250,
+                            "printed": "3998"
+                          }
+                        ],
+                        "amount": 33719312.93,
+                        "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+                      },
+                      {
+                        "label": "FISCAL YEAR 2026 CHIEF ADMIN OFCR OF THE HOUSE",
+                        "program": "GREEN & GOLD CAP SALARIES",
+                        "printed": "1862040.96",
+                        "locator": {
+                          "row": 492,
+                          "column": "QTD AMOUNT",
+                          "organization": "FISCAL YEAR 2026 CHIEF ADMIN OFCR OF THE HOUSE",
+                          "program": "GREEN & GOLD CAP SALARIES",
+                          "description": "OFFICE TOTALS:"
+                        },
+                        "programsInOffice": [
+                          {
+                            "program": "GREEN CAP EXPENSES",
+                            "row": 489,
+                            "printed": "47734.85"
+                          },
+                          {
+                            "program": "GREEN & GOLD CAP SALARIES",
+                            "row": 491,
+                            "printed": "1814306.11"
+                          }
+                        ],
+                        "amount": 1862040.96,
+                        "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+                      }
+                    ],
+                    "zeroComponents": [],
+                    "amount": 35581353.89,
+                    "componentCount": 2,
+                    "documentsStatingTheFigure": 0,
+                    "arithmetic": {
+                      "operation": "sum_of_printed_totals",
+                      "note": "The document prints no single total for this office; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+                    },
+                    "notTheCost": "Cash the chamber's disbursing office paid out for the office's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+                  }
                 },
                 {
                   "id": "leg-house-chaplain",
@@ -60770,9 +61472,9 @@
                   "placementVerified": false,
                   "placementParentId": "leg-house-admin",
                   "placementVerifiedAt": "2026-09-21T05:26:27+00:00",
-                  "resolved_total_amount": 3802307.08,
+                  "resolved_total_amount": 3719059.41,
                   "cost_status": "allocated",
-                  "cost_basis": "subtree_weight",
+                  "cost_basis": "implied_disbursement_weight",
                   "cost_validation": "estimated_from_parent",
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
@@ -60802,9 +61504,9 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "resolved_total_amount": 3802307.08,
+                  "resolved_total_amount": 3719059.41,
                   "cost_status": "allocated",
-                  "cost_basis": "subtree_weight",
+                  "cost_basis": "implied_disbursement_weight",
                   "cost_validation": "estimated_from_parent",
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
@@ -60852,9 +61554,9 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "resolved_total_amount": 3802307.08,
+                  "resolved_total_amount": 6229129.74,
                   "cost_status": "allocated",
-                  "cost_basis": "subtree_weight",
+                  "cost_basis": "disbursement_weight",
                   "cost_validation": "estimated_from_parent",
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
@@ -60877,7 +61579,88 @@
                   "verificationMethod": "name_labelled_on_parent_official_page",
                   "verificationMatchedIn": "content",
                   "verificationSiteFrom": "leg-house-admin",
-                  "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00"
+                  "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+                  "committeeDisbursements": {
+                    "nodeId": "leg-house-counsel",
+                    "nodeName": "Office of the Legislative Counsel",
+                    "chamber": "house",
+                    "unitKind": "house_officer_office",
+                    "costBasis": "disbursements",
+                    "document": {
+                      "title": "Statement of Disbursements of the House",
+                      "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+                      "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+                      "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+                      "fetchedAt": "2026-10-06T16:20:22Z",
+                      "statementVolume": {
+                        "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+                        "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+                        "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+                      },
+                      "column": "QTD AMOUNT",
+                      "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+                      "statementTotal": {
+                        "text": "$ 449,333,548.30",
+                        "label": "Disbursements for salaries and expenses and canceled checks"
+                      }
+                    },
+                    "period": {
+                      "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+                      "start": "2026-04-01",
+                      "end": "2026-06-30",
+                      "coverage": "quarter"
+                    },
+                    "listedNames": [
+                      "FISCAL YEAR 2026 LEGISLATIVE COUNSEL"
+                    ],
+                    "matchRule": "reviewed_row",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "matchBasis": "The statement prints the office without 'Office of the'; it prints the House's General Counsel as a separate organisation ('OFFICE OF GENERAL COUNSEL'), which is not this node.",
+                    "unitsEvidence": {
+                      "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+                      "statementTotal": "$ 449,333,548.30",
+                      "columnAnchor": "4252684.56"
+                    },
+                    "caveat": "The statement's summary file lists the office's current-year organisation only. Disbursements the quarter charged to the office's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure. An OFFICE TOTALS line in the file closes a run of programs, and the figure is the sum of those lines, each checked against its programs' printed totals to the cent.",
+                    "components": [
+                      {
+                        "label": "FISCAL YEAR 2026 LEGISLATIVE COUNSEL",
+                        "program": "DRAFTING LEGISLATION",
+                        "printed": "4252684.56",
+                        "locator": {
+                          "row": 342,
+                          "column": "QTD AMOUNT",
+                          "organization": "FISCAL YEAR 2026 LEGISLATIVE COUNSEL",
+                          "program": "DRAFTING LEGISLATION",
+                          "description": "OFFICE TOTALS:"
+                        },
+                        "programsInOffice": [
+                          {
+                            "program": "ADMIN AND OPS",
+                            "row": 339,
+                            "printed": "133380.63"
+                          },
+                          {
+                            "program": "DRAFTING LEGISLATION",
+                            "row": 341,
+                            "printed": "4119303.93"
+                          }
+                        ],
+                        "amount": 4252684.56,
+                        "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+                      }
+                    ],
+                    "zeroComponents": [],
+                    "amount": 4252684.56,
+                    "componentCount": 1,
+                    "documentsStatingTheFigure": 1,
+                    "arithmetic": {
+                      "operation": "sum_of_printed_totals",
+                      "note": "The figure is the one total the document prints for this office."
+                    },
+                    "notTheCost": "Cash the chamber's disbursing office paid out for the office's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+                  }
                 },
                 {
                   "id": "leg-house-physician",
@@ -60891,6 +61674,112 @@
                   "placementVerified": false,
                   "placementParentId": "leg-house-admin",
                   "placementVerifiedAt": "2026-09-21T05:26:27+00:00",
+                  "committeeDisbursements": {
+                    "nodeId": "leg-house-physician",
+                    "nodeName": "Office of the Attending Physician",
+                    "chamber": "house",
+                    "unitKind": "house_officer_office",
+                    "costBasis": "disbursements",
+                    "document": {
+                      "title": "Statement of Disbursements of the House",
+                      "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+                      "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+                      "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+                      "fetchedAt": "2026-10-06T16:20:22Z",
+                      "statementVolume": {
+                        "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+                        "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+                        "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+                      },
+                      "column": "QTD AMOUNT",
+                      "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+                      "statementTotal": {
+                        "text": "$ 449,333,548.30",
+                        "label": "Disbursements for salaries and expenses and canceled checks"
+                      }
+                    },
+                    "period": {
+                      "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+                      "start": "2026-04-01",
+                      "end": "2026-06-30",
+                      "coverage": "quarter"
+                    },
+                    "listedNames": [
+                      "FISCAL YEAR 2026 OFFICE OF ATTENDING PHYSICIAN"
+                    ],
+                    "matchRule": "reviewed_row",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "matchBasis": "The statement prints the office's name without the article. The Attending Physician serves both chambers; this is what the House's statement paid for the office, and the Senate's report is not read for it.",
+                    "unitsEvidence": {
+                      "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+                      "statementTotal": "$ 449,333,548.30",
+                      "columnAnchor": "1195810.24"
+                    },
+                    "caveat": "The statement's summary file lists the office's current-year organisation only. Disbursements the quarter charged to the office's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure. An OFFICE TOTALS line in the file closes a run of programs, and the figure is the sum of those lines, each checked against its programs' printed totals to the cent.",
+                    "components": [
+                      {
+                        "label": "FISCAL YEAR 2026 OFFICE OF ATTENDING PHYSICIAN",
+                        "program": "DOCTOR STAFF & EQUIPMENT-NAVY",
+                        "printed": "1195810.24",
+                        "locator": {
+                          "row": 6705,
+                          "column": "QTD AMOUNT",
+                          "organization": "FISCAL YEAR 2026 OFFICE OF ATTENDING PHYSICIAN",
+                          "program": "DOCTOR STAFF & EQUIPMENT-NAVY",
+                          "description": "OFFICE TOTALS:"
+                        },
+                        "programsInOffice": [
+                          {
+                            "program": "PERSONNEL",
+                            "row": 6695,
+                            "printed": "61200"
+                          },
+                          {
+                            "program": "NON - PERSONNEL",
+                            "row": 6702,
+                            "printed": "254041.55"
+                          },
+                          {
+                            "program": "DOCTOR STAFF & EQUIPMENT-NAVY",
+                            "row": 6704,
+                            "printed": "880568.69"
+                          }
+                        ],
+                        "amount": 1195810.24,
+                        "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+                      }
+                    ],
+                    "zeroComponents": [
+                      {
+                        "label": "FISCAL YEAR 2026 OFFICE OF ATTENDING PHYSICIAN",
+                        "program": "EMERGENCY SUPPLEM - TRIAGE CTR",
+                        "printed": "0",
+                        "locator": {
+                          "row": 6708,
+                          "column": "QTD AMOUNT",
+                          "organization": "FISCAL YEAR 2026 OFFICE OF ATTENDING PHYSICIAN",
+                          "program": "EMERGENCY SUPPLEM - TRIAGE CTR",
+                          "description": "OFFICE TOTALS:"
+                        },
+                        "programsInOffice": [
+                          {
+                            "program": "EMERGENCY SUPPLEM - TRIAGE CTR",
+                            "row": 6707,
+                            "printed": "0"
+                          }
+                        ]
+                      }
+                    ],
+                    "amount": 1195810.24,
+                    "componentCount": 1,
+                    "documentsStatingTheFigure": 1,
+                    "arithmetic": {
+                      "operation": "sum_of_printed_totals",
+                      "note": "The figure is the one total the document prints for this office."
+                    },
+                    "notTheCost": "Cash the chamber's disbursing office paid out for the office's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -60903,9 +61792,9 @@
                   "parentProven": true,
                   "proofStatus": "baseline",
                   "proofReason": "trusted_base_graph",
-                  "resolved_total_amount": 3802307.08,
+                  "resolved_total_amount": 1751565.87,
                   "cost_status": "allocated",
-                  "cost_basis": "subtree_weight",
+                  "cost_basis": "disbursement_weight",
                   "cost_validation": "estimated_from_parent",
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
@@ -60939,9 +61828,9 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "resolved_total_amount": 3802307.08,
+                  "resolved_total_amount": 1850397.81,
                   "cost_status": "allocated",
-                  "cost_basis": "subtree_weight",
+                  "cost_basis": "disbursement_weight",
                   "cost_validation": "estimated_from_parent",
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
@@ -60960,7 +61849,93 @@
                   "verificationSiteFrom": "leg-house-ig",
                   "placementVerified": false,
                   "placementParentId": "leg-house-admin",
-                  "placementVerifiedAt": "2026-09-21T05:26:27+00:00"
+                  "placementVerifiedAt": "2026-09-21T05:26:27+00:00",
+                  "committeeDisbursements": {
+                    "nodeId": "leg-house-ig",
+                    "nodeName": "Inspector General of the House",
+                    "chamber": "house",
+                    "unitKind": "house_officer_office",
+                    "costBasis": "disbursements",
+                    "document": {
+                      "title": "Statement of Disbursements of the House",
+                      "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+                      "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+                      "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+                      "fetchedAt": "2026-10-06T16:20:22Z",
+                      "statementVolume": {
+                        "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+                        "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+                        "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+                      },
+                      "column": "QTD AMOUNT",
+                      "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+                      "statementTotal": {
+                        "text": "$ 449,333,548.30",
+                        "label": "Disbursements for salaries and expenses and canceled checks"
+                      }
+                    },
+                    "period": {
+                      "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+                      "start": "2026-04-01",
+                      "end": "2026-06-30",
+                      "coverage": "quarter"
+                    },
+                    "listedNames": [
+                      "FISCAL YEAR 2026 OFFICE OF INSPECTOR GENERAL"
+                    ],
+                    "matchRule": "reviewed_row",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "matchBasis": "The statement prints the office as 'Office of Inspector General'; it is the House's own statement, so the office is the House's, and the House has one Inspector General.",
+                    "unitsEvidence": {
+                      "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+                      "statementTotal": "$ 449,333,548.30",
+                      "columnAnchor": "1263283.72"
+                    },
+                    "caveat": "The statement's summary file lists the office's current-year organisation only. Disbursements the quarter charged to the office's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure. An OFFICE TOTALS line in the file closes a run of programs, and the figure is the sum of those lines, each checked against its programs' printed totals to the cent.",
+                    "components": [
+                      {
+                        "label": "FISCAL YEAR 2026 OFFICE OF INSPECTOR GENERAL",
+                        "program": "AUDIT  ADVISORY  INVESTIGATION",
+                        "printed": "1263283.72",
+                        "locator": {
+                          "row": 325,
+                          "column": "QTD AMOUNT",
+                          "organization": "FISCAL YEAR 2026 OFFICE OF INSPECTOR GENERAL",
+                          "program": "AUDIT  ADVISORY  INVESTIGATION",
+                          "description": "OFFICE TOTALS:"
+                        },
+                        "programsInOffice": [
+                          {
+                            "program": "TRAINING  PERSONNEL & DEVELOP",
+                            "row": 312,
+                            "printed": "7529.95"
+                          },
+                          {
+                            "program": "ADMIN AND OPS",
+                            "row": 319,
+                            "printed": "150516.97"
+                          },
+                          {
+                            "program": "AUDIT  ADVISORY  INVESTIGATION",
+                            "row": 324,
+                            "printed": "1105236.8"
+                          }
+                        ],
+                        "amount": 1263283.72,
+                        "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+                      }
+                    ],
+                    "zeroComponents": [],
+                    "amount": 1263283.72,
+                    "componentCount": 1,
+                    "documentsStatingTheFigure": 1,
+                    "arithmetic": {
+                      "operation": "sum_of_printed_totals",
+                      "note": "The figure is the one total the document prints for this office."
+                    },
+                    "notTheCost": "Cash the chamber's disbursing office paid out for the office's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+                  }
                 }
               ],
               "lastVerified": "2026-09-21T05:26:27+00:00",
@@ -60994,11 +61969,12 @@
               "cost_status": "allocated",
               "cost_basis": "subtree_weight",
               "cost_validation": "estimated_from_parent",
-              "child_cost_basis": "subtree",
+              "child_cost_basis": "disbursements",
               "costVerificationStatus": "unverified",
               "costConfidenceScore": 0.2,
               "costVerificationReason": "estimated_from_parent",
-              "costSourceCount": 0
+              "costSourceCount": 0,
+              "child_cost_basis_implied": true
             }
           ],
           "sourceUrls": [

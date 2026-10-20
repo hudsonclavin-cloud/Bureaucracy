@@ -18,7 +18,9 @@ Reads, verbatim and with every digest recomputed from the bytes:
 Every record is a sum of totals the chamber prints, each component listed with
 its printed text, validated by `financial_evidence.validate_record` under the
 `disbursements` basis. It is never the cost: the exporter stamps it beside the
-estimate under its own heading, on a node typed Committee and nothing else.
+estimate under its own heading, on a node typed Committee -- or, since
+2026-10-20, on one of the House's own officer offices under `leg-house-admin`,
+each identified by a reviewed row -- and nothing else.
 """
 
 from __future__ import annotations
@@ -53,14 +55,23 @@ def main(argv: list[str] | None = None) -> int:
     for chamber in ("house", "senate"):
         part = report[chamber]
         mine = {k: v for k, v in records.items() if v["chamber"] == chamber}
+        committees = {k: v for k, v in mine.items() if v.get("unitKind") != "house_officer_office"}
+        offices = {k: v for k, v in mine.items() if v.get("unitKind") == "house_officer_office"}
         rules: dict[str, int] = {}
-        for rule in part["matched"].values():
-            rules[rule] = rules.get(rule, 0) + 1
-        print(f"{chamber.upper()}: {len(mine)} of {part['committees_in_graph']} committees carry a figure "
+        for node_id, rule in part["matched"].items():
+            if node_id in committees:
+                rules[rule] = rules.get(rule, 0) + 1
+        print(f"{chamber.upper()}: {len(committees)} of {part['committees_in_graph']} committees carry a figure "
               f"({', '.join(f'{n} {r}' for r, n in sorted(rules.items()))})")
-        for node_id, record in sorted(mine.items()):
+        for node_id, record in sorted(committees.items()):
             print(f"  {node_id:62s} ${record['amount']:>14,.2f}  {record['componentCount']} component(s)"
                   f"  [{record['matchRule']}]")
+        if "officer_offices_in_graph" in part:
+            print(f"  officer offices: {len(offices)} of {part['officer_offices_in_graph']} under the House's "
+                  f"administrative grouping carry a figure (each by a reviewed row)")
+            for node_id, record in sorted(offices.items()):
+                print(f"  {node_id:62s} ${record['amount']:>14,.2f}  {record['componentCount']} component(s)"
+                      f"  [{record['matchRule']}]")
         for reason, items in sorted(part["refused"].items()):
             print(f"  refused, {reason}: {len(items)}")
             for item in items[:8]:
@@ -70,7 +81,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"  labels in the document reaching no committee: {part['labels_not_matched']}")
         print()
 
-    print("A disbursement is cash the chamber paid out for the committee's account over the report's")
+    print("A disbursement is cash the chamber paid out for the unit's account over the report's")
     print("period. It is not the Treasury's net outlays and not the graph's estimate: it is published")
     print("beside the estimate, under its own heading, and never as the cost.")
 
@@ -83,7 +94,8 @@ def main(argv: list[str] | None = None) -> int:
             "Derived by scripts/derive_committee_disbursements_evidence.py from the House's Statement of "
             "Disbursements and the Senate's Report of the Secretary of the Senate, committed verbatim under "
             "tests/fixtures/disbursements/ with their digests. Each record is the sum of the totals the "
-            "chamber prints for one committee's account over the report's period, every component listed. "
+            "chamber prints for one committee's account -- or, for the House's own officer offices, that "
+            "office's organisation -- over the report's period, every component listed. "
             "No row about a person is read. It is not a cost and the exporter never writes it into one."
         ),
         "source": {"kind": "committee_disbursements",

@@ -7657,6 +7657,23 @@ COMMITTEE_DISBURSEMENT_ROWS = {
     "leg-senate-cmte-special-committee-on-aging": (
         "senate", "Senate Special Committee on Aging", ("SPECIAL COMMITTEE ON AGING",)),
 }
+#: The House's own officers and support offices: nodes typed Office whose
+#: tree parent is `leg-house-admin`, each reached by a reviewed row only, the
+#: block marked `unitKind: house_officer_office`. node id -> (the node's name
+#: when the row was written, the labels). Mirror of
+#: committee_disbursements.HOUSE_OFFICE_ROWS, pinned equal by a test; the
+#: Parliamentarian's row is mirrored though the scale rule refuses its record.
+HOUSE_OFFICER_DISBURSEMENT_ROWS = {
+    "leg-house-clerk": ("Clerk of the House", ("FISCAL YEAR 2026 CLERK OF THE HOUSE",)),
+    "leg-house-saa": ("Sergeant at Arms of the House", ("FISCAL YEAR 2026 SERGEANT AT ARMS",)),
+    "leg-house-cao": ("Chief Administrative Officer", ("FISCAL YEAR 2026 CHIEF ADMIN OFCR OF THE HOUSE",)),
+    "leg-house-parliamentarian": ("Office of the Parliamentarian", ("FISCAL YEAR 2026 OFFICE OF THE PARLIAMENTARIAN",)),
+    "leg-house-counsel": ("Office of the Legislative Counsel", ("FISCAL YEAR 2026 LEGISLATIVE COUNSEL",)),
+    "leg-house-physician": ("Office of the Attending Physician", ("FISCAL YEAR 2026 OFFICE OF ATTENDING PHYSICIAN",)),
+    "leg-house-ig": ("Inspector General of the House", ("FISCAL YEAR 2026 OFFICE OF INSPECTOR GENERAL",)),
+}
+HOUSE_OFFICER_PARENT_ID = "leg-house-admin"
+HOUSE_OFFICER_UNIT_KIND = "house_officer_office"
 
 _DISBURSEMENT_DOCUMENTS = None
 
@@ -7752,13 +7769,23 @@ def committee_disbursement_documents():
         pdf_raw = DISBURSEMENT_HOUSE_PDF.read_bytes()
         house = {
             "sha256": _hashlib.sha256(csv_raw).hexdigest(), "url": meta_of(DISBURSEMENT_HOUSE_CSV).get("url"),
-            "volumeSha256": _hashlib.sha256(pdf_raw).hexdigest(), "offices": {},
+            "volumeSha256": _hashlib.sha256(pdf_raw).hexdigest(), "offices": {}, "runs": {},
         }
         rows = list(_csv.reader(io.StringIO(csv_raw.decode("utf-8-sig"))))
+        # An OFFICE TOTALS line closes a run of program TOTALS lines; `runs`
+        # keeps each run in file order so an officer office's block, which
+        # claims the office total equals its programs' totals, can be checked.
+        run, run_org = [], None
         for row in rows[1:]:
             org, program, description, _ytd, qtd = (cell.strip() for cell in row)
+            if org != run_org:
+                run, run_org = [], org
             if description == "OFFICE TOTALS:":
                 house["offices"].setdefault(org, []).append((program, qtd))
+                house["runs"].setdefault(org, []).append((program, qtd, tuple(run)))
+                run = []
+            elif description == program + " TOTALS:":
+                run.append((program, qtd))
         for text in _disbursement_pdf_pages(pdf_raw, b"ABILITY"):
             if "STATEMENT OF ACCOUNTABILITY FOR APPROPRIATIONS" not in text:
                 continue
@@ -7882,14 +7909,38 @@ def committee_disbursement_violations(node, block, docs, label, tree_parents, by
     out = []
     say = lambda text: out.append("{} {}".format(label(node), text))  # noqa: E731
     node_id = str(node.get("id") or "")
-    if str(node.get("type") or "").strip().casefold() != "committee":
+    node_type = str(node.get("type") or "").strip().casefold()
+    unit_kind = str(block.get("unitKind") or "committee")
+    officer_row = HOUSE_OFFICER_DISBURSEMENT_ROWS.get(node_id)
+    if unit_kind == HOUSE_OFFICER_UNIT_KIND:
+        # A House officer's office: typed Office, directly under the House's
+        # administrative grouping, mirrored by id, and nothing else.
+        if node_type != "office" or node.get("synthetic"):
+            say("carries a House officer's disbursements but is typed {!r}".format(node.get("type")))
+            return out
+        if tree_parents.get(node_id) != HOUSE_OFFICER_PARENT_ID:
+            say("carries a House officer's disbursements but does not sit directly under {}".format(HOUSE_OFFICER_PARENT_ID))
+            return out
+        if officer_row is None:
+            say("carries a House officer's disbursements under an id this gate does not mirror")
+            return out
+    elif unit_kind != "committee":
+        say("marks its disbursements with unit kind {!r}, which this gate does not know".format(unit_kind))
+        return out
+    elif node_type != "committee":
         say("is typed {!r}; a chamber's committee disbursements sit on a node typed Committee only".format(node.get("type")))
+        return out
+    elif officer_row is not None:
+        say("is a House officer's office but carries a committee's block")
         return out
     if str(node.get("cost_status") or "") in DISBURSEMENT_MEASURED:
         say("carries committee disbursements beside a measured cost")
     chamber = str(block.get("chamber") or "")
     if chamber not in DISBURSEMENT_CHAMBER_ROOTS:
         say("names chamber {!r}".format(chamber))
+        return out
+    if unit_kind == HOUSE_OFFICER_UNIT_KIND and chamber != "house":
+        say("carries a House officer's disbursements from the {} document".format(chamber))
         return out
     if _disbursement_chamber(node_id, tree_parents) != chamber:
         say("cites the {} document but is not a committee of that chamber in the tree".format(chamber))
@@ -7920,6 +7971,11 @@ def committee_disbursement_violations(node, block, docs, label, tree_parents, by
         say("names no rule this gate knows ({!r}) or no label".format(rule))
         return out
     row = COMMITTEE_DISBURSEMENT_ROWS.get(node_id)
+    if unit_kind == HOUSE_OFFICER_UNIT_KIND:
+        row = ("house",) + officer_row
+        if rule != "reviewed_row":
+            say("reaches a House officer's office by {}, where only a reviewed row may".format(rule))
+            return out
     if rule == "reviewed_row":
         if row is None or row[0] != chamber or tuple(labels) != row[2]:
             say("claims a reviewed identification this gate does not mirror for it")
@@ -7965,6 +8021,26 @@ def committee_disbursement_violations(node, block, docs, label, tree_parents, by
             say("bounds its scale by {!r}, not the statement's own marked total".format(units.get("statementTotal")))
         if not str(block.get("caveat") or "").strip():
             say("does not say the summary file omits the committee's earlier-year accounts")
+        if unit_kind == HOUSE_OFFICER_UNIT_KIND:
+            # Each component is an OFFICE TOTALS line closing a run of
+            # programs; the block lists the run, and the file must print the
+            # run and its programs' totals must sum to the office total.
+            runs = {}
+            for printed_label in labels:
+                for program, qtd, programs in doc["runs"].get(printed_label, []):
+                    runs[(printed_label, program, qtd)] = programs
+            for component in block.get("components") or []:
+                key = (str(component.get("label")), str(component.get("program")), str(component.get("printed")))
+                listed = tuple((str(p.get("program")), str(p.get("printed")))
+                               for p in (component.get("programsInOffice") or []))
+                printed_run = runs.get(key)
+                if printed_run is None or not listed or listed != printed_run:
+                    say("lists programs under its office total {!r} that the file does not print in that run".format(key[2]))
+                    continue
+                if sum(round(float(q) * 100) for _, q in printed_run) != round(float(key[2]) * 100):
+                    say("claims an office total {!r} that is not the sum of its programs' printed totals".format(key[2]))
+            if "earlier-year" not in str(block.get("caveat") or ""):
+                say("does not say the summary file omits the office's earlier-year accounts")
     else:
         for printed_label in labels:
             sections = doc["sections"].get(printed_label)
@@ -10477,13 +10553,17 @@ def main(argv):
             sum(1 for n in nodes if n.get("cost_basis") == "implied_disbursement_weight"),
         ) if not payout_weight_violations else "",
     )
+    officer_office_nodes = [n for n in disbursement_nodes
+                            if n["committeeDisbursements"].get("unitKind") == HOUSE_OFFICER_UNIT_KIND]
     gate.check(
         "a committee's disbursements are the chamber's own printed totals, and never the cost",
         disbursement_violations,
-        " — {} committee(s): {} House, {} Senate".format(
-            len(disbursement_nodes),
-            sum(1 for n in disbursement_nodes if n["committeeDisbursements"].get("chamber") == "house"),
+        " — {} committee(s): {} House, {} Senate; {} House officer office(s)".format(
+            len(disbursement_nodes) - len(officer_office_nodes),
+            sum(1 for n in disbursement_nodes if n["committeeDisbursements"].get("chamber") == "house")
+            - len(officer_office_nodes),
             sum(1 for n in disbursement_nodes if n["committeeDisbursements"].get("chamber") == "senate"),
+            len(officer_office_nodes),
         ) if not disbursement_violations else "",
     )
 

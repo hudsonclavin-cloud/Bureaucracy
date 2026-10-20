@@ -118,10 +118,17 @@ class DocumentTests(unittest.TestCase):
         carry payee rows beneath the block. Nothing from those rows -- the
         column heading over them, a document number, a payee -- may appear in
         what this module writes."""
-        text = json.dumps(self.s["records"])
+        senate_text = json.dumps({k: v for k, v in self.s["records"].items() if v["chamber"] == "senate"})
+        house_text = json.dumps({k: v for k, v in self.s["records"].items() if v["chamber"] == "house"})
         for marker in ("PAYEE", "DOCUMENT NO", "DATE POSTED", "OBLIGATION/SERVICE", "PERSONNEL COMP",
-                       "STAFF PER DIEM", "STAFF TRANSPORTATION", "SERGEANT AT ARMS"):
-            self.assertNotIn(marker, text)
+                       "STAFF PER DIEM", "STAFF TRANSPORTATION"):
+            self.assertNotIn(marker, senate_text)
+            self.assertNotIn(marker, house_text)
+        # The Senate's payee pages print "SERGEANT AT ARMS" over a payee
+        # column; the House's file prints it as an organisation's own label
+        # ("FISCAL YEAR 2026 SERGEANT AT ARMS"), which one record quotes.
+        self.assertNotIn("SERGEANT AT ARMS", senate_text)
+        self.assertEqual(house_text.count("SERGEANT AT ARMS"), house_text.count("FISCAL YEAR 2026 SERGEANT AT ARMS"))
         for record in self.s["records"].values():
             for component in record["components"]:
                 if record["chamber"] == "senate":
@@ -138,7 +145,7 @@ class MatchingTests(unittest.TestCase):
 
     def test_every_house_committee_and_all_but_one_senate_committee(self) -> None:
         records = self.s["records"]
-        house = [r for r in records.values() if r["chamber"] == "house"]
+        house = [r for r in records.values() if r["chamber"] == "house" and r["unitKind"] == cd.UNIT_COMMITTEE]
         senate = [r for r in records.values() if r["chamber"] == "senate"]
         self.assertEqual(len(house), 21)
         self.assertEqual(len(senate), 19)
@@ -147,8 +154,14 @@ class MatchingTests(unittest.TestCase):
         self.assertNotIn("leg-senate-cmte-appropriations", records)
 
     def test_no_subcommittee_and_no_post_carries_one(self) -> None:
-        for node_id in self.s["records"]:
-            self.assertEqual(self.s["node_map"][node_id].get("type"), "Committee")
+        for node_id, record in self.s["records"].items():
+            node = self.s["node_map"][node_id]
+            if record["unitKind"] == cd.UNIT_OFFICE:
+                self.assertEqual(node.get("type"), "Office")
+                self.assertIn(node_id, cd.HOUSE_OFFICE_ROWS)
+                self.assertEqual(self.s["parent_map"][node_id], cd.HOUSE_OFFICE_PARENT_ID)
+            else:
+                self.assertEqual(node.get("type"), "Committee")
 
     def test_a_split_committee_is_summed_whole(self) -> None:
         record = self.s["records"]["leg-house-cmte-energy-commerce"]
@@ -180,6 +193,12 @@ class MatchingTests(unittest.TestCase):
             for node_id, row in cd.REVIEWED_ROWS.items()
         }
         self.assertEqual(mirrored, gate.COMMITTEE_DISBURSEMENT_ROWS)
+        offices = {node_id: (row["name"], tuple(row["labels"])) for node_id, row in cd.HOUSE_OFFICE_ROWS.items()}
+        self.assertEqual(offices, gate.HOUSE_OFFICER_DISBURSEMENT_ROWS)
+        self.assertEqual(set(cd.HOUSE_OFFICE_ROWS), set(fe.HOUSE_OFFICER_OFFICE_IDS))
+        self.assertEqual(gate.HOUSE_OFFICER_PARENT_ID, cd.HOUSE_OFFICE_PARENT_ID)
+        self.assertEqual(gate.HOUSE_OFFICER_UNIT_KIND, cd.UNIT_OFFICE)
+        self.assertTrue(set(cd.REVIEWED_ROWS).isdisjoint(cd.HOUSE_OFFICE_ROWS))
 
     def test_the_gate_s_committee_key_is_the_module_s(self) -> None:
         names = [n.get("name") for n in self.s["node_map"].values()
@@ -358,7 +377,8 @@ class GateTests(unittest.TestCase):
     def test_the_true_blocks_pass(self) -> None:
         self.assertEqual(self.check(json.loads(json.dumps(self.graph))), [])
         carried = [n for n, _ in walk(self.graph) if n.get(cd.FIELD)]
-        self.assertEqual(len(carried), 40)
+        self.assertEqual(len(carried), 46)
+        self.assertEqual(sum(1 for n in carried if n[cd.FIELD]["unitKind"] == cd.UNIT_OFFICE), 6)
 
     def test_each_corruption_is_refused(self) -> None:
         house, senate = "leg-house-cmte-agriculture", "leg-senate-cmte-finance"
@@ -498,4 +518,191 @@ class PayoutWeightGateTests(unittest.TestCase):
                 parents[str(child["id"])] = str(node["id"])
                 stack.append(child)
         self.assertEqual(gate.disbursement_weight_violations(nodes, parents, lambda n: n["id"]), [])
-        self.assertEqual(sum(1 for n in nodes if n.get("cost_basis") == "disbursement_weight"), 40)
+        self.assertEqual(sum(1 for n in nodes if n.get("cost_basis") == "disbursement_weight"), 46)
+        # The Senate Appropriations Committee, the House Chaplain and the
+        # Parliamentarian: implied from their siblings' payouts.
+        self.assertEqual(sum(1 for n in nodes if n.get("cost_basis") == "implied_disbursement_weight"), 3)
+
+
+class HouseOfficerOfficeTests(unittest.TestCase):
+    """The House's own officer offices, from the same statement (2026-10-20).
+
+    The statement prints each officer's organisation under the officer's
+    title, as a run of programs closed by one OFFICE TOTALS line -- or
+    several runs. The record is the sum of those lines, each checked against
+    its programs' printed totals to the cent; the block is marked for an
+    office, sits only on a node typed Office directly under the House's
+    administrative grouping whose id a reviewed row names, and the gate
+    refuses each way the mark, the parent, the run or the rule can be wrong.
+    """
+
+    PRICED = ("leg-house-clerk", "leg-house-saa", "leg-house-cao", "leg-house-counsel",
+              "leg-house-physician", "leg-house-ig")
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.s = Shared.get()
+        graph = json.loads(json.dumps(cls.s["base"]))
+        cd.apply_committee_disbursements_evidence(graph, cls.s["records"])
+        cls.graph = graph
+        cls.docs = gate.committee_disbursement_documents()
+
+    def test_six_offices_priced_and_the_parliamentarian_refused_by_the_scale_rule(self) -> None:
+        records = self.s["records"]
+        offices = {k: v for k, v in records.items() if v["unitKind"] == cd.UNIT_OFFICE}
+        self.assertEqual(set(offices), set(self.PRICED))
+        for record in offices.values():
+            self.assertEqual(record["chamber"], "house")
+            self.assertEqual(record["matchRule"], "reviewed_row")
+            self.assertEqual(record["scopeMatch"], "proxy")
+            self.assertEqual(record["financialEvidenceStatus"], "partial")
+            self.assertIn("earlier-year", record["caveat"])
+            self.assertIn("office's account", record["notTheCost"])
+        refused = self.s["reports"]["house"]["refused"]
+        self.assertEqual(refused.get("largest_office_total_too_small_to_bound_the_scale"), ["leg-house-parliamentarian"])
+        self.assertNotIn("leg-house-chaplain", records)
+        self.assertEqual(self.s["reports"]["house"]["officer_offices_in_graph"], 8)
+
+    def test_each_office_total_is_the_sum_of_its_programs_in_the_file(self) -> None:
+        docs = self.docs
+        for node_id in self.PRICED:
+            record = self.s["records"][node_id]
+            for component in record["components"]:
+                with self.subTest(node=node_id, program=component["program"]):
+                    runs = {(p, q): programs for p, q, programs in docs["house"]["runs"][component["label"]]}
+                    printed = runs[(component["program"], component["printed"])]
+                    listed = tuple((p["program"], p["printed"]) for p in component["programsInOffice"])
+                    self.assertEqual(listed, printed)
+                    self.assertEqual(sum(round(float(q) * 100) for _, q in printed),
+                                     round(float(component["printed"]) * 100))
+            self.assertEqual(round(record["amount"] * 100),
+                             sum(round(c["amount"] * 100) for c in record["components"]))
+
+    def test_the_cao_claims_its_own_organisation_only(self) -> None:
+        record = self.s["records"]["leg-house-cao"]
+        self.assertEqual(record["listedNames"], ["FISCAL YEAR 2026 CHIEF ADMIN OFCR OF THE HOUSE"])
+        self.assertIn("House-wide accounts", record["caveat"])
+        house_wide = [org for org in self.s["house"]["organisations"]
+                      if org.startswith("FISCAL YEAR 2026 ") and "CHIEF ADMIN" not in org
+                      and org not in {l for r in cd.HOUSE_OFFICE_ROWS.values() for l in r["labels"]}]
+        self.assertTrue(house_wide, "the file prints other House-wide organisations the row must not claim")
+
+    def test_the_legislative_counsel_is_not_the_general_counsel(self) -> None:
+        self.assertIn("FISCAL YEAR 2026 OFFICE OF GENERAL COUNSEL", self.s["house"]["organisations"])
+        self.assertEqual(self.s["records"]["leg-house-counsel"]["listedNames"], ["FISCAL YEAR 2026 LEGISLATIVE COUNSEL"])
+
+    def test_the_validator_admits_the_basis_on_a_listed_office_and_nowhere_else(self) -> None:
+        office = {"id": "leg-house-clerk", "name": "Clerk of the House", "type": "Office"}
+        fe.validate_record(house_record(nodeId="leg-house-clerk"), office)
+        for name, node in (
+            ("an office the table does not list", dict(office, id="leg-house-chaplain")),
+            ("the listed id on a post", dict(office, type="Position")),
+            ("the listed id on a legislative agency", dict(office, type="Legislative Agency")),
+            ("a synthetic node", dict(office, synthetic="treasury_receipts")),
+        ):
+            with self.subTest(case=name), self.assertRaises(fe.Rejected):
+                fe.validate_record(house_record(nodeId=node["id"]), node)
+
+    def test_apply_refuses_the_office_block_off_its_parent_and_on_a_committee(self) -> None:
+        record = self.s["records"]["leg-house-clerk"]
+        root = {"id": "r", "name": "r", "children": [
+            {"id": cd.HOUSE_OFFICE_PARENT_ID, "name": "House Administrative Offices Division", "type": "Division",
+             "children": [{"id": "leg-house-clerk", "name": "Clerk of the House", "type": "Office", "children": []}]},
+            {"id": "elsewhere", "name": "elsewhere", "type": "Division", "children": [
+                {"id": "leg-house-saa", "name": "Sergeant at Arms of the House", "type": "Office", "children": []},
+                {"id": "leg-house-cmte-rules", "name": "House Committee on Rules", "type": "Committee", "children": []},
+            ]},
+        ]}
+        saa = dict(self.s["records"]["leg-house-saa"])
+        on_committee = dict(record, nodeId="leg-house-cmte-rules", nodeName="House Committee on Rules")
+        report = cd.apply_committee_disbursements_evidence(
+            root, {"leg-house-clerk": record, "leg-house-saa": saa, "leg-house-cmte-rules": on_committee})
+        self.assertEqual(report["applied"], 1)
+        self.assertEqual(report["refused_not_a_committee"], 2)
+        self.assertIn(cd.FIELD, root["children"][0]["children"][0])
+        self.assertNotIn(cd.FIELD, root["children"][1]["children"][0])
+        self.assertNotIn(cd.FIELD, root["children"][1]["children"][1])
+
+    def check(self, graph):
+        pairs = list(walk(graph))
+        tree_parents = {str(n.get("id") or ""): str((p or {}).get("id") or "") for n, p in pairs}
+        by_id = {str(n.get("id") or ""): n for n, _ in pairs}
+        out = []
+        for node, _ in pairs:
+            block = node.get(cd.FIELD)
+            if isinstance(block, dict):
+                out.extend(gate.committee_disbursement_violations(node, block, self.docs, gate.label, tree_parents, by_id))
+        return out
+
+    def corrupt(self, node_id, mutate):
+        graph = json.loads(json.dumps(self.graph))
+        nodes = {n["id"]: n for n, _ in walk(graph) if n.get("id")}
+        parents = {n["id"]: p for n, p in walk(graph) if n.get("id")}
+        mutate(nodes[node_id], nodes, parents)
+        return self.check(graph)
+
+    def test_the_true_office_blocks_pass(self) -> None:
+        self.assertEqual(self.check(json.loads(json.dumps(self.graph))), [])
+
+    def test_each_office_corruption_is_refused(self) -> None:
+        clerk, saa = "leg-house-clerk", "leg-house-saa"
+
+        def setblock(key, value):
+            return lambda node, nodes, parents: node[cd.FIELD].__setitem__(key, value)
+
+        def move_to(target_id):
+            def mutate(node, nodes, parents):
+                nodes[target_id][cd.FIELD] = node.pop(cd.FIELD)
+            return mutate
+
+        def reparent(node, nodes, parents):
+            parents[node["id"]]["children"].remove(node)
+            nodes["leg-house"]["children"].append(node)
+
+        def alter_run(node, nodes, parents):
+            node[cd.FIELD]["components"][0]["programsInOffice"][0]["printed"] = "1.00"
+
+        def drop_run(node, nodes, parents):
+            node[cd.FIELD]["components"][0]["programsInOffice"] = []
+
+        def swap_run(node, nodes, parents):
+            other = nodes[saa][cd.FIELD]["components"][0]["programsInOffice"]
+            node[cd.FIELD]["components"][0]["programsInOffice"] = json.loads(json.dumps(other))
+
+        cases = [
+            ("the office mark stripped", clerk, setblock("unitKind", cd.UNIT_COMMITTEE)),
+            ("an unknown unit kind", clerk, setblock("unitKind", "senate_officer_office")),
+            ("the office block moved onto a committee", clerk, move_to("leg-house-cmte-rules")),
+            ("the office block moved onto an unlisted office", clerk, move_to("leg-house-chaplain")),
+            ("the office block moved onto another listed office", clerk, move_to(saa)),
+            ("the office re-parented out of the administrative grouping", clerk, reparent),
+            ("the office retyped as a committee", clerk, lambda n, nodes, parents: n.__setitem__("type", "Committee")),
+            ("the office retyped as a post", clerk, lambda n, nodes, parents: n.__setitem__("type", "Position")),
+            ("a committee block marked as an office", "leg-house-cmte-rules", setblock("unitKind", cd.UNIT_OFFICE)),
+            ("the office reached by the name rule", clerk, setblock("matchRule", "committee_key_equal")),
+            ("a run's program total altered", clerk, alter_run),
+            ("a run dropped", clerk, drop_run),
+            ("another office's run listed", clerk, swap_run),
+            ("a figure the file does not print", saa, setblock("amount", 1.0)),
+            ("a component dropped", saa, lambda n, nodes, parents: n[cd.FIELD]["components"].pop()),
+            ("the Senate document cited", clerk, setblock("chamber", "senate")),
+            ("a renamed office", clerk, lambda n, nodes, parents: n.__setitem__("name", "Clerk of the Senate")),
+            ("the caveat without the earlier-year sentence", clerk, setblock("caveat", "A caveat.")),
+            ("the office block beside a measured cost", clerk,
+             lambda n, nodes, parents: n.__setitem__("cost_status", "official")),
+            ("the estimate equal to the figure", saa,
+             lambda n, nodes, parents: n.update(cost_status="allocated", resolved_total_amount=n[cd.FIELD]["amount"])),
+        ]
+        for name, node_id, mutate in cases:
+            with self.subTest(case=name):
+                self.assertNotEqual(self.corrupt(node_id, mutate), [], f"{name} was accepted")
+
+    def test_no_person_reaches_an_office_record(self) -> None:
+        # The CSV names no person; the pins are that no component reaches
+        # beyond the OFFICE TOTALS and TOTALS lines, whose cells are an
+        # organisation, a program, a description and two figures.
+        for node_id in self.PRICED:
+            for component in self.s["records"][node_id]["components"]:
+                self.assertEqual(component["locator"]["description"], cd.HOUSE_OFFICE_TOTAL)
+                for program in component["programsInOffice"]:
+                    self.assertRegex(program["printed"], r"^-?\d+(?:\.\d{1,2})?$")

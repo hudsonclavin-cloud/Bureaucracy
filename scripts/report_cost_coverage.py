@@ -43,7 +43,9 @@ DEFAULT_OUTPUT = PROJECT_ROOT / "docs" / "COST_COVERAGE.md"
 #: is published beside the estimate under its own heading. Where one of these
 #: is present the node has a sourced, dated figure a reader can see today;
 #: what it lacks is a figure this project is willing to head COST.
-SOURCED_FIGURES_BESIDE = ("usaspendingOutlays", "ombBudget", "auditedNetCost")
+#: `committeeDisbursements` counts here for the House's officer offices,
+#: which carry it since 2026-10-20; a committee is classed before this is read.
+SOURCED_FIGURES_BESIDE = ("usaspendingOutlays", "ombBudget", "auditedNetCost", "committeeDisbursements")
 
 COMMITTEE_TYPES = ("committee", "subcommittee")
 
@@ -78,7 +80,9 @@ CLASSES = {
         "An apportioned share, and beside it at least one figure an official source states for "
         "this unit under its own heading: USAspending File A gross outlays (fiscal year to date), "
         "OMB's Public Budget Database outlays (last completed year, summed over the unit's account "
-        "rows), or Treasury's audited Statement of Net Cost (last completed year). Each is on the "
+        "rows), Treasury's audited Statement of Net Cost (last completed year), or — for the "
+        "House's own officer offices, since 2026-10-20 — what the House's Statement of "
+        "Disbursements paid out for the officer's organisation over a quarter. Each is on the "
         "panel today; none is headed COST, because each measures something different from the "
         "Treasury's net outlays on a different clock.",
         "The decision is the owner's, not a build: whether the headline may fall back to one of "

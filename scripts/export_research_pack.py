@@ -138,11 +138,17 @@ def build(out_dir: Path) -> dict:
                                     org.get("id", ""), org.get("name", ""), branch])
             if not any(isinstance(node.get(f), dict) for f in PAY_FIELDS):
                 listing = node.get("positionCurrentListing") or node.get("positionListing") or {}
+                # `payLevel` is the rank the listing prints (a level or a
+                # grade); the archive's raw `level` cell can hold a former
+                # incumbent's rate instead, which is not a level and which the
+                # first export printed in this column. Where it does, the last
+                # column says so, because that is why the post is unpriced.
                 unpriced.append([
                     node.get("id"), node.get("name"), family_name(node.get("name") or ""),
                     parent.get("id"), parent.get("name"), org.get("id", ""), org.get("name", ""), branch,
                     classify(node, replaced), node.get("representsPosts") or "",
-                    get(listing, "payPlan"), get(listing, "payLevel") or get(listing, "level"),
+                    get(listing, "payPlan"), get(listing, "payLevel"),
+                    "yes" if get(listing, "reportedPay") not in (None, "") else "",
                 ])
             continue
         has_page = bool([u for u in (sites.get(node.get("id")) or []) if isinstance(u, str)])
@@ -196,7 +202,8 @@ def build(out_dir: Path) -> dict:
             "branch_or_sector"], posts_nosrc),
         "unpriced_posts.csv": write_csv(out_dir / "unpriced_posts.csv", [
             "id", "title", "title_family", "parent_id", "parent_name", "organisation_id", "organisation_name",
-            "branch_or_sector", "reason", "represents_posts", "listed_pay_plan", "listed_level_or_grade"], unpriced),
+            "branch_or_sector", "reason", "represents_posts", "listed_pay_plan", "listed_level_or_grade",
+            "archive_prints_a_former_incumbents_rate"], unpriced),
     }
     readme = [
         "# Research pack",
@@ -224,7 +231,11 @@ def build(out_dir: Path) -> dict:
         "- `reason` in unpriced_posts.csv: `unreached` = no document read names the title; `multiplicity` = the node "
         "stands for several holders, so only a figure that holds for every holder may be published; "
         "`beneath_replaced_unit` and `not_federally_paid` are not research work; `listed_no_rate` = OPM lists the "
-        "post with a grade or level but no rate.",
+        "post and the row prints no rate the project may use. Where `archive_prints_a_former_incumbents_rate` "
+        "is `yes`, OPM's archive of the previous administration prints a rate for whoever then held the post; "
+        "that is one incumbency's pay, not the post's, and the project does not publish it as a pay claim "
+        "nor a range beside it (two figures for one post). The missing document is one that states what "
+        "the post pays whoever holds it, or the current holder's listed rate.",
         "- `title_family` groups templated copies of one title (e.g. 'Chief Financial Officer' under 60 "
         "organisations). Answer per family where one document governs the whole family.",
         "- Many titles are curated templates, not titles any agency prints. A useful answer may be "

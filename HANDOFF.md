@@ -31,7 +31,7 @@ CLAUDE.md.
 | Staff payroll (OPM FedScope, Mar 2025, civilian basic pay) | 178 orgs; top-level $185.1bn for 1.65M civilians |
 | Spending by object class (USAspending, FY2025 obligations) | 86 agencies incl. all 15 departments; staff pay (11.x+12.x) $595.0bn of $10.09tn obligations |
 
-Cache stamp: `?v=20261012b` (bump index.html, js/ui.js, js/graph.js together
+Cache stamp: `?v=20261020a` (bump index.html, js/ui.js, js/graph.js together
 on any JS change).
 
 ## Next actions, in order
@@ -65,6 +65,16 @@ on any JS change).
 5. **Viewer size margin** is ~141 KB (`graph.min.json` must stay under half of
    `graph.json`). Next field added may trip it; the planned fix is to store the
    461 member-seat blocks once (`SHARED_DOCUMENT_BLOCKS`), never to loosen the rule.
+6. **The proxy allowlist (owner action).** This session's agent proxy refuses
+   every `.gov` host (`scripts/probe_network_access.py`: 327 refused at the
+   tunnel). Nothing in CURATION.md §22.1 can be fetched until the owner widens
+   it: `python scripts/probe_network_access.py --allowlist` prints the list.
+   First fetches once it opens, in order: the Combined Statement FY2025
+   chapters (fiscal.treasury.gov), the Senate Report Part I (govinfo), the SES
+   career-reserved notice (govinfo), GAO's 2026 pay tables (retry; 403 last time).
+7. **Owner decision, open:** whether a chamber's disbursement figure may be
+   an office's or a committee's HEADLINE (it is "beside" today; the stand-in
+   order names File A, OMB and audited net cost only).
 
 ## Design system (2026-10-12, three slices, all on main)
 
@@ -237,6 +247,29 @@ so each prompt now names CSVs from `scripts/export_research_pack.py`
 (`output/research_pack/`, gitignored) to attach, and forbids estimated
 counts; `tests/test_export_research_pack.py` holds the lists to the graph. Cache stamp `?v=20261015a`.
 
+**The fifth research pass, sorted, and the House's officers priced
+(2026-10-20).** The owner returned the pass's twelve files; `CURATION.md`
+§22 sorts them into documents to fetch once the proxy admits the hosts (the
+Combined Statement FY2025, the Senate Report Part I, OPM's career-reserved
+SES notice, GAO's pay tables), leads that need a reviewed identification
+first, and leads with no usable document (the SF133 workbooks sit behind a
+`Disallow: /`; the Congressional Directory prints addresses and no officers;
+the pass's "OFFICE OF GENERAL COUNSEL" → Legislative Counsel match was
+wrong). The one build the committed documents allowed landed: the House's
+Statement of Disbursements prints the House's own officers as organisations,
+and `committee_disbursements.py` now prices six of the eight Office nodes
+under `leg-house-admin` through `HOUSE_OFFICE_ROWS` (reviewed, re-checked
+each run), an office total being the sum of a RUN of programs the module and
+the gate both re-add to the cent. The block is the same field marked
+`unitKind: house_officer_office`; the validator, the exporter and the gate
+each key on the mark and the id. The Parliamentarian is refused by the scale
+rule and the Chaplain is printed nowhere. Exactly the eight siblings moved
+(the Clerk $34.2m → $14.4m, the SAA $3.8m → $18.9m, the CAO $45.6m →
+$52.1m); 46 shares are weighted by a payout, 3 implied; the coverage
+report's "with a sourced figure beside" class 62 → 68. Not the headline —
+whether a disbursement may head a node is the owner's decision. Cache stamp
+`?v=20261020a`.
+
 Left deliberately undone: a fiscal-anchor chip in the top bar (the figure
 lives in `#data-provenance`, computed from the graph — a static chip would
 go stale on the next statement); collapsing the long provenance prose
@@ -259,7 +292,7 @@ artifacts ("Bureaucracy — Unified Explorer").
   (`CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome node scripts/frontend_smoke.mjs`,
   check the output says `"ok": true`, not just exit code).
 - Push: `git push -u origin main`, then `git branch -f claude/serene-darwin-a79mop main && git push -u origin claude/serene-darwin-a79mop`.
-- Commit trailer: `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` and the session line.
+- Commit trailer: the `Co-Authored-By: Claude <model> <noreply@anthropic.com>` line the session is given, and the session line.
 
 ## Environment gotchas seen this session
 

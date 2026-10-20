@@ -913,9 +913,10 @@ def get_node_weight(
     use_disbursements: bool = True,
 ) -> tuple[float, str]:
     # What the chamber paid out for a committee's account over one period
-    # (committee_disbursements.py). Only a committee carries the block, and
-    # resolve_sibling_weights compares it only with siblings read from the
-    # same statement for the same period.
+    # (committee_disbursements.py). A committee carries the block, and since
+    # 2026-10-20 so does one of the House's own officer offices under
+    # `leg-house-admin`; resolve_sibling_weights compares it only with
+    # siblings read from the same statement for the same period.
     if use_disbursements and disbursement_document_key(node) is not None:
         amount = parse_cost_amount(node["committeeDisbursements"].get("amount"))
         if amount is not None and amount > 0:

@@ -5599,3 +5599,179 @@ so every refusal `headcounts.py` makes binds unchanged.
   September 2024 cube, a different period; any per-post figure — a post with
   no pay claim shows only a context line read in the browser off its parent's
   block ("this is not this post's pay").
+
+## 22. The fifth research pass, sorted, and the House's own officers priced from a statement already in hand (2026-10-20)
+
+`docs/RESEARCH_PROMPT_5_DEEP_RESEARCH.md` went out as four prompts with the
+node lists attached (`output/research_pack/`), after Perplexity refused the
+first form for want of them. The owner returned twelve files: the cash-flow
+report (Prompt A), a four-section report, a 116-entry source catalogue, a
+robots-access survey of 168 hosts, 8,221 per-node routes, a family index, an
+input manifest, the pass's own counts, and three documents it had inspected —
+the Congressional Directory of 2026-02-20 as text, OPM's 2024 career-reserved
+SES notice (90 FR, FR Doc. 2025-08853), and the FY2026 monthly SF133 workbook
+for the Legislative Branch. Every number below was re-measured here against
+the published graph; where the pass's own number differs, this file's is the
+one re-derived from the files, and the pass is the lead.
+
+**What the pass got right about itself.** It routed 396 of the 681 estimate
+units at the Combined Statement and marked every one `match_is_verified:
+false`, saying in words that "claiming conversion counts now would violate
+the project's rule". That is the correct posture and it is why the routes are
+leads and not rows.
+
+### 22.1 Pile 1 — documents to fetch once this session's proxy admits the hosts
+
+Nothing on a `.gov` host can be fetched from this session: the agent proxy
+refuses the tunnel to every one of the 327 hosts `scripts/probe_network_access.py`
+tries ("Tunnel connection failed: 403 Forbidden"), which is this environment's
+allowlist and not any host's answer (`docs/NETWORK_ACCESS.md` §0a). A proxy
+refusal is never published. `python scripts/probe_network_access.py
+--allowlist` prints the paste-ready list. In order of what each would buy:
+
+- **The Combined Statement of Receipts, Outlays, and Balances, FY2025**
+  (`fiscal.treasury.gov/.../combined-statement/cs2025/c01.pdf` and the other
+  chapters; robots allows). A completed year on the anchor's own basis, by
+  Treasury account. The only specimen of its account names in hand is the
+  SF133 workbook's 55 Legislative Branch accounts, of which **9 reduce by name
+  to exactly one organisation node, all nine estimates with no sourced figure
+  of any kind today**: the Architect's six buildings accounts (Capitol
+  Building, Capitol Grounds, Senate and House Office Buildings, the Power
+  Plant, the Visitor Center), the Library's National Library Service, MACPAC
+  and MedPAC. The other 46 are object or fund accounts ("General
+  Administration", "Salaries, Officers and Employees") that name no unit. The
+  pass's 396 routes are the ceiling of what the other chapters might reach;
+  nothing here claims a count for them.
+- **The Report of the Secretary of the Senate, Part I** (govinfo,
+  `GPO-CDOC-119sdoc6-1.pdf`; robots allows). Part II priced 19 committees
+  (§19.21 and the disbursements module); Part I carries "Salaries, Officers
+  and Employees", which is where the Senate's own officers and the
+  Appropriations Committee are funded. The House half of that build landed
+  today (§22.4); the Senate half needs Part I.
+- **OPM's career-reserved SES notice** (`FR-2025-05-20`, FR Doc. 2025-08853;
+  govinfo allows). A fixed-width table of 6,186 position titles under 283
+  agencies and their organisations. A naïve probe — organisation column, then
+  agency column, reduced by `federal_register_name_keys` to one node, title
+  equal to exactly one of that node's position children — reaches **101
+  posts, 63 of them carrying no source of any kind**, 83 through the
+  organisation column. That is a ceiling: it folds a trailing "(2)" and
+  refuses nothing for a duplicate title. What it would publish is a
+  *listing* — the post exists and is career-reserved SES — and a reason to
+  publish `positionGradePay`'s SES range, never a rate. The scoping needs a
+  reviewed table (§22.2): the largest agency labels reduce to no node ("OFFICE
+  OF THE SECRETARY" ×317, "DEPARTMENT OF THE AIR FORCE" ×201, "OFFICE OF THE
+  DEPUTY ATTORNEY GENERAL" ×140).
+- **GAO's 2026 pay tables** (`www.gao.gov/assets/2026-04/...All Localities.pdf`).
+  Recorded in `tests/fixtures/gao/README.md` as refused by the host (403 on
+  robots.txt and the PDF) on 2026-10-08; the pass's survey of 2026-10-15 saw
+  `www.gao.gov` answer robots.txt 200 and `files.gao.gov` 403. Retry once,
+  record either way.
+
+### 22.2 Pile 2 — leads that need a reviewed identification before they can publish
+
+- **The House's officer offices** — built today, §22.4.
+- **Combined Statement accounts beyond name equality.** An account name that
+  does not reduce to a node's name needs a row with its basis, the shape of
+  `TREASURY_ROW_ALIASES`, and the same-section rule applies.
+- **The SES notice's agency labels** that name no node: a reviewed table from
+  the notice's own label to the node, with the civilian-department /
+  uniformed-service distinction this file records for the Army, Navy and Air
+  Force kept — "DEPARTMENT OF THE AIR FORCE" is not `U.S. Air Force`.
+- **The Congressional Directory as a nomination source, not evidence.** The
+  pass reported that the Directory's executive section lists each department's
+  officers. The 2026-02-20 edition does not: under "EXECUTIVE DEPARTMENTS" it
+  prints the department, its bureaus, an address, a telephone number and a
+  site, and no officer (checked at the Treasury's entry: Fiscal Service,
+  FinCEN, BEP, the OCC, each an address). What it does carry is a unit's
+  official site under its parent, which is what `usa.gov`'s A-to-Z index was
+  used for on 2026-09-20: nominations for the verifier to read, never a claim.
+
+### 22.3 Pile 3 — leads with no document this project can use
+
+- **The SF133 workbooks** (`portal.max.gov`). The host's robots.txt is
+  `User-agent: * Disallow: /`, so under this project's rules the file is never
+  fetched, and the specimen the owner uploaded cannot become a fixture
+  (`fetch_fixture.py` is the only route in). The pass ranked SF133 first for
+  being the anchor's own basis in the current year; that ranking is right and
+  the document is unreachable by rule, not by network.
+- **DFAS and the DoD hosts** for the uniformed services: 403 on robots.txt and
+  the page, re-measured on ten hosts on 2026-10-06; Schedule 8 of the
+  pay-adjustment order already prices what a statute fixes.
+- **The House's detail CSV** (26 MB): names staff beside their pay, and the
+  summary CSV already carries every office total the module needs.
+- **SAM.gov's Federal Hierarchy**: needs an API key the owner would have to
+  obtain.
+- **Congressional budget justifications**: requests, with prior-year columns
+  that mix obligations and outlays; not a document that states what a unit
+  spent on the anchor's basis.
+- **The pass's own matching errors, so they are not re-proposed:** it matched
+  the House statement's "OFFICE OF GENERAL COUNSEL" to `leg-house-counsel`,
+  which is the Office of the *Legislative* Counsel — the file prints that
+  office separately as "LEGISLATIVE COUNSEL", and the House's General Counsel
+  has no node here. Its `listed_grade_currency_anomalies` were real and were
+  this repository's: the research pack's `listed_level_or_grade` column
+  printed the archive's raw cell, which for 15 posts is a former incumbent's
+  rate ("$225,700") and not a level. `export_research_pack.py` now prints
+  `payLevel` alone and a column saying when the archive prints such a rate,
+  with the README explaining why that post is unpriced.
+
+### 22.4 The House's own officers, from the statement already committed
+
+The summary CSV read for the committees (`tests/fixtures/disbursements/house/
+2026q2_sod_summary_grid.csv`) prints the House's officers and support offices
+as organisations under the officer's title, and this graph draws each as a
+node typed Office under `leg-house-admin`. `HOUSE_OFFICE_ROWS` in
+`committee_disbursements.py` is the reviewed table, seven rows, each
+re-checked against the file and the node's name on every run:
+
+| node | the file's label | basis |
+|---|---|---|
+| `leg-house-clerk` | FISCAL YEAR 2026 CLERK OF THE HOUSE | the office's own title; 2 U.S.C. 104a makes the Clerk's accounts part of the statement |
+| `leg-house-saa` | FISCAL YEAR 2026 SERGEANT AT ARMS | the title without "of the House"; the statement is the House's own |
+| `leg-house-cao` | FISCAL YEAR 2026 CHIEF ADMIN OFCR OF THE HOUSE | the title abbreviated; the row claims the officer's own organisation only (the file prints House-wide accounts the CAO runs — telecommunications, acquisitions, the recording studio — as organisations of their own) |
+| `leg-house-parliamentarian` | FISCAL YEAR 2026 OFFICE OF THE PARLIAMENTARIAN | the office's own name; the record is refused by the scale rule (below) |
+| `leg-house-counsel` | FISCAL YEAR 2026 LEGISLATIVE COUNSEL | without "Office of the"; NOT "OFFICE OF GENERAL COUNSEL" |
+| `leg-house-physician` | FISCAL YEAR 2026 OFFICE OF ATTENDING PHYSICIAN | without the article; what the House's statement paid for an office that serves both chambers |
+| `leg-house-ig` | FISCAL YEAR 2026 OFFICE OF INSPECTOR GENERAL | the House's own statement, so the House's own Inspector General |
+
+An officer's organisation is a RUN of programs closed by one OFFICE TOTALS
+line, often several runs — the Clerk's two close 3 and 5 programs, the CAO's
+first closes 50 — where a committee's is one program closed by one line.
+`load_house_statement` keeps each run with the program TOTALS lines it closes;
+the office route refuses a run whose office total is not its programs' totals
+to the cent (the sums hold for all 1,016 office totals of the file's 544
+organisations in the quarter column; the YTD column differs by three cents on
+the CAO's and is not read); each component lists its run (`programsInOffice`)
+and the gate re-reads the runs with its own reader. The block is the same
+field with `unitKind: house_officer_office`; `financial_evidence` admits the
+basis on an Office only for the seven ids, the exporter stamps it only on an
+Office directly under `leg-house-admin` the table names, and the gate refuses
+the mark on a committee, a committee's block on an office, a re-parented or
+re-typed office, the name rule, an altered or missing run, a sum that is not
+the office total, the Senate document, and everything a committee's block is
+refused for (`tests/test_committee_disbursements.py::HouseOfficerOfficeTests`).
+
+**Six priced, two not**, April 1 – June 30, 2026: the CAO $35,581,353.89 (two
+runs), the Sergeant at Arms $12,918,146.42 (three), the Clerk $9,799,145.50
+(two), the Legislative Counsel $4,252,684.56, the Inspector General
+$1,263,283.72, the Attending Physician $1,195,810.24 (one run and a zero run).
+The Parliamentarian's single office total, $426,790.55, read in thousands
+would not exceed the statement's marked quarter, so the scale rule refuses the
+record — the rule working, recorded and not worked around. The Chaplain's
+organisation is printed nowhere in the file.
+
+**The payouts divide the officers' pool, as they divide the committees'.**
+The cascade's `disbursement_weight` class already reads the block off any
+node that carries it; exactly the eight siblings under `leg-house-admin`
+moved and nothing else — the Clerk $34.2m → $14.4m, the Sergeant at Arms
+$3.8m → $18.9m, the CAO $45.6m → $52.1m, the Chaplain and the Parliamentarian
+implied at their siblings' rate ($3.80m → $3.72m). 46 shares weighted by a
+payout, 3 implied. No measured cost and no cost status moved.
+`docs/COST_COVERAGE.md`'s "with a sourced figure beside" class 62 → 68.
+
+**Not the headline, and the decision left open.** The stand-in order the
+owner decided on 2026-10-07 names File A, OMB and audited net cost; a
+quarter's cash from the House's disbursing office is a different clock again.
+Whether it may head an officer office (and a committee) is the owner's
+decision. What would change it: nothing in the data — it is a presentation
+rule.

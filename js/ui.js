@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261015a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261015a";
+import { createGovernmentGraph } from "./graph.js?v=20261020a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261020a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1007,28 +1007,43 @@ function disbursementPeriodLabel(block) {
   return `${fmt(period.start)} – ${fmt(period.end)}`;
 }
 
+// The block sits on a committee, or — since 2026-10-20 — on one of the
+// House's own officer offices (`unitKind: house_officer_office`), whose
+// organisation the House's statement prints under the officer's title. The
+// sentence names which it is; the claim is the same shape either way.
+function disbursementUnitWord(block) {
+  return block.unitKind === "house_officer_office" ? "office" : "committee";
+}
+
 function disbursementSentence(block) {
   const chamber = block.chamber === "senate" ? "the Senate" : "the House";
   const report = block.chamber === "senate"
     ? "the Report of the Secretary of the Senate"
     : "the House's Statement of Disbursements";
+  const unit = disbursementUnitWord(block);
   const names = (block.listedNames || []).map((name) => `"${name}"`).join(" and ");
   const parts = [];
-  parts.push(`This is what ${chamber} paid out for the committee's office over ${disbursementPeriodLabel(block)}: `);
-  parts.push(`$${Math.round(block.amount).toLocaleString()}, from ${report}, which lists the committee as ${names}. `);
+  if (unit === "office") {
+    parts.push(`This is what ${chamber} paid out for this officer's own organisation over ${disbursementPeriodLabel(block)}: `);
+  } else {
+    parts.push(`This is what ${chamber} paid out for the committee's office over ${disbursementPeriodLabel(block)}: `);
+  }
+  parts.push(`$${Math.round(block.amount).toLocaleString()}, from ${report}, which lists the ${unit} as ${names}. `);
   const count = Number(block.componentCount) || 0;
   if (count > 1) {
-    const unit = block.chamber === "senate" ? "funding resolution" : "office and program";
-    parts.push(`The report prints no single total for the committee; the figure is the sum of the ${count} totals it prints, one per ${unit}, which this project added up. `);
+    const piece = block.chamber === "senate"
+      ? "funding resolution"
+      : (unit === "office" ? "office-totals line, each closing a run of programs" : "office and program");
+    parts.push(`The report prints no single total for the ${unit}; the figure is the sum of the ${count} totals it prints, one per ${piece}, which this project added up. `);
   }
   if (block.matchRule === "reviewed_row" && block.matchBasis) {
-    parts.push(`The report's name for the committee differs from the graph's; the identification is a reviewed one: ${block.matchBasis} `);
+    parts.push(`The report's name for the ${unit} differs from the graph's; the identification is a reviewed one: ${block.matchBasis} `);
   }
   if (block.signConvention && (block.components || []).some((c) => typeof c.amount === "number" && c.amount < 0)) {
     parts.push(`${block.signConvention} `);
   }
   if (block.caveat) parts.push(`${block.caveat} `);
-  parts.push("It is cash paid out for the committee's account over that period — not the Treasury's net outlays, not the estimate above, and not the cost. ");
+  parts.push(`It is cash paid out for the ${unit}'s account over that period — not the Treasury's net outlays, not the estimate above, and not the cost. `);
   return parts.join("");
 }
 
@@ -3648,12 +3663,20 @@ function describeCost(node) {
         ` OPM's employment file${period} reports ${dispute.officialEmployees.toLocaleString()} for the same unit.` +
         " The share was not recomputed from OPM's number: the two can count different populations, and neither figure is corrected against the other.";
     }
-    // The payouts decide how the committees divide their pool, not how large
-    // the pool is: that is still the committees' share of the chamber, which
-    // the cascade divides by subtree size.
+    // The payouts decide how the siblings divide their pool, not how large
+    // the pool is: that is still the group's share of the chamber, which the
+    // cascade divides by subtree size. The group is the chamber's committees
+    // or, since 2026-10-20, the House's officer offices under its
+    // administrative grouping.
     if (basis === "disbursement_weight" || basis === "implied_disbursement_weight") {
+      // Keyed on the node's type: only a committee or one of the House's
+      // officer offices (typed Office) can carry or be implied from a payout,
+      // and an implied one carries no block to read the kind off.
+      const group = String(node.type || "").toLowerCase() === "office"
+        ? "the House's officer offices"
+        : "the committees";
       caveat +=
-        " The payouts set how the committees divide their pool; the pool itself is still the committees' share of the chamber, divided by how many units sit beneath each part.";
+        ` The payouts set how ${group} divide their pool; the pool itself is still that group's share of the chamber, divided by how many units sit beneath each part.`;
     }
     // The one unmeasured child of a parent whose other children are all
     // measured is not "divided" at all: it takes the whole remainder. The

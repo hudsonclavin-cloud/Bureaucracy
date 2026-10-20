@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-08T19:47:06.097285+00:00",
+  "timestamp": "2026-10-20T12:53:13.596289+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5481,
@@ -36,7 +36,7 @@
     "exported_node_count": 1066,
     "exported_edge_count": 0,
     "nodes_removed_missing_parent": 0,
-    "nodes_reattached_to_root": 1,
+    "nodes_reattached_to_root": 0,
     "nodes_removed_structural_errors": 0,
     "final_node_count": 1066,
     "orphan_nodes_detected": 0,
@@ -45,8 +45,8 @@
     "dropped_edges_missing_source": 0,
     "dropped_edges_missing_target": 0,
     "orphaned_parent_ids": 0,
-    "attached_to_root": 1,
-    "explicitly_root_attached_nodes": 1,
+    "attached_to_root": 0,
+    "explicitly_root_attached_nodes": 0,
     "relationship_counts": {},
     "verification_status_counts": {
       "partial": 461,
@@ -62,7 +62,7 @@
       "nodes_after_normalization": 1066,
       "nodes_after_merge": 1066,
       "nodes_removed_missing_parent": 0,
-      "nodes_reattached_to_root": 1,
+      "nodes_reattached_to_root": 0,
       "nodes_removed_structural_errors": 0,
       "final_node_count": 1066,
       "nodes_removed_cost_validation": 0
@@ -223,7 +223,7 @@
           "anchor": 6811043257196.1,
           "sections": 30,
           "section_totals_sum": 6811043257196.1,
-          "difference": -0.0,
+          "difference": 0.0,
           "holds": true
         },
         "section_mismatches": [
@@ -665,7 +665,7 @@
       "equals_the_measured_cost": 0
     },
     "committee_disbursements_evidence": {
-      "applied": 40,
+      "applied": 46,
       "withdrawn_first": 0,
       "refused_not_a_committee": 0,
       "refused_renamed": 0
@@ -787,7 +787,7 @@
     "verified_cost_node_count": 172,
     "partial_cost_node_count": 0,
     "unverified_cost_node_count": 5338,
-    "mixed_weight_sibling_sets_implied": 15,
+    "mixed_weight_sibling_sets_implied": 16,
     "headcount_weights_disputed_by_opm": 10,
     "allocations_below_precision": 0,
     "posts_not_apportioned": 3887,
@@ -840,7 +840,7 @@
       "verified_cost_node_count": 172,
       "partial_cost_node_count": 0,
       "unverified_cost_node_count": 5338,
-      "mixed_weight_sibling_sets_implied": 15,
+      "mixed_weight_sibling_sets_implied": 16,
       "headcount_weights_disputed_by_opm": 10,
       "allocations_below_precision": 0,
       "posts_not_apportioned": 3887,

@@ -5439,6 +5439,63 @@ and shares that are not one rate per dollar paid; `tests/test_cost_cascade_units
 (`CommitteePayoutWeightTests`) and `tests/test_committee_disbursements.py`
 (`PayoutWeightGateTests`) pin both directions.
 
+**The House's own officers, from the same statement (since 2026-10-20).** The
+same summary CSV prints the House's officers and support offices as
+organisations under the officer's title — "FISCAL YEAR 2026 CLERK OF THE
+HOUSE", "… SERGEANT AT ARMS", "… CHIEF ADMIN OFCR OF THE HOUSE", "… OFFICE OF
+THE PARLIAMENTARIAN", "… LEGISLATIVE COUNSEL", "… OFFICE OF ATTENDING
+PHYSICIAN", "… OFFICE OF INSPECTOR GENERAL" — and this graph draws each as a
+node typed Office under `leg-house-admin`. Two things kept them out of the
+committee module. No name rule reaches them (the file abbreviates or drops the
+office word, and the committee fold is granted to committees alone), so
+`HOUSE_OFFICE_ROWS` is a reviewed table keyed by node id, re-checked against
+the file and the node's name on every run, like `REVIEWED_ROWS`. And an
+officer's organisation is not one program closed by one OFFICE TOTALS line: it
+is a RUN of programs closed by one such line, and often several runs — the
+Clerk's two close 3 and 5 programs, the CAO's first closes 50, the Attending
+Physician's second is a zero run the record lists as a zero component. `load_house_statement` keeps each run with the
+program TOTALS lines it closes, and the office route refuses a run whose office
+total is not its programs' totals to the cent; measured on all 544
+organisations of the file the sums hold in the quarter column (the YTD column
+differs by three cents on the CAO's and is not read). Each component lists its
+run (`programsInOffice`) so the sum can be audited against the CSV.
+
+The block is the same field, marked `unitKind: house_officer_office`, and the
+mark is what every reader keys on: `financial_evidence` admits the
+`disbursements` basis on a non-committee only for an Office whose id is in
+`HOUSE_OFFICER_OFFICE_IDS` (mirroring the table's keys; a test pins them
+equal), `apply_committee_disbursements_evidence` stamps such a block only on a
+node typed Office directly under `leg-house-admin` whose id the table names,
+and the gate (`HOUSE_OFFICER_DISBURSEMENT_ROWS`, mirrored by id) re-reads the
+runs off the committed CSV with its own reader and refuses the mark on a
+committee, a committee's block on an officer office, the office re-parented or
+re-typed, an unlisted office, the name rule on one, a run the file does not
+print in that order, an office total that is not its programs' sum, a block
+citing the Senate document, and everything a committee's block is already
+refused for. The panel says "this officer's own organisation" and names the
+run shape; the estimate caveat says the House's officer offices divide their
+pool by the payouts. **Six priced, two not:** the Clerk ($9.80m), the Sergeant
+at Arms ($12.92m, three runs), the CAO ($35.58m, two runs; its row claims the
+officer's own organisation only, since the file prints House-wide accounts the
+CAO runs — telecommunications, acquisitions, the recording studio — as
+organisations of their own, and the caveat says so), the Legislative Counsel
+($4.25m; the file prints the House's GENERAL Counsel separately, and the fifth
+research pass's match of that label to this node was wrong), the Attending
+Physician ($1.20m) and the Inspector General ($1.26m). The Parliamentarian's
+row stands and its record is refused by the scale rule — $426,790.55 read in
+thousands would not exceed the statement's marked quarter — which is the rule
+working and is recorded, not worked around; the Chaplain is printed nowhere.
+Measured on the rebuild: exactly the eight siblings under `leg-house-admin`
+moved and nothing else — the Clerk $34.2m → $14.4m, the Sergeant at Arms $3.8m
+→ $18.9m, the CAO $45.6m → $52.1m, the Chaplain and the Parliamentarian
+implied at their siblings' rate ($3.80m → $3.72m); 46 shares weighted by a
+payout, 3 implied; `docs/COST_COVERAGE.md`'s "with a sourced figure beside"
+class 62 → 68. The figure is not the headline: the stand-in order the owner
+decided on 2026-10-07 names File A, OMB and audited net cost, and a quarter's
+cash from a chamber's disbursing office is a different clock again, so whether
+it may head an officer office is the owner's decision, recorded in
+`CURATION.md` §22 beside the triage of the fifth research pass that led here.
+
 **Where an agency's money goes (`object_class.py`, since 2026-10-08, the
 owner's ask: "a good total cost of everyone combined ... we just want to see
 where the money goes, generally").** DATA Act File B reports obligations by

@@ -10,8 +10,8 @@ Do not edit by hand; regenerate it. The 100 largest title families are in
 - **Part B — 681 organisation nodes** that publish an apportioned estimate rather than a measured
   cost, across **7 shards**, whole parents per shard:
   - 240 — a committee or subcommittee (no Table 5 line can ever name one)
-  - 62 — an estimate with a sourced non-cost figure already beside it
-  - 379 — an estimate with no sourced figure of any kind
+  - 68 — an estimate with a sourced non-cost figure already beside it
+  - 373 — an estimate with no sourced figure of any kind
 
 Not asked about, by construction: measured nodes and priced posts (done), and the units
 beneath a Treasury pool that nets below zero or replaced by the government (no route

@@ -101,6 +101,18 @@ POSITION_ONLY_BASES = {"basic_pay"}
 #: and this basis may sit on a committee and on nothing else.
 COMMITTEE_ONLY_BASES = {"disbursements"}
 
+#: The one exception to the committee rule, by node id: the House's officers
+#: and support offices, whose organisations the House's Statement of
+#: Disbursements prints under their own titles. Typed Office under
+#: `leg-house-admin`, each identified by a reviewed row in
+#: `committee_disbursements.HOUSE_OFFICE_ROWS`; this set mirrors that table's
+#: keys and a test pins the two equal. An Office anywhere else, or any node
+#: not listed here, still cannot take the basis.
+HOUSE_OFFICER_OFFICE_IDS = frozenset({
+    "leg-house-clerk", "leg-house-saa", "leg-house-cao", "leg-house-parliamentarian",
+    "leg-house-counsel", "leg-house-physician", "leg-house-ig",
+})
+
 #: Declared units, and the factor that turns the printed figure into the base
 #: unit. `thousands_count` exists because FTE tables are printed in thousands
 #: too, and the first draft had no way to say so.
@@ -1082,13 +1094,17 @@ def validate_record(
     node_is_org = is_organisation(node)
     if basis in COMMITTEE_ONLY_BASES or is_committee(node):
         # A committee takes this basis and no other, and this basis sits on a
-        # committee and nothing else. Checked before the organisation rule,
-        # which would otherwise refuse every committee by its type word.
+        # committee and nothing else -- save the House's own officer offices,
+        # listed by id. Checked before the organisation rule, which would
+        # otherwise refuse every committee by its type word.
         if basis not in COMMITTEE_ONLY_BASES:
             raise Rejected(
                 f"{node_id}: basis {basis!r} cannot sit on a committee; only {sorted(COMMITTEE_ONLY_BASES)} can"
             )
-        if not is_committee(node):
+        if not is_committee(node) and not (
+            node_id in HOUSE_OFFICER_OFFICE_IDS and _text(node.get("type")).casefold() == "office"
+            and not node.get("synthetic")
+        ):
             raise Rejected(
                 f"{node_id}: basis {basis!r} is a committee's account and cannot sit on a {node.get('type')!r}"
             )
