@@ -6227,3 +6227,35 @@ other field moved on any node. In the default view those twelve are now
 headed by a sourced figure instead of a withheld estimate. `docs/COST_COVERAGE.md`'s
 "with a sourced figure beside" class went 68 → 80 and "no sourced figure of
 any kind" went 373 → 361.
+
+**What the missing row would move (a counterfactual, built in scratch, not
+published).** I added a thirteenth row for "Structural and Mechanical Care,
+Library Buildings and Grounds" against `leg-support-aoc-library-of-congress-buildings`
+and rebuilt the graph into a scratch directory, handed the same statement.
+With it the Architect's seven divisions qualify and only they move:
+
+| division | estimate today | weighted by the chapter's figures |
+|---|---|---|
+| House Office Buildings | ≈ $75.1m | ≈ $149.9m |
+| Senate Office Buildings | ≈ $75.1m | ≈ $122.3m |
+| Capitol Power Plant | ≈ $75.1m | ≈ $116.5m |
+| Library of Congress Buildings | ≈ $75.1m | ≈ $90.0m |
+| Capitol Building | ≈ $75.1m | ≈ $52.6m |
+| Capitol Visitor Center | ≈ $75.1m | ≈ $24.1m |
+| Capitol Grounds | ≈ $75.1m | ≈ $17.1m |
+
+Twelve nodes changed in all: the seven divisions, the four posts' weight basis
+and the Architect's `child_cost_basis`. Two things about that build:
+
+- **The posts still take a share.** The Architect's four posts keep an implied
+  weight and publish nothing, as the post rule has them do everywhere. The
+  seven divisions together take $572.3m of the Architect's $826.1m; today they
+  take $525.7m, and the posts' unpublished remainder falls from $300.4m to
+  $253.8m.
+- **It found a gate defect.** The gate first refused those four posts for
+  carrying a weight on an `unavailable` figure. The status check now applies
+  to weighted units only, and a test pins the post case.
+
+Adding the row is the owner's call. Its account title names the buildings and
+grounds the Library sits in, not a division, so it would need the same kind
+of reviewed basis as Capitol Buildings.

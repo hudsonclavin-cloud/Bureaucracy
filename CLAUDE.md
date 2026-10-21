@@ -5556,7 +5556,9 @@ which do imply a missing sibling. No parent qualifies today, so no estimate
 moved. The nearest is the Architect of the Capitol: six of seven divisions
 have a row, and Library of Congress Buildings has none, though the chapter
 prints "Structural and Mechanical Care, Library Buildings and Grounds"
-($94.2m).
+($94.2m). A scratch build with that row added moves exactly the Architect's
+seven divisions (House Office Buildings ≈ $75.1m → $149.9m, Capitol Grounds →
+$17.1m), and is recorded in §22.8 but not published.
 
 The gate checks both the block and the weights:
 

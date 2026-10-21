@@ -329,6 +329,16 @@ class WeightTests(unittest.TestCase):
                  self.placed("p", None, 10.0, "implied_combined_statement_weight", type_="Position")]
         self.assertEqual(self.gate_check(nodes), [])
 
+    def test_the_gate_accepts_a_post_that_keeps_its_implied_weight_and_publishes_nothing(self):
+        # The counterfactual with all seven of the Architect's divisions found
+        # this: the four posts beside them keep an implied weight and publish
+        # `unavailable` under the post rule, which the gate first refused.
+        post = self.placed("p", None, None, "implied_combined_statement_weight", type_="Position")
+        post["cost_status"] = "unavailable"
+        nodes = [self.placed("a", 300.0, 750.0, "combined_statement_weight"),
+                 self.placed("b", 100.0, 250.0, "combined_statement_weight"), post]
+        self.assertEqual(self.gate_check(nodes), [])
+
     def test_the_gate_refuses_a_licensed_set_left_unweighted(self):
         nodes = [self.placed("a", 300.0, 500.0, "subtree_weight"), self.placed("b", 100.0, 500.0, "subtree_weight")]
         self.assertTrue(any("every unit" in v for v in self.gate_check(nodes)))

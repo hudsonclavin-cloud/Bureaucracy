@@ -8721,7 +8721,10 @@ def combined_statement_weight_violations(nodes, tree_parents, label):
         units = [n for n in living if not is_post(n)]
         weighted = [n for n in members if n.get("cost_basis") == "combined_statement_weight"]
         implied = [n for n in members if n.get("cost_basis") == "implied_combined_statement_weight"]
-        for node in weighted + implied:
+        # A weighted unit's share is an estimate. An implied weight sits only on
+        # a post, which keeps its weight in the split and publishes no figure
+        # (`post_is_not_a_budget_unit`), so its status is not checked here.
+        for node in weighted:
             if str(node.get("cost_status") or "") != "allocated":
                 out.append("{} carries a Combined Statement weight on a {!r} figure".format(label(node), node.get("cost_status")))
         for node in implied:
