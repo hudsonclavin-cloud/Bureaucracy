@@ -161,8 +161,11 @@ try {
   const sourcedKindOf = (n) => {
     if (["official", "root_total"].includes(String(n.cost_status || ""))) return null;
     if (/position|\brole\b|office holder/i.test(String(n.type || ""))) return null;
-    if (String(n.synthetic || "") || /treasury accounting line/i.test(String(n.type || ""))) return null;
+    if (String(n.synthetic || "")) return null;
     if (String(n.lifecycle || "") === "superseded" || String(n.cost_validation || "") === "unit_superseded") return null;
+    // A curated accounting line from the Combined Statement is one account and
+    // takes that chapter's figure for it, nothing else (js/ui.js).
+    if (/treasury accounting line/i.test(String(n.type || ""))) return sourcedFigureAmountOf(n, "combined") !== null ? "combined" : null;
     return SOURCED_FIGURE_KINDS.find((kind) => sourcedFigureAmountOf(n, kind) !== null) || null;
   };
   const signedDollars = (amount) => `${amount < 0 ? "-" : ""}$${Math.round(Math.abs(amount)).toLocaleString("en-US")}`;
@@ -991,6 +994,24 @@ try {
     }
   } else {
     measurements.combinedFiledElsewhere = "skipped: no organisation headed by a Combined Statement figure filed elsewhere";
+  }
+
+  // An appropriation account carried as its own Treasury accounting line
+  // (CURATION.md Sec 22.9) is headed by the chapter's figure for it, and its
+  // description says the statement is where the node comes from.
+  const accountLine = allNodes.find((n) => /treasury accounting line/i.test(String(n.type || "")) && !n.synthetic
+    && n.combinedStatementOutlays && unique(n));
+  if (accountLine) {
+    await openByName(accountLine.name);
+    const head = await text("#info-stats .info-cost-label");
+    const amount = (await text("#info-stats .info-cost-amount")).split("\n")[0];
+    measurements.combinedAccountLine = { id: accountLine.id, head, amount };
+    check("an account line is headed by the chapter's figure for its account", sourcedHeads.combined.test(head)
+      && amount === signedDollars(accountLine.combinedStatementOutlays.amount), `${head} ${amount}`);
+    const desc = await text("#info-desc-provenance");
+    check("an account line's description says the Combined Statement prints the account", /Combined Statement, which prints this account/.test(desc), desc);
+  } else {
+    measurements.combinedAccountLine = "skipped: no account line in the served graph";
   }
 
   // A negative OMB figure is shown as the database gives it, with OMB's own

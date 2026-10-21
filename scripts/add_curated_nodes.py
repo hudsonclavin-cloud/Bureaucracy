@@ -15,7 +15,7 @@ of those: **the table proposes and an official source decides.** A row in
 `data/curation/new_nodes.json` is a reviewed proposal; nothing is written until
 this run re-checks it against the source, live.
 
-A node is added only under one of three licences, named on the row and verified
+A node is added only under one of four licences, named on the row and verified
 here rather than trusted:
 
   - `treasury_statement_line` — the Monthly Treasury Statement itself names the
@@ -53,6 +53,17 @@ here rather than trusted:
     under the same parent, so it does not catch "NOAA" against "National
     Oceanic and Atmospheric Administration". That judgement is made when the row
     is written, and `CURATION.md` records it; this script enforces what it can.
+  - `combined_statement_account` (since 2026-10-21) — the Treasury's Combined
+    Statement prints an appropriation ACCOUNT under the parent's own unit total
+    and no organisation in this graph carries it. Such a node is an account, not
+    an office, so this licence admits only the type `Treasury accounting line`,
+    and the name must be the account's printed title with its trailing
+    ", <unit>" removed. It requires exactly ONE account of that title in the
+    committed chapter (digest recomputed), closed by the unit total the row
+    names, that unit equal to the parent's name, and a non-zero figure. It says
+    nothing about who spends the account; it exists so that an account the
+    chapter prints under a unit has somewhere to stand beside that unit's
+    divisions instead of being divided among them. Offline, like the Manual.
 
 Refused before either licence is checked: an id already in the file, a parent
 that is not in the file, a name that collides with one of its own siblings, a
@@ -107,7 +118,12 @@ DEFAULT_TABLE = PROJECT_ROOT / "data" / "curation" / "new_nodes.json"
 LICENCE_TREASURY = "treasury_statement_line"
 LICENCE_PAGE = "official_page_label"
 LICENCE_MANUAL = "government_manual_entry"
-LICENCES = (LICENCE_TREASURY, LICENCE_PAGE, LICENCE_MANUAL)
+LICENCE_ACCOUNT = "combined_statement_account"
+LICENCES = (LICENCE_TREASURY, LICENCE_PAGE, LICENCE_MANUAL, LICENCE_ACCOUNT)
+
+#: The only type a `combined_statement_account` node may carry: an account is
+#: not an office, and the exporter draws this type as a line.
+ACCOUNT_NODE_TYPE = "Treasury accounting line"
 
 #: Stamped on every node this script creates, so the panel can say the node
 #: exists because an official source named it — not because somebody typed it.
@@ -115,11 +131,13 @@ STRUCTURE_SOURCE = {
     LICENCE_TREASURY: "named_in_the_monthly_treasury_statement",
     LICENCE_PAGE: "named_on_an_official_page",
     LICENCE_MANUAL: "named_in_the_us_government_manual",
+    LICENCE_ACCOUNT: "named_in_the_treasury_combined_statement",
 }
 DESCRIPTION_SOURCE = {
     LICENCE_TREASURY: "generated_from_the_monthly_treasury_statement",
     LICENCE_PAGE: "generated_from_its_official_page",
     LICENCE_MANUAL: "generated_from_the_us_government_manual",
+    LICENCE_ACCOUNT: "generated_from_the_treasury_combined_statement",
 }
 
 MIN_NAME_TOKENS = 2
@@ -302,6 +320,40 @@ def describe_from_manual(name: str, manual: dict, chain: list[str], url: str) ->
             f"read. The entry is at {url}.")
 
 
+def describe_from_account(account: dict, fiscal_year: int, url: str) -> str:
+    symbol = str(account.get("accountSymbol") or "").strip()
+    printed = f" ({symbol})" if symbol else ""
+    return (f"The Treasury's Combined Statement of Receipts, Outlays, and Balances for fiscal "
+            f"year {fiscal_year} prints an appropriation account titled "
+            f"\"{account.get('title')}\"{printed} under the {account.get('unit')}'s total. This "
+            f"node is that account, carried as a Treasury accounting line: it is not an office "
+            f"or a division, and nothing further about it has been read. The chapter is at {url}.")
+
+
+def account_refusal(row: dict, parent: dict, chapter: dict) -> tuple[str, str] | tuple[None, dict]:
+    """The `combined_statement_account` licence's checks; the account on success."""
+    title = str(row.get("account") or "")
+    unit = str(row.get("chapterUnit") or "")
+    name = str(row.get("name") or "").strip()
+    if str(row.get("type") or "") != ACCOUNT_NODE_TYPE:
+        return "an_account_is_not_an_office", f"this licence admits only the type {ACCOUNT_NODE_TYPE!r}"
+    if not title or not unit:
+        return "row_names_no_account", "a row needs the account's printed title and its chapter unit"
+    if title != f"{name}, {unit}":
+        return "name_is_not_the_accounts_title", f"{name!r} is not {title!r} less ', {unit}'"
+    if canonical_name_key(parent.get("name")) != canonical_name_key(unit):
+        return "parent_is_not_the_chapter_unit", f"{parent.get('name')!r} is not {unit!r}"
+    found = [a for a in chapter.get("accounts") or [] if a.get("title") == title]
+    if len(found) != 1:
+        return "chapter_does_not_print_one_such_account", f"{len(found)} accounts carry this title"
+    account = found[0]
+    if account.get("unit") != unit:
+        return "account_closed_by_another_unit_total", f"closed by {account.get('unit')!r}"
+    if not account.get("netOutlays"):
+        return "account_figure_is_zero", "the chapter prints no non-zero net outlays for it"
+    return None, account
+
+
 def describe_from_page(name: str, url: str, matched: str) -> str:
     return (f"{name} is named on {url}, which labels it as {matched!r}. This node "
             f"exists because that page names the unit; nothing further about it "
@@ -349,6 +401,13 @@ def main(argv: list[str] | None = None) -> int:
         # the bytes before it is read, so this licence adds no fetch.
         manual = read_manual()
         manual_by_key = manual_entries_by_key(manual)
+
+    chapter: dict = {}
+    if any(str(r.get("licence")) == LICENCE_ACCOUNT for r in rows):
+        # Offline: the committed chapter, digest recomputed before it is read.
+        from data_pipeline.verification import combined_statement  # noqa: PLC0415
+        chapter = combined_statement.load_chapter(combined_statement.CHAPTER_STEM)
+        account_year = combined_statement.FISCAL_YEAR
 
     needs_treasury = any(str(r.get("licence")) == LICENCE_TREASURY for r in rows)
     statement: dict = {}
@@ -440,6 +499,14 @@ def main(argv: list[str] | None = None) -> int:
             node_desc = describe_from_manual(name, manual, chain, url)
             structure_detail = url
             manual_placement = placement
+            row_section = ""
+        elif licence == LICENCE_ACCOUNT:
+            refusal, detail = account_refusal(row, node_map[parent_id], chapter)
+            if refusal:
+                results.append({"id": node_id, "added": False, "reason": refusal, "detail": detail})
+                continue
+            node_desc = describe_from_account(detail, account_year, str(chapter.get("url") or ""))
+            structure_detail = str(chapter.get("url") or "")
             row_section = ""
         else:
             url = str(row.get("url") or "")

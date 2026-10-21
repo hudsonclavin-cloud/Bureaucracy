@@ -8450,6 +8450,18 @@ COMBINED_STATEMENT_ROWS = {
                              ("Salaries and Expenses, Medicare Payment Advisory Commission",),
                              "Medicare Payment Advisory Commission",
                              "Legislative Branch Boards and Commissions", True),
+    "leg-support-aoc-library-of-congress-buildings": (
+        "Library of Congress Buildings",
+        ("Structural and Mechanical Care, Library Buildings and Grounds, Architect of the Capitol",),
+        "Library Buildings and Grounds", "Architect of the Capitol", False),
+    "leg-support-aoc-capital-construction-and-operations": (
+        "Capital Construction and Operations",
+        ("Capital Construction and Operations, Architect of the Capitol",),
+        "Capital Construction and Operations", "Architect of the Capitol", False),
+    "leg-support-aoc-capitol-police-buildings-and-grounds": (
+        "Capitol Police Buildings and Grounds",
+        ("Capitol Police Buildings and Grounds, Architect of the Capitol",),
+        "Capitol Police Buildings and Grounds", "Architect of the Capitol", False),
 }
 _COMBINED_STATEMENT_DOCS = None
 
@@ -8516,7 +8528,10 @@ def combined_statement_documents():
                 continue
             if sum(1 for cell in row if cell) == 1 and row[0]:
                 close()
-                current = {"title": row[0], "row": index, "closed": [], "pending": [], "symbol": "", "cells": []}
+                # Runs of whitespace collapsed, as the module's reader does: the
+                # chapter prints "Capital Construction and Operations,  Architect
+                # of the Capitol" with two spaces after the comma.
+                current = {"title": " ".join(row[0].split()), "row": index, "closed": [], "pending": [], "symbol": "", "cells": []}
                 accounts.append(current)
         close()
         accounts = [a for a in accounts if a["closed"] or a["pending"] or a["cells"]]

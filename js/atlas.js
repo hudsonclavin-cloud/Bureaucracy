@@ -375,6 +375,7 @@ function describePlacement(node) {
 const DESCRIPTION_SOURCE_TEXT = {
   generated_from_the_monthly_treasury_statement: "generated from the Monthly Treasury Statement, which names this unit — nothing further about it has been read",
   generated_from_its_official_page: "generated from the official page that names this unit — nothing further about it has been read",
+  generated_from_the_treasury_combined_statement: "generated from the Treasury's Combined Statement, which prints this account — nothing further about it has been read",
   generated_from_treasury_lines: "generated from the Monthly Treasury Statement lines it names",
   generated_from_the_us_government_manual: "generated from the United States Government Manual, the government's own handbook, which names this unit and files it where the graph puts it — nothing further about it has been read",
   generated_from_whitehouse_staff_report: "generated from the White House Office's own annual report to Congress — the title and rate are the report's, the duties are not described",
@@ -568,12 +569,16 @@ function formatSourcedFigure(amount) {
 }
 
 function describeSourcedFigure(node) {
+  // A curated accounting line from the Combined Statement takes the chapter's
+  // figure for its own account and nothing else (the panel's rule).
+  const accountLine = !isReceiptsLine(node) && /treasury accounting line/i.test(String(node.type || ""));
   if (isPost(node) || /\brole\b|office holder/i.test(String(node.type || "")) || isReceiptsLine(node)
-    || /treasury accounting line/i.test(String(node.type || "")) || isSuperseded(node)
+    || (accountLine && !node.combinedStatementOutlays) || isSuperseded(node)
     || String(node.cost_validation || "") === "unit_superseded") {
     return null;
   }
   for (const [kind, field, amountField] of SOURCED_FIGURE_ORDER) {
+    if (accountLine && kind !== "combined") continue;
     const block = node[field];
     const amount = block && typeof block === "object" ? block[amountField] : null;
     if (typeof amount !== "number" || !Number.isFinite(amount) || amount === 0) continue;

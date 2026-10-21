@@ -442,6 +442,42 @@ REVIEWED_ROWS: dict[str, dict[str, Any]] = {
                   "Legislative Branch's boards and commissions; this graph curates the Commission among the "
                   "executive branch's independent agencies, and the placement is not resolved here."),
     },
+    # Since 2026-10-21, the owner's decision: the Architect's seventh division,
+    # and the two accounts the chapter prints under the Architect's total that
+    # name no division the graph draws. Each account is carried as its own
+    # Treasury accounting line (scripts/add_curated_nodes.py,
+    # combined_statement_account), so with these three rows every unit beneath
+    # the Architect carries one and the seven divisions and two lines divide the
+    # Architect's figure by the chapter's own accounts. CURATION.md §22.9.
+    "leg-support-aoc-library-of-congress-buildings": {
+        "nodeName": "Library of Congress Buildings",
+        "accounts": ("Structural and Mechanical Care, Library Buildings and Grounds, Architect of the Capitol",),
+        "phrase": "Library Buildings and Grounds",
+        "chapterUnit": "Architect of the Capitol",
+        "filedInAnotherSection": False,
+        "basis": ("The owner's identification. The Architect's account for the care of the Library's "
+                  "buildings and grounds, under the Architect's own total; aoc.gov's Office of the Chief "
+                  "of Operations page labels the jurisdiction 'Library Buildings and Grounds', and this "
+                  "graph names the division 'Library of Congress Buildings'."),
+    },
+    "leg-support-aoc-capital-construction-and-operations": {
+        "nodeName": "Capital Construction and Operations",
+        "accounts": ("Capital Construction and Operations, Architect of the Capitol",),
+        "phrase": "Capital Construction and Operations",
+        "chapterUnit": "Architect of the Capitol",
+        "filedInAnotherSection": False,
+        "basis": ("The node is this account, added from the chapter under the combined_statement_account "
+                  "licence; the identification is the account's own title."),
+    },
+    "leg-support-aoc-capitol-police-buildings-and-grounds": {
+        "nodeName": "Capitol Police Buildings and Grounds",
+        "accounts": ("Capitol Police Buildings and Grounds, Architect of the Capitol",),
+        "phrase": "Capitol Police Buildings and Grounds",
+        "chapterUnit": "Architect of the Capitol",
+        "filedInAnotherSection": False,
+        "basis": ("The node is this account, added from the chapter under the combined_statement_account "
+                  "licence; the identification is the account's own title."),
+    },
 }
 
 NOT_THE_COST = (

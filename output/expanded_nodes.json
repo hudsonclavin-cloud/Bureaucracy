@@ -21564,7 +21564,6 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-078",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
-    "parentId": "leg-support-loc",
     "combinedStatementOutlays": {
       "nodeId": "leg-support-loc-crs",
       "nodeName": "Congressional Research Service",
@@ -21645,7 +21644,8 @@
       "matchBasis": "The Library's account titled for this service, under the Library's own total.",
       "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
       "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
-    }
+    },
+    "parentId": "leg-support-loc"
   },
   {
     "id": "leg-support-loc-copyright",
@@ -21712,7 +21712,6 @@
       "parentListedName": "Library of Congress",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "parentId": "leg-support-loc",
     "combinedStatementOutlays": {
       "nodeId": "leg-support-loc-copyright",
       "nodeName": "Copyright Office",
@@ -21803,7 +21802,8 @@
       "matchBasis": "Both accounts the chapter prints under 'Copyright Office, Library of Congress': the Office's salaries and expenses, and the payments to copyright owners it disburses.",
       "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
       "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
-    }
+    },
+    "parentId": "leg-support-loc"
   },
   {
     "id": "leg-support-loc-law",
@@ -21903,7 +21903,6 @@
     "placementVerified": false,
     "placementParentId": "leg-support-loc",
     "placementVerifiedAt": "2026-09-21T05:26:27+00:00",
-    "parentId": "leg-support-loc",
     "combinedStatementOutlays": {
       "nodeId": "leg-support-loc-nls",
       "nodeName": "National Library Service for the Blind and Print Disabled (NLS)",
@@ -21984,7 +21983,8 @@
       "matchBasis": "The Library's account titled for this service, under the Library's own total.",
       "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
       "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
-    }
+    },
+    "parentId": "leg-support-loc"
   },
   {
     "id": "leg-support-gpo",
@@ -22274,7 +22274,7 @@
     "cost_status": "official",
     "cost_basis": "treasury_rollup",
     "cost_validation": "matched_official_rollup",
-    "child_cost_basis": "subtree",
+    "child_cost_basis": "combined_statement",
     "costVerificationStatus": "verified",
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
@@ -22364,6 +22364,7 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
+    "child_cost_basis_implied": true,
     "parentId": "leg-support"
   },
   {
@@ -22395,7 +22396,7 @@
     "proofReason": "official_source_recorded",
     "resolved_total_amount": null,
     "cost_status": "unavailable",
-    "cost_basis": "subtree_weight",
+    "cost_basis": "implied_combined_statement_weight",
     "cost_validation": "post_is_not_a_budget_unit",
     "costVerificationStatus": "unverified",
     "costConfidenceScore": 0.0,
@@ -22526,9 +22527,9 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 75097786.8,
+    "resolved_total_amount": 35137237.96,
     "cost_status": "allocated",
-    "cost_basis": "subtree_weight",
+    "cost_basis": "combined_statement_weight",
     "cost_validation": "estimated_from_parent",
     "costVerificationStatus": "unverified",
     "costConfidenceScore": 0.2,
@@ -22552,7 +22553,6 @@
     "placementMatchedText": "U.S. Capitol Building",
     "placementMethod": "name_labelled_on_parent_official_page",
     "placementMatchedIn": "content",
-    "parentId": "leg-support-aoc",
     "combinedStatementOutlays": {
       "nodeId": "leg-support-aoc-capitol-building",
       "nodeName": "Capitol Building",
@@ -22633,7 +22633,8 @@
       "matchBasis": "The Architect of the Capitol's Capitol Buildings account is the appropriation for the jurisdiction this node draws as 'Capitol Building'. The plural is the account's title and the singular the graph's: a reviewed identification (the owner's, 2026-10-21), not a name match.",
       "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
       "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
-    }
+    },
+    "parentId": "leg-support-aoc"
   },
   {
     "id": "leg-support-aoc-senate-office-buildings",
@@ -22658,9 +22659,9 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 75097786.8,
+    "resolved_total_amount": 81746208.94,
     "cost_status": "allocated",
-    "cost_basis": "subtree_weight",
+    "cost_basis": "combined_statement_weight",
     "cost_validation": "estimated_from_parent",
     "costVerificationStatus": "unverified",
     "costConfidenceScore": 0.2,
@@ -22684,7 +22685,6 @@
     "placementMatchedText": "Senate Office Buildings",
     "placementMethod": "name_labelled_on_parent_official_page",
     "placementMatchedIn": "content",
-    "parentId": "leg-support-aoc",
     "combinedStatementOutlays": {
       "nodeId": "leg-support-aoc-senate-office-buildings",
       "nodeName": "Senate Office Buildings",
@@ -22765,7 +22765,8 @@
       "matchBasis": "The Architect's account titled for this jurisdiction, under the Architect's own total.",
       "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
       "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
-    }
+    },
+    "parentId": "leg-support-aoc"
   },
   {
     "id": "leg-support-aoc-house-office-buildings",
@@ -22790,9 +22791,9 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 75097786.8,
+    "resolved_total_amount": 100196270.61,
     "cost_status": "allocated",
-    "cost_basis": "subtree_weight",
+    "cost_basis": "combined_statement_weight",
     "cost_validation": "estimated_from_parent",
     "costVerificationStatus": "unverified",
     "costConfidenceScore": 0.2,
@@ -22816,7 +22817,6 @@
     "placementMatchedText": "House Office Buildings",
     "placementMethod": "name_labelled_on_parent_official_page",
     "placementMatchedIn": "content",
-    "parentId": "leg-support-aoc",
     "combinedStatementOutlays": {
       "nodeId": "leg-support-aoc-house-office-buildings",
       "nodeName": "House Office Buildings",
@@ -22897,7 +22897,8 @@
       "matchBasis": "The Architect's account titled for this jurisdiction, under the Architect's own total.",
       "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
       "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
-    }
+    },
+    "parentId": "leg-support-aoc"
   },
   {
     "id": "leg-support-aoc-capitol-power-plant",
@@ -22922,9 +22923,9 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 75097786.8,
+    "resolved_total_amount": 77909155.29,
     "cost_status": "allocated",
-    "cost_basis": "subtree_weight",
+    "cost_basis": "combined_statement_weight",
     "cost_validation": "estimated_from_parent",
     "costVerificationStatus": "unverified",
     "costConfidenceScore": 0.2,
@@ -22948,7 +22949,6 @@
     "placementMatchedText": "Capitol Power Plant",
     "placementMethod": "name_labelled_on_parent_official_page",
     "placementMatchedIn": "content",
-    "parentId": "leg-support-aoc",
     "combinedStatementOutlays": {
       "nodeId": "leg-support-aoc-capitol-power-plant",
       "nodeName": "Capitol Power Plant",
@@ -23029,7 +23029,8 @@
       "matchBasis": "The Architect's account titled for this jurisdiction, under the Architect's own total.",
       "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
       "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
-    }
+    },
+    "parentId": "leg-support-aoc"
   },
   {
     "id": "leg-support-aoc-capitol-grounds",
@@ -23054,9 +23055,9 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 75097786.8,
+    "resolved_total_amount": 11403357.4,
     "cost_status": "allocated",
-    "cost_basis": "subtree_weight",
+    "cost_basis": "combined_statement_weight",
     "cost_validation": "estimated_from_parent",
     "costVerificationStatus": "unverified",
     "costConfidenceScore": 0.2,
@@ -23080,7 +23081,6 @@
     "placementMatchedText": "Capitol Grounds",
     "placementMethod": "name_labelled_on_parent_official_page",
     "placementMatchedIn": "content",
-    "parentId": "leg-support-aoc",
     "combinedStatementOutlays": {
       "nodeId": "leg-support-aoc-capitol-grounds",
       "nodeName": "Capitol Grounds",
@@ -23161,7 +23161,8 @@
       "matchBasis": "The Architect's account titled for this jurisdiction, under the Architect's own total.",
       "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
       "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
-    }
+    },
+    "parentId": "leg-support-aoc"
   },
   {
     "id": "leg-support-aoc-capitol-visitor-center",
@@ -23186,9 +23187,9 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 75097786.8,
+    "resolved_total_amount": 16090222.75,
     "cost_status": "allocated",
-    "cost_basis": "subtree_weight",
+    "cost_basis": "combined_statement_weight",
     "cost_validation": "estimated_from_parent",
     "costVerificationStatus": "unverified",
     "costConfidenceScore": 0.2,
@@ -23212,7 +23213,6 @@
     "placementMatchedText": "U.S. Capitol Visitor Center",
     "placementMethod": "name_labelled_on_parent_official_page",
     "placementMatchedIn": "navigation",
-    "parentId": "leg-support-aoc",
     "combinedStatementOutlays": {
       "nodeId": "leg-support-aoc-capitol-visitor-center",
       "nodeName": "Capitol Visitor Center",
@@ -23303,7 +23303,8 @@
       "matchBasis": "Both accounts the chapter prints whose titles name the Capitol Visitor Center: its appropriation and its revolving fund, which nets below zero for the year.",
       "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
       "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
-    }
+    },
+    "parentId": "leg-support-aoc"
   },
   {
     "id": "leg-support-uscp",
@@ -123450,7 +123451,6 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
-    "parentId": "exec-ind-misc",
     "combinedStatementOutlays": {
       "nodeId": "exec-ind-misc-medpac",
       "nodeName": "Medicare Payment Advisory Commission",
@@ -123532,7 +123532,8 @@
       "matchBasis": "The account is titled with the Commission's name. The Treasury prints it under the Legislative Branch's boards and commissions; this graph curates the Commission among the executive branch's independent agencies, and the placement is not resolved here.",
       "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
       "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
-    }
+    },
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-marine-mammal-commission",

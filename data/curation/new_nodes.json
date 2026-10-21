@@ -1008,6 +1008,28 @@
    "url": "https://www.usa.gov/agency-index/c",
    "basis": "A unit OPM's CURRENT PLUM export files as an agency of its own and this graph had no node for at all (CURATION.md §17). The export is not a licence: the node is licensed by the page named here, tested with the verifier's own label test on the run. 13 live rows, filed by the export under its own 'EXECUTIVE OFFICE OF THE PRESIDENT - <unit>' form, whose scoped rule found no unit of this name beneath the EOP because the graph had none. whitehouse.gov serves a JavaScript shell below the verifier's readable-text floor. usa.gov's A-to-Z index of federal agencies labels it; CLAUDE.md already records that index as a source of candidate pages rather than of claims, and here it is the page the label test was run against. ",
    "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-support-aoc-capital-construction-and-operations",
+   "parentId": "leg-support-aoc",
+   "name": "Capital Construction and Operations",
+   "type": "Treasury accounting line",
+   "licence": "combined_statement_account",
+   "account": "Capital Construction and Operations, Architect of the Capitol",
+   "chapterUnit": "Architect of the Capitol",
+   "basis": "The Combined Statement's Legislative Branch chapter (FY2025) prints this appropriation account under the Architect of the Capitol's total, and no node in this graph carries it. It names no jurisdiction or office the graph draws, so it is carried as an accounting line beside the Architect's divisions rather than as an office; without a node its money would be divided among the divisions and the Architect's posts. CURATION.md \u00a722.9.",
+   "addedOn": "2026-10-21"
+  },
+  {
+   "id": "leg-support-aoc-capitol-police-buildings-and-grounds",
+   "parentId": "leg-support-aoc",
+   "name": "Capitol Police Buildings and Grounds",
+   "type": "Treasury accounting line",
+   "licence": "combined_statement_account",
+   "account": "Capitol Police Buildings and Grounds, Architect of the Capitol",
+   "chapterUnit": "Architect of the Capitol",
+   "basis": "The Combined Statement's Legislative Branch chapter (FY2025) prints this appropriation account under the Architect of the Capitol's total, and no node in this graph carries it. The owner asked for a division named 'Capitol Police Buildings, Grounds and Security' only if aoc.gov labels it; checked on 2026-10-21 with the verifier's own label test, aoc.gov names that jurisdiction only in prose (its Office of the Chief Security Officer page: 'The OCSO includes the Capitol Police Buildings, Grounds and Security jurisdiction'), and none of its organisational pages labels it. So no office is added and the account is carried as an accounting line under the Architect, the rule applied to Capital Construction and Operations. CURATION.md \u00a722.9.",
+   "addedOn": "2026-10-21"
   }
  ]
 }

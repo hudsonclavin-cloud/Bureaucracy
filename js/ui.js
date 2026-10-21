@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261021a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261021a";
+import { createGovernmentGraph } from "./graph.js?v=20261021b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261021b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -2096,6 +2096,10 @@ function renderDescriptionProvenance(data, isClusteredView) {
     line.textContent = "DESCRIPTION: generated from the Monthly Treasury Statement, which names this unit — nothing further about it has been read";
     return;
   }
+  if (String(data.descriptionSource || "") === "generated_from_the_treasury_combined_statement") {
+    line.textContent = "DESCRIPTION: generated from the Treasury's Combined Statement, which prints this account — nothing further about it has been read";
+    return;
+  }
   if (String(data.descriptionSource || "") === "generated_from_its_official_page") {
     line.textContent = "DESCRIPTION: generated from the official page that names this unit — nothing further about it has been read";
     return;
@@ -3086,7 +3090,7 @@ const SOURCED_FIGURE_STAND_IN_ORDER = [
   // The Treasury's Combined Statement for the unit's reviewed accounts (since
   // 2026-10-21): a completed year, like OMB's, but on the Treasury's own net
   // basis, so it goes before OMB; after File A by the clock rule above. None
-  // of the twelve units carrying it carries File A or OMB today, so the order
+  // of the fifteen units carrying it carries File A or OMB today, so the order
   // decides nothing yet.
   ["combined", (node) => nonZeroBlock(node.combinedStatementOutlays, "amount")],
   ["omb", (node) => nonZeroBlock(node.ombBudget, "outlays")],
@@ -3116,9 +3120,17 @@ function isPostType(node) {
   return /position|\brole\b|office holder/i.test(String(node.type || ""));
 }
 
+// A curated Treasury accounting line added from the Combined Statement (since
+// 2026-10-21) IS one account, so the chapter's figure for it is the line's own
+// and may head it; no other sourced kind names an account, so none may.
+function isCuratedAccountLine(node) {
+  return !String(node.synthetic || "") && /treasury accounting line/i.test(String(node.type || ""));
+}
+
 function canTakeSourcedFigure(node) {
   if (isPostType(node)) return false;
-  if (String(node.synthetic || "") || /treasury accounting line/i.test(String(node.type || ""))) return false;
+  if (String(node.synthetic || "")) return false;
+  if (isCuratedAccountLine(node)) return Boolean(nonZeroBlock(node.combinedStatementOutlays, "amount"));
   if (String(node.lifecycle || "") === "superseded" || String(node.cost_validation || "") === "unit_superseded") return false;
   return true;
 }
@@ -3130,6 +3142,7 @@ function canTakeSourcedFigure(node) {
 function sourcedFigureOf(node) {
   if (isCostIdentifiedForTheNode(node) || !canTakeSourcedFigure(node)) return null;
   for (const [name, read] of SOURCED_FIGURE_STAND_IN_ORDER) {
+    if (isCuratedAccountLine(node) && name !== "combined") continue;
     const block = read(node);
     if (block) return { kind: name, block };
   }

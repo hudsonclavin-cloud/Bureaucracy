@@ -631,6 +631,16 @@ def compute_subtree_sizes(root: dict[str, Any]) -> dict[str, int]:
     recurses into that node's own children (there are none, in practice —
     every instance checked is a leaf), so real structure beneath a stamped
     title, should one ever be curated, would still count.
+
+    Nor does an appropriation account added from the Treasury's Combined
+    Statement (`is_combined_statement_account_line`, since 2026-10-21): it is
+    an account standing beside a unit's divisions, not structure, so adding one
+    beneath the Architect of the Capitol must not grow the Legislative Branch's
+    support agencies against the joint committees by subtree size. Its own size
+    is still 1, so an implied weight for it stays defined. The receipts lines
+    and "Interest on the Public Debt" still count; excluding every Treasury
+    accounting line moves 82 nodes and is recorded as an open decision
+    (CURATION.md §22.9).
     """
     sizes: dict[str, int] = {}
 
@@ -649,7 +659,7 @@ def compute_subtree_sizes(root: dict[str, Any]) -> dict[str, int]:
         node_id = str(node.get("id") or "").strip()
         if node_id:
             sizes[node_id] = total
-        return total
+        return 0 if is_combined_statement_account_line(node) else total
 
     visit(root)
     return sizes
@@ -2193,6 +2203,19 @@ def summarize_scaled_official(root: dict[str, Any]) -> dict[str, Any]:
 STATED_GROUP_COUNT = re.compile(r"\(\s*(\d+)\s*\)\s*$")
 STATED_MULTIPLICITY = re.compile(r"\(\s*[\u00d7x]\s*([^)]+?)\s*\)", re.IGNORECASE)
 MULTIPLICITY_RANGE = re.compile(r"^(\d+)\s*[-\u2013]\s*(\d+)$")
+
+
+COMBINED_STATEMENT_ACCOUNT_STRUCTURE_SOURCE = "named_in_the_treasury_combined_statement"
+
+
+def is_combined_statement_account_line(node: dict[str, Any]) -> bool:
+    """A curated Treasury accounting line `scripts/add_curated_nodes.py` added
+    under its `combined_statement_account` licence: one appropriation account
+    the Combined Statement prints under a unit, carried beside its divisions."""
+    return (isinstance(node, dict)
+            and str(node.get("type") or "") == TREASURY_LINE_TYPE
+            and not node.get("synthetic")
+            and str(node.get("structureSource") or "") == COMBINED_STATEMENT_ACCOUNT_STRUCTURE_SOURCE)
 
 
 def is_treasury_line(node: dict[str, Any]) -> bool:

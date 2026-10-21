@@ -72,7 +72,7 @@ class TableTests(unittest.TestCase):
         self.assertIn(cs.FIELD, EVIDENCE_OWNED_FIELDS)
         self.assertIn(cs.FIELD, MINIMAL_GRAPH_FIELDS)
 
-    def test_twelve_rows_publish_with_their_printed_sums(self):
+    def test_fifteen_rows_publish_with_their_printed_sums(self):
         s = shared()
         self.assertEqual(s["report"]["refused"], {})
         amounts = {node_id: record["amountRaw"] for node_id, record in s["records"].items()}
@@ -83,6 +83,9 @@ class TableTests(unittest.TestCase):
             "leg-support-aoc-house-office-buildings": "156,916,099.98",
             "leg-support-aoc-capitol-power-plant": "122,012,533.26",
             "leg-support-aoc-capitol-visitor-center": "25,198,692.39",
+            "leg-support-aoc-library-of-congress-buildings": "94,205,042.27",
+            "leg-support-aoc-capital-construction-and-operations": "158,585,469.94",
+            "leg-support-aoc-capitol-police-buildings-and-grounds": "204,227,240.13",
             "leg-support-loc-crs": "141,782,158.43",
             "leg-support-loc-copyright": "63,962,820.59",
             "leg-support-loc-nls": "64,367,416.42",
@@ -165,12 +168,12 @@ class BuilderRefusalTests(unittest.TestCase):
 
 
 class ApplyTests(unittest.TestCase):
-    def test_apply_stamps_twelve_and_withdraws_what_it_no_longer_has(self):
+    def test_apply_stamps_fifteen_and_withdraws_what_it_no_longer_has(self):
         graph = copy.deepcopy(shared()["base"])
         stats = cs.apply_combined_statement_evidence(graph, shared()["records"])
-        self.assertEqual(stats["applied"], 12)
+        self.assertEqual(stats["applied"], 15)
         stats = cs.apply_combined_statement_evidence(graph, {})
-        self.assertEqual(stats["withdrawn_first"], 12)
+        self.assertEqual(stats["withdrawn_first"], 15)
         self.assertFalse(any(cs.FIELD in n for n, _ in walk(graph)))
 
     def test_apply_refuses_an_unlisted_node_a_rename_and_a_moved_record(self):
@@ -180,7 +183,7 @@ class ApplyTests(unittest.TestCase):
         node_map, _ = index_tree(graph)
         node_map["leg-support-loc-nls"]["name"] = "Talking Books Service"
         stats = cs.apply_combined_statement_evidence(graph, records)
-        self.assertEqual((stats["applied"], stats["refused_not_a_reviewed_row"], stats["refused_renamed"]), (10, 1, 1))
+        self.assertEqual((stats["applied"], stats["refused_not_a_reviewed_row"], stats["refused_renamed"]), (13, 1, 1))
 
 
 class GateTests(unittest.TestCase):
@@ -209,7 +212,7 @@ class GateTests(unittest.TestCase):
     def test_the_true_blocks_pass(self):
         self.assertNotIn("error", self.docs)
         self.assertEqual(self.check(copy.deepcopy(self.graph)), [])
-        self.assertEqual(sum(1 for n, _ in walk(self.graph) if cs.FIELD in n), 12)
+        self.assertEqual(sum(1 for n, _ in walk(self.graph) if cs.FIELD in n), 15)
 
     def test_each_corruption_is_refused(self):
         single, double, commission = "leg-support-loc-crs", "leg-support-aoc-capitol-visitor-center", "exec-ind-misc-macpac"
@@ -365,17 +368,31 @@ class WeightTests(unittest.TestCase):
         self.assertNotEqual(self.gate_check(nodes), [])
 
     @unittest.skipUnless(PUBLISHED.is_file(), "no published graph")
-    def test_the_published_graph_weights_nothing_by_them_and_passes(self):
+    def test_the_published_graph_weights_the_architects_units_only_and_passes(self):
         graph = json.loads(PUBLISHED.read_text(encoding="utf-8"))
         pairs = list(walk(graph))
         nodes = [n for n, _ in pairs]
         parents = {str(n.get("id")): str((p or {}).get("id") or "") for n, p in pairs}
         self.assertEqual(gate.combined_statement_weight_violations(nodes, parents, lambda n: n["id"]), [])
-        # No parent has a figure on every unit beneath it: the Architect's
-        # Library of Congress Buildings division, the Library's Law Library and
-        # Folklife Center, and every other sibling set carry none.
-        self.assertFalse(any("combined_statement" in str(n.get("cost_basis") or "") for n in nodes))
-        self.assertEqual(sum(1 for n in nodes if cs.FIELD in n), 12)
+        # Only the Architect of the Capitol has a figure on every unit beneath
+        # it: seven divisions and the two accounts carried as lines. Its four
+        # posts take an implied weight and publish nothing. The Library's Law
+        # Library and Folklife Center, and every other set, carry none.
+        weighted = sorted(n["id"] for n in nodes if n.get("cost_basis") == "combined_statement_weight")
+        self.assertEqual(len(weighted), 9)
+        self.assertEqual({parents[i] for i in weighted}, {"leg-support-aoc"})
+        implied = [n for n in nodes if n.get("cost_basis") == "implied_combined_statement_weight"]
+        self.assertEqual(len(implied), 4)
+        self.assertTrue(all(n.get("cost_status") == "unavailable" and "Position" in n.get("type", "") for n in implied))
+        self.assertEqual(sum(1 for n in nodes if cs.FIELD in n), 15)
+        by_id = {n["id"]: n for n in nodes}
+        aoc = by_id["leg-support-aoc"]
+        units = sum(by_id[i]["resolved_total_amount"] for i in weighted)
+        # Each unit's share is its FY2025 figure times one rate.
+        rates = {round(by_id[i]["resolved_total_amount"] / by_id[i][cs.FIELD]["amount"], 9) for i in weighted}
+        self.assertEqual(len(rates), 1)
+        # What the posts' implied weight withholds is published by nobody.
+        self.assertLess(units, aoc["resolved_total_amount"])
 
 
 @unittest.skipUnless(PUBLISHED.is_file(), "no published graph")

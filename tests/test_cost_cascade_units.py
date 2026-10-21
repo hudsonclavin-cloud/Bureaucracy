@@ -869,6 +869,22 @@ class GenericAdministrativeTitleWeightingTests(unittest.TestCase):
         self.assertEqual(sizes["dept-bureau-a"], 3)
         self.assertEqual(sizes["dept-bureau-b"], 2)
 
+    def test_an_account_added_from_the_combined_statement_adds_no_size_upward(self) -> None:
+        line = {"id": "agency-acct", "name": "Capital Construction and Operations",
+                "type": "Treasury accounting line", "structureSource": "named_in_the_treasury_combined_statement",
+                "children": []}
+        curated_line = {"id": "agency-interest", "name": "Interest on the Public Debt",
+                        "type": "Treasury accounting line", "children": []}
+        agency = {"id": "agency", "name": "Agency", "type": "Agency", "children": [
+            {"id": "agency-div", "name": "Division A", "type": "Division", "children": []}, line, curated_line]}
+        sizes = compute_subtree_sizes(_tree([agency]))
+        # The agency, its division and the line that is not from the Combined
+        # Statement: 3. The account counts nothing upward, but is itself 1.
+        self.assertEqual(sizes["agency"], 3)
+        self.assertEqual(sizes["agency-acct"], 1)
+        line["structureSource"] = "named_in_the_monthly_treasury_statement"
+        self.assertEqual(compute_subtree_sizes(_tree([agency]))["agency"], 4)
+
     def test_the_stamp_alone_draws_no_more_than_bare_self(self) -> None:
         """The headline case: an org whose whole subtree is the stamp, beside
         an equally information-free bureau that just doesn't carry the stamp
