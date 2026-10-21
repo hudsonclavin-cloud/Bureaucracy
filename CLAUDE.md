@@ -46,12 +46,13 @@ python scripts/regenerate_published_graph.py     # rebuild output/ offline from 
 python scripts/repair_review_queue.py --dry-run  # what the queue repair would drop, and why
 python scripts/probe_treasury_rows.py            # which Treasury lines match a node; read-only, drives TREASURY_ROW_ALIASES
 python scripts/probe_combined_statement.py       # which Combined Statement unit totals and accounts match a node; refuses unless the chapter's own totals reconcile to the cent; checks the chapter total against the September MTS line (the scale rule granted 2026-10-21); read-only (CURATION.md §22.5-22.7)
+python scripts/derive_combined_statement_evidence.py --dry-run  # the reviewed Combined Statement rows: every account the chapter prints per unit, FY2025 net outlays; writes nothing (CURATION.md §22.8)
 python scripts/probe_post_titles.py --dry-run    # which post titles an org's own page carries; read-only, drives CURATION.md §8
 python scripts/rename_templated_post_titles.py --dry-run  # templated cabinet titles -> the title an official document gives them
 python scripts/probe_candidate_pages.py --uncovered        # organisations with no candidate page; read-only, no fetch
 python scripts/rename_units_to_official_wording.py --dry-run  # organisations -> the wording their own page carries; drives CURATION.md §9
 python -c "import sys;sys.path.insert(0,'.');from data_pipeline.exporter.build_graph import DEFAULT_BASE_GRAPH,load_base_graph;from data_pipeline.verification.aliases import load_alias_table;t=load_alias_table(load_base_graph(DEFAULT_BASE_GRAPH));print(len(t),t.refusals)"  # adjudicate data/curation/node_aliases.json; CURATION.md §17
-python scripts/add_curated_nodes.py --dry-run     # add a unit the graph lacks, licensed by the statement, a page or the Government Manual; CURATION.md §1
+python scripts/add_curated_nodes.py --dry-run     # add a unit the graph lacks, licensed by the statement, a page or the Government Manual, or an account the Combined Statement prints (as a Treasury accounting line); CURATION.md §1, §22.9
 python scripts/mark_superseded_units.py --dry-run # mark a unit the government has replaced; nothing is ever deleted
 python scripts/probe_network_access.py           # what this session can reach now, and whether a 403 was the proxy or the host
 python scripts/derive_pay_evidence.py --dry-run  # the salary table joined to the listings' levels (the current export's where it lists the post, else the archive's); writes nothing
@@ -5526,6 +5527,90 @@ consistency between two Fiscal Service documents rather than independent
 verification, and it publishes nothing: no derive step, field or gate check
 exists for this source yet, and the accounts that would reach a node still
 need a reviewed table (`CURATION.md` §22.6–22.7).
+
+**The reviewed table, published (since 2026-10-21, the owner's decision).**
+`combined_statement.REVIEWED_ROWS` holds fifteen rows: §22.6's eleven,
+"Capitol Buildings" → `leg-support-aoc-capitol-building`, and since the same
+evening the Library Buildings and Grounds account → Library of Congress
+Buildings and the two account lines below (`CURATION.md` §22.9). Each row lists every
+account the chapter prints for the unit; the Capitol Visitor Center and the
+Copyright Office each have two. Completeness is checked: a row is refused when
+the chapter prints another account carrying the row's phrase.
+`scripts/derive_combined_statement_evidence.py` writes
+`data/verification/combined_statement_evidence.json`.
+
+The exporter stamps `combinedStatementOutlays` beside the estimate, never in a
+cost field. It is in `EVIDENCE_OWNED_FIELDS` and `MINIMAL_GRAPH_FIELDS`, and it
+writes no `sourceUrls` or verification method. What the block carries:
+
+- each account's printed figure, its account symbol and its row;
+- the sum, with `documentsStatingTheFigure: 0` when there are two accounts;
+- the scale reconciliation;
+- `treasurySection`. MACPAC and MedPAC, which the chapter prints under the
+  Legislative Branch and this graph curates in the executive branch, carry
+  `filedInAnotherSection: true` and a note the panel prints.
+
+The figure is a headline in the default view, the way OMB's is: the `combined`
+kind sits after File A and before OMB, headed "NET OUTLAYS — TREASURY COMBINED
+STATEMENT" with "FY2025, a completed year … not this year's, and not the cost".
+The estimate stays withheld behind its button.
+
+It is also a split weight (`combined_statement_weight`), but only where every
+sibling that is a unit carries one from the one chapter and year, filed in the
+graph's own section. Posts keep their implied weight, and no unit's share is
+ever implied from these figures. That is stricter than the House payouts,
+which do imply a missing sibling. One parent qualifies: the Architect of the
+Capitol, whose seven divisions and two account lines each carry a row.
+
+**The Architect's two unclaimed accounts, as lines (since 2026-10-21, the
+owner's decision).** The chapter prints "Capitol Police Buildings and Grounds"
+($204.2m) and "Capital Construction and Operations" ($158.6m) under the
+Architect's total, and no node carried them. The owner asked for the first as
+a division only if aoc.gov labels it. It does not: the verifier's label test
+finds it nowhere, and the Office of the Chief Security Officer's page names it
+only in a sentence. So both are carried as `Treasury accounting line` nodes
+under the Architect, added by `add_curated_nodes.py` under a fourth licence,
+`combined_statement_account`. That licence runs offline against the committed
+chapter and requires:
+
+- the account printed exactly once, under the parent's own unit total;
+- the node's name to be the printed title less ", <unit>";
+- the line type;
+- a non-zero figure.
+
+Such a line is headed in the panel by its own account's Combined Statement
+figure and by no other sourced kind. `compute_subtree_sizes` gives it nothing
+toward its ancestors (`is_combined_statement_account_line`), because the first
+rebuild without that moved the joint committees by 0.86% through subtree size.
+Excluding every Treasury accounting line moves 82 nodes and is the owner's
+call.
+
+On the rebuild exactly the Architect's eleven children and the Architect
+itself changed, for example:
+
+- House Office Buildings ≈ $75.1m → $100.2m;
+- Capitol Grounds → $11.4m;
+- the Capitol Police line ≈ $130.4m.
+
+The four posts still hold **$211.8m** of the Architect's measured $826.1m,
+published as nobody's. That is the post rule's implied weight (four times the
+siblings' geometric-mean rate), not a missing account. The nine units plus
+eight small funds are the Architect's whole chapter total, so that remainder
+is double counting. Zeroing posts' weight in a set whose accounts cover the
+unit's total is recorded in §22.9 as an open decision.
+
+The gate checks both the block and the weights:
+
+- `combined_statement_violations` re-reads the XLSX with its own reader, the
+  PDF's strings and the September statement, with every digest recomputed. It
+  mirrors the table by id and refuses an omitted account, a figure that is not
+  the printed sum, and a section mark the tree contradicts.
+- `combined_statement_weight_violations` refuses a licensed set left
+  unweighted and a weight on an unlicensed set.
+
+`tests/test_combined_statement_table.py` pins both directions. On the first
+rebuild exactly twelve nodes changed, each only by gaining the block; the
+Architect's set is §22.9's.
 
 **Where an agency's money goes (`object_class.py`, since 2026-10-08, the
 owner's ask: "a good total cost of everyone combined ... we just want to see

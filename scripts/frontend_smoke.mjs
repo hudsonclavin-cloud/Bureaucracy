@@ -150,8 +150,8 @@ try {
   // panel, recomputed here from the served graph in the order js/ui.js
   // declares (SOURCED_FIGURE_STAND_IN_ORDER) so the checks below hold the
   // page to the data rather than to itself.
-  const SOURCED_FIGURE_KINDS = ["fileA", "omb", "audited", "disbursed"];
-  const SOURCED_FIGURE_FIELDS = { fileA: ["usaspendingOutlays", "amount"], omb: ["ombBudget", "outlays"], audited: ["auditedNetCost", "netCostUsd"], disbursed: ["committeeDisbursements", "amount"] };
+  const SOURCED_FIGURE_KINDS = ["fileA", "combined", "omb", "audited", "disbursed"];
+  const SOURCED_FIGURE_FIELDS = { fileA: ["usaspendingOutlays", "amount"], combined: ["combinedStatementOutlays", "amount"], omb: ["ombBudget", "outlays"], audited: ["auditedNetCost", "netCostUsd"], disbursed: ["committeeDisbursements", "amount"] };
   const sourcedFigureAmountOf = (n, kind) => {
     const [field, amountField] = SOURCED_FIGURE_FIELDS[kind];
     const block = n[field];
@@ -161,12 +161,15 @@ try {
   const sourcedKindOf = (n) => {
     if (["official", "root_total"].includes(String(n.cost_status || ""))) return null;
     if (/position|\brole\b|office holder/i.test(String(n.type || ""))) return null;
-    if (String(n.synthetic || "") || /treasury accounting line/i.test(String(n.type || ""))) return null;
+    if (String(n.synthetic || "")) return null;
     if (String(n.lifecycle || "") === "superseded" || String(n.cost_validation || "") === "unit_superseded") return null;
+    // A curated accounting line from the Combined Statement is one account and
+    // takes that chapter's figure for it, nothing else (js/ui.js).
+    if (/treasury accounting line/i.test(String(n.type || ""))) return sourcedFigureAmountOf(n, "combined") !== null ? "combined" : null;
     return SOURCED_FIGURE_KINDS.find((kind) => sourcedFigureAmountOf(n, kind) !== null) || null;
   };
   const signedDollars = (amount) => `${amount < 0 ? "-" : ""}$${Math.round(Math.abs(amount)).toLocaleString("en-US")}`;
-  const hasSourcedFigureBlock = (n) => Boolean(n.usaspendingOutlays || n.ombBudget || n.auditedNetCost || n.committeeDisbursements);
+  const hasSourcedFigureBlock = (n) => Boolean(n.usaspendingOutlays || n.combinedStatementOutlays || n.ombBudget || n.auditedNetCost || n.committeeDisbursements);
 
   // "How to read this" — the first-visit explainer. A fresh browser context
   // has an empty localStorage, so this is exactly the state a first-time
@@ -348,7 +351,7 @@ try {
   // year, and its source sits on a row of its own.
   // The stylesheet upper-cases the term and innerText reports the rendered
   // text, so the match is case-insensitive.
-  const directorySourcedTerms = { fileA: /^Gross outlays — USAspending File A$/i, omb: /^Outlays — OMB Public Budget Database$/i, audited: /^Audited net cost — Treasury Statement of Net Cost$/i, disbursed: /^Paid out — (House Statement of Disbursements|Senate Secretary's report)$/i };
+  const directorySourcedTerms = { fileA: /^Gross outlays — USAspending File A$/i, combined: /^Net outlays — Treasury Combined Statement$/i, omb: /^Outlays — OMB Public Budget Database$/i, audited: /^Audited net cost — Treasury Statement of Net Cost$/i, disbursed: /^Paid out — (House Statement of Disbursements|Senate Secretary's report)$/i };
   for (const kind of SOURCED_FIGURE_KINDS) {
     const node = allNodes.find((n) => sourcedKindOf(n) === kind && reachable(n));
     if (!node) {
@@ -919,6 +922,7 @@ try {
   // under `measurements` rather than failed on the absence of data.
   const sourcedHeads = {
     fileA: /^GROSS OUTLAYS — USASPENDING FILE A$/,
+    combined: /^NET OUTLAYS — TREASURY COMBINED STATEMENT$/,
     omb: /^OUTLAYS — OMB PUBLIC BUDGET DATABASE$/,
     audited: /^AUDITED NET COST — TREASURY STATEMENT OF NET COST$/,
     disbursed: /^PAID OUT — (HOUSE STATEMENT OF DISBURSEMENTS|SENATE SECRETARY'S REPORT)$/,
@@ -951,6 +955,9 @@ try {
     const block = node[SOURCED_FIGURE_FIELDS[kind][0]];
     check(`the period line is read off the block (${kind})`, (kind === "disbursed" ? period.includes(String(block.period.start).slice(0, 4)) : period.includes(`FY${block.fiscalYear}`)) && (kind !== "fileA" || period.includes(block.periodAsOf)) && (kind !== "audited" || period.includes(block.statementDate)), period);
     check(`the period line says it is not the cost (${kind})`, /not the cost/.test(period), period);
+    if (kind === "combined") {
+      check("the Combined Statement headline says it is a completed year, not this year's", /a completed year/.test(period) && /not this year's/.test(period), period);
+    }
     if (kind === "omb") {
       check("the OMB headline says the figure is a sum of account rows OMB never prints", period.includes(`the sum of ${block.outlayAccountRows.toLocaleString("en-US")} account rows`) && /not a figure OMB prints/.test(period), period);
     }
@@ -967,6 +974,44 @@ try {
         await page.waitForTimeout(200);
       }
     }
+  }
+
+  // A Combined Statement figure the Treasury files under another section than
+  // the graph gives the unit says so (CURATION.md Sec 22.8), and one filed
+  // where the graph files it does not.
+  const filedElsewhere = allNodes.find((n) => sourcedKindOf(n) === "combined" && n.combinedStatementOutlays.treasurySection
+    && n.combinedStatementOutlays.treasurySection.filedInAnotherSection === true && unique(n));
+  if (filedElsewhere) {
+    await openByName(filedElsewhere.name);
+    const panel = await text("#info-stats");
+    check("a Combined Statement figure filed under another section says so", /files this account under the Legislative Branch chapter/.test(panel), panel.slice(0, 600));
+    measurements.combinedFiledElsewhere = filedElsewhere.id;
+    const filedHere = allNodes.find((n) => sourcedKindOf(n) === "combined" && n.combinedStatementOutlays.treasurySection
+      && n.combinedStatementOutlays.treasurySection.filedInAnotherSection === false && unique(n));
+    if (filedHere) {
+      await openByName(filedHere.name);
+      check("a Combined Statement figure filed where the graph files it says nothing of another section", !/files this account under/.test(await text("#info-stats")), filedHere.name);
+    }
+  } else {
+    measurements.combinedFiledElsewhere = "skipped: no organisation headed by a Combined Statement figure filed elsewhere";
+  }
+
+  // An appropriation account carried as its own Treasury accounting line
+  // (CURATION.md Sec 22.9) is headed by the chapter's figure for it, and its
+  // description says the statement is where the node comes from.
+  const accountLine = allNodes.find((n) => /treasury accounting line/i.test(String(n.type || "")) && !n.synthetic
+    && n.combinedStatementOutlays && unique(n));
+  if (accountLine) {
+    await openByName(accountLine.name);
+    const head = await text("#info-stats .info-cost-label");
+    const amount = (await text("#info-stats .info-cost-amount")).split("\n")[0];
+    measurements.combinedAccountLine = { id: accountLine.id, head, amount };
+    check("an account line is headed by the chapter's figure for its account", sourcedHeads.combined.test(head)
+      && amount === signedDollars(accountLine.combinedStatementOutlays.amount), `${head} ${amount}`);
+    const desc = await text("#info-desc-provenance");
+    check("an account line's description says the Combined Statement prints the account", /Combined Statement, which prints this account/.test(desc), desc);
+  } else {
+    measurements.combinedAccountLine = "skipped: no account line in the served graph";
   }
 
   // A negative OMB figure is shown as the database gives it, with OMB's own

@@ -25,7 +25,8 @@ What the reconciliation establishes is the scale of THIS chapter's figures, and
 nothing else. Both documents come from the Bureau of the Fiscal Service's own
 ledger, so their agreement is consistency, not independent verification of any
 figure; and which node an account names is a separate, reviewed question this
-module does not answer.
+module does not answer -- `REVIEWED_ROWS` below does, one reviewed row per
+unit, every account the chapter prints for it (CURATION.md Sec 22.8).
 """
 
 from __future__ import annotations
@@ -104,7 +105,11 @@ def parse_chapter(rows: list[list[Any]]) -> tuple[list[dict[str, Any]], list[dic
             current["netOutlays"] = current["_closed"] + sum(
                 (value for value in current["_pending"] if value is not None), Decimal(0)
             )
+            current["figureCells"] = current["_closedCells"] + [
+                cell for cell in current["_pendingCells"] if cell["printed"]
+            ]
             current["_pending"] = []
+            current["_pendingCells"] = []
 
     for index, raw in enumerate(rows):
         row = _cells(raw)
@@ -127,24 +132,33 @@ def parse_chapter(rows: list[list[Any]]) -> tuple[list[dict[str, Any]], list[dic
                 raise ReconciliationError(f"data row {index} sits outside any account")
             current["dataRows"] += 1
             value = parse_amount(row[OUTLAYS_COLUMN])
+            # The cell the figure is read from, exactly as printed, so a
+            # record can say which printed cell (or cells) its figure is.
+            cell = {"rowIndex": index, "printed": row[OUTLAYS_COLUMN].strip() if value is not None else ""}
+            if not current["accountSymbol"] and row[3].strip() and row[4].strip():
+                current["accountSymbol"] = "-".join(part for part in (row[2].strip(), row[3].strip(), row[4].strip()) if part)
             if row[1].strip() == "Subtotal":
                 current["_closed"] += value or Decimal(0)
+                current["_closedCells"].append(cell)
                 current["_pending"] = []
+                current["_pendingCells"] = []
                 current["subtotalRows"] += 1
             else:
                 current["_pending"].append(value)
+                current["_pendingCells"].append(cell)
             continue
         if first in STRUCTURAL_LABELS:
             continue
         if sum(1 for cell in row if cell) == 1:
             close()
-            current = {"title": first, "rowIndex": index, "_closed": Decimal(0), "_pending": [], "dataRows": 0, "subtotalRows": 0}
+            current = {"title": first, "rowIndex": index, "_closed": Decimal(0), "_pending": [], "_closedCells": [],
+                       "_pendingCells": [], "dataRows": 0, "subtotalRows": 0, "accountSymbol": ""}
             accounts.append(current)
     close()
 
     accounts = [a for a in accounts if a["dataRows"]]
     for account in accounts:
-        del account["_closed"], account["_pending"]
+        del account["_closed"], account["_pending"], account["_closedCells"], account["_pendingCells"]
 
     previous = -1
     chapter_total: dict[str, Any] | None = None
@@ -293,3 +307,444 @@ def reconcile_chapter_scale(
         },
         "statementLine": line,
     }
+
+
+# --------------------------------------------------------------------------
+# The reviewed table: which accounts are which node's (CURATION.md Sec 22.8)
+
+#: What a record publishes under, beside the estimate and never in a cost field.
+FIELD = "combinedStatementOutlays"
+SOURCE_TYPE = "treasury_combined_statement"
+CHAPTER_STEM = "c01"
+FISCAL_YEAR = 2025
+DEFAULT_EVIDENCE_PATH = PROJECT_ROOT / "data" / "verification" / "combined_statement_evidence.json"
+DOCUMENT_TITLE = "Combined Statement of Receipts, Outlays, and Balances of the United States Government"
+#: The graph's branch node for the chapter this table reads. A row whose node
+#: sits under another branch is a unit the Treasury files under the Legislative
+#: Branch and this graph curates elsewhere, and must say so.
+CHAPTER_BRANCH_ID = "legislative-branch"
+
+#: node id -> the reviewed identification. `accounts` is EVERY account the
+#: chapter prints for the unit, by its printed title; `phrase` is the words
+#: every one of those titles carries and no other account's title does, which
+#: is how completeness is checked rather than asserted; `chapterUnit` is the
+#: "Total, <unit>" line that closes each listed account; `filedInAnotherSection`
+#: is the row's own declaration, re-checked against the tree on every run.
+REVIEWED_ROWS: dict[str, dict[str, Any]] = {
+    "leg-support-aoc-capitol-building": {
+        "nodeName": "Capitol Building",
+        "accounts": ("Capitol Buildings, Architect of the Capitol",),
+        "phrase": "Capitol Buildings",
+        "chapterUnit": "Architect of the Capitol",
+        "filedInAnotherSection": False,
+        "basis": ("The Architect of the Capitol's Capitol Buildings account is the appropriation for the "
+                  "jurisdiction this node draws as 'Capitol Building'. The plural is the account's title and "
+                  "the singular the graph's: a reviewed identification (the owner's, 2026-10-21), not a name match."),
+    },
+    "leg-support-aoc-capitol-grounds": {
+        "nodeName": "Capitol Grounds",
+        "accounts": ("Capitol Grounds, Architect of the Capitol",),
+        "phrase": "Capitol Grounds",
+        "chapterUnit": "Architect of the Capitol",
+        "filedInAnotherSection": False,
+        "basis": "The Architect's account titled for this jurisdiction, under the Architect's own total.",
+    },
+    "leg-support-aoc-senate-office-buildings": {
+        "nodeName": "Senate Office Buildings",
+        "accounts": ("Senate Office Buildings, Architect of the Capitol",),
+        "phrase": "Senate Office Buildings",
+        "chapterUnit": "Architect of the Capitol",
+        "filedInAnotherSection": False,
+        "basis": "The Architect's account titled for this jurisdiction, under the Architect's own total.",
+    },
+    "leg-support-aoc-house-office-buildings": {
+        "nodeName": "House Office Buildings",
+        "accounts": ("House Office Buildings, Architect of the Capitol",),
+        "phrase": "House Office Buildings",
+        "chapterUnit": "Architect of the Capitol",
+        "filedInAnotherSection": False,
+        "basis": "The Architect's account titled for this jurisdiction, under the Architect's own total.",
+    },
+    "leg-support-aoc-capitol-power-plant": {
+        "nodeName": "Capitol Power Plant",
+        "accounts": ("Capitol Power Plant, Architect of the Capitol",),
+        "phrase": "Capitol Power Plant",
+        "chapterUnit": "Architect of the Capitol",
+        "filedInAnotherSection": False,
+        "basis": "The Architect's account titled for this jurisdiction, under the Architect's own total.",
+    },
+    "leg-support-aoc-capitol-visitor-center": {
+        "nodeName": "Capitol Visitor Center",
+        "accounts": (
+            "Capitol Visitor Center, Architect of the Capitol",
+            "Capitol Visitor Center Revolving Fund, Architect of the Capitol",
+        ),
+        "phrase": "Capitol Visitor Center",
+        "chapterUnit": "Architect of the Capitol",
+        "filedInAnotherSection": False,
+        "basis": ("Both accounts the chapter prints whose titles name the Capitol Visitor Center: its "
+                  "appropriation and its revolving fund, which nets below zero for the year."),
+    },
+    "leg-support-loc-crs": {
+        "nodeName": "Congressional Research Service",
+        "accounts": ("Salaries and Expenses, Congressional Research Service, Library of Congress",),
+        "phrase": "Congressional Research Service",
+        "chapterUnit": "Library of Congress",
+        "filedInAnotherSection": False,
+        "basis": "The Library's account titled for this service, under the Library's own total.",
+    },
+    "leg-support-loc-copyright": {
+        "nodeName": "Copyright Office",
+        "accounts": (
+            "Salaries and Expenses, Copyright Office, Library of Congress",
+            "Payments to Copyright Owners, Copyright Office, Library of Congress",
+        ),
+        "phrase": "Copyright Office",
+        "chapterUnit": "Library of Congress",
+        "filedInAnotherSection": False,
+        "basis": ("Both accounts the chapter prints under 'Copyright Office, Library of Congress': the "
+                  "Office's salaries and expenses, and the payments to copyright owners it disburses."),
+    },
+    "leg-support-loc-nls": {
+        "nodeName": "National Library Service for the Blind and Print Disabled (NLS)",
+        "accounts": ("Salaries and Expenses, National Library Service for the Blind and Print Disabled, "
+                     "Library of Congress",),
+        "phrase": "National Library Service for the Blind",
+        "chapterUnit": "Library of Congress",
+        "filedInAnotherSection": False,
+        "basis": "The Library's account titled for this service, under the Library's own total.",
+    },
+    "leg-senate-admin-legal": {
+        "nodeName": "Office of Senate Legal Counsel",
+        "accounts": ("Salaries and Expenses, Office of Senate Legal Counsel, Senate",),
+        "phrase": "Senate Legal Counsel",
+        "chapterUnit": "Senate",
+        "filedInAnotherSection": False,
+        "basis": "The Senate's account titled for this office, under the Senate's own total.",
+    },
+    "exec-ind-misc-macpac": {
+        "nodeName": "Medicaid and CHIP Payment and Access Commission",
+        "accounts": ("Medicaid and CHIP Payment and Access Commission",),
+        "phrase": "Medicaid and CHIP Payment and Access Commission",
+        "chapterUnit": "Legislative Branch Boards and Commissions",
+        "filedInAnotherSection": True,
+        "basis": ("The account is titled with the Commission's name. The Treasury prints it under the "
+                  "Legislative Branch's boards and commissions; this graph curates the Commission among the "
+                  "executive branch's independent agencies, and the placement is not resolved here."),
+    },
+    "exec-ind-misc-medpac": {
+        "nodeName": "Medicare Payment Advisory Commission",
+        "accounts": ("Salaries and Expenses, Medicare Payment Advisory Commission",),
+        "phrase": "Medicare Payment Advisory Commission",
+        "chapterUnit": "Legislative Branch Boards and Commissions",
+        "filedInAnotherSection": True,
+        "basis": ("The account is titled with the Commission's name. The Treasury prints it under the "
+                  "Legislative Branch's boards and commissions; this graph curates the Commission among the "
+                  "executive branch's independent agencies, and the placement is not resolved here."),
+    },
+    # Since 2026-10-21, the owner's decision: the Architect's seventh division,
+    # and the two accounts the chapter prints under the Architect's total that
+    # name no division the graph draws. Each account is carried as its own
+    # Treasury accounting line (scripts/add_curated_nodes.py,
+    # combined_statement_account), so with these three rows every unit beneath
+    # the Architect carries one and the seven divisions and two lines divide the
+    # Architect's figure by the chapter's own accounts. CURATION.md §22.9.
+    "leg-support-aoc-library-of-congress-buildings": {
+        "nodeName": "Library of Congress Buildings",
+        "accounts": ("Structural and Mechanical Care, Library Buildings and Grounds, Architect of the Capitol",),
+        "phrase": "Library Buildings and Grounds",
+        "chapterUnit": "Architect of the Capitol",
+        "filedInAnotherSection": False,
+        "basis": ("The owner's identification. The Architect's account for the care of the Library's "
+                  "buildings and grounds, under the Architect's own total; aoc.gov's Office of the Chief "
+                  "of Operations page labels the jurisdiction 'Library Buildings and Grounds', and this "
+                  "graph names the division 'Library of Congress Buildings'."),
+    },
+    "leg-support-aoc-capital-construction-and-operations": {
+        "nodeName": "Capital Construction and Operations",
+        "accounts": ("Capital Construction and Operations, Architect of the Capitol",),
+        "phrase": "Capital Construction and Operations",
+        "chapterUnit": "Architect of the Capitol",
+        "filedInAnotherSection": False,
+        "basis": ("The node is this account, added from the chapter under the combined_statement_account "
+                  "licence; the identification is the account's own title."),
+    },
+    "leg-support-aoc-capitol-police-buildings-and-grounds": {
+        "nodeName": "Capitol Police Buildings and Grounds",
+        "accounts": ("Capitol Police Buildings and Grounds, Architect of the Capitol",),
+        "phrase": "Capitol Police Buildings and Grounds",
+        "chapterUnit": "Architect of the Capitol",
+        "filedInAnotherSection": False,
+        "basis": ("The node is this account, added from the chapter under the combined_statement_account "
+                  "licence; the identification is the account's own title."),
+    },
+}
+
+NOT_THE_COST = (
+    "Net outlays for fiscal year {fy}, a completed year, as the Combined Statement prints them for the "
+    "account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, "
+    "and not this node's cost."
+)
+ANOTHER_SECTION_NOTE = (
+    "The Treasury files this account under the {chapter} chapter; this graph places the unit under {branch}. "
+    "The figure is published as printed and is never used to divide a pool here."
+)
+
+
+class Unreadable(RuntimeError):
+    """The committed documents cannot support the table."""
+
+
+def _branch_of(node_id: str, node_map: dict[str, Any], parent_map: dict[str, str]) -> str | None:
+    current = node_id
+    while current in parent_map:
+        parent = parent_map[current]
+        if parent not in parent_map:  # the parent is the root
+            return current
+        current = parent
+    return None
+
+
+def build_records(node_map: dict[str, Any], parent_map: dict[str, str], *,
+                  chapter_dir: Path | None = None, statement_root: Path | None = None
+                  ) -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
+    """One record per reviewed row whose every check holds, and a report of the rest."""
+    from data_pipeline.exporter.build_graph import canonical_name_key, is_post_node
+    from data_pipeline.verification import financial_evidence as fe
+
+    chapter = load_chapter(CHAPTER_STEM, chapter_dir)
+    scale = reconcile_chapter_scale(CHAPTER_STEM, FISCAL_YEAR, chapter_dir=chapter_dir, statement_root=statement_root)
+    pdf_path = Path(chapter_dir or CHAPTER_DIR) / f"{CHAPTER_STEM}.pdf"
+    _, pdf_meta = _verified_fixture(pdf_path)
+    printed_pdf = pdf_text(pdf_path)
+    xlsx_meta = json.loads((Path(chapter_dir or CHAPTER_DIR) / f"{CHAPTER_STEM}.xlsx.meta.json").read_text(encoding="utf-8"))
+    chapter_total = next(t for t in chapter["totals"] if t.get("isChapterTotal"))
+    section = chapter_total["unit"]
+    by_title: dict[str, list[dict[str, Any]]] = {}
+    for account in chapter["accounts"]:
+        by_title.setdefault(account["title"], []).append(account)
+
+    records: dict[str, dict[str, Any]] = {}
+    refused: dict[str, list[str]] = {}
+
+    def refuse(reason: str, node_id: str) -> None:
+        refused.setdefault(reason, []).append(node_id)
+
+    claimed: dict[str, str] = {}
+    for node_id, row in REVIEWED_ROWS.items():
+        node = node_map.get(node_id)
+        if node is None:
+            refuse("node_not_in_graph", node_id)
+            continue
+        if canonical_name_key(node.get("name")) != canonical_name_key(row["nodeName"]):
+            refuse("node_renamed_since_the_row_was_written", node_id)
+            continue
+        if is_post_node(node) or node.get("synthetic"):
+            refuse("not_an_organisation", node_id)
+            continue
+        phrase = row["phrase"].casefold()
+        components: list[dict[str, Any]] = []
+        failure = None
+        for title in row["accounts"]:
+            found = by_title.get(title) or []
+            if len(found) != 1:
+                failure = "account_not_printed_exactly_once"
+                break
+            account = found[0]
+            if account.get("unit") != row["chapterUnit"]:
+                failure = "account_closed_by_another_unit_total"
+                break
+            if phrase not in title.casefold():
+                failure = "listed_account_does_not_carry_the_phrase"
+                break
+            if title in claimed:
+                failure = "account_claimed_by_two_rows"
+                break
+            cells = account.get("figureCells") or []
+            if len(cells) != 1 or parse_amount(cells[0]["printed"]) != account["netOutlays"]:
+                failure = "account_figure_is_not_one_printed_cell"
+                break
+            if cells[0]["printed"] not in printed_pdf:
+                failure = "pdf_does_not_print_the_figure"
+                break
+            components.append({
+                "account": title,
+                "accountSymbol": account.get("accountSymbol") or "",
+                "chapterUnit": account["unit"],
+                "printed": cells[0]["printed"],
+                "amount": float(account["netOutlays"]),
+                "rowIndex": cells[0]["rowIndex"],
+            })
+        if failure:
+            refuse(failure, node_id)
+            continue
+        unlisted = sorted(a["title"] for a in chapter["accounts"]
+                          if phrase in a["title"].casefold() and a["title"] not in row["accounts"])
+        if unlisted:
+            refuse("chapter_prints_another_account_for_the_unit", node_id)
+            continue
+        branch_id = _branch_of(node_id, node_map, parent_map)
+        another = branch_id != CHAPTER_BRANCH_ID
+        if another != bool(row["filedInAnotherSection"]):
+            refuse("section_mark_disagrees_with_the_tree", node_id)
+            continue
+        total_cents = sum(round(Decimal(c["printed"].replace(",", "")) * 100) for c in components)
+        if total_cents == 0:
+            refuse("figure_is_zero", node_id)
+            continue
+        for title in row["accounts"]:
+            claimed[title] = node_id
+        amount_raw = f"{Decimal(total_cents) / 100:,.2f}"
+        single = len(components) == 1
+        evidence = (
+            f"{scale['chapterTotal']['label']} {scale['chapterTotal']['amountRaw']} = "
+            f"{scale['statementLine']['label']} {scale['statementLine']['amountRaw']} "
+            f"({scale['statementLine']['recordDate']}); "
+            + "; ".join(f"{c['account']} {c['printed']}" for c in components)
+            + ("" if single else f"; sum {amount_raw}")
+        )
+        branch_name = str((node_map.get(branch_id) or {}).get("name") or branch_id or "")
+        record = {
+            "nodeId": node_id,
+            "nodeName": node.get("name"),
+            "costBasis": "net_outlays",
+            "units": "usd",
+            "normalizedMultiplier": 1,
+            "amount": total_cents / 100,
+            "amountRaw": amount_raw,
+            "unitsEvidence": evidence,
+            "scaleReconciliation": scale,
+            "fiscalYear": FISCAL_YEAR,
+            "periodCoverage": "full_fiscal_year",
+            "amountScope": "; ".join(row["accounts"]),
+            "scopeMatch": "proxy",
+            "rollupRole": "line" if single else "subtotal",
+            "sourceType": SOURCE_TYPE,
+            "sourceUrl": chapter["url"],
+            "documentSha256": chapter["sha256"],
+            "retrievedAt": xlsx_meta.get("fetched_at"),
+            "locator": {"chapter": CHAPTER_STEM, "accounts": list(row["accounts"]), "column": "Outlays (Net)"},
+            "quote": " | ".join(f"{c['account']} ... {c['printed']}" for c in components),
+            "financialEvidenceStatus": "partial",
+            "components": components,
+            "componentCount": len(components),
+            "documentsStatingTheFigure": 1 if single else 0,
+            "arithmetic": {
+                "operation": "sum_of_printed_account_figures",
+                "note": ("The figure is the one account's net outlays as the chapter prints it." if single else
+                         f"The chapter prints no single figure for this unit; the figure is the sum of the "
+                         f"{len(components)} accounts it prints whose titles name it, each listed with its printed figure."),
+            },
+            "document": {
+                "title": DOCUMENT_TITLE,
+                "edition": f"Fiscal Year {FISCAL_YEAR}",
+                "part": "Part Three, Detail of Appropriations, Outlays, and Balances",
+                "chapter": CHAPTER_STEM,
+                "chapterSection": section,
+                "xlsxUrl": chapter["url"],
+                "xlsxSha256": chapter["sha256"],
+                "pdfUrl": pdf_meta.get("url") or "",
+                "pdfSha256": pdf_meta["sha256"],
+            },
+            "treasurySection": {
+                "chapter": section,
+                "graphBranch": branch_name,
+                "filedInAnotherSection": another,
+                **({"note": ANOTHER_SECTION_NOTE.format(chapter=section, branch=branch_name)} if another else {}),
+            },
+            "matchRule": "reviewed_row",
+            "matchBasis": row["basis"],
+            "notTheCost": NOT_THE_COST.format(fy=FISCAL_YEAR),
+        }
+        # Each component is validated as the record of one printed figure (the
+        # disbursement module's shape): the validator requires a record's own
+        # figure to be the one the document prints, and a sum of two accounts
+        # is not printed anywhere.
+        try:
+            kinds = set()
+            for component in components:
+                validated = fe.validate_record({
+                    **{k: v for k, v in record.items() if k not in ("components", "arithmetic")},
+                    "amount": component["amount"],
+                    "amountRaw": component["printed"],
+                    "amountScope": component["account"],
+                    "rollupRole": "line",
+                    "unitsEvidence": (
+                        f"{scale['chapterTotal']['label']} {scale['chapterTotal']['amountRaw']} = "
+                        f"{scale['statementLine']['label']} {scale['statementLine']['amountRaw']} "
+                        f"({scale['statementLine']['recordDate']}); {component['account']} {component['printed']}"
+                    ),
+                    "quote": f"{component['account']} ... {component['printed']}",
+                    "locator": {"chapter": CHAPTER_STEM, "account": component["account"],
+                                "row": component["rowIndex"], "column": "Outlays (Net)"},
+                }, node)
+                component["unitsEvidenceKind"] = validated["unitsEvidenceKind"]
+                kinds.add(validated["unitsEvidenceKind"])
+        except fe.Rejected as error:
+            refuse(f"financial_evidence_refused: {error}", node_id)
+            continue
+        if len(kinds) != 1:
+            refuse("components_rest_on_different_scale_rules", node_id)
+            continue
+        record["unitsEvidenceKind"] = kinds.pop()
+        records[node_id] = record
+    report = {
+        "chapter": CHAPTER_STEM,
+        "fiscalYear": FISCAL_YEAR,
+        "rowsReviewed": len(REVIEWED_ROWS),
+        "published": len(records),
+        "refused": refused,
+        "scale": scale,
+    }
+    return records, report
+
+
+def load_combined_statement_evidence(path: str | Path | None) -> dict[str, dict[str, Any]]:
+    if not path:
+        return {}
+    try:
+        store = json.loads(Path(path).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    nodes = store.get("nodes") if isinstance(store, dict) else None
+    return {str(k): v for k, v in (nodes or {}).items() if isinstance(v, dict)}
+
+
+def apply_combined_statement_evidence(root: dict[str, Any], records: dict[str, dict[str, Any]],
+                                      *, index_tree=None) -> dict[str, Any]:
+    """Stamp each record beside the node's estimate, never in a cost field.
+
+    Withdrawn from every node first, so a row deleted or refused since the last
+    build stops being published though the exporter re-feeds graph.json. Never
+    on a node whose id the reviewed table does not carry, never after a rename,
+    never on a post, and never where the section mark disagrees with the tree.
+    """
+    from data_pipeline.exporter.build_graph import canonical_name_key, is_post_node
+    if index_tree is None:
+        from data_pipeline.exporter.build_graph import index_tree as _index_tree
+        index_tree = _index_tree
+    node_map, parent_map = index_tree(root)
+    applied = withdrawn = refused_unlisted = refused_renamed = refused_section = 0
+    for node_id, node in node_map.items():
+        if node.pop(FIELD, None) is not None:
+            withdrawn += 1
+        record = records.get(node_id)
+        if not record:
+            continue
+        row = REVIEWED_ROWS.get(node_id)
+        if row is None or is_post_node(node) or node.get("synthetic"):
+            refused_unlisted += 1
+            continue
+        if canonical_name_key(node.get("name")) != canonical_name_key(row["nodeName"]) or \
+                canonical_name_key(node.get("name")) != canonical_name_key(record.get("nodeName")):
+            refused_renamed += 1
+            continue
+        another = _branch_of(node_id, node_map, parent_map) != CHAPTER_BRANCH_ID
+        section = record.get("treasurySection") if isinstance(record.get("treasurySection"), dict) else {}
+        if another != bool(section.get("filedInAnotherSection")) or another != bool(row["filedInAnotherSection"]):
+            refused_section += 1
+            continue
+        node[FIELD] = json.loads(json.dumps(record))
+        applied += 1
+    return {"applied": applied, "withdrawn_first": withdrawn, "refused_not_a_reviewed_row": refused_unlisted,
+            "refused_renamed": refused_renamed, "refused_section_mark": refused_section}

@@ -140,6 +140,9 @@ EVIDENCE_OWNED_FIELDS = (
     # the estimate. Withdrawn here with the rest, so a record refused since the
     # last build -- or a committee renamed or re-typed -- stops being published.
     "committeeDisbursements",
+    # A completed year's net outlays for the Combined Statement's reviewed
+    # accounts (combined_statement.py), withdrawn here with the rest.
+    "combinedStatementOutlays",
     "verificationMethod",
     "verificationFailure",
     "verificationUnread",

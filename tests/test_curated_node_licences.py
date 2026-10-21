@@ -27,6 +27,7 @@ for extra in (PROJECT_ROOT, PROJECT_ROOT / "scripts"):
         sys.path.insert(0, str(extra))
 
 from add_curated_nodes import (  # noqa: E402
+    LICENCE_ACCOUNT,
     LICENCE_MANUAL,
     LICENCES,
     STRUCTURE_SOURCE,
@@ -181,6 +182,59 @@ class WriterRefusalTests(unittest.TestCase):
         except SourceUnreachable as unreachable:
             self.skipTest(f"a source this table is re-checked against did not answer: {unreachable}")
         self.assertEqual(report["added"], 0, "every committed row is already in the curated file")
+
+
+class CombinedStatementAccountTests(unittest.TestCase):
+    """The fourth licence: an account the chapter prints under the parent's own
+    unit total, carried as a Treasury accounting line. Offline, both ways."""
+
+    def row(self, **over):
+        base = {"id": "test-scratch-account", "parentId": "leg-support-aoc",
+                "name": "House Historic Buildings Revitalization Trust Fund",
+                "type": "Treasury accounting line", "licence": LICENCE_ACCOUNT,
+                "account": "House Historic Buildings Revitalization Trust Fund, Architect of the Capitol",
+                "chapterUnit": "Architect of the Capitol", "basis": "a test row", "addedOn": "2026-10-21"}
+        base.update(over)
+        return base
+
+    def only(self, report):
+        self.assertEqual(len(report["results"]), 1)
+        return report["results"][0]
+
+    def test_registered_with_its_own_structure_source(self):
+        self.assertIn(LICENCE_ACCOUNT, LICENCES)
+        self.assertEqual(STRUCTURE_SOURCE[LICENCE_ACCOUNT], "named_in_the_treasury_combined_statement")
+
+    def test_an_account_the_chapter_prints_under_the_parent_is_added(self):
+        item = self.only(run_table([self.row()]))
+        self.assertTrue(item["added"], item)
+        self.assertIn("combined-statement/cs2025/c01.xlsx", item["detail"])
+
+    def test_each_refusal(self):
+        cases = {
+            "an_account_is_not_an_office": {"type": "Division"},
+            "name_is_not_the_accounts_title": {"name": "House Historic Buildings Trust"},
+            "parent_is_not_the_chapter_unit": {"parentId": "leg-support-loc"},
+            "chapter_does_not_print_one_such_account": {
+                "name": "Imaginary Fund", "account": "Imaginary Fund, Architect of the Capitol"},
+            "account_figure_is_zero": {
+                "name": "Capitol Trust Account", "account": "Capitol Trust Account, Architect of the Capitol"},
+            "row_names_no_account": {"account": ""},
+        }
+        for reason, over in cases.items():
+            with self.subTest(reason=reason):
+                item = self.only(run_table([self.row(**over)]))
+                self.assertFalse(item["added"], item)
+                self.assertEqual(item["reason"], reason)
+
+    def test_the_two_committed_lines_are_already_present(self):
+        rows = [r for r in json.loads((PROJECT_ROOT / "data" / "curation" / "new_nodes.json").read_text(
+            encoding="utf-8"))["nodes"] if r.get("licence") == LICENCE_ACCOUNT]
+        self.assertEqual(sorted(r["id"] for r in rows), [
+            "leg-support-aoc-capital-construction-and-operations",
+            "leg-support-aoc-capitol-police-buildings-and-grounds"])
+        report = run_table(rows)
+        self.assertEqual({r["reason"] for r in report["results"]}, {"already_added"})
 
 
 class JointRowTests(unittest.TestCase):

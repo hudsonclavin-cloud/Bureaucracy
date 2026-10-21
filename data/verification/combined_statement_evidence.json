@@ -1,0 +1,1269 @@
+{
+  "_note": "Derived by scripts/derive_combined_statement_evidence.py from the Combined Statement's Legislative Branch chapter (c01, XLSX and PDF) and the September 2025 Monthly Treasury Statement, committed verbatim under tests/fixtures/ with their digests. Each record is one reviewed row: every account the chapter prints for the unit, summed. It is not a cost and the exporter never writes it into one.",
+  "source": {
+    "kind": "combined_statement",
+    "derivedAt": "2026-10-21T23:15:34Z"
+  },
+  "report": {
+    "chapter": "c01",
+    "fiscalYear": 2025,
+    "rowsReviewed": 15,
+    "published": 15,
+    "refused": {},
+    "scale": {
+      "chapterTotal": {
+        "label": "Total, Legislative Branch",
+        "amountRaw": "7,232,968,757.51",
+        "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+        "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295"
+      },
+      "statementLine": {
+        "label": "Total--Legislative Branch",
+        "amountRaw": "7232968757.51",
+        "recordDate": "2025-09-30",
+        "field": "current_fytd_net_outly_amt",
+        "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date%3Aeq%3A2025-09-30&sort=print_order_nbr&page%5Bsize%5D=1000&page%5Bnumber%5D=1",
+        "documentSha256": "7c25e0df2983a97acb4c55394de6fbc49f1f7cbe1924b39629324d70b6b9cb12"
+      }
+    }
+  },
+  "nodes": {
+    "leg-support-aoc-capitol-building": {
+      "nodeId": "leg-support-aoc-capitol-building",
+      "nodeName": "Capitol Building",
+      "costBasis": "net_outlays",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "amount": 55027979.7,
+      "amountRaw": "55,027,979.70",
+      "unitsEvidence": "Total, Legislative Branch 7,232,968,757.51 = Total--Legislative Branch 7232968757.51 (2025-09-30); Capitol Buildings, Architect of the Capitol 55,027,979.70",
+      "scaleReconciliation": {
+        "chapterTotal": {
+          "label": "Total, Legislative Branch",
+          "amountRaw": "7,232,968,757.51",
+          "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+          "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295"
+        },
+        "statementLine": {
+          "label": "Total--Legislative Branch",
+          "amountRaw": "7232968757.51",
+          "recordDate": "2025-09-30",
+          "field": "current_fytd_net_outly_amt",
+          "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date%3Aeq%3A2025-09-30&sort=print_order_nbr&page%5Bsize%5D=1000&page%5Bnumber%5D=1",
+          "documentSha256": "7c25e0df2983a97acb4c55394de6fbc49f1f7cbe1924b39629324d70b6b9cb12"
+        }
+      },
+      "fiscalYear": 2025,
+      "periodCoverage": "full_fiscal_year",
+      "amountScope": "Capitol Buildings, Architect of the Capitol",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "treasury_combined_statement",
+      "sourceUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+      "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+      "retrievedAt": "2026-10-21T16:30:58Z",
+      "locator": {
+        "chapter": "c01",
+        "accounts": [
+          "Capitol Buildings, Architect of the Capitol"
+        ],
+        "column": "Outlays (Net)"
+      },
+      "quote": "Capitol Buildings, Architect of the Capitol ... 55,027,979.70",
+      "financialEvidenceStatus": "partial",
+      "components": [
+        {
+          "account": "Capitol Buildings, Architect of the Capitol",
+          "accountSymbol": "001-0105",
+          "chapterUnit": "Architect of the Capitol",
+          "printed": "55,027,979.70",
+          "amount": 55027979.7,
+          "rowIndex": 446,
+          "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+        }
+      ],
+      "componentCount": 1,
+      "documentsStatingTheFigure": 1,
+      "arithmetic": {
+        "operation": "sum_of_printed_account_figures",
+        "note": "The figure is the one account's net outlays as the chapter prints it."
+      },
+      "document": {
+        "title": "Combined Statement of Receipts, Outlays, and Balances of the United States Government",
+        "edition": "Fiscal Year 2025",
+        "part": "Part Three, Detail of Appropriations, Outlays, and Balances",
+        "chapter": "c01",
+        "chapterSection": "Legislative Branch",
+        "xlsxUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+        "xlsxSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+        "pdfUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+        "pdfSha256": "9b9d11fb255f452f623351ed4c2d28e6391f8eb1ed1d5b13e27de08808fd020a"
+      },
+      "treasurySection": {
+        "chapter": "Legislative Branch",
+        "graphBranch": "Legislative Branch",
+        "filedInAnotherSection": false
+      },
+      "matchRule": "reviewed_row",
+      "matchBasis": "The Architect of the Capitol's Capitol Buildings account is the appropriation for the jurisdiction this node draws as 'Capitol Building'. The plural is the account's title and the singular the graph's: a reviewed identification (the owner's, 2026-10-21), not a name match.",
+      "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
+      "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+    },
+    "leg-support-aoc-capitol-grounds": {
+      "nodeId": "leg-support-aoc-capitol-grounds",
+      "nodeName": "Capitol Grounds",
+      "costBasis": "net_outlays",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "amount": 17858652.41,
+      "amountRaw": "17,858,652.41",
+      "unitsEvidence": "Total, Legislative Branch 7,232,968,757.51 = Total--Legislative Branch 7232968757.51 (2025-09-30); Capitol Grounds, Architect of the Capitol 17,858,652.41",
+      "scaleReconciliation": {
+        "chapterTotal": {
+          "label": "Total, Legislative Branch",
+          "amountRaw": "7,232,968,757.51",
+          "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+          "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295"
+        },
+        "statementLine": {
+          "label": "Total--Legislative Branch",
+          "amountRaw": "7232968757.51",
+          "recordDate": "2025-09-30",
+          "field": "current_fytd_net_outly_amt",
+          "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date%3Aeq%3A2025-09-30&sort=print_order_nbr&page%5Bsize%5D=1000&page%5Bnumber%5D=1",
+          "documentSha256": "7c25e0df2983a97acb4c55394de6fbc49f1f7cbe1924b39629324d70b6b9cb12"
+        }
+      },
+      "fiscalYear": 2025,
+      "periodCoverage": "full_fiscal_year",
+      "amountScope": "Capitol Grounds, Architect of the Capitol",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "treasury_combined_statement",
+      "sourceUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+      "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+      "retrievedAt": "2026-10-21T16:30:58Z",
+      "locator": {
+        "chapter": "c01",
+        "accounts": [
+          "Capitol Grounds, Architect of the Capitol"
+        ],
+        "column": "Outlays (Net)"
+      },
+      "quote": "Capitol Grounds, Architect of the Capitol ... 17,858,652.41",
+      "financialEvidenceStatus": "partial",
+      "components": [
+        {
+          "account": "Capitol Grounds, Architect of the Capitol",
+          "accountSymbol": "001-0108",
+          "chapterUnit": "Architect of the Capitol",
+          "printed": "17,858,652.41",
+          "amount": 17858652.41,
+          "rowIndex": 471,
+          "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+        }
+      ],
+      "componentCount": 1,
+      "documentsStatingTheFigure": 1,
+      "arithmetic": {
+        "operation": "sum_of_printed_account_figures",
+        "note": "The figure is the one account's net outlays as the chapter prints it."
+      },
+      "document": {
+        "title": "Combined Statement of Receipts, Outlays, and Balances of the United States Government",
+        "edition": "Fiscal Year 2025",
+        "part": "Part Three, Detail of Appropriations, Outlays, and Balances",
+        "chapter": "c01",
+        "chapterSection": "Legislative Branch",
+        "xlsxUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+        "xlsxSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+        "pdfUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+        "pdfSha256": "9b9d11fb255f452f623351ed4c2d28e6391f8eb1ed1d5b13e27de08808fd020a"
+      },
+      "treasurySection": {
+        "chapter": "Legislative Branch",
+        "graphBranch": "Legislative Branch",
+        "filedInAnotherSection": false
+      },
+      "matchRule": "reviewed_row",
+      "matchBasis": "The Architect's account titled for this jurisdiction, under the Architect's own total.",
+      "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
+      "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+    },
+    "leg-support-aoc-senate-office-buildings": {
+      "nodeId": "leg-support-aoc-senate-office-buildings",
+      "nodeName": "Senate Office Buildings",
+      "costBasis": "net_outlays",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "amount": 128021693.98,
+      "amountRaw": "128,021,693.98",
+      "unitsEvidence": "Total, Legislative Branch 7,232,968,757.51 = Total--Legislative Branch 7232968757.51 (2025-09-30); Senate Office Buildings, Architect of the Capitol 128,021,693.98",
+      "scaleReconciliation": {
+        "chapterTotal": {
+          "label": "Total, Legislative Branch",
+          "amountRaw": "7,232,968,757.51",
+          "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+          "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295"
+        },
+        "statementLine": {
+          "label": "Total--Legislative Branch",
+          "amountRaw": "7232968757.51",
+          "recordDate": "2025-09-30",
+          "field": "current_fytd_net_outly_amt",
+          "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date%3Aeq%3A2025-09-30&sort=print_order_nbr&page%5Bsize%5D=1000&page%5Bnumber%5D=1",
+          "documentSha256": "7c25e0df2983a97acb4c55394de6fbc49f1f7cbe1924b39629324d70b6b9cb12"
+        }
+      },
+      "fiscalYear": 2025,
+      "periodCoverage": "full_fiscal_year",
+      "amountScope": "Senate Office Buildings, Architect of the Capitol",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "treasury_combined_statement",
+      "sourceUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+      "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+      "retrievedAt": "2026-10-21T16:30:58Z",
+      "locator": {
+        "chapter": "c01",
+        "accounts": [
+          "Senate Office Buildings, Architect of the Capitol"
+        ],
+        "column": "Outlays (Net)"
+      },
+      "quote": "Senate Office Buildings, Architect of the Capitol ... 128,021,693.98",
+      "financialEvidenceStatus": "partial",
+      "components": [
+        {
+          "account": "Senate Office Buildings, Architect of the Capitol",
+          "accountSymbol": "001-0123",
+          "chapterUnit": "Architect of the Capitol",
+          "printed": "128,021,693.98",
+          "amount": 128021693.98,
+          "rowIndex": 492,
+          "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+        }
+      ],
+      "componentCount": 1,
+      "documentsStatingTheFigure": 1,
+      "arithmetic": {
+        "operation": "sum_of_printed_account_figures",
+        "note": "The figure is the one account's net outlays as the chapter prints it."
+      },
+      "document": {
+        "title": "Combined Statement of Receipts, Outlays, and Balances of the United States Government",
+        "edition": "Fiscal Year 2025",
+        "part": "Part Three, Detail of Appropriations, Outlays, and Balances",
+        "chapter": "c01",
+        "chapterSection": "Legislative Branch",
+        "xlsxUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+        "xlsxSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+        "pdfUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+        "pdfSha256": "9b9d11fb255f452f623351ed4c2d28e6391f8eb1ed1d5b13e27de08808fd020a"
+      },
+      "treasurySection": {
+        "chapter": "Legislative Branch",
+        "graphBranch": "Legislative Branch",
+        "filedInAnotherSection": false
+      },
+      "matchRule": "reviewed_row",
+      "matchBasis": "The Architect's account titled for this jurisdiction, under the Architect's own total.",
+      "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
+      "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+    },
+    "leg-support-aoc-house-office-buildings": {
+      "nodeId": "leg-support-aoc-house-office-buildings",
+      "nodeName": "House Office Buildings",
+      "costBasis": "net_outlays",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "amount": 156916099.98,
+      "amountRaw": "156,916,099.98",
+      "unitsEvidence": "Total, Legislative Branch 7,232,968,757.51 = Total--Legislative Branch 7232968757.51 (2025-09-30); House Office Buildings, Architect of the Capitol 156,916,099.98",
+      "scaleReconciliation": {
+        "chapterTotal": {
+          "label": "Total, Legislative Branch",
+          "amountRaw": "7,232,968,757.51",
+          "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+          "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295"
+        },
+        "statementLine": {
+          "label": "Total--Legislative Branch",
+          "amountRaw": "7232968757.51",
+          "recordDate": "2025-09-30",
+          "field": "current_fytd_net_outly_amt",
+          "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date%3Aeq%3A2025-09-30&sort=print_order_nbr&page%5Bsize%5D=1000&page%5Bnumber%5D=1",
+          "documentSha256": "7c25e0df2983a97acb4c55394de6fbc49f1f7cbe1924b39629324d70b6b9cb12"
+        }
+      },
+      "fiscalYear": 2025,
+      "periodCoverage": "full_fiscal_year",
+      "amountScope": "House Office Buildings, Architect of the Capitol",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "treasury_combined_statement",
+      "sourceUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+      "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+      "retrievedAt": "2026-10-21T16:30:58Z",
+      "locator": {
+        "chapter": "c01",
+        "accounts": [
+          "House Office Buildings, Architect of the Capitol"
+        ],
+        "column": "Outlays (Net)"
+      },
+      "quote": "House Office Buildings, Architect of the Capitol ... 156,916,099.98",
+      "financialEvidenceStatus": "partial",
+      "components": [
+        {
+          "account": "House Office Buildings, Architect of the Capitol",
+          "accountSymbol": "001-0127",
+          "chapterUnit": "Architect of the Capitol",
+          "printed": "156,916,099.98",
+          "amount": 156916099.98,
+          "rowIndex": 513,
+          "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+        }
+      ],
+      "componentCount": 1,
+      "documentsStatingTheFigure": 1,
+      "arithmetic": {
+        "operation": "sum_of_printed_account_figures",
+        "note": "The figure is the one account's net outlays as the chapter prints it."
+      },
+      "document": {
+        "title": "Combined Statement of Receipts, Outlays, and Balances of the United States Government",
+        "edition": "Fiscal Year 2025",
+        "part": "Part Three, Detail of Appropriations, Outlays, and Balances",
+        "chapter": "c01",
+        "chapterSection": "Legislative Branch",
+        "xlsxUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+        "xlsxSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+        "pdfUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+        "pdfSha256": "9b9d11fb255f452f623351ed4c2d28e6391f8eb1ed1d5b13e27de08808fd020a"
+      },
+      "treasurySection": {
+        "chapter": "Legislative Branch",
+        "graphBranch": "Legislative Branch",
+        "filedInAnotherSection": false
+      },
+      "matchRule": "reviewed_row",
+      "matchBasis": "The Architect's account titled for this jurisdiction, under the Architect's own total.",
+      "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
+      "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+    },
+    "leg-support-aoc-capitol-power-plant": {
+      "nodeId": "leg-support-aoc-capitol-power-plant",
+      "nodeName": "Capitol Power Plant",
+      "costBasis": "net_outlays",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "amount": 122012533.26,
+      "amountRaw": "122,012,533.26",
+      "unitsEvidence": "Total, Legislative Branch 7,232,968,757.51 = Total--Legislative Branch 7232968757.51 (2025-09-30); Capitol Power Plant, Architect of the Capitol 122,012,533.26",
+      "scaleReconciliation": {
+        "chapterTotal": {
+          "label": "Total, Legislative Branch",
+          "amountRaw": "7,232,968,757.51",
+          "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+          "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295"
+        },
+        "statementLine": {
+          "label": "Total--Legislative Branch",
+          "amountRaw": "7232968757.51",
+          "recordDate": "2025-09-30",
+          "field": "current_fytd_net_outly_amt",
+          "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date%3Aeq%3A2025-09-30&sort=print_order_nbr&page%5Bsize%5D=1000&page%5Bnumber%5D=1",
+          "documentSha256": "7c25e0df2983a97acb4c55394de6fbc49f1f7cbe1924b39629324d70b6b9cb12"
+        }
+      },
+      "fiscalYear": 2025,
+      "periodCoverage": "full_fiscal_year",
+      "amountScope": "Capitol Power Plant, Architect of the Capitol",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "treasury_combined_statement",
+      "sourceUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+      "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+      "retrievedAt": "2026-10-21T16:30:58Z",
+      "locator": {
+        "chapter": "c01",
+        "accounts": [
+          "Capitol Power Plant, Architect of the Capitol"
+        ],
+        "column": "Outlays (Net)"
+      },
+      "quote": "Capitol Power Plant, Architect of the Capitol ... 122,012,533.26",
+      "financialEvidenceStatus": "partial",
+      "components": [
+        {
+          "account": "Capitol Power Plant, Architect of the Capitol",
+          "accountSymbol": "001-0133",
+          "chapterUnit": "Architect of the Capitol",
+          "printed": "122,012,533.26",
+          "amount": 122012533.26,
+          "rowIndex": 534,
+          "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+        }
+      ],
+      "componentCount": 1,
+      "documentsStatingTheFigure": 1,
+      "arithmetic": {
+        "operation": "sum_of_printed_account_figures",
+        "note": "The figure is the one account's net outlays as the chapter prints it."
+      },
+      "document": {
+        "title": "Combined Statement of Receipts, Outlays, and Balances of the United States Government",
+        "edition": "Fiscal Year 2025",
+        "part": "Part Three, Detail of Appropriations, Outlays, and Balances",
+        "chapter": "c01",
+        "chapterSection": "Legislative Branch",
+        "xlsxUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+        "xlsxSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+        "pdfUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+        "pdfSha256": "9b9d11fb255f452f623351ed4c2d28e6391f8eb1ed1d5b13e27de08808fd020a"
+      },
+      "treasurySection": {
+        "chapter": "Legislative Branch",
+        "graphBranch": "Legislative Branch",
+        "filedInAnotherSection": false
+      },
+      "matchRule": "reviewed_row",
+      "matchBasis": "The Architect's account titled for this jurisdiction, under the Architect's own total.",
+      "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
+      "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+    },
+    "leg-support-aoc-capitol-visitor-center": {
+      "nodeId": "leg-support-aoc-capitol-visitor-center",
+      "nodeName": "Capitol Visitor Center",
+      "costBasis": "net_outlays",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "amount": 25198692.39,
+      "amountRaw": "25,198,692.39",
+      "unitsEvidence": "Total, Legislative Branch 7,232,968,757.51 = Total--Legislative Branch 7232968757.51 (2025-09-30); Capitol Visitor Center, Architect of the Capitol 30,190,121.91; Capitol Visitor Center Revolving Fund, Architect of the Capitol -4,991,429.52; sum 25,198,692.39",
+      "scaleReconciliation": {
+        "chapterTotal": {
+          "label": "Total, Legislative Branch",
+          "amountRaw": "7,232,968,757.51",
+          "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+          "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295"
+        },
+        "statementLine": {
+          "label": "Total--Legislative Branch",
+          "amountRaw": "7232968757.51",
+          "recordDate": "2025-09-30",
+          "field": "current_fytd_net_outly_amt",
+          "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date%3Aeq%3A2025-09-30&sort=print_order_nbr&page%5Bsize%5D=1000&page%5Bnumber%5D=1",
+          "documentSha256": "7c25e0df2983a97acb4c55394de6fbc49f1f7cbe1924b39629324d70b6b9cb12"
+        }
+      },
+      "fiscalYear": 2025,
+      "periodCoverage": "full_fiscal_year",
+      "amountScope": "Capitol Visitor Center, Architect of the Capitol; Capitol Visitor Center Revolving Fund, Architect of the Capitol",
+      "scopeMatch": "proxy",
+      "rollupRole": "subtotal",
+      "sourceType": "treasury_combined_statement",
+      "sourceUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+      "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+      "retrievedAt": "2026-10-21T16:30:58Z",
+      "locator": {
+        "chapter": "c01",
+        "accounts": [
+          "Capitol Visitor Center, Architect of the Capitol",
+          "Capitol Visitor Center Revolving Fund, Architect of the Capitol"
+        ],
+        "column": "Outlays (Net)"
+      },
+      "quote": "Capitol Visitor Center, Architect of the Capitol ... 30,190,121.91 | Capitol Visitor Center Revolving Fund, Architect of the Capitol ... -4,991,429.52",
+      "financialEvidenceStatus": "partial",
+      "components": [
+        {
+          "account": "Capitol Visitor Center, Architect of the Capitol",
+          "accountSymbol": "001-0161",
+          "chapterUnit": "Architect of the Capitol",
+          "printed": "30,190,121.91",
+          "amount": 30190121.91,
+          "rowIndex": 566,
+          "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+        },
+        {
+          "account": "Capitol Visitor Center Revolving Fund, Architect of the Capitol",
+          "accountSymbol": "001-4296",
+          "chapterUnit": "Architect of the Capitol",
+          "printed": "-4,991,429.52",
+          "amount": -4991429.52,
+          "rowIndex": 613,
+          "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+        }
+      ],
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_account_figures",
+        "note": "The chapter prints no single figure for this unit; the figure is the sum of the 2 accounts it prints whose titles name it, each listed with its printed figure."
+      },
+      "document": {
+        "title": "Combined Statement of Receipts, Outlays, and Balances of the United States Government",
+        "edition": "Fiscal Year 2025",
+        "part": "Part Three, Detail of Appropriations, Outlays, and Balances",
+        "chapter": "c01",
+        "chapterSection": "Legislative Branch",
+        "xlsxUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+        "xlsxSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+        "pdfUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+        "pdfSha256": "9b9d11fb255f452f623351ed4c2d28e6391f8eb1ed1d5b13e27de08808fd020a"
+      },
+      "treasurySection": {
+        "chapter": "Legislative Branch",
+        "graphBranch": "Legislative Branch",
+        "filedInAnotherSection": false
+      },
+      "matchRule": "reviewed_row",
+      "matchBasis": "Both accounts the chapter prints whose titles name the Capitol Visitor Center: its appropriation and its revolving fund, which nets below zero for the year.",
+      "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
+      "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+    },
+    "leg-support-loc-crs": {
+      "nodeId": "leg-support-loc-crs",
+      "nodeName": "Congressional Research Service",
+      "costBasis": "net_outlays",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "amount": 141782158.43,
+      "amountRaw": "141,782,158.43",
+      "unitsEvidence": "Total, Legislative Branch 7,232,968,757.51 = Total--Legislative Branch 7232968757.51 (2025-09-30); Salaries and Expenses, Congressional Research Service, Library of Congress 141,782,158.43",
+      "scaleReconciliation": {
+        "chapterTotal": {
+          "label": "Total, Legislative Branch",
+          "amountRaw": "7,232,968,757.51",
+          "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+          "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295"
+        },
+        "statementLine": {
+          "label": "Total--Legislative Branch",
+          "amountRaw": "7232968757.51",
+          "recordDate": "2025-09-30",
+          "field": "current_fytd_net_outly_amt",
+          "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date%3Aeq%3A2025-09-30&sort=print_order_nbr&page%5Bsize%5D=1000&page%5Bnumber%5D=1",
+          "documentSha256": "7c25e0df2983a97acb4c55394de6fbc49f1f7cbe1924b39629324d70b6b9cb12"
+        }
+      },
+      "fiscalYear": 2025,
+      "periodCoverage": "full_fiscal_year",
+      "amountScope": "Salaries and Expenses, Congressional Research Service, Library of Congress",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "treasury_combined_statement",
+      "sourceUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+      "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+      "retrievedAt": "2026-10-21T16:30:58Z",
+      "locator": {
+        "chapter": "c01",
+        "accounts": [
+          "Salaries and Expenses, Congressional Research Service, Library of Congress"
+        ],
+        "column": "Outlays (Net)"
+      },
+      "quote": "Salaries and Expenses, Congressional Research Service, Library of Congress ... 141,782,158.43",
+      "financialEvidenceStatus": "partial",
+      "components": [
+        {
+          "account": "Salaries and Expenses, Congressional Research Service, Library of Congress",
+          "accountSymbol": "003-0127",
+          "chapterUnit": "Library of Congress",
+          "printed": "141,782,158.43",
+          "amount": 141782158.43,
+          "rowIndex": 711,
+          "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+        }
+      ],
+      "componentCount": 1,
+      "documentsStatingTheFigure": 1,
+      "arithmetic": {
+        "operation": "sum_of_printed_account_figures",
+        "note": "The figure is the one account's net outlays as the chapter prints it."
+      },
+      "document": {
+        "title": "Combined Statement of Receipts, Outlays, and Balances of the United States Government",
+        "edition": "Fiscal Year 2025",
+        "part": "Part Three, Detail of Appropriations, Outlays, and Balances",
+        "chapter": "c01",
+        "chapterSection": "Legislative Branch",
+        "xlsxUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+        "xlsxSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+        "pdfUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+        "pdfSha256": "9b9d11fb255f452f623351ed4c2d28e6391f8eb1ed1d5b13e27de08808fd020a"
+      },
+      "treasurySection": {
+        "chapter": "Legislative Branch",
+        "graphBranch": "Legislative Branch",
+        "filedInAnotherSection": false
+      },
+      "matchRule": "reviewed_row",
+      "matchBasis": "The Library's account titled for this service, under the Library's own total.",
+      "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
+      "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+    },
+    "leg-support-loc-copyright": {
+      "nodeId": "leg-support-loc-copyright",
+      "nodeName": "Copyright Office",
+      "costBasis": "net_outlays",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "amount": 63962820.59,
+      "amountRaw": "63,962,820.59",
+      "unitsEvidence": "Total, Legislative Branch 7,232,968,757.51 = Total--Legislative Branch 7232968757.51 (2025-09-30); Salaries and Expenses, Copyright Office, Library of Congress 63,321,276.20; Payments to Copyright Owners, Copyright Office, Library of Congress 641,544.39; sum 63,962,820.59",
+      "scaleReconciliation": {
+        "chapterTotal": {
+          "label": "Total, Legislative Branch",
+          "amountRaw": "7,232,968,757.51",
+          "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+          "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295"
+        },
+        "statementLine": {
+          "label": "Total--Legislative Branch",
+          "amountRaw": "7232968757.51",
+          "recordDate": "2025-09-30",
+          "field": "current_fytd_net_outly_amt",
+          "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date%3Aeq%3A2025-09-30&sort=print_order_nbr&page%5Bsize%5D=1000&page%5Bnumber%5D=1",
+          "documentSha256": "7c25e0df2983a97acb4c55394de6fbc49f1f7cbe1924b39629324d70b6b9cb12"
+        }
+      },
+      "fiscalYear": 2025,
+      "periodCoverage": "full_fiscal_year",
+      "amountScope": "Salaries and Expenses, Copyright Office, Library of Congress; Payments to Copyright Owners, Copyright Office, Library of Congress",
+      "scopeMatch": "proxy",
+      "rollupRole": "subtotal",
+      "sourceType": "treasury_combined_statement",
+      "sourceUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+      "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+      "retrievedAt": "2026-10-21T16:30:58Z",
+      "locator": {
+        "chapter": "c01",
+        "accounts": [
+          "Salaries and Expenses, Copyright Office, Library of Congress",
+          "Payments to Copyright Owners, Copyright Office, Library of Congress"
+        ],
+        "column": "Outlays (Net)"
+      },
+      "quote": "Salaries and Expenses, Copyright Office, Library of Congress ... 63,321,276.20 | Payments to Copyright Owners, Copyright Office, Library of Congress ... 641,544.39",
+      "financialEvidenceStatus": "partial",
+      "components": [
+        {
+          "account": "Salaries and Expenses, Copyright Office, Library of Congress",
+          "accountSymbol": "003-0102",
+          "chapterUnit": "Library of Congress",
+          "printed": "63,321,276.20",
+          "amount": 63321276.2,
+          "rowIndex": 697,
+          "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+        },
+        {
+          "account": "Payments to Copyright Owners, Copyright Office, Library of Congress",
+          "accountSymbol": "003-5175",
+          "chapterUnit": "Library of Congress",
+          "printed": "641,544.39",
+          "amount": 641544.39,
+          "rowIndex": 736,
+          "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+        }
+      ],
+      "componentCount": 2,
+      "documentsStatingTheFigure": 0,
+      "arithmetic": {
+        "operation": "sum_of_printed_account_figures",
+        "note": "The chapter prints no single figure for this unit; the figure is the sum of the 2 accounts it prints whose titles name it, each listed with its printed figure."
+      },
+      "document": {
+        "title": "Combined Statement of Receipts, Outlays, and Balances of the United States Government",
+        "edition": "Fiscal Year 2025",
+        "part": "Part Three, Detail of Appropriations, Outlays, and Balances",
+        "chapter": "c01",
+        "chapterSection": "Legislative Branch",
+        "xlsxUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+        "xlsxSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+        "pdfUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+        "pdfSha256": "9b9d11fb255f452f623351ed4c2d28e6391f8eb1ed1d5b13e27de08808fd020a"
+      },
+      "treasurySection": {
+        "chapter": "Legislative Branch",
+        "graphBranch": "Legislative Branch",
+        "filedInAnotherSection": false
+      },
+      "matchRule": "reviewed_row",
+      "matchBasis": "Both accounts the chapter prints under 'Copyright Office, Library of Congress': the Office's salaries and expenses, and the payments to copyright owners it disburses.",
+      "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
+      "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+    },
+    "leg-support-loc-nls": {
+      "nodeId": "leg-support-loc-nls",
+      "nodeName": "National Library Service for the Blind and Print Disabled (NLS)",
+      "costBasis": "net_outlays",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "amount": 64367416.42,
+      "amountRaw": "64,367,416.42",
+      "unitsEvidence": "Total, Legislative Branch 7,232,968,757.51 = Total--Legislative Branch 7232968757.51 (2025-09-30); Salaries and Expenses, National Library Service for the Blind and Print Disabled, Library of Congress 64,367,416.42",
+      "scaleReconciliation": {
+        "chapterTotal": {
+          "label": "Total, Legislative Branch",
+          "amountRaw": "7,232,968,757.51",
+          "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+          "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295"
+        },
+        "statementLine": {
+          "label": "Total--Legislative Branch",
+          "amountRaw": "7232968757.51",
+          "recordDate": "2025-09-30",
+          "field": "current_fytd_net_outly_amt",
+          "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date%3Aeq%3A2025-09-30&sort=print_order_nbr&page%5Bsize%5D=1000&page%5Bnumber%5D=1",
+          "documentSha256": "7c25e0df2983a97acb4c55394de6fbc49f1f7cbe1924b39629324d70b6b9cb12"
+        }
+      },
+      "fiscalYear": 2025,
+      "periodCoverage": "full_fiscal_year",
+      "amountScope": "Salaries and Expenses, National Library Service for the Blind and Print Disabled, Library of Congress",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "treasury_combined_statement",
+      "sourceUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+      "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+      "retrievedAt": "2026-10-21T16:30:58Z",
+      "locator": {
+        "chapter": "c01",
+        "accounts": [
+          "Salaries and Expenses, National Library Service for the Blind and Print Disabled, Library of Congress"
+        ],
+        "column": "Outlays (Net)"
+      },
+      "quote": "Salaries and Expenses, National Library Service for the Blind and Print Disabled, Library of Congress ... 64,367,416.42",
+      "financialEvidenceStatus": "partial",
+      "components": [
+        {
+          "account": "Salaries and Expenses, National Library Service for the Blind and Print Disabled, Library of Congress",
+          "accountSymbol": "003-0141",
+          "chapterUnit": "Library of Congress",
+          "printed": "64,367,416.42",
+          "amount": 64367416.42,
+          "rowIndex": 722,
+          "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+        }
+      ],
+      "componentCount": 1,
+      "documentsStatingTheFigure": 1,
+      "arithmetic": {
+        "operation": "sum_of_printed_account_figures",
+        "note": "The figure is the one account's net outlays as the chapter prints it."
+      },
+      "document": {
+        "title": "Combined Statement of Receipts, Outlays, and Balances of the United States Government",
+        "edition": "Fiscal Year 2025",
+        "part": "Part Three, Detail of Appropriations, Outlays, and Balances",
+        "chapter": "c01",
+        "chapterSection": "Legislative Branch",
+        "xlsxUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+        "xlsxSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+        "pdfUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+        "pdfSha256": "9b9d11fb255f452f623351ed4c2d28e6391f8eb1ed1d5b13e27de08808fd020a"
+      },
+      "treasurySection": {
+        "chapter": "Legislative Branch",
+        "graphBranch": "Legislative Branch",
+        "filedInAnotherSection": false
+      },
+      "matchRule": "reviewed_row",
+      "matchBasis": "The Library's account titled for this service, under the Library's own total.",
+      "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
+      "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+    },
+    "leg-senate-admin-legal": {
+      "nodeId": "leg-senate-admin-legal",
+      "nodeName": "Office of Senate Legal Counsel",
+      "costBasis": "net_outlays",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "amount": 1165507.91,
+      "amountRaw": "1,165,507.91",
+      "unitsEvidence": "Total, Legislative Branch 7,232,968,757.51 = Total--Legislative Branch 7232968757.51 (2025-09-30); Salaries and Expenses, Office of Senate Legal Counsel, Senate 1,165,507.91",
+      "scaleReconciliation": {
+        "chapterTotal": {
+          "label": "Total, Legislative Branch",
+          "amountRaw": "7,232,968,757.51",
+          "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+          "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295"
+        },
+        "statementLine": {
+          "label": "Total--Legislative Branch",
+          "amountRaw": "7232968757.51",
+          "recordDate": "2025-09-30",
+          "field": "current_fytd_net_outly_amt",
+          "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date%3Aeq%3A2025-09-30&sort=print_order_nbr&page%5Bsize%5D=1000&page%5Bnumber%5D=1",
+          "documentSha256": "7c25e0df2983a97acb4c55394de6fbc49f1f7cbe1924b39629324d70b6b9cb12"
+        }
+      },
+      "fiscalYear": 2025,
+      "periodCoverage": "full_fiscal_year",
+      "amountScope": "Salaries and Expenses, Office of Senate Legal Counsel, Senate",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "treasury_combined_statement",
+      "sourceUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+      "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+      "retrievedAt": "2026-10-21T16:30:58Z",
+      "locator": {
+        "chapter": "c01",
+        "accounts": [
+          "Salaries and Expenses, Office of Senate Legal Counsel, Senate"
+        ],
+        "column": "Outlays (Net)"
+      },
+      "quote": "Salaries and Expenses, Office of Senate Legal Counsel, Senate ... 1,165,507.91",
+      "financialEvidenceStatus": "partial",
+      "components": [
+        {
+          "account": "Salaries and Expenses, Office of Senate Legal Counsel, Senate",
+          "accountSymbol": "000-0171",
+          "chapterUnit": "Senate",
+          "printed": "1,165,507.91",
+          "amount": 1165507.91,
+          "rowIndex": 128,
+          "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+        }
+      ],
+      "componentCount": 1,
+      "documentsStatingTheFigure": 1,
+      "arithmetic": {
+        "operation": "sum_of_printed_account_figures",
+        "note": "The figure is the one account's net outlays as the chapter prints it."
+      },
+      "document": {
+        "title": "Combined Statement of Receipts, Outlays, and Balances of the United States Government",
+        "edition": "Fiscal Year 2025",
+        "part": "Part Three, Detail of Appropriations, Outlays, and Balances",
+        "chapter": "c01",
+        "chapterSection": "Legislative Branch",
+        "xlsxUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+        "xlsxSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+        "pdfUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+        "pdfSha256": "9b9d11fb255f452f623351ed4c2d28e6391f8eb1ed1d5b13e27de08808fd020a"
+      },
+      "treasurySection": {
+        "chapter": "Legislative Branch",
+        "graphBranch": "Legislative Branch",
+        "filedInAnotherSection": false
+      },
+      "matchRule": "reviewed_row",
+      "matchBasis": "The Senate's account titled for this office, under the Senate's own total.",
+      "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
+      "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+    },
+    "exec-ind-misc-macpac": {
+      "nodeId": "exec-ind-misc-macpac",
+      "nodeName": "Medicaid and CHIP Payment and Access Commission",
+      "costBasis": "net_outlays",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "amount": 10186355.32,
+      "amountRaw": "10,186,355.32",
+      "unitsEvidence": "Total, Legislative Branch 7,232,968,757.51 = Total--Legislative Branch 7232968757.51 (2025-09-30); Medicaid and CHIP Payment and Access Commission 10,186,355.32",
+      "scaleReconciliation": {
+        "chapterTotal": {
+          "label": "Total, Legislative Branch",
+          "amountRaw": "7,232,968,757.51",
+          "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+          "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295"
+        },
+        "statementLine": {
+          "label": "Total--Legislative Branch",
+          "amountRaw": "7232968757.51",
+          "recordDate": "2025-09-30",
+          "field": "current_fytd_net_outly_amt",
+          "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date%3Aeq%3A2025-09-30&sort=print_order_nbr&page%5Bsize%5D=1000&page%5Bnumber%5D=1",
+          "documentSha256": "7c25e0df2983a97acb4c55394de6fbc49f1f7cbe1924b39629324d70b6b9cb12"
+        }
+      },
+      "fiscalYear": 2025,
+      "periodCoverage": "full_fiscal_year",
+      "amountScope": "Medicaid and CHIP Payment and Access Commission",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "treasury_combined_statement",
+      "sourceUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+      "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+      "retrievedAt": "2026-10-21T16:30:58Z",
+      "locator": {
+        "chapter": "c01",
+        "accounts": [
+          "Medicaid and CHIP Payment and Access Commission"
+        ],
+        "column": "Outlays (Net)"
+      },
+      "quote": "Medicaid and CHIP Payment and Access Commission ... 10,186,355.32",
+      "financialEvidenceStatus": "partial",
+      "components": [
+        {
+          "account": "Medicaid and CHIP Payment and Access Commission",
+          "accountSymbol": "009-1801",
+          "chapterUnit": "Legislative Branch Boards and Commissions",
+          "printed": "10,186,355.32",
+          "amount": 10186355.32,
+          "rowIndex": 911,
+          "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+        }
+      ],
+      "componentCount": 1,
+      "documentsStatingTheFigure": 1,
+      "arithmetic": {
+        "operation": "sum_of_printed_account_figures",
+        "note": "The figure is the one account's net outlays as the chapter prints it."
+      },
+      "document": {
+        "title": "Combined Statement of Receipts, Outlays, and Balances of the United States Government",
+        "edition": "Fiscal Year 2025",
+        "part": "Part Three, Detail of Appropriations, Outlays, and Balances",
+        "chapter": "c01",
+        "chapterSection": "Legislative Branch",
+        "xlsxUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+        "xlsxSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+        "pdfUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+        "pdfSha256": "9b9d11fb255f452f623351ed4c2d28e6391f8eb1ed1d5b13e27de08808fd020a"
+      },
+      "treasurySection": {
+        "chapter": "Legislative Branch",
+        "graphBranch": "Executive Branch",
+        "filedInAnotherSection": true,
+        "note": "The Treasury files this account under the Legislative Branch chapter; this graph places the unit under Executive Branch. The figure is published as printed and is never used to divide a pool here."
+      },
+      "matchRule": "reviewed_row",
+      "matchBasis": "The account is titled with the Commission's name. The Treasury prints it under the Legislative Branch's boards and commissions; this graph curates the Commission among the executive branch's independent agencies, and the placement is not resolved here.",
+      "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
+      "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+    },
+    "exec-ind-misc-medpac": {
+      "nodeId": "exec-ind-misc-medpac",
+      "nodeName": "Medicare Payment Advisory Commission",
+      "costBasis": "net_outlays",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "amount": 686932.49,
+      "amountRaw": "686,932.49",
+      "unitsEvidence": "Total, Legislative Branch 7,232,968,757.51 = Total--Legislative Branch 7232968757.51 (2025-09-30); Salaries and Expenses, Medicare Payment Advisory Commission 686,932.49",
+      "scaleReconciliation": {
+        "chapterTotal": {
+          "label": "Total, Legislative Branch",
+          "amountRaw": "7,232,968,757.51",
+          "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+          "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295"
+        },
+        "statementLine": {
+          "label": "Total--Legislative Branch",
+          "amountRaw": "7232968757.51",
+          "recordDate": "2025-09-30",
+          "field": "current_fytd_net_outly_amt",
+          "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date%3Aeq%3A2025-09-30&sort=print_order_nbr&page%5Bsize%5D=1000&page%5Bnumber%5D=1",
+          "documentSha256": "7c25e0df2983a97acb4c55394de6fbc49f1f7cbe1924b39629324d70b6b9cb12"
+        }
+      },
+      "fiscalYear": 2025,
+      "periodCoverage": "full_fiscal_year",
+      "amountScope": "Salaries and Expenses, Medicare Payment Advisory Commission",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "treasury_combined_statement",
+      "sourceUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+      "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+      "retrievedAt": "2026-10-21T16:30:58Z",
+      "locator": {
+        "chapter": "c01",
+        "accounts": [
+          "Salaries and Expenses, Medicare Payment Advisory Commission"
+        ],
+        "column": "Outlays (Net)"
+      },
+      "quote": "Salaries and Expenses, Medicare Payment Advisory Commission ... 686,932.49",
+      "financialEvidenceStatus": "partial",
+      "components": [
+        {
+          "account": "Salaries and Expenses, Medicare Payment Advisory Commission",
+          "accountSymbol": "235-1550",
+          "chapterUnit": "Legislative Branch Boards and Commissions",
+          "printed": "686,932.49",
+          "amount": 686932.49,
+          "rowIndex": 921,
+          "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+        }
+      ],
+      "componentCount": 1,
+      "documentsStatingTheFigure": 1,
+      "arithmetic": {
+        "operation": "sum_of_printed_account_figures",
+        "note": "The figure is the one account's net outlays as the chapter prints it."
+      },
+      "document": {
+        "title": "Combined Statement of Receipts, Outlays, and Balances of the United States Government",
+        "edition": "Fiscal Year 2025",
+        "part": "Part Three, Detail of Appropriations, Outlays, and Balances",
+        "chapter": "c01",
+        "chapterSection": "Legislative Branch",
+        "xlsxUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+        "xlsxSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+        "pdfUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+        "pdfSha256": "9b9d11fb255f452f623351ed4c2d28e6391f8eb1ed1d5b13e27de08808fd020a"
+      },
+      "treasurySection": {
+        "chapter": "Legislative Branch",
+        "graphBranch": "Executive Branch",
+        "filedInAnotherSection": true,
+        "note": "The Treasury files this account under the Legislative Branch chapter; this graph places the unit under Executive Branch. The figure is published as printed and is never used to divide a pool here."
+      },
+      "matchRule": "reviewed_row",
+      "matchBasis": "The account is titled with the Commission's name. The Treasury prints it under the Legislative Branch's boards and commissions; this graph curates the Commission among the executive branch's independent agencies, and the placement is not resolved here.",
+      "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
+      "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+    },
+    "leg-support-aoc-library-of-congress-buildings": {
+      "nodeId": "leg-support-aoc-library-of-congress-buildings",
+      "nodeName": "Library of Congress Buildings",
+      "costBasis": "net_outlays",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "amount": 94205042.27,
+      "amountRaw": "94,205,042.27",
+      "unitsEvidence": "Total, Legislative Branch 7,232,968,757.51 = Total--Legislative Branch 7232968757.51 (2025-09-30); Structural and Mechanical Care, Library Buildings and Grounds, Architect of the Capitol 94,205,042.27",
+      "scaleReconciliation": {
+        "chapterTotal": {
+          "label": "Total, Legislative Branch",
+          "amountRaw": "7,232,968,757.51",
+          "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+          "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295"
+        },
+        "statementLine": {
+          "label": "Total--Legislative Branch",
+          "amountRaw": "7232968757.51",
+          "recordDate": "2025-09-30",
+          "field": "current_fytd_net_outly_amt",
+          "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date%3Aeq%3A2025-09-30&sort=print_order_nbr&page%5Bsize%5D=1000&page%5Bnumber%5D=1",
+          "documentSha256": "7c25e0df2983a97acb4c55394de6fbc49f1f7cbe1924b39629324d70b6b9cb12"
+        }
+      },
+      "fiscalYear": 2025,
+      "periodCoverage": "full_fiscal_year",
+      "amountScope": "Structural and Mechanical Care, Library Buildings and Grounds, Architect of the Capitol",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "treasury_combined_statement",
+      "sourceUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+      "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+      "retrievedAt": "2026-10-21T16:30:58Z",
+      "locator": {
+        "chapter": "c01",
+        "accounts": [
+          "Structural and Mechanical Care, Library Buildings and Grounds, Architect of the Capitol"
+        ],
+        "column": "Outlays (Net)"
+      },
+      "quote": "Structural and Mechanical Care, Library Buildings and Grounds, Architect of the Capitol ... 94,205,042.27",
+      "financialEvidenceStatus": "partial",
+      "components": [
+        {
+          "account": "Structural and Mechanical Care, Library Buildings and Grounds, Architect of the Capitol",
+          "accountSymbol": "001-0155",
+          "chapterUnit": "Architect of the Capitol",
+          "printed": "94,205,042.27",
+          "amount": 94205042.27,
+          "rowIndex": 555,
+          "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+        }
+      ],
+      "componentCount": 1,
+      "documentsStatingTheFigure": 1,
+      "arithmetic": {
+        "operation": "sum_of_printed_account_figures",
+        "note": "The figure is the one account's net outlays as the chapter prints it."
+      },
+      "document": {
+        "title": "Combined Statement of Receipts, Outlays, and Balances of the United States Government",
+        "edition": "Fiscal Year 2025",
+        "part": "Part Three, Detail of Appropriations, Outlays, and Balances",
+        "chapter": "c01",
+        "chapterSection": "Legislative Branch",
+        "xlsxUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+        "xlsxSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+        "pdfUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+        "pdfSha256": "9b9d11fb255f452f623351ed4c2d28e6391f8eb1ed1d5b13e27de08808fd020a"
+      },
+      "treasurySection": {
+        "chapter": "Legislative Branch",
+        "graphBranch": "Legislative Branch",
+        "filedInAnotherSection": false
+      },
+      "matchRule": "reviewed_row",
+      "matchBasis": "The owner's identification. The Architect's account for the care of the Library's buildings and grounds, under the Architect's own total; aoc.gov's Office of the Chief of Operations page labels the jurisdiction 'Library Buildings and Grounds', and this graph names the division 'Library of Congress Buildings'.",
+      "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
+      "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+    },
+    "leg-support-aoc-capital-construction-and-operations": {
+      "nodeId": "leg-support-aoc-capital-construction-and-operations",
+      "nodeName": "Capital Construction and Operations",
+      "costBasis": "net_outlays",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "amount": 158585469.94,
+      "amountRaw": "158,585,469.94",
+      "unitsEvidence": "Total, Legislative Branch 7,232,968,757.51 = Total--Legislative Branch 7232968757.51 (2025-09-30); Capital Construction and Operations, Architect of the Capitol 158,585,469.94",
+      "scaleReconciliation": {
+        "chapterTotal": {
+          "label": "Total, Legislative Branch",
+          "amountRaw": "7,232,968,757.51",
+          "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+          "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295"
+        },
+        "statementLine": {
+          "label": "Total--Legislative Branch",
+          "amountRaw": "7232968757.51",
+          "recordDate": "2025-09-30",
+          "field": "current_fytd_net_outly_amt",
+          "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date%3Aeq%3A2025-09-30&sort=print_order_nbr&page%5Bsize%5D=1000&page%5Bnumber%5D=1",
+          "documentSha256": "7c25e0df2983a97acb4c55394de6fbc49f1f7cbe1924b39629324d70b6b9cb12"
+        }
+      },
+      "fiscalYear": 2025,
+      "periodCoverage": "full_fiscal_year",
+      "amountScope": "Capital Construction and Operations, Architect of the Capitol",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "treasury_combined_statement",
+      "sourceUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+      "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+      "retrievedAt": "2026-10-21T16:30:58Z",
+      "locator": {
+        "chapter": "c01",
+        "accounts": [
+          "Capital Construction and Operations, Architect of the Capitol"
+        ],
+        "column": "Outlays (Net)"
+      },
+      "quote": "Capital Construction and Operations, Architect of the Capitol ... 158,585,469.94",
+      "financialEvidenceStatus": "partial",
+      "components": [
+        {
+          "account": "Capital Construction and Operations, Architect of the Capitol",
+          "accountSymbol": "001-0100",
+          "chapterUnit": "Architect of the Capitol",
+          "printed": "158,585,469.94",
+          "amount": 158585469.94,
+          "rowIndex": 425,
+          "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+        }
+      ],
+      "componentCount": 1,
+      "documentsStatingTheFigure": 1,
+      "arithmetic": {
+        "operation": "sum_of_printed_account_figures",
+        "note": "The figure is the one account's net outlays as the chapter prints it."
+      },
+      "document": {
+        "title": "Combined Statement of Receipts, Outlays, and Balances of the United States Government",
+        "edition": "Fiscal Year 2025",
+        "part": "Part Three, Detail of Appropriations, Outlays, and Balances",
+        "chapter": "c01",
+        "chapterSection": "Legislative Branch",
+        "xlsxUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+        "xlsxSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+        "pdfUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+        "pdfSha256": "9b9d11fb255f452f623351ed4c2d28e6391f8eb1ed1d5b13e27de08808fd020a"
+      },
+      "treasurySection": {
+        "chapter": "Legislative Branch",
+        "graphBranch": "Legislative Branch",
+        "filedInAnotherSection": false
+      },
+      "matchRule": "reviewed_row",
+      "matchBasis": "The node is this account, added from the chapter under the combined_statement_account licence; the identification is the account's own title.",
+      "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
+      "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+    },
+    "leg-support-aoc-capitol-police-buildings-and-grounds": {
+      "nodeId": "leg-support-aoc-capitol-police-buildings-and-grounds",
+      "nodeName": "Capitol Police Buildings and Grounds",
+      "costBasis": "net_outlays",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "amount": 204227240.13,
+      "amountRaw": "204,227,240.13",
+      "unitsEvidence": "Total, Legislative Branch 7,232,968,757.51 = Total--Legislative Branch 7232968757.51 (2025-09-30); Capitol Police Buildings and Grounds, Architect of the Capitol 204,227,240.13",
+      "scaleReconciliation": {
+        "chapterTotal": {
+          "label": "Total, Legislative Branch",
+          "amountRaw": "7,232,968,757.51",
+          "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+          "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295"
+        },
+        "statementLine": {
+          "label": "Total--Legislative Branch",
+          "amountRaw": "7232968757.51",
+          "recordDate": "2025-09-30",
+          "field": "current_fytd_net_outly_amt",
+          "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date%3Aeq%3A2025-09-30&sort=print_order_nbr&page%5Bsize%5D=1000&page%5Bnumber%5D=1",
+          "documentSha256": "7c25e0df2983a97acb4c55394de6fbc49f1f7cbe1924b39629324d70b6b9cb12"
+        }
+      },
+      "fiscalYear": 2025,
+      "periodCoverage": "full_fiscal_year",
+      "amountScope": "Capitol Police Buildings and Grounds, Architect of the Capitol",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "treasury_combined_statement",
+      "sourceUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+      "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+      "retrievedAt": "2026-10-21T16:30:58Z",
+      "locator": {
+        "chapter": "c01",
+        "accounts": [
+          "Capitol Police Buildings and Grounds, Architect of the Capitol"
+        ],
+        "column": "Outlays (Net)"
+      },
+      "quote": "Capitol Police Buildings and Grounds, Architect of the Capitol ... 204,227,240.13",
+      "financialEvidenceStatus": "partial",
+      "components": [
+        {
+          "account": "Capitol Police Buildings and Grounds, Architect of the Capitol",
+          "accountSymbol": "001-0171",
+          "chapterUnit": "Architect of the Capitol",
+          "printed": "204,227,240.13",
+          "amount": 204227240.13,
+          "rowIndex": 589,
+          "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+        }
+      ],
+      "componentCount": 1,
+      "documentsStatingTheFigure": 1,
+      "arithmetic": {
+        "operation": "sum_of_printed_account_figures",
+        "note": "The figure is the one account's net outlays as the chapter prints it."
+      },
+      "document": {
+        "title": "Combined Statement of Receipts, Outlays, and Balances of the United States Government",
+        "edition": "Fiscal Year 2025",
+        "part": "Part Three, Detail of Appropriations, Outlays, and Balances",
+        "chapter": "c01",
+        "chapterSection": "Legislative Branch",
+        "xlsxUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+        "xlsxSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+        "pdfUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+        "pdfSha256": "9b9d11fb255f452f623351ed4c2d28e6391f8eb1ed1d5b13e27de08808fd020a"
+      },
+      "treasurySection": {
+        "chapter": "Legislative Branch",
+        "graphBranch": "Legislative Branch",
+        "filedInAnotherSection": false
+      },
+      "matchRule": "reviewed_row",
+      "matchBasis": "The node is this account, added from the chapter under the combined_statement_account licence; the identification is the account's own title.",
+      "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
+      "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+    }
+  }
+}

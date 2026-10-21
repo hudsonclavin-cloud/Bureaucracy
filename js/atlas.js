@@ -375,6 +375,7 @@ function describePlacement(node) {
 const DESCRIPTION_SOURCE_TEXT = {
   generated_from_the_monthly_treasury_statement: "generated from the Monthly Treasury Statement, which names this unit — nothing further about it has been read",
   generated_from_its_official_page: "generated from the official page that names this unit — nothing further about it has been read",
+  generated_from_the_treasury_combined_statement: "generated from the Treasury's Combined Statement, which prints this account — nothing further about it has been read",
   generated_from_treasury_lines: "generated from the Monthly Treasury Statement lines it names",
   generated_from_the_us_government_manual: "generated from the United States Government Manual, the government's own handbook, which names this unit and files it where the graph puts it — nothing further about it has been read",
   generated_from_whitehouse_staff_report: "generated from the White House Office's own annual report to Congress — the title and rate are the report's, the duties are not described",
@@ -531,6 +532,9 @@ function describeCost(node) {
 // net cost (a year earlier and accrual). The reason is written there once.
 const SOURCED_FIGURE_ORDER = [
   ["fileA", "usaspendingOutlays", "amount"],
+  // The Treasury's Combined Statement for a unit's reviewed accounts, a
+  // completed year on the Treasury's own net basis (since 2026-10-21).
+  ["combined", "combinedStatementOutlays", "amount"],
   ["omb", "ombBudget", "outlays"],
   ["audited", "auditedNetCost", "netCostUsd"],
   // Last, and alone on every node that carries it (a committee or one of the
@@ -565,12 +569,16 @@ function formatSourcedFigure(amount) {
 }
 
 function describeSourcedFigure(node) {
+  // A curated accounting line from the Combined Statement takes the chapter's
+  // figure for its own account and nothing else (the panel's rule).
+  const accountLine = !isReceiptsLine(node) && /treasury accounting line/i.test(String(node.type || ""));
   if (isPost(node) || /\brole\b|office holder/i.test(String(node.type || "")) || isReceiptsLine(node)
-    || /treasury accounting line/i.test(String(node.type || "")) || isSuperseded(node)
+    || (accountLine && !node.combinedStatementOutlays) || isSuperseded(node)
     || String(node.cost_validation || "") === "unit_superseded") {
     return null;
   }
   for (const [kind, field, amountField] of SOURCED_FIGURE_ORDER) {
+    if (accountLine && kind !== "combined") continue;
     const block = node[field];
     const amount = block && typeof block === "object" ? block[amountField] : null;
     if (typeof amount !== "number" || !Number.isFinite(amount) || amount === 0) continue;
@@ -598,6 +606,21 @@ function describeSourcedFigure(node) {
           String(block.precisionNote || "").includes("detail below millions is not available") ? ` The file is in thousands of dollars and, in OMB's words, "detail below millions is not available".` : ""
         } Not this unit's cost.`,
         figureSource: { url: block.url, label: "OMB Public Budget Database (govinfo.gov)" },
+      };
+    }
+    if (kind === "combined") {
+      const components = Array.isArray(block.components) ? block.components : [];
+      const section = block.treasurySection && typeof block.treasurySection === "object" ? block.treasurySection : {};
+      const document = block.document && typeof block.document === "object" ? block.document : {};
+      return {
+        kind, amount: printed, label: badge, term: "Net outlays — Treasury Combined Statement",
+        period: `${blockFiscalYear(block.fiscalYear)}, a completed year — ${components.length > 1 ? `the sum of the ${components.length} accounts the Treasury prints for this unit` : "the net outlays the Treasury prints for this unit's account"}; not this year's, and not the cost`,
+        note: `The Treasury's Combined Statement of Receipts, Outlays, and Balances (${document.edition || blockFiscalYear(block.fiscalYear)}, ${document.chapterSection || "its"} chapter) prints ${components.map((c) => `${c.printed} for "${c.account}"`).join(" and ")}${
+          components.length > 1 ? "; it prints no single figure for the unit, and the figure shown is their sum, which this project added up" : ""
+        }. That is every account the chapter prints for this unit; which accounts are this unit's is a reviewed identification: ${block.matchBasis || "a reviewed row"}${
+          section.filedInAnotherSection && section.note ? ` ${section.note}` : ""
+        } It is a completed fiscal year's net outlays — not the current year this graph measures, not the estimate, and not the cost.`,
+        figureSource: { url: document.pdfUrl || block.sourceUrl, label: "Combined Statement, Part Three (fiscal.treasury.gov)" },
       };
     }
     if (kind === "disbursed") {

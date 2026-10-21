@@ -6070,3 +6070,321 @@ files it under the new kind.
   other scoping questions decided per row), then a derive step, a published
   field and a gate check that re-derives the block from the fixtures, which
   the rule's own comment says the gate must do before anything publishes.
+
+### 22.8 The reviewed table, published (2026-10-21)
+
+The owner asked for the reviewed table §22.7 said stood between the chapter
+and the graph: "the twelve Combined Statement rows in CURATION.md §22.6 plus
+'Capitol Buildings'". §22.6's table has **eleven** rows, not twelve; with
+Capitol Buildings the table has twelve, and that is what was built. If a
+thirteenth row was meant, it is not in §22.6 and is not here.
+
+**The table.** `combined_statement.REVIEWED_ROWS`, keyed by node id, one row
+per unit: the node's name as written, the printed title of **every** account
+the chapter prints for the unit, the phrase that finds them, the unit total
+that closes them, a basis sentence, and whether the Treasury files the account
+under another section than the branch this graph gives the node.
+`scripts/derive_combined_statement_evidence.py` writes
+`data/verification/combined_statement_evidence.json`; the exporter stamps
+`combinedStatementOutlays` beside the estimate and never in a cost field.
+Every run re-checks each row against the committed documents and refuses it
+when:
+
+- the node is gone, renamed, a post, or synthetic;
+- a listed account is not printed exactly once, is closed by another unit's
+  total, or does not carry the phrase;
+- **the chapter prints another account carrying the phrase that the row does
+  not list** (completeness is checked, not asserted);
+- an account's figure is not one printed cell of the Outlays (Net) column, or
+  the chapter's PDF does not print that figure;
+- the section mark disagrees with the tree, in either direction;
+- the accounts sum to zero.
+
+Each account's printed figure is validated by `financial_evidence` as its own
+record under the seventh scale rule. The block's figure is their sum, and a
+two-account block says it is a sum this project performed
+(`documentsStatingTheFigure: 0`).
+
+| node | account(s) | FY2025 net outlays | estimate published today |
+|---|---|---|---|
+| `leg-support-aoc-capitol-building` | Capitol Buildings | $55,027,979.70 | ≈ $75.1m |
+| `leg-support-aoc-capitol-grounds` | Capitol Grounds | $17,858,652.41 | ≈ $75.1m |
+| `leg-support-aoc-senate-office-buildings` | Senate Office Buildings | $128,021,693.98 | ≈ $75.1m |
+| `leg-support-aoc-house-office-buildings` | House Office Buildings | $156,916,099.98 | ≈ $75.1m |
+| `leg-support-aoc-capitol-power-plant` | Capitol Power Plant | $122,012,533.26 | ≈ $75.1m |
+| `leg-support-aoc-capitol-visitor-center` | Capitol Visitor Center ($30,190,121.91) and its Revolving Fund (−$4,991,429.52) | $25,198,692.39 | ≈ $75.1m |
+| `leg-support-loc-crs` | Salaries and Expenses, CRS | $141,782,158.43 | ≈ $335.5m |
+| `leg-support-loc-copyright` | Salaries and Expenses ($63,321,276.20) and Payments to Copyright Owners ($641,544.39) | $63,962,820.59 | ≈ $213.5m |
+| `leg-support-loc-nls` | Salaries and Expenses, NLS | $64,367,416.42 | ≈ $30.5m |
+| `leg-senate-admin-legal` | Salaries and Expenses, Office of Senate Legal Counsel | $1,165,507.91 | ≈ $2.7m |
+| `exec-ind-misc-macpac` | Medicaid and CHIP Payment and Access Commission | $10,186,355.32 | ≈ $276.7m |
+| `exec-ind-misc-medpac` | Salaries and Expenses, Medicare Payment Advisory Commission | $686,932.49 | ≈ $276.7m |
+
+Two rows rest on more than a title:
+
+- **Capitol Buildings.** The account's title is plural and the node's name
+  singular. The row is the owner's identification, and its basis says so.
+- **Payments to Copyright Owners.** These are royalties the Copyright Office
+  pays out, so the Office's row includes money that passes through it. That
+  is what the account is, and its $641,544.39 is about 1% of the Office's
+  figure.
+
+**MACPAC and MedPAC are marked.** The chapter prints both under "Legislative
+Branch Boards and Commissions"; this graph curates both among the executive
+branch's independent agencies. Each block carries `treasurySection`
+(`filedInAnotherSection: true`, the chapter, the graph's branch and a note),
+and the panel prints the note. The placement is not resolved here. A marked
+figure never divides a pool, the way an external-section Treasury line never
+does.
+
+**The headline.** `combined` joins `SOURCED_FIGURE_STAND_IN_ORDER` (and the
+directory's `SOURCED_FIGURE_ORDER`) after File A and before OMB:
+
+- It is a completed year like OMB's, but on the Treasury's own net basis.
+- It comes after File A by the clock rule the order already states.
+- None of the twelve units carries File A or OMB, so the order decides nothing
+  today.
+
+The panel shows it as follows:
+
+- **Heading:** "NET OUTLAYS — TREASURY COMBINED STATEMENT".
+- **Period line:** "FY2025, a completed year — … not this year's, and not the
+  cost".
+- **Badge:** the hollow "sourced figure of another kind".
+- **Sentence:** quotes each account's printed figure and says the chapter
+  states no scale in words, what reconciles it, and that the figure is not the
+  cost.
+
+The estimate stays withheld behind its button. Where the estimate differs from
+the figure by more than a factor of three, the panel's existing disagreement
+note now names this figure. That covers MACPAC (27×), MedPAC (403×), Capitol
+Grounds (4.2×) and the Copyright Office (3.3×). The estimate is FY2026 to
+date against a completed FY2025, so a ratio is not a like-for-like comparison.
+Factors of 27 and 403 are not a clock difference.
+
+**The weights, and why nothing moved.** As asked, the figures divide a pool
+only where **every sibling that is a unit** carries a row from the one chapter
+and year, filed in the graph's own section:
+
+- **Posts are left out of that test.** A post can never carry a row, and in
+  the cascade it keeps its weight, implied at its siblings' rate, as it does
+  everywhere.
+- **Otherwise nothing is implied.** Each row-bearing sibling falls back to the
+  weight it carries without the block.
+- **This is stricter than the House payouts.** That rule *does* imply a
+  missing sibling (the Senate Appropriations Committee, the House Chaplain and
+  the Parliamentarian are all implied).
+- **The weight class is new.** `combined_statement_weight` ranks second in
+  `WEIGHT_CLASS_PRIORITY`, after disbursements.
+
+**No parent qualifies today, so no estimate moved:**
+
+- **Architect of the Capitol.** Seven divisions, six rows: "Library of
+  Congress Buildings" has none, though the chapter prints "Structural and
+  Mechanical Care, Library Buildings and Grounds, Architect of the Capitol"
+  ($94,205,042.27).
+- **Library of Congress.** The Law Library and the American Folklife Center
+  have no account by name.
+- **Senate Administrative Offices.** Four of the five offices have no account
+  of their own.
+- **Other Independent Agencies.** Dozens of siblings.
+
+**The gate.** The gate's checks are stdlib only and take the parent off the
+tree it walks:
+
+- **Block** (`combined_statement_violations`): re-reads the chapter's XLSX with
+  the gate's own reader, re-checks its unit totals, reads the PDF's printed
+  strings, and re-reads the September statement's line, recomputing every
+  digest. It mirrors the table by id (`COMBINED_STATEMENT_ROWS`, pinned equal
+  to the module's). It refuses:
+  - a component that is not the account's printed cell, or a dropped or
+    renamed account;
+  - an account the chapter prints for the unit that the row omits;
+  - a sum that is not the components' sum, or a sum claimed to be printed;
+  - a digest or URL that is not the committed chapter's;
+  - a reconciliation a cent off, or on the prior-year column;
+  - another year or basis, more than a proxy, or a missing not-the-cost
+    sentence or basis;
+  - a section mark the tree contradicts, either way, or a missing or stray
+    note;
+  - a block moved to another node, a renamed node, a post, or a block beside
+    a measured cost;
+  - the estimate equal to the figure;
+  - the chapter among the node's own sources.
+- **Weights** (`combined_statement_weight_violations`) are checked both ways.
+  Where every living unit beside them carries a usable figure, each must be
+  weighted by it, in proportion. Anywhere else none may be, and no unit may be
+  given an implied share.
+
+`tests/test_combined_statement_table.py` holds 30 tests. The gate test
+corrupts the published blocks 25 ways, and the weight tests cover the
+cascade's resolver and the gate's check in both directions.
+
+**What moved, measured on the rebuild.** The rebuild was handed the
+2026-08-31 statement, as the committed graph was. Exactly twelve nodes
+changed, each by gaining the block: no cost figure, cost status, weight or
+other field moved on any node. In the default view those twelve are now
+headed by a sourced figure instead of a withheld estimate. `docs/COST_COVERAGE.md`'s
+"with a sourced figure beside" class went 68 → 80 and "no sourced figure of
+any kind" went 373 → 361.
+
+**What the missing row would move (a counterfactual, built in scratch, not
+published).** I added a thirteenth row for "Structural and Mechanical Care,
+Library Buildings and Grounds" against `leg-support-aoc-library-of-congress-buildings`
+and rebuilt the graph into a scratch directory, handed the same statement.
+With it the Architect's seven divisions qualify and only they move:
+
+| division | estimate today | weighted by the chapter's figures |
+|---|---|---|
+| House Office Buildings | ≈ $75.1m | ≈ $149.9m |
+| Senate Office Buildings | ≈ $75.1m | ≈ $122.3m |
+| Capitol Power Plant | ≈ $75.1m | ≈ $116.5m |
+| Library of Congress Buildings | ≈ $75.1m | ≈ $90.0m |
+| Capitol Building | ≈ $75.1m | ≈ $52.6m |
+| Capitol Visitor Center | ≈ $75.1m | ≈ $24.1m |
+| Capitol Grounds | ≈ $75.1m | ≈ $17.1m |
+
+Twelve nodes changed in all: the seven divisions, the four posts' weight basis
+and the Architect's `child_cost_basis`. Two things about that build:
+
+- **The posts still take a share.** The Architect's four posts keep an implied
+  weight and publish nothing, as the post rule has them do everywhere. The
+  seven divisions together take $572.3m of the Architect's $826.1m; today they
+  take $525.7m, and the posts' unpublished remainder falls from $300.4m to
+  $253.8m.
+- **It found a gate defect.** The gate first refused those four posts for
+  carrying a weight on an `unavailable` figure. The status check now applies
+  to weighted units only, and a test pins the post case.
+
+Adding the row was the owner's call; it was made the same day, together with
+the two accounts the counterfactual left in the posts' remainder (§22.9). The
+counterfactual's figures above are superseded by §22.9's.
+
+### 22.9 The Architect's seventh division, and the two accounts beside it (2026-10-21)
+
+The owner asked for the Library Buildings and Grounds row, and in the same
+change for the two accounts the Architect's chapter prints that no node
+carried: "Capitol Police Buildings and Grounds, Architect of the Capitol"
+($204,227,240.13) and "Capital Construction and Operations, Architect of the
+Capitol" ($158,585,469.94). The instruction was to add the first as a division
+named "Capitol Police Buildings, Grounds and Security" only if aoc.gov labels
+it, and to carry the second as a Treasury accounting line.
+
+**aoc.gov does not label it, so no division was added.** I read three pages
+with the verifier's own label test (`find_label_region_rule`, page content
+only), under the verifier's robots policy and User-Agent:
+
+- `www.aoc.gov/about-us` and `.../explore-capitol-campus/buildings-grounds`
+  (the two pages `official_sites.json` already queues for the Architect) do
+  not name it.
+- `.../about-us/organizational-structure` labels six offices, the Office of
+  the Chief Security Officer among them, and no jurisdiction.
+- `.../organizational-structure/office-chief-security-officer` names it once,
+  in prose: "The OCSO includes the Capitol Police Buildings, Grounds and
+  Security jurisdiction and oversees the execution of security related and
+  sensitive facility and infrastructure projects". A sentence is not a label,
+  and the condition was a label.
+- `.../organizational-structure/office-chief-operations` labels nine
+  jurisdictions, "Library Buildings and Grounds" among them, and the Capitol
+  Police jurisdiction is not one of them.
+
+The Office of the Chief Security Officer IS labelled, and its page says it
+includes the jurisdiction. It was not substituted: the office also oversees
+"security related and sensitive facility and infrastructure projects", which
+need not be paid from this account, so a row naming the office for the account
+would be an approximate identification. So the account is carried the way the
+instruction carries Capital Construction and Operations, as an accounting line
+under the Architect, under the account's own printed title. If the owner
+prefers the office, that is a new row and a rename, nothing else.
+
+**A fourth licence for `add_curated_nodes.py`.** `combined_statement_account`
+adds a node that IS one account. It runs offline against the committed chapter
+(digest recomputed) and refuses:
+
+- any type but `Treasury accounting line`;
+- a name that is not the account's printed title less its trailing ", <unit>";
+- a parent whose name is not the unit whose total closes the account;
+- a title the chapter does not print exactly once, or prints under another
+  unit's total;
+- a zero figure.
+
+Both rows are in `data/curation/new_nodes.json`. Each node's description is
+generated from the chapter and says it is an account, not an office.
+`tests/test_curated_node_licences.py` covers the licence in both directions.
+
+**Three reviewed rows**, bringing `combined_statement.REVIEWED_ROWS` to
+fifteen:
+
+- the Library division, on the owner's identification;
+- each account line, on its own title.
+
+The phrase-completeness check holds for all three: no other account in the
+chapter carries "Library Buildings and Grounds", "Capital Construction and
+Operations" or "Capitol Police Buildings and Grounds".
+
+The gate's own reader of the chapter missed Capital Construction and
+Operations at first: the XLSX prints the title with two spaces after the
+comma. The module's reader collapses whitespace; the gate's now does too.
+
+**The panel.** A curated accounting line from the Combined Statement is headed
+by the chapter's figure for its own account, under the same "NET OUTLAYS —
+TREASURY COMBINED STATEMENT" heading, and by no other sourced kind (none names
+an account). Receipts lines and Interest on the Public Debt are unchanged. The
+description label reads "generated from the Treasury's Combined Statement,
+which prints this account". `scripts/frontend_smoke.mjs` opens one line and
+asserts both.
+
+**One more rule, which the diff required.** The first rebuild moved six nodes
+outside the Architect. The two new leaves grew the support agencies' subtree
+against the joint committees', and those two split the Legislative Branch's
+pool by subtree size: `leg-support` gained $100,594 and `leg-joint` and its
+four committees lost it, 0.86% each. An account is not structure, so
+`compute_subtree_sizes` now gives a curated Combined Statement account line
+nothing toward its ancestors' size. The line's own size stays 1, so an implied
+weight for it is still defined. `tests/test_cost_cascade_units.py` pins this.
+
+The receipts lines and Interest on the Public Debt still count. Extending the
+rule to every Treasury accounting line was measured in a scratch build: it
+moves **82** nodes, from the Cabinet grouping down, on no new evidence. That
+is a separate decision and is left to the owner.
+
+**What moved, per-node diff of `output/graph.json` against the committed
+graph.** Both builds were handed the 2026-08-31 statement. 5,510 → 5,512
+nodes, the two lines added, **12 existing nodes changed, all of them the
+Architect and its children**:
+
+| node | before | after (combined_statement_weight) | FY2025 figure |
+|---|---|---|---|
+| House Office Buildings | ≈ $75.1m | ≈ $100.2m | $156.9m |
+| Senate Office Buildings | ≈ $75.1m | ≈ $81.7m | $128.0m |
+| Capitol Power Plant | ≈ $75.1m | ≈ $77.9m | $122.0m |
+| Library of Congress Buildings | ≈ $75.1m | ≈ $60.2m | $94.2m |
+| Capitol Building | ≈ $75.1m | ≈ $35.1m | $55.0m |
+| Capitol Visitor Center | ≈ $75.1m | ≈ $16.1m | $25.2m |
+| Capitol Grounds | ≈ $75.1m | ≈ $11.4m | $17.9m |
+| Capitol Police Buildings and Grounds (new line) | — | ≈ $130.4m | $204.2m |
+| Capital Construction and Operations (new line) | — | ≈ $101.3m | $158.6m |
+
+The Architect's four posts changed basis only (`implied_combined_statement_weight`,
+still `unavailable`), and the Architect gained `child_cost_basis:
+combined_statement`, implied. Its own measured $826,075,654.80 did not move.
+Library of Congress Buildings gained its block.
+
+**What the posts still hold: $211,771,811.98**, 25.6% of the Architect's
+figure, published as nobody's. That is down from $300.4m before this change
+and $253.8m in the §22.8 counterfactual, but not to zero. The premise that the
+posts' share "belongs to those two accounts" was only partly right. The share
+does not come from the missing accounts. It comes from the post rule: each
+post keeps an implied weight of the siblings' geometric-mean rate (about
+$82.9m of FY2025 figure each), so four posts hold four such weights whatever
+accounts are present.
+
+Here that is double counting. The nine units' figures plus eight small accounts
+(four revolving and fitness-facility funds, two trust accounts, an alterations
+account and the Judiciary Office Building fund, −$9.5m net) are the Architect's whole chapter total of $952.5m, so nothing in the
+chapter is left over for the posts. Giving the posts no weight wherever a
+licensed set's accounts cover the unit's chapter total would publish the
+remaining $211.8m across the nine units. That changes the post rule's
+weighting, which `CLAUDE.md` records as deliberately left alone ("no
+organisation's estimate moved"), so it is the owner's decision.
+

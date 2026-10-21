@@ -12257,6 +12257,32 @@
                   "budget": null,
                   "color": "#8a4ac8",
                   "children": []
+                },
+                {
+                  "id": "leg-support-aoc-capital-construction-and-operations",
+                  "name": "Capital Construction and Operations",
+                  "type": "Treasury accounting line",
+                  "desc": "The Treasury's Combined Statement of Receipts, Outlays, and Balances for fiscal year 2025 prints an appropriation account titled \"Capital Construction and Operations, Architect of the Capitol\" (001-0100) under the Architect of the Capitol's total. This node is that account, carried as a Treasury accounting line: it is not an office or a division, and nothing further about it has been read. The chapter is at https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx.",
+                  "structureSource": "named_in_the_treasury_combined_statement",
+                  "structureSourceDetail": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_treasury_combined_statement"
+                },
+                {
+                  "id": "leg-support-aoc-capitol-police-buildings-and-grounds",
+                  "name": "Capitol Police Buildings and Grounds",
+                  "type": "Treasury accounting line",
+                  "desc": "The Treasury's Combined Statement of Receipts, Outlays, and Balances for fiscal year 2025 prints an appropriation account titled \"Capitol Police Buildings and Grounds, Architect of the Capitol\" (001-0171) under the Architect of the Capitol's total. This node is that account, carried as a Treasury accounting line: it is not an office or a division, and nothing further about it has been read. The chapter is at https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx.",
+                  "structureSource": "named_in_the_treasury_combined_statement",
+                  "structureSourceDetail": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_treasury_combined_statement"
                 }
               ]
             },

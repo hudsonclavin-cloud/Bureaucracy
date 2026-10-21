@@ -7,11 +7,11 @@ Do not edit by hand; regenerate it. The 100 largest title families are in
 ## What this covers
 
 - **Part A — 1,562 unpriced positions** in the 1,542 title families outside the top 100, across **15 shards**, whole organisations per shard.
-- **Part B — 681 organisation nodes** that publish an apportioned estimate rather than a measured
+- **Part B — 683 organisation nodes** that publish an apportioned estimate rather than a measured
   cost, across **7 shards**, whole parents per shard:
   - 240 — a committee or subcommittee (no Table 5 line can ever name one)
-  - 68 — an estimate with a sourced non-cost figure already beside it
-  - 373 — an estimate with no sourced figure of any kind
+  - 83 — an estimate with a sourced non-cost figure already beside it
+  - 360 — an estimate with no sourced figure of any kind
 
 Not asked about, by construction: measured nodes and priced posts (done), and the units
 beneath a Treasury pool that nets below zero or replaced by the government (no route
@@ -3477,8 +3477,8 @@ THE UNITS:
 - exec-ind-misc-madison-fellowship-foundation | James Madison Memorial Fellowship Foundation | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-japan-united-states-friendship-commission | Japan-United States Friendship Commission | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-marine-mammal-commission | Marine Mammal Commission | Independent Agency  [already carries: ombBudget]
-- exec-ind-misc-macpac | Medicaid and CHIP Payment and Access Commission | Independent Agency
-- exec-ind-misc-medpac | Medicare Payment Advisory Commission | Independent Agency
+- exec-ind-misc-macpac | Medicaid and CHIP Payment and Access Commission | Independent Agency  [already carries: combinedStatementOutlays]
+- exec-ind-misc-medpac | Medicare Payment Advisory Commission | Independent Agency  [already carries: combinedStatementOutlays]
 - exec-ind-misc-merit-systems-protection-board-mspb | Merit Systems Protection Board (MSPB) | Independent Agency  [already carries: ombBudget, usaspendingOutlays]
 - exec-ind-misc-national-capital-planning-commission-ncpc | National Capital Planning Commission (NCPC) | Independent Agency  [already carries: ombBudget, usaspendingOutlays]
 - exec-ind-misc-national-council-on-disability | National Council on Disability | Independent Agency  [already carries: ombBudget]
@@ -3925,7 +3925,7 @@ THE UNITS:
 - exec-ind-nasa-stennis-space-center-ssc | Stennis Space Center (SSC) | NASA Center
 ```
 
-## Prompt B4 — 14 parent(s), 109 unit(s)
+## Prompt B4 — 13 parent(s), 104 unit(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -3995,6 +3995,17 @@ THE UNITS:
 - leg-senate-cmte-commerce-science-transportation-sub-surface-transportation-maritime-freight-ports | Surface Transportation, Maritime, Freight & Ports | Subcommittee
 - leg-senate-cmte-commerce-science-transportation-sub-communications-media-broadband | Telecommunications and Media | Subcommittee
 - leg-senate-cmte-commerce-science-transportation-sub-tourism-trade-export-promotion | Tourism, Trade & Export Promotion | Subcommittee
+
+### beneath Architect of the Capitol  [leg-support-aoc]
+- leg-support-aoc-capital-construction-and-operations | Capital Construction and Operations | Treasury accounting line  [already carries: combinedStatementOutlays]
+- leg-support-aoc-capitol-building | Capitol Building | Division  [already carries: combinedStatementOutlays]
+- leg-support-aoc-capitol-grounds | Capitol Grounds | Division  [already carries: combinedStatementOutlays]
+- leg-support-aoc-capitol-police-buildings-and-grounds | Capitol Police Buildings and Grounds | Treasury accounting line  [already carries: combinedStatementOutlays]
+- leg-support-aoc-capitol-power-plant | Capitol Power Plant | Division  [already carries: combinedStatementOutlays]
+- leg-support-aoc-capitol-visitor-center | Capitol Visitor Center | Division  [already carries: combinedStatementOutlays]
+- leg-support-aoc-house-office-buildings | House Office Buildings | Division  [already carries: combinedStatementOutlays]
+- leg-support-aoc-library-of-congress-buildings | Library of Congress Buildings | Division  [already carries: combinedStatementOutlays]
+- leg-support-aoc-senate-office-buildings | Senate Office Buildings | Division  [already carries: combinedStatementOutlays]
 
 ### beneath Analytical Divisions  [leg-support-cbo-divisions]
 - leg-support-cbo-budget-analysis-division | Budget Analysis Division | Division
@@ -4076,15 +4087,6 @@ THE UNITS:
 - leg-senate-cmte-judiciary-sub-criminal-justice-counterterrorism | Subcommittee on Crime and Counterterrorism | Subcommittee
 - leg-senate-cmte-judiciary-sub-federal-courts-oversight-agency-action-federal-rights | Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights | Subcommittee
 
-### beneath Architect of the Capitol  [leg-support-aoc]
-- leg-support-aoc-capitol-building | Capitol Building | Division
-- leg-support-aoc-capitol-grounds | Capitol Grounds | Division
-- leg-support-aoc-capitol-power-plant | Capitol Power Plant | Division
-- leg-support-aoc-capitol-visitor-center | Capitol Visitor Center | Division
-- leg-support-aoc-house-office-buildings | House Office Buildings | Division
-- leg-support-aoc-library-of-congress-buildings | Library of Congress Buildings | Division
-- leg-support-aoc-senate-office-buildings | Senate Office Buildings | Division
-
 ### beneath House Committee on Agriculture  [leg-house-cmte-agriculture]
 - leg-house-cmte-agriculture-sub-nutrition-foreign-agriculture-horticulture | Nutrition and Foreign Agriculture | Subcommittee
 - leg-house-cmte-agriculture-sub-commodity-markets-digital-assets-rural-development | Subcommittee on Commodity Markets, Digital Assets & Rural Development | Subcommittee
@@ -4111,18 +4113,9 @@ THE UNITS:
 - leg-house-cmte-ways-means-sub-tax | Subcommittee on Tax | Subcommittee
 - leg-house-cmte-ways-means-sub-trade | Subcommittee on Trade | Subcommittee
 - leg-house-cmte-ways-means-sub-worker-family-support | Subcommittee on Work and Welfare | Subcommittee
-
-### beneath House Permanent Select Committee on Intelligence  [leg-house-cmte-permanent-select-committee-on-intelligence]
-- leg-house-cmte-intelligence-sub-central-intelligence-agency | Subcommittee on Central Intelligence Agency | Subcommittee
-- leg-house-cmte-intelligence-sub-defense-intelligence-warfighter-support | Subcommittee on Defense Intelligence and Overhead Architecture | Subcommittee
-- leg-house-cmte-intelligence-sub-open-source-intelligence | Subcommittee on Open Source Intelligence | Subcommittee
-- leg-house-cmte-intelligence-sub-oversight-investigations | Subcommittee on Oversight and Investigations | Subcommittee
-- leg-house-cmte-intelligence-sub-strategic-technologies-advanced-research | Subcommittee on Strategic Technologies & Advanced Research | Subcommittee
-- leg-house-cmte-intelligence-sub-national-intelligence-enterprise | Subcommittee on the National Intelligence Enterprise | Subcommittee
-- leg-house-cmte-intelligence-sub-nsa-cybersecurity | Subcommittee on the National Security Agency and Cyber | Subcommittee
 ```
 
-## Prompt B5 — 18 parent(s), 107 unit(s)
+## Prompt B5 — 18 parent(s), 109 unit(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -4180,6 +4173,15 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE UNITS:
+
+### beneath House Permanent Select Committee on Intelligence  [leg-house-cmte-permanent-select-committee-on-intelligence]
+- leg-house-cmte-intelligence-sub-central-intelligence-agency | Subcommittee on Central Intelligence Agency | Subcommittee
+- leg-house-cmte-intelligence-sub-defense-intelligence-warfighter-support | Subcommittee on Defense Intelligence and Overhead Architecture | Subcommittee
+- leg-house-cmte-intelligence-sub-open-source-intelligence | Subcommittee on Open Source Intelligence | Subcommittee
+- leg-house-cmte-intelligence-sub-oversight-investigations | Subcommittee on Oversight and Investigations | Subcommittee
+- leg-house-cmte-intelligence-sub-strategic-technologies-advanced-research | Subcommittee on Strategic Technologies & Advanced Research | Subcommittee
+- leg-house-cmte-intelligence-sub-national-intelligence-enterprise | Subcommittee on the National Intelligence Enterprise | Subcommittee
+- leg-house-cmte-intelligence-sub-nsa-cybersecurity | Subcommittee on the National Security Agency and Cyber | Subcommittee
 
 ### beneath National Science Foundation (NSF)  [exec-ind-nsf]
 - exec-ind-nsf-biological-sciences-bio | Biological Sciences (BIO) | Directorate
@@ -4316,16 +4318,9 @@ THE UNITS:
 - leg-house-cmte-natural-resources-sub-indian-insular-affairs | Subcommittee on Indian & Insular Affairs | Subcommittee
 - leg-house-cmte-natural-resources-sub-oversight-investigations | Subcommittee on Oversight & Investigations | Subcommittee
 - leg-house-cmte-natural-resources-sub-water-wildlife-fisheries | Subcommittee on Water, Wildlife & Fisheries | Subcommittee
-
-### beneath House Committee on Science, Space & Technology  [leg-house-cmte-science-space-technology]
-- leg-house-cmte-science-space-technology-sub-energy | Subcommittee on Energy | Subcommittee
-- leg-house-cmte-science-space-technology-sub-environment | Subcommittee on Environment | Subcommittee
-- leg-house-cmte-science-space-technology-sub-investigations-oversight | Subcommittee on Investigations & Oversight | Subcommittee
-- leg-house-cmte-science-space-technology-sub-research-technology | Subcommittee on Research & Technology | Subcommittee
-- leg-house-cmte-science-space-technology-sub-space-aeronautics | Subcommittee on Space & Aeronautics | Subcommittee
 ```
 
-## Prompt B6 — 26 parent(s), 108 unit(s)
+## Prompt B6 — 26 parent(s), 110 unit(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -4384,6 +4379,13 @@ official-published or third-party-estimated.
 
 THE UNITS:
 
+### beneath House Committee on Science, Space & Technology  [leg-house-cmte-science-space-technology]
+- leg-house-cmte-science-space-technology-sub-energy | Subcommittee on Energy | Subcommittee
+- leg-house-cmte-science-space-technology-sub-environment | Subcommittee on Environment | Subcommittee
+- leg-house-cmte-science-space-technology-sub-investigations-oversight | Subcommittee on Investigations & Oversight | Subcommittee
+- leg-house-cmte-science-space-technology-sub-research-technology | Subcommittee on Research & Technology | Subcommittee
+- leg-house-cmte-science-space-technology-sub-space-aeronautics | Subcommittee on Space & Aeronautics | Subcommittee
+
 ### beneath House Committee on Small Business  [leg-house-cmte-small-business]
 - leg-house-cmte-small-business-sub-contracting-infrastructure | Subcommittee on Contracting & Infrastructure | Subcommittee
 - leg-house-cmte-small-business-sub-economic-growth-tax-capital-access | Subcommittee on Economic Growth, Tax & Capital Access | Subcommittee
@@ -4393,10 +4395,10 @@ THE UNITS:
 
 ### beneath Library of Congress  [leg-support-loc]
 - leg-support-loc-folklife | American Folklife Center | Bureau
-- leg-support-loc-crs | Congressional Research Service | Bureau
-- leg-support-loc-copyright | Copyright Office | Bureau
+- leg-support-loc-crs | Congressional Research Service | Bureau  [already carries: combinedStatementOutlays]
+- leg-support-loc-copyright | Copyright Office | Bureau  [already carries: combinedStatementOutlays]
 - leg-support-loc-law | Law Library of Congress | Bureau
-- leg-support-loc-nls | National Library Service for the Blind and Print Disabled (NLS) | Bureau
+- leg-support-loc-nls | National Library Service for the Blind and Print Disabled (NLS) | Bureau  [already carries: combinedStatementOutlays]
 
 ### beneath Mathematical & Physical Sciences (MPS)  [exec-ind-nsf-mathematical-physical-sciences-mps]
 - exec-ind-nsf-mathematical-physical-sciences-mps-astronomical-sciences | Division of Astronomical Sciences | Division
@@ -4413,7 +4415,7 @@ THE UNITS:
 - exec-dept-defense-sf | U.S. Space Force | Military Branch
 
 ### beneath Senate Administrative Offices  [leg-senate-admin]
-- leg-senate-admin-legal | Office of Senate Legal Counsel | Office
+- leg-senate-admin-legal | Office of Senate Legal Counsel | Office  [already carries: combinedStatementOutlays]
 - leg-senate-admin-physician | Office of the Senate Physician | Office
 - leg-senate-admin-secretary | Secretary of the Senate | Office
 - leg-senate-admin-chaplain | Senate Chaplain | Office
@@ -4538,14 +4540,9 @@ THE UNITS:
 - exec-dept-treasury-fincen | Financial Crimes Enforcement Network (FinCEN) | Bureau  [already carries: ombBudget, usaspendingOutlays]
 - exec-dept-treasury-ofr | Office of Financial Research (OFR) | Bureau
 - exec-dept-treasury-ofac | Office of Foreign Assets Control (OFAC) | Bureau
-
-### beneath Directorate for Geosciences (GEO)  [exec-ind-nsf-geosciences-geo]
-- exec-ind-nsf-geosciences-geo-atmospheric-geospace-sciences | Division of Atmospheric & Geospace Sciences | Division
-- exec-ind-nsf-geosciences-geo-earth-sciences | Division of Earth Sciences | Division
-- exec-ind-nsf-geosciences-geo-ocean-sciences | Division of Ocean Sciences | Division
 ```
 
-## Prompt B7 — 27 parent(s), 42 unit(s)
+## Prompt B7 — 28 parent(s), 45 unit(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -4603,6 +4600,11 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE UNITS:
+
+### beneath Directorate for Geosciences (GEO)  [exec-ind-nsf-geosciences-geo]
+- exec-ind-nsf-geosciences-geo-atmospheric-geospace-sciences | Division of Atmospheric & Geospace Sciences | Division
+- exec-ind-nsf-geosciences-geo-earth-sciences | Division of Earth Sciences | Division
+- exec-ind-nsf-geosciences-geo-ocean-sciences | Division of Ocean Sciences | Division
 
 ### beneath Executive Branch  [executive-branch]
 - exec-independent | Independent Establishments & Government Corporations | Division

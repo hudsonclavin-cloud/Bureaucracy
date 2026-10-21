@@ -304,6 +304,9 @@ MINIMAL_GRAPH_FIELDS = (
     # What a chamber paid out for a committee's account over its report's
     # period, beside the estimate and never in it (committee_disbursements.py)
     "committeeDisbursements",
+    # A completed year's net outlays for the reviewed accounts of the Combined
+    # Statement, likewise beside the cost and never in it (combined_statement.py)
+    "combinedStatementOutlays",
     # whether the government still has this unit. Absent means it does; the
     # viewer hides a superseded one unless asked, and the panel says what
     # replaced it and quotes the page that says so.
@@ -628,6 +631,16 @@ def compute_subtree_sizes(root: dict[str, Any]) -> dict[str, int]:
     recurses into that node's own children (there are none, in practice —
     every instance checked is a leaf), so real structure beneath a stamped
     title, should one ever be curated, would still count.
+
+    Nor does an appropriation account added from the Treasury's Combined
+    Statement (`is_combined_statement_account_line`, since 2026-10-21): it is
+    an account standing beside a unit's divisions, not structure, so adding one
+    beneath the Architect of the Capitol must not grow the Legislative Branch's
+    support agencies against the joint committees by subtree size. Its own size
+    is still 1, so an implied weight for it stays defined. The receipts lines
+    and "Interest on the Public Debt" still count; excluding every Treasury
+    accounting line moves 82 nodes and is recorded as an open decision
+    (CURATION.md §22.9).
     """
     sizes: dict[str, int] = {}
 
@@ -646,7 +659,7 @@ def compute_subtree_sizes(root: dict[str, Any]) -> dict[str, int]:
         node_id = str(node.get("id") or "").strip()
         if node_id:
             sizes[node_id] = total
-        return total
+        return 0 if is_combined_statement_account_line(node) else total
 
     visit(root)
     return sizes
@@ -757,6 +770,8 @@ def get_node_official_total(node: dict[str, Any]) -> float | None:
 WEIGHT_BASIS_CLASSES = {
     "disbursement_weight": "disbursements",
     "implied_disbursement_weight": "disbursements",
+    "combined_statement_weight": "combined_statement",
+    "implied_combined_statement_weight": "combined_statement",
     "annual_budget_weight": "dollars",
     "budget_weight": "dollars",
     "direct_outlay_weight": "dollars",
@@ -774,11 +789,14 @@ def get_subtree_weight(node: dict[str, Any], subtree_sizes: dict[str, int]) -> f
 
 # Disbursements first: they are the one dollar weight a document states (the
 # chamber's own statement of what it paid out for a committee's account),
-# where every other dollar weight is an uncited curated figure.
-WEIGHT_CLASS_PRIORITY = ("disbursements", "dollars", "employees", "subtree")
+# where every other dollar weight is an uncited curated figure. The Combined
+# Statement's net outlays for a reviewed account are the second such weight
+# (combined_statement.py); the two never meet in one sibling set.
+WEIGHT_CLASS_PRIORITY = ("disbursements", "combined_statement", "dollars", "employees", "subtree")
 
 IMPLIED_WEIGHT_BASES = {
     "disbursements": "implied_disbursement_weight",
+    "combined_statement": "implied_combined_statement_weight",
     "dollars": "implied_budget_weight",
     "employees": "implied_employee_weight",
 }
@@ -798,6 +816,24 @@ def disbursement_document_key(node: dict[str, Any]) -> tuple[str, str, str] | No
     document = block.get("document") if isinstance(block.get("document"), dict) else {}
     period = block.get("period") if isinstance(block.get("period"), dict) else {}
     key = (str(document.get("sha256") or ""), str(period.get("start") or ""), str(period.get("end") or ""))
+    return key if all(key) else None
+
+
+def combined_statement_document_key(node: dict[str, Any]) -> tuple[str, str] | None:
+    """The chapter and fiscal year a node's Combined Statement figure was read from.
+
+    None for a node with no block, and for one the Treasury files under another
+    section than the graph's: that figure is published as printed and never
+    divides a pool here, as an external-section Treasury line never does.
+    """
+    block = node.get("combinedStatementOutlays")
+    if not isinstance(block, dict):
+        return None
+    section = block.get("treasurySection") if isinstance(block.get("treasurySection"), dict) else {}
+    if section.get("filedInAnotherSection") is not False:
+        return None
+    document = block.get("document") if isinstance(block.get("document"), dict) else {}
+    key = (str(document.get("xlsxSha256") or ""), str(block.get("fiscalYear") or ""))
     return key if all(key) else None
 
 
@@ -834,6 +870,25 @@ def resolve_sibling_weights(
             else (child, weight, basis)
             for child, weight, basis in weighted_children
         ]
+    # The Combined Statement's figures weight a sibling set only where EVERY
+    # sibling that is a unit carries one, from one chapter for one year -- no
+    # unit's share is ever implied from them. A post never carries one (a post
+    # is not a budget unit); it keeps its weight as everywhere else in the
+    # cascade, implied at its siblings' rate. Anything short of that and each
+    # such sibling falls back to the weight it carries without the block.
+    combined = [child for child, _, basis in weighted_children if basis == "combined_statement_weight"]
+    if combined:
+        units = [child for child, _, _ in weighted_children if not is_post_node(child)]
+        keys = {combined_statement_document_key(child) for child in combined}
+        every_unit = all(basis == "combined_statement_weight"
+                         for child, _, basis in weighted_children if not is_post_node(child))
+        if not (every_unit and len(keys) == 1 and len(units) >= 2):
+            weighted_children = [
+                (child, *get_node_weight(child, subtree_sizes, use_combined_statement=False))
+                if basis == "combined_statement_weight"
+                else (child, weight, basis)
+                for child, weight, basis in weighted_children
+            ]
     classes = {WEIGHT_BASIS_CLASSES.get(basis, "subtree") for _, _, basis in weighted_children}
     if len(classes) == 1:
         return weighted_children, next(iter(classes)), False
@@ -911,6 +966,7 @@ def get_node_weight(
     node: dict[str, Any],
     subtree_sizes: dict[str, int],
     use_disbursements: bool = True,
+    use_combined_statement: bool = True,
 ) -> tuple[float, str]:
     # What the chamber paid out for a committee's account over one period
     # (committee_disbursements.py). A committee carries the block, and since
@@ -921,6 +977,14 @@ def get_node_weight(
         amount = parse_cost_amount(node["committeeDisbursements"].get("amount"))
         if amount is not None and amount > 0:
             return amount, "disbursement_weight"
+    # A completed year's net outlays for the unit's reviewed accounts
+    # (combined_statement.py), compared only within a set where every unit
+    # carries one -- resolve_sibling_weights. A figure netting to zero or below
+    # weights nothing.
+    if use_combined_statement and combined_statement_document_key(node) is not None:
+        amount = parse_cost_amount(node["combinedStatementOutlays"].get("amount"))
+        if amount is not None and amount > 0:
+            return amount, "combined_statement_weight"
     for key, basis in (
         ("annual_budget", "annual_budget_weight"),
         ("budget", "budget_weight"),
@@ -2141,6 +2205,19 @@ STATED_MULTIPLICITY = re.compile(r"\(\s*[\u00d7x]\s*([^)]+?)\s*\)", re.IGNORECAS
 MULTIPLICITY_RANGE = re.compile(r"^(\d+)\s*[-\u2013]\s*(\d+)$")
 
 
+COMBINED_STATEMENT_ACCOUNT_STRUCTURE_SOURCE = "named_in_the_treasury_combined_statement"
+
+
+def is_combined_statement_account_line(node: dict[str, Any]) -> bool:
+    """A curated Treasury accounting line `scripts/add_curated_nodes.py` added
+    under its `combined_statement_account` licence: one appropriation account
+    the Combined Statement prints under a unit, carried beside its divisions."""
+    return (isinstance(node, dict)
+            and str(node.get("type") or "") == TREASURY_LINE_TYPE
+            and not node.get("synthetic")
+            and str(node.get("structureSource") or "") == COMBINED_STATEMENT_ACCOUNT_STRUCTURE_SOURCE)
+
+
 def is_treasury_line(node: dict[str, Any]) -> bool:
     """A Treasury accounting line rather than a unit of government.
 
@@ -2879,6 +2956,7 @@ def build_graph(
     fr_signature_evidence_path: str | Path | None = "default",
     omb_budget_evidence_path: str | Path | None = "default",
     committee_disbursements_evidence_path: str | Path | None = "default",
+    combined_statement_evidence_path: str | Path | None = "default",
     employment_status_evidence_path: str | Path | None = "default",
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
@@ -3422,6 +3500,25 @@ def build_graph(
     validation["committee_disbursements_evidence"] = apply_committee_disbursements_evidence(
         graph,
         load_committee_disbursements_evidence(resolved_disbursements_path) if resolved_disbursements_path else {},
+        index_tree=index_tree,
+    )
+    # A completed year's net outlays for the reviewed accounts of the Combined
+    # Statement's Legislative Branch chapter (CURATION.md Sec 22.8). Beside the
+    # estimate and never in it; read as a split weight only where every
+    # sibling that is a unit carries a record (resolve_sibling_weights).
+    from data_pipeline.verification.combined_statement import (  # noqa: E402 — same late-import shape as omb_budget
+        DEFAULT_EVIDENCE_PATH as DEFAULT_COMBINED_STATEMENT_PATH,
+        apply_combined_statement_evidence,
+        load_combined_statement_evidence,
+    )
+
+    resolved_combined_path = (
+        DEFAULT_COMBINED_STATEMENT_PATH
+        if combined_statement_evidence_path == "default" else combined_statement_evidence_path
+    )
+    validation["combined_statement_evidence"] = apply_combined_statement_evidence(
+        graph,
+        load_combined_statement_evidence(resolved_combined_path) if resolved_combined_path else {},
         index_tree=index_tree,
     )
     validation["usaspending_evidence"] = apply_usaspending_evidence(

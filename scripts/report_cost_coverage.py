@@ -45,7 +45,10 @@ DEFAULT_OUTPUT = PROJECT_ROOT / "docs" / "COST_COVERAGE.md"
 #: what it lacks is a figure this project is willing to head COST.
 #: `committeeDisbursements` counts here for the House's officer offices,
 #: which carry it since 2026-10-20; a committee is classed before this is read.
-SOURCED_FIGURES_BESIDE = ("usaspendingOutlays", "ombBudget", "auditedNetCost", "committeeDisbursements")
+#: `combinedStatementOutlays` since 2026-10-21: the Treasury's Combined
+#: Statement for a unit's reviewed accounts, a completed year.
+SOURCED_FIGURES_BESIDE = ("usaspendingOutlays", "combinedStatementOutlays", "ombBudget", "auditedNetCost",
+                          "committeeDisbursements")
 
 COMMITTEE_TYPES = ("committee", "subcommittee")
 
@@ -80,14 +83,14 @@ CLASSES = {
         "An apportioned share, and beside it at least one figure an official source states for "
         "this unit under its own heading: USAspending File A gross outlays (fiscal year to date), "
         "OMB's Public Budget Database outlays (last completed year, summed over the unit's account "
-        "rows), Treasury's audited Statement of Net Cost (last completed year), or — for the "
+        "rows), Treasury's audited Statement of Net Cost (last completed year), the net outlays the Treasury's Combined Statement prints for the unit's reviewed accounts (last completed year, since 2026-10-21), or — for the "
         "House's own officer offices, since 2026-10-20 — what the House's Statement of "
         "Disbursements paid out for the officer's organisation over a quarter. Each is on the "
         "panel today; none is headed COST, because each measures something different from the "
         "Treasury's net outlays on a different clock.",
         "Decided by the owner: the headline falls back to one of these, labelled by its basis and "
         "period, when the Treasury prints no line (File A, OMB and audited net cost since "
-        "2026-10-07; a chamber's payout for a committee or an officer office since 2026-10-20) — "
+        "2026-10-07; a chamber's payout for a committee or an officer office since 2026-10-20; the Combined Statement since 2026-10-21) — "
         "the same move the panel makes for a post's salary. The estimate stays withheld behind its "
         "button. Measured on the 94 nodes that carry both, not one OMB FY2025 figure agrees with "
         "the Treasury line within 1%, so the fallback is a different number under a different "

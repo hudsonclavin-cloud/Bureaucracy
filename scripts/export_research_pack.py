@@ -172,8 +172,8 @@ def build(out_dir: Path) -> dict:
                               parent.get("name"), branch, node.get("cost_basis") or "",
                               node.get("resolved_total_amount") or "",
                               "yes" if any(isinstance(node.get(k), dict) for k in
-                                           ("usaspendingOutlays", "ombBudget", "auditedNetCost",
-                                            "committeeDisbursements")) else ""])
+                                           ("usaspendingOutlays", "combinedStatementOutlays", "ombBudget",
+                                            "auditedNetCost", "committeeDisbursements")) else ""])
         if not sources:
             orgs_nosrc.append([node.get("id"), node.get("name"), node.get("type") or "", parent.get("id"),
                                parent.get("name"), branch, "yes" if has_page else ""])
