@@ -41,6 +41,7 @@ python scripts/regenerate_published_graph.py     # rebuild output/ offline from 
 python scripts/repair_review_queue.py --dry-run  # what the queue repair would drop, and why
 python scripts/probe_treasury_rows.py            # which Treasury lines match a node; read-only, drives TREASURY_ROW_ALIASES
 python scripts/probe_combined_statement.py       # which Combined Statement unit totals and accounts match a node; refuses unless the chapter's own totals reconcile to the cent; checks the chapter total against the September MTS line (the scale rule granted 2026-10-21); read-only (CURATION.md §22.5-22.7)
+python scripts/derive_combined_statement_evidence.py --dry-run  # the reviewed Combined Statement rows: every account the chapter prints per unit, FY2025 net outlays; writes nothing (CURATION.md §22.8)
 python scripts/probe_post_titles.py --dry-run    # which post titles an org's own page carries; read-only, drives CURATION.md §8
 python scripts/rename_templated_post_titles.py --dry-run  # templated cabinet titles -> the title an official document gives them
 python scripts/probe_candidate_pages.py --uncovered        # organisations with no candidate page; read-only, no fetch
@@ -5521,6 +5522,53 @@ consistency between two Fiscal Service documents rather than independent
 verification, and it publishes nothing: no derive step, field or gate check
 exists for this source yet, and the accounts that would reach a node still
 need a reviewed table (`CURATION.md` §22.6–22.7).
+
+**The reviewed table, published (since 2026-10-21, the owner's decision).**
+`combined_statement.REVIEWED_ROWS` holds twelve rows: §22.6's eleven plus
+"Capitol Buildings" → `leg-support-aoc-capitol-building`. Each row lists every
+account the chapter prints for the unit; the Capitol Visitor Center and the
+Copyright Office each have two. Completeness is checked: a row is refused when
+the chapter prints another account carrying the row's phrase.
+`scripts/derive_combined_statement_evidence.py` writes
+`data/verification/combined_statement_evidence.json`.
+
+The exporter stamps `combinedStatementOutlays` beside the estimate, never in a
+cost field. It is in `EVIDENCE_OWNED_FIELDS` and `MINIMAL_GRAPH_FIELDS`, and it
+writes no `sourceUrls` or verification method. What the block carries:
+
+- each account's printed figure, its account symbol and its row;
+- the sum, with `documentsStatingTheFigure: 0` when there are two accounts;
+- the scale reconciliation;
+- `treasurySection`. MACPAC and MedPAC, which the chapter prints under the
+  Legislative Branch and this graph curates in the executive branch, carry
+  `filedInAnotherSection: true` and a note the panel prints.
+
+The figure is a headline in the default view, the way OMB's is: the `combined`
+kind sits after File A and before OMB, headed "NET OUTLAYS — TREASURY COMBINED
+STATEMENT" with "FY2025, a completed year … not this year's, and not the cost".
+The estimate stays withheld behind its button.
+
+It is also a split weight (`combined_statement_weight`), but only where every
+sibling that is a unit carries one from the one chapter and year, filed in the
+graph's own section. Posts keep their implied weight, and no unit's share is
+ever implied from these figures. That is stricter than the House payouts,
+which do imply a missing sibling. No parent qualifies today, so no estimate
+moved. The nearest is the Architect of the Capitol: six of seven divisions
+have a row, and Library of Congress Buildings has none, though the chapter
+prints "Structural and Mechanical Care, Library Buildings and Grounds"
+($94.2m).
+
+The gate checks both the block and the weights:
+
+- `combined_statement_violations` re-reads the XLSX with its own reader, the
+  PDF's strings and the September statement, with every digest recomputed. It
+  mirrors the table by id and refuses an omitted account, a figure that is not
+  the printed sum, and a section mark the tree contradicts.
+- `combined_statement_weight_violations` refuses a licensed set left
+  unweighted and a weight on an unlicensed set.
+
+`tests/test_combined_statement_table.py` pins both directions. On the rebuild
+exactly twelve nodes changed, each only by gaining the block.
 
 **Where an agency's money goes (`object_class.py`, since 2026-10-08, the
 owner's ask: "a good total cost of everyone combined ... we just want to see

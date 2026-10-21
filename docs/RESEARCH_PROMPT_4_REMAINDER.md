@@ -10,8 +10,8 @@ Do not edit by hand; regenerate it. The 100 largest title families are in
 - **Part B — 681 organisation nodes** that publish an apportioned estimate rather than a measured
   cost, across **7 shards**, whole parents per shard:
   - 240 — a committee or subcommittee (no Table 5 line can ever name one)
-  - 68 — an estimate with a sourced non-cost figure already beside it
-  - 373 — an estimate with no sourced figure of any kind
+  - 80 — an estimate with a sourced non-cost figure already beside it
+  - 361 — an estimate with no sourced figure of any kind
 
 Not asked about, by construction: measured nodes and priced posts (done), and the units
 beneath a Treasury pool that nets below zero or replaced by the government (no route
@@ -3477,8 +3477,8 @@ THE UNITS:
 - exec-ind-misc-madison-fellowship-foundation | James Madison Memorial Fellowship Foundation | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-japan-united-states-friendship-commission | Japan-United States Friendship Commission | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-marine-mammal-commission | Marine Mammal Commission | Independent Agency  [already carries: ombBudget]
-- exec-ind-misc-macpac | Medicaid and CHIP Payment and Access Commission | Independent Agency
-- exec-ind-misc-medpac | Medicare Payment Advisory Commission | Independent Agency
+- exec-ind-misc-macpac | Medicaid and CHIP Payment and Access Commission | Independent Agency  [already carries: combinedStatementOutlays]
+- exec-ind-misc-medpac | Medicare Payment Advisory Commission | Independent Agency  [already carries: combinedStatementOutlays]
 - exec-ind-misc-merit-systems-protection-board-mspb | Merit Systems Protection Board (MSPB) | Independent Agency  [already carries: ombBudget, usaspendingOutlays]
 - exec-ind-misc-national-capital-planning-commission-ncpc | National Capital Planning Commission (NCPC) | Independent Agency  [already carries: ombBudget, usaspendingOutlays]
 - exec-ind-misc-national-council-on-disability | National Council on Disability | Independent Agency  [already carries: ombBudget]
@@ -4077,13 +4077,13 @@ THE UNITS:
 - leg-senate-cmte-judiciary-sub-federal-courts-oversight-agency-action-federal-rights | Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights | Subcommittee
 
 ### beneath Architect of the Capitol  [leg-support-aoc]
-- leg-support-aoc-capitol-building | Capitol Building | Division
-- leg-support-aoc-capitol-grounds | Capitol Grounds | Division
-- leg-support-aoc-capitol-power-plant | Capitol Power Plant | Division
-- leg-support-aoc-capitol-visitor-center | Capitol Visitor Center | Division
-- leg-support-aoc-house-office-buildings | House Office Buildings | Division
+- leg-support-aoc-capitol-building | Capitol Building | Division  [already carries: combinedStatementOutlays]
+- leg-support-aoc-capitol-grounds | Capitol Grounds | Division  [already carries: combinedStatementOutlays]
+- leg-support-aoc-capitol-power-plant | Capitol Power Plant | Division  [already carries: combinedStatementOutlays]
+- leg-support-aoc-capitol-visitor-center | Capitol Visitor Center | Division  [already carries: combinedStatementOutlays]
+- leg-support-aoc-house-office-buildings | House Office Buildings | Division  [already carries: combinedStatementOutlays]
 - leg-support-aoc-library-of-congress-buildings | Library of Congress Buildings | Division
-- leg-support-aoc-senate-office-buildings | Senate Office Buildings | Division
+- leg-support-aoc-senate-office-buildings | Senate Office Buildings | Division  [already carries: combinedStatementOutlays]
 
 ### beneath House Committee on Agriculture  [leg-house-cmte-agriculture]
 - leg-house-cmte-agriculture-sub-nutrition-foreign-agriculture-horticulture | Nutrition and Foreign Agriculture | Subcommittee
@@ -4393,10 +4393,10 @@ THE UNITS:
 
 ### beneath Library of Congress  [leg-support-loc]
 - leg-support-loc-folklife | American Folklife Center | Bureau
-- leg-support-loc-crs | Congressional Research Service | Bureau
-- leg-support-loc-copyright | Copyright Office | Bureau
+- leg-support-loc-crs | Congressional Research Service | Bureau  [already carries: combinedStatementOutlays]
+- leg-support-loc-copyright | Copyright Office | Bureau  [already carries: combinedStatementOutlays]
 - leg-support-loc-law | Law Library of Congress | Bureau
-- leg-support-loc-nls | National Library Service for the Blind and Print Disabled (NLS) | Bureau
+- leg-support-loc-nls | National Library Service for the Blind and Print Disabled (NLS) | Bureau  [already carries: combinedStatementOutlays]
 
 ### beneath Mathematical & Physical Sciences (MPS)  [exec-ind-nsf-mathematical-physical-sciences-mps]
 - exec-ind-nsf-mathematical-physical-sciences-mps-astronomical-sciences | Division of Astronomical Sciences | Division
@@ -4413,7 +4413,7 @@ THE UNITS:
 - exec-dept-defense-sf | U.S. Space Force | Military Branch
 
 ### beneath Senate Administrative Offices  [leg-senate-admin]
-- leg-senate-admin-legal | Office of Senate Legal Counsel | Office
+- leg-senate-admin-legal | Office of Senate Legal Counsel | Office  [already carries: combinedStatementOutlays]
 - leg-senate-admin-physician | Office of the Senate Physician | Office
 - leg-senate-admin-secretary | Secretary of the Senate | Office
 - leg-senate-admin-chaplain | Senate Chaplain | Office

@@ -168,7 +168,7 @@ def collect(graph):
                     "parentName": str(parent.get("name") or "?"),
                     "beside": sorted(
                         field
-                        for field in ("usaspendingOutlays", "ombBudget", "auditedNetCost")
+                        for field in ("usaspendingOutlays", "combinedStatementOutlays", "ombBudget", "auditedNetCost")
                         if isinstance(node.get(field), dict)
                     ),
                 }

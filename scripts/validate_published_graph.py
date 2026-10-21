@@ -12,11 +12,14 @@ The gate never writes. Run it before every push that touches output/.
 
 from __future__ import annotations
 
+import hashlib
 import io
 import json
 import re
 from datetime import datetime, timezone
 import sys
+import zipfile
+import zlib
 from collections import Counter
 from pathlib import Path
 from urllib.parse import urlparse
@@ -2007,6 +2010,7 @@ KNOWN_COST_BASES = {
     "annual_budget_weight", "budget_weight", "direct_outlay_weight",
     "implied_budget_weight", "employee_weight", "implied_employee_weight",
     "subtree_weight", "disbursement_weight", "implied_disbursement_weight",
+    "combined_statement_weight", "implied_combined_statement_weight",
 }
 
 
@@ -8393,6 +8397,361 @@ POST_PAGE_METHOD = "name_labelled_on_its_organisations_official_page"
 # OMB's Public Budget Database. The gate re-derives the figures from the
 # committed package itself -- a stdlib zip+XML read, importing nothing from
 # data_pipeline -- for the reason whitehouse_roster() is independent.
+# The Combined Statement of Receipts, Outlays, and Balances, Part Three, the
+# Legislative Branch chapter (combined_statement.py, CURATION.md Sec 22.8).
+# Mirrored by node id: the printed titles of EVERY account the chapter prints
+# for the unit, the phrase that finds them all, the unit total that closes
+# them, and whether the Treasury files the account under another section than
+# the branch this graph gives the node. Pinned equal to the module's table by
+# tests/test_combined_statement.py.
+COMBINED_STATEMENT_DIR = PROJECT_ROOT / "tests" / "fixtures" / "treasury" / "combined_statement" / "cs2025"
+COMBINED_STATEMENT_CHAPTER = "c01"
+COMBINED_STATEMENT_FISCAL_YEAR = 2025
+COMBINED_STATEMENT_BRANCH_ID = "legislative-branch"
+COMBINED_STATEMENT_SOURCE_TYPE = "treasury_combined_statement"
+COMBINED_STATEMENT_UNITS_KIND = "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+COMBINED_STATEMENT_MEASURED = ("official", "root_total", "scaled_official")
+COMBINED_STATEMENT_ROWS = {
+    "leg-support-aoc-capitol-building": ("Capitol Building", ("Capitol Buildings, Architect of the Capitol",),
+                                         "Capitol Buildings", "Architect of the Capitol", False),
+    "leg-support-aoc-capitol-grounds": ("Capitol Grounds", ("Capitol Grounds, Architect of the Capitol",),
+                                        "Capitol Grounds", "Architect of the Capitol", False),
+    "leg-support-aoc-senate-office-buildings": ("Senate Office Buildings",
+                                                ("Senate Office Buildings, Architect of the Capitol",),
+                                                "Senate Office Buildings", "Architect of the Capitol", False),
+    "leg-support-aoc-house-office-buildings": ("House Office Buildings",
+                                               ("House Office Buildings, Architect of the Capitol",),
+                                               "House Office Buildings", "Architect of the Capitol", False),
+    "leg-support-aoc-capitol-power-plant": ("Capitol Power Plant", ("Capitol Power Plant, Architect of the Capitol",),
+                                            "Capitol Power Plant", "Architect of the Capitol", False),
+    "leg-support-aoc-capitol-visitor-center": ("Capitol Visitor Center", (
+        "Capitol Visitor Center, Architect of the Capitol",
+        "Capitol Visitor Center Revolving Fund, Architect of the Capitol",
+    ), "Capitol Visitor Center", "Architect of the Capitol", False),
+    "leg-support-loc-crs": ("Congressional Research Service",
+                            ("Salaries and Expenses, Congressional Research Service, Library of Congress",),
+                            "Congressional Research Service", "Library of Congress", False),
+    "leg-support-loc-copyright": ("Copyright Office", (
+        "Salaries and Expenses, Copyright Office, Library of Congress",
+        "Payments to Copyright Owners, Copyright Office, Library of Congress",
+    ), "Copyright Office", "Library of Congress", False),
+    "leg-support-loc-nls": ("National Library Service for the Blind and Print Disabled (NLS)",
+                            ("Salaries and Expenses, National Library Service for the Blind and Print Disabled, "
+                             "Library of Congress",),
+                            "National Library Service for the Blind", "Library of Congress", False),
+    "leg-senate-admin-legal": ("Office of Senate Legal Counsel",
+                               ("Salaries and Expenses, Office of Senate Legal Counsel, Senate",),
+                               "Senate Legal Counsel", "Senate", False),
+    "exec-ind-misc-macpac": ("Medicaid and CHIP Payment and Access Commission",
+                             ("Medicaid and CHIP Payment and Access Commission",),
+                             "Medicaid and CHIP Payment and Access Commission",
+                             "Legislative Branch Boards and Commissions", True),
+    "exec-ind-misc-medpac": ("Medicare Payment Advisory Commission",
+                             ("Salaries and Expenses, Medicare Payment Advisory Commission",),
+                             "Medicare Payment Advisory Commission",
+                             "Legislative Branch Boards and Commissions", True),
+}
+_COMBINED_STATEMENT_DOCS = None
+
+
+def _combined_statement_fixture(path):
+    data = Path(path).read_bytes()
+    meta = json.loads(Path(str(path) + ".meta.json").read_text(encoding="utf-8"))
+    digest = hashlib.sha256(data).hexdigest()
+    if meta.get("sha256") != digest:
+        raise ValueError("{} is not the bytes its fetch recorded".format(Path(path).name))
+    return data, meta, digest
+
+
+def _combined_statement_cents(text):
+    text = str(text or "").strip()
+    if not re.fullmatch(r"-?[\d,]*\d\.\d\d", text):
+        return None
+    return int(text.replace(",", "").replace(".", ""))
+
+
+def combined_statement_documents():
+    """The chapter re-read from the committed XLSX with this gate's own
+    reader, its arithmetic re-checked, its PDF's printed strings, and the
+    September statement's line for the chapter, every digest recomputed."""
+    global _COMBINED_STATEMENT_DOCS
+    if _COMBINED_STATEMENT_DOCS is not None:
+        return _COMBINED_STATEMENT_DOCS
+    try:
+        xlsx, xlsx_meta, xlsx_digest = _combined_statement_fixture(
+            COMBINED_STATEMENT_DIR / (COMBINED_STATEMENT_CHAPTER + ".xlsx"))
+        pdf, pdf_meta, pdf_digest = _combined_statement_fixture(
+            COMBINED_STATEMENT_DIR / (COMBINED_STATEMENT_CHAPTER + ".pdf"))
+        rows = _omb_sheet_rows(xlsx)
+        accounts, totals, current = [], [], None
+        period = re.compile(r"^(\d{4}(-\d{4})?|No Year|Subtotal)$")
+
+        def close():
+            if current is not None:
+                current["cells"] = current["closed"] + [c for c in current["pending"] if c[1]]
+                current["pending"] = []
+
+        for index, raw in enumerate(rows):
+            row = [str(cell or "").strip() for cell in raw] + [""] * 12
+            if not any(row):
+                continue
+            if row[0].startswith("Total, "):
+                close()
+                current = None
+                totals.append({"unit": row[0][len("Total, "):].strip(), "label": row[0], "printed": row[9], "row": index})
+                continue
+            if period.match(row[1]):
+                if current is None:
+                    raise ValueError("a data row sits outside any account")
+                cell = (index, row[9] if _combined_statement_cents(row[9]) is not None else "")
+                if not current["symbol"] and row[3] and row[4]:
+                    current["symbol"] = "-".join(x for x in (row[2], row[3], row[4]) if x)
+                if row[1] == "Subtotal":
+                    current["closed"].append(cell)
+                    current["pending"] = []
+                else:
+                    current["pending"].append(cell)
+                continue
+            if row[0] in ("Fund Resources:", "Appropriations, Outlays, and Balances"):
+                continue
+            if sum(1 for cell in row if cell) == 1 and row[0]:
+                close()
+                current = {"title": row[0], "row": index, "closed": [], "pending": [], "symbol": "", "cells": []}
+                accounts.append(current)
+        close()
+        accounts = [a for a in accounts if a["closed"] or a["pending"] or a["cells"]]
+        previous, unit_sum, chapter_total = -1, 0, None
+        for total in totals:
+            members = [a for a in accounts if previous < a["row"] < total["row"]]
+            if total is totals[-1] and not members:
+                chapter_total = total
+                break
+            for account in members:
+                account["unit"] = total["unit"]
+                account["cents"] = sum(_combined_statement_cents(c[1]) or 0 for c in account["cells"])
+            # A total that closes no account (the chapter's offsetting receipts,
+            # printed as lines of their own) is not an account sum to check.
+            if members and sum(a["cents"] for a in members) != _combined_statement_cents(total["printed"]):
+                raise ValueError("Total, {} is not the sum of its accounts".format(total["unit"]))
+            unit_sum += _combined_statement_cents(total["printed"])
+            previous = total["row"]
+        if chapter_total is None or unit_sum != _combined_statement_cents(chapter_total["printed"]):
+            raise ValueError("the chapter's unit totals do not sum to its own total")
+        blobs = []
+        for match in re.finditer(rb"stream\r?\n(.*?)endstream", pdf, re.DOTALL):
+            try:
+                blobs.append(zlib.decompress(match.group(1)))
+            except zlib.error:
+                continue
+        pdf_strings = b"".join(s[1:-1] for s in re.findall(rb"\((?:[^()\\]|\\.)*\)", b"".join(blobs))).decode(
+            "latin-1", "ignore")
+        statement_path = PROJECT_ROOT / "tests" / "fixtures" / "mts_table5_{}-09-30.json".format(
+            COMBINED_STATEMENT_FISCAL_YEAR)
+        statement, statement_meta, statement_digest = _combined_statement_fixture(statement_path)
+        payload = json.loads(statement.decode("utf-8"))
+        wanted = "Total--" + chapter_total["unit"]
+        lines = [r for r in payload.get("rows") or [] if str(r.get("classification_desc") or "").strip() == wanted]
+        if len(lines) != 1 or str(payload.get("record_date")) != "{}-09-30".format(COMBINED_STATEMENT_FISCAL_YEAR):
+            raise ValueError("the September statement does not carry exactly one {!r}".format(wanted))
+        line_raw = str(lines[0].get("current_fytd_net_outly_amt") or "").strip()
+        if _combined_statement_cents(line_raw) != _combined_statement_cents(chapter_total["printed"]):
+            raise ValueError("the chapter's total is not the September statement's line to the cent")
+        _COMBINED_STATEMENT_DOCS = {
+            "accounts": accounts, "chapterTotal": chapter_total,
+            "xlsxSha256": xlsx_digest, "xlsxUrl": xlsx_meta.get("url"),
+            "pdfSha256": pdf_digest, "pdfUrl": pdf_meta.get("url"), "pdfStrings": pdf_strings,
+            "statement": {"label": wanted, "amountRaw": line_raw, "recordDate": payload.get("record_date"),
+                          "documentSha256": statement_digest, "url": statement_meta.get("url")},
+        }
+    except (OSError, ValueError, KeyError, zipfile.BadZipFile) as error:
+        _COMBINED_STATEMENT_DOCS = {"error": str(error)}
+    return _COMBINED_STATEMENT_DOCS
+
+
+def _combined_statement_branch(node_id, tree_parents):
+    current = node_id
+    while tree_parents.get(current):
+        parent = tree_parents[current]
+        if not tree_parents.get(parent):
+            return current
+        current = parent
+    return None
+
+
+def combined_statement_violations(node, block, docs, label, tree_parents):
+    """Everything a `combinedStatementOutlays` block may claim, re-derived."""
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))  # noqa: E731
+    node_id = str(node.get("id") or "")
+    row = COMBINED_STATEMENT_ROWS.get(node_id)
+    if row is None:
+        say("carries a Combined Statement figure under an id this gate does not mirror")
+        return out
+    name, titles, phrase, unit, another = row
+    type_text = str(node.get("type") or "").casefold()
+    if node.get("synthetic") or any(w in type_text for w in ("position", "role", "office holder", "committee", "caucus")):
+        say("carries a Combined Statement figure but is typed {!r}".format(node.get("type")))
+        return out
+    if canonical_key(node.get("name")) != canonical_key(name) or canonical_key(block.get("nodeName")) != canonical_key(name):
+        say("carries a reviewed row written for {!r}".format(name))
+    if str(block.get("costBasis") or "") != "net_outlays" or str(block.get("sourceType") or "") != COMBINED_STATEMENT_SOURCE_TYPE:
+        say("files its block under basis {!r} from {!r}".format(block.get("costBasis"), block.get("sourceType")))
+    if block.get("fiscalYear") != COMBINED_STATEMENT_FISCAL_YEAR or block.get("periodCoverage") != "full_fiscal_year":
+        say("states a period the chapter does not cover")
+    if str(block.get("scopeMatch") or "") != "proxy" or str(block.get("financialEvidenceStatus") or "") != "partial":
+        say("claims more than a proxy graded partial")
+    if str(block.get("matchRule") or "") != "reviewed_row" or not str(block.get("matchBasis") or "").strip():
+        say("names no reviewed identification and basis")
+    if not str(block.get("notTheCost") or "").strip():
+        say("does not say the figure is not the cost")
+    if str(block.get("unitsEvidenceKind") or "") != COMBINED_STATEMENT_UNITS_KIND:
+        say("rests its scale on {!r}, not the chapter's reconciliation".format(block.get("unitsEvidenceKind")))
+    if str(node.get("cost_status") or "") in COMBINED_STATEMENT_MEASURED:
+        say("carries a Combined Statement figure beside a measured cost")
+    if "error" in docs:
+        say("cannot be checked: {}".format(docs["error"]))
+        return out
+    document = block.get("document") if isinstance(block.get("document"), dict) else {}
+    if (document.get("xlsxSha256") != docs["xlsxSha256"] or document.get("pdfSha256") != docs["pdfSha256"]
+            or document.get("xlsxUrl") != docs["xlsxUrl"] or document.get("pdfUrl") != docs["pdfUrl"]
+            or document.get("chapter") != COMBINED_STATEMENT_CHAPTER
+            or document.get("chapterSection") != docs["chapterTotal"]["unit"]):
+        say("cites a document, digest or chapter that is not the committed chapter's")
+    if block.get("sourceUrl") != docs["xlsxUrl"] or block.get("documentSha256") != docs["xlsxSha256"]:
+        say("cites a source the committed chapter is not")
+    scale = block.get("scaleReconciliation") if isinstance(block.get("scaleReconciliation"), dict) else {}
+    chapter_line = scale.get("chapterTotal") if isinstance(scale.get("chapterTotal"), dict) else {}
+    statement_line = scale.get("statementLine") if isinstance(scale.get("statementLine"), dict) else {}
+    if (chapter_line.get("label") != docs["chapterTotal"]["label"]
+            or chapter_line.get("amountRaw") != docs["chapterTotal"]["printed"]
+            or chapter_line.get("documentSha256") != docs["xlsxSha256"]
+            or statement_line.get("label") != docs["statement"]["label"]
+            or statement_line.get("amountRaw") != docs["statement"]["amountRaw"]
+            or statement_line.get("recordDate") != docs["statement"]["recordDate"]
+            or statement_line.get("documentSha256") != docs["statement"]["documentSha256"]
+            or statement_line.get("field") != "current_fytd_net_outly_amt"):
+        say("carries a scale reconciliation that is not the committed chapter's and statement's")
+    by_title = {}
+    for account in docs["accounts"]:
+        by_title.setdefault(account["title"], []).append(account)
+    expected = []
+    for title in titles:
+        found = by_title.get(title) or []
+        if len(found) != 1 or found[0].get("unit") != unit or len(found[0]["cells"]) != 1:
+            say("names an account the chapter does not print once, under {}, in one cell: {!r}".format(unit, title))
+            return out
+        index, printed = found[0]["cells"][0]
+        if printed not in docs["pdfStrings"]:
+            say("quotes {} for {!r}, which the chapter's PDF does not print".format(printed, title))
+        expected.append((title, printed, found[0]["symbol"], unit, index))
+    unlisted = [a["title"] for a in docs["accounts"] if phrase.casefold() in a["title"].casefold() and a["title"] not in titles]
+    if unlisted:
+        say("omits an account the chapter prints for the unit: {}".format(unlisted))
+    got = [(str(c.get("account")), str(c.get("printed")), str(c.get("accountSymbol")), str(c.get("chapterUnit")),
+            c.get("rowIndex")) for c in block.get("components") or []]
+    if got != expected:
+        say("lists components that are not the accounts the chapter prints for it")
+    for component in block.get("components") or []:
+        cents = _combined_statement_cents(component.get("printed"))
+        if cents is None or not isinstance(component.get("amount"), (int, float)) or round(float(component["amount"]) * 100) != cents:
+            say("states a component amount that is not its printed figure")
+    total = sum(_combined_statement_cents(e[1]) for e in expected)
+    amount = block.get("amount")
+    if not isinstance(amount, (int, float)) or isinstance(amount, bool) or round(float(amount) * 100) != total or total == 0:
+        say("publishes {!r}, not the sum of its accounts' printed figures".format(amount))
+    if _combined_statement_cents(block.get("amountRaw")) != total:
+        say("prints an amountRaw that is not the sum")
+    if block.get("componentCount") != len(expected) or block.get("documentsStatingTheFigure") != (1 if len(expected) == 1 else 0):
+        say("miscounts its accounts or claims a sum is printed")
+    section = block.get("treasurySection") if isinstance(block.get("treasurySection"), dict) else {}
+    tree_another = _combined_statement_branch(node_id, tree_parents) != COMBINED_STATEMENT_BRANCH_ID
+    if section.get("filedInAnotherSection") is not another or tree_another != another:
+        say("marks its Treasury section {!r} where the tree and the reviewed row say {!r}".format(
+            section.get("filedInAnotherSection"), tree_another))
+    if section.get("chapter") != docs["chapterTotal"]["unit"]:
+        say("names a chapter section the document does not print")
+    if bool(section.get("note")) != another:
+        say("says or omits that the Treasury files it under another section, wrongly")
+    resolved = node.get("resolved_total_amount")
+    if isinstance(resolved, (int, float)) and not isinstance(resolved, bool) and isinstance(amount, (int, float)) \
+            and abs(float(resolved) - float(amount)) < 0.005:
+        say("publishes its Combined Statement figure as its estimate")
+    for url in (docs["xlsxUrl"], docs["pdfUrl"]):
+        if url in (node.get("sourceUrls") or []):
+            say("puts the chapter among its own sources")
+    if "combined_statement" in str(node.get("verificationMethod") or ""):
+        say("takes the chapter as its verification method")
+    return out
+
+
+def combined_statement_weight_violations(nodes, tree_parents, label):
+    """An estimate divided by the Combined Statement's figures, both ways.
+
+    The cascade reads them as split weights only where EVERY sibling that is a
+    unit (not a post) carries a block from the one chapter and year, the
+    Treasury filing it in the graph's own section: then every such sibling
+    must be weighted by it, in proportion; otherwise none may be, and a unit's
+    share is never implied from them. Siblings are the allocated, living
+    children of one tree parent -- the set the cascade divides.
+    """
+    out = []
+    groups = {}
+    for node in nodes:
+        groups.setdefault(tree_parents.get(str(node.get("id") or "")), []).append(node)
+
+    def is_post(node):
+        type_text = str(node.get("type") or "").casefold()
+        return any(w in type_text for w in ("position", "role", "office holder"))
+
+    def usable_key(node):
+        block = node.get("combinedStatementOutlays")
+        if not isinstance(block, dict):
+            return None
+        section = block.get("treasurySection") if isinstance(block.get("treasurySection"), dict) else {}
+        document = block.get("document") if isinstance(block.get("document"), dict) else {}
+        amount = block.get("amount")
+        if section.get("filedInAnotherSection") is not False or not isinstance(amount, (int, float)) or amount <= 0:
+            return None
+        key = (document.get("xlsxSha256"), block.get("fiscalYear"))
+        return key if all(key) else None
+
+    for parent_id, members in groups.items():
+        living = [n for n in members if str(n.get("cost_status") or "") == "allocated"
+                  and str(n.get("lifecycle") or "") != "superseded"]
+        units = [n for n in living if not is_post(n)]
+        weighted = [n for n in members if n.get("cost_basis") == "combined_statement_weight"]
+        implied = [n for n in members if n.get("cost_basis") == "implied_combined_statement_weight"]
+        for node in weighted + implied:
+            if str(node.get("cost_status") or "") != "allocated":
+                out.append("{} carries a Combined Statement weight on a {!r} figure".format(label(node), node.get("cost_status")))
+        for node in implied:
+            if not is_post(node):
+                out.append("{} is a unit given a share implied from its siblings' Combined Statement figures".format(label(node)))
+        keys = {usable_key(n) for n in units}
+        licensed = len(units) >= 2 and None not in keys and len(keys) == 1
+        if licensed:
+            for node in units:
+                if node.get("cost_basis") != "combined_statement_weight":
+                    out.append("{}: every unit under {} carries the Combined Statement's figure, but it is weighted by {!r}".format(
+                        label(node), parent_id, node.get("cost_basis")))
+        elif weighted or implied:
+            out.append("units under {} are weighted by Combined Statement figures that not every unit beside them carries".format(parent_id))
+            continue
+        rates = []
+        for node in weighted:
+            share, block = node.get("resolved_total_amount"), node.get("combinedStatementOutlays") or {}
+            if usable_key(node) is None:
+                out.append("{} is weighted by a Combined Statement figure it cannot be weighted by".format(label(node)))
+            elif isinstance(share, (int, float)) and not isinstance(share, bool):
+                rates.append(float(share) / float(block["amount"]))
+        if rates:
+            low, high = min(rates), max(rates)
+            if low <= 0 or (high - low) / low > 1e-4:
+                out.append("units under {} are not divided in proportion to their Combined Statement figures ({:.6g} to {:.6g})".format(
+                    parent_id, low, high))
+    return out
+
+
 OMB_PACKAGE = "BUDGET-2027-DB"
 OMB_FIXTURE = Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "omb" / (OMB_PACKAGE + ".zip")
 OMB_ESTIMATE_SENTENCE = re.compile(
@@ -10552,6 +10911,33 @@ def main(argv):
             sum(1 for n in nodes if n.get("cost_basis") == "disbursement_weight"),
             sum(1 for n in nodes if n.get("cost_basis") == "implied_disbursement_weight"),
         ) if not payout_weight_violations else "",
+    )
+    combined_violations = []
+    combined_nodes = [n for n in nodes if "combinedStatementOutlays" in n]
+    if combined_nodes:
+        combined_docs = combined_statement_documents()
+        for node in combined_nodes:
+            block = node.get("combinedStatementOutlays")
+            if not isinstance(block, dict):
+                combined_violations.append("{} carries a combinedStatementOutlays that is not a block".format(label(node)))
+                continue
+            combined_violations.extend(combined_statement_violations(node, block, combined_docs, label, tree_parents))
+    gate.check(
+        "a Combined Statement figure is the chapter's own printed accounts, reconciled, and never the cost",
+        combined_violations,
+        " — {} unit(s), {} filed by the Treasury under another section".format(
+            len(combined_nodes),
+            sum(1 for n in combined_nodes if isinstance(n.get("combinedStatementOutlays"), dict)
+                and (n["combinedStatementOutlays"].get("treasurySection") or {}).get("filedInAnotherSection")),
+        ) if not combined_violations else "",
+    )
+    combined_weight_violations = combined_statement_weight_violations(nodes, tree_parents, label)
+    gate.check(
+        "units are weighted by Combined Statement figures exactly where every unit beside them carries one",
+        combined_weight_violations,
+        " — {} share(s) weighted by one".format(
+            sum(1 for n in nodes if n.get("cost_basis") == "combined_statement_weight"),
+        ) if not combined_weight_violations else "",
     )
     officer_office_nodes = [n for n in disbursement_nodes
                             if n["committeeDisbursements"].get("unitKind") == HOUSE_OFFICER_UNIT_KIND]
