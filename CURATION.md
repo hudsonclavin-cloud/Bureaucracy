@@ -5641,7 +5641,9 @@ bought:
   suggested 9 would reduce to a node; read directly, with the trailing
   ", <issuing body>" and a leading "Salaries and Expenses, " set aside the way
   a PLUM title already is, **18 of the chapter's 54 accounts reduce to
-  exactly one non-post node** — more than the SF133-based estimate, because
+  exactly one non-post node** (corrected the same day in §22.6: the chapter
+  has 115 accounts, seven of the 18 were one account of a larger unit, and
+  the eleven that remain are all sub-units published today as estimates) — more than the SF133-based estimate, because
   the Senate's, House's, Library of Congress's, CBO's, GAO's and the Tax
   Court's own top-level accounts reduce too, not only the smaller units the
   earlier pass named. §22.5 has the full table, the cross-reading against the
@@ -5823,7 +5825,10 @@ trailing ", <issuing body>" aside the way `positions.archive_title_keys`
 already does for a PLUM Book title, and a leading "Salaries and Expenses, "
 or "Compensation of Members and Related Administrative Expenses, " the way
 no module has needed to before — both are candidates to TEST against a node's
-name by `canonical_name_key` equality, never a name to publish. **18 of the
+name by `canonical_name_key` equality, never a name to publish. **Corrected
+the same day (§22.6): the parser below missed 52 of the chapter's 115
+accounts (42 of them non-zero), and seven of the eighteen rows are one account of a unit that
+holds several, refused now.** As first written: **18 of the
 chapter's 54 accounts reduce to exactly one non-post node**, more than the
 SF133 workbook's own 55 Legislative Branch accounts had suggested (9), because
 the chambers', the Library's, CBO's, GAO's and the Tax Court's own top-level
@@ -5901,3 +5906,110 @@ Combined Statement states its own units — a cover page, a methodology volume
 not yet fetched, or GPO's print edition's own front matter — and, failing
 that, put the "cents imply whole dollars" reading to the owner as a
 structural-evidence grant the way `COLUMN_HEAD_MARK_SOURCE_TYPES` once was.
+
+### 22.6 The probe corrected, the same day (2026-10-21)
+
+A second session read §22.5 against the committed fixtures before merging it,
+and two of its findings did not hold. Both are fixed in
+`scripts/probe_combined_statement.py`; nothing was published from either.
+
+**The parser missed more than half the chapter.** It read an account's figure
+off its "Subtotal" rows only, and an account with a single year of
+availability prints no Subtotal at all. 52 of the chapter's 115 accounts are
+that shape, 42 of them with a non-zero figure — every Senate revolving fund, the Sergeant at Arms' continuity
+fund, the Congressional Use of Foreign Currency account, most of the
+Library's trust and gift funds — so the first version reported 54 accounts and
+said nothing of the rest. A second defect hid inside the first fix: an
+account that also carries "Funds Held Outside the Treasury" (the Capitol
+Police's general expenses, the Library's salaries and expenses) prints those
+rows inside its Subtotal, and a parser that summed them separately counted
+them twice. What catches both is a check the chapter prints itself: every
+unit closes with a "Total, <unit>" line, and the chapter with "Total,
+Legislative Branch". `parse_chapter` now takes an account's figure as its
+Subtotal rows plus any data rows after the last one, assigns each account to
+the unit total that closes it, and refuses to report anything unless **every
+one of the thirteen unit totals equals the sum of its accounts and the unit
+totals with the chapter's offsetting receipts (−$63,023,261.20) equal
+"Total, Legislative Branch" ($7,232,968,757.51), all to the cent**. On the
+committed XLSX they do.
+
+**Seven of the eighteen matches were one account of a unit that holds
+several.** "Compensation of Members and Related Administrative Expenses,
+Senate" strips to "Senate" and reached `leg-senate` at $24.4m; the Senate's
+own total line prints $1,308,849,893.25 across 27 accounts. The same shape
+reached the House (two of its eleven accounts, summed, $1.97bn of
+$1.98bn — close, and still not the House's figure), the Library of Congress
+($602.5m of $935.0m: the salaries account, without CRS, the Copyright
+Office, the NLS and thirteen funds), CBO, GAO and the Tax Court ($70.6m of
+$72.0m). Publishing such an account as the unit's figure is a narrower thing
+presented as the whole — the first of the three scoping failures
+`docs/COST_NOMINATION_RUNBOOK.md` names. §22.5 called the House's two-account
+sum "correct" by analogy with a unit's header line beside its own `Total--`
+line; that analogy holds only when the two lines ARE the whole unit, and here
+the statement prints the whole unit on a third line. The probe now refuses an
+account whose stripped name is the unit its own total closes, and reports the
+total line instead.
+
+**What the corrected probe reports, and what it is worth.**
+
+- **Nine unit totals reach a node** (the Senate, the House, the Capitol
+  Police, CBO, the Architect of the Capitol, the Library of Congress, the GPO,
+  the GAO, and the Tax Court, which this graph files under the judiciary). **Every one already carries a measured Treasury cost**, so
+  the Combined Statement adds a completed-year figure beside an
+  eleven-months-to-date one and changes no headline. Corroboration only.
+- **Eleven accounts name a unit below the one whose total closes them**, and
+  every one of these is today an apportioned estimate. That is where the
+  chapter is worth reading, because the estimates are badly off:
+
+  | node | FY2025 net outlays, the account | published estimate today |
+  |---|---|---|
+  | `leg-support-aoc-capitol-grounds` | $17,858,652.41 | ≈ $75.1m |
+  | `leg-support-aoc-senate-office-buildings` | $128,021,693.98 | ≈ $75.1m |
+  | `leg-support-aoc-house-office-buildings` | $156,916,099.98 | ≈ $75.1m |
+  | `leg-support-aoc-capitol-power-plant` | $122,012,533.26 | ≈ $75.1m |
+  | `leg-support-aoc-capitol-visitor-center` | $30,190,121.91 | ≈ $75.1m |
+  | `leg-support-loc-crs` | $141,782,158.43 | ≈ $335.5m |
+  | `leg-support-loc-copyright` | $63,321,276.20 | ≈ $213.5m |
+  | `leg-support-loc-nls` | $64,367,416.42 | ≈ $30.5m |
+  | `leg-senate-admin-legal` | $1,165,507.91 | ≈ $2.7m |
+  | `exec-ind-misc-macpac` | $10,186,355.32 | ≈ $276.7m |
+  | `exec-ind-misc-medpac` | $686,932.49 | ≈ $276.7m |
+
+  The Architect's six divisions each publish the identical $75.1m, which is
+  the subtree-size apportionment CLAUDE.md records as the cascade's weakest
+  point, made visible: the accounts run from $17.9m to $156.9m. MACPAC and
+  MedPAC are each published at $276.7m against $10.2m and $0.7m — a factor
+  of 27 and of 400. The Copyright Office's figure is one account of two (its
+  "Payments to Copyright Owners" account prints $641,544.39 separately), so
+  even this table carries a scoping question per row, which is why it is a
+  candidate list and not a reviewed table.
+- **Leads for reviewed rows, none built:** "Capitol Buildings" (plural,
+  $55,027,979.70) against the node `Capitol Building`; "Contingent Expenses,
+  Joint Committee on Taxation" ($13,700,604.31) against `leg-joint-tax`; the
+  Office of Compliance's total ($7,638,007.44), which prints its accounts
+  under the Office of Congressional Workplace Rights, a name no node carries;
+  and the Senate's Secretary and Sergeant at Arms, whose contingent-expense
+  accounts ($18.3m and $184.7m) are not the whole of either office — their
+  staff are paid from "Salaries, Officers and Employees" ($266.5m), which
+  names no office — so neither can be priced from this chapter without the
+  per-office split the Secretary's own report (Part I, §22.1) prints.
+
+**The scale question, one step further and not closed.** §22.5 read four
+explanatory chapters for a scale statement and found none; that stands. Two
+things bear on it. First, the chapter itself is not silent about the mark:
+its footnote 7 prints three opening-balance adjustments with a currency mark
+— "-$5.00", "-$212.41", "$217.41" — against accounts whose balances the
+table prints bare, so the publisher puts a "$" on a figure of this table's
+own kind in this table's own footnote. Second, the chapter's grand total,
+$7,232,968,757.51 for FY2025, sits $813m above the Monthly Treasury
+Statement's FY2025-through-August Legislative Branch figure ($6,419,827,472.21,
+`prior_fytd_net_outly_amt` on the committed 2026-08-31 statement): one month
+apart, and a thousandfold off on any other reading of the scale. Neither is
+a stated scale. **The decisive check needs the network:** the September 2025
+Monthly Treasury Statement's FY2025 Legislative Branch line, from the API
+this project already reads and whose scale it already accepts. If the two
+agree to the cent — or differ by exactly the adjustments the Combined
+Statement's preface says it carries through October 17, 2025 — the scale is
+established structurally by a document this project trusts, the way
+`COLUMN_HEAD_MARK_SOURCE_TYPES` established a column's; if they do not, the
+question goes to the owner.

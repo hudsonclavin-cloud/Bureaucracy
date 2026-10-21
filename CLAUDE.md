@@ -40,7 +40,7 @@ python scripts/validate_published_graph.py       # publish gate on output/graph.
 python scripts/regenerate_published_graph.py     # rebuild output/ offline from the base graph + published anchor, repair the queue, then gate
 python scripts/repair_review_queue.py --dry-run  # what the queue repair would drop, and why
 python scripts/probe_treasury_rows.py            # which Treasury lines match a node; read-only, drives TREASURY_ROW_ALIASES
-python scripts/probe_combined_statement.py       # which Combined Statement accounts match a node; read-only, no scale statement found yet (CURATION.md §22.5)
+python scripts/probe_combined_statement.py       # which Combined Statement unit totals and accounts match a node; refuses unless the chapter's own totals reconcile to the cent; read-only, scale not yet established (CURATION.md §22.5-22.6)
 python scripts/probe_post_titles.py --dry-run    # which post titles an org's own page carries; read-only, drives CURATION.md §8
 python scripts/rename_templated_post_titles.py --dry-run  # templated cabinet titles -> the title an official document gives them
 python scripts/probe_candidate_pages.py --uncovered        # organisations with no candidate page; read-only, no fetch
