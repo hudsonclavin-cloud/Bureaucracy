@@ -1,0 +1,11 @@
+{
+ "fetched_at": "2026-10-21T17:37:23Z",
+ "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date%3Aeq%3A2025-09-30&sort=print_order_nbr&page%5Bsize%5D=1000&page%5Bnumber%5D=1",
+ "status": 200,
+ "robots": "api.fiscaldata.treasury.gov/robots.txt answers 404: nothing published to obey",
+ "user_agent": "bureaucracy-data-pipeline crawler (data_pipeline.crawler.common.request_json)",
+ "bytes": 808089,
+ "sha256": "7c25e0df2983a97acb4c55394de6fbc49f1f7cbe1924b39629324d70b6b9cb12",
+ "error": null,
+ "note": "Fetched with the crawler's own fetch_rows_for_record_date and wrapped as mts_table5_2026-08-31.json is."
+}
