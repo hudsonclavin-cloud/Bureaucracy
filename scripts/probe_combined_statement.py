@@ -36,19 +36,21 @@ independent rendering. What it does, in order:
      unit's figure would be a narrower thing presented as the whole.
   5. Cross-reads every reported figure against the PDF's own text.
 
-This prints a ceiling, not a claim. CURATION.md Sec 22.5 records what blocks
-publication: no document read so far states the scale of these figures in
-words (the chapter prints a "$" only in a footnote of opening-balance
-adjustments), and every match below is a candidate for a reviewed table.
+  6. Reconciles the chapter's own total with the September Monthly Treasury
+     Statement's line for the same unit (combined_statement.reconcile_chapter_scale).
+     Equal to the cent, the chapter's figures are whole dollars: the scale rule
+     the owner granted on 2026-10-21 (CURATION.md Sec 22.7).
+
+This prints a ceiling, not a claim. The scale is now established for a chapter
+that reconciles; what still blocks publication is that every match below is a
+candidate for a reviewed table, not a reviewed identification.
 """
 
 from __future__ import annotations
 
 import argparse
 import json
-import re
 import sys
-import zlib
 from decimal import Decimal
 from pathlib import Path
 from typing import Any
@@ -64,154 +66,19 @@ from data_pipeline.exporter.build_graph import (  # noqa: E402
     is_post_node,
     load_base_graph,
 )
+from data_pipeline.verification.combined_statement import (  # noqa: E402,F401
+    CHAPTER_DIR as FIXTURE_DIR,
+    OFFSETTING_TOTAL,
+    OUTLAYS_COLUMN,
+    ReconciliationError,
+    parse_chapter,
+    pdf_text,
+    reconcile_chapter_scale,
+    strip_candidates,
+)
 from data_pipeline.verification.congress import read_xlsx_rows  # noqa: E402
 
-FIXTURE_DIR = PROJECT_ROOT / "tests" / "fixtures" / "treasury" / "combined_statement" / "cs2025"
 PUBLISHED_GRAPH = PROJECT_ROOT / "output" / "graph.json"
-
-#: The column the chapter prints "Outlays (Net)" in, by the header rows of the
-#: XLSX export (index 9 of 12).
-OUTLAYS_COLUMN = 9
-#: A data row's second cell is its period of availability or "Subtotal".
-PERIOD_PATTERN = re.compile(r"^(\d{4}(-\d{4})?|No Year|Subtotal)$")
-STRUCTURAL_LABELS = {"Fund Resources:", "Appropriations, Outlays, and Balances"}
-TOTAL_PREFIX = "Total, "
-OFFSETTING_TOTAL = "Offsetting Receipts"
-
-TRAILING_ORG_PATTERN = re.compile(r",\s*[^,]+$")
-LEADING_LABEL_PATTERN = re.compile(
-    r"^(Salaries and Expenses|Compensation of Members and Related Administrative Expenses),\s*",
-    re.IGNORECASE,
-)
-
-
-class ReconciliationError(ValueError):
-    """The chapter's own printed totals do not equal what was parsed."""
-
-
-def parse_amount(cell: Any) -> Decimal | None:
-    text = str(cell or "").strip()
-    if not text or text == "----------":
-        return None
-    return Decimal(text.replace(",", ""))
-
-
-def _cells(row: list[Any]) -> list[str]:
-    return [str(cell or "") for cell in row]
-
-
-def parse_chapter(rows: list[list[Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    """Every account and every "Total, <unit>" line of one chapter.
-
-    Raises ReconciliationError unless every unit total equals the sum of its
-    accounts and the unit totals (with the chapter's offsetting receipts)
-    equal the chapter total, all to the cent.
-    """
-    accounts: list[dict[str, Any]] = []
-    totals: list[dict[str, Any]] = []
-    current: dict[str, Any] | None = None
-
-    def close() -> None:
-        if current is not None:
-            current["netOutlays"] = current["_closed"] + sum(
-                (value for value in current["_pending"] if value is not None), Decimal(0)
-            )
-            current["_pending"] = []
-
-    for index, raw in enumerate(rows):
-        row = _cells(raw)
-        if not any(row):
-            continue
-        first = row[0]
-        if first.startswith(TOTAL_PREFIX):
-            close()
-            current = None
-            totals.append({
-                "unit": first[len(TOTAL_PREFIX):].strip(),
-                "rowIndex": index,
-                "netOutlays": parse_amount(row[OUTLAYS_COLUMN]) if len(row) > OUTLAYS_COLUMN else None,
-            })
-            continue
-        if len(row) > OUTLAYS_COLUMN and PERIOD_PATTERN.match(row[1].strip()):
-            if current is None:
-                raise ReconciliationError(f"data row {index} sits outside any account")
-            current["dataRows"] += 1
-            value = parse_amount(row[OUTLAYS_COLUMN])
-            if row[1].strip() == "Subtotal":
-                current["_closed"] += value or Decimal(0)
-                current["_pending"] = []
-                current["subtotalRows"] += 1
-            else:
-                current["_pending"].append(value)
-            continue
-        if first in STRUCTURAL_LABELS:
-            continue
-        if sum(1 for cell in row if cell) == 1:
-            close()
-            current = {"title": first, "rowIndex": index, "_closed": Decimal(0), "_pending": [], "dataRows": 0, "subtotalRows": 0}
-            accounts.append(current)
-    close()
-
-    accounts = [a for a in accounts if a["dataRows"]]
-    for account in accounts:
-        del account["_closed"], account["_pending"]
-
-    # Assign each account to the unit total that closes it, and reconcile.
-    previous = -1
-    chapter_total: dict[str, Any] | None = None
-    unit_sum = Decimal(0)
-    for total in totals:
-        members = [a for a in accounts if previous < a["rowIndex"] < total["rowIndex"]]
-        if total is totals[-1] and not members:
-            chapter_total = total
-            break
-        for account in members:
-            account["unit"] = total["unit"]
-        total["accountCount"] = len(members)
-        if members:
-            parsed = sum((a["netOutlays"] for a in members), Decimal(0))
-            if parsed != total["netOutlays"]:
-                raise ReconciliationError(
-                    f"Total, {total['unit']} prints {total['netOutlays']} but its {len(members)} accounts sum to {parsed}"
-                )
-        unit_sum += total["netOutlays"] or Decimal(0)
-        previous = total["rowIndex"]
-    if chapter_total is None:
-        raise ReconciliationError("no chapter total line found")
-    if unit_sum != chapter_total["netOutlays"]:
-        raise ReconciliationError(
-            f"Total, {chapter_total['unit']} prints {chapter_total['netOutlays']} but the unit totals sum to {unit_sum}"
-        )
-    chapter_total["isChapterTotal"] = True
-    return accounts, totals
-
-
-def pdf_text(path: Path) -> str:
-    """The chapter's PDF as one flat string of its Tj/TJ string operands --
-    enough for a substring check of a printed figure; no spacing attempted."""
-    raw = path.read_bytes()
-    blobs = []
-    for match in re.finditer(rb"stream\r?\n(.*?)endstream", raw, re.DOTALL):
-        try:
-            blobs.append(zlib.decompress(match.group(1)))
-        except zlib.error:
-            continue
-    strings = re.findall(rb"\((?:[^()\\]|\\.)*\)", b"".join(blobs))
-    return b"".join(s[1:-1] for s in strings).decode("latin-1", "ignore")
-
-
-def strip_candidates(title: str) -> list[str]:
-    """What an account title reduces to once the issuing-unit suffix and an
-    account-type prefix are set aside -- candidates, not a chosen name."""
-    candidates = {title}
-    no_suffix = TRAILING_ORG_PATTERN.sub("", title).strip()
-    if no_suffix and no_suffix != title:
-        candidates.add(no_suffix)
-    for base in list(candidates):
-        no_prefix = LEADING_LABEL_PATTERN.sub("", base).strip()
-        if no_prefix and no_prefix != base:
-            candidates.add(no_prefix)
-    return sorted(candidates, key=len)
 
 
 def published_cost_status() -> dict[str, tuple[str | None, Any]]:
@@ -233,6 +100,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--chapter", default="c01", help="chapter stem under tests/fixtures/treasury/combined_statement/cs2025/ (default: c01, the Legislative Branch)")
     parser.add_argument("--base-graph", type=Path, default=DEFAULT_BASE_GRAPH)
+    parser.add_argument("--fiscal-year", type=int, default=2025, help="the completed fiscal year the chapter reports (default: 2025)")
     args = parser.parse_args(argv[1:] if argv else None)
 
     xlsx_path = FIXTURE_DIR / f"{args.chapter}.xlsx"
@@ -269,7 +137,16 @@ def main(argv: list[str] | None = None) -> int:
         return f"published {cost_status} ${amount:,.0f}"
 
     unit_node: dict[str, str] = {}
-    print(f"chapter {args.chapter}: {len(accounts)} accounts in {len(totals) - 1} printed totals; every unit total equals its accounts' sum and the chapter total, to the cent\n")
+    print(f"chapter {args.chapter}: {len(accounts)} accounts in {len(totals) - 1} printed totals; every unit total equals its accounts' sum and the chapter total, to the cent")
+    try:
+        scale = reconcile_chapter_scale(args.chapter, args.fiscal_year)
+        print(
+            f"scale: {scale['chapterTotal']['label']} {scale['chapterTotal']['amountRaw']} equals the "
+            f"{scale['statementLine']['recordDate']} Monthly Treasury Statement's {scale['statementLine']['label']} "
+            f"{scale['statementLine']['amountRaw']} to the cent, so these figures are whole dollars\n"
+        )
+    except ReconciliationError as error:
+        print(f"scale: NOT established for this chapter -- {error}\n")
     print("unit totals the statement prints, matched to exactly one non-post node:")
     for total in totals:
         if total.get("isChapterTotal") or total["unit"] == OFFSETTING_TOTAL:
@@ -321,9 +198,9 @@ def main(argv: list[str] | None = None) -> int:
         print(f"  ${a['netOutlays']:>18,.2f}  [{a['unit']}]  {a['title']!r}")
 
     print(
-        "\nNothing here is a cost claim: no document read so far states the scale of these\n"
-        "figures in words (CURATION.md Sec 22.5), and every match above is a candidate for a\n"
-        "reviewed table, not a published identification."
+        "\nNothing here is a cost claim. The scale is established only where the line above says\n"
+        "so (CURATION.md Sec 22.7), and every match above is a candidate for a reviewed table,\n"
+        "not a published identification."
     )
     return 0
 

@@ -6013,3 +6013,60 @@ Statement's preface says it carries through October 17, 2025 — the scale is
 established structurally by a document this project trusts, the way
 `COLUMN_HEAD_MARK_SOURCE_TYPES` established a column's; if they do not, the
 question goes to the owner.
+
+### 22.7 The check run, and the scale granted (2026-10-21)
+
+**The check.** The September 2025 Monthly Treasury Statement, Table 5, was
+fetched through the crawler's own `fetch_rows_for_record_date` and committed as
+`tests/fixtures/mts_table5_2025-09-30.json` (811 rows, `record_date`
+2025-09-30, its `.meta.json` beside it). Its `Total--Legislative Branch` line
+prints `current_fytd_net_outly_amt` **7232968757.51**; the chapter's "Total,
+Legislative Branch" prints **7,232,968,757.51**. Equal to the cent, so the
+October 17 adjustments the preface mentions do not arise. The statement's own
+section reconciles too (its level-2 lines sum to the total, and gross outlays
+less receipts equal the net), and its Senate ($1,308,849,893.25) and GAO
+($874,100,992.14) lines and its two receipts lines (−$55,930,143.18 and
+−$7,093,118.02, summing to the chapter's −$63,023,261.20) equal the chapter's
+figures exactly.
+
+**The grant.** The owner granted it the same day ("Grant it"), and it is the
+seventh scale rule in `financial_evidence`:
+`RECONCILED_TO_MONTHLY_STATEMENT_SOURCE_TYPES = {"treasury_combined_statement"}`,
+kind `chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent`,
+with `treasury_combined_statement` added as a source type that reports
+`net_outlays` and nothing else. A record must carry `scaleReconciliation`
+— the chapter's total line and the September statement's line for the same
+unit, each with its digest — and the validator refuses it unless the two
+labels name one unit, the two figures are printed to the cent and equal, the
+line is `current_fytd_net_outly_amt` on the statement dated September 30 of
+the record's own fiscal year, the record covers the full year, and the
+evidence quotes both totals beside the record's own bare figure.
+`data_pipeline/verification/combined_statement.py` (the probe's parser, moved
+out of `scripts/`) builds that block from the committed fixtures with both
+digests recomputed (`reconcile_chapter_scale`), and refuses a statement a cent
+off, one whose bytes are not its fetch record, one of the wrong date, a year
+with no committed statement, and a chapter whose bytes are not its fetch
+record. `tests/test_financial_evidence.py::ChapterReconciledToMonthlyStatementTestCase`
+corrupts the record's block sixteen ways, and `tests/test_combined_statement.py`
+builds a record for the Capitol Grounds account from the real fixtures and
+files it under the new kind.
+
+**What the grant is, and what it is not.**
+
+- It establishes the scale of a chapter that reconciles, and is per chapter by
+  construction: each record carries its own chapter's reconciliation, so
+  another chapter needs its own September line before anything from it can
+  file. Today that is the Legislative Branch only.
+- It is consistency, not independent verification: both documents come from
+  the Bureau of the Fiscal Service's own ledger.
+- It rests on the Monthly Treasury Statement's API figures being whole
+  dollars, which this project has always assumed of the anchor and has never
+  had to state; this grant makes that assumption load-bearing for a second
+  document.
+- It publishes nothing. No derive script, exporter field or gate check exists
+  for this source, and the probe still prints a ceiling. What stands between
+  the eleven accounts of §22.6's table and the graph is a reviewed table of
+  identifications (with the Copyright Office's second account and §22.6's
+  other scoping questions decided per row), then a derive step, a published
+  field and a gate check that re-derives the block from the fixtures, which
+  the rule's own comment says the gate must do before anything publishes.

@@ -250,6 +250,12 @@ SOURCE_TYPES = {
     # (2 U.S.C. 4108), Part II: a committee's Inquiries and Investigations
     # account, one summary block per funding resolution.
     "senate_secretary_report",
+    # The Combined Statement of Receipts, Outlays, and Balances, Part Three: a
+    # completed fiscal year's net outlays per appropriation or fund account,
+    # closed by unit and chapter totals. States its scale nowhere in words;
+    # takes the reconciliation rule below. See
+    # data_pipeline/verification/combined_statement.py.
+    "treasury_combined_statement",
 }
 
 #: Documents that state their scale by *printing* it rather than by declaring
@@ -393,6 +399,39 @@ COLUMN_HEAD_MARK_SOURCE_TYPES = {"opm_pay_table", "us_code_pay_schedules"}
 #: Tried last. Kind: `currency_mark_on_the_statements_own_total_bounds_the_column`.
 STATEMENT_TOTAL_BOUNDED_SOURCE_TYPES = {"house_statement_of_disbursements"}
 
+#: A seventh way, granted by the owner on 2026-10-21 to exactly one source
+#: type: a document whose scale is established by reconciling its own printed
+#: total, to the cent, with a line of a document this project already reads as
+#: whole dollars. The Combined Statement's Part Three chapters print bare
+#: figures to the cent ("7,232,968,757.51") and say "dollars", "thousands" or
+#: "millions" nowhere, nor do the four explanatory chapters committed beside
+#: them (CURATION.md Sec 22.5). The Monthly Treasury Statement's Table 5 is the
+#: document the cost cascade's anchor has always been read from in whole
+#: dollars, and its statement dated September 30 of a fiscal year carries that
+#: whole year's net outlays in `current_fytd_net_outly_amt`. Where the chapter's
+#: "Total, <unit>" line equals that statement's "Total--<unit>" line to the
+#: cent, the chapter is in whole dollars: any other scale would put the two
+#: figures a thousandfold apart. CURATION.md Sec 22.6 measured exactly that for
+#: the Legislative Branch, and Sec 22.7 records the grant.
+#:
+#: The record carries the reconciliation as `scaleReconciliation`
+#: ({chapterTotal: {label, amountRaw, documentSha256}, statementLine: {label,
+#: amountRaw, recordDate, field, documentSha256}}), and the validator checks its
+#: shape: the two labels name one unit, the two figures are equal to the cent
+#: and printed to the cent, the line is the September statement's year-to-date
+#: field for the record's own fiscal year, the record covers the full year, and
+#: the evidence quotes both totals and the record's own bare figure.
+#: `combined_statement.reconcile_chapter_scale` is what re-reads both committed
+#: fixtures, digests recomputed, and builds the block; a block a derive step
+#: did not build from the fixtures is what the release gate must refuse once
+#: anything publishes from this source. The grant is per chapter by
+#: construction -- each record carries its own chapter's reconciliation -- and
+#: it establishes the scale only: which node an account names is a reviewed
+#: identification this rule says nothing about. Tried last. Kind:
+#: `chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent`.
+RECONCILED_TO_MONTHLY_STATEMENT_SOURCE_TYPES = {"treasury_combined_statement"}
+MONTHLY_STATEMENT_YEAR_FIELD = "current_fytd_net_outly_amt"
+
 #: Which bases a source can actually report. A Congressional Justification
 #: cannot report an audited net cost; nothing stopped that being claimed.
 #: CJs *do* print prior-year actual columns, so realized bases are allowed
@@ -422,6 +461,7 @@ SOURCE_BASES = {
     "us_code_stated_rate": {"basic_pay"},
     "house_statement_of_disbursements": {"disbursements"},
     "senate_secretary_report": {"disbursements"},
+    "treasury_combined_statement": {"net_outlays"},
 }
 
 SCOPE_MATCHES = {"exact", "parent", "child", "broader_account", "proxy", "ambiguous"}
@@ -715,6 +755,63 @@ def _statement_total_bounds_the_column(
     return total_text
 
 
+_CENTS_FIGURE = re.compile(r"-?[\d,]*\d\.\d\d")
+
+
+def _chapter_total_reconciles_to_the_monthly_statement(
+    record: Mapping[str, Any], evidence: str, amount_raw: Any, source_type: str, units: str
+) -> str:
+    """Whether the record's chapter total equals the September Monthly Treasury
+    Statement's line for the same unit, to the cent. See
+    `RECONCILED_TO_MONTHLY_STATEMENT_SOURCE_TYPES`.
+
+    Returns "<chapter label> = <statement label>", or "" when the record does
+    not show this.
+    """
+    if units != "usd" or source_type not in RECONCILED_TO_MONTHLY_STATEMENT_SOURCE_TYPES:
+        return ""
+    block = record.get("scaleReconciliation")
+    if not isinstance(block, Mapping):
+        return ""
+    chapter, line = block.get("chapterTotal"), block.get("statementLine")
+    if not isinstance(chapter, Mapping) or not isinstance(line, Mapping):
+        return ""
+    chapter_label, line_label = _text(chapter.get("label")), _text(line.get("label"))
+    if not chapter_label.startswith("Total, ") or not line_label.startswith("Total--"):
+        return ""
+    unit_key = canonical_name_key(chapter_label[len("Total, "):])
+    if not unit_key or unit_key != canonical_name_key(line_label[len("Total--"):]):
+        return ""
+    chapter_raw, line_raw = _text(chapter.get("amountRaw")), _text(line.get("amountRaw"))
+    if not _CENTS_FIGURE.fullmatch(chapter_raw) or not _CENTS_FIGURE.fullmatch(line_raw):
+        return ""
+    chapter_value = float(chapter_raw.replace(",", ""))
+    if chapter_value == 0 or chapter_raw.replace(",", "") != line_raw.replace(",", ""):
+        return ""
+    if _text(line.get("field")) != MONTHLY_STATEMENT_YEAR_FIELD:
+        return ""
+    fiscal_year = record.get("fiscalYear")
+    if isinstance(fiscal_year, bool) or not isinstance(fiscal_year, int):
+        return ""
+    if _text(line.get("recordDate")) != f"{fiscal_year}-09-30":
+        return ""
+    if _text(record.get("periodCoverage")) != "full_fiscal_year":
+        return ""
+    for part in (chapter, line):
+        if not _SHA256.match(_text(part.get("documentSha256")).lower()):
+            return ""
+    for needed in (chapter_label, line_label, chapter_raw, line_raw):
+        if needed.casefold() not in evidence:
+            return ""
+    raw = _text(amount_raw)
+    if not _PLAIN_FIGURE.fullmatch(raw):
+        return ""
+    for match in re.finditer(rf"(?<![\d,.]){re.escape(raw)}(?![\d,]|\.\d)", evidence):
+        if not evidence[: match.start()].rstrip().endswith("$"):
+            return f"{chapter_label} = {line_label}"
+    return ""
+
+
 def _is_real_number(value: Any) -> bool:
     """A number, not a bool, and finite.
 
@@ -953,7 +1050,12 @@ def validate_record(
         bounded = "" if (printed or dictionary or column_head or computed) else _statement_total_bounds_the_column(
             record, units_evidence, record.get("amountRaw"), source_type, units
         )
-        if not printed and not dictionary and not column_head and not computed and not bounded:
+        reconciled = "" if (printed or dictionary or column_head or computed or bounded) else (
+            _chapter_total_reconciles_to_the_monthly_statement(
+                record, units_evidence, record.get("amountRaw"), source_type, units
+            )
+        )
+        if not printed and not dictionary and not column_head and not computed and not bounded and not reconciled:
             raise Rejected(
                 f"{node_id}: unitsEvidence {record.get('unitsEvidence')!r} states no scale "
                 f"(expected one of {UNIT_PHRASES[units]})"
@@ -966,8 +1068,10 @@ def validate_record(
             units_evidence_kind = "currency_mark_on_the_columns_first_figure"
         elif computed:
             units_evidence_kind = "currency_mark_on_the_figure_the_record_is_computed_from"
-        else:
+        elif bounded:
             units_evidence_kind = "currency_mark_on_the_statements_own_total_bounds_the_column"
+        else:
+            units_evidence_kind = "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
     else:
         if stated != units:
             raise Rejected(

@@ -55,7 +55,7 @@ can record is always a figure the nomination side can name.
 | `metric` | What it answers | Source system | Notes |
 |---|---|---|---|
 | `audited_net_cost` | What did this entity cost? | `agency_financial_report` | Audited, accrual basis. The best answer and the only audited one. |
-| `net_outlays` | What cash went out, net of receipts? | `treasury_mts`, `usaspending_file_ab` | What this graph already publishes. Not cost. |
+| `net_outlays` | What cash went out, net of receipts? | `treasury_mts`, `treasury_combined_statement`, `usaspending_file_ab` | What this graph already publishes. Not cost. |
 | `gross_outlays` | What cash went out, before receipts? | `treasury_mts`, `usaspending_file_ab` | The statement prints both. On a large agency they differ by billions. File A reports only this, fiscal-year-to-date. |
 | `obligations` | What was committed? | `usaspending_file_ab` | A commitment, not spending. |
 | `budget_authority` | What was made available? | `usaspending_file_ab`, `omb_public_budget` | A plan, not an outcome. |
@@ -134,6 +134,7 @@ a section check, and `USASPENDING_NAME_ALIASES` publishes what it reaches as
 | `whitehouse_staff_report` | The title exactly as the Annual Report to Congress on White House Staff prints it |
 | `opm_plum_current_export` | The Agency, Organization and Position Title exactly as OPM's current PLUM export prints them; a row is an incumbency, so the figure is one listing's and the record is a proxy |
 | `us_code_stated_rate` | The section's citation, e.g. `3 U.S.C. 102`, whose sentence naming the office and stating the figure must be in that section's OPERATIVE text. The result is a stated rate for the office the section names; which node that office is stays a reviewed identification, so the record is a proxy |
+| `treasury_combined_statement` | The appropriation or fund account title exactly as the Combined Statement's Part Three chapter prints it, plus the chapter (e.g. `c01`) and fiscal year. The chapter's own total must equal the September Monthly Treasury Statement's `Total--` line for the same unit to the cent (`combined_statement.reconcile_chapter_scale`, CURATION.md §22.7), and an account naming the unit whose own total closes it is one account of several, not the unit. Nothing publishes from this source yet |
 
 The list is `financial_evidence.SOURCE_TYPES`, imported rather than copied,
 so a source the evidence side can record is always one this side can name.

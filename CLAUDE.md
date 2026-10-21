@@ -40,7 +40,7 @@ python scripts/validate_published_graph.py       # publish gate on output/graph.
 python scripts/regenerate_published_graph.py     # rebuild output/ offline from the base graph + published anchor, repair the queue, then gate
 python scripts/repair_review_queue.py --dry-run  # what the queue repair would drop, and why
 python scripts/probe_treasury_rows.py            # which Treasury lines match a node; read-only, drives TREASURY_ROW_ALIASES
-python scripts/probe_combined_statement.py       # which Combined Statement unit totals and accounts match a node; refuses unless the chapter's own totals reconcile to the cent; read-only, scale not yet established (CURATION.md §22.5-22.6)
+python scripts/probe_combined_statement.py       # which Combined Statement unit totals and accounts match a node; refuses unless the chapter's own totals reconcile to the cent; checks the chapter total against the September MTS line (the scale rule granted 2026-10-21); read-only (CURATION.md §22.5-22.7)
 python scripts/probe_post_titles.py --dry-run    # which post titles an org's own page carries; read-only, drives CURATION.md §8
 python scripts/rename_templated_post_titles.py --dry-run  # templated cabinet titles -> the title an official document gives them
 python scripts/probe_candidate_pages.py --uncovered        # organisations with no candidate page; read-only, no fetch
@@ -5502,6 +5502,25 @@ the Treasury's net outlays and not the cost, and the estimate stays withheld
 behind the same button. 46 nodes; the provenance line and the reading guide
 count them as a fourth group; `scripts/frontend_smoke.mjs` opens one of each
 kind including this one. Recorded in `CURATION.md` §22.
+
+**The Combined Statement's scale, granted (since 2026-10-21, the owner's
+decision).** The Combined Statement of Receipts, Outlays, and Balances prints a
+completed year's net outlays per appropriation account, bare and to the cent,
+and states its scale nowhere in words. The Legislative Branch chapter's total
+($7,232,968,757.51 for FY2025) equals the September 2025 Monthly Treasury
+Statement's `Total--Legislative Branch` line to the cent
+(`tests/fixtures/mts_table5_2025-09-30.json`), and the owner granted that as a
+seventh scale rule: `financial_evidence.RECONCILED_TO_MONTHLY_STATEMENT_SOURCE_TYPES`
+(`treasury_combined_statement`, `net_outlays` only, kind
+`chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent`). A
+record must carry the reconciliation (`scaleReconciliation`: both total lines,
+the statement's date and field, both digests), which
+`combined_statement.reconcile_chapter_scale` builds from the committed fixtures
+with both digests recomputed. It is per chapter by construction, it is
+consistency between two Fiscal Service documents rather than independent
+verification, and it publishes nothing: no derive step, field or gate check
+exists for this source yet, and the accounts that would reach a node still
+need a reviewed table (`CURATION.md` §22.6–22.7).
 
 **Where an agency's money goes (`object_class.py`, since 2026-10-08, the
 owner's ask: "a good total cost of everyone combined ... we just want to see

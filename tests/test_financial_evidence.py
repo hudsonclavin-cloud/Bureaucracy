@@ -342,6 +342,106 @@ class ColumnHeadMarkTestCase(unittest.TestCase):
             ), ORG)
 
 
+class ChapterReconciledToMonthlyStatementTestCase(unittest.TestCase):
+    """The seventh scale rule, granted by the owner on 2026-10-21: the Combined
+    Statement prints bare figures to the cent and states no scale in words, and
+    its chapter total equals the September Monthly Treasury Statement's line
+    for the same unit to the cent. Both directions: the honest record files
+    under its own kind, and each way the reconciliation could be faked or
+    misapplied is refused."""
+
+    CHAPTER = {"label": "Total, Legislative Branch", "amountRaw": "7,232,968,757.51", "documentSha256": "c" * 64}
+    LINE = {
+        "label": "Total--Legislative Branch", "amountRaw": "7232968757.51", "recordDate": "2025-09-30",
+        "field": "current_fytd_net_outly_amt", "documentSha256": "d" * 64,
+    }
+
+    def _cs(self, chapter=None, line=None, **over):
+        chapter = dict(self.CHAPTER, **(chapter or {}))
+        line = dict(self.LINE, **(line or {}))
+        record = {
+            "nodeId": "gsa-cbca",
+            "amount": 17858652.41, "amountRaw": "17,858,652.41", "units": "usd",
+            "normalizedMultiplier": 1,
+            "unitsEvidence": (
+                f"{chapter['label']} {chapter['amountRaw']} equals the September statement's "
+                f"{line['label']} {line['amountRaw']}; Capitol Grounds, Architect of the Capitol 17,858,652.41"
+            ),
+            "scaleReconciliation": {"chapterTotal": chapter, "statementLine": line},
+            "costBasis": "net_outlays", "fiscalYear": 2025, "periodCoverage": "full_fiscal_year",
+            "amountScope": "Capitol Grounds, Architect of the Capitol", "scopeMatch": "proxy", "rollupRole": "line",
+            "sourceType": "treasury_combined_statement",
+            "sourceUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+            "documentSha256": "c" * 64, "retrievedAt": "2026-10-21T00:00:00Z",
+            "locator": {"chapter": "c01", "account": "Capitol Grounds, Architect of the Capitol", "column": "Outlays (Net)"},
+            "quote": "Subtotal 001 0108 000 17,845,036.49 18,900,000.00 17,858,652.41",
+            "financialEvidenceStatus": "partial",
+        }
+        record.update(over)
+        return record
+
+    def _refused(self, record):
+        with self.assertRaises(fe.Rejected):
+            fe.validate_record(record, ORG)
+
+    def test_a_reconciled_chapter_files_under_its_own_kind(self):
+        out = fe.validate_record(self._cs(), ORG)
+        self.assertEqual(out["unitsEvidenceKind"], "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent")
+        self.assertEqual(fe.classify(out), "partial")
+
+    def test_totals_a_cent_apart_are_refused(self):
+        self._refused(self._cs(line={"amountRaw": "7232968757.52"}))
+
+    def test_totals_off_by_a_thousandfold_are_refused(self):
+        self._refused(self._cs(line={"amountRaw": "7232968.76"}))
+
+    def test_a_total_not_printed_to_the_cent_is_refused(self):
+        self._refused(self._cs(chapter={"amountRaw": "7,232,968,757"}, line={"amountRaw": "7232968757"}))
+
+    def test_the_two_lines_must_name_one_unit(self):
+        self._refused(self._cs(line={"label": "Total--The Judiciary"}))
+
+    def test_the_chapter_line_must_be_a_total_line(self):
+        self._refused(self._cs(chapter={"label": "Legislative Branch"}))
+
+    def test_a_statement_not_dated_the_last_day_of_the_year_is_refused(self):
+        self._refused(self._cs(line={"recordDate": "2025-08-31"}))
+
+    def test_the_statement_must_be_the_records_own_fiscal_year(self):
+        self._refused(self._cs(fiscalYear=2024))
+
+    def test_the_prior_year_column_is_not_the_years_figure(self):
+        self._refused(self._cs(line={"field": "prior_fytd_net_outly_amt"}))
+
+    def test_a_part_year_record_is_refused(self):
+        self._refused(self._cs(periodCoverage="fiscal_year_to_date", periodAsOf="2025-09-30"))
+
+    def test_each_document_needs_its_digest(self):
+        self._refused(self._cs(line={"documentSha256": "not-a-digest"}))
+
+    def test_the_evidence_must_quote_the_statement_line(self):
+        self._refused(self._cs(unitsEvidence="Total, Legislative Branch 7,232,968,757.51; Capitol Grounds 17,858,652.41"))
+
+    def test_the_evidence_must_quote_the_records_own_figure(self):
+        record = self._cs()
+        record["unitsEvidence"] = record["unitsEvidence"].replace("17,858,652.41", "17,845,036.49")
+        self._refused(record)
+
+    def test_no_reconciliation_means_the_ordinary_refusal(self):
+        with self.assertRaises(fe.Rejected) as ctx:
+            fe.validate_record(self._cs(scaleReconciliation=None), ORG)
+        self.assertIn("states no scale", str(ctx.exception))
+
+    def test_the_rule_is_granted_to_the_combined_statement_only(self):
+        self._refused(self._cs(
+            sourceType="congressional_justification",
+            sourceUrl="https://www.gsa.gov/cdnstatic/fy2026-cj.pdf",
+        ))
+
+    def test_the_combined_statement_reports_net_outlays_only(self):
+        self._refused(self._cs(costBasis="obligations"))
+
+
 class MinusDollarsTestCase(unittest.TestCase):
     """The computed-figure rule's fourth operation (2026-10-07): a statute
     pays a post a stated number of dollars LESS than another officer -- 2
