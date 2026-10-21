@@ -150,8 +150,8 @@ try {
   // panel, recomputed here from the served graph in the order js/ui.js
   // declares (SOURCED_FIGURE_STAND_IN_ORDER) so the checks below hold the
   // page to the data rather than to itself.
-  const SOURCED_FIGURE_KINDS = ["fileA", "omb", "audited"];
-  const SOURCED_FIGURE_FIELDS = { fileA: ["usaspendingOutlays", "amount"], omb: ["ombBudget", "outlays"], audited: ["auditedNetCost", "netCostUsd"] };
+  const SOURCED_FIGURE_KINDS = ["fileA", "omb", "audited", "disbursed"];
+  const SOURCED_FIGURE_FIELDS = { fileA: ["usaspendingOutlays", "amount"], omb: ["ombBudget", "outlays"], audited: ["auditedNetCost", "netCostUsd"], disbursed: ["committeeDisbursements", "amount"] };
   const sourcedFigureAmountOf = (n, kind) => {
     const [field, amountField] = SOURCED_FIGURE_FIELDS[kind];
     const block = n[field];
@@ -166,7 +166,7 @@ try {
     return SOURCED_FIGURE_KINDS.find((kind) => sourcedFigureAmountOf(n, kind) !== null) || null;
   };
   const signedDollars = (amount) => `${amount < 0 ? "-" : ""}$${Math.round(Math.abs(amount)).toLocaleString("en-US")}`;
-  const hasSourcedFigureBlock = (n) => Boolean(n.usaspendingOutlays || n.ombBudget || n.auditedNetCost);
+  const hasSourcedFigureBlock = (n) => Boolean(n.usaspendingOutlays || n.ombBudget || n.auditedNetCost || n.committeeDisbursements);
 
   // "How to read this" — the first-visit explainer. A fresh browser context
   // has an empty localStorage, so this is exactly the state a first-time
@@ -348,7 +348,7 @@ try {
   // year, and its source sits on a row of its own.
   // The stylesheet upper-cases the term and innerText reports the rendered
   // text, so the match is case-insensitive.
-  const directorySourcedTerms = { fileA: /^Gross outlays — USAspending File A$/i, omb: /^Outlays — OMB Public Budget Database$/i, audited: /^Audited net cost — Treasury Statement of Net Cost$/i };
+  const directorySourcedTerms = { fileA: /^Gross outlays — USAspending File A$/i, omb: /^Outlays — OMB Public Budget Database$/i, audited: /^Audited net cost — Treasury Statement of Net Cost$/i, disbursed: /^Paid out — (House Statement of Disbursements|Senate Secretary's report)$/i };
   for (const kind of SOURCED_FIGURE_KINDS) {
     const node = allNodes.find((n) => sourcedKindOf(n) === kind && reachable(n));
     if (!node) {
@@ -921,6 +921,7 @@ try {
     fileA: /^GROSS OUTLAYS — USASPENDING FILE A$/,
     omb: /^OUTLAYS — OMB PUBLIC BUDGET DATABASE$/,
     audited: /^AUDITED NET COST — TREASURY STATEMENT OF NET COST$/,
+    disbursed: /^PAID OUT — (HOUSE STATEMENT OF DISBURSEMENTS|SENATE SECRETARY'S REPORT)$/,
   };
   const sourcedCounts = {};
   for (const kind of SOURCED_FIGURE_KINDS) sourcedCounts[kind] = allNodes.filter((n) => sourcedKindOf(n) === kind).length;
@@ -948,7 +949,7 @@ try {
     check(`the headline is not called Not available (${kind})`, !/Not available/.test(amount), amount);
     const period = await text("#info-stats .info-cost-period");
     const block = node[SOURCED_FIGURE_FIELDS[kind][0]];
-    check(`the period line is read off the block (${kind})`, period.includes(`FY${block.fiscalYear}`) && (kind !== "fileA" || period.includes(block.periodAsOf)) && (kind !== "audited" || period.includes(block.statementDate)), period);
+    check(`the period line is read off the block (${kind})`, (kind === "disbursed" ? period.includes(String(block.period.start).slice(0, 4)) : period.includes(`FY${block.fiscalYear}`)) && (kind !== "fileA" || period.includes(block.periodAsOf)) && (kind !== "audited" || period.includes(block.statementDate)), period);
     check(`the period line says it is not the cost (${kind})`, /not the cost/.test(period), period);
     if (kind === "omb") {
       check("the OMB headline says the figure is a sum of account rows OMB never prints", period.includes(`the sum of ${block.outlayAccountRows.toLocaleString("en-US")} account rows`) && /not a figure OMB prints/.test(period), period);

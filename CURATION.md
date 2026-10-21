@@ -5769,9 +5769,14 @@ implied at their siblings' rate ($3.80m → $3.72m). 46 shares weighted by a
 payout, 3 implied. No measured cost and no cost status moved.
 `docs/COST_COVERAGE.md`'s "with a sourced figure beside" class 62 → 68.
 
-**Not the headline, and the decision left open.** The stand-in order the
-owner decided on 2026-10-07 names File A, OMB and audited net cost; a
-quarter's cash from the House's disbursing office is a different clock again.
-Whether it may head an officer office (and a committee) is the owner's
-decision. What would change it: nothing in the data — it is a presentation
-rule.
+**The headline, decided the same evening (2026-10-20): yes.** The owner
+answered "yes" to whether a chamber's disbursement figure may head a
+committee's or an officer office's panel. It is the fourth entry in the
+sourced-figure order (`disbursed`, after File A, OMB and audited net cost; no
+node carries more than one of them today, so the order decides nothing yet),
+headed "PAID OUT — HOUSE STATEMENT OF DISBURSEMENTS" or "… SENATE SECRETARY'S
+REPORT" with the period and "cash paid out for this committee's account; not
+the Treasury's net outlays, and not the cost", the hollow badge every
+unmeasured figure wears, and the estimate still withheld behind the same
+"Show the estimate" button. 46 nodes (40 committees, 6 officer offices); the
+reading guide and the provenance line count them as a fourth group.

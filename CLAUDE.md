@@ -5490,11 +5490,17 @@ moved and nothing else — the Clerk $34.2m → $14.4m, the Sergeant at Arms $3.
 → $18.9m, the CAO $45.6m → $52.1m, the Chaplain and the Parliamentarian
 implied at their siblings' rate ($3.80m → $3.72m); 46 shares weighted by a
 payout, 3 implied; `docs/COST_COVERAGE.md`'s "with a sourced figure beside"
-class 62 → 68. The figure is not the headline: the stand-in order the owner
-decided on 2026-10-07 names File A, OMB and audited net cost, and a quarter's
-cash from a chamber's disbursing office is a different clock again, so whether
-it may head an officer office is the owner's decision, recorded in
-`CURATION.md` §22 beside the triage of the fifth research pass that led here.
+class 62 → 68. **It is the headline since the same evening, the owner's
+decision ("yes"):** `SOURCED_FIGURE_STAND_IN_ORDER` (and the directory's
+`SOURCED_FIGURE_ORDER`) gained a fourth entry, `disbursed`, last, because no
+committee or officer office carries File A, OMB or an audited figure and the
+order decides nothing today. The heading is "PAID OUT — HOUSE STATEMENT OF
+DISBURSEMENTS" (or the Senate Secretary's report), the period line is the
+block's own period and says it is cash paid out for the unit's account, not
+the Treasury's net outlays and not the cost, and the estimate stays withheld
+behind the same button. 46 nodes; the provenance line and the reading guide
+count them as a fourth group; `scripts/frontend_smoke.mjs` opens one of each
+kind including this one. Recorded in `CURATION.md` §22.
 
 **Where an agency's money goes (`object_class.py`, since 2026-10-08, the
 owner's ask: "a good total cost of everyone combined ... we just want to see

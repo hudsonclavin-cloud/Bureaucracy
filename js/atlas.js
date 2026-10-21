@@ -533,7 +533,23 @@ const SOURCED_FIGURE_ORDER = [
   ["fileA", "usaspendingOutlays", "amount"],
   ["omb", "ombBudget", "outlays"],
   ["audited", "auditedNetCost", "netCostUsd"],
+  // Last, and alone on every node that carries it (a committee or one of the
+  // House's officer offices): what the chamber's own report says it paid out
+  // for the unit's account, since 2026-10-20.
+  ["disbursed", "committeeDisbursements", "amount"],
 ];
+
+// The period a disbursement block covers, as the panel prints it.
+function disbursedPeriodLabel(block) {
+  const period = block.period || {};
+  const fmt = (iso) => {
+    const date = new Date(`${iso}T00:00:00Z`);
+    return Number.isNaN(date.getTime())
+      ? String(iso || "")
+      : date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
+  };
+  return `${fmt(period.start)} – ${fmt(period.end)}`;
+}
 
 function blockFiscalYear(value) {
   const text = String(value ?? "").trim();
@@ -582,6 +598,21 @@ function describeSourcedFigure(node) {
           String(block.precisionNote || "").includes("detail below millions is not available") ? ` The file is in thousands of dollars and, in OMB's words, "detail below millions is not available".` : ""
         } Not this unit's cost.`,
         figureSource: { url: block.url, label: "OMB Public Budget Database (govinfo.gov)" },
+      };
+    }
+    if (kind === "disbursed") {
+      const senate = block.chamber === "senate";
+      const unit = block.unitKind === "house_officer_office" ? "office" : "committee";
+      const names = (block.listedNames || []).map((name) => `"${name}"`).join(" and ");
+      const count = Number(block.componentCount) || 0;
+      return {
+        kind, amount: printed, label: badge,
+        term: senate ? "Paid out — Senate Secretary's report" : "Paid out — House Statement of Disbursements",
+        period: `${disbursedPeriodLabel(block)} — cash paid out for this ${unit}'s account; not the Treasury's net outlays, and not the cost`,
+        note: `${senate ? "The Senate" : "The House"} paid out ${printed} for this ${unit === "office" ? "officer's own organisation" : "committee's office"} over ${disbursedPeriodLabel(block)}, from ${senate ? "the Report of the Secretary of the Senate" : "the House's Statement of Disbursements"}, which lists the ${unit} as ${names}.${
+          count > 1 ? ` The report prints no single total; the figure is the sum of the ${count} totals it prints, which this project added up.` : ""
+        }${block.caveat ? ` ${String(block.caveat).trim()}` : ""} It is cash paid out for the ${unit}'s account over that period — not the Treasury's net outlays, not the estimate, and not the cost.`,
+        figureSource: { url: (block.document && block.document.url) || block.url, label: senate ? "Report of the Secretary of the Senate (govinfo.gov)" : "House Statement of Disbursements (house.gov)" },
       };
     }
     return {

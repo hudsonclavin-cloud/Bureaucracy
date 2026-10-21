@@ -85,11 +85,13 @@ CLASSES = {
         "Disbursements paid out for the officer's organisation over a quarter. Each is on the "
         "panel today; none is headed COST, because each measures something different from the "
         "Treasury's net outlays on a different clock.",
-        "The decision is the owner's, not a build: whether the headline may fall back to one of "
-        "these, labelled by its basis and period, when the Treasury prints no line — the same move "
-        "the panel makes since 2026-10-05 for a post's salary. Measured on the 94 nodes that carry "
-        "both, not one OMB FY2025 figure agrees with the Treasury line within 1%, so a fallback "
-        "would be a different number under a different label, never the same claim.",
+        "Decided by the owner: the headline falls back to one of these, labelled by its basis and "
+        "period, when the Treasury prints no line (File A, OMB and audited net cost since "
+        "2026-10-07; a chamber's payout for a committee or an officer office since 2026-10-20) — "
+        "the same move the panel makes for a post's salary. The estimate stays withheld behind its "
+        "button. Measured on the 94 nodes that carry both, not one OMB FY2025 figure agrees with "
+        "the Treasury line within 1%, so the fallback is a different number under a different "
+        "label, never the same claim.",
     ),
     "estimate": (
         "Estimate — no sourced figure of any kind",

@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261020a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261020a";
+import { createGovernmentGraph } from "./graph.js?v=20261020b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261020b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -245,7 +245,7 @@ function summariseGraph(root) {
     placed: 0, orgEdges: 0, unreachable: 0, posts: 0, paidPosts: 0,
     allocated: 0, noFigure: 0, postsWithoutFigure: 0,
     orgs: 0, orgsSourced: 0, orgsUnread: 0, orgsHostRefuses: 0,
-    sourcedFigure: 0, sourcedFigureFileA: 0, sourcedFigureOmb: 0, sourcedFigureAudited: 0,
+    sourcedFigure: 0, sourcedFigureFileA: 0, sourcedFigureOmb: 0, sourcedFigureAudited: 0, sourcedFigureDisbursed: 0,
     sourcedFigureWithEstimate: 0, sourcedFigureNoFigure: 0,
   };
   const stack = [root];
@@ -298,6 +298,7 @@ function summariseGraph(root) {
       if (sourced.kind === "fileA") count.sourcedFigureFileA += 1;
       else if (sourced.kind === "omb") count.sourcedFigureOmb += 1;
       else if (sourced.kind === "audited") count.sourcedFigureAudited += 1;
+      else if (sourced.kind === "disbursed") count.sourcedFigureDisbursed += 1;
       if (status === "allocated" || status === "scaled_official") count.sourcedFigureWithEstimate += 1;
       if (status === "unavailable" || !status) count.sourcedFigureNoFigure += 1;
     }
@@ -336,7 +337,7 @@ function describeProvenance(count) {
     `${count.noFigure.toLocaleString()} with no cost figure at all, ${count.postsWithoutFigure.toLocaleString()} of them posts, which have no budget to divide`,
     // Its own clause, never folded into the measured count: a figure of
     // another kind, headed as what it is.
-    `${count.sourcedFigure.toLocaleString()} organisations without a measured cost headed instead by a sourced figure of another kind (${count.sourcedFigureFileA.toLocaleString()} File A gross outlays, ${count.sourcedFigureOmb.toLocaleString()} OMB completed-year outlays, ${count.sourcedFigureAudited.toLocaleString()} audited net cost)`,
+    `${count.sourcedFigure.toLocaleString()} organisations without a measured cost headed instead by a sourced figure of another kind (${count.sourcedFigureFileA.toLocaleString()} File A gross outlays, ${count.sourcedFigureOmb.toLocaleString()} OMB completed-year outlays, ${count.sourcedFigureAudited.toLocaleString()} audited net cost, ${count.sourcedFigureDisbursed.toLocaleString()} a chamber's payout for the unit's own account)`,
     `${count.sourced.toLocaleString()} of ${count.nodes.toLocaleString()} nodes carry a source`,
     `${count.placed.toLocaleString()} of ${count.orgEdges.toLocaleString()} organisation placements evidenced by the parent's official page (${count.unreachable.toLocaleString()} unreachable: parent has no page)`,
     "the descriptions carry no citation",
@@ -371,8 +372,8 @@ function readingGuidePoints(count) {
       + `${count.sourcedFigure.toLocaleString()} organisations without a measured cost show, at the top of their `
       + `panel, a figure of another kind that a named source publishes for them — gross outlays from `
       + `USAspending (${count.sourcedFigureFileA.toLocaleString()}), the sum of OMB's budget accounts for a `
-      + `completed year (${count.sourcedFigureOmb.toLocaleString()}), or the Treasury's audited net cost `
-      + `(${count.sourcedFigureAudited.toLocaleString()}). Each is headed as what it is, with its year and `
+      + `completed year (${count.sourcedFigureOmb.toLocaleString()}), the Treasury's audited net cost `
+      + `(${count.sourcedFigureAudited.toLocaleString()}), or, for a House or Senate committee or one of the House's officer offices, what the chamber's own report says it paid out for the unit's account (${count.sourcedFigureDisbursed.toLocaleString()}). Each is headed as what it is, with its year and `
       + `its basis, and none is the cost or counted as measured; `
       + `${count.sourcedFigureWithEstimate.toLocaleString()} of them still hold an estimate behind the box, and `
       + `${count.sourcedFigureNoFigure.toLocaleString()} are among the ones with no cost figure.`,
@@ -3045,6 +3046,12 @@ const SOURCED_FIGURE_STAND_IN_ORDER = [
   ["fileA", (node) => nonZeroBlock(node.usaspendingOutlays, "amount")],
   ["omb", (node) => nonZeroBlock(node.ombBudget, "outlays")],
   ["audited", (node) => nonZeroBlock(node.auditedNetCost, "netCostUsd")],
+  // Last, and only ever alone: a committee or one of the House's officer
+  // offices carries no File A, OMB or audited figure, so the order among the
+  // four never decides anything today. It is a chamber's own report of what it
+  // paid out for the unit's account over a quarter or a half-year (since
+  // 2026-10-20, the owner's decision) -- cash, not the Treasury's net outlays.
+  ["disbursed", (node) => nonZeroBlock(node.committeeDisbursements, "amount")],
 ];
 
 const SOURCED_FIGURE_KINDS = new Set(SOURCED_FIGURE_STAND_IN_ORDER.map(([name]) => name));
@@ -3159,6 +3166,8 @@ function standInAmountText(standIn) {
       return formatSignedWholeDollars(block.outlays);
     case "audited":
       return formatSignedWholeDollars(block.netCostUsd);
+    case "disbursed":
+      return formatSignedWholeDollars(block.amount);
     default:
       return block.rateText || `$${Math.round(block.amount).toLocaleString()}`;
   }
@@ -3262,6 +3271,11 @@ function standInHeading(standIn) {
         label: "OUTLAYS — OMB PUBLIC BUDGET DATABASE",
         period: `${blockFiscalYear(block.fiscalYear)}, a completed year — the sum of ${Number.isInteger(block.outlayAccountRows) ? `${block.outlayAccountRows.toLocaleString()} account rows` : "the account rows"} OMB files under this unit, not a figure OMB prints, and not the cost`,
       };
+    case "disbursed":
+      return {
+        label: block.chamber === "senate" ? "PAID OUT — SENATE SECRETARY'S REPORT" : "PAID OUT — HOUSE STATEMENT OF DISBURSEMENTS",
+        period: `${disbursementPeriodLabel(block)} — cash paid out for this ${disbursementUnitWord(block)}'s account; not the Treasury's net outlays, and not the cost`,
+      };
     case "audited":
       return {
         label: "AUDITED NET COST — TREASURY STATEMENT OF NET COST",
@@ -3301,6 +3315,7 @@ function standInBadgeLabel(standIn) {
     case "fileA":
     case "omb":
     case "audited":
+    case "disbursed":
       return "No measured cost; a sourced figure of another kind is shown";
     default:
       return "No cost known; a rate of pay is shown";
@@ -3408,6 +3423,9 @@ function standInNote(standIn) {
         (block.basisNote ? ` ${String(block.basisNote).trim()}` : " It is accrual accounting for a completed year, not outlays, and not this unit's cost.");
       break;
     }
+    case "disbursed":
+      note = ` What is shown instead is a sourced figure of another kind. ${disbursementSentence(block)}`.trimEnd();
+      break;
     default:
       note = "";
   }
@@ -3789,7 +3807,7 @@ function buildCostBlock(node) {
   }
   // A sourced figure of another kind gets the same reading aid: its own
   // number, to three figures, never a different claim.
-  const sourcedAmount = standIn && standIn.sourced ? toFiniteAmount(standIn.block[{ fileA: "amount", omb: "outlays", audited: "netCostUsd" }[standIn.kind]]) : null;
+  const sourcedAmount = standIn && standIn.sourced ? toFiniteAmount(standIn.block[{ fileA: "amount", omb: "outlays", audited: "netCostUsd", disbursed: "amount" }[standIn.kind]]) : null;
   if (sourcedAmount !== null && Math.abs(sourcedAmount) >= 1e9) {
     const compact = document.createElement("span");
     compact.className = "info-cost-compact";

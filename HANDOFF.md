@@ -72,9 +72,10 @@ on any JS change).
    First fetches once it opens, in order: the Combined Statement FY2025
    chapters (fiscal.treasury.gov), the Senate Report Part I (govinfo), the SES
    career-reserved notice (govinfo), GAO's 2026 pay tables (retry; 403 last time).
-7. **Owner decision, open:** whether a chamber's disbursement figure may be
-   an office's or a committee's HEADLINE (it is "beside" today; the stand-in
-   order names File A, OMB and audited net cost only).
+7. **Decided 2026-10-20 (yes) and built:** a chamber's disbursement figure is
+   the HEADLINE of the 46 committees and House officer offices carrying one
+   (fourth in the sourced-figure order, labelled by period; the estimate stays
+   withheld behind its button). Cache stamp `?v=20261020b`.
 
 ## Design system (2026-10-12, three slices, all on main)
 
@@ -266,9 +267,9 @@ each key on the mark and the id. The Parliamentarian is refused by the scale
 rule and the Chaplain is printed nowhere. Exactly the eight siblings moved
 (the Clerk $34.2m → $14.4m, the SAA $3.8m → $18.9m, the CAO $45.6m →
 $52.1m); 46 shares are weighted by a payout, 3 implied; the coverage
-report's "with a sourced figure beside" class 62 → 68. Not the headline —
-whether a disbursement may head a node is the owner's decision. Cache stamp
-`?v=20261020a`.
+report's "with a sourced figure beside" class 62 → 68. Made the headline the
+same evening on the owner's "yes" (see Next actions 7). Cache stamp
+`?v=20261020b`.
 
 Left deliberately undone: a fiscal-anchor chip in the top bar (the figure
 lives in `#data-provenance`, computed from the graph — a static chip would
