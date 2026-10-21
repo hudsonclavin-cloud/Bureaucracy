@@ -9,6 +9,11 @@ This file was lost in the 2026-08-04 merge and rewritten from the code on
 **`HANDOFF.md` first**: the current state, headline numbers and the ordered
 next actions as of the last session's close (2026-10-12).
 
+`docs/DEFINITION_OF_DONE.md` is the finish line the owner set on 2026-10-21:
+seven criteria (money, pay, evidence, structure, self-updating, freshness,
+conflicts) plus four reader features, each with a measured target and gap.
+Work that does not move one of its gaps should say why.
+
 `docs/GO.md` is the standing instruction for agent work on this repository.
 When the owner says **go**, read it and follow it from Step 0; it decides
 which of the three phases the work is currently in by reading state off disk,
