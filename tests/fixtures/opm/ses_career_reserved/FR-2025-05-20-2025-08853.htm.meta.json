@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-21T16:32:34Z",
+ "url": "https://www.govinfo.gov/content/pkg/FR-2025-05-20/html/2025-08853.htm",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/FR-2025-05-20/html/2025-08853.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /content/pkg/FR-2025-05-20/html/2025-08853.htm",
+ "bytes": 1479070,
+ "sha256": "645991eb7145a146a78e8fb3c2130ee1c9c33fd2181e2a5a4f23a34ef121aec2",
+ "error": null
+}

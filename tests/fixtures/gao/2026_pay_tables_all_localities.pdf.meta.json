@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-21T16:32:58Z",
+ "url": "https://www.gao.gov/assets/2026-04/2026%20Pay%20Tables%20-%20All%20Localities.pdf",
+ "status": null,
+ "final_url": null,
+ "content_type": null,
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "robots.txt could not be read (403); refused by policy",
+ "bytes": null,
+ "sha256": null,
+ "error": "not fetched: robots.txt robots.txt could not be read (403); refused by policy"
+}

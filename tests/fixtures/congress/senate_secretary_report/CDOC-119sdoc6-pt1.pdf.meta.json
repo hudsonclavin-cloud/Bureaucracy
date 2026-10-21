@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-21T16:32:29Z",
+ "url": "https://www.govinfo.gov/content/pkg/CDOC-119sdoc6/pdf/CDOC-119sdoc6-pt1.pdf",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/CDOC-119sdoc6/pdf/CDOC-119sdoc6-pt1.pdf",
+ "content_type": "application/pdf",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /content/pkg/CDOC-119sdoc6/pdf/CDOC-119sdoc6-pt1.pdf",
+ "bytes": 4539801,
+ "sha256": "8a8e8394165c8a17c84780a1a92e4bd50e1e06c32bc5bacfed112fafaa9a2aa4",
+ "error": null
+}

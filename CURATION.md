@@ -5622,50 +5622,61 @@ leads and not rows.
 
 ### 22.1 Pile 1 — documents to fetch once this session's proxy admits the hosts
 
-Nothing on a `.gov` host can be fetched from this session: the agent proxy
-refuses the tunnel to every one of the 327 hosts `scripts/probe_network_access.py`
-tries ("Tunnel connection failed: 403 Forbidden"), which is this environment's
-allowlist and not any host's answer (`docs/NETWORK_ACCESS.md` §0a). A proxy
-refusal is never published. `python scripts/probe_network_access.py
---allowlist` prints the paste-ready list. In order of what each would buy:
+Nothing on a `.gov` host could be fetched from this session for over a month:
+the agent proxy refused the tunnel to every one of the 327 hosts
+`scripts/probe_network_access.py` tries ("Tunnel connection failed: 403
+Forbidden"), which was this environment's allowlist and not any host's answer
+(`docs/NETWORK_ACCESS.md` §0a). A proxy refusal is never published.
+
+**Fetched 2026-10-21.** The same probe now reads 315 of 327 hosts, all ten
+data hosts among them (`docs/NETWORK_ACCESS.md` §17). In order of what each
+bought:
 
 - **The Combined Statement of Receipts, Outlays, and Balances, FY2025**
-  (`fiscal.treasury.gov/.../combined-statement/cs2025/c01.pdf` and the other
-  chapters; robots allows). A completed year on the anchor's own basis, by
-  Treasury account. The only specimen of its account names in hand is the
-  SF133 workbook's 55 Legislative Branch accounts, of which **9 reduce by name
-  to exactly one organisation node, all nine estimates with no sourced figure
-  of any kind today**: the Architect's six buildings accounts (Capitol
-  Building, Capitol Grounds, Senate and House Office Buildings, the Power
-  Plant, the Visitor Center), the Library's National Library Service, MACPAC
-  and MedPAC. The other 46 are object or fund accounts ("General
-  Administration", "Salaries, Officers and Employees") that name no unit. The
-  pass's 396 routes are the ceiling of what the other chapters might reach;
-  nothing here claims a count for them.
+  (`fiscal.treasury.gov/.../combined-statement/cs2025/c01.pdf` and `.xlsx`;
+  robots allows `/system/files/`). Both renderings of the Legislative Branch
+  chapter are committed under `tests/fixtures/treasury/combined_statement/
+  cs2025/`, with four explanatory chapters (`bof`, `coa`, `pre`, `finhigh`)
+  beside them. The SF133 workbook's own 55 Legislative Branch accounts had
+  suggested 9 would reduce to a node; read directly, with the trailing
+  ", <issuing body>" and a leading "Salaries and Expenses, " set aside the way
+  a PLUM title already is, **18 of the chapter's 54 accounts reduce to
+  exactly one non-post node** — more than the SF133-based estimate, because
+  the Senate's, House's, Library of Congress's, CBO's, GAO's and the Tax
+  Court's own top-level accounts reduce too, not only the smaller units the
+  earlier pass named. §22.5 has the full table, the cross-reading against the
+  chapter's own PDF (every figure agrees), and what is still missing before
+  any of it can publish: no scale statement for these dollar figures
+  ("in whole dollars" or similar) has been found anywhere in the chapter or
+  its four explanatory companions, checked today. `scripts/
+  probe_combined_statement.py` is the read-only instrument, the combined
+  statement's analogue of `probe_treasury_rows.py`.
 - **The Report of the Secretary of the Senate, Part I** (govinfo,
-  `GPO-CDOC-119sdoc6-1.pdf`; robots allows). Part II priced 19 committees
-  (§19.21 and the disbursements module); Part I carries "Salaries, Officers
-  and Employees", which is where the Senate's own officers and the
-  Appropriations Committee are funded. The House half of that build landed
-  today (§22.4); the Senate half needs Part I.
+  `CDOC-119sdoc6/pdf/CDOC-119sdoc6-pt1.pdf`; robots allows `/content/pkg/`).
+  Fetched: 4.5MB, real extractable text (not scanned), its own table of
+  contents confirming exactly what was wanted — "SALARIES, OFFICERS AND
+  EMPLOYEES — COMMITTEE ON APPROPRIATIONS, FY 2024 – FY 2026" and a run of
+  officer accounts (the Chaplain, the Vice President's office, and more) —
+  the Senate's own officers and the Appropriations Committee's funding, Part
+  II's shape one chamber over. Not yet parsed into records; that is Pile 2
+  (§22.2), the same reviewed-identification step the House's officer offices
+  needed (§22.4).
 - **OPM's career-reserved SES notice** (`FR-2025-05-20`, FR Doc. 2025-08853;
-  govinfo allows). A fixed-width table of 6,186 position titles under 283
-  agencies and their organisations. A naïve probe — organisation column, then
-  agency column, reduced by `federal_register_name_keys` to one node, title
-  equal to exactly one of that node's position children — reaches **101
-  posts, 63 of them carrying no source of any kind**, 83 through the
-  organisation column. That is a ceiling: it folds a trailing "(2)" and
-  refuses nothing for a duplicate title. What it would publish is a
-  *listing* — the post exists and is career-reserved SES — and a reason to
-  publish `positionGradePay`'s SES range, never a rate. The scoping needs a
-  reviewed table (§22.2): the largest agency labels reduce to no node ("OFFICE
-  OF THE SECRETARY" ×317, "DEPARTMENT OF THE AIR FORCE" ×201, "OFFICE OF THE
+  govinfo allows). Fetched: 1.5MB of the same `<pre>`-wrapped plain text the
+  Government Manual and Code sections already come from, confirmed to carry
+  the fixed-width Agency / Organization / Position Title table the earlier
+  pass described. Not yet scoped against the graph; still needs the reviewed
+  table §22.2 names (the largest agency labels reduce to no node — "OFFICE OF
+  THE SECRETARY" ×317, "DEPARTMENT OF THE AIR FORCE" ×201, "OFFICE OF THE
   DEPUTY ATTORNEY GENERAL" ×140).
-- **GAO's 2026 pay tables** (`www.gao.gov/assets/2026-04/...All Localities.pdf`).
-  Recorded in `tests/fixtures/gao/README.md` as refused by the host (403 on
-  robots.txt and the PDF) on 2026-10-08; the pass's survey of 2026-10-15 saw
-  `www.gao.gov` answer robots.txt 200 and `files.gao.gov` 403. Retry once,
-  record either way.
+- **GAO's 2026 pay tables** (`www.gao.gov/assets/2026-04/...All Localities.pdf`,
+  confirmed to exist by a web search this session ran, since the fetch itself
+  could not reach it). Retried 2026-10-21, same result as 2026-10-08:
+  `www.gao.gov` still answers `robots.txt` **403**, recorded in
+  `tests/fixtures/gao/README.md`. `www.gao.gov` is not on
+  `politeness.STANDARD_4XX_HOSTS`, so this is this project's own policy
+  refusing the fetch, same as before -- the wider proxy access did not change
+  it.
 
 ### 22.2 Pile 2 — leads that need a reviewed identification before they can publish
 
@@ -5780,3 +5791,113 @@ the Treasury's net outlays, and not the cost", the hollow badge every
 unmeasured figure wears, and the estimate still withheld behind the same
 "Show the estimate" button. 46 nodes (40 committees, 6 officer offices); the
 reading guide and the provenance line count them as a fourth group.
+
+### 22.5 The Combined Statement's Legislative Branch chapter, read (2026-10-21)
+
+Fetched once the proxy began admitting `.gov` hosts generally
+(`docs/NETWORK_ACCESS.md` §17): `fiscal.treasury.gov`'s "current" Combined
+Statement page lists every chapter of Part Three, "Detail of Appropriations,
+Outlays, and Balances", by organisation; the Legislative Branch is chapter
+`c01`, fetched as both its PDF and its machine-readable XLSX export into
+`tests/fixtures/treasury/combined_statement/cs2025/`, with four of the
+report's own explanatory chapters (`bof.pdf`, `coa.pdf`, `pre.pdf`,
+`finhigh.pdf`) beside it.
+
+**The account, not the column, is the figure.** Each "Appropriation or Fund
+Account" prints one or more years of availability under one "Fund Resources:"
+block, each year a row, closed by one "Subtotal" row; an account's own net
+outlays for the year is the sum of every Subtotal row's "Outlays (Net)"
+column across whatever years of availability it carries — the Capitol
+Grounds account alone sums 16 such year-rows. `scripts/
+probe_combined_statement.py` is the read-only instrument that does this
+(`chapter_accounts`), the combined statement's analogue of
+`probe_treasury_rows.py` for the Monthly Treasury Statement: it writes
+nothing, and prints a ceiling, never a claim.
+
+**Matching, by the same strip a PLUM title already takes.** An account's
+title is of the shape `<account name>, <issuing body>` — "Capitol Grounds,
+Architect of the Capitol" — or, for a run of the chamber's own accounts,
+`Salaries and Expenses, <account name>` or `Compensation of Members and
+Related Administrative Expenses, <chamber>`. `strip_candidates` sets the
+trailing ", <issuing body>" aside the way `positions.archive_title_keys`
+already does for a PLUM Book title, and a leading "Salaries and Expenses, "
+or "Compensation of Members and Related Administrative Expenses, " the way
+no module has needed to before — both are candidates to TEST against a node's
+name by `canonical_name_key` equality, never a name to publish. **18 of the
+chapter's 54 accounts reduce to exactly one non-post node**, more than the
+SF133 workbook's own 55 Legislative Branch accounts had suggested (9), because
+the chambers', the Library's, CBO's, GAO's and the Tax Court's own top-level
+accounts reduce too, not only the smaller units the SF133-based estimate
+named:
+
+| node | account | net outlays, FY2025 |
+|---|---|---|
+| `leg-senate` | Compensation of Members and Related Administrative Expenses, Senate | $24,381,415.96 |
+| `leg-senate-admin-legal` | Salaries and Expenses, Office of Senate Legal Counsel, Senate | $1,165,507.91 |
+| `leg-house` | Compensation of Members and Related Administrative Expenses, House of Representatives | $104,618,473.32 |
+| `leg-house` | Salaries and Expenses, House of Representatives | $1,862,554,746.13 |
+| `leg-support-cbo` | Salaries and Expenses, Congressional Budget Office | $71,642,629.70 |
+| `leg-support-aoc-capitol-grounds` | Capitol Grounds, Architect of the Capitol | $17,858,652.41 |
+| `leg-support-aoc-senate-office-buildings` | Senate Office Buildings, Architect of the Capitol | $128,021,693.98 |
+| `leg-support-aoc-house-office-buildings` | House Office Buildings, Architect of the Capitol | $156,916,099.98 |
+| `leg-support-aoc-capitol-power-plant` | Capitol Power Plant, Architect of the Capitol | $122,012,533.26 |
+| `leg-support-aoc-capitol-visitor-center` | Capitol Visitor Center, Architect of the Capitol | $30,190,121.91 |
+| `leg-support-loc` | Salaries and Expenses, Library of Congress | $602,515,340.44 |
+| `leg-support-loc-copyright` | Salaries and Expenses, Copyright Office, Library of Congress | $63,321,276.20 |
+| `leg-support-loc-crs` | Salaries and Expenses, Congressional Research Service, Library of Congress | $141,782,158.43 |
+| `leg-support-loc-nls` | Salaries and Expenses, National Library Service for the Blind and Print Disabled, Library of Congress | $64,367,416.42 |
+| `leg-support-gao` | Salaries and Expenses, Government Accountability Office | $874,100,992.14 |
+| `jud-specialized-tax` | Salaries and Expenses, United States Tax Court | $70,644,764.94 |
+| `exec-ind-misc-macpac` | Medicaid and CHIP Payment and Access Commission | $10,186,355.32 |
+| `exec-ind-misc-medpac` | Salaries and Expenses, Medicare Payment Advisory Commission | $686,932.49 |
+
+`leg-house` carries two accounts (Members' compensation and the chamber's own
+salaries and expenses); summing them for one node, rather than refusing the
+second as ambiguous, is correct and is exactly the "two Table 5 rows for one
+header" shape this file's receipts work already treats as one unit reported
+twice, not a collision.
+
+**One name a strip cannot resolve, refused rather than guessed.** "Capitol
+Buildings, Architect of the Capitol" (plural; $55,027,979.70) strips to
+"Capitol Buildings", and the node is named `Capitol Building` (singular,
+`leg-support-aoc-capitol-building`). The script leaves it unmatched rather
+than folding a plural, the same discipline the committee and post routes
+already apply to a name that is close but not equal; it needs a one-row
+reviewed alias, with a basis, before it can be matched — Pile 2's job, not
+this probe's.
+
+**Cross-read against the chapter's own PDF, and every figure agrees.** All 18
+matched figures, printed to the cent, are found verbatim in the PDF's own
+text (extracted straight from its FlateDecode content streams, the same
+mechanism `whitehouse_pay.py` already uses for the White House staff report,
+reading faster here by pulling the `Tj`/`TJ` string operands directly rather
+than reconstructing word spacing). Two independent renderings of the same
+chapter, from the same publisher, agreeing to the cent on 18 figures is
+real corroboration — but corroboration of a number is not the same as a
+statement of what the number is counted in.
+
+**What is still missing, and it is the one thing blocking publication: no
+scale statement.** Every other sourced-figure module in this project rests on
+the publisher saying, somewhere, what unit its numbers are in — a `$` mark
+attached to a figure, a "thousands of dollars" sentence in a data dictionary
+or a user's guide, a `net_cost_bil_amt`-shaped column name. Checked today,
+word by word, against `bof.pdf` ("Explanation of Transactions and Basis of
+Figures"), `coa.pdf` ("Description of Accounts Relating to Cash Operations"),
+`pre.pdf` (the Preface) and `finhigh.pdf` ("Financial Highlights"): none of
+the four contains the word "dollar", "thousand", "million" or "rounded"
+applied to the Part Three account tables. `finhigh.pdf` does carry a scale
+phrase — "(in billions of dollars)" — but it is printed beside a different
+table, the summary chart of total receipts, outlays and the surplus or
+deficit, not the account-level figures `c01` prints. The account figures
+themselves are printed to the cent throughout (every Subtotal row above ends
+in two decimal places), which is suggestive — a thousands-scale table would
+not need hundredths-of-a-thousand precision — but suggestive is not stated,
+and this project's own rule, pinned by `tests/test_omb_budget.py` and
+`tests/test_pay_tables.py` among others, is that a figure is published only
+once a document says what it is counted in, not once a reader infers it from
+how it is printed. Nothing is published from this chapter today. The next
+session's job is narrower than it looks: find where (if anywhere) the
+Combined Statement states its own units — a cover page, a methodology volume
+not yet fetched, or GPO's print edition's own front matter — and, failing
+that, put the "cents imply whole dollars" reading to the owner as a
+structural-evidence grant the way `COLUMN_HEAD_MARK_SOURCE_TYPES` once was.

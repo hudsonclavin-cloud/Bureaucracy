@@ -34,3 +34,19 @@ section names a Managing Director, an Assistant Director, an Analyst or a band,
 so neither says which pay structure any of this graph's GAO posts sits in. A
 ceiling is not a rate, a statutory bound on a pay system is not a document
 placing a post in it, and nothing is published from either section.
+
+**Retried 2026-10-21, after this session's proxy began admitting `.gov`
+hosts generally (`docs/NETWORK_ACCESS.md`).** The wider access changed
+nothing about GAO specifically: `www.gao.gov/about/careers` and the real 2026
+pay table this session located
+(`www.gao.gov/assets/2026-04/2026%20Pay%20Tables%20-%20All%20Localities.pdf`,
+confirmed to exist by a web search quoting its own effective date of January
+11, 2026 and a locality table beginning with Washington, DC) both still
+answer `robots.txt` **403** to this project's User-Agent
+(`careers_retry_2026-10-21.html.meta.json`,
+`2026_pay_tables_all_localities.pdf.meta.json`). `www.gao.gov` is not on
+`politeness.STANDARD_4XX_HOSTS`, so under this project's own policy the 403
+refuses the fetch rather than being read as "Unavailable, permitted" under RFC
+9309 §2.3.1.3. Nothing new is published; this is the second recorded refusal
+of this host, and the 2026 table's existence is confirmed without this
+project having read it.

@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-21T16:30:40Z",
+ "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+ "status": 200,
+ "final_url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+ "content_type": "application/pdf",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+ "bytes": 755377,
+ "sha256": "9b9d11fb255f452f623351ed4c2d28e6391f8eb1ed1d5b13e27de08808fd020a",
+ "error": null
+}

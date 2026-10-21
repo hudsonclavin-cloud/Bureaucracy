@@ -1019,3 +1019,40 @@ govinfo documents now name the edition.
 renderer API disallowed by that host's `robots.txt` and discarded its content
 unread; 5 CFR 930.205 was read from govinfo's 2025 CFR rendering instead,
 which the host allows.
+
+## 17. 2026-10-21: the proxy admits `.gov` hosts generally, and the §22.1 pile fetched
+
+`scripts/probe_network_access.py` had refused every one of 327 hosts with
+"Tunnel connection failed: 403 Forbidden" the whole time §0a through §16 were
+written -- this environment's allowlist, never a host's own answer. Run again
+today: **315 of 327 reachable**, the ten data hosts this project depends on
+among them, and only 3 hosts refused at the proxy
+(`ca3.uscourts.gov`, `www.chaplain.senate.gov`, `www.nrel.gov` -- "Tunnel
+connection failed: 502 Bad Gateway", a different failure from the earlier
+403s and still not this project's to work around). `CURATION.md` §22.1's four
+items, none of them on the probe's own host list, were tried directly:
+
+- **`fiscal.treasury.gov`** answers `robots.txt` **200** with no disallow on
+  `/system/files/`. The Combined Statement of Receipts, Outlays, and Balances,
+  FY2025's "current" page lists every chapter; the Legislative Branch chapter
+  (`c01`, both its PDF and its XLSX) and four explanatory chapters (`bof`,
+  `coa`, `pre`, `finhigh`) were fetched into
+  `tests/fixtures/treasury/combined_statement/cs2025/`. `CURATION.md` §22.5
+  records what was found in them.
+- **`www.govinfo.gov`** (already `ok` on the data-host list) served the Report
+  of the Secretary of the Senate, Part I (`CDOC-119sdoc6-pt1.pdf`, 4.5MB, real
+  extractable text, not scanned images) and the OPM career-reserved SES notice
+  (`FR-2025-05-20/2025-08853.htm`, the same `<pre>`-wrapped plain text the
+  Government Manual and the Code sections already come from).
+- **`www.gao.gov`** still answers `robots.txt` **403** to this project's
+  User-Agent, confirmed on two paths today (`tests/fixtures/gao/README.md`).
+  The wider admission changed nothing about this one host; it is not on
+  `politeness.STANDARD_4XX_HOSTS` and stays refused by this project's own
+  policy rather than by the proxy.
+
+Nothing about the earlier sections' findings is retracted: a host this file
+already recorded as refusing `robots.txt` or the page on its own account
+(`www.gao.gov`, the DoD hosts of §14/§16) is unaffected by an allowlist that
+was never the thing refusing it. What changed today is specifically the
+proxy's own allowlist, which is this session's environment setting and not a
+fact about any `.gov` host.

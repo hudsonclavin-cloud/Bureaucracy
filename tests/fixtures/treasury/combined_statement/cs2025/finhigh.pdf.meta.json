@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-21T16:39:01Z",
+ "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/finhigh.pdf",
+ "status": 200,
+ "final_url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/finhigh.pdf",
+ "content_type": "application/pdf",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /system/files/files/reports-statements/combined-statement/cs2025/finhigh.pdf",
+ "bytes": 413917,
+ "sha256": "d94314c4e561c334b297bf17d2286d771bbfea57067b1f956a14774fb0626d3b",
+ "error": null
+}
