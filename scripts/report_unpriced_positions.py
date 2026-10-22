@@ -182,9 +182,38 @@ def collect(graph):
                     isinstance(node.get("positionListing"), dict)
                     or isinstance(node.get("positionCurrentListing"), dict)
                 ),
+                # The explained blank (pay_no_document.py): what the held
+                # title-listing pay documents print for this title. Read off
+                # the node, never recomputed here.
+                "blank": blank_of(node),
             }
         )
     return groups, positions, priced, multi_priced
+
+
+def blank_of(node) -> dict | None:
+    """The post's `payNoDocument` block, reduced to what the inventory prints:
+    how many held documents were checked and which print the title."""
+    block = node.get("payNoDocument")
+    if not isinstance(block, dict):
+        return None
+    hits = [h for h in (block.get("namedIn") or []) if isinstance(h, dict) and h.get("printed")]
+    return {
+        "checked": int(block.get("documentsChecked") or 0),
+        "printedIn": [(str(h.get("document")), str(h.get("printed"))) for h in hits],
+    }
+
+
+def blank_note(row) -> str:
+    """One inventory clause per row: the held documents checked, and whether
+    one prints the title under a filing no rule ties to the post."""
+    blank = row.get("blank")
+    if not blank:
+        return ""
+    if blank["printedIn"]:
+        where = "; ".join(f"\"{printed}\" in {document.replace('_', ' ')}" for document, printed in blank["printedIn"])
+        return f" — the title is printed in a held pay document ({where}); no row of it reaches this post"
+    return f" — none of the {blank['checked']} held title-listing pay documents prints the title"
 
 
 def researchable(groups):
@@ -411,6 +440,15 @@ def render_inventory(groups, totals) -> str:
     w(f"- position nodes in the published graph: **{positions:,}**")
     w(f"- carrying a pay claim an official document supports: **{priced:,}**")
     w(f"- carrying none: **{unpriced:,}**")
+    blanks = [row for rows in groups.values() for row in rows if row.get("blank")]
+    printed = sum(1 for row in blanks if row["blank"]["printedIn"])
+    checked = max((row["blank"]["checked"] for row in blanks), default=0)
+    if blanks:
+        w(f"- of those, carrying `payNoDocument`, the explained blank naming the {checked} title-listing pay documents "
+          f"checked for the title: **{len(blanks):,}** — {len(blanks) - printed:,} whose title none of them prints, "
+          f"{printed:,} whose title a held document prints under a filing no reviewed rule ties to the post. "
+          "An explained blank is not a terminal reason: the definition of done's criterion 2 counts these as unpriced "
+          "until a document prices the post or establishes why none can.")
     w("")
     w("| reason | count | what it means |")
     w("|---|---|---|")
@@ -428,7 +466,7 @@ def render_inventory(groups, totals) -> str:
         w(f"`{org_id}`")
         w("")
         for row in sorted(rows, key=lambda r: r["name"]):
-            w(f"- `{row['id']}` — {row['name']} — `{row['reason']}`")
+            w(f"- `{row['id']}` — {row['name']} — `{row['reason']}`{blank_note(row)}")
     w("")
     return "\n".join(out) + "\n"
 

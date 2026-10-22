@@ -7,11 +7,11 @@ Do not edit by hand; regenerate it. The 100 largest title families are in
 ## What this covers
 
 - **Part A — 1,562 unpriced positions** in the 1,542 title families outside the top 100, across **15 shards**, whole organisations per shard.
-- **Part B — 683 organisation nodes** that publish an apportioned estimate rather than a measured
-  cost, across **7 shards**, whole parents per shard:
+- **Part B — 323 organisation nodes** that publish an apportioned estimate rather than a measured
+  cost, across **3 shards**, whole parents per shard:
   - 240 — a committee or subcommittee (no Table 5 line can ever name one)
   - 83 — an estimate with a sourced non-cost figure already beside it
-  - 360 — an estimate with no sourced figure of any kind
+  - 0 — an estimate with no sourced figure of any kind
 
 Not asked about, by construction: measured nodes and priced posts (done), and the units
 beneath a Treasury pool that nets below zero or replaced by the government (no route
@@ -2995,7 +2995,7 @@ THE TITLES:
 ### Division of Undergraduate Education  [exec-ind-nsf-education-human-resources-ehr-undergraduate-education]
 - exec-ind-nsf-education-human-resources-ehr-undergraduate-education-division-director-undergraduate-education | Division Director, Undergraduate Education
 
-### Dwight D. Eisenhower Presidential Library (Abilene, KS)  [exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks]
+### Dwight D. Eisenhower Presidential Library and Museum (Abilene, KS)  [exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks]
 - exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-director-dwight-d-eisenhower-presidential-library | Director, Dwight D. Eisenhower Presidential Library
 
 ### East Asia, The Pacific & International Cybersecurity Policy  [leg-senate-cmte-foreign-relations-sub-east-asia-the-pacific-international-cybersecurity-policy]
@@ -3061,13 +3061,13 @@ THE TITLES:
 ### Goddard Space Flight Center (GSFC)  [exec-ind-nasa-goddard-space-flight-center-gsfc]
 - exec-ind-nasa-goddard-space-flight-center-gsfc-center-director-goddard-space-flight-center-gsfc | Center Director, Goddard Space Flight Center (GSFC)
 
-### Harry S. Truman Presidential Library (Independence, MO)  [exec-ind-nara-harry-s-truman-presidential-library-independence-mo]
+### Harry S. Truman Presidential Library and Museum (Independence, MO)  [exec-ind-nara-harry-s-truman-presidential-library-independence-mo]
 - exec-ind-nara-harry-s-truman-presidential-library-independence-mo-director-harry-s-truman-presidential-library | Director, Harry S. Truman Presidential Library
 
 ### Health Care  [leg-senate-cmte-finance-sub-health-care]
 - leg-senate-cmte-finance-sub-health-care-staff-director-subcommittee-on-health-care | Staff Director, Subcommittee on Health Care
 
-### Herbert Hoover Presidential Library (West Branch, IA)  [exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia]
+### Herbert Hoover Presidential Library and Museum (West Branch, IA)  [exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia]
 - exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-director-herbert-hoover-presidential-library | Director, Herbert Hoover Presidential Library
 
 ### Homeland Security  [leg-senate-cmte-appropriations-sub-homeland-security]
@@ -3103,10 +3103,10 @@ THE TITLES:
 ### Jet Propulsion Laboratory (JPL)  [exec-ind-nasa-jet-propulsion-laboratory-jpl]
 - exec-ind-nasa-jet-propulsion-laboratory-jpl-center-director-jet-propulsion-laboratory-jpl | Center Director, Jet Propulsion Laboratory (JPL)
 
-### Jimmy Carter Presidential Library (Atlanta, GA)  [exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga]
+### Jimmy Carter Presidential Library and Museum (Atlanta, GA)  [exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga]
 - exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-director-jimmy-carter-presidential-library | Director, Jimmy Carter Presidential Library
 
-### John F. Kennedy Presidential Library (Boston, MA)  [exec-ind-nara-john-f-kennedy-presidential-library-boston-ma]
+### John F. Kennedy Presidential Library and Museum (Boston, MA)  [exec-ind-nara-john-f-kennedy-presidential-library-boston-ma]
 - exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-director-john-f-kennedy-presidential-library | Director, John F. Kennedy Presidential Library
 
 ### Johnson Space Center (JSC)  [exec-ind-nasa-johnson-space-center-jsc]
@@ -3127,7 +3127,7 @@ THE TITLES:
 ### Library of Congress  [leg-support-loc]
 - leg-support-loc-deputy-librarian-of-congress | Deputy Librarian of Congress
 
-### Lyndon B. Johnson Presidential Library (Austin, TX)  [exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx]
+### Lyndon Baines Johnson Presidential Library and Museum (Austin, TX)  [exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx]
 - exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx-director-lyndon-b-johnson-presidential-library | Director, Lyndon B. Johnson Presidential Library
 ```
 
@@ -3266,7 +3266,7 @@ THE TITLES:
 ### Richard Nixon Presidential Library and Museum  [exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca]
 - exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca-director-richard-nixon-presidential-library | Director, Richard Nixon Presidential Library
 
-### Ronald Reagan Presidential Library (Simi Valley, CA)  [exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca]
+### Ronald Reagan Presidential Library and Museum (Simi Valley, CA)  [exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca]
 - exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-director-ronald-reagan-presidential-library | Director, Ronald Reagan Presidential Library
 
 ### Science & Space  [leg-senate-cmte-commerce-science-transportation-sub-science-space]
@@ -3386,7 +3386,7 @@ THE TITLES:
 ### Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights & Global Women's Issues  [leg-senate-cmte-foreign-relations-sub-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues]
 - leg-senate-cmte-foreign-relations-sub-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues-staff-director-subcommittee-on-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues | Staff Director, Subcommittee on Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights & Global Women's Issues
 
-### William J. Clinton Presidential Library (Little Rock, AR)  [exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar]
+### William J. Clinton Presidential Library and Museum (Little Rock, AR)  [exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar]
 - exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-director-william-j-clinton-presidential-library | Director, William J. Clinton Presidential Library
 ```
 
@@ -3394,7 +3394,7 @@ THE TITLES:
 
 # Part B — organisations that publish an estimate
 
-## Prompt B1 — 3 parent(s), 100 unit(s)
+## Prompt B1 — 5 parent(s), 110 unit(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -3458,7 +3458,6 @@ THE UNITS:
 - exec-ind-misc-advisory-council-on-historic-preservation | Advisory Council on Historic Preservation | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-american-battle-monuments-commission-abmc | American Battle Monuments Commission (ABMC) | Independent Agency  [already carries: usaspendingOutlays]
 - exec-ind-misc-appalachian-regional-commission-arc | Appalachian Regional Commission (ARC) | Independent Agency  [already carries: ombBudget, usaspendingOutlays]
-- exec-ind-misc-armed-forces-retirement-home | Armed Forces Retirement Home | Independent Agency
 - exec-ind-misc-chemical-safety-hazard-investigation-board-csb | Chemical Safety & Hazard Investigation Board (CSB) | Independent Agency  [already carries: ombBudget, usaspendingOutlays]
 - exec-ind-misc-civil-rights-cold-case-records-review-board | Civil Rights Cold Case Records Review Board | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-cigie | Council of the Inspectors General on Integrity and Efficiency | Independent Agency  [already carries: ombBudget]
@@ -3473,7 +3472,6 @@ THE UNITS:
 - exec-ind-misc-federal-mine-safety-and-health-review-commission | Federal Mine Safety and Health Review Commission | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-federal-retirement-thrift-investment-board | Federal Retirement Thrift Investment Board | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-truman-scholarship-foundation | Harry S. Truman Scholarship Foundation | Independent Agency  [already carries: ombBudget]
-- exec-ind-misc-inter-american-foundation | Inter-American Foundation | Independent Agency
 - exec-ind-misc-madison-fellowship-foundation | James Madison Memorial Fellowship Foundation | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-japan-united-states-friendship-commission | Japan-United States Friendship Commission | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-marine-mammal-commission | Marine Mammal Commission | Independent Agency  [already carries: ombBudget]
@@ -3488,18 +3486,12 @@ THE UNITS:
 - exec-ind-misc-nuclear-waste-technical-review-board | Nuclear Waste Technical Review Board | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-occupational-safety-and-health-review-commission | Occupational Safety and Health Review Commission | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-office-of-special-counsel-osc | Office of Special Counsel (OSC) | Independent Agency  [already carries: ombBudget, usaspendingOutlays]
-- exec-ind-misc-odni | Office of the Director of National Intelligence | Independent Agency
-- exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission | Postal Regulatory Commission | Independent Agency
 - exec-ind-misc-privacy-civil-liberties-oversight-board-pclob | Privacy & Civil Liberties Oversight Board (PCLOB) | Independent Agency  [already carries: ombBudget, usaspendingOutlays]
 - exec-ind-misc-public-buildings-reform-board | Public Buildings Reform Board | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-selective-service-system | Selective Service System | Independent Agency  [already carries: usaspendingOutlays]
 - exec-ind-misc-surface-transportation-board | Surface Transportation Board | Independent Agency  [already carries: ombBudget]
-- exec-ind-misc-abilityone-commission | U.S. AbilityOne Commission | Independent Agency
 - exec-ind-misc-access-board | U.S. Access Board (Architectural and Transportation Barriers Compliance Board) | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-u-s-international-development-finance-corp-dfc | U.S. International Development Finance Corporation | Independent Agency  [already carries: auditedNetCost, usaspendingOutlays]
-- exec-ind-misc-african-development-foundation | United States African Development Foundation | Independent Agency
-- exec-ind-misc-arctic-research-commission | United States Arctic Research Commission | Independent Agency
-- exec-ind-misc-heritage-abroad-commission | United States Commission for the Preservation of America's Heritage Abroad | Independent Agency
 - exec-ind-misc-commission-of-fine-arts | United States Commission of Fine Arts | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-commission-on-civil-rights | United States Commission on Civil Rights | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-holocaust-memorial-museum | United States Holocaust Memorial Museum | Independent Agency  [already carries: ombBudget]
@@ -3507,117 +3499,6 @@ THE UNITS:
 - exec-ind-misc-interagency-council-on-homelessness | United States Interagency Council on Homelessness | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-international-trade-commission | United States International Trade Commission | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-office-of-government-ethics | United States Office of Government Ethics | Independent Agency  [already carries: ombBudget]
-- exec-ind-misc-trade-and-development-agency | United States Trade and Development Agency | Independent Agency
-
-### beneath Smithsonian Institution  [exec-ind-smithsonian]
-- exec-ind-smithsonian-american-art-museum | American Art Museum | Museum/Unit
-- exec-ind-smithsonian-anacostia-community-museum | Anacostia Community Museum | Museum/Unit
-- exec-ind-smithsonian-cooper-hewitt-smithsonian-design-museum | Cooper Hewitt (Smithsonian Design Museum) | Museum/Unit
-- exec-ind-smithsonian-hirshhorn-museum-sculpture-garden | Hirshhorn Museum & Sculpture Garden | Museum/Unit
-- exec-ind-smithsonian-john-f-kennedy-center-performing-arts | John F. Kennedy Center for the Performing Arts | Museum/Unit
-- exec-ind-smithsonian-lemelson-center-for-invention-innovation | Lemelson Center for Invention & Innovation | Museum/Unit
-- exec-ind-smithsonian-national-air-space-museum | National Air & Space Museum | Museum/Unit
-- exec-ind-smithsonian-national-gallery-art | National Gallery of Art | Museum/Unit
-- exec-ind-smithsonian-national-museum-of-african-american-history-culture | National Museum of African American History & Culture | Museum/Unit
-- exec-ind-smithsonian-national-museum-of-african-art | National Museum of African Art | Museum/Unit
-- exec-ind-smithsonian-national-museum-of-american-history | National Museum of American History | Museum/Unit
-- exec-ind-smithsonian-national-museum-of-asian-art | National Museum of Asian Art | Museum/Unit
-- exec-ind-smithsonian-national-museum-of-natural-history | National Museum of Natural History | Museum/Unit
-- exec-ind-smithsonian-national-museum-of-the-american-indian | National Museum of the American Indian | Museum/Unit
-- exec-ind-smithsonian-national-portrait-gallery | National Portrait Gallery | Museum/Unit
-- exec-ind-smithsonian-national-postal-museum | National Postal Museum | Museum/Unit
-- exec-ind-smithsonian-national-zoo | National Zoo | Museum/Unit
-- exec-ind-smithsonian-renwick-gallery | Renwick Gallery | Museum/Unit
-- exec-ind-smithsonian-smithsonian-astrophysical-observatory | Smithsonian Astrophysical Observatory | Museum/Unit
-- exec-ind-smithsonian-smithsonian-environmental-research-center | Smithsonian Environmental Research Center | Museum/Unit
-- exec-ind-smithsonian-smithsonian-institution-archives | Smithsonian Institution Archives | Museum/Unit
-- exec-ind-smithsonian-smithsonian-libraries | Smithsonian Libraries | Museum/Unit
-- exec-ind-smithsonian-smithsonian-tropical-research-institute | Smithsonian Tropical Research Institute | Museum/Unit
-- exec-ind-smithsonian-woodrow-wilson-international-center-scholars | Woodrow Wilson International Center for Scholars | Museum/Unit
-
-### beneath Defense Agencies & Field Activities  [exec-dept-defense-agencies]
-- exec-dept-defense-agency-darpa | DARPA | Defense Agency
-- exec-dept-defense-agency-defense-commissary-agency | Defense Commissary Agency | Defense Agency
-- exec-dept-defense-agency-dcaa | Defense Contract Audit Agency (DCAA) | Defense Agency
-- exec-dept-defense-agency-dcma | Defense Contract Management Agency (DCMA) | Defense Agency
-- exec-dept-defense-agency-dcsa | Defense Counterintelligence & Security Agency (DCSA) | Defense Agency
-- exec-dept-defense-agency-dfas | Defense Finance & Accounting Service (DFAS) | Defense Agency
-- exec-dept-defense-agency-dha | Defense Health Agency (DHA) | Defense Agency
-- exec-dept-defense-agency-disa | Defense Information Systems Agency (DISA) | Defense Agency
-- exec-dept-defense-agency-dia | Defense Intelligence Agency (DIA) | Defense Agency
-- exec-dept-defense-agency-defense-legal-services-agency | Defense Legal Services Agency | Defense Agency
-- exec-dept-defense-agency-dla | Defense Logistics Agency (DLA) | Defense Agency
-- exec-dept-defense-agency-defense-security-cooperation-agency | Defense Security Cooperation Agency | Defense Agency
-- exec-dept-defense-agency-dtra | Defense Threat Reduction Agency (DTRA) | Defense Agency
-- exec-dept-defense-agency-dodea | DoD Education Activity (DoDEA) | Defense Agency
-- exec-dept-defense-agency-mda | Missile Defense Agency (MDA) | Defense Agency
-- exec-dept-defense-agency-national-defense-university | National Defense University | Defense Agency
-- exec-dept-defense-agency-nga | National Geospatial-Intelligence Agency (NGA) | Defense Agency
-- exec-dept-defense-agency-national-intelligence-university | National Intelligence University | Defense Agency
-- exec-dept-defense-agency-nro | National Reconnaissance Office (NRO) | Defense Agency
-- exec-dept-defense-agency-nsa | National Security Agency (NSA) | Defense Agency
-- exec-dept-defense-agency-pfpa | Pentagon Force Protection Agency (PFPA) | Defense Agency
-- exec-dept-defense-agency-uniformed-services-university-health-sciences | Uniformed Services University of the Health Sciences | Defense Agency
-```
-
-## Prompt B2 — 6 parent(s), 107 unit(s)
-
-```
-I am building a data-backed public graph of the U.S. federal government. Every
-published figure must be traceable to a specific published government document
-that prints it for that unit by name. Below are federal UNITS (bureaus, divisions,
-offices, regional offices, laboratories, committees), grouped by the unit above
-them, for which I currently publish only a share apportioned from a parent's total.
-For each I need the published document that prints the unit's OWN spending, if one
-exists, and what kind of figure it prints.
-
-For EVERY unit listed below, return exactly one line in this pipe-delimited
-format and nothing else per unit:
-
-    <node id> | <basis> | <document URL> | <period> | <figure or —> | <join key> | <confidence>
-
-- **basis** — what the figure measures, one of: `net_outlays`, `gross_outlays`,
-  `obligations`, `budget_authority`, `appropriations`, `budget_request`,
-  `audited_net_cost`, `payroll`, `disbursements`, `full_time_equivalents`,
-  `none`. These are different quantities and must never be mixed: an
-  appropriation is not spending, a request is not an appropriation, and a
-  committee's disbursements are not outlays.
-- **document URL** — the published document that prints the figure for THIS
-  unit by name, on the publisher's own site (a `.gov` host wherever one exists:
-  the Monthly Treasury Statement, OMB's Public Budget Database, USAspending
-  File A/B by Treasury Account Symbol, the agency's own Agency Financial Report
-  or Congressional Budget Justification, the House Statement of Disbursements,
-  the Report of the Secretary of the Senate). Not a news article, Wikipedia or
-  any republication.
-- **period** — the fiscal year or reporting period the figure covers, as the
-  document states it. A budget-year or out-year figure is a projection, not a
-  figure for a year that has happened; say so.
-- **figure** — only where the document prints one for this unit, as printed,
-  with its stated unit (dollars, thousands, millions). Never apportion a parent's
-  figure, never sum rows yourself unless the document prints the total.
-- **join key** — the string, account symbol or code the document uses for this
-  unit (a Treasury Account Symbol, an OMB bureau code, a committee name as the
-  disbursement report prints it).
-- **confidence** — `certain` only if you read the row; `likely` if the document
-  is right and the row inferred; `speculative` otherwise.
-
-Rules that matter more than coverage:
-1. **A missing answer is a result.** `<id> | none | — | — | — | — | certain` is
-   correct where no document prints a figure for the unit, and is more useful
-   than a guess. Many divisions, regional offices and laboratories are funded
-   from a parent's accounts and no document prints their spending alone.
-2. **A parent's figure is not the unit's.** If a document prints only the
-   bureau or department total, say `none` for the unit and name the document
-   in the join key column as `parent only: <name>`.
-3. **Contractor-operated is not federal spending by the unit.** A national
-   laboratory's budget is the sponsoring department's obligations to its
-   operating contractor; say so and give the department's own document.
-
-END with a section titled LOAD-BEARING NUMBERS: every figure you returned
-above, one line each, with the document URL it came from and whether it is
-official-published or third-party-estimated.
-
-THE UNITS:
 
 ### beneath House Committees  [leg-house-committees]
 - leg-house-cmte-agriculture | House Committee on Agriculture | Committee
@@ -3664,200 +3545,6 @@ THE UNITS:
 - leg-senate-cmte-select-committee-on-ethics | U.S. Senate Select Committee on Ethics | Committee
 - leg-senate-cmte-judiciary | United States Senate Committee on the Judiciary | Committee
 
-### beneath Department of State  [exec-dept-state]
-- exec-dept-state-bureau-of-african-affairs | Bureau of African Affairs | Bureau
-- exec-dept-state-bureau-of-arms-control-verification-compliance | Bureau of Arms Control, Verification & Compliance | Bureau
-- exec-dept-state-bureau-of-consular-affairs | Bureau of Consular Affairs | Bureau
-- exec-dept-state-bureau-of-diplomatic-security | Bureau of Diplomatic Security | Bureau
-- exec-dept-state-bureau-of-east-asian-pacific-affairs | Bureau of East Asian & Pacific Affairs | Bureau
-- exec-dept-state-bureau-of-european-eurasian-affairs | Bureau of European & Eurasian Affairs | Bureau
-- exec-dept-state-bureau-of-global-public-affairs | Bureau of Global Public Affairs | Bureau
-- exec-dept-state-bureau-of-international-organization-affairs | Bureau of International Organization Affairs | Bureau
-- exec-dept-state-bureau-of-international-security-nonproliferation | Bureau of International Security & Nonproliferation | Bureau
-- exec-dept-state-bureau-of-near-eastern-affairs | Bureau of Near Eastern Affairs | Bureau
-- exec-dept-state-bureau-of-political-military-affairs | Bureau of Political-Military Affairs | Bureau
-- exec-dept-state-bureau-of-south-central-asian-affairs | Bureau of South & Central Asian Affairs | Bureau
-- exec-dept-state-bureau-of-western-hemisphere-affairs | Bureau of Western Hemisphere Affairs | Bureau
-- exec-dept-state-foreign-service-institute | Foreign Service Institute | Bureau
-- exec-dept-state-office-of-the-chief-of-protocol | Office of the Chief of Protocol | Bureau
-- exec-dept-state-embassy | U.S. Embassies & Consulates (180+) | Field Structure
-- exec-dept-state-u-s-mission-to-the-united-nations | U.S. Mission to the United Nations | Bureau
-
-### beneath Environmental Protection Agency (EPA)  [exec-ind-epa]
-- exec-ind-epa-region-i-new-england | EPA Region 1 (New England) | Regional Office
-- exec-ind-epa-region-x-northwest | EPA Region 10 (Pacific Northwest) | Regional Office
-- exec-ind-epa-region-ii-new-york | EPA Region 2 | Regional Office
-- exec-ind-epa-region-iii-mid-atlantic | EPA Region 3 (Mid-Atlantic) | Regional Office
-- exec-ind-epa-region-iv-southeast | EPA Region 4 (Southeast) | Regional Office
-- exec-ind-epa-region-v-midwest | EPA Region 5 | Regional Office
-- exec-ind-epa-region-vi-south-central | EPA Region 6 (South Central) | Regional Office
-- exec-ind-epa-region-vii-plains | EPA Region 7 (Midwest) | Regional Office
-- exec-ind-epa-region-viii-mountain | EPA Region 8 (Mountains and Plains) | Regional Office
-- exec-ind-epa-region-ix-pacific | EPA Region 9 (Pacific Southwest) | Regional Office
-- exec-ind-epa-office-of-air-radiation-oar | Office of Air & Radiation (OAR) | Office
-- exec-ind-epa-office-of-chemical-safety-pollution-prevention-ocspp | Office of Chemical Safety & Pollution Prevention (OCSPP) | Office
-- exec-ind-epa-office-of-enforcement-compliance-assurance-oeca | Office of Enforcement & Compliance Assurance (OECA) | Office
-- exec-ind-epa-office-of-international-tribal-affairs-oita | Office of International & Tribal Affairs (OITA) | Office
-- exec-ind-epa-office-of-land-emergency-management-olem | Office of Land & Emergency Management (OLEM) | Office
-- exec-ind-epa-office-of-research-development-ord | Office of Research & Development (ORD) | Office
-- exec-ind-epa-office-of-water-ow | Office of Water (OW) | Office
-
-### beneath National Laboratories  [exec-dept-doe-natl-labs]
-- exec-dept-doe-ames-national-laboratory | Ames National Laboratory | National Laboratory
-- exec-dept-doe-argonne-national-laboratory | Argonne National Laboratory | National Laboratory
-- exec-dept-doe-brookhaven-national-laboratory | Brookhaven National Laboratory | National Laboratory
-- exec-dept-doe-fermi-national-accelerator-laboratory | Fermi National Accelerator Laboratory | National Laboratory
-- exec-dept-doe-idaho-national-laboratory | Idaho National Laboratory | National Laboratory
-- exec-dept-doe-lawrence-berkeley-national-laboratory | Lawrence Berkeley National Laboratory | National Laboratory
-- exec-dept-doe-lawrence-livermore-national-laboratory | Lawrence Livermore National Laboratory | National Laboratory
-- exec-dept-doe-los-alamos-national-laboratory | Los Alamos National Laboratory | National Laboratory
-- exec-dept-doe-national-energy-technology-laboratory | National Energy Technology Laboratory | National Laboratory
-- exec-dept-doe-national-renewable-energy-laboratory | National Laboratory of the Rockies (NLR) | National Laboratory
-- exec-dept-doe-oak-ridge-national-laboratory | Oak Ridge National Laboratory | National Laboratory
-- exec-dept-doe-pacific-northwest-national-laboratory | Pacific Northwest National Laboratory | National Laboratory
-- exec-dept-doe-princeton-plasma-physics-laboratory | Princeton Plasma Physics Laboratory | National Laboratory
-- exec-dept-doe-slac-national-accelerator-laboratory | SLAC National Accelerator Laboratory | National Laboratory
-- exec-dept-doe-sandia-national-laboratories | Sandia National Laboratories | National Laboratory
-- exec-dept-doe-savannah-river-national-laboratory | Savannah River National Laboratory | National Laboratory
-- exec-dept-doe-thomas-jefferson-national-accelerator-facility | Thomas Jefferson National Accelerator Facility | National Laboratory
-
-### beneath Mission Teams (15)  [leg-support-gao-mission-teams]
-- leg-support-gao-congressional-relations | Congressional Relations | Division
-- leg-support-gao-defense-capabilities-management | Defense Capabilities & Management | Division
-- leg-support-gao-economic-financial-markets | Economic & Financial Markets | Division
-- leg-support-gao-education-workforce-income-security | Education, Workforce & Income Security | Division
-- leg-support-gao-financial-management-assurance | Financial Management & Assurance | Division
-- leg-support-gao-forensic-audits-investigative-service | Forensic Audits & Investigative Service | Division
-- leg-support-gao-health-care | Health Care | Division
-- leg-support-gao-homeland-security-justice | Homeland Security & Justice | Division
-- leg-support-gao-information-technology-cybersecurity | Information Technology & Cybersecurity | Division
-- leg-support-gao-international-affairs-trade | International Affairs & Trade | Division
-- leg-support-gao-natural-resources-environment | Natural Resources & Environment | Division
-- leg-support-gao-physical-infrastructure | Physical Infrastructure | Division
-- leg-support-gao-public-affairs | Public Affairs | Division
-- leg-support-gao-science-technology-assessment-analytics | Science, Technology Assessment & Analytics | Division
-- leg-support-gao-strategic-issues | Strategic Issues | Division
-```
-
-## Prompt B3 — 9 parent(s), 108 unit(s)
-
-```
-I am building a data-backed public graph of the U.S. federal government. Every
-published figure must be traceable to a specific published government document
-that prints it for that unit by name. Below are federal UNITS (bureaus, divisions,
-offices, regional offices, laboratories, committees), grouped by the unit above
-them, for which I currently publish only a share apportioned from a parent's total.
-For each I need the published document that prints the unit's OWN spending, if one
-exists, and what kind of figure it prints.
-
-For EVERY unit listed below, return exactly one line in this pipe-delimited
-format and nothing else per unit:
-
-    <node id> | <basis> | <document URL> | <period> | <figure or —> | <join key> | <confidence>
-
-- **basis** — what the figure measures, one of: `net_outlays`, `gross_outlays`,
-  `obligations`, `budget_authority`, `appropriations`, `budget_request`,
-  `audited_net_cost`, `payroll`, `disbursements`, `full_time_equivalents`,
-  `none`. These are different quantities and must never be mixed: an
-  appropriation is not spending, a request is not an appropriation, and a
-  committee's disbursements are not outlays.
-- **document URL** — the published document that prints the figure for THIS
-  unit by name, on the publisher's own site (a `.gov` host wherever one exists:
-  the Monthly Treasury Statement, OMB's Public Budget Database, USAspending
-  File A/B by Treasury Account Symbol, the agency's own Agency Financial Report
-  or Congressional Budget Justification, the House Statement of Disbursements,
-  the Report of the Secretary of the Senate). Not a news article, Wikipedia or
-  any republication.
-- **period** — the fiscal year or reporting period the figure covers, as the
-  document states it. A budget-year or out-year figure is a projection, not a
-  figure for a year that has happened; say so.
-- **figure** — only where the document prints one for this unit, as printed,
-  with its stated unit (dollars, thousands, millions). Never apportion a parent's
-  figure, never sum rows yourself unless the document prints the total.
-- **join key** — the string, account symbol or code the document uses for this
-  unit (a Treasury Account Symbol, an OMB bureau code, a committee name as the
-  disbursement report prints it).
-- **confidence** — `certain` only if you read the row; `likely` if the document
-  is right and the row inferred; `speculative` otherwise.
-
-Rules that matter more than coverage:
-1. **A missing answer is a result.** `<id> | none | — | — | — | — | certain` is
-   correct where no document prints a figure for the unit, and is more useful
-   than a guess. Many divisions, regional offices and laboratories are funded
-   from a parent's accounts and no document prints their spending alone.
-2. **A parent's figure is not the unit's.** If a document prints only the
-   bureau or department total, say `none` for the unit and name the document
-   in the join key column as `parent only: <name>`.
-3. **Contractor-operated is not federal spending by the unit.** A national
-   laboratory's budget is the sponsoring department's obligations to its
-   operating contractor; say so and give the department's own document.
-
-END with a section titled LOAD-BEARING NUMBERS: every figure you returned
-above, one line each, with the document URL it came from and whether it is
-official-published or third-party-estimated.
-
-THE UNITS:
-
-### beneath National Archives & Records Administration (NARA)  [exec-ind-nara]
-- exec-ind-nara-barack-obama-presidential-library-chicago-il | Barack Obama Presidential Library (Chicago, IL) | Presidential Library
-- exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks | Dwight D. Eisenhower Presidential Library (Abilene, KS) | Presidential Library
-- exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny | Franklin D. Roosevelt Presidential Library and Museum | Presidential Library
-- exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx | George Bush Presidential Library and Museum | Presidential Library
-- exec-ind-nara-george-w-bush-presidential-library-dallas-tx | George W. Bush Presidential Library (Dallas, TX) | Presidential Library
-- exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi | Gerald R. Ford Presidential Library (Ann Arbor, MI) | Presidential Library
-- exec-ind-nara-harry-s-truman-presidential-library-independence-mo | Harry S. Truman Presidential Library (Independence, MO) | Presidential Library
-- exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia | Herbert Hoover Presidential Library (West Branch, IA) | Presidential Library
-- exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga | Jimmy Carter Presidential Library (Atlanta, GA) | Presidential Library
-- exec-ind-nara-john-f-kennedy-presidential-library-boston-ma | John F. Kennedy Presidential Library (Boston, MA) | Presidential Library
-- exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx | Lyndon B. Johnson Presidential Library (Austin, TX) | Presidential Library
-- exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca | Richard Nixon Presidential Library and Museum | Presidential Library
-- exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca | Ronald Reagan Presidential Library (Simi Valley, CA) | Presidential Library
-- exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar | William J. Clinton Presidential Library (Little Rock, AR) | Presidential Library
-
-### beneath Department of Justice (DOJ)  [exec-dept-doj]
-- exec-dept-doj-div-antitrust | Antitrust Division | Division
-- exec-dept-doj-div-civil | Civil Division | Division
-- exec-dept-doj-div-civil-rights | Civil Rights Division | Division
-- exec-dept-doj-div-criminal | Criminal Division | Division
-- exec-dept-doj-div-enrd | Environment & Natural Resources Division | Division
-- exec-dept-doj-executive-office-immigration-review | Executive Office for Immigration Review | Office
-- exec-dept-doj-foreign-claims-settlement-commission | Foreign Claims Settlement Commission of the United States | Office
-- exec-dept-doj-international-criminal-police-organization-washington | International Criminal Police Organization (INTERPOL)-Washington | Bureau
-- exec-dept-doj-div-nsd | National Security Division | Division
-- exec-dept-doj-solicitor | Office of the Solicitor General | Office
-- exec-dept-doj-office-violence-against-women | Office on Violence Against Women | Office
-- exec-dept-doj-div-tax | Tax Division | Division
-- exec-dept-doj-parole-commission | United States Parole Commission | Office  [already carries: ombBudget]
-
-### beneath U.S. Courts of Appeals (13 Circuits)  [jud-appeals]
-- jud-circuit-8th-circuit | Eighth Circuit | Circuit Court
-- jud-circuit-11th-circuit | Eleventh Circuit | Circuit Court
-- jud-circuit-1st-circuit | First Circuit | Circuit Court
-- jud-circuit-6th-circuit | Sixth Circuit | Circuit Court
-- jud-circuit-10th-circuit | Tenth Circuit | Circuit Court
-- jud-circuit-3rd-circuit | Third Circuit | Circuit Court
-- jud-circuit-d-c-circuit | U.S. Court of Appeals for the D.C. Circuit | Circuit Court
-- jud-circuit-federal-circuit | U.S. Court of Appeals for the Federal Circuit | Circuit Court
-- jud-circuit-5th-circuit | U.S. Court of Appeals for the Fifth Circuit | Circuit Court
-- jud-circuit-4th-circuit | U.S. Court of Appeals for the Fourth Circuit | Circuit Court
-- jud-circuit-9th-circuit | U.S. Court of Appeals for the Ninth Circuit | Circuit Court
-- jud-circuit-2nd-circuit | U.S. Court of Appeals for the Second Circuit | Circuit Court
-- jud-circuit-7th-circuit | U.S. Court of Appeals for the Seventh Circuit | Circuit Court
-
-### beneath Department of Housing & Urban Development (HUD)  [exec-dept-hud]
-- exec-dept-hud-fha | Federal Housing Administration (FHA) | Agency
-- exec-dept-hud-fheo | Office of Fair Housing & Equal Opportunity (FHEO) | Office  [already carries: usaspendingOutlays]
-- exec-dept-hud-region-i-new-england | Region I - Boston | Regional Office
-- exec-dept-hud-region-ii-new-york | Region II - New York | Regional Office
-- exec-dept-hud-region-iii-mid-atlantic | Region III - Philadelphia | Regional Office
-- exec-dept-hud-region-iv-southeast | Region IV - Atlanta | Regional Office
-- exec-dept-hud-region-ix-pacific | Region IX - San Francisco | Regional Office
-- exec-dept-hud-region-v-midwest | Region V - Chicago | Regional Office
-- exec-dept-hud-region-vi-south-central | Region VI - Fort Worth | Regional Office
-- exec-dept-hud-region-vii-plains | Region VII - Kansas City | Regional Office
-- exec-dept-hud-region-viii-mountain | Region VIII - Denver | Regional Office
-- exec-dept-hud-region-x-northwest | Region X - Seattle | Regional Office
-
 ### beneath House Committee on Appropriations  [leg-house-cmte-appropriations]
 - leg-house-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies | Agriculture, Rural Development, Food and Drug Administration, and Related Agencies | Subcommittee
 - leg-house-cmte-appropriations-sub-energy-water-development | Energy and Water Development and Related Agencies | Subcommittee
@@ -3885,47 +3572,9 @@ THE UNITS:
 - leg-senate-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies | Military Construction, Veterans Affairs & Related Agencies | Subcommittee
 - leg-senate-cmte-appropriations-sub-state-foreign-operations-related-programs | State, Foreign Operations & Related Programs | Subcommittee
 - leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies | Transportation, Housing and Urban Development, and Related Agencies | Subcommittee
-
-### beneath Department of Education  [exec-dept-ed]
-- exec-dept-ed-region-i-new-england | Dept of Education Region I — New England | Regional Office
-- exec-dept-ed-region-ii-new-york | Dept of Education Region II — New York | Regional Office
-- exec-dept-ed-region-iii-mid-atlantic | Dept of Education Region III — Mid-Atlantic | Regional Office
-- exec-dept-ed-region-iv-southeast | Dept of Education Region IV — Southeast | Regional Office
-- exec-dept-ed-region-ix-pacific | Dept of Education Region IX — Pacific | Regional Office
-- exec-dept-ed-region-v-midwest | Dept of Education Region V — Midwest | Regional Office
-- exec-dept-ed-region-vi-south-central | Dept of Education Region VI — South Central | Regional Office
-- exec-dept-ed-region-vii-plains | Dept of Education Region VII — Plains | Regional Office
-- exec-dept-ed-region-viii-mountain | Dept of Education Region VIII — Mountain | Regional Office
-- exec-dept-ed-region-x-northwest | Dept of Education Region X — Northwest | Regional Office
-- exec-dept-ed-ocr | Office for Civil Rights (OCR) | Office
-
-### beneath Unified Combatant Commands (11)  [exec-dept-defense-cocoms]
-- exec-dept-defense-cocom-usafricom | USAFRICOM — Africa Command | Combatant Command
-- exec-dept-defense-cocom-uscentcom | USCENTCOM — Central Command | Combatant Command
-- exec-dept-defense-cocom-uscybercom | USCYBERCOM — Cyber Command | Combatant Command
-- exec-dept-defense-cocom-useucom | USEUCOM — European Command | Combatant Command
-- exec-dept-defense-cocom-usindopacom | USINDOPACOM — Indo-Pacific Command | Combatant Command
-- exec-dept-defense-cocom-usnorthcom | USNORTHCOM — Northern Command | Combatant Command
-- exec-dept-defense-cocom-ussocom | USSOCOM — Special Operations Command | Combatant Command
-- exec-dept-defense-cocom-ussouthcom | USSOUTHCOM — Southern Command | Combatant Command
-- exec-dept-defense-cocom-usspacecom | USSPACECOM — Space Command | Combatant Command
-- exec-dept-defense-cocom-usstratcom | USSTRATCOM — Strategic Command | Combatant Command
-- exec-dept-defense-cocom-ustranscom | USTRANSCOM — Transportation Command | Combatant Command
-
-### beneath NASA Field Centers (10)  [exec-ind-nasa-centers]
-- exec-ind-nasa-ames-research-center-arc | Ames Research Center (ARC) | NASA Center
-- exec-ind-nasa-armstrong-flight-research-center-afrc | Armstrong Flight Research Center (AFRC) | NASA Center
-- exec-ind-nasa-glenn-research-center-grc | Glenn Research Center (GRC) | NASA Center
-- exec-ind-nasa-goddard-space-flight-center-gsfc | Goddard Space Flight Center (GSFC) | NASA Center
-- exec-ind-nasa-jet-propulsion-laboratory-jpl | Jet Propulsion Laboratory (JPL) | NASA Center
-- exec-ind-nasa-johnson-space-center-jsc | Johnson Space Center (JSC) | NASA Center
-- exec-ind-nasa-kennedy-space-center-ksc | Kennedy Space Center (KSC) | NASA Center
-- exec-ind-nasa-langley-research-center-larc | Langley Research Center (LaRC) | NASA Center
-- exec-ind-nasa-marshall-space-flight-center-msfc | Marshall Space Flight Center (MSFC) | NASA Center
-- exec-ind-nasa-stennis-space-center-ssc | Stennis Space Center (SSC) | NASA Center
 ```
 
-## Prompt B4 — 13 parent(s), 104 unit(s)
+## Prompt B2 — 14 parent(s), 105 unit(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -4007,26 +3656,6 @@ THE UNITS:
 - leg-support-aoc-library-of-congress-buildings | Library of Congress Buildings | Division  [already carries: combinedStatementOutlays]
 - leg-support-aoc-senate-office-buildings | Senate Office Buildings | Division  [already carries: combinedStatementOutlays]
 
-### beneath Analytical Divisions  [leg-support-cbo-divisions]
-- leg-support-cbo-budget-analysis-division | Budget Analysis Division | Division
-- leg-support-cbo-budget-review-division | Budget Review Division | Division
-- leg-support-cbo-economic-analysis-division | Economic Analysis Division | Division
-- leg-support-cbo-financial-analysis-division | Financial Analysis Division | Division
-- leg-support-cbo-health-retirement-long-term-analysis-division | Health, Retirement & Long-Term Analysis Division | Division
-- leg-support-cbo-microeconomic-studies-division | Microeconomic Studies Division | Division
-- leg-support-cbo-national-security-division | National Security Division | Division
-- leg-support-cbo-tax-analysis-division | Tax Analysis Division | Division
-
-### beneath House Administrative Offices  [leg-house-admin]
-- leg-house-cao | Chief Administrative Officer | Office
-- leg-house-clerk | Clerk of the House | Office
-- leg-house-chaplain | House Chaplain | Office
-- leg-house-ig | Inspector General of the House | Office
-- leg-house-physician | Office of the Attending Physician | Office
-- leg-house-counsel | Office of the Legislative Counsel | Office
-- leg-house-parliamentarian | Office of the Parliamentarian | Office
-- leg-house-saa | Sergeant at Arms of the House | Office
-
 ### beneath House Committee on Foreign Affairs  [leg-house-cmte-foreign-affairs]
 - leg-house-cmte-foreign-affairs-sub-africa | Africa Subcommittee | Subcommittee
 - leg-house-cmte-foreign-affairs-sub-indo-pacific | East Asia and Pacific Subcommittee | Subcommittee
@@ -4056,26 +3685,6 @@ THE UNITS:
 - leg-house-cmte-oversight-accountability-sub-health-care-financial-services | Subcommittee on Health Care & Financial Services | Subcommittee
 - leg-house-cmte-oversight-accountability-sub-military-foreign-affairs | Subcommittee on Military & Foreign Affairs | Subcommittee
 - leg-house-cmte-oversight-accountability-sub-national-security-the-border-foreign-affairs | Subcommittee on National Security, the Border & Foreign Affairs | Subcommittee
-
-### beneath Office of Management and Budget (OMB)  [exec-eop-omb]
-- exec-eop-omb-budget-review-division | Budget Review Division | Division
-- exec-eop-omb-economic-policy-division | Economic Policy Division | Division
-- exec-eop-omb-legislative-reference-division | Legislative Reference Division | Division
-- exec-eop-omb-office-of-e-government-it-federal-cio | Office of E-Government & IT (Federal CIO) | Division
-- exec-eop-omb-office-of-federal-financial-management | Office of Federal Financial Management | Division
-- exec-eop-omb-office-of-federal-procurement-policy | Office of Federal Procurement Policy | Division
-- exec-eop-omb-oira-office-of-information-regulatory-affairs | Office of Information and Regulatory Affairs (OIRA) | Division
-- exec-eop-omb-performance-personnel-management | Performance & Personnel Management | Division
-
-### beneath U.S. Capitol Police  [leg-support-uscp]
-- leg-support-uscp-communications-division | Communications Division | Bureau
-- leg-support-uscp-criminal-investigative-division | Criminal Investigative Division | Bureau
-- leg-support-uscp-hazardous-incident-response-division | Hazardous Incident Response Division | Bureau
-- leg-support-uscp-intelligence-interagency-coordination-division | Intelligence & Interagency Coordination Division | Bureau
-- leg-support-uscp-k-9-unit | K-9 Unit | Bureau
-- leg-support-uscp-office-of-professional-responsibility | Office of Professional Responsibility | Bureau
-- leg-support-uscp-patrol-mobile-response-bureau | Patrol & Mobile Response Bureau | Bureau
-- leg-support-uscp-protective-services-bureau | Protective Services Bureau | Bureau
 
 ### beneath United States Senate Committee on the Judiciary  [leg-senate-cmte-judiciary]
 - leg-senate-cmte-judiciary-sub-competition-policy-antitrust-consumer-rights | Antitrust, Competition Policy, and Consumer Rights | Subcommittee
@@ -4113,9 +3722,52 @@ THE UNITS:
 - leg-house-cmte-ways-means-sub-tax | Subcommittee on Tax | Subcommittee
 - leg-house-cmte-ways-means-sub-trade | Subcommittee on Trade | Subcommittee
 - leg-house-cmte-ways-means-sub-worker-family-support | Subcommittee on Work and Welfare | Subcommittee
+
+### beneath House Permanent Select Committee on Intelligence  [leg-house-cmte-permanent-select-committee-on-intelligence]
+- leg-house-cmte-intelligence-sub-central-intelligence-agency | Subcommittee on Central Intelligence Agency | Subcommittee
+- leg-house-cmte-intelligence-sub-defense-intelligence-warfighter-support | Subcommittee on Defense Intelligence and Overhead Architecture | Subcommittee
+- leg-house-cmte-intelligence-sub-open-source-intelligence | Subcommittee on Open Source Intelligence | Subcommittee
+- leg-house-cmte-intelligence-sub-oversight-investigations | Subcommittee on Oversight and Investigations | Subcommittee
+- leg-house-cmte-intelligence-sub-strategic-technologies-advanced-research | Subcommittee on Strategic Technologies & Advanced Research | Subcommittee
+- leg-house-cmte-intelligence-sub-national-intelligence-enterprise | Subcommittee on the National Intelligence Enterprise | Subcommittee
+- leg-house-cmte-intelligence-sub-nsa-cybersecurity | Subcommittee on the National Security Agency and Cyber | Subcommittee
+
+### beneath Senate Committee on Armed Services  [leg-senate-cmte-armed-services]
+- leg-senate-cmte-armed-services-sub-airland | Airland | Subcommittee
+- leg-senate-cmte-armed-services-sub-cybersecurity | Cybersecurity | Subcommittee
+- leg-senate-cmte-armed-services-sub-emerging-threats-capabilities | Emerging Threats & Capabilities | Subcommittee
+- leg-senate-cmte-armed-services-sub-personnel | Personnel | Subcommittee
+- leg-senate-cmte-armed-services-sub-readiness-management-support | Readiness & Management Support | Subcommittee
+- leg-senate-cmte-armed-services-sub-seapower | Seapower | Subcommittee
+- leg-senate-cmte-armed-services-sub-strategic-forces | Strategic Forces | Subcommittee
+
+### beneath Senate Committee on Foreign Relations  [leg-senate-cmte-foreign-relations]
+- leg-senate-cmte-foreign-relations-sub-africa-global-health-policy | Africa & Global Health Policy | Subcommittee
+- leg-senate-cmte-foreign-relations-sub-east-asia-the-pacific-international-cybersecurity-policy | East Asia, The Pacific & International Cybersecurity Policy | Subcommittee
+- leg-senate-cmte-foreign-relations-sub-europe-regional-security-cooperation | Europe & Regional Security Cooperation | Subcommittee
+- leg-senate-cmte-foreign-relations-sub-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy | Multilateral International Development, Multilateral Institutions & International Economic, Energy & Environmental Policy | Subcommittee
+- leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism | Near East, South Asia, Central Asia & Counterterrorism | Subcommittee
+- leg-senate-cmte-foreign-relations-sub-state-department-usaid-management-international-operations-bilateral-international-development | State Department & USAID Management, International Operations & Bilateral International Development | Subcommittee
+- leg-senate-cmte-foreign-relations-sub-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues | Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights & Global Women's Issues | Subcommittee
+
+### beneath House Administrative Offices  [leg-house-admin]
+- leg-house-cao | Chief Administrative Officer | Office
+- leg-house-clerk | Clerk of the House | Office
+- leg-house-ig | Inspector General of the House | Office
+- leg-house-physician | Office of the Attending Physician | Office
+- leg-house-counsel | Office of the Legislative Counsel | Office
+- leg-house-saa | Sergeant at Arms of the House | Office
+
+### beneath House Committee on Energy & Commerce  [leg-house-cmte-energy-commerce]
+- leg-house-cmte-energy-commerce-sub-innovation-data-commerce | Subcommittee on Commerce, Manufacturing, and Trade | Subcommittee
+- leg-house-cmte-energy-commerce-sub-communications-technology | Subcommittee on Communications & Technology | Subcommittee
+- leg-house-cmte-energy-commerce-sub-energy-climate-grid-security | Subcommittee on Energy | Subcommittee
+- leg-house-cmte-energy-commerce-sub-environment-manufacturing-critical-materials | Subcommittee on Environment | Subcommittee
+- leg-house-cmte-energy-commerce-sub-health | Subcommittee on Health | Subcommittee
+- leg-house-cmte-energy-commerce-sub-oversight-investigations | Subcommittee on Oversight & Investigations | Subcommittee
 ```
 
-## Prompt B5 — 18 parent(s), 109 unit(s)
+## Prompt B3 — 32 parent(s), 108 unit(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -4173,59 +3825,6 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE UNITS:
-
-### beneath House Permanent Select Committee on Intelligence  [leg-house-cmte-permanent-select-committee-on-intelligence]
-- leg-house-cmte-intelligence-sub-central-intelligence-agency | Subcommittee on Central Intelligence Agency | Subcommittee
-- leg-house-cmte-intelligence-sub-defense-intelligence-warfighter-support | Subcommittee on Defense Intelligence and Overhead Architecture | Subcommittee
-- leg-house-cmte-intelligence-sub-open-source-intelligence | Subcommittee on Open Source Intelligence | Subcommittee
-- leg-house-cmte-intelligence-sub-oversight-investigations | Subcommittee on Oversight and Investigations | Subcommittee
-- leg-house-cmte-intelligence-sub-strategic-technologies-advanced-research | Subcommittee on Strategic Technologies & Advanced Research | Subcommittee
-- leg-house-cmte-intelligence-sub-national-intelligence-enterprise | Subcommittee on the National Intelligence Enterprise | Subcommittee
-- leg-house-cmte-intelligence-sub-nsa-cybersecurity | Subcommittee on the National Security Agency and Cyber | Subcommittee
-
-### beneath National Science Foundation (NSF)  [exec-ind-nsf]
-- exec-ind-nsf-biological-sciences-bio | Biological Sciences (BIO) | Directorate
-- exec-ind-nsf-computer-information-science-engineering-cise | Computer & Information Science & Engineering (CISE) | Directorate
-- exec-ind-nsf-engineering-eng | Directorate for Engineering (ENG) | Directorate
-- exec-ind-nsf-geosciences-geo | Directorate for Geosciences (GEO) | Directorate
-- exec-ind-nsf-mathematical-physical-sciences-mps | Mathematical & Physical Sciences (MPS) | Directorate
-- exec-ind-nsf-social-behavioral-economic-sciences-sbe | Social, Behavioral & Economic Sciences (SBE) | Directorate
-- exec-ind-nsf-technology-innovation-partnerships-tip | Technology, Innovation & Partnerships (TIP) | Directorate
-
-### beneath Senate Committee on Armed Services  [leg-senate-cmte-armed-services]
-- leg-senate-cmte-armed-services-sub-airland | Airland | Subcommittee
-- leg-senate-cmte-armed-services-sub-cybersecurity | Cybersecurity | Subcommittee
-- leg-senate-cmte-armed-services-sub-emerging-threats-capabilities | Emerging Threats & Capabilities | Subcommittee
-- leg-senate-cmte-armed-services-sub-personnel | Personnel | Subcommittee
-- leg-senate-cmte-armed-services-sub-readiness-management-support | Readiness & Management Support | Subcommittee
-- leg-senate-cmte-armed-services-sub-seapower | Seapower | Subcommittee
-- leg-senate-cmte-armed-services-sub-strategic-forces | Strategic Forces | Subcommittee
-
-### beneath Senate Committee on Foreign Relations  [leg-senate-cmte-foreign-relations]
-- leg-senate-cmte-foreign-relations-sub-africa-global-health-policy | Africa & Global Health Policy | Subcommittee
-- leg-senate-cmte-foreign-relations-sub-east-asia-the-pacific-international-cybersecurity-policy | East Asia, The Pacific & International Cybersecurity Policy | Subcommittee
-- leg-senate-cmte-foreign-relations-sub-europe-regional-security-cooperation | Europe & Regional Security Cooperation | Subcommittee
-- leg-senate-cmte-foreign-relations-sub-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy | Multilateral International Development, Multilateral Institutions & International Economic, Energy & Environmental Policy | Subcommittee
-- leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism | Near East, South Asia, Central Asia & Counterterrorism | Subcommittee
-- leg-senate-cmte-foreign-relations-sub-state-department-usaid-management-international-operations-bilateral-international-development | State Department & USAID Management, International Operations & Bilateral International Development | Subcommittee
-- leg-senate-cmte-foreign-relations-sub-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues | Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights & Global Women's Issues | Subcommittee
-
-### beneath U.S. Postal Service (USPS)  [exec-ind-usps]
-- exec-ind-usps-capital-metro-area | USPS Capital Metro Area | Area Office
-- exec-ind-usps-eastern-area | USPS Eastern Area | Area Office
-- exec-ind-usps-great-lakes-area | USPS Great Lakes Area | Area Office
-- exec-ind-usps-northeast-area | USPS Northeast Area | Area Office
-- exec-ind-usps-pacific-area | USPS Pacific Area | Area Office
-- exec-ind-usps-southern-area | USPS Southern Area | Area Office
-- exec-ind-usps-western-area | USPS Western Area | Area Office
-
-### beneath House Committee on Energy & Commerce  [leg-house-cmte-energy-commerce]
-- leg-house-cmte-energy-commerce-sub-innovation-data-commerce | Subcommittee on Commerce, Manufacturing, and Trade | Subcommittee
-- leg-house-cmte-energy-commerce-sub-communications-technology | Subcommittee on Communications & Technology | Subcommittee
-- leg-house-cmte-energy-commerce-sub-energy-climate-grid-security | Subcommittee on Energy | Subcommittee
-- leg-house-cmte-energy-commerce-sub-environment-manufacturing-critical-materials | Subcommittee on Environment | Subcommittee
-- leg-house-cmte-energy-commerce-sub-health | Subcommittee on Health | Subcommittee
-- leg-house-cmte-energy-commerce-sub-oversight-investigations | Subcommittee on Oversight & Investigations | Subcommittee
 
 ### beneath House Committee on Financial Services  [leg-house-cmte-financial-services]
 - leg-house-cmte-financial-services-sub-capital-markets | Subcommittee on Capital Markets | Subcommittee
@@ -4259,22 +3858,6 @@ THE UNITS:
 - leg-house-cmte-veterans-affairs-sub-oversight-investigations | Subcommittee on Oversight & Investigations | Subcommittee
 - leg-house-cmte-veterans-affairs-sub-technology-modernization | Subcommittee on Technology Modernization | Subcommittee
 
-### beneath Independent Regulatory Commissions  [exec-regulatory]
-- exec-regulatory-cftc | Commodity Futures Trading Commission (CFTC) | Independent Regulatory Commission  [already carries: ombBudget, usaspendingOutlays]
-- exec-regulatory-cpsc | Consumer Product Safety Commission (CPSC) | Independent Regulatory Commission  [already carries: ombBudget, usaspendingOutlays]
-- exec-regulatory-ferc | Federal Energy Regulatory Commission (FERC) | Independent Regulatory Commission
-- exec-regulatory-fmc | Federal Maritime Commission (FMC) | Independent Regulatory Commission  [already carries: ombBudget, usaspendingOutlays]
-- exec-regulatory-fed | Federal Reserve System | Independent Regulatory Commission
-- exec-regulatory-ftc | Federal Trade Commission (FTC) | Independent Regulatory Commission  [already carries: ombBudget]
-
-### beneath National Aeronautics & Space Administration (NASA)  [exec-ind-nasa]
-- exec-ind-nasa-aeronautics-research-mission-directorate | Aeronautics Research Mission Directorate | Mission Directorate
-- exec-ind-nasa-exploration-systems-development-mission-directorate | Exploration Systems Development Mission Directorate | Mission Directorate
-- exec-ind-nasa-centers | NASA Field Centers (10) | Division
-- exec-ind-nasa-science-mission-directorate | Science Mission Directorate | Mission Directorate
-- exec-ind-nasa-space-operations-mission-directorate | Space Operations Mission Directorate | Mission Directorate
-- exec-ind-nasa-space-technology-mission-directorate | Space Technology Mission Directorate | Mission Directorate
-
 ### beneath Senate Committee on Banking, Housing & Urban Affairs  [leg-senate-cmte-banking-housing-urban-affairs]
 - leg-senate-cmte-banking-housing-urban-affairs-sub-digital-assets | Digital Assets | Subcommittee
 - leg-senate-cmte-banking-housing-urban-affairs-sub-economic-policy | Economic Policy | Subcommittee
@@ -4291,93 +3874,12 @@ THE UNITS:
 - leg-senate-cmte-finance-sub-social-security-pensions-family-policy | Social Security, Pensions & Family Policy | Subcommittee
 - leg-senate-cmte-finance-sub-taxation-irs-oversight | Taxation & IRS Oversight | Subcommittee
 
-### beneath Central Intelligence Agency (CIA)  [exec-ind-cia]
-- exec-ind-cia-directorate-of-analysis-da | Directorate of Analysis (DA) | Directorate
-- exec-ind-cia-directorate-of-digital-innovation-ddi | Directorate of Digital Innovation (DDI) | Directorate
-- exec-ind-cia-directorate-of-operations-do | Directorate of Operations (DO) | Directorate
-- exec-ind-cia-directorate-of-science-technology-dst | Directorate of Science & Technology (DS&T) | Directorate
-- exec-ind-cia-directorate-of-support-ds | Directorate of Support (DS) | Directorate
-
-### beneath Department of Labor (DOL)  [exec-dept-dol]
-- exec-dept-dol-bureau-international-labor-affairs | Bureau of International Labor Affairs | Agency
-- exec-dept-dol-ebsa | Employee Benefits Security Administration (EBSA) | Agency  [already carries: ombBudget, usaspendingOutlays]
-- exec-dept-dol-ofccp | Office of Federal Contract Compliance Programs (OFCCP) | Agency  [already carries: ombBudget, usaspendingOutlays]
-- exec-dept-dol-veterans-employment-training-service | Veterans' Employment and Training Service | Agency  [already carries: ombBudget]
-- exec-dept-dol-women-s-bureau | Women's Bureau | Agency
-
-### beneath Directorate for Engineering (ENG)  [exec-ind-nsf-engineering-eng]
-- exec-ind-nsf-engineering-eng-chemical-bioengineering-environmental-transport-systems | Chemical, Bioengineering, Energy and Transport Systems (CBET) | Division
-- exec-ind-nsf-engineering-eng-civil-mechanical-manufacturing-innovation | Division of Civil, Mechanical & Manufacturing Innovation | Division
-- exec-ind-nsf-engineering-eng-electrical-communications-cyber-systems | Division of Electrical, Communications & Cyber Systems | Division
-- exec-ind-nsf-engineering-eng-emerging-frontiers-in-research-innovation | Division of Emerging Frontiers in Research & Innovation | Division
-- exec-ind-nsf-engineering-eng-engineering-education-centers | Division of Engineering Education & Centers | Division
-
 ### beneath House Committee on Natural Resources  [leg-house-cmte-natural-resources]
 - leg-house-cmte-natural-resources-sub-energy-mineral-resources | Subcommittee on Energy & Mineral Resources | Subcommittee
 - leg-house-cmte-natural-resources-sub-federal-lands | Subcommittee on Federal Lands | Subcommittee
 - leg-house-cmte-natural-resources-sub-indian-insular-affairs | Subcommittee on Indian & Insular Affairs | Subcommittee
 - leg-house-cmte-natural-resources-sub-oversight-investigations | Subcommittee on Oversight & Investigations | Subcommittee
 - leg-house-cmte-natural-resources-sub-water-wildlife-fisheries | Subcommittee on Water, Wildlife & Fisheries | Subcommittee
-```
-
-## Prompt B6 — 26 parent(s), 110 unit(s)
-
-```
-I am building a data-backed public graph of the U.S. federal government. Every
-published figure must be traceable to a specific published government document
-that prints it for that unit by name. Below are federal UNITS (bureaus, divisions,
-offices, regional offices, laboratories, committees), grouped by the unit above
-them, for which I currently publish only a share apportioned from a parent's total.
-For each I need the published document that prints the unit's OWN spending, if one
-exists, and what kind of figure it prints.
-
-For EVERY unit listed below, return exactly one line in this pipe-delimited
-format and nothing else per unit:
-
-    <node id> | <basis> | <document URL> | <period> | <figure or —> | <join key> | <confidence>
-
-- **basis** — what the figure measures, one of: `net_outlays`, `gross_outlays`,
-  `obligations`, `budget_authority`, `appropriations`, `budget_request`,
-  `audited_net_cost`, `payroll`, `disbursements`, `full_time_equivalents`,
-  `none`. These are different quantities and must never be mixed: an
-  appropriation is not spending, a request is not an appropriation, and a
-  committee's disbursements are not outlays.
-- **document URL** — the published document that prints the figure for THIS
-  unit by name, on the publisher's own site (a `.gov` host wherever one exists:
-  the Monthly Treasury Statement, OMB's Public Budget Database, USAspending
-  File A/B by Treasury Account Symbol, the agency's own Agency Financial Report
-  or Congressional Budget Justification, the House Statement of Disbursements,
-  the Report of the Secretary of the Senate). Not a news article, Wikipedia or
-  any republication.
-- **period** — the fiscal year or reporting period the figure covers, as the
-  document states it. A budget-year or out-year figure is a projection, not a
-  figure for a year that has happened; say so.
-- **figure** — only where the document prints one for this unit, as printed,
-  with its stated unit (dollars, thousands, millions). Never apportion a parent's
-  figure, never sum rows yourself unless the document prints the total.
-- **join key** — the string, account symbol or code the document uses for this
-  unit (a Treasury Account Symbol, an OMB bureau code, a committee name as the
-  disbursement report prints it).
-- **confidence** — `certain` only if you read the row; `likely` if the document
-  is right and the row inferred; `speculative` otherwise.
-
-Rules that matter more than coverage:
-1. **A missing answer is a result.** `<id> | none | — | — | — | — | certain` is
-   correct where no document prints a figure for the unit, and is more useful
-   than a guess. Many divisions, regional offices and laboratories are funded
-   from a parent's accounts and no document prints their spending alone.
-2. **A parent's figure is not the unit's.** If a document prints only the
-   bureau or department total, say `none` for the unit and name the document
-   in the join key column as `parent only: <name>`.
-3. **Contractor-operated is not federal spending by the unit.** A national
-   laboratory's budget is the sponsoring department's obligations to its
-   operating contractor; say so and give the department's own document.
-
-END with a section titled LOAD-BEARING NUMBERS: every figure you returned
-above, one line each, with the document URL it came from and whether it is
-official-published or third-party-estimated.
-
-THE UNITS:
 
 ### beneath House Committee on Science, Space & Technology  [leg-house-cmte-science-space-technology]
 - leg-house-cmte-science-space-technology-sub-energy | Subcommittee on Energy | Subcommittee
@@ -4393,34 +3895,6 @@ THE UNITS:
 - leg-house-cmte-small-business-sub-oversight-investigations-regulations | Subcommittee on Oversight, Investigations & Regulations | Subcommittee
 - leg-house-cmte-small-business-sub-rural-development-energy-supply-chains | Subcommittee on Rural Development, Energy & Supply Chains | Subcommittee
 
-### beneath Library of Congress  [leg-support-loc]
-- leg-support-loc-folklife | American Folklife Center | Bureau
-- leg-support-loc-crs | Congressional Research Service | Bureau  [already carries: combinedStatementOutlays]
-- leg-support-loc-copyright | Copyright Office | Bureau  [already carries: combinedStatementOutlays]
-- leg-support-loc-law | Law Library of Congress | Bureau
-- leg-support-loc-nls | National Library Service for the Blind and Print Disabled (NLS) | Bureau  [already carries: combinedStatementOutlays]
-
-### beneath Mathematical & Physical Sciences (MPS)  [exec-ind-nsf-mathematical-physical-sciences-mps]
-- exec-ind-nsf-mathematical-physical-sciences-mps-astronomical-sciences | Division of Astronomical Sciences | Division
-- exec-ind-nsf-mathematical-physical-sciences-mps-chemistry | Division of Chemistry | Division
-- exec-ind-nsf-mathematical-physical-sciences-mps-materials-research | Division of Materials Research | Division
-- exec-ind-nsf-mathematical-physical-sciences-mps-mathematical-sciences | Division of Mathematical Sciences | Division
-- exec-ind-nsf-mathematical-physical-sciences-mps-physics | Division of Physics | Division
-
-### beneath Military Departments & Services  [exec-dept-defense-branches]
-- exec-dept-defense-af | U.S. Air Force | Military Branch  [already carries: usaspendingOutlays]
-- exec-dept-defense-army | U.S. Army | Military Branch  [already carries: usaspendingOutlays]
-- exec-dept-defense-marines | U.S. Marine Corps | Military Branch
-- exec-dept-defense-navy | U.S. Navy | Military Branch
-- exec-dept-defense-sf | U.S. Space Force | Military Branch
-
-### beneath Senate Administrative Offices  [leg-senate-admin]
-- leg-senate-admin-legal | Office of Senate Legal Counsel | Office  [already carries: combinedStatementOutlays]
-- leg-senate-admin-physician | Office of the Senate Physician | Office
-- leg-senate-admin-secretary | Secretary of the Senate | Office
-- leg-senate-admin-chaplain | Senate Chaplain | Office
-- leg-senate-admin-saa | Sergeant at Arms of the Senate | Office
-
 ### beneath Senate Committee on Agriculture, Nutrition, and Forestry  [leg-senate-cmte-agriculture-nutrition-and-forestry]
 - leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research | Food and Nutrition, Specialty Crops, Organics, and Research | Subcommittee
 - leg-senate-cmte-agriculture-nutrition-and-forestry-sub-livestock-dairy-poultry-local-food-systems-food-safety-security | Subcommittee on Livestock, Dairy, Poultry, and Food Safety | Subcommittee
@@ -4428,67 +3902,23 @@ THE UNITS:
 - leg-senate-cmte-agriculture-nutrition-and-forestry-sub-commodities-risk-management-trade | The Subcommittee on Commodities, Derivatives, Risk Management, and Trade | Subcommittee
 - leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources | The Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology | Subcommittee
 
-### beneath Specialized Federal Courts  [jud-specialized]
-- jud-specialized-cavc | Court of Appeals for Veterans Claims (CAVC) | Specialized Court  [already carries: usaspendingOutlays]
-- jud-specialized-caaf | Court of Appeals for the Armed Forces (CAAF) | Specialized Court
-- jud-specialized-fisc | Foreign Intelligence Surveillance Court (FISC) | Specialized Court
-- jud-specialized-claims | U.S. Court of Federal Claims | Specialized Court
-- jud-specialized-intl-trade | U.S. Court of International Trade (CIT) | Specialized Court
-
-### beneath Veterans Integrated Service Networks  [exec-dept-va-vha-visns]
-- exec-dept-va-vha-visn-1 | VISN 1 | Regional Office
-- exec-dept-va-vha-visn-2 | VISN 2 | Regional Office
-- exec-dept-va-vha-visn-3 | VISN 3 | Regional Office
-- exec-dept-va-vha-visn-4 | VISN 4 | Regional Office
-- exec-dept-va-vha-visn-5 | VISN 5 | Regional Office
-
-### beneath Biological Sciences (BIO)  [exec-ind-nsf-biological-sciences-bio]
-- exec-ind-nsf-biological-sciences-bio-biological-infrastructure | Division of Biological Infrastructure | Division
-- exec-ind-nsf-biological-sciences-bio-environmental-biology | Division of Environmental Biology | Division
-- exec-ind-nsf-biological-sciences-bio-integrative-organismal-systems | Division of Integrative Organismal Systems | Division
-- exec-ind-nsf-biological-sciences-bio-molecular-cellular-biosciences | Division of Molecular & Cellular Biosciences | Division
-
-### beneath Computer & Information Science & Engineering (CISE)  [exec-ind-nsf-computer-information-science-engineering-cise]
-- exec-ind-nsf-computer-information-science-engineering-cise-computer-network-systems | Division of Computer & Network Systems | Division
-- exec-ind-nsf-computer-information-science-engineering-cise-computing-communication-foundations | Division of Computing & Communication Foundations | Division
-- exec-ind-nsf-computer-information-science-engineering-cise-information-intelligent-systems | Division of Information & Intelligent Systems | Division
-- exec-ind-nsf-computer-information-science-engineering-cise-advanced-cyberinfrastructure | Office of Advanced Cyberinfrastructure | Division
-
-### beneath Department of Defense (DoD)  [exec-dept-defense]
-- exec-dept-defense-agencies | Defense Agencies & Field Activities | Division
-- exec-dept-defense-jcs | Joint Chiefs of Staff | Division
-- exec-dept-defense-branches | Military Departments & Services | Division
-- exec-dept-defense-cocoms | Unified Combatant Commands (11) | Division
-
-### beneath Directorate for STEM Education (EDU)  [exec-ind-nsf-education-human-resources-ehr]
-- exec-ind-nsf-education-human-resources-ehr-graduate-education | Division of Graduate Education | Division
-- exec-ind-nsf-education-human-resources-ehr-human-resource-development | Division of Human Resource Development | Division
-- exec-ind-nsf-education-human-resources-ehr-research-on-learning-in-formal-informal-settings | Division of Research on Learning in Formal & Informal Settings | Division
-- exec-ind-nsf-education-human-resources-ehr-undergraduate-education | Division of Undergraduate Education | Division
-
 ### beneath House Committee on Education & the Workforce  [leg-house-cmte-education-the-workforce]
 - leg-house-cmte-education-the-workforce-sub-early-childhood-elementary-secondary-education | Subcommittee on Early Childhood, Elementary & Secondary Education | Subcommittee
 - leg-house-cmte-education-the-workforce-sub-health-employment-labor-pensions | Subcommittee on Health, Employment, Labor & Pensions | Subcommittee
 - leg-house-cmte-education-the-workforce-sub-higher-education-workforce-development | Subcommittee on Higher Education & Workforce Development | Subcommittee
 - leg-house-cmte-education-the-workforce-sub-workforce-environmental-regulation | Subcommittee on Workforce & Environmental Regulation | Subcommittee
 
+### beneath Independent Regulatory Commissions  [exec-regulatory]
+- exec-regulatory-cftc | Commodity Futures Trading Commission (CFTC) | Independent Regulatory Commission  [already carries: ombBudget, usaspendingOutlays]
+- exec-regulatory-cpsc | Consumer Product Safety Commission (CPSC) | Independent Regulatory Commission  [already carries: ombBudget, usaspendingOutlays]
+- exec-regulatory-fmc | Federal Maritime Commission (FMC) | Independent Regulatory Commission  [already carries: ombBudget, usaspendingOutlays]
+- exec-regulatory-ftc | Federal Trade Commission (FTC) | Independent Regulatory Commission  [already carries: ombBudget]
+
 ### beneath Joint Congressional Bodies  [leg-joint]
 - leg-joint-printing | Joint Committee on Printing | Committee
 - leg-joint-tax | Joint Committee on Taxation | Committee
 - leg-joint-library | Joint Committee on the Library | Committee
 - leg-joint-econ | Joint Economic Committee | Committee
-
-### beneath Judicial Branch  [judicial-branch]
-- jud-support | Judicial Support Organizations | Division
-- jud-specialized | Specialized Federal Courts | Division
-- jud-appeals | U.S. Courts of Appeals (13 Circuits) | Division
-- jud-district | U.S. District Courts (94 Districts) | Court
-
-### beneath Judicial Support Organizations  [jud-support]
-- jud-support-aousc | Administrative Office of U.S. Courts (AOUSC) | Agency
-- jud-support-fjc | Federal Judicial Center (FJC) | Agency  [already carries: ombBudget]
-- jud-support-fpd | Federal Public Defender Offices (82) | Agency
-- jud-support-ussc | U.S. Sentencing Commission (USSC) | Agency  [already carries: ombBudget]
 
 ### beneath Senate Committee on Energy & Natural Resources  [leg-senate-cmte-energy-natural-resources]
 - leg-senate-cmte-energy-natural-resources-sub-national-parks | National Parks | Subcommittee
@@ -4514,192 +3944,58 @@ THE UNITS:
 - leg-senate-cmte-homeland-security-governmental-affairs-sub-emerging-threats-spending-oversight | Emerging Threats & Spending Oversight | Subcommittee
 - leg-senate-cmte-homeland-security-governmental-affairs-sub-investigations-subcommittee-on-permanent-investigations | Permanent Subcommittee on Investigations | Subcommittee
 
-### beneath United States House of Representatives  [leg-house]
-- leg-house-admin | House Administrative Offices | Division
-- leg-house-committees | House Committees | Division
-- leg-house-leadership | House Leadership | Division
-- leg-house-offices | Individual Representative Offices (435) | Division
-
-### beneath United States Senate  [leg-senate]
-- leg-senate-offices | Individual Senator Offices (100) | Division
-- leg-senate-admin | Senate Administrative Offices | Division
-- leg-senate-committees | Senate Committees | Division
-- leg-senate-leadership | Senate Leadership | Division
-
-### beneath Department of Energy (DOE)  [exec-dept-doe]
-- exec-dept-doe-natl-labs | National Laboratories | Division
-- exec-dept-doe-em | Office of Environmental Management (EM) | Office
-- exec-dept-doe-sc | Office of Science (SC) | Office
-
-### beneath Department of Veterans Affairs (VA)  [exec-dept-va]
-- exec-dept-va-bva | Board of Veterans Appeals (BVA) | Office
-- exec-dept-va-nca | National Cemetery Administration (NCA) | Agency
-- exec-dept-va-vba | Veterans Benefits Administration (VBA) | Agency
-
-### beneath Department of the Treasury  [exec-dept-treasury]
-- exec-dept-treasury-fincen | Financial Crimes Enforcement Network (FinCEN) | Bureau  [already carries: ombBudget, usaspendingOutlays]
-- exec-dept-treasury-ofr | Office of Financial Research (OFR) | Bureau
-- exec-dept-treasury-ofac | Office of Foreign Assets Control (OFAC) | Bureau
-```
-
-## Prompt B7 — 28 parent(s), 45 unit(s)
-
-```
-I am building a data-backed public graph of the U.S. federal government. Every
-published figure must be traceable to a specific published government document
-that prints it for that unit by name. Below are federal UNITS (bureaus, divisions,
-offices, regional offices, laboratories, committees), grouped by the unit above
-them, for which I currently publish only a share apportioned from a parent's total.
-For each I need the published document that prints the unit's OWN spending, if one
-exists, and what kind of figure it prints.
-
-For EVERY unit listed below, return exactly one line in this pipe-delimited
-format and nothing else per unit:
-
-    <node id> | <basis> | <document URL> | <period> | <figure or —> | <join key> | <confidence>
-
-- **basis** — what the figure measures, one of: `net_outlays`, `gross_outlays`,
-  `obligations`, `budget_authority`, `appropriations`, `budget_request`,
-  `audited_net_cost`, `payroll`, `disbursements`, `full_time_equivalents`,
-  `none`. These are different quantities and must never be mixed: an
-  appropriation is not spending, a request is not an appropriation, and a
-  committee's disbursements are not outlays.
-- **document URL** — the published document that prints the figure for THIS
-  unit by name, on the publisher's own site (a `.gov` host wherever one exists:
-  the Monthly Treasury Statement, OMB's Public Budget Database, USAspending
-  File A/B by Treasury Account Symbol, the agency's own Agency Financial Report
-  or Congressional Budget Justification, the House Statement of Disbursements,
-  the Report of the Secretary of the Senate). Not a news article, Wikipedia or
-  any republication.
-- **period** — the fiscal year or reporting period the figure covers, as the
-  document states it. A budget-year or out-year figure is a projection, not a
-  figure for a year that has happened; say so.
-- **figure** — only where the document prints one for this unit, as printed,
-  with its stated unit (dollars, thousands, millions). Never apportion a parent's
-  figure, never sum rows yourself unless the document prints the total.
-- **join key** — the string, account symbol or code the document uses for this
-  unit (a Treasury Account Symbol, an OMB bureau code, a committee name as the
-  disbursement report prints it).
-- **confidence** — `certain` only if you read the row; `likely` if the document
-  is right and the row inferred; `speculative` otherwise.
-
-Rules that matter more than coverage:
-1. **A missing answer is a result.** `<id> | none | — | — | — | — | certain` is
-   correct where no document prints a figure for the unit, and is more useful
-   than a guess. Many divisions, regional offices and laboratories are funded
-   from a parent's accounts and no document prints their spending alone.
-2. **A parent's figure is not the unit's.** If a document prints only the
-   bureau or department total, say `none` for the unit and name the document
-   in the join key column as `parent only: <name>`.
-3. **Contractor-operated is not federal spending by the unit.** A national
-   laboratory's budget is the sponsoring department's obligations to its
-   operating contractor; say so and give the department's own document.
-
-END with a section titled LOAD-BEARING NUMBERS: every figure you returned
-above, one line each, with the document URL it came from and whether it is
-official-published or third-party-estimated.
-
-THE UNITS:
-
-### beneath Directorate for Geosciences (GEO)  [exec-ind-nsf-geosciences-geo]
-- exec-ind-nsf-geosciences-geo-atmospheric-geospace-sciences | Division of Atmospheric & Geospace Sciences | Division
-- exec-ind-nsf-geosciences-geo-earth-sciences | Division of Earth Sciences | Division
-- exec-ind-nsf-geosciences-geo-ocean-sciences | Division of Ocean Sciences | Division
-
-### beneath Executive Branch  [executive-branch]
-- exec-independent | Independent Establishments & Government Corporations | Division
-- exec-regulatory | Independent Regulatory Commissions | Division
-- exec-cabinet | The Cabinet — Executive Departments | Division
-
-### beneath Government Publishing Office (GPO)  [leg-support-gpo]
-- leg-support-gpo-journals | Official Journals of Government | Division
-- leg-support-gpo-plant | Plant Operations | Division
-- leg-support-gpo-security | Security & Intelligent Documents | Division
+### beneath Department of Labor (DOL)  [exec-dept-dol]
+- exec-dept-dol-ebsa | Employee Benefits Security Administration (EBSA) | Agency  [already carries: ombBudget, usaspendingOutlays]
+- exec-dept-dol-ofccp | Office of Federal Contract Compliance Programs (OFCCP) | Agency  [already carries: ombBudget, usaspendingOutlays]
+- exec-dept-dol-veterans-employment-training-service | Veterans' Employment and Training Service | Agency  [already carries: ombBudget]
 
 ### beneath House Committee on House Administration  [leg-house-cmte-house-administration]
 - leg-house-cmte-house-administration-sub-committees | Subcommittee on Committees | Subcommittee
 - leg-house-cmte-house-administration-sub-elections | Subcommittee on Elections | Subcommittee
 - leg-house-cmte-house-administration-sub-modernization-innovation | Subcommittee on Modernization and Innovation | Subcommittee
 
-### beneath Social, Behavioral & Economic Sciences (SBE)  [exec-ind-nsf-social-behavioral-economic-sciences-sbe]
-- exec-ind-nsf-social-behavioral-economic-sciences-sbe-behavioral-cognitive-sciences | Division of Behavioral & Cognitive Sciences | Division
-- exec-ind-nsf-social-behavioral-economic-sciences-sbe-social-economic-sciences | Division of Social & Economic Sciences | Division
-- exec-ind-nsf-social-behavioral-economic-sciences-sbe-national-center-for-science-engineering-statistics | National Center for Science and Engineering Statistics (NCSES) | Division
-
-### beneath Department of Transportation (DOT)  [exec-dept-dot]
-- exec-dept-dot-great-lakes-saint-lawrence-seaway-development-corporatio | Great Lakes Saint Lawrence Seaway Development Corporation | Government Corporation
-- exec-dept-dot-phmsa | Pipeline & Hazardous Materials Safety Admin (PHMSA) | Agency  [already carries: usaspendingOutlays]
+### beneath Library of Congress  [leg-support-loc]
+- leg-support-loc-crs | Congressional Research Service | Bureau  [already carries: combinedStatementOutlays]
+- leg-support-loc-copyright | Copyright Office | Bureau  [already carries: combinedStatementOutlays]
+- leg-support-loc-nls | National Library Service for the Blind and Print Disabled (NLS) | Bureau  [already carries: combinedStatementOutlays]
 
 ### beneath House Committee on Rules  [leg-house-cmte-rules]
 - leg-house-cmte-rules-sub-legislative-budget-process | Subcommittee on Legislative & Budget Process | Subcommittee
 - leg-house-cmte-rules-sub-rules-the-organization-of-the-house | Subcommittee on Rules and Organization of the House | Subcommittee
 
-### beneath Independent Establishments & Government Corporations  [exec-independent]
-- exec-ind-cia | Central Intelligence Agency (CIA) | Agency  [already carries: ombBudget]
-- exec-ind-misc | Other Independent Agencies (25+) | Division
+### beneath Judicial Support Organizations  [jud-support]
+- jud-support-fjc | Federal Judicial Center (FJC) | Agency  [already carries: ombBudget]
+- jud-support-ussc | U.S. Sentencing Commission (USSC) | Agency  [already carries: ombBudget]
 
-### beneath Legislative Branch  [legislative-branch]
-- leg-support | Congressional Support Agencies | Division
-- leg-joint | Joint Congressional Bodies | Division
-
-### beneath Social Security Administration (SSA)  [exec-ind-ssa]
-- exec-ind-ssa-oho | Office of Hearings Operations (OHO) | Division
-- exec-ind-ssa-field-ops | Office of Operations — Field Structure | Division
-
-### beneath Technology, Innovation & Partnerships (TIP)  [exec-ind-nsf-technology-innovation-partnerships-tip]
-- exec-ind-nsf-technology-innovation-partnerships-tip-convergence-accelerator | Convergence Accelerator | Division
-- exec-ind-nsf-technology-innovation-partnerships-tip-directorate-for-tip-programs | Division of Directorate for TIP Programs | Division
-
-### beneath U.S. District Courts (94 Districts)  [jud-district]
-- jud-district-structure | All 94 District Courts — Standard Structure | Division
-- jud-district-sdny | Southern District of New York (S.D.N.Y.) | District Court
-
-### beneath Congressional Budget Office (CBO)  [leg-support-cbo]
-- leg-support-cbo-divisions | Analytical Divisions | Division
-
-### beneath Department of Health & Human Services (HHS)  [exec-dept-hhs]
-- exec-dept-hhs-agency-toxic-substances-disease-registry | Agency for Toxic Substances and Disease Registry | Operating Division
+### beneath Military Departments & Services  [exec-dept-defense-branches]
+- exec-dept-defense-af | U.S. Air Force | Military Branch  [already carries: usaspendingOutlays]
+- exec-dept-defense-army | U.S. Army | Military Branch  [already carries: usaspendingOutlays]
 
 ### beneath Department of Homeland Security (DHS)  [exec-dept-dhs]
 - exec-dept-dhs-fletc | Federal Law Enforcement Training Centers (FLETC) | Component Agency  [already carries: ombBudget, usaspendingOutlays]
 
+### beneath Department of Housing & Urban Development (HUD)  [exec-dept-hud]
+- exec-dept-hud-fheo | Office of Fair Housing & Equal Opportunity (FHEO) | Office  [already carries: usaspendingOutlays]
+
+### beneath Department of Justice (DOJ)  [exec-dept-doj]
+- exec-dept-doj-parole-commission | United States Parole Commission | Office  [already carries: ombBudget]
+
+### beneath Department of Transportation (DOT)  [exec-dept-dot]
+- exec-dept-dot-phmsa | Pipeline & Hazardous Materials Safety Admin (PHMSA) | Agency  [already carries: usaspendingOutlays]
+
 ### beneath Department of the Interior (DOI)  [exec-dept-doi]
 - exec-dept-doi-bsee | Bureau of Safety & Environmental Enforcement (BSEE) | Bureau  [already carries: ombBudget, usaspendingOutlays]
 
-### beneath Government Accountability Office (GAO)  [leg-support-gao]
-- leg-support-gao-mission-teams | Mission Teams (15) | Division
+### beneath Department of the Treasury  [exec-dept-treasury]
+- exec-dept-treasury-fincen | Financial Crimes Enforcement Network (FinCEN) | Bureau  [already carries: ombBudget, usaspendingOutlays]
 
-### beneath Small Business Administration (SBA)  [exec-ind-sba]
-- exec-ind-sba-districts | District Offices (68) | Division
+### beneath Independent Establishments & Government Corporations  [exec-independent]
+- exec-ind-cia | Central Intelligence Agency (CIA) | Agency  [already carries: ombBudget]
 
-### beneath The Constitution of the United States  [the-constitution-of-the-united-states]
-- executive-branch | Executive Branch | Branch
+### beneath Senate Administrative Offices  [leg-senate-admin]
+- leg-senate-admin-legal | Office of Senate Legal Counsel | Office  [already carries: combinedStatementOutlays]
 
-### beneath U.S. Navy  [exec-dept-defense-navy]
-- exec-dept-defense-navy-naval-academy | United States Naval Academy | Component Agency
-
-### beneath USPS Capital Metro Area  [exec-ind-usps-capital-metro-area]
-- exec-ind-usps-capital-metro-area-districts | Districts (multiple) | Division
-
-### beneath USPS Eastern Area  [exec-ind-usps-eastern-area]
-- exec-ind-usps-eastern-area-districts | Districts (multiple) | Division
-
-### beneath USPS Great Lakes Area  [exec-ind-usps-great-lakes-area]
-- exec-ind-usps-great-lakes-area-districts | Districts (multiple) | Division
-
-### beneath USPS Northeast Area  [exec-ind-usps-northeast-area]
-- exec-ind-usps-northeast-area-districts | Districts (multiple) | Division
-
-### beneath USPS Pacific Area  [exec-ind-usps-pacific-area]
-- exec-ind-usps-pacific-area-districts | Districts (multiple) | Division
-
-### beneath USPS Southern Area  [exec-ind-usps-southern-area]
-- exec-ind-usps-southern-area-districts | Districts (multiple) | Division
-
-### beneath USPS Western Area  [exec-ind-usps-western-area]
-- exec-ind-usps-western-area-districts | Districts (multiple) | Division
-
-### beneath Veterans Health Administration (VHA)  [exec-dept-va-vha]
-- exec-dept-va-vha-visns | Veterans Integrated Service Networks | Division
+### beneath Specialized Federal Courts  [jud-specialized]
+- jud-specialized-cavc | Court of Appeals for Veterans Claims (CAVC) | Specialized Court  [already carries: usaspendingOutlays]
 ```
 

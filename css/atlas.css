@@ -14,8 +14,8 @@ body:not(.atlas-mode) #atlas { display: none; }
 body.atlas-mode { overflow: hidden; cursor: default; }
 /* In Directory mode the universe's own panels step aside; the top bar, the
    directory and the reading guide stay. */
-body.atlas-mode > :not(#atlas):not(#topbar):not(#loading):not(#reading-guide):not(script) { visibility: hidden; }
-body.atlas-mode #topbar, body.atlas-mode #atlas, body.atlas-mode #reading-guide { visibility: visible; }
+body.atlas-mode > :not(#atlas):not(#topbar):not(#loading):not(#reading-guide):not(#change-history):not(#download):not(script) { visibility: hidden; }
+body.atlas-mode #topbar, body.atlas-mode #atlas, body.atlas-mode #reading-guide, body.atlas-mode #change-history, body.atlas-mode #download { visibility: visible; }
 
 /* ---------- Coverage strip (the hero, made compact) ---------- */
 .atlas-hero {

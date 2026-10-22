@@ -15,10 +15,12 @@ CLAUDE.md.
   `graph.json` identical field-for-field except dates; the three generated
   reports byte-identical; gate `PASSED`; suite 2,234 passed / 1 skipped;
   browser smoke `ok: true`. Nothing is stale.
-- Treasury anchor: the **2026-08-31** Monthly Treasury Statement
-  (`tests/fixtures/mts_table5_2026-08-31.json`). The September statement was
-  **not yet published** on 2026-10-12 (API checked directly: no record_date
-  ≥ 2026-09-01). Expected ~2026-10-14/15.
+- Treasury anchor: the **2026-09-30** Monthly Treasury Statement, the fiscal
+  year's close (`tests/fixtures/mts_table5_2026-09-30.json`), fetched by the
+  first live update cycle on 2026-10-22 (CURATION.md §30.4): anchor
+  $7,395,799,983,313, 173 measured nodes, 171 of them moved against the
+  August statement. The 2026-08-31 fixture stays committed for the tests
+  pinned to it.
 
 ## Headline numbers (published graph)
 
@@ -31,13 +33,104 @@ CLAUDE.md.
 | Staff payroll (OPM FedScope, Mar 2025, civilian basic pay) | 178 orgs; top-level $185.1bn for 1.65M civilians |
 | Spending by object class (USAspending, FY2025 obligations) | 86 agencies incl. all 15 departments; staff pay (11.x+12.x) $595.0bn of $10.09tn obligations |
 
-Cache stamp: `?v=20261020a` (bump index.html, js/ui.js, js/graph.js together
+Cache stamp: `?v=20261022d` (bump index.html, js/ui.js, js/graph.js together
 on any JS change).
+
+## 2026-10-22: two definition-of-done criteria closed (see CURATION.md §23–24)
+
+- **Criterion 3 (Evidence).** `verificationNoDocument` publishes a recorded
+  reason where no official document can be read (the verifier's name floor or
+  the nomination ledger's latest decline). `scripts/report_evidence_coverage.py`
+  → `docs/EVIDENCE_COVERAGE.md` is the measure: 870 current organisations,
+  631 with a method, gap **247 → 40** — every one a document that WAS read and
+  does not carry the graph's name (17 subcommittees absent from a complete
+  committee list, 17 units whose page labels another wording, 4 groupings,
+  the Eisenhower library and one more): curation or rename decisions.
+- **Criterion 1 (Money).** `costNoDocument` is the explained blank: every
+  organisation left with only an estimate names the seven held money
+  documents (version, digest, names checked) and whether any prints its name.
+  `docs/COST_COVERAGE.md`: bare estimates **359 → 0** (341 explained blanks,
+  18 named in a held document without a licensed figure — the route to a few
+  more sourced figures, §24.4).
+- **Criterion 2 (Pay), measured and explained but NOT closed.** `payNoDocument`
+  (CURATION.md §25) sits on all 3,221 posts with no pay claim and no employer
+  block: the six held title-listing pay documents (Executive Schedule, current
+  Plum export, PLUM archive, White House roster, Manual leadership tables,
+  Schedule 8 footnote), each with digest and count, and whether any prints the
+  title (663 yes — stamped titles under other organisations; 2,558 no). The
+  list sits once on the root as `__heldPayDocuments`. By the definition's own
+  "0 in the four reasons" the gap is unchanged at 3,221: an explained blank is
+  not a terminal reason. `docs/UNPRICED_POSITIONS.md` prints the verdict per
+  post.
+- **Criterion 4(a) (Lists), measured as one number.** `data/curation/
+  list_dispositions.json` (CURATION.md §26) disposes of every list entry that
+  reaches no node (403) and every curated committee name the complete lists
+  lack (21); `scripts/report_list_reconciliation.py` → `docs/LIST_RECONCILIATION.md`.
+  **Gap 19** = 3 unsure (§13.6) + 16 real units not yet added (routes in §26.4:
+  a toptier-reporter licence would add eight at once).
+- **Criterion 4(b) and the reader feature "totals add up visibly".**
+  `treasury_sum` (CURATION.md §27) on all 57 measured units whose Table 5
+  header has parts: each part, where it landed, the sums, not attributed 0
+  everywhere. $2.88tn beneath 22 units is apportioned to estimated children
+  and now named part by part on the parent's panel.
+- Still open in the definition of done: criterion 2's count itself, 4(a)'s 16
+  addable units, whether to stop (rather than show) the $2.88tn apportionment,
+  5–7 self-update, change history and export.
+
+- **Criterion 6 (Freshness), 2026-10-22.** `data/source_registry.json` (27
+  sources) derived onto the graph root as `__sourceRegistry` by
+  `data_pipeline/freshness.py`; the panel's `#info-freshness` block marks a
+  source overdue against the reader's date; `docs/SOURCE_REGISTRY.md` and
+  `--due` list what the update job should try. Today: the September Treasury
+  statement is expected and not in use; FedScope (March 2025) and the AUSA
+  pay chart (2025) are overdue. CURATION.md §28.
+
+- **Change history, budget and review queue, 2026-10-22.**
+  `scripts/build_change_history.py --record` diffs the committed graph
+  against the build (`data_pipeline/changes.py`), writes
+  `output/change_history.json` (the site's "What changed" card and the
+  panel's per-node lines), `data/audit/review_queue.json` (53 open: 40 name
+  questions, 10 headcount disputes, 2 overdue sources, 1 placement
+  disagreement) and `docs/CHANGE_HISTORY.md`; exit 3 means the change
+  budget held. The gate checks the latest entry against the graph and the
+  queue against the graph's disagreements. CURATION.md §29.
+
+- **The update job, 2026-10-22.** `scripts/update_cycle.py --plan|--hold`
+  (fetch what the registry says is due with a per-row content check, derive,
+  rebuild, reports, gate, suite, smoke, change budget; report in
+  `output/update_cycle_report.json`; `--publish` refused until three clean
+  held cycles) and `.github/workflows/update_cycle.yml` (12th of each month
+  and on demand, hold mode, opens a pull request; merging publishes). No
+  scheduled cycle has run. CURATION.md §30.
+
+- **Export, 2026-10-22.** `scripts/export_flat_csv.py` writes `output/nodes.csv`
+  (one row per node, 52 columns, figures the nodes' own); the "Download" card
+  offers it with both graph copies, the change history, the registry and the
+  base graph; the gate checks the CSV beside the graph. All four reader
+  features of the definition of done are built. CURATION.md §31.
 
 ## Next actions, in order
 
+0. **The first live cycle was run from the sandbox on 2026-10-22 (CURATION.md
+   §30.4)**: it fetched the September statement, rebuilt, was held by the
+   suite on August-pinned tests (re-pinned) and by a job ordering defect
+   (fixed). The next cycle is the workflow's. **Run the update cycle (built
+   2026-10-22, CURATION.md §30).**
+   `python scripts/update_cycle.py --plan` lists what is due;
+   `python scripts/update_cycle.py --hold` fetches it (the September statement
+   through the crawler's functions into a dated fixture, the AUSA chart in
+   place), re-derives, rebuilds, runs the gate, the suite, the smoke check and
+   the change budget, and writes `output/update_cycle_report.json`. Expect
+   the first live run to be HELD: `tests/test_treasury_header_sums.py` pins
+   nine sums to the cent against the August rows and must be re-pinned
+   against the new fixture, and `docs/GO.md`'s `--treasury-rows` path moves.
+   The monthly workflow (`.github/workflows/update_cycle.yml`) fires only
+   once it is on `main`; merge this branch, then use "Run workflow" for the
+   first cycle rather than waiting for the 12th. Three clean held cycles
+   before the owner switches it to `--publish`.
 1. **September Treasury statement (~Oct 14–15).** It closes FY2026, so every
-   measured cost moves (~1/12 up) and estimates shift. Procedure:
+   measured cost moves (~1/12 up) and estimates shift. The update job above
+   does this; the manual procedure stays recorded:
    ```bash
    python -c "import sys,json,datetime;sys.path.insert(0,'.');from data_pipeline.crawler import treasury_outlays as t;d=t.fetch_latest_record_date(timeout=60);print(d)"
    # if d == 2026-09-30: fetch rows with t.fetch_rows_for_record_date(d) and write
@@ -45,8 +138,8 @@ on any JS change).
    # (keys: api_url, fetched_at, record_date, rows). Keep 08-31 and latest.json untouched.
    python scripts/regenerate_published_graph.py --treasury-rows tests/fixtures/mts_table5_2026-09-30.json
    ```
-   Then: regenerate the 3 reports (`report_cost_coverage`, `report_unpriced_positions`,
-   `report_research_prompts`), gate, full suite, smoke, update the
+   Then: regenerate the 4 reports (`report_cost_coverage`, `report_unpriced_positions`,
+   `report_research_prompts`, `report_evidence_coverage`), gate, full suite, smoke, update the
    `--treasury-rows` path in `docs/GO.md`, commit, push main + branch.
    Report which measured nodes moved and by how much.
 2. **"Committed vs paid out" (owner decision, open).** `spendingByKind` is

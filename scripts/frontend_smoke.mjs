@@ -318,6 +318,17 @@ try {
     check("an unread page says why it went unread", /^Not verified: /.test(evidenceRow) && /(could not be read|was not read|answered 404|refused until|could not be reached)/.test(evidenceRow), evidenceRow);
   }
 
+  // An organisation with a recorded reason no page could be named: the
+  // directory says the reason, never "no source recorded".
+  const noDocumentDirOrg = allNodes.find((n) => !isPostNode(n) && n.verificationNoDocument && !n.verificationMethod && !n.verificationUnread && !n.verificationFailure && reachable(n));
+  check("a no-document organisation is reachable in the directory", Boolean(noDocumentDirOrg), "none");
+  if (noDocumentDirOrg) {
+    check("the directory opens a no-document organisation", await openInDirectory(noDocumentDirOrg), noDocumentDirOrg.name);
+    const evidenceRow = await rowText(".detail-row:first-child dd");
+    check("a recorded reason is not called no source recorded in the directory", !/no source recorded/i.test(evidenceRow), evidenceRow);
+    check("the directory says why no page could be named", /^Not verified: /.test(evidenceRow), evidenceRow);
+  }
+
   // A checked-and-failed node says what was tested and against what.
   const failedNode = allNodes.find((n) => n.verificationFailure && reachable(n));
   if (failedNode) {
@@ -1012,6 +1023,175 @@ try {
     check("an account line's description says the Combined Statement prints the account", /Combined Statement, which prints this account/.test(desc), desc);
   } else {
     measurements.combinedAccountLine = "skipped: no account line in the served graph";
+  }
+
+  // An organisation left with only an estimate says which held money
+  // documents were checked for its name (criterion 1's explained blank), and
+  // one a held document names says which row it prints.
+  const blankOrg = allNodes.find((n) => n.costNoDocument && n.costNoDocument.kind === "no_held_document_names_it" && unique(n));
+  check("some organisation carries an explained blank", Boolean(blankOrg), "none");
+  if (blankOrg) {
+    await openByName(blankOrg.name);
+    const blankPanel = await text("#info-stats");
+    check("an explained blank names the documents checked", /No document this project holds prints a figure for this unit/.test(blankPanel) && /documents checked for a row carrying this unit's name: Monthly Treasury Statement/.test(blankPanel), blankPanel.slice(0, 900));
+    measurements.explainedBlank = blankOrg.id;
+  }
+  const namedOrg = allNodes.find((n) => n.costNoDocument && n.costNoDocument.kind === "named_in_a_held_document_without_a_licensed_figure" && unique(n));
+  if (namedOrg) {
+    await openByName(namedOrg.name);
+    const namedPanel = await text("#info-stats");
+    check("a unit a held document names says which row it prints", /A held document does print this unit's name/.test(namedPanel) && new RegExp(namedOrg.costNoDocument.namedIn[0].printed.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(namedPanel), namedPanel.slice(0, 900));
+    measurements.namedBlank = namedOrg.id;
+  } else {
+    measurements.namedBlank = "skipped: no organisation a held document names without a licensed figure";
+  }
+  const subcommittee = allNodes.find((n) => /^subcommittee$/i.test(String(n.type || "")) && n.cost_status === "allocated" && unique(n));
+  if (subcommittee) {
+    await openByName(subcommittee.name);
+    check("a subcommittee says it is funded through its committee", /funded through its committee/.test(await text("#info-stats")), subcommittee.name);
+  }
+
+  // Freshness (criterion 6): the panel lists the sources behind a node and
+  // marks one overdue when the reader's date is past the registry's
+  // overdueAfter. The expected status is recomputed here from the served
+  // root block with the same date arithmetic, and the page must agree.
+  const registry = graphJson.__sourceRegistry;
+  check("the served graph's root carries the source registry", Boolean(registry && Array.isArray(registry.sources) && registry.sources.length > 10), JSON.stringify(registry && registry.counts));
+  if (registry && Array.isArray(registry.sources)) {
+    const today = new Date().toISOString().slice(0, 10);
+    const statusOf = (entry) => {
+      const kind = String((entry.cadence || {}).kind || "");
+      const e = entry.expected || {};
+      if (kind === "closed_record") return "closed_record";
+      if (kind === "on_republication") return !e.recheckDue ? "copy_date_unknown" : today > e.recheckDue ? "recheck_due" : "current";
+      if (!(entry.copy || {}).date || !e.expectedBy) return "copy_date_unknown";
+      return today <= e.expectedBy ? "current" : today <= e.overdueAfter ? "newer_edition_expected" : "overdue";
+    };
+    const mts = registry.sources.find((s) => s.id === "monthly_treasury_statement");
+    const measured = allNodes.find((n) => n.cost_status === "official" && !n.synthetic && unique(n) && /^Department of/.test(n.name));
+    check("a measured node and the Treasury statement's registry row exist", Boolean(mts && measured), `${Boolean(mts)} ${Boolean(measured)}`);
+    if (mts && measured) {
+      await openByName(measured.name);
+      const freshText = await text("#info-freshness");
+      const mtsLine = await page.$eval('#info-freshness li[data-source="monthly_treasury_statement"]', (el) => ({ text: el.textContent, status: el.dataset.status })).catch(() => null);
+      check("a measured node's panel lists the Treasury statement among its sources", Boolean(mtsLine) && mtsLine.text.includes(mts.label), freshText.slice(0, 400));
+      check("the panel's status for the statement is the registry's dates read against today", Boolean(mtsLine) && mtsLine.status === statusOf(mts) && (statusOf(mts) !== "overdue" || /^OVERDUE/.test(mtsLine.text)), mtsLine ? `${mtsLine.status} vs ${statusOf(mts)}` : "no line");
+      check("the panel names the copy in use by its date", Boolean(mtsLine) && mtsLine.text.includes(String(mts.copy.date)), mtsLine ? mtsLine.text : "");
+      measurements.freshness = { node: measured.id, statement: statusOf(mts), counts: registry.counts };
+    }
+    const overdue = registry.sources.filter((s) => statusOf(s) === "overdue");
+    const overdueNode = overdue.length
+      ? allNodes.find((n) => unique(n) && !/position/i.test(String(n.type || "")) && overdue.some((s) => (s.graphFields || []).some((spec) => typeof spec === "string" ? Boolean(n[spec] && typeof n[spec] === "object") : spec && spec.field && n[spec.field] && typeof n[spec.field] === "object" && (spec.where || []).every(([k, v]) => String(n[spec.field][k]) === String(v)))))
+      : null;
+    if (overdueNode) {
+      await openByName(overdueNode.name);
+      const overdueText = await text("#info-freshness");
+      check("a node fed by an overdue source says OVERDUE and counts it in the heading", /OVERDUE — /.test(overdueText) && /of \d+ overdue:/.test(overdueText), overdueText.slice(0, 400));
+      measurements.freshnessOverdue = { node: overdueNode.id, sources: overdue.map((s) => s.id) };
+    } else {
+      measurements.freshnessOverdue = overdue.length ? "skipped: no reachable organisation carries an overdue source's fields" : "skipped: no source is overdue today";
+    }
+  }
+
+  // What changed (Part 2): the card shows the latest recorded build's own
+  // summary and budget verdict from output/change_history.json, which the
+  // check reads for itself.
+  const historyPath = path.join(ROOT, "output", "change_history.json");
+  if (fs.existsSync(historyPath)) {
+    const history = JSON.parse(fs.readFileSync(historyPath, "utf8"));
+    const latest = Array.isArray(history) && history.length ? history[0] : null;
+    check("the change history has a latest entry", Boolean(latest && latest.summary), "none");
+    if (latest) {
+      await page.click("#btn-change-history");
+      await page.waitForTimeout(400);
+      const open = await page.$eval("#change-history", (el) => el.classList.contains("open") && el.getAttribute("aria-hidden") === "false");
+      check("the What changed card opens", open, String(open));
+      const body = await text("#change-history-body");
+      check("the card prints the latest entry's own summary", body.includes(latest.summary.slice(0, 80)), body.slice(0, 300));
+      check("the card states the budget verdict", latest.budget && latest.budget.held ? /HELD by the change budget/.test(body) : /Within the change budget/.test(body), body.slice(0, 120));
+      const foot = await text("#change-history-foot");
+      check("the card names the review queue and its open count", /review queue/.test(foot) && (typeof latest.reviewQueueOpen !== "number" || foot.includes(String(latest.reviewQueueOpen))), foot);
+      await page.keyboard.press("Escape");
+      await page.waitForTimeout(200);
+      check("Escape closes the card", await page.$eval("#change-history", (el) => !el.classList.contains("open")), "still open");
+      measurements.changeHistory = { builtAt: latest.builtAt, held: Boolean(latest.budget && latest.budget.held), touched: (latest.touched || []).length };
+    }
+  } else {
+    measurements.changeHistory = "skipped: no output/change_history.json";
+  }
+
+  // Download (Part 2): the card lists the files the page names, each a link
+  // the server actually serves, the CSV among them.
+  await page.click("#btn-download");
+  await page.waitForTimeout(600);
+  const downloadLinks = await page.$$eval("#download-body a", (els) => els.map((a) => ({ href: a.getAttribute("href"), name: a.textContent })));
+  check("the Download card lists the graph, the CSV and the registry", downloadLinks.some((l) => l.name === "graph.json") && downloadLinks.some((l) => l.name === "nodes.csv") && downloadLinks.some((l) => l.name === "source_registry.json"), JSON.stringify(downloadLinks));
+  let served = 0;
+  for (const link of downloadLinks) {
+    const response = await page.request.fetch(new URL(link.href, page.url()).toString(), { method: "HEAD" }).catch(() => null);
+    if (response && response.ok()) served += 1;
+  }
+  check("every file the Download card offers is served", served === downloadLinks.length, `${served} of ${downloadLinks.length}`);
+  const sizes = await page.$$eval("#download-body .dl-size", (els) => els.map((e) => e.textContent));
+  check("the card shows each file's size", sizes.length === downloadLinks.length && sizes.every((s) => /\d/.test(s)), JSON.stringify(sizes));
+  await page.keyboard.press("Escape");
+  await page.waitForTimeout(200);
+  measurements.downloads = downloadLinks.map((l) => l.name);
+
+  // A measured unit's total adds up visibly (criterion 4(b)): the panel lists
+  // every part the statement prints beneath its header, which node each landed
+  // on, what reaches no node and is divided among the estimated children, and
+  // says the parts sum to the total.
+  const sumNode = allNodes.find((n) => n.id === "exec-dept-va" && n.treasury_sum) || allNodes.find((n) => n.treasury_sum && n.treasury_sum.toNoNode && n.treasury_sum.estimatedChildren.length && unique(n));
+  check("some measured unit carries a treasury_sum block", Boolean(sumNode), "none");
+  if (sumNode) {
+    await openByName(sumNode.name);
+    const sumText = await text("#info-cost-sum");
+    const noNodePart = sumNode.treasury_sum.parts.find((p) => p.where === "none");
+    const childPart = sumNode.treasury_sum.parts.find((p) => p.where === "child" && p.kind !== "receipts");
+    check("the sum block names a part that reaches no node and says so", noNodePart ? sumText.includes(noNodePart.name) && /no node here/.test(sumText) : true, sumText.slice(0, 600));
+    check("the sum block names the child a part landed on", childPart ? sumText.includes(childPart.nodeName) : true, sumText.slice(0, 600));
+    check("the sum block names the estimated children that divide the no-node money, or says the lines are the unit's own",
+      sumNode.treasury_sum.estimatedChildren.length
+        ? sumNode.treasury_sum.estimatedChildren.every((c) => sumText.includes(c.name)) && /divided among/.test(sumText) && /an apportionment, not a measurement/.test(sumText)
+        : /not subdivided further/.test(sumText),
+      sumText.slice(0, 900));
+    check("the sum block says the parts sum to the total exactly", Math.abs(sumNode.treasury_sum.notAttributed) > 0.005 ? /Not attributed/.test(sumText) : /sum to the total exactly/.test(sumText), sumText.slice(-200));
+    measurements.treasurySum = { node: sumNode.id, parts: sumNode.treasury_sum.parts.length };
+  }
+
+  // A post no pay document prices and no employer block explains says which
+  // held title-listing pay documents were checked for its title (criterion
+  // 2's explained blank), and one whose title a held document prints says so.
+  const blankPost = allNodes.find((n) => n.payNoDocument && n.payNoDocument.kind === "no_held_pay_document_prints_the_title" && n.payNoDocument.reason === "unreached" && unique(n));
+  check("some post carries an explained pay blank", Boolean(blankPost), "none");
+  if (blankPost) {
+    await openByName(blankPost.name);
+    const blankText = await text("#info-pay-blank");
+    check("a post's pay blank names the documents checked and says none prints the title",
+      /Why no pay figure:/.test(blankText) && /no pay document this project has read names this title under this organisation/.test(blankText)
+        && /title-listing pay documents this project holds were checked for the title: 5 U\.S\.C/.test(blankText) && /None of them prints this title\./.test(blankText)
+        && /an explained blank, not a document saying the post is unpaid/.test(blankText),
+      blankText.slice(0, 900));
+    const blankHead = await text("#info-stats .info-cost-amount");
+    check("a post's headline still reads Not available: the blank is not a figure", /Not available/.test(blankHead), blankHead);
+    measurements.payBlank = blankPost.id;
+  }
+  const namedPost = allNodes.find((n) => n.payNoDocument && n.payNoDocument.kind === "title_printed_in_a_held_pay_document_without_a_row_reaching_this_post" && unique(n));
+  if (namedPost) {
+    await openByName(namedPost.name);
+    const namedText = await text("#info-pay-blank");
+    check("a post whose title a held document prints says so and which document",
+      /A held document does print this title/.test(namedText) && new RegExp(namedPost.payNoDocument.namedIn[0].printed.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(namedText) && /no reviewed rule ties to this post/.test(namedText),
+      namedText.slice(0, 900));
+    measurements.payBlankNamed = namedPost.id;
+  } else {
+    measurements.payBlankNamed = "skipped: no post whose title a held pay document prints";
+  }
+  const pricedPost = allNodes.find((n) => n.positionStatutoryPay && !n.payNoDocument && unique(n));
+  if (pricedPost) {
+    await openByName(pricedPost.name);
+    check("a priced post carries no pay blank line", !(await page.$("#info-pay-blank")), pricedPost.id);
   }
 
   // A negative OMB figure is shown as the database gives it, with OMB's own
@@ -1878,6 +2058,21 @@ try {
     check("a never-checked node with an unread page says the page went unread", /Not verified: .*(could not be read|nothing could be read|refuses this crawler|answered 404|could not be reached|server error)/.test(unreadPanel), unreadPanel.slice(-700));
     check("an unread page is described as a fact about the page or host, not the unit", !/Not yet verified/.test(unreadPanel), unreadPanel.slice(0, 700));
   }
+  // An organisation for which no page was ever queued, and the record says
+  // why — the verifier's name floor or the nomination ledger's decline. The
+  // panel prints the reason where it said "hand-compiled base graph", and
+  // never calls it a finding about the unit.
+  const noDocumentNode = allNodes.find((n) =>
+    n.verificationNoDocument && typeof n.verificationNoDocument === "object" && !n.verificationMethod
+    && !n.verificationUnread && !n.verificationFailure && !(n.sourceUrls || []).length && unique(n));
+  check("some organisation carries a recorded reason no document can be read", Boolean(noDocumentNode), "none");
+  if (noDocumentNode) {
+    await openByName(noDocumentNode.name);
+    const noDocPanel = await text("#info-panel");
+    check("a unit with a recorded reason says why no page could be named", /Not verified: .*(count label|one common word|graph's own grouping|no page of its own|could name no official page|not on a \.gov or \.mil host|refuses this crawler|does not carry this graph's name)/.test(noDocPanel), noDocPanel.slice(-900));
+    check("a recorded reason is not described as a page that was never looked for", !/No source URL has been attached to it yet/.test(noDocPanel), noDocPanel.slice(0, 700));
+    measurements.noDocumentKind = noDocumentNode.verificationNoDocument.kind;
+  }
   // OPM's PLUM archive as the method that confirmed a post and placed it:
   // 125 and 129 nodes, which the wording maps did not know, so the panel
   // fell to "Last checked: <date>" and "no evidence recorded".
@@ -2167,7 +2362,8 @@ try {
     const isPost = (n) => /position|\brole\b|office holder/i.test(String(n.type || ""));
     const measuredOrg = allNodes.find((n) => n.cost_status === "official" && !isPost(n) && !n.synthetic && Number(n.resolved_total_amount) > 1e9 && n.__depth > 0);
     const verifiedOrg = allNodes.find((n) => n.verificationStatus === "verified" && (n.sourceUrls || []).length >= 2 && !isPost(n));
-    const unsourced = allNodes.find((n) => !n.lastVerified && !(n.sourceUrls || []).length && !n.verificationUnread && !n.synthetic);
+    const unsourced = allNodes.find((n) => !n.lastVerified && !(n.sourceUrls || []).length && !n.verificationUnread && !n.verificationNoDocument && !n.synthetic);
+    const noDocumentOrg = allNodes.find((n) => !isPost(n) && n.verificationNoDocument && !n.verificationMethod && !n.verificationUnread && !n.verificationFailure);
     const statutoryPost = allNodes.find((n) => isPost(n) && n.positionStatutoryPay && Number(n.positionStatutoryPay.amount) > 0 && !n.representsPosts);
     const unpricedPost = allNodes.find((n) => isPost(n) && !n.positionStatutoryPay && !n.positionSchedulePay && !n.positionTierReferencePay && !n.positionDerivedPay && !n.positionMilitaryPay && !n.positionReportedPay && !n.positionCurrentPay && !n.positionPayRate && !n.positionGradePay && !n.positionTierPay && !n.positionEmployer);
     const estimateOrg = allNodes.find((n) => n.cost_status === "allocated" && !isPost(n) && Number(n.resolved_total_amount) > 0);
@@ -2179,6 +2375,10 @@ try {
     if (verifiedOrg) {
       const v = await verdictOf(verifiedOrg.id);
       check("under Evidence a verified unit draws as verified", v && v.key === "verified" && v.color === "#4FBF8C", JSON.stringify(v));
+    }
+    if (noDocumentOrg) {
+      const v = await verdictOf(noDocumentOrg.id);
+      check("under Evidence a unit with a recorded reason draws as no page could be named, never as unsourced", v && v.key === "noDocument" && /no page could be named/.test(v.text), JSON.stringify(v));
     }
     if (unsourced) {
       const v = await verdictOf(unsourced.id);
@@ -2195,7 +2395,10 @@ try {
     }
     if (unpricedPost) {
       const v = await verdictOf(unpricedPost.id);
-      check("under Pay an unpriced post says no document names the title", v && v.key === "unpriced", JSON.stringify(v));
+      check("under Pay an unpriced post says no held pay document prints the title, or that one prints it under a filing no rule ties to the post",
+        v && v.key === "unpriced" && (unpricedPost.payNoDocument
+          ? (unpricedPost.payNoDocument.namedIn && unpricedPost.payNoDocument.namedIn.length ? /a held document prints the title/.test(v.text) : /no held pay document prints the title \(\d+ checked\)/.test(v.text))
+          : /no document names the title/.test(v.text)), JSON.stringify(v));
     }
     if (measuredOrg) {
       const v = await verdictOf(measuredOrg.id);

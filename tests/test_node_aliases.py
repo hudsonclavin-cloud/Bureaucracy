@@ -262,6 +262,11 @@ class IsolationTests(unittest.TestCase):
         # generic proposed name, and lands no figure.
         "scripts/rename_posts_to_printed_titles.py",
         "scripts/add_curated_nodes.py",
+        # Since 2026-10-22: the list reconciliation re-runs the Manual's entry
+        # join and the current export's agency scoping with the table those
+        # two name joins already take, to say which entries reach a node. It
+        # lands no figure.
+        "data_pipeline/verification/list_dispositions.py",
         "tests/test_node_aliases.py",
         "tests/test_govman.py",
     }

@@ -1,0 +1,2315 @@
+[
+ {
+  "builtAt": "2026-10-22T08:53:12.726654+00:00",
+  "anchor": {
+   "before": {
+    "recordDate": "2026-08-31",
+    "total": 6811043257196.1,
+    "statementFile": "tests/fixtures/mts_table5_2026-08-31.json"
+   },
+   "after": {
+    "recordDate": "2026-09-30",
+    "total": 7395799983313.23,
+    "statementFile": "/home/user/Bureaucracy/tests/fixtures/mts_table5_2026-09-30.json"
+   },
+   "sameStatement": false
+  },
+  "nodes": {
+   "before": 5512,
+   "after": 5512,
+   "added": [],
+   "removed": [],
+   "newlySuperseded": [],
+   "renamed": [],
+   "reparented": []
+  },
+  "measuredCosts": {
+   "before": 173,
+   "after": 173,
+   "moved": [
+    {
+     "id": "the-constitution-of-the-united-states",
+     "name": "The Constitution of the United States",
+     "before": 6811043257196.1,
+     "after": 7395799983313.23,
+     "change": 584756726117.13,
+     "percent": 8.59
+    },
+    {
+     "id": "exec-dept-hhs-cms",
+     "name": "Centers for Medicare & Medicaid Services (CMS)",
+     "before": 2486049653525.63,
+     "after": 2732873583522.79,
+     "change": 246823929997.16,
+     "percent": 9.93
+    },
+    {
+     "id": "exec-dept-hhs",
+     "name": "Department of Health & Human Services (HHS)",
+     "before": 1822378202029.11,
+     "after": 2003813410605.72,
+     "change": 181435208576.61,
+     "percent": 9.96
+    },
+    {
+     "id": "exec-ind-ssa",
+     "name": "Social Security Administration (SSA)",
+     "before": 1586725434763.84,
+     "after": 1733853189988.17,
+     "change": 147127755224.33,
+     "percent": 9.27
+    },
+    {
+     "id": "exec-dept-treasury-interest-on-the-public-debt",
+     "name": "Interest on the Public Debt",
+     "before": 1267361531632.09,
+     "after": 1359953253416.84,
+     "change": 92591721784.75,
+     "percent": 7.31
+    },
+    {
+     "id": "exec-dept-defense",
+     "name": "Department of Defense (DoD)",
+     "before": 832633471247.51,
+     "after": 916836451162.99,
+     "change": 84202979915.48,
+     "percent": 10.11
+    },
+    {
+     "id": "exec-dept-hhs--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -823236969714.51,
+     "after": -902694749259.04,
+     "change": -79457779544.53,
+     "percent": -9.65
+    },
+    {
+     "id": "exec-dept-treasury--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -18372459773.08,
+     "after": -86048959037.96,
+     "change": -67676499264.88,
+     "percent": -368.36
+    },
+    {
+     "id": "exec-dept-treasury",
+     "name": "Department of the Treasury",
+     "before": 1520317300729.7,
+     "after": 1580963564396.77,
+     "change": 60646263667.07,
+     "percent": 3.99
+    },
+    {
+     "id": "exec-ind-opm--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -515041268.23,
+     "after": -48815222499.47,
+     "change": -48300181231.24,
+     "percent": -9377.92
+    },
+    {
+     "id": "exec-dept-treasury-irs",
+     "name": "Internal Revenue Service (IRS)",
+     "before": 260269276851.62,
+     "after": 280977373896.34,
+     "change": 20708097044.72,
+     "percent": 7.96
+    },
+    {
+     "id": "exec-dept-va",
+     "name": "Department of Veterans Affairs (VA)",
+     "before": 395059405295.38,
+     "after": 415574777773.02,
+     "change": 20515372477.64,
+     "percent": 5.19
+    },
+    {
+     "id": "exec-dept-dot",
+     "name": "Department of Transportation (DOT)",
+     "before": 109594889432.49,
+     "after": 124270631233.59,
+     "change": 14675741801.1,
+     "percent": 13.39
+    },
+    {
+     "id": "exec-dept-usda",
+     "name": "Department of Agriculture (USDA)",
+     "before": 202292623413.6,
+     "after": 216669564389.41,
+     "change": 14376940975.81,
+     "percent": 7.11
+    },
+    {
+     "id": "exec-dept-ed",
+     "name": "Department of Education",
+     "before": 61327395379.76,
+     "after": 75226473850.21,
+     "change": 13899078470.45,
+     "percent": 22.66
+    },
+    {
+     "id": "exec-dept-va-vha",
+     "name": "Veterans Health Administration (VHA)",
+     "before": 100361712221.24,
+     "after": 113755226913.66,
+     "change": 13393514692.42,
+     "percent": 13.35
+    },
+    {
+     "id": "exec-dept-ed-fsa",
+     "name": "Federal Student Aid (FSA)",
+     "before": 80531492080.33,
+     "after": 92903788398.06,
+     "change": 12372296317.73,
+     "percent": 15.36
+    },
+    {
+     "id": "exec-dept-treasury-fiscal",
+     "name": "Bureau of the Fiscal Service",
+     "before": 9899395085.72,
+     "after": 22054348276.79,
+     "change": 12154953191.07,
+     "percent": 122.78
+    },
+    {
+     "id": "exec-ind-opm",
+     "name": "Office of Personnel Management (OPM)",
+     "before": 124287409220.6,
+     "after": 135808863209.02,
+     "change": 11521453988.42,
+     "percent": 9.27
+    },
+    {
+     "id": "exec-dept-dhs",
+     "name": "Department of Homeland Security (DHS)",
+     "before": 98222170059.21,
+     "after": 109528448164.37,
+     "change": 11306278105.16,
+     "percent": 11.51
+    },
+    {
+     "id": "treasury-undistributed-offsetting-receipts",
+     "name": "Undistributed offsetting receipts",
+     "before": -358094223680.81,
+     "after": -369128261110.47,
+     "change": -11034037429.66,
+     "percent": -3.08
+    },
+    {
+     "id": "exec-dept-usda-fns",
+     "name": "Food and Nutrition Administration (FNA)",
+     "before": 127220788208.37,
+     "after": 137040427117.23,
+     "change": 9819638908.86,
+     "percent": 7.72
+    },
+    {
+     "id": "exec-dept-dot-fhwa",
+     "name": "Federal Highway Administration (FHWA)",
+     "before": 58322278678.82,
+     "after": 65950614452.73,
+     "change": 7628335773.91,
+     "percent": 13.08
+    },
+    {
+     "id": "exec-dept-hud",
+     "name": "Department of Housing & Urban Development (HUD)",
+     "before": 61686962442.33,
+     "after": 68263373803.71,
+     "change": 6576411361.38,
+     "percent": 10.66
+    },
+    {
+     "id": "exec-dept-hhs-administration-for-children-and-families",
+     "name": "Administration for Children and Families",
+     "before": 65640372808.49,
+     "after": 71890019941.72,
+     "change": 6249647133.23,
+     "percent": 9.52
+    },
+    {
+     "id": "exec-dept-doe",
+     "name": "Department of Energy (DOE)",
+     "before": 47466853460.71,
+     "after": 52001025628.49,
+     "change": 4534172167.78,
+     "percent": 9.55
+    },
+    {
+     "id": "exec-dept-hhs-nih",
+     "name": "National Institutes of Health (NIH)",
+     "before": 41470778905.87,
+     "after": 45629933425.84,
+     "change": 4159154519.97,
+     "percent": 10.03
+    },
+    {
+     "id": "exec-dept-hud-pih",
+     "name": "Office of Public & Indian Housing (PIH)",
+     "before": 44561532246.56,
+     "after": 48675974379.86,
+     "change": 4114442133.3,
+     "percent": 9.23
+    },
+    {
+     "id": "exec-dept-doj",
+     "name": "Department of Justice (DOJ)",
+     "before": 41306694994.56,
+     "after": 45336477058.26,
+     "change": 4029782063.7,
+     "percent": 9.76
+    },
+    {
+     "id": "exec-dept-state",
+     "name": "Department of State",
+     "before": 24891927642.42,
+     "after": 28828477980.42,
+     "change": 3936550338.0,
+     "percent": 15.81
+    },
+    {
+     "id": "exec-dept-dol",
+     "name": "Department of Labor (DOL)",
+     "before": 51358064489.24,
+     "after": 55183832215.66,
+     "change": 3825767726.42,
+     "percent": 7.45
+    },
+    {
+     "id": "exec-dept-dhs-cbp",
+     "name": "Customs & Border Protection (CBP)",
+     "before": 25176948616.46,
+     "after": 28923160698.85,
+     "change": 3746212082.39,
+     "percent": 14.88
+    },
+    {
+     "id": "exec-dept-va-vba",
+     "name": "Veterans Benefits Administration (VBA)",
+     "before": 242849884236.03,
+     "after": 246493111723.82,
+     "change": 3643227487.79,
+     "percent": 1.5
+    },
+    {
+     "id": "exec-dept-ed--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -72979946293.25,
+     "after": -76266994413.29,
+     "change": -3287048120.04,
+     "percent": -4.5
+    },
+    {
+     "id": "exec-regulatory-fdic",
+     "name": "Federal Deposit Insurance Corporation (FDIC)",
+     "before": -18957565906.75,
+     "after": -22191862750.36,
+     "change": -3234296843.61,
+     "percent": -17.06
+    },
+    {
+     "id": "exec-dept-dhs-fema",
+     "name": "Federal Emergency Management Agency (FEMA)",
+     "before": 29627654655.87,
+     "after": 32851975032.5,
+     "change": 3224320376.63,
+     "percent": 10.88
+    },
+    {
+     "id": "exec-dept-dol-eta",
+     "name": "Employment & Training Administration (ETA)",
+     "before": 44061408872.96,
+     "after": 47221070601.66,
+     "change": 3159661728.7,
+     "percent": 7.17
+    },
+    {
+     "id": "exec-dept-dot-faa",
+     "name": "Federal Aviation Administration (FAA)",
+     "before": 22531060812.05,
+     "after": 25616375293.38,
+     "change": 3085314481.33,
+     "percent": 13.69
+    },
+    {
+     "id": "exec-dept-doi",
+     "name": "Department of the Interior (DOI)",
+     "before": 12832178268.92,
+     "after": 15566809061.84,
+     "change": 2734630792.92,
+     "percent": 21.31
+    },
+    {
+     "id": "exec-dept-dot-fta",
+     "name": "Federal Transit Administration (FTA)",
+     "before": 18549547599.63,
+     "after": 21068434730.17,
+     "change": 2518887130.54,
+     "percent": 13.58
+    },
+    {
+     "id": "exec-dept-doe-nnsa",
+     "name": "National Nuclear Security Administration (NNSA)",
+     "before": 23763992947.05,
+     "after": 26192332286.47,
+     "change": 2428339339.42,
+     "percent": 10.22
+    },
+    {
+     "id": "exec-regulatory-sec",
+     "name": "Securities & Exchange Commission (SEC)",
+     "before": 1799067031.03,
+     "after": -499610699.87,
+     "change": -2298677730.9,
+     "percent": -127.77
+    },
+    {
+     "id": "exec-ind-nasa",
+     "name": "National Aeronautics & Space Administration (NASA)",
+     "before": 21216279162.78,
+     "after": 23357242203.53,
+     "change": 2140963040.75,
+     "percent": 10.09
+    },
+    {
+     "id": "exec-dept-ed-oese",
+     "name": "Office of Elementary & Secondary Education (OESE)",
+     "before": 27191608261.22,
+     "after": 29292251243.43,
+     "change": 2100642982.21,
+     "percent": 7.73
+    },
+    {
+     "id": "exec-dept-doc",
+     "name": "Department of Commerce",
+     "before": 13000128043.8,
+     "after": 14837300292.27,
+     "change": 1837172248.47,
+     "percent": 14.13
+    },
+    {
+     "id": "exec-dept-dhs-ice",
+     "name": "Immigration & Customs Enforcement (ICE)",
+     "before": 20618379814.35,
+     "after": 22426702253.51,
+     "change": 1808322439.16,
+     "percent": 8.77
+    },
+    {
+     "id": "exec-dept-usda-fs",
+     "name": "Forest Service (USFS)",
+     "before": 11008051664.28,
+     "after": 12815595571.37,
+     "change": 1807543907.09,
+     "percent": 16.42
+    },
+    {
+     "id": "exec-dept-doi--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -16652737868.07,
+     "after": -18431417057.41,
+     "change": -1778679189.34,
+     "percent": -10.68
+    },
+    {
+     "id": "exec-dept-dhs-uscg",
+     "name": "U.S. Coast Guard",
+     "before": 12231768573.05,
+     "after": 13796793439.41,
+     "change": 1565024866.36,
+     "percent": 12.79
+    },
+    {
+     "id": "exec-dept-hud-cpd",
+     "name": "Office of Community Planning & Development (CPD)",
+     "before": 14378167642.09,
+     "after": 15770161330.04,
+     "change": 1391993687.95,
+     "percent": 9.68
+    },
+    {
+     "id": "exec-ind-epa",
+     "name": "Environmental Protection Agency (EPA)",
+     "before": 15983392461.05,
+     "after": 17365168363.24,
+     "change": 1381775902.19,
+     "percent": 8.65
+    },
+    {
+     "id": "exec-dept-hhs-hrsa",
+     "name": "Health Resources & Services Administration (HRSA)",
+     "before": 13326120452.32,
+     "after": 14675773445.64,
+     "change": 1349652993.32,
+     "percent": 10.13
+    },
+    {
+     "id": "exec-dept-dhs--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -16192042503.5,
+     "after": -17400018011.26,
+     "change": -1207975507.76,
+     "percent": -7.46
+    },
+    {
+     "id": "exec-dept-doc-nist",
+     "name": "National Institute of Standards and Technology (NIST)",
+     "before": 2871627326.72,
+     "after": 4018892711.12,
+     "change": 1147265384.4,
+     "percent": 39.95
+    },
+    {
+     "id": "exec-dept-hhs-cdc",
+     "name": "Centers for Disease Control & Prevention (CDC)",
+     "before": 8797566552.09,
+     "after": 9912373689.08,
+     "change": 1114807136.99,
+     "percent": 12.67
+    },
+    {
+     "id": "exec-dept-doj-fbi",
+     "name": "Federal Bureau of Investigation (FBI)",
+     "before": 9724112829.92,
+     "after": 10722639762.13,
+     "change": 998526932.21,
+     "percent": 10.27
+    },
+    {
+     "id": "exec-dept-state--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -4950336767.59,
+     "after": -5917598707.83,
+     "change": -967261940.24,
+     "percent": -19.54
+    },
+    {
+     "id": "exec-ind-nsf",
+     "name": "National Science Foundation (NSF)",
+     "before": 7951593352.37,
+     "after": 8876811687.53,
+     "change": 925218335.16,
+     "percent": 11.64
+    },
+    {
+     "id": "exec-dept-doc-noaa",
+     "name": "NOAA — National Oceanic & Atmospheric Administration",
+     "before": 6414280623.71,
+     "after": 7333482762.2,
+     "change": 919202138.49,
+     "percent": 14.33
+    },
+    {
+     "id": "judicial-branch",
+     "name": "Judicial Branch",
+     "before": 9140133867.73,
+     "after": 9985272808.0,
+     "change": 845138940.27,
+     "percent": 9.25
+    },
+    {
+     "id": "exec-dept-hhs-fda",
+     "name": "Food & Drug Administration (FDA)",
+     "before": 3369384319.53,
+     "after": 2538242424.73,
+     "change": -831141894.8,
+     "percent": -24.67
+    },
+    {
+     "id": "exec-dept-doj-bop",
+     "name": "Bureau of Prisons (BOP)",
+     "before": 7932740679.58,
+     "after": 8741921660.64,
+     "change": 809180981.06,
+     "percent": 10.2
+    },
+    {
+     "id": "exec-dept-doi-office-surface-mining-reclamation-enforcement",
+     "name": "Office of Surface Mining Reclamation and Enforcement",
+     "before": 1184535259.8,
+     "after": 1980077900.35,
+     "change": 795542640.55,
+     "percent": 67.16
+    },
+    {
+     "id": "exec-ind-misc-railroad-retirement-board--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -11427266977.53,
+     "after": -12212569957.65,
+     "change": -785302980.12,
+     "percent": -6.87
+    },
+    {
+     "id": "exec-dept-hhs-samhsa",
+     "name": "Substance Abuse and Mental Health Services Administration (SAMHSA)",
+     "before": 6986628348.34,
+     "after": 7704004358.24,
+     "change": 717376009.9,
+     "percent": 10.27
+    },
+    {
+     "id": "exec-regulatory-fcc",
+     "name": "Federal Communications Commission (FCC)",
+     "before": 9879942633.73,
+     "after": 10547464011.73,
+     "change": 667521378.0,
+     "percent": 6.76
+    },
+    {
+     "id": "exec-ind-usps",
+     "name": "U.S. Postal Service (USPS)",
+     "before": 2055857347.93,
+     "after": 1402790573.83,
+     "change": -653066774.1,
+     "percent": -31.77
+    },
+    {
+     "id": "exec-ind-misc-railroad-retirement-board",
+     "name": "Railroad Retirement Board",
+     "before": 4470523415.96,
+     "after": 5111207359.1,
+     "change": 640683943.14,
+     "percent": 14.33
+    },
+    {
+     "id": "exec-dept-hhs-ihs",
+     "name": "Indian Health Service (IHS)",
+     "before": 9494534406.02,
+     "after": 10087690109.83,
+     "change": 593155703.81,
+     "percent": 6.25
+    },
+    {
+     "id": "legislative-branch",
+     "name": "Legislative Branch",
+     "before": 6471395639.99,
+     "after": 7048846626.9,
+     "change": 577450986.91,
+     "percent": 8.92
+    },
+    {
+     "id": "exec-dept-doi-bia",
+     "name": "Bureau of Indian Affairs (BIA)",
+     "before": 2427080474.47,
+     "after": 2947784703.82,
+     "change": 520704229.35,
+     "percent": 21.45
+    },
+    {
+     "id": "exec-dept-dhs-uscis",
+     "name": "U.S. Citizenship & Immigration Services (USCIS)",
+     "before": 5232852592.24,
+     "after": 5749512188.69,
+     "change": 516659596.45,
+     "percent": 9.87
+    },
+    {
+     "id": "exec-dept-doi-nps",
+     "name": "National Park Service (NPS)",
+     "before": 4431721287.83,
+     "after": 4946454159.39,
+     "change": 514732871.56,
+     "percent": 11.61
+    },
+    {
+     "id": "exec-ind-misc-tennessee-valley-authority-tva",
+     "name": "Tennessee Valley Authority (TVA)",
+     "before": -945112444.17,
+     "after": -1447263334.54,
+     "change": -502150890.37,
+     "percent": -53.13
+    },
+    {
+     "id": "exec-dept-dol--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -759419059.04,
+     "after": -1260924834.19,
+     "change": -501505775.15,
+     "percent": -66.04
+    },
+    {
+     "id": "exec-dept-doj-office-justice-programs",
+     "name": "Office of Justice Programs",
+     "before": 4518129781.85,
+     "after": 5004301766.21,
+     "change": 486171984.36,
+     "percent": 10.76
+    },
+    {
+     "id": "exec-dept-treasury-occ",
+     "name": "Office of the Comptroller of the Currency (OCC)",
+     "before": 408288873.68,
+     "after": -77724569.67,
+     "change": -486013443.35,
+     "percent": -119.04
+    },
+    {
+     "id": "exec-ind-ssa--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -61191383791.04,
+     "after": -61664480382.33,
+     "change": -473096591.29,
+     "percent": -0.77
+    },
+    {
+     "id": "exec-independent-agency-for-international-development",
+     "name": "Agency for International Development",
+     "before": 6886914401.01,
+     "after": 7349686474.57,
+     "change": 462772073.56,
+     "percent": 6.72
+    },
+    {
+     "id": "exec-dept-dhs-usss",
+     "name": "U.S. Secret Service (USSS)",
+     "before": 3363339533.09,
+     "after": 3819159602.97,
+     "change": 455820069.88,
+     "percent": 13.55
+    },
+    {
+     "id": "exec-dept-hud-ginnie",
+     "name": "Ginnie Mae",
+     "before": -1839035438.49,
+     "after": -1386250708.7,
+     "change": 452784729.79,
+     "percent": 24.62
+    },
+    {
+     "id": "exec-dept-dhs-tsa",
+     "name": "Transportation Security Administration (TSA)",
+     "before": 7449834519.9,
+     "after": 7901697679.4,
+     "change": 451863159.5,
+     "percent": 6.07
+    },
+    {
+     "id": "exec-dept-usda-nrcs",
+     "name": "Natural Resources Conservation Service (NRCS)",
+     "before": 5270811519.5,
+     "after": 5698293571.02,
+     "change": 427482051.52,
+     "percent": 8.11
+    },
+    {
+     "id": "exec-dept-va--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -6685762604.11,
+     "after": -7061489118.96,
+     "change": -375726514.85,
+     "percent": -5.62
+    },
+    {
+     "id": "exec-dept-doi-bor",
+     "name": "Bureau of Reclamation (BOR)",
+     "before": 2987056641.15,
+     "after": 3343771342.38,
+     "change": 356714701.23,
+     "percent": 11.94
+    },
+    {
+     "id": "exec-dept-usda-aphis",
+     "name": "Animal & Plant Health Inspection Service (APHIS)",
+     "before": 2048645529.7,
+     "after": 2355849961.61,
+     "change": 307204431.91,
+     "percent": 15.0
+    },
+    {
+     "id": "exec-dept-dot-fra",
+     "name": "Federal Railroad Administration (FRA)",
+     "before": 6791383741.04,
+     "after": 7088662861.75,
+     "change": 297279120.71,
+     "percent": 4.38
+    },
+    {
+     "id": "exec-dept-doe-eere",
+     "name": "Office of Energy Efficiency & Renewable Energy (EERE)",
+     "before": 3303739714.39,
+     "after": 3598516769.98,
+     "change": 294777055.59,
+     "percent": 8.92
+    },
+    {
+     "id": "exec-dept-doi-fws",
+     "name": "U.S. Fish & Wildlife Service (FWS)",
+     "before": 3091700660.5,
+     "after": 3383992199.4,
+     "change": 292291538.9,
+     "percent": 9.45
+    },
+    {
+     "id": "exec-dept-doi-blm",
+     "name": "Bureau of Land Management (BLM)",
+     "before": 1364367888.4,
+     "after": 1612117509.7,
+     "change": 247749621.3,
+     "percent": 18.16
+    },
+    {
+     "id": "exec-dept-doc-ntia",
+     "name": "National Telecommunications and Information Administration",
+     "before": 986305441.58,
+     "after": 739747130.48,
+     "change": -246558311.1,
+     "percent": -25.0
+    },
+    {
+     "id": "exec-dept-doj-usao",
+     "name": "U.S. Attorneys Office (USAO — 94 Districts)",
+     "before": 2291251063.23,
+     "after": 2526757978.33,
+     "change": 235506915.1,
+     "percent": 10.28
+    },
+    {
+     "id": "exec-dept-doc-economic-development-administration",
+     "name": "Economic Development Administration",
+     "before": 1063808699.83,
+     "after": 1294468432.06,
+     "change": 230659732.23,
+     "percent": 21.68
+    },
+    {
+     "id": "exec-dept-doj-dea",
+     "name": "Drug Enforcement Administration (DEA)",
+     "before": 2969266853.4,
+     "after": 3197208845.3,
+     "change": 227941991.9,
+     "percent": 7.68
+    },
+    {
+     "id": "exec-dept-doc--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -46947641.54,
+     "after": -273497240.56,
+     "change": -226549599.02,
+     "percent": -482.56
+    },
+    {
+     "id": "exec-dept-defense--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -2393568087.77,
+     "after": -2611688680.53,
+     "change": -218120592.76,
+     "percent": -9.11
+    },
+    {
+     "id": "leg-house",
+     "name": "United States House of Representatives",
+     "before": 1833255200.73,
+     "after": 2009254505.94,
+     "change": 175999305.21,
+     "percent": 9.6
+    },
+    {
+     "id": "exec-dept-dot--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -647622469.79,
+     "after": -820973263.72,
+     "change": -173350793.93,
+     "percent": -26.77
+    },
+    {
+     "id": "exec-dept-hhs-administration-for-community-living",
+     "name": "Administration for Community Living",
+     "before": 2142149578.01,
+     "after": 2308834175.04,
+     "change": 166684597.03,
+     "percent": 7.78
+    },
+    {
+     "id": "exec-dept-usda-agricultural-marketing-service",
+     "name": "Agricultural Marketing Service",
+     "before": 1616282322.16,
+     "after": 1773551402.84,
+     "change": 157269080.68,
+     "percent": 9.73
+    },
+    {
+     "id": "exec-dept-usda-foreign-agricultural-service",
+     "name": "Foreign Agricultural Service",
+     "before": 1425550468.66,
+     "after": 1580201745.52,
+     "change": 154651276.86,
+     "percent": 10.85
+    },
+    {
+     "id": "exec-ind-sba",
+     "name": "Small Business Administration (SBA)",
+     "before": 11679892637.64,
+     "after": 11826793776.22,
+     "change": 146901138.58,
+     "percent": 1.26
+    },
+    {
+     "id": "exec-regulatory-bureau-of-consumer-financial-protection",
+     "name": "Bureau of Consumer Financial Protection",
+     "before": 403988335.89,
+     "after": 545256852.55,
+     "change": 141268516.66,
+     "percent": 34.97
+    },
+    {
+     "id": "exec-dept-doj-usms",
+     "name": "U.S. Marshals Service (USMS)",
+     "before": 1610072463.85,
+     "after": 1745553958.15,
+     "change": 135481494.3,
+     "percent": 8.41
+    },
+    {
+     "id": "leg-senate",
+     "name": "United States Senate",
+     "before": 1206618593.37,
+     "after": 1340590543.44,
+     "change": 133971950.07,
+     "percent": 11.1
+    },
+    {
+     "id": "exec-dept-dot-nhtsa",
+     "name": "National Highway Traffic Safety Admin (NHTSA)",
+     "before": 1360453649.92,
+     "after": 1491155014.3,
+     "change": 130701364.38,
+     "percent": 9.61
+    },
+    {
+     "id": "exec-dept-usda-ars",
+     "name": "Agricultural Research Service (ARS)",
+     "before": 1637508142.58,
+     "after": 1761028221.49,
+     "change": 123520078.91,
+     "percent": 7.54
+    },
+    {
+     "id": "exec-dept-doj-atf",
+     "name": "Bureau of Alcohol, Tobacco, Firearms & Explosives (ATF)",
+     "before": 1497501197.68,
+     "after": 1617999153.66,
+     "change": 120497955.98,
+     "percent": 8.05
+    },
+    {
+     "id": "exec-ind-smithsonian",
+     "name": "Smithsonian Institution",
+     "before": 1155851484.61,
+     "after": 1273047706.36,
+     "change": 117196221.75,
+     "percent": 10.14
+    },
+    {
+     "id": "exec-independent-corps-of-engineers",
+     "name": "Corps of Engineers",
+     "before": 10899676389.06,
+     "after": 10783829803.75,
+     "change": -115846585.31,
+     "percent": -1.06
+    },
+    {
+     "id": "exec-ind-nsf-education-human-resources-ehr",
+     "name": "Directorate for STEM Education (EDU)",
+     "before": 985423177.39,
+     "after": 1097501342.79,
+     "change": 112078165.4,
+     "percent": 11.37
+    },
+    {
+     "id": "exec-dept-doi-usgs",
+     "name": "U.S. Geological Survey (USGS)",
+     "before": 1336172065.27,
+     "after": 1436432465.17,
+     "change": 100260399.9,
+     "percent": 7.5
+    },
+    {
+     "id": "exec-dept-dot-fmcsa",
+     "name": "Federal Motor Carrier Safety Admin (FMCSA)",
+     "before": 863605463.94,
+     "after": 955281881.34,
+     "change": 91676417.4,
+     "percent": 10.62
+    },
+    {
+     "id": "exec-dept-dhs-cisa",
+     "name": "Cybersecurity & Infrastructure Security Agency (CISA)",
+     "before": 1913129116.71,
+     "after": 2004790601.8,
+     "change": 91661485.09,
+     "percent": 4.79
+    },
+    {
+     "id": "leg-support-uscp",
+     "name": "U.S. Capitol Police",
+     "before": 764621744.01,
+     "after": 854086085.21,
+     "change": 89464341.2,
+     "percent": 11.7
+    },
+    {
+     "id": "exec-independent-general-services-administration",
+     "name": "General Services Administration",
+     "before": -1064048019.07,
+     "after": -974666395.59,
+     "change": 89381623.48,
+     "percent": 8.4
+    },
+    {
+     "id": "exec-dept-dot-marad",
+     "name": "Maritime Administration (MARAD)",
+     "before": -841121590.82,
+     "after": -754356408.95,
+     "change": 86765181.87,
+     "percent": 10.32
+    },
+    {
+     "id": "exec-dept-treasury-bep",
+     "name": "Bureau of Engraving & Printing",
+     "before": 9287041.05,
+     "after": 94805760.32,
+     "change": 85518719.27,
+     "percent": 920.84
+    },
+    {
+     "id": "exec-dept-usda-fsis",
+     "name": "Food Safety & Inspection Service (FSIS)",
+     "before": 1070885603.84,
+     "after": 1155027968.8,
+     "change": 84142364.96,
+     "percent": 7.86
+    },
+    {
+     "id": "exec-dept-doj--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -4030378563.21,
+     "after": -4110456246.08,
+     "change": -80077682.87,
+     "percent": -1.99
+    },
+    {
+     "id": "exec-regulatory-nrc",
+     "name": "Nuclear Regulatory Commission (NRC)",
+     "before": 186944054.1,
+     "after": 108417963.7,
+     "change": -78526090.4,
+     "percent": -42.01
+    },
+    {
+     "id": "exec-ind-misc-americorps",
+     "name": "AmeriCorps",
+     "before": 941240516.35,
+     "after": 1018334403.34,
+     "change": 77093886.99,
+     "percent": 8.19
+    },
+    {
+     "id": "exec-dept-dol-bls",
+     "name": "Bureau of Labor Statistics (BLS)",
+     "before": 449463540.67,
+     "after": 526429061.69,
+     "change": 76965521.02,
+     "percent": 17.12
+    },
+    {
+     "id": "leg-support-loc",
+     "name": "Library of Congress",
+     "before": 823618772.19,
+     "after": 895782554.43,
+     "change": 72163782.24,
+     "percent": 8.76
+    },
+    {
+     "id": "leg-support-aoc",
+     "name": "Architect of the Capitol",
+     "before": 826075654.8,
+     "after": 897465341.62,
+     "change": 71389686.82,
+     "percent": 8.64
+    },
+    {
+     "id": "exec-ind-misc-national-credit-union-administration-ncua",
+     "name": "National Credit Union Administration (NCUA)",
+     "before": -1211944181.54,
+     "after": -1140768651.04,
+     "change": 71175530.5,
+     "percent": 5.87
+    },
+    {
+     "id": "exec-dept-usda--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -3545126503.5,
+     "after": -3613654526.75,
+     "change": -68528023.25,
+     "percent": -1.93
+    },
+    {
+     "id": "exec-eop",
+     "name": "Executive Office of the President (EOP)",
+     "before": -1166326771.25,
+     "after": -1233611351.34,
+     "change": -67284580.09,
+     "percent": -5.77
+    },
+    {
+     "id": "exec-dept-hud--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -1462591938.29,
+     "after": -1524308437.81,
+     "change": -61716499.52,
+     "percent": -4.22
+    },
+    {
+     "id": "leg-support-gao",
+     "name": "Government Accountability Office (GAO)",
+     "before": 773914960.8,
+     "after": 835570825.01,
+     "change": 61655864.21,
+     "percent": 7.97
+    },
+    {
+     "id": "exec-ind-misc-broadcasting-board-of-governors-usagm",
+     "name": "U.S. Agency for Global Media",
+     "before": 517507373.96,
+     "after": 569965975.83,
+     "change": 52458601.87,
+     "percent": 10.14
+    },
+    {
+     "id": "leg-support-gpo",
+     "name": "Government Publishing Office (GPO)",
+     "before": 87161929.2,
+     "after": 35956085.88,
+     "change": -51205843.32,
+     "percent": -58.75
+    },
+    {
+     "id": "exec-dept-doc-ita",
+     "name": "International Trade Administration (ITA)",
+     "before": 469663976.42,
+     "after": 514993600.66,
+     "change": 45329624.24,
+     "percent": 9.65
+    },
+    {
+     "id": "exec-ind-misc-peace-corps",
+     "name": "Peace Corps",
+     "before": 372892234.93,
+     "after": 417394400.65,
+     "change": 44502165.72,
+     "percent": 11.93
+    },
+    {
+     "id": "exec-dept-dol-osha",
+     "name": "Occupational Safety & Health Administration (OSHA)",
+     "before": 560016210.75,
+     "after": 604377541.41,
+     "change": 44361330.66,
+     "percent": 7.92
+    },
+    {
+     "id": "exec-dept-treasury-ttb",
+     "name": "Alcohol & Tobacco Tax & Trade Bureau (TTB)",
+     "before": 512977431.15,
+     "after": 553582210.07,
+     "change": 40604778.92,
+     "percent": 7.92
+    },
+    {
+     "id": "exec-independent-corps-of-engineers--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -1103876045.07,
+     "after": -1142745719.5,
+     "change": -38869674.43,
+     "percent": -3.52
+    },
+    {
+     "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc",
+     "name": "Pension Benefit Guaranty Corporation (PBGC)",
+     "before": 1370201748.37,
+     "after": 1407527391.29,
+     "change": 37325642.92,
+     "percent": 2.72
+    },
+    {
+     "id": "exec-dept-ed-ies",
+     "name": "Institute of Education Sciences (IES)",
+     "before": 478287221.94,
+     "after": 514798523.04,
+     "change": 36511301.1,
+     "percent": 7.63
+    },
+    {
+     "id": "exec-ind-misc-millennium-challenge-corporation",
+     "name": "Millennium Challenge Corporation",
+     "before": 530694161.88,
+     "after": 566010476.6,
+     "change": 35316314.72,
+     "percent": 6.65
+    },
+    {
+     "id": "exec-dept-doj-office-community-oriented-policing-services",
+     "name": "Office of Community Oriented Policing Services",
+     "before": 462550050.1,
+     "after": 495705881.08,
+     "change": 33155830.98,
+     "percent": 7.17
+    },
+    {
+     "id": "exec-ind-misc-institute-of-museum-and-library-services",
+     "name": "Institute of Museum and Library Services",
+     "before": 214381355.64,
+     "after": 246084459.36,
+     "change": 31703103.72,
+     "percent": 14.79
+    },
+    {
+     "id": "exec-dept-dol-msha",
+     "name": "Mine Safety & Health Administration (MSHA)",
+     "before": 340436251.37,
+     "after": 370964133.05,
+     "change": 30527881.68,
+     "percent": 8.97
+    },
+    {
+     "id": "exec-ind-misc-equal-employment-opportunity-commission-eeoc",
+     "name": "Equal Employment Opportunity Commission (EEOC)",
+     "before": 381077914.19,
+     "after": 411234961.24,
+     "change": 30157047.05,
+     "percent": 7.91
+    },
+    {
+     "id": "judicial-branch--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -1232765172.42,
+     "after": -1261648599.37,
+     "change": -28883426.95,
+     "percent": -2.34
+    },
+    {
+     "id": "exec-dept-doi-boem",
+     "name": "Bureau of Ocean Energy Management (BOEM)",
+     "before": 133467940.96,
+     "after": 161546765.9,
+     "change": 28078824.94,
+     "percent": 21.04
+    },
+    {
+     "id": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
+     "name": "National Labor Relations Board (NLRB — independent)",
+     "before": 254240820.66,
+     "after": 281793294.0,
+     "change": 27552473.34,
+     "percent": 10.84
+    },
+    {
+     "id": "exec-independent-general-services-administration--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -274815739.14,
+     "after": -247446685.44,
+     "change": 27369053.7,
+     "percent": 9.96
+    },
+    {
+     "id": "exec-dept-hhs-ahrq",
+     "name": "Agency for Healthcare Research & Quality (AHRQ)",
+     "before": 259717363.67,
+     "after": 284522765.15,
+     "change": 24805401.48,
+     "percent": 9.55
+    },
+    {
+     "id": "exec-ind-epa--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -478410231.34,
+     "after": -502451764.67,
+     "change": -24041533.33,
+     "percent": -5.03
+    },
+    {
+     "id": "exec-dept-dol-whd",
+     "name": "Wage & Hour Division (WHD)",
+     "before": 273948686.88,
+     "after": 297315074.57,
+     "change": 23366387.69,
+     "percent": 8.53
+    },
+    {
+     "id": "exec-regulatory-federal-housing-finance-agency",
+     "name": "Federal Housing Finance Agency",
+     "before": 253082628.12,
+     "after": 276280880.09,
+     "change": 23198251.97,
+     "percent": 9.17
+    },
+    {
+     "id": "exec-eop-omb",
+     "name": "Office of Management and Budget (OMB)",
+     "before": 105136537.41,
+     "after": 124099330.52,
+     "change": 18962793.11,
+     "percent": 18.04
+    },
+    {
+     "id": "jud-scotus",
+     "name": "Supreme Court of the United States (SCOTUS)",
+     "before": 162432819.44,
+     "after": 181268102.85,
+     "change": 18835283.41,
+     "percent": 11.6
+    },
+    {
+     "id": "exec-ind-nara",
+     "name": "National Archives & Records Administration (NARA)",
+     "before": 407171945.17,
+     "after": 424935832.55,
+     "change": 17763887.38,
+     "percent": 4.36
+    },
+    {
+     "id": "exec-ind-misc-national-endowment-for-the-arts-nea",
+     "name": "National Endowment for the Arts (NEA)",
+     "before": 136258500.73,
+     "after": 152103814.46,
+     "change": 15845313.73,
+     "percent": 11.63
+    },
+    {
+     "id": "exec-ind-sba--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -2867741165.59,
+     "after": -2853787832.63,
+     "change": 13953332.96,
+     "percent": 0.49
+    },
+    {
+     "id": "exec-eop--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -1201545069.63,
+     "after": -1215347727.58,
+     "change": -13802657.95,
+     "percent": -1.15
+    },
+    {
+     "id": "exec-dept-treasury-mint",
+     "name": "U.S. Mint",
+     "before": -444816644.44,
+     "after": -457604228.28,
+     "change": -12787583.84,
+     "percent": -2.87
+    },
+    {
+     "id": "exec-ind-misc-national-endowment-for-the-humanities-neh",
+     "name": "National Endowment for the Humanities (NEH)",
+     "before": 61181877.27,
+     "after": 73177390.63,
+     "change": 11995513.36,
+     "percent": 19.61
+    },
+    {
+     "id": "exec-dept-doc-census",
+     "name": "Census Bureau",
+     "before": 1349746840.63,
+     "after": 1338140060.45,
+     "change": -11606780.18,
+     "percent": -0.86
+    },
+    {
+     "id": "exec-eop-who",
+     "name": "White House Office",
+     "before": 65359248.46,
+     "after": 76537224.52,
+     "change": 11177976.06,
+     "percent": 17.1
+    },
+    {
+     "id": "exec-ind-misc-export-import-bank-of-the-u-s",
+     "name": "Export-Import Bank of the U.S.",
+     "before": -32992212.54,
+     "after": -24867185.37,
+     "change": 8125027.17,
+     "percent": 24.63
+    },
+    {
+     "id": "jud-specialized-tax",
+     "name": "U.S. Tax Court",
+     "before": 67612388.41,
+     "after": 73727617.63,
+     "change": 6115229.22,
+     "percent": 9.04
+    },
+    {
+     "id": "leg-support-cbo",
+     "name": "Congressional Budget Office (CBO)",
+     "before": 66610369.35,
+     "after": 72300073.13,
+     "change": 5689703.78,
+     "percent": 8.54
+    },
+    {
+     "id": "exec-dept-usda-fsa",
+     "name": "Farm Service Agency (FSA)",
+     "before": 9467972191.32,
+     "after": 9471660301.82,
+     "change": 3688110.5,
+     "percent": 0.04
+    },
+    {
+     "id": "exec-independent-agency-for-international-development--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -363635528.15,
+     "after": -366098148.4,
+     "change": -2462620.25,
+     "percent": -0.68
+    },
+    {
+     "id": "legislative-branch--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -62178096.73,
+     "after": -63881478.52,
+     "change": -1703381.79,
+     "percent": -2.74
+    },
+    {
+     "id": "exec-ind-nsf--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -17747139.26,
+     "after": -19330217.11,
+     "change": -1583077.85,
+     "percent": -8.92
+    },
+    {
+     "id": "exec-dept-doe--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -3366157019.74,
+     "after": -3367567486.3,
+     "change": -1410466.56,
+     "percent": -0.04
+    },
+    {
+     "id": "exec-ind-nasa--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -2585588.94,
+     "after": -3650977.1,
+     "change": -1065388.16,
+     "percent": -41.2
+    }
+   ],
+   "gained": [],
+   "lost": [],
+   "forReview": [
+    {
+     "id": "exec-regulatory-sec",
+     "name": "Securities & Exchange Commission (SEC)",
+     "before": 1799067031.03,
+     "after": -499610699.87,
+     "change": -2298677730.9,
+     "percent": -127.77
+    },
+    {
+     "id": "exec-ind-misc-tennessee-valley-authority-tva",
+     "name": "Tennessee Valley Authority (TVA)",
+     "before": -945112444.17,
+     "after": -1447263334.54,
+     "change": -502150890.37,
+     "percent": -53.13
+    },
+    {
+     "id": "exec-ind-opm--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -515041268.23,
+     "after": -48815222499.47,
+     "change": -48300181231.24,
+     "percent": -9377.92
+    },
+    {
+     "id": "exec-dept-dol--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -759419059.04,
+     "after": -1260924834.19,
+     "change": -501505775.15,
+     "percent": -66.04
+    },
+    {
+     "id": "exec-dept-doi-office-surface-mining-reclamation-enforcement",
+     "name": "Office of Surface Mining Reclamation and Enforcement",
+     "before": 1184535259.8,
+     "after": 1980077900.35,
+     "change": 795542640.55,
+     "percent": 67.16
+    },
+    {
+     "id": "exec-dept-treasury--treasury-receipts",
+     "name": "Offsetting receipts and intrabudgetary transactions",
+     "before": -18372459773.08,
+     "after": -86048959037.96,
+     "change": -67676499264.88,
+     "percent": -368.36
+    },
+    {
+     "id": "exec-dept-treasury-fiscal",
+     "name": "Bureau of the Fiscal Service",
+     "before": 9899395085.72,
+     "after": 22054348276.79,
+     "change": 12154953191.07,
+     "percent": 122.78
+    }
+   ]
+  },
+  "estimates": {
+   "moved": 682,
+   "largestMoves": [
+    {
+     "id": "executive-branch",
+     "name": "Executive Branch",
+     "before": 7153525951369.19,
+     "after": 7747894124988.8,
+     "percent": 8.31
+    },
+    {
+     "id": "exec-cabinet",
+     "name": "The Cabinet — Executive Departments",
+     "before": 5335991671600.27,
+     "after": 5768593733029.88,
+     "percent": 8.11
+    },
+    {
+     "id": "exec-independent",
+     "name": "Independent Establishments & Government Corporations",
+     "before": 1821622031232.02,
+     "after": 1987891447041.18,
+     "percent": 9.13
+    },
+    {
+     "id": "exec-ind-ssa-field-ops",
+     "name": "Office of Operations — Field Structure",
+     "before": 507051328786.12,
+     "after": 552466975498.62,
+     "percent": 8.96
+    },
+    {
+     "id": "exec-dept-defense-cocoms",
+     "name": "Unified Combatant Commands (11)",
+     "before": 340713373909.38,
+     "after": 375159441675.28,
+     "percent": 10.11
+    },
+    {
+     "id": "exec-ind-ssa-oho",
+     "name": "Office of Hearings Operations (OHO)",
+     "before": 380288496589.59,
+     "after": 414350231623.96,
+     "percent": 8.96
+    },
+    {
+     "id": "exec-dept-defense-branches",
+     "name": "Military Departments & Services",
+     "before": 245760466426.44,
+     "after": 270606810388.73,
+     "percent": 10.11
+    },
+    {
+     "id": "exec-dept-defense-agencies",
+     "name": "Defense Agencies & Field Activities",
+     "before": 153600291516.52,
+     "after": 169129256492.96,
+     "percent": 10.11
+    },
+    {
+     "id": "exec-dept-defense-af",
+     "name": "U.S. Air Force",
+     "before": 80749867540.11,
+     "after": 88913666270.58,
+     "percent": 10.11
+    },
+    {
+     "id": "exec-dept-va-vha-visns",
+     "name": "Veterans Integrated Service Networks",
+     "before": 60217027332.74,
+     "after": 68253136148.2,
+     "percent": 13.35
+    },
+    {
+     "id": "exec-dept-defense-navy",
+     "name": "U.S. Navy",
+     "before": 73728139927.93,
+     "after": 81182043116.62,
+     "percent": 10.11
+    },
+    {
+     "id": "exec-dept-defense-agency-dha",
+     "name": "Defense Health Agency (DHA)",
+     "before": 64159047333.89,
+     "after": 70645516787.38,
+     "percent": 10.11
+    },
+    {
+     "id": "exec-dept-defense-army",
+     "name": "U.S. Army",
+     "before": 63195548509.66,
+     "after": 69584608385.67,
+     "percent": 10.11
+    },
+    {
+     "id": "exec-dept-defense-jcs",
+     "name": "Joint Chiefs of Staff",
+     "before": 50269186314.5,
+     "after": 55351393034.06,
+     "percent": 10.11
+    },
+    {
+     "id": "exec-regulatory",
+     "name": "Independent Regulatory Commissions",
+     "before": -2977634556.36,
+     "after": -7419149491.1,
+     "percent": -149.16
+    },
+    {
+     "id": "exec-dept-defense-cocom-ussocom",
+     "name": "USSOCOM — Special Operations Command",
+     "before": 30973943082.67,
+     "after": 34105403788.66,
+     "percent": 10.11
+    },
+    {
+     "id": "exec-dept-defense-cocom-usstratcom",
+     "name": "USSTRATCOM — Strategic Command",
+     "before": 30973943082.67,
+     "after": 34105403788.66,
+     "percent": 10.11
+    },
+    {
+     "id": "exec-dept-defense-cocom-ustranscom",
+     "name": "USTRANSCOM — Transportation Command",
+     "before": 30973943082.67,
+     "after": 34105403788.66,
+     "percent": 10.11
+    },
+    {
+     "id": "exec-dept-defense-cocom-uscybercom",
+     "name": "USCYBERCOM — Cyber Command",
+     "before": 30973943082.67,
+     "after": 34105403788.66,
+     "percent": 10.11
+    },
+    {
+     "id": "exec-dept-defense-cocom-usspacecom",
+     "name": "USSPACECOM — Space Command",
+     "before": 30973943082.67,
+     "after": 34105403788.66,
+     "percent": 10.11
+    }
+   ]
+  },
+  "pay": {
+   "claimsBefore": 1258,
+   "claimsAfter": 1258,
+   "added": [],
+   "withdrawn": [],
+   "moved": []
+  },
+  "evidence": {
+   "added": [],
+   "withdrawn": [],
+   "changed": []
+  },
+  "sourcedFigures": {},
+  "sources": {
+   "changed": [
+    {
+     "id": "monthly_treasury_statement",
+     "before": "2026-08-31",
+     "after": "2026-09-30",
+     "status": "current"
+    }
+   ],
+   "registryAfter": {
+    "monthly_treasury_statement": {
+     "copyDate": "2026-09-30",
+     "status": "current"
+    },
+    "usaspending_file_a": {
+     "copyDate": "2026-09-17",
+     "status": "current"
+    },
+    "usaspending_file_b_object_class": {
+     "copyDate": "2025-09-30",
+     "status": "current"
+    },
+    "house_statement_of_disbursements": {
+     "copyDate": "2026-06-30",
+     "status": "current"
+    },
+    "senate_secretary_report": {
+     "copyDate": "2026-03-31",
+     "status": "current"
+    },
+    "opm_salary_tables": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "us_code_pay_schedules_5332_note": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "uscourts_judicial_compensation": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "senate_salary_schedule": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "whitehouse_staff_report": {
+     "copyDate": "2026-07-01",
+     "status": "current"
+    },
+    "opm_plum_current_export": {
+     "copyDate": "2026-09-21",
+     "status": "current"
+    },
+    "opm_plum_archive": {
+     "copyDate": "2025-01-20",
+     "status": "closed_record"
+    },
+    "opm_fedscope_employment": {
+     "copyDate": "2025-03-31",
+     "status": "overdue"
+    },
+    "us_government_manual": {
+     "copyDate": "2025-12-31",
+     "status": "current"
+    },
+    "omb_public_budget_database": {
+     "copyDate": "2026-09-20",
+     "status": "current"
+    },
+    "treasury_statement_of_net_cost": {
+     "copyDate": "2025-09-30",
+     "status": "current"
+    },
+    "treasury_combined_statement": {
+     "copyDate": "2025-09-30",
+     "status": "current"
+    },
+    "us_code_sections": {
+     "copyDate": "2026-09-18",
+     "status": "current"
+    },
+    "federal_register_agency_directory": {
+     "copyDate": "2026-09-08",
+     "status": "current"
+    },
+    "senate_committee_list": {
+     "copyDate": "2026-09-08",
+     "status": "current"
+    },
+    "house_clerk_committee_list": {
+     "copyDate": "2026-09-13",
+     "status": "current"
+    },
+    "federal_register_signatures": {
+     "copyDate": "2026-09-21",
+     "status": "current"
+    },
+    "usajobs_vacancy_announcements": {
+     "copyDate": "2026-10-06",
+     "status": "current"
+    },
+    "doj_usao_ad_pay_plan": {
+     "copyDate": "2025-01-12",
+     "status": "overdue"
+    },
+    "va_title38_pay_tables": {
+     "copyDate": "2026-01-11",
+     "status": "current"
+    },
+    "doe_laboratory_pages": {
+     "copyDate": "2026-10-06",
+     "status": "current"
+    },
+    "official_pages": {
+     "copyDate": "2026-10-22",
+     "status": "current"
+    }
+   }
+  },
+  "budget": {
+   "rules": [
+    {
+     "rule": "node_count_drops",
+     "tripped": false,
+     "detail": "5,512 nodes before, 5,512 after; 0 removed"
+    },
+    {
+     "rule": "anchor_lost",
+     "tripped": false,
+     "detail": "anchor record date after: 2026-09-30"
+    },
+    {
+     "rule": "anchor_period_goes_backwards",
+     "tripped": false,
+     "detail": "anchor 2026-08-31 -> 2026-09-30"
+    },
+    {
+     "rule": "measured_cost_moved_without_a_new_statement",
+     "tripped": false,
+     "detail": "a new statement (2026-08-31 -> 2026-09-30): 171 measured costs moved, which the statement explains"
+    },
+    {
+     "rule": "pay_claims_withdrawn_above_5_percent",
+     "tripped": false,
+     "detail": "0 of 1,258 pay claims withdrawn (0.0%; the limit is 5%)"
+    }
+   ],
+   "held": false,
+   "thresholds": {
+    "payWithdrawalLimit": 0.05,
+    "measuredReviewMove": 0.5,
+    "measuredReviewFloor": 1000000000.0
+   }
+  },
+  "touched": [
+   "exec-dept-defense",
+   "exec-dept-defense--treasury-receipts",
+   "exec-dept-dhs",
+   "exec-dept-dhs--treasury-receipts",
+   "exec-dept-dhs-cbp",
+   "exec-dept-dhs-cisa",
+   "exec-dept-dhs-fema",
+   "exec-dept-dhs-ice",
+   "exec-dept-dhs-tsa",
+   "exec-dept-dhs-uscg",
+   "exec-dept-dhs-uscis",
+   "exec-dept-dhs-usss",
+   "exec-dept-doc",
+   "exec-dept-doc--treasury-receipts",
+   "exec-dept-doc-census",
+   "exec-dept-doc-economic-development-administration",
+   "exec-dept-doc-ita",
+   "exec-dept-doc-nist",
+   "exec-dept-doc-noaa",
+   "exec-dept-doc-ntia",
+   "exec-dept-doe",
+   "exec-dept-doe--treasury-receipts",
+   "exec-dept-doe-eere",
+   "exec-dept-doe-nnsa",
+   "exec-dept-doi",
+   "exec-dept-doi--treasury-receipts",
+   "exec-dept-doi-bia",
+   "exec-dept-doi-blm",
+   "exec-dept-doi-boem",
+   "exec-dept-doi-bor",
+   "exec-dept-doi-fws",
+   "exec-dept-doi-nps",
+   "exec-dept-doi-office-surface-mining-reclamation-enforcement",
+   "exec-dept-doi-usgs",
+   "exec-dept-doj",
+   "exec-dept-doj--treasury-receipts",
+   "exec-dept-doj-atf",
+   "exec-dept-doj-bop",
+   "exec-dept-doj-dea",
+   "exec-dept-doj-fbi",
+   "exec-dept-doj-office-community-oriented-policing-services",
+   "exec-dept-doj-office-justice-programs",
+   "exec-dept-doj-usao",
+   "exec-dept-doj-usms",
+   "exec-dept-dol",
+   "exec-dept-dol--treasury-receipts",
+   "exec-dept-dol-bls",
+   "exec-dept-dol-eta",
+   "exec-dept-dol-msha",
+   "exec-dept-dol-osha",
+   "exec-dept-dol-whd",
+   "exec-dept-dot",
+   "exec-dept-dot--treasury-receipts",
+   "exec-dept-dot-faa",
+   "exec-dept-dot-fhwa",
+   "exec-dept-dot-fmcsa",
+   "exec-dept-dot-fra",
+   "exec-dept-dot-fta",
+   "exec-dept-dot-marad",
+   "exec-dept-dot-nhtsa",
+   "exec-dept-ed",
+   "exec-dept-ed--treasury-receipts",
+   "exec-dept-ed-fsa",
+   "exec-dept-ed-ies",
+   "exec-dept-ed-oese",
+   "exec-dept-hhs",
+   "exec-dept-hhs--treasury-receipts",
+   "exec-dept-hhs-administration-for-children-and-families",
+   "exec-dept-hhs-administration-for-community-living",
+   "exec-dept-hhs-ahrq",
+   "exec-dept-hhs-cdc",
+   "exec-dept-hhs-cms",
+   "exec-dept-hhs-fda",
+   "exec-dept-hhs-hrsa",
+   "exec-dept-hhs-ihs",
+   "exec-dept-hhs-nih",
+   "exec-dept-hhs-samhsa",
+   "exec-dept-hud",
+   "exec-dept-hud--treasury-receipts",
+   "exec-dept-hud-cpd",
+   "exec-dept-hud-ginnie",
+   "exec-dept-hud-pih",
+   "exec-dept-state",
+   "exec-dept-state--treasury-receipts",
+   "exec-dept-treasury",
+   "exec-dept-treasury--treasury-receipts",
+   "exec-dept-treasury-bep",
+   "exec-dept-treasury-fiscal",
+   "exec-dept-treasury-interest-on-the-public-debt",
+   "exec-dept-treasury-irs",
+   "exec-dept-treasury-mint",
+   "exec-dept-treasury-occ",
+   "exec-dept-treasury-ttb",
+   "exec-dept-usda",
+   "exec-dept-usda--treasury-receipts",
+   "exec-dept-usda-agricultural-marketing-service",
+   "exec-dept-usda-aphis",
+   "exec-dept-usda-ars",
+   "exec-dept-usda-fns",
+   "exec-dept-usda-foreign-agricultural-service",
+   "exec-dept-usda-fs",
+   "exec-dept-usda-fsa",
+   "exec-dept-usda-fsis",
+   "exec-dept-usda-nrcs",
+   "exec-dept-va",
+   "exec-dept-va--treasury-receipts",
+   "exec-dept-va-vba",
+   "exec-dept-va-vha",
+   "exec-eop",
+   "exec-eop--treasury-receipts",
+   "exec-eop-omb",
+   "exec-eop-who",
+   "exec-ind-epa",
+   "exec-ind-epa--treasury-receipts",
+   "exec-ind-misc-americorps",
+   "exec-ind-misc-broadcasting-board-of-governors-usagm",
+   "exec-ind-misc-equal-employment-opportunity-commission-eeoc",
+   "exec-ind-misc-export-import-bank-of-the-u-s",
+   "exec-ind-misc-institute-of-museum-and-library-services",
+   "exec-ind-misc-millennium-challenge-corporation",
+   "exec-ind-misc-national-credit-union-administration-ncua",
+   "exec-ind-misc-national-endowment-for-the-arts-nea",
+   "exec-ind-misc-national-endowment-for-the-humanities-neh",
+   "exec-ind-misc-national-labor-relations-board-nlrb-independent",
+   "exec-ind-misc-peace-corps",
+   "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc",
+   "exec-ind-misc-railroad-retirement-board",
+   "exec-ind-misc-railroad-retirement-board--treasury-receipts",
+   "exec-ind-misc-tennessee-valley-authority-tva",
+   "exec-ind-nara",
+   "exec-ind-nasa",
+   "exec-ind-nasa--treasury-receipts",
+   "exec-ind-nsf",
+   "exec-ind-nsf--treasury-receipts",
+   "exec-ind-nsf-education-human-resources-ehr",
+   "exec-ind-opm",
+   "exec-ind-opm--treasury-receipts",
+   "exec-ind-sba",
+   "exec-ind-sba--treasury-receipts",
+   "exec-ind-smithsonian",
+   "exec-ind-ssa",
+   "exec-ind-ssa--treasury-receipts",
+   "exec-ind-usps",
+   "exec-independent-agency-for-international-development",
+   "exec-independent-agency-for-international-development--treasury-receipts",
+   "exec-independent-corps-of-engineers",
+   "exec-independent-corps-of-engineers--treasury-receipts",
+   "exec-independent-general-services-administration",
+   "exec-independent-general-services-administration--treasury-receipts",
+   "exec-regulatory-bureau-of-consumer-financial-protection",
+   "exec-regulatory-fcc",
+   "exec-regulatory-fdic",
+   "exec-regulatory-federal-housing-finance-agency",
+   "exec-regulatory-nrc",
+   "exec-regulatory-sec",
+   "jud-scotus",
+   "jud-specialized-tax",
+   "judicial-branch",
+   "judicial-branch--treasury-receipts",
+   "leg-house",
+   "leg-senate",
+   "leg-support-aoc",
+   "leg-support-cbo",
+   "leg-support-gao",
+   "leg-support-gpo",
+   "leg-support-loc",
+   "leg-support-uscp",
+   "legislative-branch",
+   "legislative-branch--treasury-receipts",
+   "the-constitution-of-the-united-states",
+   "treasury-undistributed-offsetting-receipts"
+  ],
+  "summary": "the Treasury anchor moved from the statement of 2026-08-31 to 2026-09-30; 5,512 nodes before and 5,512 after (0 added, 0 removed, 0 newly marked replaced, 0 renamed); 171 measured costs moved, 0 gained a measured figure, 0 lost one; 682 estimates moved; pay claims 1,258 -> 1,258 (0 added, 0 withdrawn, 0 changed figure); verification or placement methods: 0 added, 0 withdrawn, 0 changed; within the change budget.",
+  "before": "HEAD:output/graph.json",
+  "reviewQueueOpen": 60
+ },
+ {
+  "builtAt": "2026-10-22T08:35:19.193041+00:00",
+  "anchor": {
+   "before": {
+    "recordDate": "2026-08-31",
+    "total": 6811043257196.1,
+    "statementFile": "tests/fixtures/mts_table5_2026-08-31.json"
+   },
+   "after": {
+    "recordDate": "2026-08-31",
+    "total": 6811043257196.1,
+    "statementFile": "tests/fixtures/mts_table5_2026-08-31.json"
+   },
+   "sameStatement": true
+  },
+  "nodes": {
+   "before": 5512,
+   "after": 5512,
+   "added": [],
+   "removed": [],
+   "newlySuperseded": [],
+   "renamed": [],
+   "reparented": []
+  },
+  "measuredCosts": {
+   "before": 173,
+   "after": 173,
+   "moved": [],
+   "gained": [],
+   "lost": [],
+   "forReview": []
+  },
+  "estimates": {
+   "moved": 0,
+   "largestMoves": []
+  },
+  "pay": {
+   "claimsBefore": 1258,
+   "claimsAfter": 1258,
+   "added": [],
+   "withdrawn": [],
+   "moved": []
+  },
+  "evidence": {
+   "added": [],
+   "withdrawn": [],
+   "changed": []
+  },
+  "sourcedFigures": {},
+  "sources": {
+   "changed": [
+    {
+     "id": "doe_laboratory_pages",
+     "before": null,
+     "after": "2026-10-06",
+     "status": "current"
+    },
+    {
+     "id": "doj_usao_ad_pay_plan",
+     "before": null,
+     "after": "2025-01-12",
+     "status": "overdue"
+    },
+    {
+     "id": "federal_register_agency_directory",
+     "before": null,
+     "after": "2026-09-08",
+     "status": "current"
+    },
+    {
+     "id": "federal_register_signatures",
+     "before": null,
+     "after": "2026-09-21",
+     "status": "current"
+    },
+    {
+     "id": "house_clerk_committee_list",
+     "before": null,
+     "after": "2026-09-13",
+     "status": "current"
+    },
+    {
+     "id": "house_statement_of_disbursements",
+     "before": null,
+     "after": "2026-06-30",
+     "status": "current"
+    },
+    {
+     "id": "monthly_treasury_statement",
+     "before": null,
+     "after": "2026-08-31",
+     "status": "newer_edition_expected"
+    },
+    {
+     "id": "official_pages",
+     "before": null,
+     "after": "2026-10-22",
+     "status": "current"
+    },
+    {
+     "id": "omb_public_budget_database",
+     "before": null,
+     "after": "2026-09-20",
+     "status": "current"
+    },
+    {
+     "id": "opm_fedscope_employment",
+     "before": null,
+     "after": "2025-03-31",
+     "status": "overdue"
+    },
+    {
+     "id": "opm_plum_archive",
+     "before": null,
+     "after": "2025-01-20",
+     "status": "closed_record"
+    },
+    {
+     "id": "opm_plum_current_export",
+     "before": null,
+     "after": "2026-09-21",
+     "status": "current"
+    },
+    {
+     "id": "opm_salary_tables",
+     "before": null,
+     "after": "2026-01-01",
+     "status": "current"
+    },
+    {
+     "id": "senate_committee_list",
+     "before": null,
+     "after": "2026-09-08",
+     "status": "current"
+    },
+    {
+     "id": "senate_salary_schedule",
+     "before": null,
+     "after": "2026-01-01",
+     "status": "current"
+    },
+    {
+     "id": "senate_secretary_report",
+     "before": null,
+     "after": "2026-03-31",
+     "status": "current"
+    },
+    {
+     "id": "treasury_combined_statement",
+     "before": null,
+     "after": "2025-09-30",
+     "status": "current"
+    },
+    {
+     "id": "treasury_statement_of_net_cost",
+     "before": null,
+     "after": "2025-09-30",
+     "status": "current"
+    },
+    {
+     "id": "us_code_pay_schedules_5332_note",
+     "before": null,
+     "after": "2026-01-01",
+     "status": "current"
+    },
+    {
+     "id": "us_code_sections",
+     "before": null,
+     "after": "2026-09-18",
+     "status": "current"
+    },
+    {
+     "id": "us_government_manual",
+     "before": null,
+     "after": "2025-12-31",
+     "status": "current"
+    },
+    {
+     "id": "usajobs_vacancy_announcements",
+     "before": null,
+     "after": "2026-10-06",
+     "status": "current"
+    },
+    {
+     "id": "usaspending_file_a",
+     "before": null,
+     "after": "2026-09-17",
+     "status": "current"
+    },
+    {
+     "id": "usaspending_file_b_object_class",
+     "before": null,
+     "after": "2025-09-30",
+     "status": "current"
+    },
+    {
+     "id": "uscourts_judicial_compensation",
+     "before": null,
+     "after": "2026-01-01",
+     "status": "current"
+    },
+    {
+     "id": "va_title38_pay_tables",
+     "before": null,
+     "after": "2026-01-11",
+     "status": "current"
+    },
+    {
+     "id": "whitehouse_staff_report",
+     "before": null,
+     "after": "2026-07-01",
+     "status": "current"
+    }
+   ],
+   "registryAfter": {
+    "monthly_treasury_statement": {
+     "copyDate": "2026-08-31",
+     "status": "newer_edition_expected"
+    },
+    "usaspending_file_a": {
+     "copyDate": "2026-09-17",
+     "status": "current"
+    },
+    "usaspending_file_b_object_class": {
+     "copyDate": "2025-09-30",
+     "status": "current"
+    },
+    "house_statement_of_disbursements": {
+     "copyDate": "2026-06-30",
+     "status": "current"
+    },
+    "senate_secretary_report": {
+     "copyDate": "2026-03-31",
+     "status": "current"
+    },
+    "opm_salary_tables": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "us_code_pay_schedules_5332_note": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "uscourts_judicial_compensation": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "senate_salary_schedule": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "whitehouse_staff_report": {
+     "copyDate": "2026-07-01",
+     "status": "current"
+    },
+    "opm_plum_current_export": {
+     "copyDate": "2026-09-21",
+     "status": "current"
+    },
+    "opm_plum_archive": {
+     "copyDate": "2025-01-20",
+     "status": "closed_record"
+    },
+    "opm_fedscope_employment": {
+     "copyDate": "2025-03-31",
+     "status": "overdue"
+    },
+    "us_government_manual": {
+     "copyDate": "2025-12-31",
+     "status": "current"
+    },
+    "omb_public_budget_database": {
+     "copyDate": "2026-09-20",
+     "status": "current"
+    },
+    "treasury_statement_of_net_cost": {
+     "copyDate": "2025-09-30",
+     "status": "current"
+    },
+    "treasury_combined_statement": {
+     "copyDate": "2025-09-30",
+     "status": "current"
+    },
+    "us_code_sections": {
+     "copyDate": "2026-09-18",
+     "status": "current"
+    },
+    "federal_register_agency_directory": {
+     "copyDate": "2026-09-08",
+     "status": "current"
+    },
+    "senate_committee_list": {
+     "copyDate": "2026-09-08",
+     "status": "current"
+    },
+    "house_clerk_committee_list": {
+     "copyDate": "2026-09-13",
+     "status": "current"
+    },
+    "federal_register_signatures": {
+     "copyDate": "2026-09-21",
+     "status": "current"
+    },
+    "usajobs_vacancy_announcements": {
+     "copyDate": "2026-10-06",
+     "status": "current"
+    },
+    "doj_usao_ad_pay_plan": {
+     "copyDate": "2025-01-12",
+     "status": "overdue"
+    },
+    "va_title38_pay_tables": {
+     "copyDate": "2026-01-11",
+     "status": "current"
+    },
+    "doe_laboratory_pages": {
+     "copyDate": "2026-10-06",
+     "status": "current"
+    },
+    "official_pages": {
+     "copyDate": "2026-10-22",
+     "status": "current"
+    }
+   }
+  },
+  "budget": {
+   "rules": [
+    {
+     "rule": "node_count_drops",
+     "tripped": false,
+     "detail": "5,512 nodes before, 5,512 after; 0 removed"
+    },
+    {
+     "rule": "anchor_lost",
+     "tripped": false,
+     "detail": "anchor record date after: 2026-08-31"
+    },
+    {
+     "rule": "anchor_period_goes_backwards",
+     "tripped": false,
+     "detail": "anchor 2026-08-31 -> 2026-08-31"
+    },
+    {
+     "rule": "measured_cost_moved_without_a_new_statement",
+     "tripped": false,
+     "detail": "the statement is unchanged (2026-08-31) and 0 measured costs moved"
+    },
+    {
+     "rule": "pay_claims_withdrawn_above_5_percent",
+     "tripped": false,
+     "detail": "0 of 1,258 pay claims withdrawn (0.0%; the limit is 5%)"
+    }
+   ],
+   "held": false,
+   "thresholds": {
+    "payWithdrawalLimit": 0.05,
+    "measuredReviewMove": 0.5,
+    "measuredReviewFloor": 1000000000.0
+   }
+  },
+  "touched": [],
+  "summary": "the Treasury anchor is still the statement of 2026-08-31; 5,512 nodes before and 5,512 after (0 added, 0 removed, 0 newly marked replaced, 0 renamed); 0 measured costs moved, 0 gained a measured figure, 0 lost one; 0 estimates moved; pay claims 1,258 -> 1,258 (0 added, 0 withdrawn, 0 changed figure); verification or placement methods: 0 added, 0 withdrawn, 0 changed; within the change budget.",
+  "before": "HEAD:output/graph.json",
+  "reviewQueueOpen": 53
+ }
+]

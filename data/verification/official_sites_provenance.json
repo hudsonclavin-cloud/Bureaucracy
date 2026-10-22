@@ -4498,5 +4498,16 @@
   "run": "new-units-2026-09-21",
   "nominatedAt": "2026-09-21T17:56:15Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-misc-macpac": {
+  "url": "https://www.macpac.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "exec-ind-misc-macpac",
+  "basis": "The Commission's own site. Probed 2026-10-22 with scripts/probe_candidate_pages.py under the verifier's robots policy: answers 200 with 1,333 readable characters and labels 'Medicaid and CHIP Payment and Access Commission' in its site-wide navigation (labelled-in-site-navigation), which confirms an organisation. The node was added on 2026-09-21 under the official_page_label licence tested against usa.gov's A-to-Z index, a directory that files nowhere, so no page of its own was ever queued.",
+  "confidence": "likely",
+  "run": "evidence-coverage-2026-10-22",
+  "nominatedAt": "2026-10-22T04:27:22Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  }
 }

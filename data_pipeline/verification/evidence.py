@@ -146,6 +146,10 @@ EVIDENCE_OWNED_FIELDS = (
     "verificationMethod",
     "verificationFailure",
     "verificationUnread",
+    # A recorded reason no official document can be read for the unit
+    # (no_document.py): the name floor or the nomination ledger's latest
+    # decline, re-derived on every build and withdrawn here with the rest.
+    "verificationNoDocument",
     "govmanEntry",
     # The Manual's top-level entry FOR an office (govman.py's third route:
     # the President and the Vice President). Withdrawn here with the rest.

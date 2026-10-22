@@ -233,12 +233,29 @@ MINIMAL_GRAPH_FIELDS = (
     # header-sum node does not contain: which node's figure already holds the
     # money, and the sentence saying it is kept out of the parent's arithmetic
     "treasury_counted_in_header_sum", "treasury_counted_in_header_sum_note",
+    # how a measured unit's total adds up from the statement's own parts: each
+    # part, where it landed in this graph, the three sums and what is not
+    # attributed (treasury_sums.py)
+    "treasury_sum",
     # the verification box
     "sourceUrls", "sourceTypes", "sourceCount", "lastVerified",
     "verificationStatus", "confidenceScore", "verificationMethod",
     "verificationMatchedIn", "verificationMatchRule", "verificationMatchedText",
     "verificationFailure", "verificationFailureSource", "directoryListing",
     "pageReadNotNamed", "verificationUnread",
+    # a recorded reason no official document can be read for the unit: the
+    # verifier's name floor, or the nomination ledger's latest decline, with
+    # the note the panel quotes
+    "verificationNoDocument",
+    # an explained blank where no held money document prints a figure for the
+    # unit: the kind, the rows that do carry the name, and the shared document
+    # list (cost_no_document.py)
+    "costNoDocument",
+    # the pay analogue on a post no document prices: the unpriced report's
+    # reason, the kind the held pay documents support, the title as a document
+    # prints it, and a reference to the root's `__heldPayDocuments` list
+    # (pay_no_document.py)
+    "payNoDocument",
     # the alternative name a claim was reached through, and the basis the
     # reviewed table states for it; the panel quotes both names
     "verificationAliasMatch",
@@ -315,7 +332,12 @@ MINIMAL_GRAPH_FIELDS = (
 
 #: Root-only keys the viewer also needs: the anchor's period label, which the
 #: panel applies to every figure, and the edge index.
-MINIMAL_GRAPH_ROOT_FIELDS = ("__budgetSummary", "relationships")
+#: `__heldPayDocuments` is the one list every `payNoDocument` block refers to
+#: (pay_no_document.py): six documents, stored once on the root in both copies.
+#: `__sourceRegistry` is the source registry's derived block (freshness.py):
+#: each source's cycle, the copy in use and what is due, which the panel reads
+#: against the reader's own date to mark a figure's source overdue.
+MINIMAL_GRAPH_ROOT_FIELDS = ("__budgetSummary", "relationships", "__heldPayDocuments", "__sourceRegistry")
 
 
 #: Blocks whose `documents` list is identical across many nodes. In the viewer
@@ -324,7 +346,9 @@ MINIMAL_GRAPH_ROOT_FIELDS = ("__budgetSummary", "relationships")
 #: same three documents' quotes on each of its 112 posts, about 1.9 KB a node.
 #: graph.json keeps every block whole (the gate reads it there); only the
 #: browser's copy is deduplicated, and the panel resolves the reference.
-SHARED_DOCUMENT_BLOCKS = ("positionEmployer",)
+#: `costNoDocument` since 2026-10-22: the same seven-document list on every
+#: organisation left with only an estimate, stored once.
+SHARED_DOCUMENT_BLOCKS = ("positionEmployer", "costNoDocument")
 
 
 def share_repeated_documents(root: dict[str, Any]) -> None:
@@ -801,6 +825,15 @@ IMPLIED_WEIGHT_BASES = {
     "employees": "implied_employee_weight",
 }
 
+# The classes whose weights are dollar figures. In a sibling set split by one
+# of them a post takes no weight at all (since 2026-10-21, the owner's
+# decision): a post is not a budget unit, so a dollar rate implied for it
+# would withhold a share of real money from every unit beside it and publish
+# that share as nobody's. In a headcount or subtree-size split a post still
+# counts, because there the organisation really is that many people or nodes.
+DOLLAR_WEIGHT_CLASSES = frozenset({"disbursements", "combined_statement", "dollars"})
+POST_UNWEIGHTED_BASIS = "post_unweighted_beside_dollar_figures"
+
 
 def disbursement_document_key(node: dict[str, Any]) -> tuple[str, str, str] | None:
     """The statement and period a committee's disbursements were read from.
@@ -893,6 +926,19 @@ def resolve_sibling_weights(
     if len(classes) == 1:
         return weighted_children, next(iter(classes)), False
     dominant = next(cls for cls in WEIGHT_CLASS_PRIORITY if cls in classes)
+    if dominant in DOLLAR_WEIGHT_CLASSES:
+        # A post takes no share of a dollar split; see DOLLAR_WEIGHT_CLASSES.
+        # No post carries a dollar figure of its own, so every post here is
+        # one that would otherwise have been implied.
+        weighted_children = [
+            (child, 0.0, POST_UNWEIGHTED_BASIS)
+            if is_post_node(child) and WEIGHT_BASIS_CLASSES.get(basis, "subtree") != dominant
+            else (child, weight, basis)
+            for child, weight, basis in weighted_children
+        ]
+        if all(basis == POST_UNWEIGHTED_BASIS or WEIGHT_BASIS_CLASSES.get(basis, "subtree") == dominant
+               for _, _, basis in weighted_children):
+            return weighted_children, dominant, False
     reported = [
         (child, weight)
         for child, weight, basis in weighted_children
@@ -910,7 +956,7 @@ def resolve_sibling_weights(
     implied_basis = IMPLIED_WEIGHT_BASES[dominant]
     resolved: list[tuple[dict[str, Any], float, str]] = []
     for child, weight, basis in weighted_children:
-        if WEIGHT_BASIS_CLASSES.get(basis, "subtree") == dominant:
+        if WEIGHT_BASIS_CLASSES.get(basis, "subtree") == dominant or basis == POST_UNWEIGHTED_BASIS:
             resolved.append((child, weight, basis))
         else:
             resolved.append((child, max(rate_per_node * get_subtree_weight(child, subtree_sizes), 1e-9), implied_basis))
@@ -1289,6 +1335,21 @@ TREASURY_ROW_ALIASES = {
     # 1723) on a post beneath this very node. Filed by the statement under the
     # Department of Housing and Urban Development, where the node sits.
     "government national mortgage association": "exec-dept-hud-ginnie",
+    # Added 2026-10-22, the owner's decision. The statement prints the VA's
+    # benefits as a "Benefits Programs:" header over Compensation and Pensions,
+    # Readjustment Benefits, the Veterans Housing Benefit Program Fund, the
+    # insurance funds and two public enterprise funds, closed by its own
+    # "Total--Benefits Programs" line ($242,849,884,236.03 on the 2026-08-31
+    # statement) -- a printed line, the ordinary one-unit-reported-twice shape,
+    # so no header sum is involved. The basis is the organic statute: 38 U.S.C.
+    # 7701(a), committed at tests/fixtures/uscode/va_38_usc_7701_govinfo2024.html,
+    # "The primary function of the Veterans Benefits Administration is the
+    # administration of nonmedical benefits programs of the Department which
+    # provide assistance to veterans and their dependents and survivors." Filed
+    # by the statement under the Department of Veterans Affairs, where the node
+    # sits. Until this row the $242.85bn was divided among the VBA, the NCA and
+    # the BVA by a curated budget note and their siblings' implied rate.
+    "benefits programs": "exec-dept-va-vba",
 }
 #: An alias is a reviewed identification of a PRINTED line, and a header sum is
 #: already one step from a printed figure, so by default the two are not
@@ -2347,6 +2408,7 @@ def annotate_resolved_costs(
         "headcount_weights_disputed_by_opm": 0,
         "allocations_below_precision": 0,
         "posts_not_apportioned": 0,
+        "posts_unweighted_in_dollar_splits": 0,
         "superseded_units_not_apportioned": 0,
         "sibling_sets_scaled_to_official_floors": 0,
         "treasury_pools_negative": 0,
@@ -2530,7 +2592,13 @@ def annotate_resolved_costs(
                 floor_scale = remainder_total / floor_sum
                 counters["sibling_sets_scaled_to_official_floors"] += 1
         excess_total = max(remainder_total - floor_sum * floor_scale, 0.0)
-        weighted_remaining = len(weighted_children)
+        # The last child takes what is left, so the shares sum to the pool to
+        # the cent -- the last child with a weight, since a post in a dollar
+        # split takes none and must not be handed the remainder.
+        weighted_remaining = max(
+            (index + 1 for index, (_, weight, _) in enumerate(weighted_children) if weight > 0),
+            default=len(weighted_children),
+        )
         remainder_left = remainder_total
         # Nothing left for the unlined children — or less than nothing: the
         # measured lines under this unit exceed its net total, which after
@@ -2559,9 +2627,26 @@ def annotate_resolved_costs(
                 continue
             if weighted_remaining <= 0:
                 child_total = remainder_left
+                remainder_left = 0.0
             else:
                 child_total = floor * floor_scale + excess_total * (weight / total_weight)
                 remainder_left -= child_total
+            if is_post_node(child):
+                # A post is not a budget unit. See POST_TYPE_KEYWORDS. Checked
+                # before the precision rule: a post given no weight in a dollar
+                # split has a share of exactly zero, and that is this rule, not
+                # a figure too small to print.
+                counters["posts_not_apportioned"] += 1
+                if weight_basis == POST_UNWEIGHTED_BASIS:
+                    counters["posts_unweighted_in_dollar_splits"] += 1
+                recurse(
+                    child,
+                    None,
+                    inherited_basis=weight_basis,
+                    inherited_validation="post_is_not_a_budget_unit",
+                    section=current_section,
+                )
+                continue
             if allocated_total != 0 and abs(child_total) < 0.005:
                 # A share that rounds to $0.00 is not a cost of zero; publishing
                 # it as one asserts the Peace Corps is free. Say "not available".
@@ -2571,17 +2656,6 @@ def annotate_resolved_costs(
                     None,
                     inherited_basis=weight_basis,
                     inherited_validation="allocation_below_precision",
-                    section=current_section,
-                )
-                continue
-            if is_post_node(child):
-                # A post is not a budget unit. See POST_TYPE_KEYWORDS.
-                counters["posts_not_apportioned"] += 1
-                recurse(
-                    child,
-                    None,
-                    inherited_basis=weight_basis,
-                    inherited_validation="post_is_not_a_budget_unit",
                     section=current_section,
                 )
                 continue
@@ -2770,6 +2844,7 @@ def annotate_resolved_costs(
             "headcount_weights_disputed_by_opm": counters["headcount_weights_disputed_by_opm"],
             "allocations_below_precision": counters["allocations_below_precision"],
             "posts_not_apportioned": counters["posts_not_apportioned"],
+            "posts_unweighted_in_dollar_splits": counters["posts_unweighted_in_dollar_splits"],
             "superseded_units_not_apportioned": counters["superseded_units_not_apportioned"],
             "sibling_sets_scaled_to_official_floors": counters["sibling_sets_scaled_to_official_floors"],
             "treasury_lines_counted_in_header_sums": counters["treasury_lines_counted_in_header_sums"],
@@ -2947,6 +3022,9 @@ def build_graph(
     doj_ad_pay_evidence_path: str | Path | None = "default",
     derived_pay_evidence_path: str | Path | None = "default",
     tier_reference_pay_evidence_path: str | Path | None = "default",
+    no_document_ledger_dir: str | Path | None = "default",
+    cost_no_document: bool = True,
+    pay_no_document: bool = True,
     military_pay_evidence_path: str | Path | None = "default",
     whitehouse_pay_evidence_path: str | Path | None = "default",
     usaspending_evidence_path: str | Path | None = "default",
@@ -3589,6 +3667,15 @@ def build_graph(
     # comparable with the children the published graph actually carries.
     validity_report["stated_counts"] = annotate_stated_counts(graph)
     validity_report["treasury_lines_recoloured"] = colour_treasury_lines(graph)
+    # How each measured unit's total adds up, part by part, from the committed
+    # statement the graph was built from: which part lands on which child,
+    # which is drawn elsewhere, which no node carries, and what is not
+    # attributed (treasury_sums.py). After the cascade, since it reads the
+    # final statuses and the estimated children the no-node money is divided
+    # among.
+    from data_pipeline.exporter.treasury_sums import annotate_treasury_sums  # noqa: E402 — imports this module
+
+    validity_report["treasury_sums"] = annotate_treasury_sums(graph)
     # And only now can a rate of basic pay be taken off a node that stands for
     # several posts: `representsPosts` does not exist until the line above
     # computes it, so the guard inside apply_pay_evidence (which runs at 2329,
@@ -3609,6 +3696,30 @@ def build_graph(
     from data_pipeline.verification.aliases import cap_alias_only_confirmations  # noqa: E402
 
     validation["alias_matches"] = cap_alias_only_confirmations(graph, index_tree=index_tree)
+    # A recorded reason no official document can be read for a unit, where
+    # every route above left an organisation with no method and no queued page
+    # that went unread: the verifier's own name floor, or the phase 1b
+    # nomination ledger's latest decline, quoted and never invented. It runs
+    # after every evidence pass because it must read the FINAL method.
+    from data_pipeline.verification.no_document import (  # noqa: E402 — no_document imports evidence, which imports this module
+        DEFAULT_LEDGER_DIR as DEFAULT_NO_DOCUMENT_LEDGER_DIR,
+        apply_no_document_evidence,
+        read_source_ledger,
+    )
+
+    resolved_ledger_dir = DEFAULT_NO_DOCUMENT_LEDGER_DIR if no_document_ledger_dir == "default" else no_document_ledger_dir
+    validation["no_document_evidence"] = apply_no_document_evidence(
+        graph,
+        ledger=read_source_ledger(resolved_ledger_dir) if resolved_ledger_dir else {},
+        index_tree=index_tree,
+    )
+    # The money analogue, after every sourced-figure pass: an organisation
+    # left with only an apportioned estimate says which held money documents
+    # were checked for its name and found none, or which one prints the name
+    # under a heading no reviewed rule has turned into a figure.
+    from data_pipeline.verification.cost_no_document import apply_cost_no_document  # noqa: E402
+
+    validation["cost_no_document"] = apply_cost_no_document(graph, index_tree=index_tree) if cost_no_document else {"skipped": True}
     validation["pay_evidence"]["stands_for_many_posts"] = multi_post_withdrawn
     validation["grade_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["judicial_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
@@ -3650,6 +3761,19 @@ def build_graph(
         index_tree=index_tree,
     )
     validation["whitehouse_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
+    # The pay analogue of the explained blank, last of all: a post no pay
+    # document prices and no employer block explains says which held
+    # title-listing pay documents were checked for its title and whether any
+    # prints it. It must read the FINAL pay fields and the employer block, so it
+    # runs after every pay pass, the multi-post sweep and the employer pass.
+    from data_pipeline.verification.pay_no_document import apply_pay_no_document  # noqa: E402 — imports this module
+
+    validation["pay_no_document"] = apply_pay_no_document(graph) if pay_no_document else {"skipped": True}
+    # The source registry, last of all: each source's copy date is read off the
+    # FINAL blocks on the nodes, so it runs after every pass that stamps one.
+    from data_pipeline.freshness import annotate_source_registry  # noqa: E402
+
+    validation["source_registry"] = annotate_source_registry(graph)
     validity_report["audit_report"] = {"summary": deepcopy(audit_report.get("summary", {}))}
     validity_report["root_orphan_resolution"] = orphan_resolution
     validity_report["treasury_outlay_rows"] = outlay_stats

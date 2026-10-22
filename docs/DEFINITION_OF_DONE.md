@@ -3,7 +3,8 @@
 Decided by the owner on 2026-10-21, in two rounds of multiple-choice questions.
 Every "today" figure below was measured on the published graph that day
 (`output/graph.json`, 5,510 nodes) by `scripts/validate_published_graph.py`,
-`scripts/report_cost_coverage.py`, `scripts/report_unpriced_positions.py` and
+`scripts/report_cost_coverage.py`, `scripts/report_unpriced_positions.py`,
+`scripts/report_evidence_coverage.py` (criterion 3, since 2026-10-22) and
 `python scripts/nominate.py status --kind source`. Re-measure them with those
 commands; do not restate them by hand.
 
@@ -41,6 +42,14 @@ is **0**, and every other organisation is in one of these states:
 
 Subcommittees may read "funded through its committee": the owner's decision
 of 2026-10-07 already says neither chamber's document prints them.
+
+Since 2026-10-22 the explained blank is `costNoDocument`
+(`data_pipeline/verification/cost_no_document.py`, CURATION.md §24): every
+organisation left with only an estimate names the seven money documents this
+project holds, each with its version and digest, and says whether any prints
+a row carrying the unit's name. `scripts/report_cost_coverage.py` prints the
+remaining bare count as one number ("bare estimates — … criterion 1 gap"),
+and the gate's "explained blanks" line counts the same set.
 
 | measure | today |
 |---|---|
@@ -85,6 +94,18 @@ posts carry `not_federally_paid`.
 | stands for several holders | 611 |
 | paused beneath a replaced VA network | 432 |
 | listed with no rate | 20 |
+| carrying `payNoDocument`, the explained blank (2026-10-22) | 3,221 — 2,558 whose title none of the six held title-listing pay documents prints, 663 whose title one prints under a filing no rule ties to the post |
+
+**Measured on 2026-10-22, and what it is not.** Every one of the 3,221 now
+carries `payNoDocument` (`pay_no_document.py`, CURATION.md §25): the six
+title-listing pay documents this project holds, each with version and digest,
+and whether any prints the title. That is criterion 1's "explained blank"
+applied to posts, and it is deliberately NOT counted as a terminal reason here:
+the gap by this criterion's own test stays **3,221**, because "six documents
+were read and none prints the title" is a fact about this repository's
+holdings, not a document establishing that no figure exists. The measurement
+sharpens the counterargument below: 1,624 of the 2,158 `unreached` titles
+appear in no held document at all, and most are curated templates.
 
 **Route.**
 - Research packs 3–5.
@@ -110,7 +131,13 @@ listing already evidences most priced posts.
 
 **Done when** every current organisation carries a `verificationMethod`, or a
 recorded reason no official document can be read for it (for example, a host
-that refuses every crawler and no directory lists the unit).
+that refuses every crawler and no directory lists the unit). Measured by
+`scripts/report_evidence_coverage.py`, whose one number is the gap; the
+recorded reasons are `verificationUnread` (a queued page went unread) and,
+since 2026-10-22, `verificationNoDocument` (no page was queued: the name is the
+graph's own count label or grouping, the site is off every .gov host, the only
+host refuses the crawler, or the page read does not carry the graph's name —
+CURATION.md §23).
 
 | measure | today |
 |---|---|
@@ -153,6 +180,19 @@ names and the House Clerk's lacks 9. Beyond the lists, the graph may carry
 units no list names (offices, posts, regional structure) when a document
 supports them.
 
+**Measured on 2026-10-22** (`scripts/report_list_reconciliation.py` →
+`docs/LIST_RECONCILIATION.md`, CURATION.md §26): `data/curation/
+list_dispositions.json` disposes of every one of the 403 entries that reach no
+node across the five lists (44 Manual, 270 directory, 20 toptier, 8 Senate, 7
+House, 54 Plum) and of all 21 curated committee names the two complete lists
+lack (11 Senate, 10 House), each row re-adjudicated against the committed list
+on every run. **Gap: 19** = 3 entries left unsure + 16 distinct real units the
+lists name and the graph has not added + 0 curated names unresolved. The
+sixteen are counted on purpose: a unit recorded as "not added, here is the
+route" is neither a node nor deliberately not one. Eight of them need a
+toptier-reporter licence for `add_curated_nodes.py`, six a page fetch, two a
+decision (the Bureau of Indian Education, Amtrak).
+
 **(b) The money is reconciled.** For every unit with a measured total, the
 panel shows:
 
@@ -169,6 +209,18 @@ Alcohol and Tobacco Tax and Trade Bureau (TTB) look larger than the IRS.
 the Legislative Branch to the cent (§22.6). The same check, per chapter, is
 the engine for (b).
 
+**Measured on 2026-10-22** (`treasury_sum`, CURATION.md §27): every one of
+the 57 measured units whose Table 5 header has parts now carries the
+statement's own parts beneath it, each landed on the node that carries it or
+marked as reaching no node, and **not attributed is zero on all 57** — the
+statement's arithmetic closes to the cent. The panel shows the sum. What the
+measurement exposes rather than fixes: $2.88tn printed beneath 22 units under
+programme and object-class headings no node carries is divided among their
+estimated children by weight (the SSA's $1.65tn, Defense's $835bn, the VA's
+$58.5bn), and the panel now names each part and each child that takes it,
+saying it is an apportionment. Whether to stop that division rather than show
+it is the owner's call; the estimates are withheld by default either way.
+
 ---
 
 ## Part 2 — What the reader gets
@@ -178,9 +230,9 @@ All four were chosen.
 | criterion | done when | today |
 |---|---|---|
 | **Every figure explains itself** | every figure on the panel and in the directory names its source, period and kind in words | largely met; keep the smoke check asserting it |
-| **Totals add up visibly** | a measured unit's panel shows the sum in criterion 4(b): what each child contributes, what is estimated, what is not attributed | not built; the data exists (`treasury_unapportioned`, receipts lines, `treasury_pool_negative`) |
-| **Change history** | a reader can see what changed since the last update: figures that moved, nodes added or replaced, claims withdrawn, and why | not built; each build already knows what it withdrew and re-derived |
-| **Export / download** | a reader can download the graph and a flat CSV of nodes and figures, with the sources, from the site | partly: `graph.json` is public but not offered as a download; no CSV |
+| **Totals add up visibly** | a measured unit's panel shows the sum in criterion 4(b): what each child contributes, what is estimated, what is not attributed | built 2026-10-22: `treasury_sum` on 57 measured units, the panel's "How the total adds up" block (CURATION.md §27) |
+| **Change history** | a reader can see what changed since the last update: figures that moved, nodes added or replaced, claims withdrawn, and why | built 2026-10-22: `output/change_history.json` from `scripts/build_change_history.py`, the "What changed" card and the panel's per-node lines (CURATION.md §29) |
+| **Export / download** | a reader can download the graph and a flat CSV of nodes and figures, with the sources, from the site | built 2026-10-22: `output/nodes.csv` (`scripts/export_flat_csv.py`, 52 columns) and the "Download" card offering it, both graph copies, the change history and the registry (CURATION.md §31) |
 
 ---
 
@@ -195,9 +247,15 @@ about failures and held changes.
 **Done when** the job has run on its schedule for **three consecutive monthly
 cycles** with no manual step and no bad publish.
 
-**Today.** Nothing runs on a schedule. `data_pipeline/scheduler/nightly_update.py`
-exists but nothing invokes it, and there is no CI workflow. Every update is a
-person or an agent running commands.
+**Today.** **Built 2026-10-22:** `scripts/update_cycle.py` runs the six steps
+below (`--plan`, `--hold`, `--offline`; `--publish` refused until three clean held
+cycles are recorded in `data/audit/update_cycles.json`), with a per-source
+`contentCheck` for step 2 and `build_change_history.py` for step 5;
+`.github/workflows/update_cycle.yml` runs it in hold mode on the 12th of each
+month and on demand and opens a pull request, which a person merges to publish.
+No scheduled cycle has run yet; the three-cycle count starts when the workflow
+first fires (CURATION.md §30). `data_pipeline/scheduler/nightly_update.py` is
+still not invoked.
 
 **What the job does, in order:**
 
@@ -270,8 +328,16 @@ is written [Likely]:
 | Statement of Net Cost; Combined Statement | annual, after fiscal year end |
 | U.S. Code sections | when amended (re-check yearly) |
 
-**Today.** Every figure carries its period. There is no registry, no overdue
-flag, and nothing decides what is due.
+**Today.** Every figure carries its period. **Built 2026-10-22:**
+`data/source_registry.json` (27 sources, cadence with a stated basis, copy date
+read off the graph or the fixtures' fetch records), derived onto the graph root
+as `__sourceRegistry` by `data_pipeline/freshness.py`, mirrored by the gate;
+the panel lists the sources behind each node and marks one overdue against the
+reader's date; `scripts/report_source_registry.py --due` is the list the job
+reads. First derivation: 23 current, 1 newer edition expected (the Treasury
+statement), 2 overdue (FedScope March 2025; the 2025 AUSA pay chart), 1 closed
+record (CURATION.md §28). Cadences are the reviewer's, to be tuned on the first
+cycles; no job reads the registry yet (criterion 5).
 
 ### 7. Conflicts: hold and queue, never resolve automatically
 
@@ -289,8 +355,15 @@ never settles a disagreement by itself.
 **Today.** Withdrawal is already built in: every evidence field is owned and
 cleared each build, and a renamed node loses its evidence. Disagreements are
 already published, not resolved (`placementDirectoryDisagreement`,
-`cost_weight_dispute`, `CODE_CONTRADICTED_LISTINGS`). What is missing is the
-queue itself, and a record of what changed between two builds.
+`cost_weight_dispute`, `CODE_CONTRADICTED_LISTINGS`). **Built 2026-10-22:**
+`data/audit/review_queue.json`, rebuilt by `scripts/build_change_history.py --record`
+from each build's diff (holds, withdrawals, removals) and the graph's own
+disagreements, each record with both documents and what each says, closed and
+never deleted when its condition goes; and `output/change_history.json`, the
+record of what changed between two builds. First queue: 53 open (40 name
+questions, 10 headcount disputes, 2 overdue sources, 1 placement
+disagreement); CURATION.md §29. The job that writes both each cycle is
+criterion 5's.
 
 This sits inside criterion 5 without contradicting it: everything a check can
 settle publishes automatically, and everything that needs judgement is held.
@@ -302,14 +375,14 @@ settle publishes automatically, and everything that needs judgement is held.
 | # | criterion | target | today | gap |
 |---|---|---|---|---|
 | 1 | Money | 0 bare estimates | 373 | 373 |
-| 2 | Pay | 0 posts unpriced and unexplained | 3,221 | 3,221 |
+| 2 | Pay | 0 posts unpriced and unexplained | 3,221 (every one with a documents-checked blank since 2026-10-22) | 3,221 |
 | 3 | Evidence | every current organisation sourced | 623 / 870 | 247 |
-| 4a | Lists | every list unit reconciled | partly | not yet measured as one number |
-| 4b | Money traced | every measured parent sums visibly | Legislative Branch probed | only chapter c01 is fetched |
-| R | Reader | four features | 1 of 4 | 3 |
-| 5 | Self-update | 3 clean automatic cycles | no scheduler | all |
-| 6 | Freshness | registry + overdue flag | periods shown | registry, flag |
-| 7 | Conflicts | review queue + change log | withdrawal built | queue, log |
+| 4a | Lists | every list unit reconciled | 403 of 403 unmatched entries disposed, 21 of 21 curated names resolved (2026-10-22) | 19: 3 unsure + 16 real units not yet added |
+| 4b | Money traced | every measured parent sums visibly | 57 of 57 measured units with parts show the sum; not attributed 0 (2026-10-22) | $2.88tn beneath 22 units is still apportioned to estimated children, now named |
+| R | Reader | four features | 4 of 4 (figures explain themselves; totals add up visibly; change history; export/download) | — |
+| 5 | Self-update | 3 clean automatic cycles | job and monthly hold-mode workflow built 2026-10-22; 0 scheduled cycles run | three clean cycles, then the owner's switch to --publish |
+| 6 | Freshness | registry + overdue flag | registry (27 sources) + overdue flag built 2026-10-22; 2 sources overdue today | the job that acts on "due" (criterion 5); cadences to tune |
+| 7 | Conflicts | review queue + change log | queue (53 open) and change log built 2026-10-22; withdrawals recorded with the document and why | the job that writes both each cycle (criterion 5) |
 
 The 3,221 in row 2 is the 3,333 positions with no pay figure, less the 112
 already explained.

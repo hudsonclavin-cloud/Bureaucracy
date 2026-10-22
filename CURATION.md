@@ -6388,3 +6388,1072 @@ remaining $211.8m across the nine units. That changes the post rule's
 weighting, which `CLAUDE.md` records as deliberately left alone ("no
 organisation's estimate moved"), so it is the owner's decision.
 
+The owner decided it the same evening, generalised rather than special-cased
+(§22.10).
+
+### 22.10 A post takes no weight in a split by dollar figures (2026-10-21)
+
+The owner's decision, made general: in any sibling set split by dollar weights
+(curated budgets, the Combined Statement's figures, a chamber's payouts) a post
+takes zero implied weight; in a headcount or subtree-size split it keeps its
+weight. No post in the curated file carries a dollar figure of its own, so
+every post the rule reaches had been given an implied dollar rate.
+
+**What moved, per-node diff of `output/graph.json` before and after**, both
+built from the 2026-08-31 statement. 124 nodes changed, all beneath six
+parents: 84 posts changed basis only (to
+`post_unweighted_beside_dollar_figures`), 39 units moved, and the Architect lost
+`child_cost_basis_implied`.
+
+| parent | posts | released to units | each unit |
+|---|---|---|---|
+| Department of Veterans Affairs | 16 | $117,613,055,874 | +64.0% |
+| Department of Labor | 16 | $3,380,091,321 | +110.7% |
+| Department of Energy | 16 | $2,236,621,498 | +10.4% (and the 17 laboratories beneath its grouping) |
+| Department of Transportation | 16 | $1,854,124,207 | +228.6% |
+| Architect of the Capitol | 4 | $211,771,812 | +34.5% |
+| Department of Commerce | 16 | $0 | its pool nets below zero (−$108.4m), so nothing is apportioned either way |
+
+**The VA's unshown $117.6bn was all post weight.** None of it was a Treasury
+line going nowhere: the VA carries no `treasury_unapportioned`, because it has
+unlined children to apportion to. What it was a share of is the statement's
+lines with no node. The VA's net total is $395,059,405,295.38. After the VHA's
+header sum ($100,361,712,221.24) and the receipts line (−$6,685,762,604.11),
+the pool is $301,383,455,678.25, which is exactly:
+
+- "Benefits Programs" (the header's own subtotal line), $242,849,884,236.03;
+- "Departmental Administration": Construction, Information Technology Systems,
+  General Operating Expenses and Other, $57,827,407,301.43;
+- the Joint DOD-VA Medical Facility Demonstration Fund, $706,164,140.79.
+
+The VBA, NCA and BVA divided $183.8bn of it and the sixteen posts held the
+rest. They now divide all of it: $168.8bn, $72.3bn and $60.3bn.
+
+**The strongest argument against the rule, recorded because it is real.** The
+units that take the released money are weighted by uncited curated budgets
+("~$170B (benefits paid)" for the VBA) or, where
+they carry none, by their siblings' rate times their subtree size. So the NCA
+and the BVA, apportioned tens of billions on no evidence before, now carry 64%
+more, and the Great Lakes St. Lawrence Seaway's share went from $116m to $381m.
+The post weight had been absorbing part of a pool the graph has no node for;
+the rule moves it onto the units beside it. The estimates remain withheld by
+default. The fix that would make the VA's figures right is the statement's
+"Benefits Programs" lines reaching the VBA, which `CLAUDE.md` records as
+refused for USAspending's equivalent key ("broader than the node"); whether the
+Table 5 header is the VBA is the owner's call, and so is a node for
+Departmental Administration.
+
+**Built:** `DOLLAR_WEIGHT_CLASSES` and `POST_UNWEIGHTED_BASIS` in
+`build_graph.py`; the remainder now goes to the last child with a weight; the
+post check runs before the below-precision check. The gate's
+`post_dollar_weight_violations` refuses, both ways: a living post under a
+dollar-class parent weighted by anything else, an implied dollar weight on a
+post, the no-weight basis on a unit, under a headcount or size split, or beside
+a figure; `combined_statement_weight_violations` now refuses an implied weight
+on a post too. `tests/test_post_dollar_weights.py` pins the cascade and the
+gate.
+
+### 22.11 The VA's Benefits Programs line reaches the VBA (2026-10-22)
+
+The owner's decision: alias the statement's "Benefits Programs" header to the
+Veterans Benefits Administration. The shape is the ordinary one: Table 5 prints
+"Benefits Programs:" as a header over Compensation and Pensions, Readjustment
+Benefits, the Veterans Housing Benefit Program Fund, two insurance funds and two
+public enterprise funds, and closes it with its own "Total--Benefits Programs"
+line, $242,849,884,236.03 on the 2026-08-31 statement. That is a printed line
+beside its own header (one unit reported twice), so the alias is a row of
+`TREASURY_ROW_ALIASES` and no header sum is involved. Filed by the statement
+under the Department of Veterans Affairs, where the node sits.
+
+**Basis.** 38 U.S.C. 7701(a), fetched from govinfo's 2024-edition rendering and
+committed at `tests/fixtures/uscode/va_38_usc_7701_govinfo2024.html`: "There
+is in the Department of Veterans Affairs a Veterans Benefits Administration.
+The primary function of the Veterans Benefits Administration is the
+administration of nonmedical benefits programs of the Department which provide
+assistance to veterans and their dependents and survivors." The statement's
+header groups exactly those programs.
+
+**What moved, per-node diff against the graph after §22.10**, both builds
+from the 2026-08-31 statement: 20 nodes, all the VA's children.
+
+| node | before | after |
+|---|---|---|
+| Veterans Benefits Administration | ≈ $168.8bn, a curated budget note | **$242,849,884,236.03, measured** |
+| National Cemetery Administration | ≈ $72.3bn, implied budget | ≈ $13.0bn, subtree size |
+| Board of Veterans' Appeals | ≈ $60.3bn, implied budget | ≈ $10.8bn, subtree size |
+| the sixteen posts | no weight (dollar split) | subtree weight again |
+
+Measured nodes 172 → 173; the VA's `child_cost_basis` went from `dollars`
+(implied) to `subtree`.
+
+**The consequence §22.10 predicted, and the rule as decided.** The VBA was the
+only VA unit with a curated dollar figure. Once it is measured, the NCA and the
+BVA carry no dollar figure, the set is split by subtree size, and a post keeps
+its weight in a subtree split. So the sixteen posts hold **$34.69bn** of the
+$58.53bn remainder again, published as nobody's; the NCA and the BVA split the
+other $23.85bn. The remainder is the statement's "Departmental Administration"
+header ($57,827,407,301.43: Construction, Information Technology Systems,
+General Operating Expenses, Other) and the Joint DOD-VA Medical Facility
+Demonstration Fund ($706,164,140.79), neither of which has a node. The NCA's
+and the BVA's estimates are still apportioned from money the statement does
+not attribute to them.
+
+**Next step, not taken here.** `derive_header_sum_rows` already derives
+"Departmental Administration" as a header sum. A Treasury accounting line node
+of that name under the VA (the shape "Interest on the Public Debt" and the
+Architect's two accounts take) would carry it measured and leave the NCA and
+the BVA dividing $0.7bn. "Departmental Administration" is a name several
+departments' headers may share; `add_curated_nodes.py`'s `treasury_statement_line`
+licence refuses a header (it reads non-header rows only), so this needs a
+licence for a header sum, keyed by section, or the account-line route the
+Combined Statement chapter for the VA would give. Definition-of-done criterion
+4(b) asks for exactly this: the remainder named, not spread.
+
+## 23. Evidence: a recorded reason where no official document can be read (2026-10-22)
+
+`docs/DEFINITION_OF_DONE.md` criterion 3 is done when every current
+organisation carries a `verificationMethod`, or a recorded reason no official
+document can be read for it. On the 2026-10-21 graph 870 current organisations
+(not posts, not Treasury lines, not replaced units) split 623 with a method and
+247 without, and of the 247 only 72 published anything about why: the
+`verificationUnread` record for a page that was queued and could not be read.
+The other 175 read "No source recorded … no source URL has been attached to it
+yet", as though nobody had looked.
+
+### 23.1 What the 175 actually were
+
+Joined to the phase 1b nomination ledger (`data/audit/nominations/source-*.jsonl`,
+latest record per node by `nominatedAt`) and the verifier's own evidence file,
+every one of the 175 had a record:
+
+| latest record says | nodes | examples |
+|---|---|---|
+| `page_read_does_not_name_it` (probe) | 55 | NSF's divisions ("Mathematical Sciences" on the page, "Division of Mathematical Sciences" here); the Department of Education's ten regions; the Architect's "Library of Congress Buildings" |
+| `host_refuses_crawler` (probe) | 31 | GAO's fifteen mission teams (gao.gov 403), State's bureaus (state.gov 403), the combatant commands (.mil hosts) |
+| `not_on_a_gov_host` | 31 | the Smithsonian's 21 museums and units (si.edu), the seven USPS areas (usps.com), the CPB (cpb.org) |
+| `editorial_grouping` | 39 | "Joint Congressional Bodies", "Judicial Support Organizations", the eighteen per-VISN "VA Medical Centers" templates |
+| `no_public_page_known` | 8 | the Office of the Attending Physician (four pages read, the office appears on none); the NSC's directorates |
+| `covered_by_parent` | 2 | |
+| the verifier's `not_checkable` (a count label or a generic word) | 19 | "Mission Teams (15)", "Individual Senator Offices (100)", "Districts (multiple)", the Senate Appropriations subcommittee named "Defense" |
+| a record that NOMINATES a page (no reason) | 9 | seven presidential libraries, House Leadership, MACPAC, NSF's Division of Mathematical Sciences |
+
+So the gap was not evidence that was never sought; it was evidence sought and
+refused for a recorded reason that reached the site nowhere.
+
+### 23.2 What was built
+
+`data_pipeline/verification/no_document.py` publishes `verificationNoDocument`
+on a current organisation with no method and no unread record, from two
+sources and nothing else:
+
+- the verifier's own name floor (`evidence.uncheckable_reason`), recomputed
+  from the node's current name on every build: `curated_count_label` (11
+  nodes) and `name_too_generic` (8);
+- the nomination ledger's LATEST record for the node, when it is a decline
+  (`noCandidate: true`) with one of the ledger's own six reasons — the kind,
+  the date, the run and file, the note (bounded at 320 characters, quoted on
+  the panel) and, for the two reasons the ledger requires a probe for, the
+  probe's URL and verdict, which must be on a .gov/.mil host. A latest record
+  that nominates a page licenses nothing: there is a page to check and the
+  verifier decides. A record older than a rename row for the node
+  (`unit_renames.json`, `addedOn`) is refused, since the agent read against a
+  name the graph no longer uses.
+
+It is never stamped on a post, a receipts or accounting line, a replaced unit,
+or beside a method or an unread record. It writes no `sourceUrls`, no
+`lastVerified`, no failure and no status. The field is evidence-owned and in
+the viewer copy. The gate (`no_document_violations`) mirrors the floor
+(`COUNT_LABEL_PATTERN`, the count-in-prose rule, `GENERIC_SINGLE_TOKENS`), the
+ledger reader and the vocabulary stdlib-only, re-reads the committed ledger,
+checks every field of every block against the latest record, and refuses in
+the other direction too: an organisation whose name trips the floor and
+carries no method, no unread record and no block.
+`tests/test_no_document.py` pins the mirrors equal to the module's and to
+`nominate.read_ledger`, and corrupts 23 dimensions in turn.
+
+The panel prints one sentence per kind where it printed "hand-compiled base
+graph" — "Not verified: the name "Mission Teams (15)" is this graph's own count
+label, not a unit's name — no official page can carry it as a heading or link,
+so none was fetched"; "Not verified: its site is not on a .gov or .mil host,
+which this verifier does not read" — with the ledger's note quoted after it,
+and the reading guide counts them as a group of their own. The directory view
+and the Evidence lens (a new key, "No page could be named — reason recorded")
+say the same.
+
+`scripts/report_evidence_coverage.py` writes `docs/EVIDENCE_COVERAGE.md`: every
+current organisation in exactly one class (two method classes, `unread`, eight
+`no_document_*` kinds, and two gap classes), the criterion-3 gap as one number,
+and the parents holding the most unsourced units. `tests/test_evidence_coverage.py`
+asserts the partition, that the gap equals the gate's own "evidence gap" line,
+and the committed document byte for byte.
+
+### 23.3 The nine that nominated a page, resolved
+
+Seven presidential libraries were unconfirmed because the graph's name dropped
+"and Museum": NARA's own directory (`archives.gov/presidential-libraries`,
+already queued under the National Archives' key) labels each as "<President>
+Presidential Library and Museum", and so do most of the libraries' own sites
+(trumanlibrary.gov's title, clintonlibrary.gov's, reaganlibrary.gov's "&
+Museum"). Eight rows were added to `data/curation/unit_renames.json` and
+applied by `rename_units_to_official_wording.py` against the live page (8
+renamed, 0 refused): Hoover, Truman, Eisenhower, Kennedy, Johnson (NARA spells
+it "Lyndon Baines Johnson"), Carter, Reagan and Clinton, each keeping its city
+and state in brackets. Re-verified: **seven confirmed** on NARA's page
+(`name_labelled_on_parent_official_page`, with placement), and one, the
+**Eisenhower** library, `not_found` on its own site — eisenhowerlibrary.gov
+labels only the short form "Eisenhower Presidential Library" — while NARA's page
+lists it. This project's rule, pinned by a test since 2026-09-20, is that a
+checked negative on the unit's OWN page is the stronger fact and is never
+overwritten by the parent's listing; the rule stands, and the Eisenhower
+library is the one organisation in the gap with no ledger decline beside it.
+It is a question about the name (the site's short form against NARA's full
+one), not about whether the library exists, and it is left open rather than
+resolved by loosening the rule.
+
+MACPAC had been added on 2026-09-21 under the `official_page_label` licence
+tested against usa.gov's A-to-Z index, a directory that files nowhere, so no
+page of its own was ever queued. `https://www.macpac.gov/` was nominated
+(run `evidence-coverage-2026-10-22`), promoted and verified: confirmed, the
+name in the site's navigation.
+
+House Leadership (house.gov/leadership labels "Leadership", "Republican
+Leadership" and "Democratic Leadership"; the page's own word reduces to the
+single generic token the floor refuses) and NSF's Division of Mathematical
+Sciences (the page labels "Mathematical Sciences"; §9 declined renaming NSF's
+divisions to their breadcrumbs) each got a `page_read_does_not_name_it` decline
+in the same ledger run, with the probe, so the state reads as a question about
+the name.
+
+### 23.4 Measured on the rebuild, and what "the gap" counts
+
+Current organisations 870: with a method **623 → 631** (72.5%). 166 carry the
+new block (57 `page_read_does_not_name_it`, 29 `host_refuses_crawler`, 29
+`not_on_a_gov_host`, 24 `editorial_grouping`, 11 `curated_count_label`, 8
+`name_too_generic`, 8 `no_public_page_known`), 72 carry `verificationUnread`.
+The per-node diff against the previous graph: 175 nodes changed, 166 by gaining
+the block alone, 8 libraries by the rename and its evidence, MACPAC by its
+confirmation; no cost figure, status or weight moved. The viewer copy grew by
+the blocks (about 89 KB, 537 bytes a block) and sits about 108 KB under the
+half-of-`graph.json` rule.
+
+The gap is **247 → 40**, and the 40 are deliberately not counted as "a recorded
+reason", though 39 of them carry a ledger decline beside the finding: each is a
+`verificationFailure` — a document WAS read and does not carry the graph's
+name — which is a negative about the wording and not a reason no document can
+be read. The report puts a read document's negative above the block and the
+gate's "evidence gap" line counts the same set, so the number cannot be made
+smaller by stamping a reason on a node a page already answered. The 40 are:
+
+- **17 subcommittees a complete committee list does not carry**
+  (`not_in_official_list`; 9 House, 8 Senate — the names the definition of
+  done's criterion 4(a) already lists as unresolved): a rename to the Clerk's
+  or the Senate's wording, a supersession, or a recorded decision;
+- **17 units whose own queued page was read and labels another wording**
+  (`not_found` with a `page_read_does_not_name_it` decline): ten NSF divisions
+  whose pages label the breadcrumb ("Mathematical Sciences"), which §9
+  declined to adopt as a name; USSOCOM; the Capitol Police's Protective
+  Services Bureau; the Sergeant at Arms of the Senate; the Senate's and House's
+  administrative groupings, the House Chaplain and "Congressional Support
+  Agencies";
+- **4 of the graph's own groupings** whose misfiled "own" page was read
+  ("Judicial Support Organizations", "Specialized Federal Courts",
+  "Independent Establishments & Government Corporations", "House Committees");
+- the Eisenhower library (above), and NSF's Division of Information &
+  Intelligent Systems (`no_public_page_known` beside a `not_found`).
+
+Every one is a name question or a curation decision, which is the honest shape
+of what is left: the evidence routes are exhausted for them and the gate says
+so in one number.
+
+### 23.5 What this does and does not settle
+
+A recorded reason is a fact about what this project can read, and the report
+keeps the kinds apart so the owner can see which have a route: 57 are a page
+that was read and does not carry the graph's wording (a rename, as §9 did
+sixty-nine times, or a recorded refusal); 29 are sites off every .gov host,
+which only an owner's decision on the host policy could reach; 29 are hosts
+that refuse every crawler, reachable only through a different document; 24
+are the graph's own groupings, which no document will ever name; 19 are names
+the floor refuses; 8 have no public page anybody could find. None of them is
+"not yet looked at", and the panel no longer says so.
+
+## 24. Money: the explained blank, and what the held documents name (2026-10-22)
+
+`docs/DEFINITION_OF_DONE.md` criterion 1 is done when the cost-coverage class
+"Estimate — no sourced figure of any kind" is 0 and every other organisation is
+measured, headed by a sourced figure of another kind, or an explained blank
+"which must name the documents checked". On the 2026-10-22 graph 359
+organisations were bare estimates.
+
+### 24.1 Measured first: what the held documents name
+
+Before building the blank, every bare estimate's name was checked by
+canonical-key equality against the unit names in every money document this
+project holds. 341 appear in none. 18 appear in at least one, and the hits
+sort into four shapes, none of which a name rule may publish as a figure:
+
+| shape | units | why no figure follows |
+|---|---|---|
+| an OMB ACCOUNT under a bureau the graph has no node for | EOIR, the Education Department's Office for Civil Rights, the BVA, the NCA (two accounts), the Kennedy Center, FERC (under DOE's "Energy Programs"), the CAAF (under DoD), the Secretary of the Senate | OMB's module matches agencies and bureaus; an account is one level further down and this project has no reviewed table saying which account IS the unit's money — the Combined Statement's reviewed rows are that shape and would be the model |
+| an OMB bureau under a grouping with no node | the Inter-American Foundation, the African Development Foundation, the Trade and Development Agency ("International Assistance Programs"), the Armed Forces Retirement Home ("Other Defense--Civil Programs", where Table 5 files it too) | the same-section rule: the graph places these among the independent agencies; the Treasury's line for AFRH was refused across sections for the same reason, and OMB's module refuses a bureau whose agency matched no node |
+| an OMB bureau whose name two nodes share | Justice's National Security Division (CBO has a division of the same name) | `omb_budget` requires the bureau name to reach one node graph-wide before scoping; scoping to the agency's subtree would reach exactly this one unit and no other — measured on every bureau row |
+| OMB's "Judicial Branch" bureaus | the Court of International Trade, the Federal Circuit | `omb_budget.NON_BUDGET_TYPE_WORDS` excludes courts from the name index |
+
+The USAspending hits are weaker than they look and the module says so only
+implicitly: the sub-component lists name DOJ's litigating divisions and NSF's
+divisions as awarding offices, not as units File A reports outlays for, so
+they are "named in a held document" and no more.
+
+### 24.2 What was built
+
+`data_pipeline/verification/cost_no_document.py` publishes `costNoDocument` on
+every organisation whose `cost_status` is `allocated` or `scaled_official`
+and which carries none of the five sourced figures — never on a post, a
+committee or subcommittee, a Treasury line, a replaced unit or a measured
+node. The block names the seven documents (id, label, version, file, digest,
+distinct names checked) and lists `namedIn`: each document that prints the
+unit's name and the row as printed. `kind` follows from the hits. The
+document list is identical on every node and the viewer copy stores it once
+(`SHARED_DOCUMENT_BLOCKS`); the panel and the directory print "No document
+this project holds prints a figure for this unit … The 7 documents checked
+for a row carrying this unit's name: …" or "A held document does print this
+unit's name — "Board of Veterans Appeals" in omb public budget database —
+under a heading no reviewed rule has yet turned into a figure for this unit".
+A subcommittee reads "funded through its committee" (the owner's 2026-10-07
+rule) and carries no block.
+
+The gate (`cost_no_document_violations`) re-derives every universe from the
+committed fixtures with its own readers and refuses a block whose documents
+are not the fixtures' (id, label, version, digest, count), whose hits are not
+what the documents print, whose kind does not follow, that sits where no
+blank belongs, or that is missing from a bare estimate once the pass has
+run; `tests/test_cost_no_document.py` pins the two universes equal name for
+name and corrupts seventeen dimensions. One alignment was needed: the
+module's chapter reader keeps 115 accounts and the gate's 105 — the ten the
+chapter prints with no figure — so the module checks only accounts with
+figure cells, which is also the honest set for "prints a figure".
+
+### 24.3 Measured on the rebuild
+
+`docs/COST_COVERAGE.md`: "Estimate — no sourced figure of any kind" **359 →
+0**; "an explained blank" 341; "a held document prints the name" 18. No cost
+figure, status or weight moved; the only change to any node is the block.
+The criterion is met in the sense the definition of done states — every
+organisation shows a figure or says in words why none exists, naming the
+documents checked — and the honest caveat is the one the definition itself
+anticipated: most of the 341 are divisions, regional offices and laboratories
+funded from a parent's accounts, for which no document anybody holds prints a
+separate line, so the blank is the end state and not a queue.
+
+### 24.4 Routes the measurement leaves open
+
+- An OMB account-level reviewed table (the Combined Statement's shape) would
+  reach EOIR, the BVA, the NCA, OCR, the Kennedy Center and the Secretary of
+  the Senate; each row is a decision that the printed account IS the unit's
+  money.
+- Scoping OMB's bureau match to the agency's subtree reaches Justice's NSD and
+  nothing else; the court exclusion is a decision the module's docstring does
+  not explain and could be revisited for the CIT and the Federal Circuit.
+- The cross-section bureaus (IAF, ADF, TDA, AFRH) are the same-section rule's,
+  and the owner's.
+
+## 25. Pay: the explained blank, and what the held title-listing documents print (2026-10-22)
+
+`docs/DEFINITION_OF_DONE.md` criterion 2 is done when every position carries a
+pay claim an official document supports or "a stated reason no such figure
+exists", and the owner's own words there are that "a terminal reason needs a
+document exactly as a figure does". On the 2026-10-22 graph 3,333 of 4,591
+positions carried no pay claim; 112 of those carry the one terminal reason this
+project has (`positionEmployer`, a DOE laboratory a contractor operates), and
+3,221 carried nothing but the unpriced report's reason.
+
+### 25.1 Measured first: what the held documents print
+
+Before building anything, every unpriced post's title (its "(×N)" suffix set
+aside, which `canonical_name_key` does on its own) was checked by canonical-key
+equality against the titles printed in every title-listing pay document this
+project holds. Six documents list titles as rows: 5 U.S.C. §§5312–5316 (417
+positions), OPM's current Plum Book export (5,495 distinct live titles), OPM's
+PLUM archive (6,782), the White House staff report (233), the Government
+Manual's leadership tables (361 rows the complete-title rule admits) and
+Schedule 8's enlisted footnote (8). The documents that print TIERS rather than
+titles — uscourts.gov's compensation table, senate.gov's salary table,
+Schedules 5–7, the VA's Title 38 ranges, OPM's GS/SES/SL tables, the DOJ AD
+chart, the USAJOBS announcements — are not title lists and were not checked.
+
+| reason | posts | title printed in a held document | in none |
+|---|---|---|---|
+| `unreached` | 2,158 | 534 | 1,624 |
+| `multiplicity` | 611 | 105 | 506 |
+| `beneath_replaced_unit` | 432 | 0 | 432 |
+| `listed_no_rate` | 20 | 19 | 1 |
+
+The 663 hits are almost all one shape: a stamped administrative title the
+export or the archive prints under OTHER organisations — "General Counsel",
+"Chief Information Officer", "Staff Director", "Economist" — which a row reaches
+only under the organisation the document files it under. The White House
+roster's 47 hits are titles the report lists several times at differing rates
+("Advance Representative (×2)"), which the uniform-rate rule refuses on
+purpose. None of the 663 is a figure a name rule may publish, and the hits say
+so in words.
+
+### 25.2 What was built
+
+`data_pipeline/verification/pay_no_document.py` publishes `payNoDocument` on
+every position with no pay claim and no employer block — never on an
+organisation or a Treasury line. The block carries `reason` (the unpriced
+report's own: `unreached`, `multiplicity`, `listed_no_rate`,
+`beneath_replaced_unit`), `kind` (`no_held_pay_document_prints_the_title`, or
+`title_printed_in_a_held_pay_document_without_a_row_reaching_this_post`), the
+node's name, `namedIn` (each document that prints the title and the title as
+printed), `documentsChecked` and a `documentsRef` to the root's
+`__heldPayDocuments` — the six documents with id, label, version, file, digest
+and distinct titles checked, stored ONCE on the root in both copies because
+3,221 copies of it would have added four megabytes to the pipeline's own state
+file. The panel prints "Why no pay figure:" under the post's "Not available"
+headline with the reason in the report's words, the six documents by name and
+version, "None of them prints this title." or the document and the printed
+title, and the sentence "This is an explained blank, not a document saying the
+post is unpaid or paid off every federal schedule." The directory's Pay row and
+the Pay lens say the same in fewer words.
+
+The gate (`pay_no_document_violations`) re-derives all six universes from the
+committed fixtures with its own readers — a stdlib port of the Executive
+Schedule's body-paragraph rule including the Code's closing footnote-reference
+element, the current export through the gate's own column-indexed reader, the
+archive CSV, the roster reader (which now keeps the printed titles it already
+parsed), the Manual's leadership rows and Schedule 8's footnote — and refuses a
+root list that is not the fixtures' (ids, labels, versions, digests, counts), a
+block whose hits are not what the documents print, whose kind does not follow,
+whose reason is not the report's for that node (a replaced ancestor read off
+the tree), that refers to another list or miscounts it, that sits on a priced
+post, an organisation or beside an employer block, and a post no document
+prices with no block once the pass has run. `tests/test_pay_no_document.py`
+pins the six universes equal title for title and corrupts twenty dimensions.
+
+### 25.3 Measured on the rebuild
+
+3,221 blocks, 2,558 `no_held_pay_document_prints_the_title`, 663
+`title_printed_…`; no pay figure, cost figure, status or weight moved; the only
+changes to any node are the block and the root's list, plus one field on one
+node that is not this slice's: the government-wide receipts line
+(`treasury-undistributed-offsetting-receipts`) lost `attachToRoot: true`. A
+control rebuild with the committed exporter and the committed graph, into a
+scratch directory, dropped it too, so it is a pre-existing offline-rebuild
+drift and not this change: the re-fed copy of the line arrives as a child of
+the root with a `parentId`, the attach loop in `build_graph_tree` pops the
+flag because a parent was named, and the export sync at the end drops the
+`parentId` for a root child without restoring the flag. The line still sits
+under the root (the root guard and the gate both read the tree, not the
+flag), the viewer reads `attachToRoot` only for the expansion overlays, which
+are off, and the invariant the gate enforces is "never both", so nothing
+published changes; a build handed a statement sets the flag again at
+`make_receipts_node`. Recorded here rather than fixed, because restoring the
+flag in the export sync would also stamp the three branches, which have never
+carried it. `docs/UNPRICED_POSITIONS.md` now prints, per post, whether the six
+documents print the title and which; its headline count says in words that an
+explained blank is not a terminal reason.
+
+**What this does and does not do for criterion 2.** By the definition's own
+"done when" — 0 in the four reasons — the gap is **unchanged at 3,221**, and
+this section does not claim otherwise. What changed is that every one of the
+3,221 now says what was checked, which is the state criterion 1 accepted for
+an organisation and the state a reader needs to tell "nobody looked" from
+"six documents were read and none prints it". Closing the gap is the three
+routes the definition already names: the research packs (a document that
+prints the title with a rate or a system), the VA re-homing, and new terminal
+reasons where a document establishes one. The strongest counterargument stands
+and is sharpened by the measurement: 1,624 of the 2,158 `unreached` posts are
+titles no held document prints at all, and most are curated templates
+("Chief — Medicine Service" under eighteen medical centres, the Capitol
+Police's "Lieutenant" under every bureau); for those the honest fix is
+structural, not a pay document.
+
+### 25.4 Declined
+
+- A VA Title 38 universe: Table 3 prints "Chief of Staff", which would have
+  stamped "a held document prints this title" on seventy departmental Chiefs
+  of Staff from a VA clinical pay table. The document prints tiers, and a tier
+  table is not a title list.
+- Any fold on the title (a leading "Deputy", a trailing ", <organisation>"):
+  the same containment failure this file records three times already.
+- Publishing the blank as the post's headline: the headline stays "Not
+  available", because the blank is not a figure and not a reason a document
+  states.
+
+## 26. Structure: the government's own lists reconciled, and the gap as one number (2026-10-22)
+
+`docs/DEFINITION_OF_DONE.md` criterion 4(a) is done when every unit on five
+official lists is a node or recorded as deliberately not one, and every curated
+committee name a complete list does not carry is renamed, superseded or kept
+with the reason. Until today the dispositions sat in prose across §5, §13 and
+§16 and nothing counted them. `data/curation/list_dispositions.json` is now the
+record (403 entry rows, 21 curated-name rows), `data_pipeline/verification/
+list_dispositions.py` its only reader, and `scripts/report_list_reconciliation.py`
+→ `docs/LIST_RECONCILIATION.md` the measure.
+
+### 26.1 The lists as the modules read them
+
+Each list is re-read from its committed fixture and matched by the SAME
+function the evidence modules use, so "reaches no node" means what it means
+everywhere else: `govman.match_organisations` (with the alias table, as the
+Manual's derive step runs it), `directories.match_federal_register`,
+USAspending's toptier names against the organisations' canonical keys and
+`USASPENDING_NAME_ALIASES`, `congress.match_senate` / `match_house`, and
+`plum_current.match_organisations` for the export's agencies.
+
+| list | entries | reach a node | do not |
+|---|---|---|---|
+| Government Manual, agency entries (edition 2025-12-31) | 231 | 187 | 44 |
+| Federal Register agency directory (fetched 2026-09-08) | 472 | 202 | 270 |
+| USAspending toptier agencies | 111 | 91 | 20 |
+| Senate committee list (committees and subcommittees) | 94 | 86 | 8 |
+| House Clerk committee list | 136 | 129 | 7 |
+| Current Plum Book export, agencies | 174 | 120 | 54 |
+
+### 26.2 The vocabulary, and why each kind is a different claim
+
+A row disposes of one entry of one list with one of fourteen kinds, each a
+different statement about the entry (the module's docstring defines them):
+`scaffolding` (the list's own heading), `distinct_from_the_graphs_unit` (the
+civilian department against the uniformed service), `carried_as_a_post` (an
+Office of Inspector General carried as the Inspector General),
+`names_a_node_under_another_wording`, `carried_outside_the_lists_scope` (a
+joint committee under a chamber's list), `predecessor_of_a_node`,
+`former_body`, `unit_beneath_a_node_not_drawn`,
+`umbrella_body_drawn_as_its_members`, `body_outside_the_graphs_scope`,
+`non_federal_or_international_body`, `fund_or_account_not_a_unit`,
+`unit_the_list_names_not_added` and `unsure`. The table proposes and the lists
+decide: a row is refused when its entry is not on the list, when the entry now
+reaches a node (a stale disposition), when its node or parent is missing or of
+the wrong kind, when a `unit_beneath_a_node_not_drawn` parent is not the node
+the list's own parent entry reaches nor beneath it (one row disputes the
+directory's parent and says so: the directory files the National Civilian
+Community Corps under the Interior Department), when its kind is unknown, or
+when its quote is not in the list's own text. `tests/test_list_reconciliation.py`
+corrupts each in turn.
+
+Two honesty markers ride on the rows. A `former_body` or `predecessor_of_a_node`
+row may carry a `quote` from the list's own text — the Federal Register's
+descriptions say "The Commission was terminated December 31, 1997" for 36 of
+the 92 former bodies — and the report says which rows rest on the list's words
+and which on the reviewer's statement (the basis ends "Reviewer's statement"
+where no committed document establishes it). And `body_outside_the_graphs_scope`
+is a reviewer's SCOPE decision, recorded for the owner to overturn: advisory
+committees (the President's Committee on the Arts and the Humanities),
+interagency councils (FSOC, the FFIEC, the Permitting Council), temporary
+commissions (the Semiquincentennial Commission) and special inspectors general
+(SIGAR, SIGPR) are not drawn in this graph. 33 entries carry it.
+
+### 26.3 What the lists say, list by list
+
+**The Manual's 44.** Sixteen international organisations and four federally
+aided institutions (Howard, Gallaudet, the Printing House for the Blind, the
+NTID) are not federal units; eight are the Manual's own headings; three are the
+civilian military departments; the President and the Vice President are posts;
+"Congress" is the legislative branch; NSA/CSS names the NSA jointly with a body
+the graph lacks; OPIC's functions are the DFC's; the National Foundation on the
+Arts and the Humanities is drawn as its members. Four are real units the graph
+lacks — the Botanic Garden, the Judicial Panel on Multidistrict Litigation, the
+Bureau of Indian Education (§13.5) and Amtrak — and two stay unsure (§13.6).
+
+**The directory's 270** are what an index of everybody who has ever published
+in the Federal Register looks like: 92 bodies that no longer exist (36 of them
+on the directory's own sentence), 21 predecessors of units the graph carries
+(the Customs Service of CBP, the Defense Mapping Agency of the NGA, the Public
+Debt Bureau of the Fiscal Service), 79 live offices beneath a node the graph
+draws coarser (the power administrations under DOE, USDA's rural services, the
+Office of Refugee Resettlement beneath ACF), 22 nodes under another wording
+("Engineers Corps", "Comptroller of the Currency", "Government National
+Mortgage Association"), 23 bodies outside the scope, 14 non-federal, 4 IG
+offices carried as posts, the three departments, the Foundation umbrella, nine
+real units not added (the Goldwater and Udall foundations, Denali, the FCSIC,
+ONHIR, the Presidio Trust, the USCC, the Utah Commission, Amtrak) and ESA
+unsure.
+
+**USAspending's 20**: eight real units the graph lacks (the two foundations,
+Denali, the FCSIC, ONHIR, the Presidio Trust and two regional commissions of
+the same kind as the three the graph carries), four nodes under another wording
+(the CFPB's statutory name, "Corps of Engineers - Civil Works", CSOSA's short
+name, the AbilityOne Committee's statutory name), three interagency councils,
+the DC Courts, a trust fund, OPIC and a foundation that closed.
+
+**The two chambers**: the eight Senate and seven House entries that reach no
+node are the four joint committees on each (carried under the graph's joint
+grouping, outside each chamber's subtree), the Senate Appropriations
+subcommittees under the XML's "Department(s) of" spelling (§16.3), the House
+Clerk's "Education and Workforce", and two real seats the graph lacks — the
+House Committee on Ethics (§5.7) and the 119th Congress's January 6 select
+subcommittee. All 21 curated names the lists do not carry are resolved as
+§16.3 recorded: four kept in the committee's own wording, fifteen former seats
+kept as records, two whose successor is already a sibling (merge leads).
+
+**The Plum Book's 54**: 26 Offices of Inspector General carried as posts, three
+more beneath agencies that carry no IG post (the RRB, GSA, USAID), the Office
+of the Secretary of War (OSD, 506 live rows, the one gap CLAUDE.md records as
+needing a node), four EOP offices the graph does not draw (the National Cyber
+Director, the DOGE Service, IPEC, pandemic preparedness), TIGTA beneath the
+Treasury, the three military departments, the Vice President's office carried
+as the post and the residence as an account, five international or compact
+bodies, five bodies outside the scope, the Interagency Council on Homelessness
+under its older name, and four real units not added.
+
+### 26.4 The number
+
+**criterion 4(a) gap: 19** = 3 unresolved entries (the Economics and Statistics
+Administration on two lists and the Defense Acquisition University, both §13.6)
++ **16 distinct real units the lists name and the graph has not added** + 0
+curated names unresolved. The second term is counted deliberately: a unit
+recorded as "not added, here is the route" is neither a node nor deliberately
+not one, so the definition's own words put it in the gap. The sixteen, and the
+route for each: the Goldwater and Udall foundations, the Denali Commission, the
+FCSIC, ONHIR, the Presidio Trust and the Southeast Crescent and Southwest
+Border regional commissions (a toptier-reporter licence for
+`add_curated_nodes.py`, since each is exactly one row of the committed
+USAspending list, under the independent establishments; File A would then land
+by name equality); the USCC and the Utah Reclamation Commission (their own
+pages under `official_page_label`); the Botanic Garden, the JPML, the House
+Ethics Committee and the January 6 select subcommittee (a page or the Clerk's
+list, with a placement decision); the Bureau of Indian Education (§13.5, a
+decision rather than a fetch); Amtrak (no licence places a quasi-official
+corporation the Treasury prints no line for).
+
+### 26.5 Declined
+
+- Adding the sixteen in this slice. Eight need a licence that does not exist
+  yet (a toptier reporter), six need a fetch, two are decisions; each is
+  listed with its route and the report counts them until they land.
+- Reading the Federal Register directory's defunct bodies as a supersession
+  table: `superseded.json` quotes an official page about a unit the graph
+  carries; these are units it never carried, and a disposition is the right
+  record.
+- Any fold in a list's matcher to absorb the 22+4+1 "another wording" rows:
+  the same containment failure this file records three times; the rows name
+  the node and the report shows them, which is what an alias would buy
+  without loosening a matcher.
+
+## 27. Money: how a measured unit's total adds up, part by part (2026-10-22)
+
+`docs/DEFINITION_OF_DONE.md` criterion 4(b) asks that for every unit with a
+measured total the panel show `parent = measured children + sourced figures +
+named remainder`, the remainder traced to the documents that explain it and
+anything untraceable labelled "not attributed", so that no remainder is
+silently spread across siblings as though it were their money. The reader
+feature "Totals add up visibly" is the same thing seen from the panel.
+
+### 27.1 The statement already says what a total is made of
+
+Table 5 prints each agency as a section — a header, the lines and
+sub-headers beneath it, its receipts-type lines, and a `Total--` line that is
+their sum — so the parts of a unit's total are not something this repository
+has to infer: they are the direct items the statement prints beneath the
+unit's header. `data_pipeline/exporter/treasury_sums.py` reads the committed
+statement the graph was built from (the one the root's anchor date names) and
+publishes `treasury_sum` on every measured organisation whose header has
+parts: each part by printed name and exact amount (a sub-header at the sum of
+its own lines, which is the statement's arithmetic), its kind (line, header,
+receipts), its classification id, and WHERE it landed in this graph — `child`
+(a direct child carries the line or the sub-header's total), `descendant`,
+`elsewhere` (a node outside the unit's subtree: the Tax Court, printed under
+the Legislative Branch and drawn under the judiciary; COPS inside OJP's header;
+the PBGC under Labor's) or `none`. Beside the parts: `partsSum`,
+`notAttributed = total − partsSum`, the three sums `landedOnChildren`,
+`appliedElsewhere` and `toNoNode`, and `estimatedChildren`, the direct
+organisation children whose figure is an apportioned share.
+
+### 27.2 Measured on the rebuild
+
+57 measured units carry a block, 391 parts in all, and **not attributed is
+zero on every one**: the statement's own arithmetic closes to the cent for
+every section this graph carries. Of the money printed beneath those units
+that reaches no node here, **$3.79tn beneath 35 units is the unit's own
+lines** — CMS's "Grants to States for Medicaid", the IRS's "Taxpayer
+Services", the VBA's "Compensation and Pensions" — not subdivided further in
+this graph and apportioned to nobody; and **$2.88tn beneath 22 units IS divided
+among estimated children by weight**: $1.65tn of the SSA's trust-fund and SSI
+lines across its two estimated offices, $835bn of the Defense Department's
+eight object-class headers across the Joint Chiefs, the military departments,
+the combatant commands and the Defense agencies, $100bn of the VHA's lines
+across its networks grouping, $58.5bn of the VA's "Departmental
+Administration" and the Joint DOD-VA fund across the NCA and the BVA, State's
+$29.8bn across its bureaus, and so on down to the SBA's $14.6bn across its
+district offices. That $2.88tn is the quantity the definition names: money the
+statement prints under a programme or object-class heading no node carries,
+divided among organisational siblings as though it were theirs. It was always
+in `graph.json` as the estimates; it is now named, part by part, on the
+measured parent's panel, with the children that take it, and the sentence
+says it is an apportionment and not a measurement. $1.90bn is measured under
+a unit drawn elsewhere and stays inside the total it is printed in.
+
+### 27.3 What was built
+
+The panel (`buildTreasurySumLines`) prints "How the total adds up — Table 5,
+statement of <date>", one line per part with its amount and landing, then the
+sums in words: what the children account for, what reaches no node and is
+divided among the named estimated children (or is the unit's own lines, not
+subdivided), what is measured elsewhere, and "The parts sum to the total
+exactly" or "Not attributed: $X". The directory prints the same as one
+sentence. The gate (`treasury_sum_violations`) re-derives every block from the
+committed statement with its own reader (`TreasuryStatementRows`), lands each
+part off the tree it is walking, recomputes the five sums and refuses a block
+whose parts, amounts, landings, sums or estimated children differ, a block on
+a post, a line or an estimate, and a measured unit whose header has parts with
+no block once the pass has run. `tests/test_treasury_sums.py` pins the VA's
+and the Legislative Branch's blocks and corrupts twenty dimensions. The field
+is in `MINIMAL_GRAPH_FIELDS`; `scripts/frontend_smoke.mjs` opens the VA and
+asserts the block names "Departmental Administration" as reaching no node, the
+VHA as the child its header landed on, the NCA and the BVA as the estimated
+children that divide the remainder, and that the parts sum exactly.
+
+### 27.4 What this does not do
+
+- It does not change a figure. The cascade still divides the no-node money
+  among the estimated children by weight; the block makes that visible and
+  names the children. Stopping the division is a decision the definition's
+  text could be read to ask for ("no remainder is silently spread"); it is
+  recorded here as visible rather than stopped, because the estimates are
+  withheld by default and every one says what it is.
+- The "sourced figures" term of the definition's formula is the estimated
+  children's own File A, OMB, Combined Statement and disbursement blocks,
+  which the panel already heads them with; the block names the children and
+  leaves the figures where they are.
+- A unit with no classification id (the root's three branches carry one; the
+  curated groupings beneath them do not) carries no block, and a plain line
+  (the FBI's) has no parts.
+
+## 28. Freshness: the source registry, and two sources already overdue (2026-10-22)
+
+`docs/DEFINITION_OF_DONE.md` criterion 6 asks for a committed registry giving
+each source's expected cadence and the date of the copy in use, a job that
+reads it to decide what is due, and a panel that marks a figure "overdue" once
+its source has missed its expected publication by a stated margin. Before this
+every figure carried its period and nothing said whether a newer edition
+should exist.
+
+### 28.1 The registry proposes; the fixtures and the graph decide
+
+`data/source_registry.json` holds 27 rows, one per source this graph publishes
+a figure or a piece of evidence from. A row states the cadence (one of eight
+kinds: a period end rolling monthly, quarterly, twice a year or yearly; an
+effective date rolling yearly; a fixed month and day; no fixed cycle with a
+re-check interval; a closed record), the publication lag and the overdue
+margin in days, with a `basis` sentence beside each. **Every cadence is the
+reviewer's statement of the publisher's cycle, not a fact read from a
+publisher's document**, and the registry says so at its top; the lags and
+margins are starting values to be tuned on the first update cycles, which is
+what the definition of done itself says of them.
+
+What a row does NOT state is the date of the copy in use, wherever the
+repository already carries it. `data_pipeline/freshness.py` reads it on every
+build: off the graph root (the anchor's `record_date`), off the maximum of a
+block field across the nodes (`committeeDisbursements.period.end` for the
+House's rows alone, `employeesOfficialSource.period` turned into a month end,
+`govmanEntry.edition`), or off the fixtures' own `.meta.json` fetch records
+(the newest for a live export, the OLDEST for the Code sections, since the
+oldest copy is the one due a re-check). A refusal record, which carries no
+digest, is never a copy. Two rows state a date, and each is tied to the graph
+by a `graphCheck` the derivation re-makes: the White House report's
+"Wednesday, July 1, 2026" and the Plum archive's "January 21, 2021 - January
+20, 2025". A row is refused when its vocabulary is wrong, its fixtures do not
+exist, its stated date's check fails against the graph, or no copy date can
+be read; a refused row is not published.
+
+The derivation is stamped once on the graph root as `__sourceRegistry`
+(in `MINIMAL_GRAPH_ROOT_FIELDS`, so the viewer copy carries it): per source
+the copy's date and meaning, the fetch date, the next edition's period end,
+the date it was expected by, the date after which it counts as overdue (or the
+re-check date), the status at build time, and whether the copy was last read
+after its successor was expected. The gate (`source_registry_violations`)
+re-derives the whole block with its own stdlib reader from the registry, the
+meta files and the graph, as of the block's own build date, refuses a
+mismatch on any entry, a source the registry does not carry, a status outside
+the vocabulary, a key outside the entry vocabulary, the block on any node but
+the root, a future build date, and a source whose fields no node carries;
+`tests/test_source_registry.py` pins the module and the gate equal on four
+dates and corrupts the block nineteen ways.
+
+### 28.2 The status is judged by the reader's clock
+
+The panel (`#info-freshness`, under the cost block) lists every registry
+source whose fields the node carries — a measured unit names the Monthly
+Treasury Statement; a post priced from the Schedule names OPM's tables and the
+Code sections; a unit with a FedScope headcount names FedScope — and
+recomputes each status against the READER's date from the block's dates, so a
+source reads "OVERDUE" the day it becomes so and not on the next build. The
+`official_pages` row is read node by node: its `perNodeDate` is the node's
+own `lastVerified`, and the re-check line uses that. The directory view
+carries a one-sentence copy for a measured figure. The smoke check recomputes
+the Treasury statement's status from the served block with the same
+arithmetic and asserts the panel agrees, and opens a node fed by an overdue
+source and asserts the heading counts it.
+
+### 28.3 What the first derivation says
+
+As of 2026-10-22, of 27 sources: **23 current, 1 with a newer edition expected
+(the Monthly Treasury Statement: the September statement was expected by
+2026-10-20 and is not in use; it counts overdue after 2026-11-19), 2 overdue, 1
+closed record.** The two overdue sources are findings, not registry errors:
+
+- **OPM FedScope** — the copy in use counts March 2025, the September 2025
+  dataset was expected by 2026-05-28 on the registry's eight-month lag, and
+  the fixtures were last read 2026-09-08, after that date. Every headcount,
+  payroll figure and `cost_weight_dispute` rests on it, and the panel now says
+  so beside each.
+- **The U.S. Attorneys' AD pay chart** — the chart in use is the 2025 one
+  (effective 2026-01-12 for the 2026 edition), and the page read on 2026-10-08
+  carried no 2026 chart. `CURATION.md` §19.23 recorded the fact; the registry
+  makes it a flag on the two AUSA nodes.
+
+`scripts/report_source_registry.py` renders `docs/SOURCE_REGISTRY.md` and,
+with `--due`, prints the sources an update job should try this cycle — the
+three above today. Nothing fetches yet; that is criterion 5's job (§29).
+
+### 28.4 Declined
+
+- No cadence was asserted as the publisher's own: 2 U.S.C. 104a, 2 U.S.C.
+  4108 and 31 U.S.C. 1105(a) are named in the bases as the sections that set
+  the House's, the Senate's and the Budget's schedules, with the note that
+  this project has not read them.
+- `where` clauses in the registry are lists of `[path, value]` pairs rather
+  than objects, because `tests/test_viewer_graph.py` forbids `Object.entries`
+  and its kin in `js/`: the viewer copy is safe only because the viewer names
+  every key it reads, and a registry read with key enumeration would have been
+  the first exception.
+- The `official_pages` row's registry-level date is the newest page read
+  anywhere, which says little; the per-node date is the one the panel uses.
+
+## 29. The change history, the change budget and the review queue (2026-10-22)
+
+Three asks of `docs/DEFINITION_OF_DONE.md` share one mechanism: Part 2's
+"Change history" (a reader can see what changed since the last update),
+criterion 5's change budget (a build beyond the budget is held, not published)
+and criterion 7's review queue (one entry per held change, both documents and
+what each says, the only thing a person looks at between cycles). Before this
+each build knew what it withdrew and re-derived, and nothing recorded it.
+
+### 29.1 One diff, read off two graphs
+
+`data_pipeline/changes.diff_graphs(before, after)` compares the graph the site
+served (the committed `output/graph.json`) with the graph just built, node by
+node, and returns one history ENTRY: the anchor before and after; nodes added,
+removed, newly marked replaced, renamed and re-parented; every measured cost
+that moved, gained or lost its figure; the largest estimate moves; pay claims
+added, withdrawn (with why: the node is gone, now stands for several posts, or
+the record no longer applies) and changed, over all ten pay fields;
+verification and placement methods added, withdrawn and changed; sourced
+figures of another kind added, withdrawn and moved; the registry's copy dates
+that changed; and the budget's verdict rule by rule. Nothing in it is asserted
+— every item carries the node, the figures and the document the old claim
+rested on.
+
+### 29.2 The budget, as the definition starts it
+
+Five rules, each tripping on its own case and no other
+(`tests/test_change_history.py`): the node count drops; a measured cost moved
+while the statement did not change (with a NEW statement a move is the
+statement's own, so it is explained rather than held, and a line moving more
+than 50% on more than $1bn is queued for review); more than 5% of pay claims
+withdrawn; the anchor's period goes backwards; the anchor lost. The
+thresholds are the definition's own starting values, recorded on every entry,
+and are to be tuned on the first cycles. `scripts/build_change_history.py`
+exits 3 when a rule tripped, which is how the update job learns to hold.
+
+### 29.3 The queue keeps everything it ever opened
+
+`data/audit/review_queue.json` is rebuilt on every recorded build from two
+things: the entry (budget holds, nodes removed, claims and methods withdrawn,
+large measured moves between statements) and the graph's own published
+disagreements, which this project never resolves — `placementDirectoryDisagreement`
+(FERC: the Manual files it under Energy, the graph under the independent
+regulators), `cost_weight_dispute` (ten estimates divided by a curated
+headcount OPM's figure contradicts), a `verificationFailure` with no method (40
+units whose own document does not carry the graph's name, §23), and a registry
+source past its margin (§28). Each record is keyed by its condition, so a run
+re-finding it keeps the opening date and any `resolved` status a person wrote;
+a condition no longer found is CLOSED with the date and never deleted. First
+queue: **53 open** — 40 name questions, 10 headcount disputes, 2 overdue
+sources, 1 placement disagreement — and 0 budget holds, since the first
+recorded build changed nothing against the committed graph but the registry's
+appearance.
+
+### 29.4 What the reader gets
+
+`output/change_history.json` is served beside the graph. The "What changed"
+button under the title opens a card with the latest build's summary, the
+budget verdict, each rule, and the lists above by name, with a selector for
+earlier builds; older entries keep their summary and budget and drop the
+per-node lists (`FULL_ENTRIES`). The panel's cost block ends with "Changed in
+the build of <date>" on any node the latest entry touched, saying what — a
+measured figure's before and after with the two statements, a pay claim
+withdrawn and why, a renaming. The gate checks that the latest entry's
+after-counts and anchor are THIS graph's, that every entry carries every rule
+and its verdict agrees with them, and that the queue holds open exactly the
+disagreements the graph publishes; the smoke check opens the card and reads
+the summary off the served file.
+
+### 29.5 Declined
+
+- The gate does not re-run the diff: it has no "before" graph, and a check
+  that read git would be a check on the environment, not the file. It checks
+  the recorded entry against the graph it describes.
+- The queue is not shown on the site. It names documents and curation
+  decisions for the person who maintains the graph; the card tells a reader
+  how many items it holds and where it is.
+- No entry is ever rewritten by a later build, except that the same build
+  recorded twice replaces its own entry rather than stacking a duplicate.
+
+## 30. The update job, in hold mode (2026-10-22)
+
+`docs/DEFINITION_OF_DONE.md` criterion 5 names the job's six steps and a
+mitigation: for its first three cycles it runs in hold-everything mode and a
+person approves each publish. `scripts/update_cycle.py` is the job and
+`.github/workflows/update_cycle.yml` runs it on the 12th of each month and on
+demand.
+
+### 30.1 What one cycle does
+
+1. **What is due** comes from the registry (§28), re-derived against the
+   graph as of the day: today the September Treasury statement (expected, not
+   yet in use), FedScope and the AUSA pay chart (overdue).
+2. **How each is fetched** is the row's own rule. The statement is asked for
+   through the crawler's functions — the API's newest record date, and the
+   rows only when newer than the copy in use — and written as a dated
+   fixture with a `.meta.json`, which the rebuild then takes through
+   `--treasury-rows`. A fixed-address source is re-fetched to a temporary file
+   with `fetch_fixture.fetch` (its robots and User-Agent policy), checked, and
+   replaces the committed fixture only when the bytes differ. A source whose
+   address changes each period (FedScope, the House statement, OPM's yearly
+   tables) is recorded as **needing a reviewed URL**: a person finds the new
+   edition on the landing page and records it; nothing guesses an address.
+3. **A fetch that is not the document is refused** (criterion 5 step 2, the
+   two cases this project met): the registry row's `contentCheck` names the
+   content type, a byte floor, strings that must and must not appear ("Under
+   Maintenance", "Request Access") and, for a statement, that the newest
+   record date must be newer than the copy in use. A refused file is deleted
+   unread and recorded with its reason; a host that refuses is "unavailable
+   this cycle" and never blocks the other sources.
+4. **Then the pipeline**: all 27 derive steps in an order that puts a step
+   after the evidence it reads, the offline rebuild, the six generated
+   reports, the gate, the test suite, the browser smoke check, and
+   `build_change_history.py --record`, whose exit 3 is the budget's hold
+   (§29). Any required step failing holds the cycle.
+5. **The verdict** is written to `output/update_cycle_report.json` (every
+   fetch and refusal with its reason, every step's exit and the tail of its
+   output, the budget's reasons, the queue's open count) and a short record
+   is appended to `data/audit/update_cycles.json`. `--publish` is refused
+   until that file shows three consecutive clean held cycles; even then the
+   script never pushes — it marks the result publishable and the workflow
+   decides.
+
+### 30.2 The workflow is the person's approval point
+
+The workflow runs `--hold`, uploads the report and the log as artefacts, and
+opens a pull request from an `update/<date>-<run>` branch carrying the fetched
+fixtures, the re-derived evidence, the rebuilt graph, the reports, the change
+history and the queue, with the report's summary in its body. GitHub Pages
+serves `main`, so merging the pull request IS the publish step, and in hold
+mode a person does it. Switching the workflow to `--publish` after three clean
+cycles is the owner's decision and is written there as such. The workflow
+never pushes to `main` and never force-pushes; `tests/test_update_cycle.py`
+pins both and that every derive script the repository has is in the job's
+list.
+
+### 30.3 Measured, and not yet measured
+
+`--plan` on 2026-10-22 lists the three due sources and their fetch rules. The
+offline hold cycle (`--hold --offline --no-tests --no-smoke`) was run once from
+this sandbox to prove the orchestration: the result is in §30.4 below. No
+scheduled cycle has run: criterion 5's "done when" — three consecutive monthly
+cycles with no manual step and no bad publish — starts counting when the
+workflow first fires, and nothing here can make that happen sooner. Two
+things to expect on the first live cycle: the September statement will change
+every measured figure and the header-sum tests pinned to the cent against the
+August rows will fail, which holds the cycle correctly and asks a person to
+re-pin them against the new fixture; and hosts that refuse this sandbox's
+proxy may answer GitHub's runners, or refuse them too, which the report will
+say source by source.
+
+## 31. Export and download (2026-10-22)
+
+The fourth reader feature of `docs/DEFINITION_OF_DONE.md` Part 2: a reader can
+download the graph and a flat CSV of nodes and figures, with the sources, from
+the site. `graph.json` has been public since the site went up and was never
+offered; there was no CSV.
+
+`scripts/export_flat_csv.py` writes `output/nodes.csv` beside the graph: one row
+per node in tree order, 52 columns, every one read off the node's own published
+fields and nothing computed that the panel does not already say — the cost as
+published (status, figure, basis, the Treasury row and FiscalData URL for a
+measured line, the validation word for a withheld one; blank where the graph
+publishes none, and never a zero), the sourced figures of other kinds with
+their periods and URLs (File A, OMB, audited net cost, the Combined Statement,
+the chambers' disbursements, FedScope headcount and payroll), the pay headline
+the panel shows for a post in the panel's own order with the document's URL
+and the count of documents it rests on, existence and placement evidence with
+method, URL and date, and the kinds of the explained blanks. 5,512 rows, about
+2.2 MB. The gate re-reads the file beside the graph and refuses one whose rows
+are not the graph's nodes, whose parents, statuses, figures, methods or pay
+fields are not the nodes' own, or that prints a zero cost;
+`tests/test_export_csv.py` pins the gate's column mirror to the script's and
+the committed file to a fresh render.
+
+The "Download" button under the title opens a card listing the files the page
+itself names in `index.html` (`GRAPH_DATA_SOURCES.downloads`): the published
+graph, the viewer copy, the CSV, the change history, the source registry and
+the curated base graph, each with one sentence saying what it is and the size
+the server reports when the card opens. The smoke check opens the card,
+HEAD-requests every link and asserts each is served. The update job
+regenerates the CSV with the graph (`REPORT_STEPS`), so a download is never
+older than the page.
+
+### 30.4 The first live cycle, run from this sandbox (2026-10-22)
+
+`python scripts/update_cycle.py --hold` was run once from the sandbox, with
+the fetch step on, the afternoon the job was built. What it did, in the
+report's own order:
+
+- **Due**: the Monthly Treasury Statement (a newer edition expected),
+  FedScope and the AUSA pay chart (overdue).
+- **Fetched**: the API's newest record date was **2026-09-30**, the fiscal
+  year's closing statement, and its 811 rows were written verbatim to
+  `tests/fixtures/mts_table5_2026-09-30.json` with a `.meta.json`. The AUSA
+  chart was re-fetched and the bytes differed by six lines of page chrome;
+  the table is still the 2025 one, so the source stays overdue and the
+  registry now records that it was read after its expected date. FedScope
+  was recorded as needing a reviewed URL, since OPM publishes each dataset
+  at a new address.
+- **Rebuilt** from the new statement: the anchor moved from $6,811,043,257,196
+  (FYTD through August) to **$7,395,799,983,313** (the full fiscal year); all
+  173 measured nodes stayed measured and **171 moved**, by a median factor of
+  1.096 (twelve months against eleven); every header sum and every `treasury_sum`
+  block still attributes to the cent; 1,258 pay claims unchanged; the
+  Student Aid alias $80.53bn → $92.90bn.
+- **Held**, for two reasons the report names. The standalone gate failed
+  one check, because the job recorded the change history AFTER the gate and
+  the gate found the previous entry describing the August graph — an
+  ordering defect in the job, fixed the same hour (the budget step now runs
+  before the gate, so the gate reads the entry that describes the graph
+  beside it). And the suite failed six tests: two on the same stale entry,
+  one pinning Federal Student Aid's measured figure to the August statement
+  (its own comment says to move it when the anchor advances, and it was
+  moved to $92,903,788,398), one whose registry corruption case set the copy
+  date to the very date the new statement carries (changed to a date no
+  statement has), one on the gate's stale-history check, and the DOJ AD
+  band's "honest record passes" case, which fixed its notion of today at the
+  fixture's old fetch date.
+- **The change budget passed**: no node removed, the anchor forward, no pay
+  claim withdrawn, every measured move explained by the new statement. Seven
+  measured moves exceeded the review threshold (more than 50% on more than
+  $1bn) and are in the queue as the statement's own explanation to be looked
+  at, not held: the Bureau of the Fiscal Service +122.8%, OSMRE +67.2%, the
+  SEC −127.8% and the TVA −53.1% (both net below zero at year end), and three
+  receipts lines, whose base is small and negative. The queue holds 60 open
+  records.
+
+So the first live run behaved as §30.3 predicted — the suite held it on
+pins that name the August statement — and surfaced one defect in the job
+itself. The suite was re-run clean after the re-pins and the fix, the smoke
+check passed on the new graph inside the cycle, and the result was committed
+by hand: this cycle is the proving run, not one of the three the criterion
+counts, which start when the workflow fires on `main`.
+

@@ -7,7 +7,7 @@
     "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip",
     "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
     "fetchedAt": "2026-09-20T03:39:36Z",
-    "derivedAt": "2026-10-06T05:06:11Z",
+    "derivedAt": "2026-10-22T08:52:51Z",
     "fixture": "tests/fixtures/omb/BUDGET-2027-DB.zip"
   },
   "report": {

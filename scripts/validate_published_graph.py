@@ -12,6 +12,7 @@ The gate never writes. Run it before every push that touches output/.
 
 from __future__ import annotations
 
+import calendar
 import hashlib
 import io
 import json
@@ -2011,6 +2012,7 @@ KNOWN_COST_BASES = {
     "implied_budget_weight", "employee_weight", "implied_employee_weight",
     "subtree_weight", "disbursement_weight", "implied_disbursement_weight",
     "combined_statement_weight", "implied_combined_statement_weight",
+    "post_unweighted_beside_dollar_figures",
 }
 
 
@@ -2504,6 +2506,7 @@ def whitehouse_roster(path=None):
     money = re.compile(r"^\$([\d,]+\.\d{2})$")
     person = re.compile(r"^[A-Z][A-Za-z.'\- ]*, [A-Z]")
     counts = {}
+    printed_titles = []  # every row's title as printed, for the pay blanks' title universe
     for match in re.finditer(rb"stream\r?\n", raw):
         start = match.end()
         end = raw.find(b"endstream", start)
@@ -2545,6 +2548,7 @@ def whitehouse_roster(path=None):
             if len(names) != 1 or len(titles) != 1:
                 continue
             value = float(amounts[0][1:].replace(",", ""))
+            printed_titles.append(titles[0])
             entry = counts.setdefault(whitehouse_canonical(titles[0]), [value, 0, set(), set(), set()])
             entry[1] += 1
             entry[2].add(value)
@@ -2559,7 +2563,20 @@ def whitehouse_roster(path=None):
     roster = {title: (value, held, len(distinct), frozenset(statuses), frozenset(bases))
               for title, (value, held, distinct, statuses, bases) in counts.items()}
     _ROSTER_CACHE[key] = roster
+    _ROSTER_TITLES[key] = printed_titles
     return roster
+
+
+_ROSTER_TITLES = {}
+
+
+def whitehouse_roster_titles(path=None):
+    """Every row's title as the committed report prints it (names never
+    kept), read by the same pass as `whitehouse_roster`; [] when the report
+    cannot be read."""
+    fixture = Path(path) if path else WHITEHOUSE_REPORT_FIXTURE
+    whitehouse_roster(fixture)
+    return list(_ROSTER_TITLES.get(str(fixture), []))
 
 
 #: The multiplicity suffix the expanded White House subtree writes on a node
@@ -8699,6 +8716,52 @@ def combined_statement_violations(node, block, docs, label, tree_parents):
     return out
 
 
+DOLLAR_WEIGHT_CLASSES = ("disbursements", "combined_statement", "dollars")
+POST_UNWEIGHTED_BASIS = "post_unweighted_beside_dollar_figures"
+IMPLIED_DOLLAR_BASES = ("implied_budget_weight", "implied_combined_statement_weight", "implied_disbursement_weight")
+
+
+def post_dollar_weight_violations(nodes, tree_parents, label):
+    """A post takes no weight in a split by dollar figures, and keeps it elsewhere.
+
+    Since 2026-10-21 (the owner's decision) a sibling set the cascade divides
+    by a dollar class -- curated budgets, Combined Statement figures, a
+    chamber's payouts -- gives a post no weight, so no share of real money is
+    withheld from the units beside it and published as nobody's. In a
+    headcount or subtree-size split a post still counts. So, read off the
+    parent's own `child_cost_basis`: under a dollar-class parent every living
+    post carries the unweighted basis and none carries an implied dollar
+    weight; the unweighted basis sits only on a post, only under such a
+    parent, and only beside a figure it does not publish.
+    """
+    by_id = {str(n.get("id") or ""): n for n in nodes}
+
+    def is_post(node):
+        type_text = str(node.get("type") or "").casefold()
+        return any(w in type_text for w in ("position", "role", "office holder"))
+
+    out = []
+    for node in nodes:
+        node_id = str(node.get("id") or "")
+        basis = str(node.get("cost_basis") or "")
+        parent = by_id.get(tree_parents.get(node_id) or "") or {}
+        dollar_parent = str(parent.get("child_cost_basis") or "") in DOLLAR_WEIGHT_CLASSES
+        living = str(node.get("lifecycle") or "") != "superseded"
+        if basis == POST_UNWEIGHTED_BASIS:
+            if not is_post(node):
+                out.append("{} is a unit carrying the post's no-weight basis".format(label(node)))
+            elif not dollar_parent:
+                out.append("{} carries the no-weight basis under a parent divided by {!r}, not by dollar figures".format(
+                    label(node), parent.get("child_cost_basis")))
+            if node.get("resolved_total_amount") is not None:
+                out.append("{} carries the no-weight basis beside a figure".format(label(node)))
+        elif is_post(node) and living and dollar_parent:
+            out.append("{} is a post weighted by {!r} in a split by dollar figures".format(label(node), basis))
+        elif is_post(node) and basis in IMPLIED_DOLLAR_BASES and dollar_parent:
+            out.append("{} is a post given an implied dollar weight".format(label(node)))
+    return out
+
+
 def combined_statement_weight_violations(nodes, tree_parents, label):
     """An estimate divided by the Combined Statement's figures, both ways.
 
@@ -8736,15 +8799,15 @@ def combined_statement_weight_violations(nodes, tree_parents, label):
         units = [n for n in living if not is_post(n)]
         weighted = [n for n in members if n.get("cost_basis") == "combined_statement_weight"]
         implied = [n for n in members if n.get("cost_basis") == "implied_combined_statement_weight"]
-        # A weighted unit's share is an estimate. An implied weight sits only on
-        # a post, which keeps its weight in the split and publishes no figure
-        # (`post_is_not_a_budget_unit`), so its status is not checked here.
+        # A weighted unit's share is an estimate. Since 2026-10-21 a post beside
+        # these figures takes no weight at all (post_dollar_weight_violations),
+        # so any implied weight here is refused, on a post or a unit.
         for node in weighted:
             if str(node.get("cost_status") or "") != "allocated":
                 out.append("{} carries a Combined Statement weight on a {!r} figure".format(label(node), node.get("cost_status")))
         for node in implied:
-            if not is_post(node):
-                out.append("{} is a unit given a share implied from its siblings' Combined Statement figures".format(label(node)))
+            out.append("{} is a {} given a share implied from its siblings' Combined Statement figures".format(
+                label(node), "post" if is_post(node) else "unit"))
         keys = {usable_key(n) for n in units}
         licensed = len(units) >= 2 and None not in keys and len(keys) == 1
         if licensed:
@@ -9226,6 +9289,796 @@ def list_subcommittee_key(key):
     return text.strip()
 
 
+#: Mirror of data_pipeline.verification.no_document, stdlib-only by design
+#: (this file imports nothing from data_pipeline); tests/test_no_document.py
+#: pins every mirror below equal to the module's own.
+NO_DOCUMENT_FIELD = "verificationNoDocument"
+NO_DOCUMENT_NAME_FLOOR_KINDS = ("curated_count_label", "name_too_generic")
+NO_DOCUMENT_LEDGER_KINDS = (
+    "editorial_grouping", "covered_by_parent", "no_public_page_known",
+    "not_on_a_gov_host", "host_refuses_crawler", "page_read_does_not_name_it",
+)
+NO_DOCUMENT_PROBE_KINDS = ("host_refuses_crawler", "page_read_does_not_name_it")
+NO_DOCUMENT_NOTE_CHARS = 320
+NO_DOCUMENT_LEDGER_DIR = PROJECT_ROOT / "data" / "audit" / "nominations"
+NO_DOCUMENT_RENAMES_PATH = PROJECT_ROOT / "data" / "curation" / "unit_renames.json"
+# Mirrors of evidence.COUNT_LABEL_PATTERN, the count-in-prose segments and
+# GENERIC_SINGLE_TOKENS: the verifier's floor on a NAME, recomputed here from
+# the node's current name so a block cannot outlive a rename.
+_NO_DOCUMENT_COUNT_LABEL = re.compile(r"\(\s*[≈~]?\d[\d,]*\s*\+?\s*(?:[A-Za-z .&-]{0,30})?\)|\(\s*\d+\s*\)|\b\d+\s*\+")
+_NO_DOCUMENT_SEGMENT = re.compile(r"\s*[—–]\s*|\s+[-]\s+")
+_NO_DOCUMENT_PARENTHETICAL = re.compile(r"\(([^)]*)\)")
+_NO_DOCUMENT_CARDINAL = re.compile(r"^\d[\d,]*$")
+_NO_DOCUMENT_WORD = re.compile(r"[^\s(),./]+")
+NO_DOCUMENT_GENERIC_SINGLE_TOKENS = frozenset(
+    "defense energy personnel cybersecurity seapower airland constitution security policy operations "
+    "administration management leadership committees districts offices staff research development "
+    "science engineering geosciences education health justice labor commerce interior state treasury".split()
+)
+
+
+def no_document_states_a_count(name):
+    parts = []
+    for segment in _NO_DOCUMENT_SEGMENT.split(str(name or "")):
+        parts.append(_NO_DOCUMENT_PARENTHETICAL.sub(" ", segment))
+        parts.extend(_NO_DOCUMENT_PARENTHETICAL.findall(segment))
+    for segment in parts:
+        tokens = _NO_DOCUMENT_WORD.findall(segment)
+        for index, token in enumerate(tokens):
+            if not _NO_DOCUMENT_CARDINAL.match(token):
+                continue
+            for later in tokens[index + 1:]:
+                if later.isalpha() and later.lower().endswith("s"):
+                    return True
+    return False
+
+
+def no_document_name_floor(name):
+    """Mirror of evidence.uncheckable_reason for an ORGANISATION's name: the
+    kind the floor gives, or None where the name could be a label."""
+    text = str(name or "").strip()
+    if not text:
+        return "empty_name"
+    if _NO_DOCUMENT_COUNT_LABEL.search(text):
+        return "curated_count_label"
+    key = canonical_key(text)
+    if not key:
+        return "no_canonical_key"
+    if no_document_states_a_count(text):
+        return "curated_count_label"
+    tokens = key.split()
+    if len(tokens) == 1 and (len(key) < 4 or key in NO_DOCUMENT_GENERIC_SINGLE_TOKENS):
+        return "name_too_generic"
+    return None
+
+
+def no_document_read_ledger(ledger_dir):
+    """Mirror of no_document.read_source_ledger: the LATEST record per node by
+    nominatedAt, then file order, with the file's name under `_file`."""
+    records, stamps = {}, {}
+    directory = Path(ledger_dir)
+    if not directory.is_dir():
+        return records
+    for order, path in enumerate(sorted(directory.glob("source-*.jsonl"))):
+        for line in path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                record = json.loads(line)
+            except ValueError:
+                continue
+            if isinstance(record, dict) and record.get("id"):
+                node_id = str(record["id"])
+                stamp = (str(record.get("nominatedAt") or ""), order)
+                if node_id not in stamps or stamp >= stamps[node_id]:
+                    stamps[node_id] = stamp
+                    record = dict(record)
+                    record["_file"] = path.name
+                    records[node_id] = record
+    return records
+
+
+def no_document_rename_dates(path):
+    out = {}
+    table_path = Path(path)
+    if not table_path.is_file():
+        return out
+    try:
+        table = json.loads(table_path.read_text(encoding="utf-8"))
+    except ValueError:
+        return out
+    for row in table.get("renames") or []:
+        if isinstance(row, dict) and row.get("id") and row.get("addedOn"):
+            if str(row["addedOn"]) > out.get(str(row["id"]), ""):
+                out[str(row["id"])] = str(row["addedOn"])
+    return out
+
+
+def no_document_is_current_organisation(node):
+    if is_post(node):
+        return False
+    type_text = str(node.get("type") or "").casefold()
+    if node.get("synthetic") or "treasury accounting line" in type_text or "caucus" in type_text:
+        return False
+    return str(node.get("lifecycle") or "") != "superseded"
+
+
+def no_document_violations(nodes, label, ledger_dir=NO_DOCUMENT_LEDGER_DIR, renames_path=NO_DOCUMENT_RENAMES_PATH, today=None):
+    """A recorded reason no official document can be read for a unit is
+    checked in both directions: every block is the verifier's own name floor
+    recomputed from the node's current name, or the nomination ledger's LATEST
+    record for the node quoted field for field; and every organisation whose
+    name trips the floor and carries no method and no unread record carries
+    the block. Refused: a block on a post, a line or a replaced unit; beside a
+    method or an unread record; a kind this pipeline does not produce; a name
+    the node no longer carries; a ledger block whose record is not the latest,
+    nominates a page, carries another reason, date, run, file or note, was
+    written before the node was renamed, or needs a probe and has none, or a
+    probe off every .gov/.mil host; and any key the module never writes."""
+    from datetime import date
+
+    ledger = no_document_read_ledger(ledger_dir)
+    renames = no_document_rename_dates(renames_path)
+    today = today or date.today()
+    out = []
+    # The other direction is owed only by a graph the pass has run over: a
+    # graph carrying no block anywhere was built before the field existed (or
+    # is a test fixture built by hand), and refusing every count-label name
+    # in it would report a missing pass as a hundred missing blocks.
+    pass_ran = any(isinstance(n.get(NO_DOCUMENT_FIELD), dict) for n in nodes)
+    for node in nodes:
+        block = node.get(NO_DOCUMENT_FIELD)
+        if block is None:
+            if (pass_ran and no_document_is_current_organisation(node) and not node.get("verificationMethod")
+                    and not isinstance(node.get("verificationUnread"), dict)
+                    and no_document_name_floor(node.get("name")) in NO_DOCUMENT_NAME_FLOOR_KINDS
+                    and node.get("id") != "the-constitution-of-the-united-states"):
+                out.append("{} trips the verifier's name floor and carries no verificationNoDocument block".format(label(node)))
+            continue
+        if not isinstance(block, dict):
+            out.append("{} verificationNoDocument is not an object".format(label(node)))
+            continue
+        if not no_document_is_current_organisation(node):
+            out.append("{} carries verificationNoDocument on a post, a line or a replaced unit".format(label(node)))
+        if node.get("verificationMethod"):
+            out.append("{} says no document can be read beside verificationMethod {!r}".format(label(node), node.get("verificationMethod")))
+        if isinstance(node.get("verificationUnread"), dict):
+            out.append("{} says no document can be read beside an unread record for a queued page".format(label(node)))
+        kind = str(block.get("kind") or "")
+        if kind not in NO_DOCUMENT_NAME_FLOOR_KINDS + NO_DOCUMENT_LEDGER_KINDS:
+            out.append("{} verificationNoDocument.kind {!r} is not one this pipeline produces".format(label(node), kind))
+            continue
+        if str(block.get("name") or "") != str(node.get("name") or ""):
+            out.append("{} verificationNoDocument names {!r}, not the node's name".format(label(node), block.get("name")))
+        if kind in NO_DOCUMENT_NAME_FLOOR_KINDS:
+            if block.get("basis") != "verifier_name_floor":
+                out.append("{} name-floor block claims basis {!r}".format(label(node), block.get("basis")))
+            if no_document_name_floor(node.get("name")) != kind:
+                out.append("{} claims the name floor {!r}, which the name {!r} does not trip".format(label(node), kind, node.get("name")))
+            extra = set(block) - {"kind", "basis", "name"}
+            if extra:
+                out.append("{} name-floor block carries keys the module never writes: {}".format(label(node), sorted(extra)))
+            continue
+        if block.get("basis") != "nomination_ledger":
+            out.append("{} ledger block claims basis {!r}".format(label(node), block.get("basis")))
+        record = ledger.get(str(node.get("id") or ""))
+        if not record:
+            out.append("{} cites the nomination ledger, which has no record for it".format(label(node)))
+            continue
+        if not record.get("noCandidate"):
+            out.append("{} cites a ledger record that NOMINATES a page rather than declining one".format(label(node)))
+        if str(record.get("reason") or "") != kind:
+            out.append("{} claims {!r}; the ledger's latest record says {!r}".format(label(node), kind, record.get("reason")))
+        recorded = str(block.get("recordedAt") or "")
+        if recorded != str(record.get("nominatedAt") or "") or len(recorded) < 10:
+            out.append("{} recordedAt {!r} is not the ledger record's nominatedAt".format(label(node), recorded))
+        else:
+            try:
+                if date.fromisoformat(recorded[:10]) > today:
+                    out.append("{} recordedAt {!r} is in the future".format(label(node), recorded))
+            except ValueError:
+                out.append("{} recordedAt {!r} is not an ISO date".format(label(node), recorded))
+        renamed_on = renames.get(str(node.get("id") or ""))
+        if renamed_on and recorded and renamed_on > recorded[:10]:
+            out.append("{} was renamed on {} after the ledger record of {}".format(label(node), renamed_on, recorded[:10]))
+        meta = block.get("ledger") if isinstance(block.get("ledger"), dict) else {}
+        if str(meta.get("file") or "") != str(record.get("_file") or "") or str(meta.get("run") or "") != str(record.get("run") or ""):
+            out.append("{} ledger file/run {!r} is not the record's ({!r}, {!r})".format(label(node), meta, record.get("_file"), record.get("run")))
+        if str(block.get("note") or "") != str(record.get("note") or "")[:NO_DOCUMENT_NOTE_CHARS]:
+            out.append("{} quotes a note the ledger record does not carry".format(label(node)))
+        probe = block.get("probe")
+        record_probe = record.get("probe") if isinstance(record.get("probe"), dict) else None
+        if kind in NO_DOCUMENT_PROBE_KINDS and not isinstance(probe, dict):
+            out.append("{} claims {!r} with no probe".format(label(node), kind))
+        if isinstance(probe, dict):
+            if not record_probe or str(probe.get("url") or "") != str(record_probe.get("url") or "") or str(probe.get("verdict") or "") != str(record_probe.get("verdict") or ""):
+                out.append("{} probe is not the ledger record's".format(label(node)))
+            host = urlparse(str(probe.get("url") or "")).netloc.lower()
+            if not host.endswith((".gov", ".mil")):
+                out.append("{} probe cites a non-official host {!r}".format(label(node), host))
+        extra = set(block) - {"kind", "basis", "name", "recordedAt", "ledger", "note", "probe"}
+        if extra:
+            out.append("{} ledger block carries keys the module never writes: {}".format(label(node), sorted(extra)))
+    return out
+
+
+#: Mirror of data_pipeline.verification.cost_no_document, stdlib-only by
+#: design; tests/test_cost_no_document.py pins the vocabulary, the document
+#: labels and every universe equal to the module's on the committed fixtures.
+COST_NO_DOCUMENT_FIELD = "costNoDocument"
+COST_NO_DOCUMENT_KIND_NONE = "no_held_document_names_it"
+COST_NO_DOCUMENT_KIND_NAMED = "named_in_a_held_document_without_a_licensed_figure"
+COST_NO_DOCUMENT_SOURCED_FIGURES = ("usaspendingOutlays", "combinedStatementOutlays", "ombBudget", "auditedNetCost",
+                                    "committeeDisbursements")
+COST_NO_DOCUMENT_COMMITTEE_WORDS = ("committee", "subcommittee", "caucus")
+COST_NO_DOCUMENT_LABELS = {
+    "monthly_treasury_statement": "Monthly Treasury Statement, Table 5 (every line, headers included)",
+    "treasury_combined_statement_c01": "Treasury Combined Statement of Receipts, Outlays, and Balances, chapter c01 (unit totals and account titles)",
+    "omb_public_budget_database": "OMB Public Budget Database (agency, bureau and account names, budget authority and outlays)",
+    "usaspending_agency_lists": "USAspending toptier agency list and the committed bureau (sub-component) lists",
+    "treasury_statement_of_net_cost": "Treasury Statement of Net Cost (reporting entities)",
+    "house_statement_of_disbursements": "House Statement of Disbursements, summary (organisations, the fiscal-year prefix set aside)",
+    "senate_secretary_report": "Report of the Secretary of the Senate, Part II (committee headings)",
+}
+_COST_NO_DOCUMENT_HOUSE_ORG = re.compile(r"^(?:FISCAL YEAR )?(\d{4}) (.+?)\s*$")
+_COST_NO_DOCUMENT_UNIVERSES = {}
+
+
+def _cost_no_document_keys(values):
+    out = {}
+    for value in values:
+        text = str(value or "").strip()
+        key = canonical_key(text)
+        if key and key not in out:
+            out[key] = text
+    return out
+
+
+def cost_no_document_universes(graph):
+    """Mirror of cost_no_document.document_universes: the unit names every held
+    money document prints, re-read from the committed fixtures with this
+    gate's own readers. Keyed by document id, in the module's order."""
+    import csv as _csv
+    import hashlib as _hashlib
+    import zipfile as _zipfile
+
+    summary = graph.get("__budgetSummary") if isinstance(graph.get("__budgetSummary"), dict) else {}
+    record_date = str(summary.get("record_date") or "")[:10]
+    cache_key = record_date
+    if cache_key in _COST_NO_DOCUMENT_UNIVERSES:
+        return _COST_NO_DOCUMENT_UNIVERSES[cache_key]
+    fixtures = PROJECT_ROOT / "tests" / "fixtures"
+    universes = []
+    mts_path = fixtures / "mts_table5_{}.json".format(record_date)
+    if record_date and mts_path.is_file():
+        raw = mts_path.read_bytes()
+        payload = json.loads(raw.decode("utf-8"))
+        universes.append({"id": "monthly_treasury_statement", "version": "statement of {}".format(payload.get("record_date") or record_date),
+                          "sha256": _hashlib.sha256(raw).hexdigest(),
+                          "names": _cost_no_document_keys(r.get("classification_desc") for r in payload.get("rows") or [] if isinstance(r, dict))})
+    docs = combined_statement_documents()
+    if "error" not in docs:
+        values = []
+        for account in docs["accounts"]:
+            values.append(account.get("title"))
+            values.append(account.get("unit"))
+        universes.append({"id": "treasury_combined_statement_c01", "version": "FY{}".format(COMBINED_STATEMENT_FISCAL_YEAR),
+                          "sha256": docs["xlsxSha256"], "names": _cost_no_document_keys(values)})
+    omb_raw = OMB_FIXTURE.read_bytes()
+    last_actual = omb_database()[0]
+    archive = _zipfile.ZipFile(io.BytesIO(omb_raw))
+    values = []
+    for member in ("1", "2"):
+        rows = _omb_sheet_rows(archive.read("{}/xls/{}-{}.xlsx".format(OMB_PACKAGE, OMB_PACKAGE, member)))
+        header = rows[0]
+        columns = [header.index(c) for c in ("Agency Name", "Bureau Name", "Account Name") if c in header]
+        for row in rows[1:]:
+            for index in columns:
+                if index < len(row):
+                    values.append(row[index])
+    universes.append({"id": "omb_public_budget_database",
+                      "version": "package {}, last actual year FY{}".format(OMB_PACKAGE, last_actual),
+                      "sha256": _hashlib.sha256(omb_raw).hexdigest(), "names": _cost_no_document_keys(values)})
+    toptier = fixtures / "usaspending" / "toptier_agencies.json"
+    values, digests, files = [], [_hashlib.sha256(toptier.read_bytes()).hexdigest()], 1
+    for row in json.loads(toptier.read_text(encoding="utf-8")).get("results") or []:
+        values.append(row.get("agency_name"))
+        values.append(row.get("abbreviation"))
+    for path in sorted((fixtures / "usaspending" / "sub_components").glob("*.json")):
+        if path.name.endswith(".meta.json"):
+            continue
+        files += 1
+        digests.append(_hashlib.sha256(path.read_bytes()).hexdigest())
+        for row in json.loads(path.read_text(encoding="utf-8")).get("results") or []:
+            values.append(row.get("name"))
+    universes.append({"id": "usaspending_agency_lists", "version": "{} files".format(files),
+                      "sha256": _hashlib.sha256("\n".join(digests).encode("ascii")).hexdigest(),
+                      "names": _cost_no_document_keys(values)})
+    net_path = fixtures / "treasury" / "net_cost" / "statement_net_cost_2025-09-30.json"
+    net_raw = net_path.read_bytes()
+    net_rows = (json.loads(net_raw.decode("utf-8")).get("data") or [])
+    years = sorted({str(r.get("stmt_fiscal_year") or "") for r in net_rows if isinstance(r, dict) and r.get("stmt_fiscal_year")})
+    universes.append({"id": "treasury_statement_of_net_cost", "version": "FY{}".format(years[-1]) if years else "FY2025",
+                      "sha256": _hashlib.sha256(net_raw).hexdigest(),
+                      "names": _cost_no_document_keys(r.get("agency_nm") for r in net_rows if isinstance(r, dict))})
+    house_raw = DISBURSEMENT_HOUSE_CSV.read_bytes()
+    values = []
+    for row in _csv.reader(io.StringIO(house_raw.decode("utf-8-sig"))):
+        if row:
+            found = _COST_NO_DOCUMENT_HOUSE_ORG.match(str(row[0] or "").strip())
+            if found:
+                values.append(found.group(2))
+    universes.append({"id": "house_statement_of_disbursements", "version": "April 1 - June 30, 2026",
+                      "sha256": _hashlib.sha256(house_raw).hexdigest(), "names": _cost_no_document_keys(values)})
+    senate_raw = DISBURSEMENT_SENATE_PDF.read_bytes()
+    heading = re.compile(r"STATEMENT OF EXPENDITURES ([A-Z][A-Z ,.'&-]+?) (S\.RES\. \S+ \(\d+TH\)|COMMITTEE ON [A-Z ]+ - FY \d{4}) "
+                         r"EXPENSES OF INQUIRIES AND INVESTIGATIONS (B-[\d-]+)")
+    period_re = re.compile(r"NET EXPENDITURES FOR THE PERIOD OF \d\d/\d\d/\d{4} THRU \d\d/\d\d/\d{4} \(\$\)")
+    labels, printed = [], None
+    for text in _disbursement_pdf_pages(senate_raw, b"ORGANIZ"):
+        found = heading.findall(text)
+        if len(found) != 1:
+            continue
+        labels.append(found[0][0].strip())
+        period = period_re.search(text)
+        if period and printed is None:
+            printed = period.group(0)
+    universes.append({"id": "senate_secretary_report", "version": printed or "October 1, 2025 - March 31, 2026",
+                      "sha256": _hashlib.sha256(senate_raw).hexdigest(), "names": _cost_no_document_keys(labels)})
+    result = [u for u in universes if u["names"]]
+    _COST_NO_DOCUMENT_UNIVERSES[cache_key] = result
+    return result
+
+
+def cost_no_document_takes_block(node):
+    if is_post(node):
+        return False
+    type_text = str(node.get("type") or "").casefold()
+    if node.get("synthetic") or "treasury accounting line" in type_text or any(w in type_text for w in COST_NO_DOCUMENT_COMMITTEE_WORDS):
+        return False
+    if str(node.get("lifecycle") or "") == "superseded":
+        return False
+    if str(node.get("cost_status") or "") not in ("allocated", "scaled_official"):
+        return False
+    return not any(isinstance(node.get(f), dict) for f in COST_NO_DOCUMENT_SOURCED_FIGURES)
+
+
+def cost_no_document_violations(nodes, graph, label):
+    """An explained blank is re-derived from the committed money documents:
+    every block's document list is the fixtures' (id, label, version, digest,
+    distinct names), its name hits are recomputed by canonical-key equality,
+    its kind follows from the hits, and it sits only on an organisation left
+    with an apportioned estimate and no sourced figure of another kind. In the
+    other direction every such organisation carries one, once the pass has run."""
+    try:
+        universes = cost_no_document_universes(graph)
+    except (OSError, ValueError, KeyError, IndexError) as error:
+        return ["the money documents could not be re-read for the explained blanks: {}".format(error)]
+    expected_docs = [{"id": u["id"], "document": COST_NO_DOCUMENT_LABELS.get(u["id"]), "version": u["version"],
+                      "sha256": u["sha256"], "namesChecked": len(u["names"])} for u in universes]
+    out = []
+    pass_ran = any(isinstance(n.get(COST_NO_DOCUMENT_FIELD), dict) for n in nodes)
+    for node in nodes:
+        block = node.get(COST_NO_DOCUMENT_FIELD)
+        takes = cost_no_document_takes_block(node) and node.get("id") != "the-constitution-of-the-united-states"
+        if block is None:
+            if pass_ran and takes:
+                out.append("{} is left with only an estimate and carries no costNoDocument block".format(label(node)))
+            continue
+        if not isinstance(block, dict):
+            out.append("{} costNoDocument is not an object".format(label(node)))
+            continue
+        if not takes:
+            out.append("{} carries an explained blank on a node that is not an organisation left with only an estimate".format(label(node)))
+        if str(block.get("name") or "") != str(node.get("name") or ""):
+            out.append("{} costNoDocument names {!r}, not the node's name".format(label(node), block.get("name")))
+        key = canonical_key(node.get("name"))
+        hits = [{"document": u["id"], "printed": u["names"][key]} for u in universes if key in u["names"]]
+        got_hits = block.get("namedIn")
+        if not isinstance(got_hits, list) or [(str(h.get("document")), str(h.get("printed"))) for h in got_hits if isinstance(h, dict)] != [(h["document"], h["printed"]) for h in hits]:
+            out.append("{} costNoDocument.namedIn is not what the held documents print for this name".format(label(node)))
+        kind = str(block.get("kind") or "")
+        expected_kind = COST_NO_DOCUMENT_KIND_NAMED if hits else COST_NO_DOCUMENT_KIND_NONE
+        if kind != expected_kind:
+            out.append("{} costNoDocument.kind {!r}; the documents say {!r}".format(label(node), kind, expected_kind))
+        docs = block.get("documents")
+        if not isinstance(docs, list):
+            out.append("{} costNoDocument lists no documents".format(label(node)))
+        else:
+            got = [{"id": str(d.get("id")), "document": str(d.get("document")), "version": str(d.get("version")),
+                    "sha256": str(d.get("sha256")), "namesChecked": d.get("namesChecked")} for d in docs if isinstance(d, dict)]
+            want = [dict(d, document=str(d["document"])) for d in expected_docs]
+            if [dict(d) for d in got] != want:
+                out.append("{} costNoDocument.documents is not the committed documents' list (ids, labels, versions, digests, counts)".format(label(node)))
+            for d in docs:
+                if isinstance(d, dict) and set(d) - {"id", "document", "version", "file", "sha256", "namesChecked"}:
+                    out.append("{} costNoDocument document carries keys the module never writes".format(label(node)))
+                    break
+        extra = set(block) - {"kind", "name", "namedIn", "documents"}
+        if extra:
+            out.append("{} costNoDocument carries keys the module never writes: {}".format(label(node), sorted(extra)))
+    return out
+
+
+#: Mirror of data_pipeline.verification.pay_no_document, stdlib-only by
+#: design; tests/test_pay_no_document.py pins the vocabulary, the document
+#: labels and every title universe equal to the module's on the committed
+#: fixtures.
+PAY_NO_DOCUMENT_FIELD = "payNoDocument"
+PAY_NO_DOCUMENT_ROOT_FIELD = "__heldPayDocuments"
+PAY_NO_DOCUMENT_REF = "heldPayDocuments"
+PAY_NO_DOCUMENT_KIND_NONE = "no_held_pay_document_prints_the_title"
+PAY_NO_DOCUMENT_KIND_NAMED = "title_printed_in_a_held_pay_document_without_a_row_reaching_this_post"
+PAY_NO_DOCUMENT_REASONS = ("unreached", "multiplicity", "listed_no_rate", "beneath_replaced_unit")
+PAY_NO_DOCUMENT_LABELS = {
+    "executive_schedule_5_usc_5312_5316": "5 U.S.C. §§5312–5316, the Executive Schedule (every position the five sections enumerate)",
+    "opm_current_plum_export": "OPM's current Plum Book export (the title of every Filled or Vacant row; incumbent columns never read)",
+    "opm_plum_archive": "OPM's PLUM archive of the previous administration (the title of every row; incumbent columns never read)",
+    "whitehouse_staff_report": "the White House Office's Annual Report to Congress on White House Staff (the title of every row; names discarded)",
+    "us_government_manual_leadership_tables": "the United States Government Manual's leadership tables (every row the complete-title rule admits; names never read)",
+    "schedule_8_enlisted_footnote": "Schedule 8 of the pay-adjustment order, the enlisted footnote (the senior enlisted advisers it names)",
+}
+#: Every pay field a blank may not sit beside. Mirrors pay_documents.PAY_FIELDS;
+#: tests/test_pay_no_document.py pins the two equal.
+PAY_NO_DOCUMENT_PAY_FIELDS = (
+    "positionPayRate", "positionGradePay", "positionCurrentPay", "positionSchedulePay", "positionStatutoryPay",
+    "positionDerivedPay", "positionTierPay", "positionTierReferencePay", "positionReportedPay", "positionMilitaryPay",
+)
+PLUM_ARCHIVE_FIXTURE = Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "opm" / "plum" / "plum-archive-biden-administration.csv"
+#: The Executive Schedule's body paragraphs as uscode.house.gov marks them up,
+#: and the Code's closing footnote-reference element; mirrors
+#: statutory_schedule._BODY, _TRAILING_FOOTNOTE_REF, _HEADING, MIN/MAX_TITLE_CHARS.
+_PAY_ES_BODY = re.compile(r'<p class="statutory-body[^"]*">(.*?)</p>', re.S)
+_PAY_ES_TRAILING_REF = re.compile(r'(?:&nbsp;|\s)*<sup>\s*<a href="#\d{4}_\d+_target" name="\d{4}_\d+">\d+</a>\s*</sup>\s*$')
+_PAY_ES_HEADING = re.compile(r"^level\s+[ivx]+\b", re.IGNORECASE)
+_PAY_ES_TITLE_CHARS = (6, 140)
+_PAY_NO_DOCUMENT_UNIVERSES = {}
+
+
+def _pay_executive_schedule_titles():
+    """Every position the five committed sections enumerate, by the module's
+    own shallow rule: a body paragraph ending in a full stop (or closed by the
+    Code's footnote-reference element), not a Level heading, 6-140 characters,
+    at least two canonical tokens. Returns (titles, joined digest)."""
+    import hashlib as _hashlib
+    import html as _html
+
+    titles, digests = [], []
+    for section in ("5312", "5313", "5314", "5315", "5316"):
+        raw = (US_CODE_BASIS_FIXTURE_DIR / "exec_schedule_{}.html".format(section)).read_bytes()
+        digests.append(_hashlib.sha256(raw).hexdigest())
+        for fragment in _PAY_ES_BODY.findall(raw.decode("utf-8", errors="replace")):
+            stripped = _PAY_ES_TRAILING_REF.sub("", fragment, count=1)
+            closed_by_mark = stripped != fragment
+            text = " ".join(_html.unescape(re.sub(r"<[^>]+>", "", stripped)).split())
+            if not text or _PAY_ES_HEADING.match(text):
+                continue
+            if text.endswith("."):
+                title = text[:-1].strip()
+            elif closed_by_mark:
+                title = text
+            else:
+                continue
+            if not (_PAY_ES_TITLE_CHARS[0] <= len(title) <= _PAY_ES_TITLE_CHARS[1]):
+                continue
+            key = canonical_key(title)
+            if not key or len(key.split()) < 2:
+                continue
+            titles.append(title)
+    return titles, _hashlib.sha256("\n".join(digests).encode("ascii")).hexdigest()
+
+
+def pay_no_document_universes():
+    """Mirror of pay_no_document.document_universes: the titles every held
+    title-listing pay document prints, re-read from the committed fixtures
+    with this gate's own readers, in the module's order."""
+    import csv as _csv
+    import hashlib as _hashlib
+
+    if "all" in _PAY_NO_DOCUMENT_UNIVERSES:
+        return _PAY_NO_DOCUMENT_UNIVERSES["all"]
+    universes = []
+    es_titles, es_digest = _pay_executive_schedule_titles()
+    universes.append({"id": "executive_schedule_5_usc_5312_5316", "version": "the five sections as committed",
+                      "sha256": es_digest, "names": _cost_no_document_keys(es_titles)})
+    export = plum_current_export()
+    if export:
+        universes.append({"id": "opm_current_plum_export", "version": "fetched {}".format(export["fetched_at"][:10]),
+                          "sha256": export["sha256"],
+                          "names": _cost_no_document_keys(key[2] for key, entry in export["index"].items() if entry["live"])})
+    raw = PLUM_ARCHIVE_FIXTURE.read_bytes()
+    meta = json.loads(PLUM_ARCHIVE_FIXTURE.with_name(PLUM_ARCHIVE_FIXTURE.name + ".meta.json").read_text(encoding="utf-8"))
+    titles = []
+    for row in _csv.DictReader(io.StringIO(raw.decode("utf-8-sig"), newline="")):
+        if str(row.get("AgencyName") or "").strip() and str(row.get("PositionTitle") or "").strip():
+            titles.append(str(row.get("PositionTitle") or "").strip())
+    universes.append({"id": "opm_plum_archive", "version": "fetched {}".format(str(meta.get("fetched_at") or "")[:10]),
+                      "sha256": _hashlib.sha256(raw).hexdigest(), "names": _cost_no_document_keys(titles)})
+    roster_titles = whitehouse_roster_titles()
+    if roster_titles:
+        universes.append({"id": "whitehouse_staff_report", "version": "as of {}".format(WHITEHOUSE_REPORT_AS_OF_TEXT),
+                          "sha256": _hashlib.sha256(WHITEHOUSE_REPORT_FIXTURE.read_bytes()).hexdigest(),
+                          "names": _cost_no_document_keys(roster_titles)})
+    entries = govman_entries()
+    titles = []
+    for _name, by_key in entries.values():
+        for printed in by_key.values():
+            titles.extend(printed)
+    universes.append({"id": "us_government_manual_leadership_tables", "version": "edition {}".format(GOVMAN_PACKAGE[len("GOVMAN-"):]),
+                      "sha256": _GOVMAN_CACHE["digest"], "names": _cost_no_document_keys(titles)})
+    schedule = military_schedule_8()
+    if "error" not in schedule:
+        universes.append({"id": "schedule_8_enlisted_footnote", "version": "effective January 1, {}".format(schedule["year"]),
+                          "sha256": schedule["sha256"],
+                          "names": _cost_no_document_keys(t["title"] for t in schedule["footnote"]["titles"])})
+    result = [u for u in universes if u["names"]]
+    _PAY_NO_DOCUMENT_UNIVERSES["all"] = result
+    return result
+
+
+def pay_no_document_reason(node, beneath_replaced):
+    """The reason a blank carries, or None where none belongs: a post that is
+    not a Treasury line, with no pay claim and no employer block. Mirrors
+    pay_no_document.takes_block (report_unpriced_positions.classify's order)."""
+    if not is_post(node):
+        return None
+    if node.get("synthetic") or "treasury accounting line" in str(node.get("type") or "").casefold():
+        return None
+    if any(isinstance(node.get(f), dict) for f in PAY_NO_DOCUMENT_PAY_FIELDS):
+        return None
+    employer = node.get("positionEmployer")
+    if isinstance(employer, dict) and employer.get("federallyPaid") is False:
+        return None
+    if beneath_replaced:
+        return "beneath_replaced_unit"
+    if node.get("representsPosts"):
+        return "multiplicity"
+    if isinstance(node.get("positionListing"), dict) or isinstance(node.get("positionCurrentListing"), dict):
+        return "listed_no_rate"
+    return "unreached"
+
+
+def pay_no_document_violations(graph, label):
+    """The pay blank is re-derived from the committed pay documents: the root's
+    `__heldPayDocuments` list is the fixtures' (id, label, version, digest,
+    distinct titles), every block refers to it and counts it, its title hits
+    are recomputed by canonical-key equality, its kind follows from the hits,
+    its reason is the unpriced report's, and it sits only on a post with no pay
+    claim and no employer block. In the other direction every such post carries
+    one, once the pass has run."""
+    try:
+        universes = pay_no_document_universes()
+    except (OSError, ValueError, KeyError, IndexError) as error:
+        return ["the pay documents could not be re-read for the pay blanks: {}".format(error)]
+    expected_docs = [{"id": u["id"], "document": PAY_NO_DOCUMENT_LABELS.get(u["id"]), "version": u["version"],
+                      "sha256": u["sha256"], "titlesChecked": len(u["names"])} for u in universes]
+    out = []
+    # (node, beneath a replaced unit?) for every node, the way the report walks
+    stack = [(graph, False)]
+    rows = []
+    while stack:
+        node, replaced = stack.pop()
+        replaced = replaced or str(node.get("lifecycle") or "") == "superseded"
+        rows.append((node, replaced))
+        for child in node.get("children") or []:
+            if isinstance(child, dict):
+                stack.append((child, replaced))
+    pass_ran = any(isinstance(n.get(PAY_NO_DOCUMENT_FIELD), dict) for n, _ in rows)
+    held = graph.get(PAY_NO_DOCUMENT_ROOT_FIELD)
+    if pass_ran:
+        if not isinstance(held, list):
+            out.append("the root carries no __heldPayDocuments list while posts carry pay blanks referring to it")
+        else:
+            got = [{"id": str(d.get("id")), "document": str(d.get("document")), "version": str(d.get("version")),
+                    "sha256": str(d.get("sha256")), "titlesChecked": d.get("titlesChecked")} for d in held if isinstance(d, dict)]
+            if got != [dict(d, document=str(d["document"])) for d in expected_docs]:
+                out.append("the root's __heldPayDocuments is not the committed pay documents' list (ids, labels, versions, digests, counts)")
+            for d in held:
+                if isinstance(d, dict) and set(d) - {"id", "document", "version", "file", "sha256", "titlesChecked"}:
+                    out.append("a __heldPayDocuments entry carries keys the module never writes")
+                    break
+    elif held is not None:
+        out.append("the root carries __heldPayDocuments while no post carries a pay blank")
+    for node, replaced in rows:
+        block = node.get(PAY_NO_DOCUMENT_FIELD)
+        reason = pay_no_document_reason(node, replaced) if node is not graph else None
+        if block is None:
+            if pass_ran and reason is not None:
+                out.append("{} is a post no document prices and carries no payNoDocument block".format(label(node)))
+            continue
+        if not isinstance(block, dict):
+            out.append("{} payNoDocument is not an object".format(label(node)))
+            continue
+        if reason is None:
+            out.append("{} carries a pay blank on a node that is not a post left with no pay claim and no employer block".format(label(node)))
+        elif str(block.get("reason") or "") != reason:
+            out.append("{} payNoDocument.reason {!r}; the unpriced report's reason is {!r}".format(label(node), block.get("reason"), reason))
+        if str(block.get("name") or "") != str(node.get("name") or ""):
+            out.append("{} payNoDocument names {!r}, not the node's name".format(label(node), block.get("name")))
+        key = canonical_key(node.get("name"))
+        hits = [{"document": u["id"], "printed": u["names"][key]} for u in universes if key in u["names"]]
+        got_hits = block.get("namedIn")
+        if not isinstance(got_hits, list) or [(str(h.get("document")), str(h.get("printed"))) for h in got_hits if isinstance(h, dict)] != [(h["document"], h["printed"]) for h in hits]:
+            out.append("{} payNoDocument.namedIn is not what the held pay documents print for this title".format(label(node)))
+        expected_kind = PAY_NO_DOCUMENT_KIND_NAMED if hits else PAY_NO_DOCUMENT_KIND_NONE
+        if str(block.get("kind") or "") != expected_kind:
+            out.append("{} payNoDocument.kind {!r}; the documents say {!r}".format(label(node), block.get("kind"), expected_kind))
+        if block.get("documentsRef") != PAY_NO_DOCUMENT_REF:
+            out.append("{} payNoDocument does not refer to the root's held-document list".format(label(node)))
+        if block.get("documentsChecked") != len(expected_docs):
+            out.append("{} payNoDocument says {!r} documents were checked; the committed list holds {}".format(label(node), block.get("documentsChecked"), len(expected_docs)))
+        extra = set(block) - {"kind", "reason", "name", "namedIn", "documentsRef", "documentsChecked"}
+        if extra:
+            out.append("{} payNoDocument carries keys the module never writes: {}".format(label(node), sorted(extra)))
+    return out
+
+
+#: Mirror of data_pipeline.exporter.treasury_sums, stdlib-only; tests/
+#: test_treasury_sums.py pins the vocabulary and the published blocks equal to
+#: a re-derivation from the committed statement.
+TREASURY_SUM_FIELD = "treasury_sum"
+TREASURY_SUM_KINDS = ("line", "header", "receipts")
+TREASURY_SUM_WHERE = ("child", "descendant", "elsewhere", "none")
+TREASURY_SUM_BLOCK_KEYS = {"statementDate", "classificationId", "total", "parts", "partsSum", "notAttributed",
+                           "landedOnChildren", "appliedElsewhere", "toNoNode", "estimatedChildren"}
+TREASURY_SUM_PART_KEYS = {"name", "amount", "kind", "classificationId", "nodeId", "nodeName", "where"}
+
+
+def treasury_sum_takes_block(node):
+    if is_post(node) or node.get("synthetic") or "treasury accounting line" in str(node.get("type") or "").casefold():
+        return False
+    return str(node.get("cost_status") or "") == "official" and bool(str(node.get("treasury_classification_id") or "").strip())
+
+
+def treasury_sum_violations(nodes, graph, label):
+    """A measured unit's `treasury_sum` is re-derived from the committed
+    statement its date names: the parts are the direct items beneath the
+    unit's header (a sub-header at the sum of its lines, a Total-- row never a
+    part), in print order with the printed names and exact amounts; each
+    part's landing is the node carrying its classification id (a sub-header's
+    own or its Total-- row's; a receipts row the unit's receipts child), and
+    `where` is read off the tree the gate is walking; the three sums, the
+    parts' sum and the not-attributed remainder are recomputed; the estimated
+    children are the direct organisation children with an apportioned share.
+    In the other direction every measured organisation whose header has parts
+    carries a block, once the pass has run."""
+    out = []
+    parents, by_id, by_cid, receipts_child = {}, {}, {}, {}
+    for node, parent in walk(graph):
+        node_id = str(node.get("id") or "")
+        by_id[node_id] = node
+        parents[node_id] = str(parent.get("id") or "") if parent else None
+        cid = str(node.get("treasury_classification_id") or "").strip()
+        if cid and not node.get("synthetic"):
+            by_cid.setdefault(cid, node_id)
+        if str(node.get("synthetic") or "") == "treasury_receipts" and parent:
+            receipts_child[str(parent.get("id") or "")] = node_id
+
+    def where_of(target, node_id):
+        if not target:
+            return "none"
+        if parents.get(target) == node_id:
+            return "child"
+        cursor = parents.get(target)
+        while cursor:
+            if cursor == node_id:
+                return "descendant"
+            cursor = parents.get(cursor)
+        return "elsewhere"
+
+    committed = None
+    pass_ran = any(isinstance(n.get(TREASURY_SUM_FIELD), dict) for n in nodes)
+    for node in nodes:
+        block = node.get(TREASURY_SUM_FIELD)
+        node_id = str(node.get("id") or "")
+        takes = treasury_sum_takes_block(node) and node is not graph
+        if committed is None:
+            committed = load_committed_treasury_statements()
+        if block is None:
+            if pass_ran and takes:
+                date = str((graph.get("__budgetSummary") or {}).get("record_date") or "")[:10]
+                statement = committed.get(date)
+                if statement is not None:
+                    reading = statement[1]
+                    row = reading.rows.get(str(node.get("treasury_classification_id") or "").strip())
+                    header = reading.rows.get(reading.parent_of.get(str(row.get("classification_id")).strip())) if row is not None and reading.is_total(row) else (row if row is not None and reading.is_header(row) else None)
+                    if header is not None and any(not reading.is_total(k) for k in reading.kids(header)):
+                        out.append("{} is a measured unit whose Table 5 header has parts and carries no treasury_sum".format(label(node)))
+            continue
+        if not isinstance(block, dict):
+            out.append("{} treasury_sum is not an object".format(label(node)))
+            continue
+        if not takes:
+            out.append("{} carries a treasury_sum on a node that is not a measured organisation with a Table 5 classification id".format(label(node)))
+            continue
+        extra = set(block) - TREASURY_SUM_BLOCK_KEYS
+        if extra:
+            out.append("{} treasury_sum carries keys the module never writes: {}".format(label(node), sorted(extra)))
+        date = str(block.get("statementDate") or "")
+        statement = committed.get(date)
+        if statement is None:
+            out.append("{} treasury_sum cites a statement dated {!r} that is not committed".format(label(node), date))
+            continue
+        reading = statement[1]
+        cid = str(node.get("treasury_classification_id") or "").strip()
+        if str(block.get("classificationId") or "") != cid:
+            out.append("{} treasury_sum names classification id {!r}, not the node's {!r}".format(label(node), block.get("classificationId"), cid))
+        row = reading.rows.get(cid)
+        if row is None:
+            out.append("{} names classification id {!r}, which the {} statement does not print".format(label(node), cid, date))
+            continue
+        header = reading.rows.get(reading.parent_of.get(cid)) if reading.is_total(row) else (row if reading.is_header(row) else None)
+        if header is None:
+            out.append("{} treasury_sum sits on a plain line, which has no parts".format(label(node)))
+            continue
+        expected_parts = []
+        for kid in reading.kids(header):
+            if reading.is_total(kid):
+                continue
+            kid_id = str(kid.get("classification_id") or "").strip()
+            if reading.is_receipts(kid):
+                kind, landed = "receipts", receipts_child.get(node_id)
+            elif reading.is_header(kid):
+                kind = "header"
+                totals = [k for k in reading.kids(kid) if reading.is_total(k)]
+                landed = by_cid.get(kid_id) or (by_cid.get(str(totals[0].get("classification_id") or "").strip()) if len(totals) == 1 else None)
+            else:
+                kind, landed = "line", by_cid.get(kid_id)
+            if landed == node_id:
+                landed = None
+            expected_parts.append({
+                "name": reading.label(kid), "amount": round(reading.value(kid), 2), "kind": kind, "classificationId": kid_id,
+                "nodeId": landed, "nodeName": str((by_id.get(landed) or {}).get("name") or "") if landed else None, "where": where_of(landed, node_id),
+            })
+        parts = block.get("parts")
+        if not isinstance(parts, list) or not parts:
+            out.append("{} treasury_sum lists no parts".format(label(node)))
+            continue
+        got = []
+        for part in parts:
+            if not isinstance(part, dict) or set(part) - TREASURY_SUM_PART_KEYS:
+                out.append("{} treasury_sum part carries keys the module never writes".format(label(node)))
+                break
+            got.append({k: part.get(k) for k in TREASURY_SUM_PART_KEYS})
+            if part.get("kind") not in TREASURY_SUM_KINDS or part.get("where") not in TREASURY_SUM_WHERE:
+                out.append("{} treasury_sum part {!r} has a kind or landing outside the vocabulary".format(label(node), part.get("name")))
+        if got != expected_parts:
+            out.append("{} treasury_sum parts are not the statement's direct items beneath the unit's header, as landed in this tree".format(label(node)))
+        try:
+            total = float(block.get("total"))
+        except (TypeError, ValueError):
+            out.append("{} treasury_sum carries no total".format(label(node)))
+            continue
+        if abs(total - float(node.get("resolved_total_amount") or 0.0)) > 0.005:
+            out.append("{} treasury_sum total {:,.2f} is not the node's measured {:,.2f}".format(label(node), total, float(node.get("resolved_total_amount") or 0.0)))
+        parts_sum = round(sum(p["amount"] for p in expected_parts), 2)
+        checks = {
+            "partsSum": parts_sum,
+            "notAttributed": round(total - parts_sum, 2),
+            "landedOnChildren": round(sum(p["amount"] for p in expected_parts if p["where"] in ("child", "descendant")), 2),
+            "appliedElsewhere": round(sum(p["amount"] for p in expected_parts if p["where"] == "elsewhere"), 2),
+            "toNoNode": round(sum(p["amount"] for p in expected_parts if p["where"] == "none"), 2),
+        }
+        for key, want in checks.items():
+            try:
+                have = float(block.get(key))
+            except (TypeError, ValueError):
+                out.append("{} treasury_sum.{} is missing".format(label(node), key))
+                continue
+            if abs(have - want) > 0.005:
+                out.append("{} treasury_sum.{} is {:,.2f}; the statement and the tree give {:,.2f}".format(label(node), key, have, want))
+        expected_estimated = [
+            {"id": str(c.get("id") or ""), "name": str(c.get("name") or "")}
+            for c in node.get("children") or []
+            if isinstance(c, dict) and not is_post(c) and not c.get("synthetic")
+            and "treasury accounting line" not in str(c.get("type") or "").casefold() and str(c.get("cost_status") or "") == "allocated"
+        ]
+        if block.get("estimatedChildren") != expected_estimated:
+            out.append("{} treasury_sum.estimatedChildren is not the direct organisation children with an apportioned share".format(label(node)))
+    return out
+
+
 def is_committee(node):
     return str(node.get("type") or "").strip().casefold() in COMMITTEE_TYPES
 
@@ -9646,6 +10499,585 @@ def fedscope_payroll_violations(node, block, rows, digest, label):
             node.get("resolved_total_amount") == block.get("totalAnnualPay"):
         out.append("{} payroll equals the measured cost to the cent".format(who))
     return out
+
+
+# ---------------------------------------------------------------------------
+# The source registry (criterion 6), re-derived. A stdlib mirror of
+# data_pipeline/freshness.py: the registry's rows, the fixtures' own fetch
+# records and the graph's own blocks give each source's copy date and what is
+# due, and the root's `__sourceRegistry` must be exactly that. The two are
+# pinned equal by tests/test_source_registry.py.
+# ---------------------------------------------------------------------------
+
+SOURCE_REGISTRY_ROOT_FIELD = "__sourceRegistry"
+SOURCE_REGISTRY_PATH = PROJECT_ROOT / "data" / "source_registry.json"
+SOURCE_REGISTRY_FIXTURES = PROJECT_ROOT / "tests" / "fixtures"
+SOURCE_REGISTRY_PERIOD_MONTHS = {"period_end_monthly": 1, "period_end_quarterly": 3, "period_end_semiannual": 6, "period_end_annual": 12}
+SOURCE_REGISTRY_CADENCES = tuple(SOURCE_REGISTRY_PERIOD_MONTHS) + ("effective_annual", "fixed_month_day", "on_republication", "closed_record")
+SOURCE_REGISTRY_COPY_KINDS = ("graph_root", "graph_field_max", "stated", "fixture_meta", "fixture_meta_oldest")
+SOURCE_REGISTRY_FETCH_KINDS = ("api_latest_statement", "fixed_url", "refetch_each_fixture_url", "url_changes_each_period", "closed_record")
+SOURCE_REGISTRY_STATUSES = ("current", "newer_edition_expected", "overdue", "recheck_due", "closed_record", "copy_date_unknown")
+SOURCE_REGISTRY_ROW_KEYS = ("id", "label", "publisher", "cadence", "copy", "fixtures", "fetch", "graphFields", "note", "perNodeDate")
+SOURCE_REGISTRY_ENTRY_KEYS = ("id", "label", "publisher", "cadence", "copy", "expected", "statusAtBuild", "lastReadAfterExpected", "graphFields", "fixtureCount", "fetch", "note", "perNodeDate")
+
+
+def _sr_date(value):
+    text = str(value or "").strip()
+    if len(text) < 10:
+        return None
+    try:
+        return datetime.strptime(text[:10], "%Y-%m-%d").date()
+    except ValueError:
+        return None
+
+
+def _sr_month_end(year, month):
+    return datetime(year, month, calendar.monthrange(year, month)[1]).date()
+
+
+def _sr_add_months_end(day, months):
+    index = day.year * 12 + (day.month - 1) + months
+    return _sr_month_end(index // 12, index % 12 + 1)
+
+
+def _sr_add_days(day, days):
+    return day.fromordinal(day.toordinal() + int(days))
+
+
+def _sr_transform(value, transform):
+    text = str(value or "").strip()
+    if not text:
+        return None
+    if transform == "fiscal_year_end":
+        return datetime(int(text[:4]), 9, 30).date() if text[:4].isdigit() else None
+    if transform == "month_end":
+        return _sr_month_end(int(text[:4]), int(text[5:7])) if len(text) >= 7 and text[:4].isdigit() and text[5:7].isdigit() else None
+    return _sr_date(text)
+
+
+def _sr_dotted(value, path):
+    cursor = value
+    for part in str(path).split("."):
+        if not isinstance(cursor, dict):
+            return None
+        cursor = cursor.get(part)
+    return cursor
+
+
+def _sr_where(block, where):
+    if not where:
+        return True
+    for path, wanted in where:
+        actual = _sr_dotted(block, path)
+        if isinstance(wanted, dict) and "prefix" in wanted:
+            if not str(actual or "").startswith(str(wanted["prefix"])):
+                return False
+        elif str(actual if actual is not None else "") != str(wanted):
+            return False
+    return True
+
+
+def source_registry_node_uses(node, graph_fields):
+    for spec in graph_fields:
+        if isinstance(spec, str):
+            if isinstance(node.get(spec), dict):
+                return True
+        elif isinstance(spec, dict):
+            if "costStatus" in spec:
+                if str(node.get("cost_status") or "") in spec["costStatus"]:
+                    return True
+            elif "nodeWhere" in spec:
+                if _sr_where(node, spec["nodeWhere"]):
+                    return True
+            elif "field" in spec:
+                block = node.get(spec["field"])
+                if isinstance(block, dict) and _sr_where(block, spec.get("where")):
+                    return True
+    return False
+
+
+def _sr_field_max(nodes, spec):
+    field = spec.get("field")
+    best = None
+    for node in nodes:
+        holder = node if field in (None, "") else node.get(field)
+        if not isinstance(holder, dict) or not _sr_where(holder, spec.get("where")):
+            continue
+        found = _sr_transform(_sr_dotted(holder, str(spec.get("path") or "")), spec.get("transform"))
+        if found and (best is None or found > best):
+            best = found
+    return best
+
+
+def _sr_graph_check(nodes, check):
+    if not check:
+        return None
+    field = check.get("field")
+    for node in nodes:
+        holder = node if field in (None, "") else node.get(field)
+        if isinstance(holder, dict) and str(_sr_dotted(holder, str(check.get("path") or "")) or "") == str(check.get("equals")):
+            return True
+    return False
+
+
+def _sr_metas(fixtures, root=SOURCE_REGISTRY_FIXTURES):
+    out = []
+    for rel in fixtures:
+        target = root / rel
+        if target.is_dir():
+            paths = sorted(target.rglob("*.meta.json"))
+        elif target.is_file():
+            meta = target if target.name.endswith(".meta.json") else target.with_name(target.name + ".meta.json")
+            paths = [meta] if meta.is_file() else []
+        else:
+            paths = []
+        for path in paths:
+            try:
+                meta = json.loads(path.read_text(encoding="utf-8"))
+            except (OSError, ValueError):
+                continue
+            if isinstance(meta, dict) and meta.get("sha256"):
+                out.append({"path": str(path.relative_to(root)), "fetchedAt": str(meta.get("fetched_at") or ""),
+                            "url": str(meta.get("url") or ""), "sha256": str(meta.get("sha256") or "")})
+    return out
+
+
+def _sr_validate_row(row, root=SOURCE_REGISTRY_FIXTURES):
+    problems = []
+    for key in ("id", "label", "publisher", "cadence", "copy", "fixtures", "fetch", "graphFields"):
+        if key not in row:
+            problems.append("missing " + key)
+    if set(row) - set(SOURCE_REGISTRY_ROW_KEYS):
+        problems.append("unknown keys")
+    cadence = row.get("cadence") or {}
+    kind = str(cadence.get("kind") or "")
+    if kind not in SOURCE_REGISTRY_CADENCES:
+        problems.append("cadence kind")
+    if not str(cadence.get("basis") or "").strip():
+        problems.append("cadence basis")
+    if kind in SOURCE_REGISTRY_PERIOD_MONTHS or kind in ("effective_annual", "fixed_month_day"):
+        for key in ("lagDays", "overdueMarginDays"):
+            if not isinstance(cadence.get(key), int) or cadence[key] < 0:
+                problems.append("cadence " + key)
+    if kind == "fixed_month_day" and not (isinstance(cadence.get("month"), int) and isinstance(cadence.get("day"), int)):
+        problems.append("fixed_month_day month/day")
+    if kind == "on_republication" and not (isinstance(cadence.get("recheckDays"), int) and cadence["recheckDays"] > 0):
+        problems.append("recheckDays")
+    copy = row.get("copy") or {}
+    if str(copy.get("kind")) not in SOURCE_REGISTRY_COPY_KINDS:
+        problems.append("copy kind")
+    if copy.get("transform") is not None and copy.get("transform") not in ("fiscal_year_end", "month_end"):
+        problems.append("copy transform")
+    if copy.get("kind") == "stated" and (not _sr_date(copy.get("date")) or not str(copy.get("basis") or "").strip()):
+        problems.append("stated copy")
+    if not str(copy.get("meaning") or "").strip():
+        problems.append("copy meaning")
+    fixtures = row.get("fixtures") or []
+    if not isinstance(fixtures, list) or not fixtures or not any((root / rel).exists() for rel in fixtures):
+        problems.append("fixtures")
+    fetch = row.get("fetch") or {}
+    if str(fetch.get("kind")) not in SOURCE_REGISTRY_FETCH_KINDS:
+        problems.append("fetch kind")
+    if fetch.get("kind") in ("api_latest_statement", "fixed_url", "url_changes_each_period") and not str(fetch.get("url") or "").startswith("https://"):
+        problems.append("fetch url")
+    if fetch.get("kind") != "closed_record" and not isinstance(fetch.get("contentCheck"), dict):
+        problems.append("contentCheck")
+    if not isinstance(row.get("graphFields"), list) or not row.get("graphFields"):
+        problems.append("graphFields")
+    return problems
+
+
+def _sr_cadence_text(cadence):
+    kind = str(cadence.get("kind") or "")
+    words = {"period_end_monthly": "monthly", "period_end_quarterly": "quarterly", "period_end_semiannual": "twice a year",
+             "period_end_annual": "yearly, after the period ends", "effective_annual": "yearly, effective each January",
+             "fixed_month_day": "yearly, by a fixed date", "on_republication": "no fixed cycle; re-checked",
+             "closed_record": "a closed record; nothing newer is expected"}
+    text = words.get(kind, kind)
+    if kind == "fixed_month_day":
+        text = "yearly, by {} {}".format(calendar.month_name[int(cadence["month"])], int(cadence["day"]))
+    if kind == "on_republication":
+        text = "no fixed cycle; re-checked every {} days".format(int(cadence.get("recheckDays") or 0))
+    elif kind != "closed_record":
+        text += "; published about {} days after the period, overdue {} days after that".format(int(cadence.get("lagDays") or 0), int(cadence.get("overdueMarginDays") or 0))
+    return text
+
+
+def source_registry_expected(graph, registry, as_of, root=SOURCE_REGISTRY_FIXTURES):
+    """What the root block must be: the registry re-derived against this graph."""
+    nodes = [n for n, _ in walk(graph)]
+    entries, refused, unused, seen = [], [], [], set()
+    for row in registry.get("sources") or []:
+        problems = _sr_validate_row(row, root)
+        if str(row.get("id")) in seen:
+            problems.append("duplicate id")
+        seen.add(str(row.get("id")))
+        if problems:
+            refused.append({"id": str(row.get("id") or ""), "problems": problems})
+            continue
+        if not any(source_registry_node_uses(n, list(row.get("graphFields") or [])) for n in nodes):
+            unused.append(str(row.get("id") or ""))
+            continue
+        metas = _sr_metas(list(row.get("fixtures") or []), root)
+        spec = row.get("copy") or {}
+        kind = str(spec.get("kind") or "")
+        copy = {"kind": kind, "date": None, "meaning": str(spec.get("meaning") or ""), "basis": str(spec.get("basis") or "")}
+        if spec.get("edition"):
+            copy["edition"] = str(spec["edition"])
+        found = None
+        if kind == "graph_root":
+            found = _sr_transform(_sr_dotted(graph, str(spec.get("path") or "")), spec.get("transform"))
+        elif kind == "graph_field_max":
+            found = _sr_field_max(nodes, spec)
+        elif kind == "stated":
+            found = _sr_date(spec.get("date"))
+            holds = _sr_graph_check(nodes, spec.get("graphCheck"))
+            copy["graphCheck"] = "holds" if holds else ("not_made" if holds is None else "fails")
+        else:
+            dates = [d for d in (_sr_date(m["fetchedAt"]) for m in metas if m.get("fetchedAt")) if d]
+            if dates:
+                found = min(dates) if kind == "fixture_meta_oldest" else max(dates)
+        copy["date"] = found.isoformat() if found else None
+        fetched_all = [m["fetchedAt"] for m in metas if m.get("fetchedAt")]
+        copy["fetchedAt"] = max(fetched_all)[:10] if fetched_all else None
+        if copy.get("graphCheck") == "fails":
+            refused.append({"id": str(row.get("id")), "problems": ["graphCheck fails"]})
+            continue
+        cadence = dict(row.get("cadence") or {})
+        ckind = str(cadence.get("kind") or "")
+        if found is None and ckind not in ("on_republication", "closed_record"):
+            refused.append({"id": str(row.get("id")), "problems": ["no copy date"]})
+            continue
+        fetched = _sr_date(copy.get("fetchedAt"))
+        expected = {"next": None, "expectedBy": None, "overdueAfter": None, "recheckDue": None}
+        if ckind == "on_republication":
+            base = found or fetched
+            if base is not None:
+                expected["recheckDue"] = _sr_add_days(base, int(cadence.get("recheckDays") or 0)).isoformat()
+        elif ckind != "closed_record" and found is not None:
+            if ckind in SOURCE_REGISTRY_PERIOD_MONTHS:
+                nxt = _sr_add_months_end(found, SOURCE_REGISTRY_PERIOD_MONTHS[ckind])
+            elif ckind == "effective_annual":
+                nxt = datetime(found.year + 1, found.month, min(found.day, calendar.monthrange(found.year + 1, found.month)[1])).date()
+            else:
+                candidate = datetime(found.year, int(cadence["month"]), int(cadence["day"])).date()
+                nxt = candidate if candidate > found else datetime(found.year + 1, int(cadence["month"]), int(cadence["day"])).date()
+            expected_by = _sr_add_days(nxt, int(cadence.get("lagDays") or 0))
+            expected = {"next": nxt.isoformat(), "expectedBy": expected_by.isoformat(),
+                        "overdueAfter": _sr_add_days(expected_by, int(cadence.get("overdueMarginDays") or 0)).isoformat(), "recheckDue": None}
+        if ckind == "closed_record":
+            status = "closed_record"
+        elif ckind == "on_republication":
+            due = _sr_date(expected.get("recheckDue"))
+            status = "copy_date_unknown" if due is None else ("recheck_due" if as_of > due else "current")
+        elif found is None or not expected.get("expectedBy"):
+            status = "copy_date_unknown"
+        elif as_of <= _sr_date(expected["expectedBy"]):
+            status = "current"
+        elif as_of <= _sr_date(expected["overdueAfter"]):
+            status = "newer_edition_expected"
+        else:
+            status = "overdue"
+        expected_by = _sr_date(expected.get("expectedBy"))
+        fetch = dict(row.get("fetch") or {})
+        entries.append({
+            "id": str(row.get("id") or ""), "label": str(row.get("label") or ""), "publisher": str(row.get("publisher") or ""),
+            "cadence": dict(cadence, text=_sr_cadence_text(cadence)), "copy": copy, "expected": expected, "statusAtBuild": status,
+            "lastReadAfterExpected": (fetched > expected_by) if (fetched and expected_by) else None,
+            "graphFields": list(row.get("graphFields") or []), "fixtureCount": len(metas),
+            "fetch": {"kind": str(fetch.get("kind") or ""), "url": str(fetch.get("url") or "")},
+            "note": str(row.get("note") or ""), "perNodeDate": str(row.get("perNodeDate") or "") or None,
+        })
+    counts = {s: sum(1 for e in entries if e["statusAtBuild"] == s) for s in SOURCE_REGISTRY_STATUSES}
+    return {"asOf": as_of.isoformat(), "cadencesAre": str(registry.get("cadencesAre") or ""), "sources": entries, "unused": unused, "counts": counts}, refused
+
+
+def source_registry_violations(graph, label, registry_path=SOURCE_REGISTRY_PATH, fixtures_root=SOURCE_REGISTRY_FIXTURES):
+    """The root's `__sourceRegistry` is honest: every source it lists is the
+    registry's row re-derived against this graph as of the block's own build
+    date, used by some node, and in the vocabulary; every registry row is
+    either listed or named unused; the counts are the listed entries'; the
+    field sits on the root alone. A graph the exporter's final passes did not
+    run on (no `__heldPayDocuments` on the root) carries no block and is not
+    asked for one. A used source the block omits is not a gate violation --
+    a hand-edited test graph can grow a field after its build -- and
+    tests/test_source_registry.py asserts `unused` is empty on the published
+    graph, which is where that claim belongs."""
+    out = []
+    block = graph.get(SOURCE_REGISTRY_ROOT_FIELD)
+    for node, _ in walk(graph):
+        if node is not graph and SOURCE_REGISTRY_ROOT_FIELD in node:
+            out.append("{}: carries __sourceRegistry, a root-only field".format(label(node)))
+    if block is None:
+        if "__heldPayDocuments" in graph:
+            out.append("the root carries no __sourceRegistry block while the exporter's final passes ran")
+        return out
+    if not isinstance(block, dict):
+        return out + ["__sourceRegistry is not an object"]
+    as_of = _sr_date(block.get("asOf"))
+    if as_of is None:
+        return out + ["__sourceRegistry.asOf is not a date"]
+    if as_of > datetime.now(timezone.utc).date():
+        out.append("__sourceRegistry.asOf {} is in the future".format(block.get("asOf")))
+    try:
+        registry = json.loads(Path(registry_path).read_text(encoding="utf-8"))
+    except (OSError, ValueError) as error:
+        return out + ["the source registry could not be read: {}".format(error)]
+    expected, refused = source_registry_expected(graph, registry, as_of, fixtures_root)
+    expected_by_id = {e["id"]: e for e in expected["sources"]}
+    refused_ids = {r["id"]: r["problems"] for r in refused}
+    registry_ids = [str(r.get("id") or "") for r in registry.get("sources") or []]
+    listed = block.get("sources") if isinstance(block.get("sources"), list) else None
+    if listed is None:
+        return out + ["__sourceRegistry.sources is not a list"]
+    listed_ids = []
+    for entry in listed:
+        if not isinstance(entry, dict):
+            out.append("__sourceRegistry carries a source that is not an object")
+            continue
+        source_id = str(entry.get("id") or "")
+        listed_ids.append(source_id)
+        if source_id not in registry_ids:
+            out.append("__sourceRegistry carries a source the registry does not: {}".format(source_id))
+            continue
+        if source_id in refused_ids:
+            out.append("__sourceRegistry lists {} although its row does not re-adjudicate: {}".format(source_id, "; ".join(refused_ids[source_id])))
+            continue
+        mine = expected_by_id.get(source_id)
+        if mine is None:
+            out.append("__sourceRegistry lists {} although no node carries a field it feeds".format(source_id))
+            continue
+        if entry != mine:
+            keys = [k for k in set(entry) | set(mine) if entry.get(k) != mine.get(k)]
+            out.append("__sourceRegistry.{} differs from the re-derived entry on {}".format(source_id, ", ".join(sorted(keys))))
+        if set(entry) - set(SOURCE_REGISTRY_ENTRY_KEYS):
+            out.append("__sourceRegistry.{} carries keys outside the entry vocabulary".format(source_id))
+        if entry.get("statusAtBuild") not in SOURCE_REGISTRY_STATUSES:
+            out.append("__sourceRegistry.{} status {!r} is not in the vocabulary".format(source_id, entry.get("statusAtBuild")))
+    unused = block.get("unused") if isinstance(block.get("unused"), list) else None
+    if unused is None:
+        out.append("__sourceRegistry.unused is not a list")
+    else:
+        for source_id in unused:
+            if str(source_id) not in registry_ids:
+                out.append("__sourceRegistry.unused names a source the registry does not: {}".format(source_id))
+            elif str(source_id) in listed_ids:
+                out.append("__sourceRegistry names {} both listed and unused".format(source_id))
+        accounted = set(listed_ids) | {str(s) for s in unused}
+        for source_id in registry_ids:
+            if source_id not in accounted and source_id not in refused_ids:
+                out.append("__sourceRegistry neither lists nor names unused the registry row {}".format(source_id))
+    counts = {s: sum(1 for e in listed if isinstance(e, dict) and e.get("statusAtBuild") == s) for s in SOURCE_REGISTRY_STATUSES}
+    if block.get("counts") != counts:
+        out.append("__sourceRegistry.counts is not the count of the listed entries by status")
+    if block.get("cadencesAre") != expected.get("cadencesAre"):
+        out.append("__sourceRegistry.cadencesAre is not the registry's sentence")
+    if set(block) - {"asOf", "cadencesAre", "sources", "unused", "counts"}:
+        out.append("__sourceRegistry carries keys the derivation does not write: {}".format(sorted(set(block) - {"asOf", "cadencesAre", "sources", "unused", "counts"})))
+    return out
+
+
+
+# ---------------------------------------------------------------------------
+# The change history and the review queue (Part 2 "Change history", criteria
+# 5 and 7). The history next to the graph is a record of builds; the gate
+# cannot re-derive a diff against a graph it does not have, so it checks that
+# the LATEST entry describes THIS graph (its after-counts and anchor), that
+# every entry is well formed, and that the review queue's graph-derived
+# records are exactly the disagreements this graph publishes.
+# ---------------------------------------------------------------------------
+
+CHANGE_HISTORY_FILENAME = "change_history.json"
+REVIEW_QUEUE_PATH = PROJECT_ROOT / "data" / "audit" / "review_queue.json"
+CHANGE_BUDGET_RULES = ("node_count_drops", "measured_cost_moved_without_a_new_statement", "pay_claims_withdrawn_above_5_percent",
+                       "anchor_period_goes_backwards", "anchor_lost")
+CHANGE_PAY_FIELDS = ("positionStatutoryPay", "positionSchedulePay", "positionPayRate", "positionGradePay", "positionCurrentPay",
+                     "positionReportedPay", "positionDerivedPay", "positionTierPay", "positionTierReferencePay", "positionMilitaryPay")
+REVIEW_QUEUE_KINDS = ("budget_hold", "node_removed", "claim_withdrawn", "method_withdrawn", "sourced_figure_withdrawn",
+                      "measured_cost_moved_with_new_statement", "placement_directory_disagreement", "cost_weight_dispute",
+                      "verification_failure", "source_overdue")
+REVIEW_QUEUE_GRAPH_KINDS = ("placement_directory_disagreement", "cost_weight_dispute", "verification_failure", "source_overdue")
+REVIEW_QUEUE_STATUSES = ("open", "closed", "resolved")
+
+
+def review_queue_key(kind, *parts):
+    digest = hashlib.sha256("|".join(str(p) for p in parts).encode("utf-8")).hexdigest()[:12]
+    return "{}:{}".format(kind, digest)
+
+
+def review_queue_expected_keys(graph):
+    """The keys of every graph-derived record the queue must hold open."""
+    keys = set()
+    for node, _ in walk(graph):
+        d = node.get("placementDirectoryDisagreement")
+        if isinstance(d, dict):
+            keys.add(review_queue_key("placement_directory_disagreement", node.get("id"), d.get("source")))
+        w = node.get("cost_weight_dispute")
+        if isinstance(w, dict):
+            keys.add(review_queue_key("cost_weight_dispute", node.get("id"), w.get("period")))
+        if node.get("verificationFailure") and not node.get("verificationMethod"):
+            keys.add(review_queue_key("verification_failure", node.get("id"), node.get("verificationFailure")))
+    registry = graph.get(SOURCE_REGISTRY_ROOT_FIELD) if isinstance(graph.get(SOURCE_REGISTRY_ROOT_FIELD), dict) else {}
+    for entry in registry.get("sources") or []:
+        if isinstance(entry, dict) and entry.get("statusAtBuild") == "overdue":
+            keys.add(review_queue_key("source_overdue", entry.get("id"), (entry.get("expected") or {}).get("next")))
+    return keys
+
+
+def change_history_violations(graph, graph_path, label, queue_path=REVIEW_QUEUE_PATH):
+    out = []
+    history_path = Path(graph_path).parent / CHANGE_HISTORY_FILENAME
+    if not history_path.is_file():
+        return out
+    try:
+        history = json.loads(history_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as error:
+        return ["the change history could not be read: {}".format(error)]
+    if not isinstance(history, list) or not history:
+        return ["the change history is not a non-empty list"]
+    for i, entry in enumerate(history):
+        if not isinstance(entry, dict):
+            out.append("change history entry {} is not an object".format(i))
+            continue
+        for key in ("builtAt", "summary", "budget", "anchor"):
+            if key not in entry:
+                out.append("change history entry {} lacks {}".format(i, key))
+        budget = entry.get("budget") or {}
+        rules = budget.get("rules") if isinstance(budget, dict) else None
+        if not isinstance(rules, list) or {r.get("rule") for r in rules if isinstance(r, dict)} != set(CHANGE_BUDGET_RULES):
+            out.append("change history entry {} does not carry every budget rule".format(i))
+        elif budget.get("held") != any(bool(r.get("tripped")) for r in rules):
+            out.append("change history entry {}: held disagrees with its rules".format(i))
+        if isinstance(entry.get("builtAt"), str) and entry["builtAt"][:10] > datetime.now(timezone.utc).date().isoformat():
+            out.append("change history entry {} is dated in the future".format(i))
+    latest = history[0] if isinstance(history[0], dict) else {}
+    nodes = [n for n, _ in walk(graph)]
+    measured = sum(1 for n in nodes if str(n.get("cost_status") or "") in ("official", "root_total"))
+    posts_priced = sum(1 for n in nodes if is_post(n) and any(isinstance(n.get(f), dict) for f in CHANGE_PAY_FIELDS))
+    anchor = str((graph.get("__budgetSummary") or {}).get("record_date") or "")[:10] or None
+    after = {
+        "nodes.after": ((latest.get("nodes") or {}).get("after"), len(nodes)),
+        "measuredCosts.after": ((latest.get("measuredCosts") or {}).get("after"), measured),
+        "pay.claimsAfter": ((latest.get("pay") or {}).get("claimsAfter"), posts_priced),
+        "anchor.after.recordDate": (((latest.get("anchor") or {}).get("after") or {}).get("recordDate"), anchor),
+    }
+    for key, (recorded, actual) in after.items():
+        if recorded != actual:
+            out.append("the latest change history entry says {} = {!r}; this graph has {!r}".format(key, recorded, actual))
+    if latest.get("trimmed"):
+        out.append("the latest change history entry is trimmed; the newest entry must be whole")
+    if not Path(queue_path).is_file():
+        return out
+    try:
+        queue = json.loads(Path(queue_path).read_text(encoding="utf-8"))
+    except (OSError, ValueError) as error:
+        return out + ["the review queue could not be read: {}".format(error)]
+    if not isinstance(queue, list):
+        return out + ["the review queue is not a list"]
+    open_graph_keys = set()
+    seen = set()
+    for record in queue:
+        if not isinstance(record, dict):
+            out.append("a review queue record is not an object")
+            continue
+        key = str(record.get("key") or "")
+        if key in seen:
+            out.append("review queue key {} appears twice".format(key))
+        seen.add(key)
+        if record.get("kind") not in REVIEW_QUEUE_KINDS:
+            out.append("review queue record {} has kind {!r} outside the vocabulary".format(key, record.get("kind")))
+        if record.get("status") not in REVIEW_QUEUE_STATUSES:
+            out.append("review queue record {} has status {!r} outside the vocabulary".format(key, record.get("status")))
+        if not isinstance(record.get("documents"), list) or not record["documents"]:
+            out.append("review queue record {} names no document".format(key))
+        if not str(record.get("opened") or "")[:10] or str(record.get("opened"))[:10] > datetime.now(timezone.utc).date().isoformat():
+            out.append("review queue record {} has no past opening date".format(key))
+        if record.get("status") == "closed" and not record.get("closed"):
+            out.append("review queue record {} is closed with no closing date".format(key))
+        if record.get("kind") in REVIEW_QUEUE_GRAPH_KINDS and record.get("status") in ("open", "resolved"):
+            open_graph_keys.add(key)
+    expected = review_queue_expected_keys(graph)
+    for key in sorted(expected - open_graph_keys):
+        out.append("the graph publishes a disagreement the review queue does not hold open: {}".format(key))
+    for key in sorted(open_graph_keys - expected):
+        out.append("the review queue holds open a disagreement the graph no longer publishes: {}".format(key))
+    return out
+
+
+
+# ---------------------------------------------------------------------------
+# The flat CSV beside the graph (Part 2, "Export / download"): one row per
+# node, in tree order, with figures that are the nodes' own. Mirrors
+# scripts/export_flat_csv.py's columns; tests/test_export_csv.py pins them equal
+# and compares the committed file with a fresh render byte for byte.
+# ---------------------------------------------------------------------------
+
+FLAT_CSV_FILENAME = "nodes.csv"
+FLAT_CSV_COLUMNS = (
+    "id", "name", "type", "parent_id", "parent_name", "depth", "branch", "lifecycle",
+    "cost_status", "cost_amount_usd", "cost_basis", "cost_validation", "treasury_row_name", "treasury_section", "cost_source_url", "cost_period",
+    "usaspending_gross_outlays_usd", "usaspending_period", "usaspending_url",
+    "omb_outlays_usd", "omb_fiscal_year", "omb_url",
+    "audited_net_cost_usd", "audited_fiscal_year", "audited_url",
+    "combined_statement_net_outlays_usd", "combined_statement_fiscal_year", "combined_statement_url",
+    "disbursements_usd", "disbursements_period_start", "disbursements_period_end", "disbursements_url",
+    "employees_official", "employees_period", "employees_url", "payroll_official_usd",
+    "pay_field", "pay_amount_usd", "pay_minimum_usd", "pay_maximum_usd", "pay_source", "pay_url", "pay_documents",
+    "verification_method", "verification_url", "verification_date", "verification_no_document_kind",
+    "placement_method", "placement_url",
+    "cost_blank_kind", "pay_blank_kind", "pay_employer_kind",
+)
+
+
+def flat_csv_violations(graph, graph_path, label):
+    import csv
+
+    path = Path(graph_path).parent / FLAT_CSV_FILENAME
+    if not path.is_file():
+        return []
+    out = []
+    with path.open(encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        if tuple(reader.fieldnames or ()) != FLAT_CSV_COLUMNS:
+            return ["{} does not carry the expected columns".format(FLAT_CSV_FILENAME)]
+        rows = list(reader)
+    pairs = list(walk(graph))
+    nodes = {str(n.get("id") or ""): (n, p) for n, p in pairs}
+    if len(rows) != len(pairs):
+        out.append("{} has {:,} rows; the graph has {:,} nodes".format(FLAT_CSV_FILENAME, len(rows), len(pairs)))
+    seen = set()
+    for row in rows:
+        node_id = row.get("id") or ""
+        if node_id in seen:
+            out.append("{}: {} appears twice".format(FLAT_CSV_FILENAME, node_id))
+        seen.add(node_id)
+        if node_id not in nodes:
+            out.append("{}: {} is not a node of the graph".format(FLAT_CSV_FILENAME, node_id))
+            continue
+        node, parent = nodes[node_id]
+        if row.get("name") != str(node.get("name") or ""):
+            out.append("{}: {} carries the name {!r}, the graph {!r}".format(FLAT_CSV_FILENAME, node_id, row.get("name"), node.get("name")))
+        if row.get("parent_id") != str((parent or {}).get("id") or ""):
+            out.append("{}: {} is filed under {!r}, the tree under {!r}".format(FLAT_CSV_FILENAME, node_id, row.get("parent_id"), (parent or {}).get("id")))
+        if row.get("cost_status") != str(node.get("cost_status") or ""):
+            out.append("{}: {} cost_status {!r} is not the node's {!r}".format(FLAT_CSV_FILENAME, node_id, row.get("cost_status"), node.get("cost_status")))
+        status = str(node.get("cost_status") or "")
+        amount = node.get("resolved_total_amount")
+        expected_amount = "{:.2f}".format(float(amount)) if status in ("official", "root_total", "allocated", "scaled_official") and amount is not None else ""
+        if row.get("cost_amount_usd") != expected_amount:
+            out.append("{}: {} cost_amount_usd {!r} is not the node's {!r}".format(FLAT_CSV_FILENAME, node_id, row.get("cost_amount_usd"), expected_amount))
+        if row.get("cost_amount_usd") == "0.00":
+            out.append("{}: {} publishes a zero cost".format(FLAT_CSV_FILENAME, node_id))
+        if row.get("verification_method") != str(node.get("verificationMethod") or ""):
+            out.append("{}: {} verification_method is not the node's".format(FLAT_CSV_FILENAME, node_id))
+        if row.get("pay_field") and not isinstance(node.get(row["pay_field"]), dict):
+            out.append("{}: {} names a pay field {} the node does not carry".format(FLAT_CSV_FILENAME, node_id, row["pay_field"]))
+        if row.get("pay_amount_usd") and row.get("pay_field") and "{:.2f}".format(float(node[row["pay_field"]].get("amount") or 0)) != row["pay_amount_usd"]:
+            out.append("{}: {} pay_amount_usd is not the block's".format(FLAT_CSV_FILENAME, node_id))
+    for node_id in set(nodes) - seen:
+        out.append("{}: the node {} has no row".format(FLAT_CSV_FILENAME, node_id))
+    return out
+
 
 def main(argv):
     graph_path = Path(argv[1]) if len(argv) > 1 else DEFAULT_GRAPH
@@ -10430,6 +11862,7 @@ def main(argv):
 
     gate.check("no node claims a failed check beside a source", failure_beside_source)
     gate.check("an unread page says which host, why, and when, and never beside a page method", unread_violations)
+    gate.check("a recorded reason no document can be read is the name floor or the ledger's latest record, and sits beside no method", no_document_violations(nodes, label))
     gate.check("an official source type has a .gov/.mil URL behind it", unofficial_official)
     gate.check("every verification method is one this pipeline can produce", unknown_method)
     gate.check("a salary-table rate names a level the archive still reports and the rate that table prints", bad_table_pay)
@@ -10948,6 +12381,14 @@ def main(argv):
             sum(1 for n in combined_nodes if isinstance(n.get("combinedStatementOutlays"), dict)
                 and (n["combinedStatementOutlays"].get("treasurySection") or {}).get("filedInAnotherSection")),
         ) if not combined_violations else "",
+    )
+    post_weight_violations = post_dollar_weight_violations(nodes, tree_parents, label)
+    gate.check(
+        "a post takes no weight in a split by dollar figures, and keeps it in a headcount or size split",
+        post_weight_violations,
+        " — {} post(s) unweighted beside dollar figures".format(
+            sum(1 for n in nodes if n.get("cost_basis") == POST_UNWEIGHTED_BASIS),
+        ) if not post_weight_violations else "",
     )
     combined_weight_violations = combined_statement_weight_violations(nodes, tree_parents, label)
     gate.check(
@@ -11542,6 +12983,82 @@ def main(argv):
         if not url.startswith("https://www.govinfo.gov/"):
             omb_violations.append("{}'s OMB block cites {!r}, not the package on govinfo".format(label(node), url))
     gate.check("an OMB budget figure is a completed year the package really prints", omb_violations)
+    # The explained blank (criterion 1): an organisation left with only an
+    # estimate names the money documents checked for its name, re-derived here
+    # from the committed fixtures, and every such organisation carries one.
+    gate.check("an explained blank lists the held money documents, re-derived, and every bare estimate carries one", cost_no_document_violations(nodes, graph, label))
+    blanks = [n for n in nodes if isinstance(n.get(COST_NO_DOCUMENT_FIELD), dict)]
+    named = sum(1 for n in blanks if str(n[COST_NO_DOCUMENT_FIELD].get("kind")) == COST_NO_DOCUMENT_KIND_NAMED)
+    bare = [n for n in nodes if cost_no_document_takes_block(n) and not isinstance(n.get(COST_NO_DOCUMENT_FIELD), dict) and n.get("id") != "the-constitution-of-the-united-states"]
+    print("  explained blanks     : {:,} organisations left with only an estimate name the money documents checked ({:,} of them named in one without a licensed figure); bare estimates with no explanation: {:,} (criterion 1)".format(
+        len(blanks), named, len(bare)))
+    # The pay analogue (criterion 2): a post no document prices and no employer
+    # block explains names the title-listing pay documents checked, re-derived
+    # here, and every such post carries one. An explained blank, not a terminal
+    # reason; the summary line says so.
+    gate.check("a pay blank lists the held pay documents, re-derived, and every post no document prices carries one", pay_no_document_violations(graph, label))
+    pay_blanks = [n for n in nodes if isinstance(n.get(PAY_NO_DOCUMENT_FIELD), dict)]
+    pay_named = sum(1 for n in pay_blanks if str(n[PAY_NO_DOCUMENT_FIELD].get("kind")) == PAY_NO_DOCUMENT_KIND_NAMED)
+    pay_reasons = {}
+    for n in pay_blanks:
+        reason = str(n[PAY_NO_DOCUMENT_FIELD].get("reason"))
+        pay_reasons[reason] = pay_reasons.get(reason, 0) + 1
+    # How each measured unit's total adds up (criterion 4(b)): every part the
+    # statement prints beneath the unit's header, where it landed, and what is
+    # not attributed, re-derived from the committed statement.
+    gate.check("a measured unit's parts are the statement's own, landed as the tree lands them, and sum as published", treasury_sum_violations(nodes, graph, label))
+    sum_blocks = [n for n in nodes if isinstance(n.get(TREASURY_SUM_FIELD), dict)]
+    print("  totals add up        : {:,} measured units list the statement's parts beneath their header ({:,} parts); not attributed on {:,}; ${:,.2f} printed beneath {:,} of them reaches no node and is divided among their estimated children by weight; ${:,.2f} beneath {:,} others is the unit's own lines, not subdivided here; ${:,.2f} is measured under a unit drawn elsewhere (criterion 4b)".format(
+        len(sum_blocks), sum(len(n[TREASURY_SUM_FIELD].get("parts") or []) for n in sum_blocks),
+        sum(1 for n in sum_blocks if abs(float(n[TREASURY_SUM_FIELD].get("notAttributed") or 0)) > 0.005),
+        sum(float(n[TREASURY_SUM_FIELD].get("toNoNode") or 0) for n in sum_blocks if n[TREASURY_SUM_FIELD].get("estimatedChildren")),
+        sum(1 for n in sum_blocks if n[TREASURY_SUM_FIELD].get("estimatedChildren") and float(n[TREASURY_SUM_FIELD].get("toNoNode") or 0)),
+        sum(float(n[TREASURY_SUM_FIELD].get("toNoNode") or 0) for n in sum_blocks if not n[TREASURY_SUM_FIELD].get("estimatedChildren")),
+        sum(1 for n in sum_blocks if not n[TREASURY_SUM_FIELD].get("estimatedChildren") and float(n[TREASURY_SUM_FIELD].get("toNoNode") or 0)),
+        sum(float(n[TREASURY_SUM_FIELD].get("appliedElsewhere") or 0) for n in sum_blocks)))
+    print("  pay blanks           : {:,} posts no document prices name the {:,} title-listing pay documents checked ({:,} of them a title a held document prints under a filing no rule ties to the post); by reason {}; an explained blank, not a terminal reason (criterion 2)".format(
+        len(pay_blanks), len(graph.get(PAY_NO_DOCUMENT_ROOT_FIELD) or []), pay_named,
+        ", ".join("{} {:,}".format(k, v) for k, v in sorted(pay_reasons.items(), key=lambda kv: -kv[1])) or "none"))
+
+    # Freshness (criterion 6): the source registry's block on the root is the
+    # registry re-derived against this graph, every source it names feeds a
+    # field some node carries, and the summary says what is due.
+    gate.check("the source registry on the root is re-derived from the registry, the fixtures and the graph, and names only sources the graph uses", source_registry_violations(graph, label))
+    registry_block = graph.get(SOURCE_REGISTRY_ROOT_FIELD) if isinstance(graph.get(SOURCE_REGISTRY_ROOT_FIELD), dict) else {"sources": [], "counts": {}, "asOf": "?"}
+    by_status = {}
+    for entry in registry_block.get("sources") or []:
+        by_status.setdefault(str(entry.get("statusAtBuild")), []).append(str(entry.get("id")))
+    print("  freshness            : {:,} sources in the registry as of {}; {} (criterion 6)".format(
+        len(registry_block.get("sources") or []), registry_block.get("asOf"),
+        "; ".join("{} {:,}{}".format(status, len(ids), "" if status == "current" else " (" + ", ".join(ids) + ")") for status, ids in sorted(by_status.items(), key=lambda kv: -len(kv[1]))) or "none"))
+
+    # The change history and the review queue (Part 2, criteria 5 and 7): the
+    # latest recorded build describes this graph, every entry carries the
+    # budget's verdict rule by rule, and the queue holds open exactly the
+    # disagreements the graph publishes.
+    gate.check("the change history next to the graph describes this graph, and the review queue holds every open disagreement the graph publishes", change_history_violations(graph, graph_path, label))
+    history_file = Path(graph_path).parent / CHANGE_HISTORY_FILENAME
+    if history_file.is_file():
+        try:
+            history_entries = json.loads(history_file.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            history_entries = []
+        queue_entries = json.loads(REVIEW_QUEUE_PATH.read_text(encoding="utf-8")) if REVIEW_QUEUE_PATH.is_file() else []
+        latest_entry = history_entries[0] if isinstance(history_entries, list) and history_entries and isinstance(history_entries[0], dict) else {}
+        print("  change history       : {:,} builds recorded; the latest ({}) is {}: {}; review queue {:,} open, {:,} resolved, {:,} closed (criteria 5, 7)".format(
+            len(history_entries) if isinstance(history_entries, list) else 0, str(latest_entry.get("builtAt", "?"))[:10],
+            "HELD" if (latest_entry.get("budget") or {}).get("held") else "within the budget", str(latest_entry.get("summary", ""))[:160],
+            sum(1 for r in queue_entries if isinstance(r, dict) and r.get("status") == "open"),
+            sum(1 for r in queue_entries if isinstance(r, dict) and r.get("status") == "resolved"),
+            sum(1 for r in queue_entries if isinstance(r, dict) and r.get("status") == "closed")))
+    else:
+        print("  change history       : none recorded beside this graph")
+
+    # The flat CSV beside the graph (Part 2): one row per node, figures the
+    # nodes' own, no zero for a missing figure.
+    gate.check("the flat CSV beside the graph has one row per node with the nodes' own figures", flat_csv_violations(graph, graph_path, label))
+    csv_path = Path(graph_path).parent / FLAT_CSV_FILENAME
+    print("  flat csv             : {}".format("{} rows beside the graph ({:,} bytes)".format(sum(1 for _ in csv_path.open(encoding="utf-8")) - 1, csv_path.stat().st_size) if csv_path.is_file() else "none beside this graph"))
 
     # A name that states how many things it stands for, against what the
     # graph carries. The claim is only ever "the name says N, we carry M";
@@ -11664,6 +13181,22 @@ def main(argv):
     unread_kinds = Counter(str(n["verificationUnread"].get("kind")) for n in unread_orgs)
     print("  page unread          : {:,} organisations have a queued page that could not be read and no other method {}".format(
         len(unread_orgs), dict(unread_kinds) or ""))
+    # The definition of done's criterion 3: a method, or a recorded reason no
+    # official document can be read. The last line is the gap, by its own
+    # number, so it cannot be read as "unread" or as "not yet looked at".
+    current_orgs = [n for n in nodes if no_document_is_current_organisation(n) and n.get("id") != "the-constitution-of-the-united-states"]
+    no_document_orgs = [n for n in current_orgs if isinstance(n.get(NO_DOCUMENT_FIELD), dict) and not n.get("verificationMethod")]
+    no_document_kinds = Counter(str(n[NO_DOCUMENT_FIELD].get("kind")) for n in no_document_orgs)
+    print("  no document          : {:,} organisations carry a recorded reason no official document can be read for them {}".format(
+        len(no_document_orgs), dict(no_document_kinds) or ""))
+    # A document that WAS read and does not carry the name (verificationFailure)
+    # is a negative about the graph's wording, not a reason no document can be
+    # read, so it is the gap even where a ledger decline sits beside it; the
+    # report (scripts/report_evidence_coverage.py) counts the same set.
+    neither = [n for n in current_orgs if not n.get("verificationMethod") and not isinstance(n.get("verificationUnread"), dict)
+               and (n.get("verificationFailure") or not isinstance(n.get(NO_DOCUMENT_FIELD), dict))]
+    print("  evidence gap         : {:,} of {:,} current organisations carry neither a verification method nor a recorded reason, or were checked and not found (criterion 3)".format(
+        len(neither), len(current_orgs)))
     # Positions are 85% of this graph and carried no evidence of any kind
     # until 2026-09-15, so their coverage is reported on its own line rather
     # than buried in a total the organisations dominate.

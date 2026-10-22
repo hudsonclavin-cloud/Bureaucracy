@@ -1,0 +1,1165 @@
+{
+  "_comment": "The source registry (docs/DEFINITION_OF_DONE.md criterion 6). One row per source the graph publishes a figure or a piece of evidence from. data_pipeline/freshness.py re-derives every date on each build and refuses a row that does not re-adjudicate; the gate mirrors it. Edit rows here, never the derived block on the graph.",
+  "cadencesAre": "the reviewer's statements of each publisher's cycle, with a basis beside each; none was read from a publisher's own schedule, and every lag and margin is to be tuned on the first update cycles",
+  "sources": [
+    {
+      "id": "monthly_treasury_statement",
+      "label": "Monthly Treasury Statement, Table 5 (outlays by agency)",
+      "publisher": "Treasury, Bureau of the Fiscal Service (FiscalData)",
+      "cadence": {
+        "kind": "period_end_monthly",
+        "lagDays": 20,
+        "overdueMarginDays": 30,
+        "basis": "the statement for a month appears early in the next month, the September (fiscal year-end) statement later in October; the reviewer's statement of the publisher's cycle, not read from a publisher's document; to be tuned on the first cycles"
+      },
+      "copy": {
+        "kind": "graph_root",
+        "path": "__budgetSummary.record_date",
+        "meaning": "the statement's own record date: the last day of the month the statement reports"
+      },
+      "fixtures": [
+        "mts_table5_2026-08-31.json"
+      ],
+      "fetch": {
+        "kind": "api_latest_statement",
+        "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5",
+        "contentCheck": {
+          "contentType": "json",
+          "minBytes": 100000,
+          "mustContain": [
+            "record_date",
+            "classification_desc",
+            "Total Outlays"
+          ],
+          "parse": "data_pipeline.crawler.treasury_outlays:parse_outlay_rows",
+          "newerThanCopy": "record_date"
+        }
+      },
+      "graphFields": [
+        {
+          "costStatus": [
+            "official",
+            "root_total"
+          ]
+        },
+        "treasury_sum",
+        {
+          "nodeWhere": [
+            [
+              "synthetic",
+              "treasury_receipts"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "usaspending_file_a",
+      "label": "USAspending File A gross outlays (toptier agencies and bureaus)",
+      "publisher": "Treasury, Bureau of the Fiscal Service (USAspending.gov)",
+      "cadence": {
+        "kind": "period_end_monthly",
+        "lagDays": 45,
+        "overdueMarginDays": 30,
+        "basis": "agencies submit DATA Act files for each period in the following month and the site updates as they certify; the reviewer's statement of the publisher's cycle, not read from a publisher's document; to be tuned on the first cycles"
+      },
+      "copy": {
+        "kind": "graph_field_max",
+        "field": "usaspendingOutlays",
+        "path": "periodAsOf",
+        "meaning": "the date the fiscal-year-to-date figures were read, which is the period they run to"
+      },
+      "fixtures": [
+        "usaspending/toptier_agencies.json",
+        "usaspending/sub_components",
+        "usaspending/sub_agency",
+        "usaspending/bureau_accounts",
+        "usaspending/data_dictionary_crosswalk.xlsx"
+      ],
+      "fetch": {
+        "kind": "refetch_each_fixture_url",
+        "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+        "contentCheck": {
+          "contentType": "json",
+          "minBytes": 2000,
+          "mustContain": [
+            "results"
+          ]
+        }
+      },
+      "graphFields": [
+        "usaspendingOutlays"
+      ]
+    },
+    {
+      "id": "usaspending_file_b_object_class",
+      "label": "USAspending File B obligations by object class",
+      "publisher": "Treasury, Bureau of the Fiscal Service (USAspending.gov)",
+      "cadence": {
+        "kind": "period_end_annual",
+        "lagDays": 60,
+        "overdueMarginDays": 60,
+        "basis": "a completed fiscal year's twelfth period is certified in the November after it ends; the reviewer's statement of the publisher's cycle, not read from a publisher's document; to be tuned on the first cycles"
+      },
+      "copy": {
+        "kind": "graph_field_max",
+        "field": "spendingByKind",
+        "path": "fiscalYear",
+        "transform": "fiscal_year_end",
+        "meaning": "the end of the completed fiscal year the obligations are for"
+      },
+      "fixtures": [
+        "usaspending/object_class"
+      ],
+      "fetch": {
+        "kind": "refetch_each_fixture_url",
+        "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+        "contentCheck": {
+          "contentType": "json",
+          "minBytes": 500,
+          "mustContain": [
+            "results",
+            "fiscal_year"
+          ]
+        }
+      },
+      "graphFields": [
+        "spendingByKind"
+      ]
+    },
+    {
+      "id": "house_statement_of_disbursements",
+      "label": "House Statement of Disbursements (quarterly)",
+      "publisher": "U.S. House of Representatives, Chief Administrative Officer",
+      "cadence": {
+        "kind": "period_end_quarterly",
+        "lagDays": 60,
+        "overdueMarginDays": 30,
+        "basis": "published each quarter, about two months after the quarter ends (2 U.S.C. 104a, a section this project has not read); the reviewer's statement of the publisher's cycle, not read from a publisher's document; to be tuned on the first cycles"
+      },
+      "copy": {
+        "kind": "graph_field_max",
+        "field": "committeeDisbursements",
+        "path": "period.end",
+        "where": [
+          [
+            "chamber",
+            "house"
+          ]
+        ],
+        "meaning": "the last day of the quarter the statement covers"
+      },
+      "fixtures": [
+        "disbursements/house"
+      ],
+      "fetch": {
+        "kind": "url_changes_each_period",
+        "url": "https://www.house.gov/the-house-explained/open-government/statement-of-disbursements",
+        "contentCheck": {
+          "contentType": "csv",
+          "minBytes": 100000,
+          "mustContain": [
+            "OFFICE TOTALS"
+          ]
+        }
+      },
+      "graphFields": [
+        {
+          "field": "committeeDisbursements",
+          "where": [
+            [
+              "chamber",
+              "house"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "senate_secretary_report",
+      "label": "Report of the Secretary of the Senate, Part II (committee accounts)",
+      "publisher": "U.S. Senate, Secretary of the Senate (via govinfo)",
+      "cadence": {
+        "kind": "period_end_semiannual",
+        "lagDays": 120,
+        "overdueMarginDays": 60,
+        "basis": "a semiannual report (2 U.S.C. 4108, a section this project has not read), printed as a Senate document some months after the period; the reviewer's statement of the publisher's cycle, not read from a publisher's document; to be tuned on the first cycles"
+      },
+      "copy": {
+        "kind": "graph_field_max",
+        "field": "committeeDisbursements",
+        "path": "period.end",
+        "where": [
+          [
+            "chamber",
+            "senate"
+          ]
+        ],
+        "meaning": "the last day of the half-year the report covers"
+      },
+      "fixtures": [
+        "disbursements/senate",
+        "congress/senate_secretary_report"
+      ],
+      "fetch": {
+        "kind": "url_changes_each_period",
+        "url": "https://www.senate.gov/legislative/common/generic/report_secsen.htm",
+        "contentCheck": {
+          "contentType": "pdf",
+          "minBytes": 500000,
+          "mustContain": [
+            "NET EXPENDITURES FOR THE PERIOD"
+          ]
+        }
+      },
+      "graphFields": [
+        {
+          "field": "committeeDisbursements",
+          "where": [
+            [
+              "chamber",
+              "senate"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "opm_salary_tables",
+      "label": "OPM salary tables: Executive Schedule, General Schedule, SES, SL/ST",
+      "publisher": "Office of Personnel Management",
+      "cadence": {
+        "kind": "effective_annual",
+        "lagDays": 14,
+        "overdueMarginDays": 45,
+        "basis": "new tables take effect with the first pay period of January and OPM posts them around the pay-adjustment order in late December; the reviewer's statement of the publisher's cycle, not read from a publisher's document; to be tuned on the first cycles"
+      },
+      "copy": {
+        "kind": "graph_field_max",
+        "field": "positionPayRate",
+        "path": "effective",
+        "meaning": "the tables' own effective date"
+      },
+      "fixtures": [
+        "opm/pay"
+      ],
+      "fetch": {
+        "kind": "url_changes_each_period",
+        "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/",
+        "contentCheck": {
+          "contentType": "html",
+          "mustNotContain": [
+            "Under Maintenance",
+            "Request Access"
+          ],
+          "minBytes": 20000,
+          "mustContain": [
+            "Salary Table",
+            "Effective January"
+          ]
+        }
+      },
+      "graphFields": [
+        "positionPayRate",
+        "positionGradePay",
+        "positionSchedulePay",
+        "positionTierReferencePay"
+      ]
+    },
+    {
+      "id": "us_code_pay_schedules_5332_note",
+      "label": "The pay-adjustment order's schedules, in the note to 5 U.S.C. 5332 (Schedules 5–8)",
+      "publisher": "Office of the Law Revision Counsel, U.S. House",
+      "cadence": {
+        "kind": "effective_annual",
+        "lagDays": 30,
+        "overdueMarginDays": 60,
+        "basis": "a new executive order each late December, effective in January, reproduced in the Code's note when the Code is updated; the reviewer's statement of the publisher's cycle, not read from a publisher's document; to be tuned on the first cycles"
+      },
+      "copy": {
+        "kind": "graph_field_max",
+        "field": "positionMilitaryPay",
+        "path": "effective",
+        "meaning": "the order's own effective date"
+      },
+      "fixtures": [
+        "uscode/pay_schedules_5_usc_5332.html"
+      ],
+      "fetch": {
+        "kind": "fixed_url",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5332&num=0&edition=prelim",
+        "contentCheck": {
+          "contentType": "html",
+          "mustNotContain": [
+            "Under Maintenance",
+            "Request Access"
+          ],
+          "minBytes": 50000,
+          "mustContain": [
+            "Schedule 8",
+            "5332"
+          ]
+        }
+      },
+      "graphFields": [
+        "positionMilitaryPay",
+        {
+          "field": "positionStatutoryPay",
+          "where": [
+            [
+              "source",
+              "us_code_pay_schedules"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uscourts_judicial_compensation",
+      "label": "Judicial Compensation table",
+      "publisher": "Administrative Office of the U.S. Courts (uscourts.gov)",
+      "cadence": {
+        "kind": "effective_annual",
+        "lagDays": 30,
+        "overdueMarginDays": 60,
+        "basis": "the table adds the new year's row when judicial salaries adjust in January; the reviewer's statement of the publisher's cycle, not read from a publisher's document; to be tuned on the first cycles"
+      },
+      "copy": {
+        "kind": "graph_field_max",
+        "field": "positionStatutoryPay",
+        "path": "effective",
+        "where": [
+          [
+            "source",
+            "uscourts_judicial_compensation"
+          ]
+        ],
+        "meaning": "the effective date of the current row"
+      },
+      "fixtures": [
+        "uscourts"
+      ],
+      "fetch": {
+        "kind": "fixed_url",
+        "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+        "contentCheck": {
+          "contentType": "html",
+          "mustNotContain": [
+            "Under Maintenance",
+            "Request Access"
+          ],
+          "minBytes": 20000,
+          "mustContain": [
+            "Judicial Compensation",
+            "District Judges"
+          ]
+        }
+      },
+      "graphFields": [
+        {
+          "field": "positionStatutoryPay",
+          "where": [
+            [
+              "source",
+              "uscourts_judicial_compensation"
+            ]
+          ]
+        },
+        "positionDerivedPay"
+      ]
+    },
+    {
+      "id": "senate_salary_schedule",
+      "label": "Senate salaries since 1789",
+      "publisher": "U.S. Senate (senate.gov)",
+      "cadence": {
+        "kind": "effective_annual",
+        "lagDays": 30,
+        "overdueMarginDays": 60,
+        "basis": "a row per year, added when the year's rate is set; the reviewer's statement of the publisher's cycle, not read from a publisher's document; to be tuned on the first cycles"
+      },
+      "copy": {
+        "kind": "graph_field_max",
+        "field": "positionStatutoryPay",
+        "path": "effective",
+        "where": [
+          [
+            "source",
+            "senate_salary_schedule"
+          ]
+        ],
+        "meaning": "the effective date of the current row"
+      },
+      "fixtures": [
+        "congress/senate_salaries_since_1789.html"
+      ],
+      "fetch": {
+        "kind": "fixed_url",
+        "url": "https://www.senate.gov/senators/SenateSalariesSince1789.htm",
+        "contentCheck": {
+          "contentType": "html",
+          "mustNotContain": [
+            "Under Maintenance",
+            "Request Access"
+          ],
+          "minBytes": 10000,
+          "mustContain": [
+            "Salaries"
+          ]
+        }
+      },
+      "graphFields": [
+        {
+          "field": "positionStatutoryPay",
+          "where": [
+            [
+              "source",
+              "senate_salary_schedule"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "whitehouse_staff_report",
+      "label": "Annual Report to Congress on White House Office Personnel",
+      "publisher": "The White House Office",
+      "cadence": {
+        "kind": "fixed_month_day",
+        "month": 7,
+        "day": 1,
+        "lagDays": 14,
+        "overdueMarginDays": 60,
+        "basis": "Section 6 of Public Law 103-270 requires the report by July 1 each year (as the module reading it records)"
+      },
+      "copy": {
+        "kind": "stated",
+        "date": "2026-07-01",
+        "basis": "the report's own as-of line, \"Wednesday, July 1, 2026\"",
+        "graphCheck": {
+          "field": "positionReportedPay",
+          "path": "asOf",
+          "equals": "Wednesday, July 1, 2026"
+        },
+        "meaning": "the report's own as-of date"
+      },
+      "fixtures": [
+        "whitehouse"
+      ],
+      "fetch": {
+        "kind": "url_changes_each_period",
+        "url": "https://www.whitehouse.gov/disclosures/",
+        "contentCheck": {
+          "contentType": "pdf",
+          "minBytes": 100000,
+          "mustContain": [
+            "Annual Report to Congress on White House Office Personnel"
+          ]
+        }
+      },
+      "graphFields": [
+        "positionReportedPay"
+      ]
+    },
+    {
+      "id": "opm_plum_current_export",
+      "label": "OPM's current Plum Book export (PLUM Reporting)",
+      "publisher": "Office of Personnel Management (escs.opm.gov)",
+      "cadence": {
+        "kind": "on_republication",
+        "recheckDays": 90,
+        "basis": "a live export with no publication date of its own; it changes as agencies report"
+      },
+      "copy": {
+        "kind": "fixture_meta",
+        "meaning": "the date the export was fetched"
+      },
+      "fixtures": [
+        "opm/plum/escs_pbpub_download-data.csv"
+      ],
+      "fetch": {
+        "kind": "fixed_url",
+        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+        "contentCheck": {
+          "contentType": "csv",
+          "minBytes": 1000000,
+          "mustContain": [
+            "Position Title",
+            "Pay Plan"
+          ]
+        }
+      },
+      "graphFields": [
+        "positionCurrentListing",
+        "positionCurrentPay"
+      ]
+    },
+    {
+      "id": "opm_plum_archive",
+      "label": "OPM's Plum Book archive, previous administration",
+      "publisher": "Office of Personnel Management",
+      "cadence": {
+        "kind": "closed_record",
+        "basis": "the archive covers January 21, 2021 – January 20, 2025 and is closed"
+      },
+      "copy": {
+        "kind": "stated",
+        "date": "2025-01-20",
+        "basis": "the archive's own period, \"January 21, 2021 - January 20, 2025\"",
+        "graphCheck": {
+          "field": "positionListing",
+          "path": "period",
+          "equals": "January 21, 2021 - January 20, 2025"
+        },
+        "meaning": "the last day of the period the archive covers"
+      },
+      "fixtures": [
+        "opm/plum/plum-archive-biden-administration.csv"
+      ],
+      "fetch": {
+        "kind": "closed_record"
+      },
+      "graphFields": [
+        "positionListing"
+      ]
+    },
+    {
+      "id": "opm_fedscope_employment",
+      "label": "FedScope civilian employment (headcount and average pay by agency)",
+      "publisher": "Office of Personnel Management",
+      "cadence": {
+        "kind": "period_end_semiannual",
+        "lagDays": 240,
+        "overdueMarginDays": 60,
+        "basis": "March and September datasets, posted some months after the period; the reviewer's statement of the publisher's cycle, not read from a publisher's document; to be tuned on the first cycles"
+      },
+      "copy": {
+        "kind": "graph_field_max",
+        "field": "employeesOfficialSource",
+        "path": "period",
+        "transform": "month_end",
+        "meaning": "the last day of the month the dataset counts"
+      },
+      "fixtures": [
+        "opm/fedscope"
+      ],
+      "fetch": {
+        "kind": "url_changes_each_period",
+        "url": "https://www.opm.gov/data/datasets/",
+        "contentCheck": {
+          "contentType": "zip",
+          "minBytes": 1000000
+        }
+      },
+      "graphFields": [
+        "employeesOfficialSource",
+        "payrollOfficial",
+        "cost_weight_dispute"
+      ]
+    },
+    {
+      "id": "us_government_manual",
+      "label": "The United States Government Manual",
+      "publisher": "Office of the Federal Register (via govinfo)",
+      "cadence": {
+        "kind": "period_end_annual",
+        "lagDays": 90,
+        "overdueMarginDays": 90,
+        "basis": "an annual edition dated to the year's end, posted in the following months; the reviewer's statement of the publisher's cycle, not read from a publisher's document; to be tuned on the first cycles"
+      },
+      "copy": {
+        "kind": "graph_field_max",
+        "field": "govmanEntry",
+        "path": "edition",
+        "meaning": "the edition's own date"
+      },
+      "fixtures": [
+        "govman"
+      ],
+      "fetch": {
+        "kind": "url_changes_each_period",
+        "url": "https://www.govinfo.gov/app/collection/govman",
+        "contentCheck": {
+          "contentType": "xml",
+          "minBytes": 5000000,
+          "mustContain": [
+            "GovernmentManual"
+          ]
+        }
+      },
+      "graphFields": [
+        "govmanEntry",
+        "govmanListing",
+        "govmanOfficeEntry",
+        "descriptionOfficial"
+      ]
+    },
+    {
+      "id": "omb_public_budget_database",
+      "label": "OMB Public Budget Database",
+      "publisher": "Office of Management and Budget (via govinfo)",
+      "cadence": {
+        "kind": "fixed_month_day",
+        "month": 2,
+        "day": 1,
+        "lagDays": 60,
+        "overdueMarginDays": 120,
+        "basis": "released with each President's Budget, due the first Monday in February (31 U.S.C. 1105(a), a section this project has not read) and often later; the reviewer's statement of the publisher's cycle, not read from a publisher's document; to be tuned on the first cycles"
+      },
+      "copy": {
+        "kind": "fixture_meta",
+        "edition": "BUDGET-2027-DB (the FY2027 Budget)",
+        "meaning": "the date the package was fetched; its last completed year is FY2025"
+      },
+      "fixtures": [
+        "omb"
+      ],
+      "fetch": {
+        "kind": "url_changes_each_period",
+        "url": "https://www.govinfo.gov/app/collection/budget",
+        "contentCheck": {
+          "contentType": "zip",
+          "minBytes": 3000000
+        }
+      },
+      "graphFields": [
+        "ombBudget"
+      ]
+    },
+    {
+      "id": "treasury_statement_of_net_cost",
+      "label": "Statement of Net Cost (Financial Report of the U.S. Government)",
+      "publisher": "Treasury, Bureau of the Fiscal Service (FiscalData)",
+      "cadence": {
+        "kind": "period_end_annual",
+        "lagDays": 150,
+        "overdueMarginDays": 60,
+        "basis": "the audited Financial Report for a fiscal year appears the following February or March; the reviewer's statement of the publisher's cycle, not read from a publisher's document; to be tuned on the first cycles"
+      },
+      "copy": {
+        "kind": "graph_field_max",
+        "field": "auditedNetCost",
+        "path": "statementDate",
+        "meaning": "the statement's own date, the fiscal year's end"
+      },
+      "fixtures": [
+        "treasury/net_cost"
+      ],
+      "fetch": {
+        "kind": "api_latest_statement",
+        "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+        "contentCheck": {
+          "contentType": "json",
+          "minBytes": 10000,
+          "mustContain": [
+            "net_cost_bil_amt",
+            "record_date"
+          ],
+          "newerThanCopy": "record_date"
+        }
+      },
+      "graphFields": [
+        "auditedNetCost"
+      ]
+    },
+    {
+      "id": "treasury_combined_statement",
+      "label": "Combined Statement of Receipts, Outlays, and Balances",
+      "publisher": "Treasury, Bureau of the Fiscal Service",
+      "cadence": {
+        "kind": "period_end_annual",
+        "lagDays": 90,
+        "overdueMarginDays": 60,
+        "basis": "published for each completed fiscal year, around the December after it ends; the reviewer's statement of the publisher's cycle, not read from a publisher's document; to be tuned on the first cycles"
+      },
+      "copy": {
+        "kind": "graph_field_max",
+        "field": "combinedStatementOutlays",
+        "path": "fiscalYear",
+        "transform": "fiscal_year_end",
+        "meaning": "the end of the completed fiscal year the statement covers"
+      },
+      "fixtures": [
+        "treasury/combined_statement"
+      ],
+      "fetch": {
+        "kind": "url_changes_each_period",
+        "url": "https://fiscal.treasury.gov/reports-statements/combined-statement/",
+        "contentCheck": {
+          "contentType": "xlsx",
+          "minBytes": 100000
+        }
+      },
+      "graphFields": [
+        "combinedStatementOutlays"
+      ]
+    },
+    {
+      "id": "us_code_sections",
+      "label": "Sections of the United States Code (pay, grade and establishment provisions)",
+      "publisher": "Office of the Law Revision Counsel; Government Publishing Office (govinfo)",
+      "cadence": {
+        "kind": "on_republication",
+        "recheckDays": 365,
+        "basis": "a section changes only when Congress amends it; the oldest copy in use is re-checked yearly"
+      },
+      "copy": {
+        "kind": "fixture_meta_oldest",
+        "meaning": "the date the OLDEST section in use was fetched"
+      },
+      "fixtures": [
+        "uscode"
+      ],
+      "fetch": {
+        "kind": "refetch_each_fixture_url",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
+        "contentCheck": {
+          "contentType": "html",
+          "mustNotContain": [
+            "Under Maintenance",
+            "Request Access"
+          ],
+          "minBytes": 5000,
+          "mustContain": [
+            "U.S.C."
+          ]
+        }
+      },
+      "graphFields": [
+        "positionSchedulePay",
+        "positionTierReferencePay",
+        "positionDerivedPay",
+        "positionMilitaryPay",
+        {
+          "field": "positionStatutoryPay",
+          "where": [
+            [
+              "source",
+              "us_code_stated_rate"
+            ]
+          ]
+        },
+        "positionEmployer"
+      ]
+    },
+    {
+      "id": "federal_register_agency_directory",
+      "label": "Federal Register agency directory",
+      "publisher": "Office of the Federal Register (federalregister.gov API)",
+      "cadence": {
+        "kind": "on_republication",
+        "recheckDays": 180,
+        "basis": "a live directory with no edition; re-checked twice a year"
+      },
+      "copy": {
+        "kind": "graph_field_max",
+        "field": "directoryListing",
+        "path": "checkedAt",
+        "where": [
+          [
+            "source",
+            "federal_register_agency_directory"
+          ]
+        ],
+        "meaning": "the directory's fetch time, which every listing carries as checkedAt (the fixture wraps the API body with its own fetched_at and has no .meta.json)"
+      },
+      "fixtures": [
+        "directories/federal_register_agencies.json"
+      ],
+      "fetch": {
+        "kind": "fixed_url",
+        "url": "https://www.federalregister.gov/api/v1/agencies.json",
+        "contentCheck": {
+          "contentType": "json",
+          "minBytes": 100000,
+          "mustContain": [
+            "agency_url",
+            "parent_id"
+          ]
+        }
+      },
+      "graphFields": [
+        {
+          "field": "directoryListing",
+          "where": [
+            [
+              "source",
+              "federal_register_agency_directory"
+            ]
+          ]
+        },
+        "placementDirectoryAncestor"
+      ]
+    },
+    {
+      "id": "senate_committee_list",
+      "label": "Senate committee membership lists (one XML file per committee)",
+      "publisher": "U.S. Senate (senate.gov)",
+      "cadence": {
+        "kind": "on_republication",
+        "recheckDays": 180,
+        "basis": "the lists change with each Congress and as subcommittees are reorganised; re-checked twice a year"
+      },
+      "copy": {
+        "kind": "fixture_meta",
+        "meaning": "the date the lists were fetched"
+      },
+      "fixtures": [
+        "directories/senate"
+      ],
+      "fetch": {
+        "kind": "refetch_each_fixture_url",
+        "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAF.xml",
+        "contentCheck": {
+          "contentType": "xml",
+          "minBytes": 1000,
+          "mustContain": [
+            "committee_name"
+          ]
+        }
+      },
+      "graphFields": [
+        {
+          "field": "directoryListing",
+          "where": [
+            [
+              "source",
+              "senate_committee_list"
+            ]
+          ]
+        },
+        {
+          "field": "verificationFailureSource",
+          "where": [
+            [
+              "source",
+              "senate_committee_list"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "house_clerk_committee_list",
+      "label": "House Clerk's committee list (ExcelCommitteeData)",
+      "publisher": "Clerk of the U.S. House of Representatives",
+      "cadence": {
+        "kind": "on_republication",
+        "recheckDays": 180,
+        "basis": "the list changes with each Congress and as subcommittees are reorganised; re-checked twice a year"
+      },
+      "copy": {
+        "kind": "fixture_meta",
+        "meaning": "the date the list was fetched"
+      },
+      "fixtures": [
+        "directories/house/committees.xlsx"
+      ],
+      "fetch": {
+        "kind": "fixed_url",
+        "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+        "contentCheck": {
+          "contentType": "xlsx",
+          "minBytes": 10000
+        }
+      },
+      "graphFields": [
+        {
+          "field": "directoryListing",
+          "where": [
+            [
+              "source",
+              "house_clerk_committee_list"
+            ]
+          ]
+        },
+        {
+          "field": "verificationFailureSource",
+          "where": [
+            [
+              "source",
+              "house_clerk_committee_list"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "federal_register_signatures",
+      "label": "Federal Register documents' signature blocks (a census of two tranches)",
+      "publisher": "Office of the Federal Register (federalregister.gov)",
+      "cadence": {
+        "kind": "on_republication",
+        "recheckDays": 365,
+        "basis": "a census taken once; what it says about the documents in it does not age, and a new census is a new corpus"
+      },
+      "copy": {
+        "kind": "fixture_meta",
+        "meaning": "the date the corpus was fetched"
+      },
+      "fixtures": [
+        "federal_register/signatures"
+      ],
+      "fetch": {
+        "kind": "refetch_each_fixture_url",
+        "url": "https://www.federalregister.gov/api/v1/documents.json",
+        "contentCheck": {
+          "contentType": "text",
+          "minBytes": 1000,
+          "mustContain": [
+            "[FR Doc."
+          ],
+          "mustNotContain": [
+            "Request Access"
+          ]
+        }
+      },
+      "graphFields": [
+        "federalRegisterSignature"
+      ]
+    },
+    {
+      "id": "usajobs_vacancy_announcements",
+      "label": "USAJOBS vacancy announcements (a reviewed set, read for pay plan and grade)",
+      "publisher": "Office of Personnel Management (usajobs.gov)",
+      "cadence": {
+        "kind": "on_republication",
+        "recheckDays": 180,
+        "basis": "announcements close and are replaced; the set is re-checked twice a year"
+      },
+      "copy": {
+        "kind": "fixture_meta",
+        "meaning": "the date the announcements were fetched"
+      },
+      "fixtures": [
+        "usajobs"
+      ],
+      "fetch": {
+        "kind": "refetch_each_fixture_url",
+        "url": "https://www.usajobs.gov/",
+        "contentCheck": {
+          "contentType": "html",
+          "mustNotContain": [
+            "Under Maintenance",
+            "Request Access"
+          ],
+          "minBytes": 5000,
+          "mustContain": [
+            "Pay scale"
+          ]
+        }
+      },
+      "graphFields": [
+        "positionVacancyListing",
+        {
+          "field": "positionGradePay",
+          "where": [
+            [
+              "listingSource.source",
+              "usajobs_vacancy_announcements"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "doj_usao_ad_pay_plan",
+      "label": "U.S. Attorneys' Administratively Determined pay plan chart",
+      "publisher": "Department of Justice, Executive Office for U.S. Attorneys",
+      "cadence": {
+        "kind": "effective_annual",
+        "lagDays": 60,
+        "overdueMarginDays": 60,
+        "basis": "the chart is dated to a January effective date each year; the reviewer's statement of the publisher's cycle, not read from a publisher's document; to be tuned on the first cycles"
+      },
+      "copy": {
+        "kind": "graph_field_max",
+        "field": "positionTierPay",
+        "path": "effective",
+        "where": [
+          [
+            "source",
+            "doj_usao_ad_pay_plan"
+          ]
+        ],
+        "meaning": "the chart's own effective date"
+      },
+      "fixtures": [
+        "doj"
+      ],
+      "fetch": {
+        "kind": "fixed_url",
+        "url": "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts",
+        "contentCheck": {
+          "contentType": "html",
+          "mustNotContain": [
+            "Under Maintenance",
+            "Request Access"
+          ],
+          "minBytes": 5000,
+          "mustContain": [
+            "Assistant United States Attorneys"
+          ]
+        }
+      },
+      "graphFields": [
+        {
+          "field": "positionTierPay",
+          "where": [
+            [
+              "source",
+              "doj_usao_ad_pay_plan"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "va_title38_pay_tables",
+      "label": "VA Title 38 physician, dentist and podiatrist pay ranges",
+      "publisher": "Department of Veterans Affairs, Veterans Health Administration",
+      "cadence": {
+        "kind": "effective_annual",
+        "lagDays": 30,
+        "overdueMarginDays": 60,
+        "basis": "a new table each January, effective with the first pay period; the reviewer's statement of the publisher's cycle, not read from a publisher's document; to be tuned on the first cycles"
+      },
+      "copy": {
+        "kind": "graph_field_max",
+        "field": "positionTierPay",
+        "path": "effective",
+        "where": [
+          [
+            "source",
+            "va_title38_pay_ranges"
+          ]
+        ],
+        "meaning": "the table's own effective date"
+      },
+      "fixtures": [
+        "va"
+      ],
+      "fetch": {
+        "kind": "url_changes_each_period",
+        "url": "https://www.va.gov/OHRM/Pay/",
+        "contentCheck": {
+          "contentType": "pdf",
+          "minBytes": 50000,
+          "mustContain": [
+            "Tier"
+          ]
+        }
+      },
+      "graphFields": [
+        {
+          "field": "positionTierPay",
+          "where": [
+            [
+              "source",
+              "va_title38_pay_ranges"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "doe_laboratory_pages",
+      "label": "DOE's laboratory pages and 48 CFR part 970 (who operates each laboratory)",
+      "publisher": "Department of Energy; Government Publishing Office",
+      "cadence": {
+        "kind": "on_republication",
+        "recheckDays": 365,
+        "basis": "an operating model changes rarely; re-checked yearly"
+      },
+      "copy": {
+        "kind": "fixture_meta",
+        "meaning": "the date the pages were fetched"
+      },
+      "fixtures": [
+        "doe/national_laboratories.html",
+        "doe/netl_operating_model.html",
+        "doe/dear_48_cfr_970_govinfo2025.xml"
+      ],
+      "fetch": {
+        "kind": "refetch_each_fixture_url",
+        "url": "https://www.energy.gov/national-laboratories",
+        "contentCheck": {
+          "contentType": "html",
+          "mustNotContain": [
+            "Under Maintenance",
+            "Request Access"
+          ],
+          "minBytes": 5000,
+          "mustContain": [
+            "National Lab"
+          ]
+        }
+      },
+      "graphFields": [
+        "positionEmployer"
+      ]
+    },
+    {
+      "id": "official_pages",
+      "label": "The organisations' own official pages (existence and placement evidence)",
+      "publisher": "each agency (.gov / .mil)",
+      "cadence": {
+        "kind": "on_republication",
+        "recheckDays": 180,
+        "basis": "a page can be reorganised at any time; a label read from it is re-checked twice a year"
+      },
+      "copy": {
+        "kind": "graph_field_max",
+        "field": null,
+        "path": "lastVerified",
+        "where": [
+          [
+            "verificationMethod",
+            {
+              "prefix": "name_labelled_on"
+            }
+          ]
+        ],
+        "meaning": "the most recent date any page was read; each node's own panel uses its own lastVerified"
+      },
+      "fixtures": [
+        "cia/about_organization.html",
+        "epa/region_1_new_england.html"
+      ],
+      "fetch": {
+        "kind": "refetch_each_fixture_url",
+        "url": "https://www.cia.gov/about/organization/",
+        "contentCheck": {
+          "contentType": "html",
+          "mustNotContain": [
+            "Under Maintenance",
+            "Request Access"
+          ],
+          "minBytes": 400
+        }
+      },
+      "graphFields": [
+        {
+          "nodeWhere": [
+            [
+              "verificationMethod",
+              {
+                "prefix": "name_labelled_on"
+              }
+            ]
+          ]
+        },
+        {
+          "nodeWhere": [
+            [
+              "placementMethod",
+              "name_labelled_on_parent_official_page"
+            ]
+          ]
+        }
+      ],
+      "note": "The pages themselves live in data/verification/evidence.json by URL, not as fixtures; the two fixtures here are the ones committed as examples. The per-node date is the node's own lastVerified, and the panel's recheck line uses it.",
+      "perNodeDate": "lastVerified"
+    }
+  ]
+}

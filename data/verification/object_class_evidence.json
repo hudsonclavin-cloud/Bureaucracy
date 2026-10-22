@@ -2,7 +2,7 @@
   "_note": "Derived by scripts/derive_object_class_evidence.py from USAspending's FY2025 object-class breakdowns, committed verbatim under tests/fixtures/usaspending/object_class/ with their digests, for the toptier agencies usaspending.py applies. Obligations by what the money was spent on; never the node's cost.",
   "source": {
     "kind": "usaspending_file_b_object_class",
-    "derivedAt": "2026-10-08T19:46:44Z"
+    "derivedAt": "2026-10-22T08:52:48Z"
   },
   "report": {
     "matched": 91,

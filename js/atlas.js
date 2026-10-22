@@ -162,6 +162,27 @@ function unreadText(unread) {
   return UNREAD_TEXT[String(unread.kind || "")] || UNREAD_TEXT.other;
 }
 
+// No page was ever queued for the unit, and the record says why: the panel's
+// own vocabulary (ui.js NO_DOCUMENT_TEXT), a fact about what this project can
+// read and never a finding about the unit.
+function noDocumentText(b) {
+  const when = formatDate(b.recordedAt);
+  const on = when ? ` on ${when}` : "";
+  const host = (b.probe && hostnameOf(b.probe.url)) || "the host";
+  const TEXT = {
+    curated_count_label: `Not verified: the name "${b.name}" is this graph's own count label, not a unit's name — no official page can carry it as a heading or link, so none was fetched`,
+    name_too_generic: `Not verified: the name "${b.name}" is one common word, which a page may use without naming this unit, so no page is checked for it`,
+    editorial_grouping: `Not verified: this is the graph's own grouping; the nomination pass${on} found no official page that names a unit of this name`,
+    covered_by_parent: `Not verified: it has no page of its own; the nomination pass${on} found its parent's page the right place to look, and that page does not label it`,
+    no_public_page_known: `Not verified: the nomination pass${on} could name no official page for it`,
+    not_on_a_gov_host: `Not verified: its site is not on a .gov or .mil host, which this verifier does not read (recorded${on})`,
+    host_refuses_crawler: `Not verified: ${host} refuses this crawler (probed${on}), so no page on it can be read — a fact about the host, not about the unit`,
+    page_read_does_not_name_it: `Not verified: ${host} was read${on} and does not carry this graph's name for the unit as a heading or link — a question about the name, not about whether the unit exists`,
+  };
+  const note = b.note ? ` — the ledger's note: “${b.note}”` : "";
+  return `${TEXT[String(b.kind || "")] || `Not verified: no official page could be named for it${on}`}${note}`;
+}
+
 // The panel's rule, not keyed on verificationStatus: that string is stamped
 // "unverified" on every node the normaliser touches, so it is a default, not
 // a finding. Zero sources and no timestamp means nothing was checked.
@@ -203,6 +224,10 @@ function describeEvidence(node) {
   const unread = node.verificationUnread;
   if (!node.verificationMethod && unread && typeof unread === "object") {
     return { status: "unread", short: "page could not be read", text: unreadText(unread) };
+  }
+  const noDocument = node.verificationNoDocument;
+  if (!node.verificationMethod && noDocument && typeof noDocument === "object") {
+    return { status: "nodocument", short: "no page could be named", text: noDocumentText(noDocument) };
   }
   if (isNeverChecked(node)) {
     const headcount = node.employeesOfficial !== undefined && node.employeesOfficial !== null;
@@ -395,6 +420,25 @@ function describeDescription(node) {
 // to divide and says so in the panel's words.
 // ---------------------------------------------------------------------------
 
+// An organisation left with only an estimate says which held money documents
+// were checked for its name (cost_no_document.py; ui.js describeCostNoDocument
+// is the panel's copy). The document list is shared across nodes in the viewer
+// copy and resolved off the root.
+function costNoDocumentText(node) {
+  const block = node && node.costNoDocument;
+  if (!block || typeof block !== "object") return "";
+  const shared = state.root && state.root.__sharedDocuments && block.documentsRef
+    ? state.root.__sharedDocuments[block.documentsRef] : null;
+  const docs = Array.isArray(block.documents) ? block.documents : (Array.isArray(shared) ? shared : []);
+  const named = docs.map((d) => `${d.document}${d.version ? ` (${d.version})` : ""}`).join("; ");
+  const checked = docs.length ? ` The ${docs.length} documents checked for a row carrying this unit's name: ${named}.` : "";
+  if (String(block.kind) === "named_in_a_held_document_without_a_licensed_figure" && Array.isArray(block.namedIn) && block.namedIn.length) {
+    const where = block.namedIn.map((h) => `"${h.printed}" in ${String(h.document).replace(/_/g, " ")}`).join("; ");
+    return ` A held document does print this unit's name — ${where} — under a heading no reviewed rule has yet turned into a figure for this unit, so no sourced figure is shown.${checked}`;
+  }
+  return ` No document this project holds prints a figure for this unit: none of them carries a row, account, bureau or entity of this name.${checked}`;
+}
+
 const ESTIMATE_WITHHELD_NOTE =
   "No record names this node's own cost. The figure this graph could otherwise show is its share of an ancestor's measured total, " +
   "divided among siblings by budget, headcount or subtree size — a number nobody measured, so it is not shown here. " +
@@ -439,6 +483,58 @@ function headerSumLinesText(node) {
   return ` Lines: ${parts.join("; ")}.`;
 }
 
+// How a measured unit's total adds up, as one sentence for the directory
+// (treasury_sums.py; ui.js buildTreasurySumLines is the panel's copy).
+// The directory's one-line copy of the panel's freshness block, for the
+// sources behind a measured figure: status as of the reader's date, from the
+// root's __sourceRegistry (freshness.py).
+function freshnessText(node) {
+  const registry = state.root && state.root.__sourceRegistry;
+  if (!registry || !Array.isArray(registry.sources)) return "";
+  const today = new Date().toISOString().slice(0, 10);
+  const uses = (spec) => {
+    if (typeof spec === "string") return Boolean(node[spec] && typeof node[spec] === "object");
+    if (!spec || typeof spec !== "object") return false;
+    if (Array.isArray(spec.costStatus)) return spec.costStatus.includes(String(node.cost_status || ""));
+    const matches = (block, where) => (Array.isArray(where) ? where : []).every(([path, wanted]) => {
+      const actual = String(path).split(".").reduce((c, p) => (c && typeof c === "object" ? c[p] : undefined), block);
+      return wanted && typeof wanted === "object" && "prefix" in wanted
+        ? String(actual == null ? "" : actual).startsWith(String(wanted.prefix))
+        : String(actual == null ? "" : actual) === String(wanted);
+    });
+    if (spec.nodeWhere) return matches(node, spec.nodeWhere);
+    return Boolean(spec.field && node[spec.field] && typeof node[spec.field] === "object" && matches(node[spec.field], spec.where));
+  };
+  const parts = [];
+  for (const entry of registry.sources) {
+    if (!(entry.graphFields || []).some(uses)) continue;
+    const kind = String((entry.cadence || {}).kind || "");
+    const copyDate = (entry.copy || {}).date;
+    const expected = entry.expected || {};
+    if (kind === "closed_record") parts.push(`${entry.label} is a closed record`);
+    else if (kind === "on_republication") parts.push(`${entry.label} read ${copyDate}${expected.recheckDue && today > expected.recheckDue ? ", a re-check due since " + expected.recheckDue : ""}`);
+    else if (!expected.expectedBy) parts.push(`${entry.label}: copy date not read`);
+    else if (today <= expected.expectedBy) parts.push(`${entry.label} dated ${copyDate}, current`);
+    else if (today <= expected.overdueAfter) parts.push(`${entry.label} dated ${copyDate}; a newer edition was expected by ${expected.expectedBy}`);
+    else parts.push(`OVERDUE: ${entry.label} dated ${copyDate}; the next edition was expected by ${expected.expectedBy}`);
+  }
+  return parts.length ? ` Source freshness as of ${today}: ${parts.join("; ")}.` : "";
+}
+
+function treasurySumText(node) {
+  const block = node && node.treasury_sum;
+  if (!block || typeof block !== "object" || !Array.isArray(block.parts) || !block.parts.length) return "";
+  const estimated = Array.isArray(block.estimatedChildren) ? block.estimatedChildren : [];
+  const noNode = toFiniteAmount(block.toNoNode) || 0;
+  const elsewhere = toFiniteAmount(block.appliedElsewhere) || 0;
+  const notAttributed = toFiniteAmount(block.notAttributed) || 0;
+  let text = ` How the total adds up (Table 5, statement of ${block.statementDate}): ${block.parts.length} parts; children account for ${formatExactMoney(toFiniteAmount(block.landedOnChildren) || 0)}`;
+  if (noNode !== 0) text += `; ${formatExactMoney(noNode)} reaches no node here${estimated.length ? ` and is divided among ${estimated.length} estimated children (${estimated.map((c) => c.name).join("; ")}) by weight, an apportionment the default view withholds` : ", the unit's own lines not subdivided further in this graph"}`;
+  if (elsewhere !== 0) text += `; ${formatExactMoney(elsewhere)} is measured under a unit drawn elsewhere`;
+  text += Math.abs(notAttributed) > 0.005 ? `; not attributed: ${formatExactMoney(notAttributed)}.` : "; the parts sum to the total exactly.";
+  return text;
+}
+
 function describeCost(node) {
   const status = String(node.cost_status || "").toLowerCase();
   const validation = String(node.cost_validation || "").toLowerCase();
@@ -476,6 +572,8 @@ function describeCost(node) {
       note = `U.S. Treasury outlays, from the Monthly Treasury Statement (Table 5).${headerSum}`;
     }
     if (counted && !isReceiptsLine(node)) note += counted;
+    note += treasurySumText(node);
+    note += freshnessText(node);
     return { amount: formatExactMoney(amount), label, note, period: costPeriodLabel(node), sourceUrl };
   }
   if (validation === "post_is_not_a_budget_unit" && employerOf(node)) {
@@ -504,7 +602,7 @@ function describeCost(node) {
     return { ...sourced, note: `${sourced.note}${withheld}`, sourceUrl: null };
   }
   if (status === "allocated") {
-    return { amount: null, label: "Estimate withheld", note: ESTIMATE_WITHHELD_NOTE, period: "", sourceUrl: null };
+    return { amount: null, label: "Estimate withheld", note: `${ESTIMATE_WITHHELD_NOTE}${costNoDocumentText(node)}`, period: "", sourceUrl: null };
   }
   if (validation === "allocation_below_precision") {
     return { amount: null, label: "Not available", note: "Its share of the estimate above it rounds to less than one cent (or an ancestor's did), so no figure is shown rather than $0.", period: "", sourceUrl: null };
@@ -698,6 +796,34 @@ function describePay(node) {
     }];
   }
   const blocks = [];
+  // A post no pay document prices says which held title-listing pay documents
+  // were checked for its title (pay_no_document.py; ui.js describePayNoDocument
+  // is the panel's copy). The list sits once on the root as __heldPayDocuments.
+  const blank = node.payNoDocument;
+  if (blank && typeof blank === "object" && !isMeasured(node) && !PAY_FIELDS.some((field) => node[field])) {
+    const docs = state.root && Array.isArray(state.root.__heldPayDocuments) ? state.root.__heldPayDocuments : [];
+    const reasons = {
+      unreached: "no pay document this project has read names this title under this organisation",
+      multiplicity: "this node stands for several holders and no claim that holds for every holder has reached it",
+      listed_no_rate: "OPM lists the post and the row prints no rate",
+      beneath_replaced_unit: "the post sits beneath a unit the government has replaced; research on it is paused",
+    };
+    const named = Array.isArray(blank.namedIn) ? blank.namedIn.filter((h) => h && typeof h.printed === "string") : [];
+    const where = named.map((h) => `"${h.printed}" in ${String(h.document).replace(/_/g, " ")}`).join("; ");
+    const verdict = blank.kind === "title_printed_in_a_held_pay_document_without_a_row_reaching_this_post" && named.length
+      ? (String(blank.reason) === "listed_no_rate"
+        ? ` A held document does print this title — ${where} — and the row OPM files under this organisation is the listing above, which prints no rate.`
+        : ` A held document does print this title — ${where} — under a filing no reviewed rule ties to this post.`)
+      : " None of them prints this title.";
+    blocks.push({
+      heading: "No pay figure",
+      notARate: true,
+      text: `${reasons[String(blank.reason)] || "no pay claim an official document supports has reached this post"}.${
+        docs.length ? ` The ${docs.length} title-listing pay documents this project holds were checked for the title: ${docs.map((d) => `${d.document}${d.version ? ` (${d.version})` : ""}`).join("; ")}.` : ""
+      }${verdict} An explained blank, not a document saying the post is unpaid.`,
+    });
+    return blocks;
+  }
   const listing = node.positionListing;
   if (listing && typeof listing === "object" && typeof listing.reportedPay === "number" && listing.reportedPay > 0) {
     blocks.push({

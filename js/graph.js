@@ -1,5 +1,5 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20261021c";
+import { createLodManager } from "./lodManager.js?v=20261022f";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
@@ -86,6 +86,7 @@ const EVIDENCE_COLORS = {
   partial: "#E0A83C",
   notFound: "#E06A4F",
   unread: "#9A86CF",
+  noDocument: "#B7A9DC",
   unsourced: "#6E7079",
   treasuryLine: "#8AA0B0",
 };
@@ -595,6 +596,13 @@ export function createGovernmentGraph({
     if (sources === 0 && data?.lastVerified) {
       return { key: "notFound", text: "checked, not found" };
     }
+    // No page was ever queued, and the record says why: the name is this
+    // graph's own count label or grouping, the site is off every .gov host,
+    // or the only host that would carry it refuses the crawler. A checked
+    // negative above outranks it: a document was read.
+    if (data?.verificationNoDocument) {
+      return { key: "noDocument", text: "no page could be named" };
+    }
     if (sources > 0) {
       return { key: "partial", text: "source recorded, unverified" };
     }
@@ -635,6 +643,14 @@ export function createGovernmentGraph({
     const employer = data.positionEmployer;
     if (employer && typeof employer === "object" && employer.federallyPaid === false) {
       return { key: "notFederal", text: "not on a federal pay schedule" };
+    }
+    const blank = data.payNoDocument;
+    if (blank && typeof blank === "object") {
+      if (blank.kind === "title_printed_in_a_held_pay_document_without_a_row_reaching_this_post") {
+        return { key: "unpriced", text: "a held document prints the title; no row reaches this post" };
+      }
+      const checked = Number(blank.documentsChecked);
+      return { key: "unpriced", text: `no held pay document prints the title${Number.isFinite(checked) && checked > 0 ? ` (${checked} checked)` : ""}` };
     }
     return { key: "unpriced", text: "no document names the title" };
   }

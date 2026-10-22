@@ -682,19 +682,19 @@ organisations; this lists the node ids.
 - `exec-dept-treasury-ofr-deputy-director` — Deputy Director — under Office of Financial Research (OFR)
 - `exec-eop-onadm-deputy-director` — Deputy Director — under Office of Administration
 - `exec-ind-nara-barack-obama-presidential-library-chicago-il-deputy-director` — Deputy Director — under Barack Obama Presidential Library (Chicago, IL)
-- `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-deputy-director` — Deputy Director — under Dwight D. Eisenhower Presidential Library (Abilene, KS)
+- `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-deputy-director` — Deputy Director — under Dwight D. Eisenhower Presidential Library and Museum (Abilene, KS)
 - `exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny-deputy-director` — Deputy Director — under Franklin D. Roosevelt Presidential Library and Museum
 - `exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx-deputy-director` — Deputy Director — under George Bush Presidential Library and Museum
 - `exec-ind-nara-george-w-bush-presidential-library-dallas-tx-deputy-director` — Deputy Director — under George W. Bush Presidential Library (Dallas, TX)
 - `exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi-deputy-director` — Deputy Director — under Gerald R. Ford Presidential Library (Ann Arbor, MI)
-- `exec-ind-nara-harry-s-truman-presidential-library-independence-mo-deputy-director` — Deputy Director — under Harry S. Truman Presidential Library (Independence, MO)
-- `exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-deputy-director` — Deputy Director — under Herbert Hoover Presidential Library (West Branch, IA)
-- `exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-deputy-director` — Deputy Director — under Jimmy Carter Presidential Library (Atlanta, GA)
-- `exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-deputy-director` — Deputy Director — under John F. Kennedy Presidential Library (Boston, MA)
-- `exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx-deputy-director` — Deputy Director — under Lyndon B. Johnson Presidential Library (Austin, TX)
+- `exec-ind-nara-harry-s-truman-presidential-library-independence-mo-deputy-director` — Deputy Director — under Harry S. Truman Presidential Library and Museum (Independence, MO)
+- `exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-deputy-director` — Deputy Director — under Herbert Hoover Presidential Library and Museum (West Branch, IA)
+- `exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-deputy-director` — Deputy Director — under Jimmy Carter Presidential Library and Museum (Atlanta, GA)
+- `exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-deputy-director` — Deputy Director — under John F. Kennedy Presidential Library and Museum (Boston, MA)
+- `exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx-deputy-director` — Deputy Director — under Lyndon Baines Johnson Presidential Library and Museum (Austin, TX)
 - `exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca-deputy-director` — Deputy Director — under Richard Nixon Presidential Library and Museum
-- `exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-deputy-director` — Deputy Director — under Ronald Reagan Presidential Library (Simi Valley, CA)
-- `exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-deputy-director` — Deputy Director — under William J. Clinton Presidential Library (Little Rock, AR)
+- `exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-deputy-director` — Deputy Director — under Ronald Reagan Presidential Library and Museum (Simi Valley, CA)
+- `exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-deputy-director` — Deputy Director — under William J. Clinton Presidential Library and Museum (Little Rock, AR)
 
 ### F012 — Chief Information Officer (28)
 
@@ -1098,19 +1098,19 @@ organisations; this lists the node ids.
 ### F031 — Archivist (14)
 
 - `exec-ind-nara-barack-obama-presidential-library-chicago-il-archivist-multiple` — Archivist (×multiple) — under Barack Obama Presidential Library (Chicago, IL) — ×N
-- `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-archivist-multiple` — Archivist (×multiple) — under Dwight D. Eisenhower Presidential Library (Abilene, KS) — ×N
+- `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-archivist-multiple` — Archivist (×multiple) — under Dwight D. Eisenhower Presidential Library and Museum (Abilene, KS) — ×N
 - `exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny-archivist-multiple` — Archivist (×multiple) — under Franklin D. Roosevelt Presidential Library and Museum — ×N
 - `exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx-archivist-multiple` — Archivist (×multiple) — under George Bush Presidential Library and Museum — ×N
 - `exec-ind-nara-george-w-bush-presidential-library-dallas-tx-archivist-multiple` — Archivist (×multiple) — under George W. Bush Presidential Library (Dallas, TX) — ×N
 - `exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi-archivist-multiple` — Archivist (×multiple) — under Gerald R. Ford Presidential Library (Ann Arbor, MI) — ×N
-- `exec-ind-nara-harry-s-truman-presidential-library-independence-mo-archivist-multiple` — Archivist (×multiple) — under Harry S. Truman Presidential Library (Independence, MO) — ×N
-- `exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-archivist-multiple` — Archivist (×multiple) — under Herbert Hoover Presidential Library (West Branch, IA) — ×N
-- `exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-archivist-multiple` — Archivist (×multiple) — under Jimmy Carter Presidential Library (Atlanta, GA) — ×N
-- `exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-archivist-multiple` — Archivist (×multiple) — under John F. Kennedy Presidential Library (Boston, MA) — ×N
-- `exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx-archivist-multiple` — Archivist (×multiple) — under Lyndon B. Johnson Presidential Library (Austin, TX) — ×N
+- `exec-ind-nara-harry-s-truman-presidential-library-independence-mo-archivist-multiple` — Archivist (×multiple) — under Harry S. Truman Presidential Library and Museum (Independence, MO) — ×N
+- `exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-archivist-multiple` — Archivist (×multiple) — under Herbert Hoover Presidential Library and Museum (West Branch, IA) — ×N
+- `exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-archivist-multiple` — Archivist (×multiple) — under Jimmy Carter Presidential Library and Museum (Atlanta, GA) — ×N
+- `exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-archivist-multiple` — Archivist (×multiple) — under John F. Kennedy Presidential Library and Museum (Boston, MA) — ×N
+- `exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx-archivist-multiple` — Archivist (×multiple) — under Lyndon Baines Johnson Presidential Library and Museum (Austin, TX) — ×N
 - `exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca-archivist-multiple` — Archivist (×multiple) — under Richard Nixon Presidential Library and Museum — ×N
-- `exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-archivist-multiple` — Archivist (×multiple) — under Ronald Reagan Presidential Library (Simi Valley, CA) — ×N
-- `exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-archivist-multiple` — Archivist (×multiple) — under William J. Clinton Presidential Library (Little Rock, AR) — ×N
+- `exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-archivist-multiple` — Archivist (×multiple) — under Ronald Reagan Presidential Library and Museum (Simi Valley, CA) — ×N
+- `exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-archivist-multiple` — Archivist (×multiple) — under William J. Clinton Presidential Library and Museum (Little Rock, AR) — ×N
 
 ### F032 — Chief Human Capital Officer (14)
 
@@ -1132,19 +1132,19 @@ organisations; this lists the node ids.
 ### F033 — Director of Education & Public Programs (14)
 
 - `exec-ind-nara-barack-obama-presidential-library-chicago-il-director-of-education-public-programs` — Director of Education & Public Programs — under Barack Obama Presidential Library (Chicago, IL)
-- `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-director-of-education-public-programs` — Director of Education & Public Programs — under Dwight D. Eisenhower Presidential Library (Abilene, KS)
+- `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-director-of-education-public-programs` — Director of Education & Public Programs — under Dwight D. Eisenhower Presidential Library and Museum (Abilene, KS)
 - `exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny-director-of-education-public-programs` — Director of Education & Public Programs — under Franklin D. Roosevelt Presidential Library and Museum
 - `exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx-director-of-education-public-programs` — Director of Education & Public Programs — under George Bush Presidential Library and Museum
 - `exec-ind-nara-george-w-bush-presidential-library-dallas-tx-director-of-education-public-programs` — Director of Education & Public Programs — under George W. Bush Presidential Library (Dallas, TX)
 - `exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi-director-of-education-public-programs` — Director of Education & Public Programs — under Gerald R. Ford Presidential Library (Ann Arbor, MI)
-- `exec-ind-nara-harry-s-truman-presidential-library-independence-mo-director-of-education-public-programs` — Director of Education & Public Programs — under Harry S. Truman Presidential Library (Independence, MO)
-- `exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-director-of-education-public-programs` — Director of Education & Public Programs — under Herbert Hoover Presidential Library (West Branch, IA)
-- `exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-director-of-education-public-programs` — Director of Education & Public Programs — under Jimmy Carter Presidential Library (Atlanta, GA)
-- `exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-director-of-education-public-programs` — Director of Education & Public Programs — under John F. Kennedy Presidential Library (Boston, MA)
-- `exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx-director-of-education-public-programs` — Director of Education & Public Programs — under Lyndon B. Johnson Presidential Library (Austin, TX)
+- `exec-ind-nara-harry-s-truman-presidential-library-independence-mo-director-of-education-public-programs` — Director of Education & Public Programs — under Harry S. Truman Presidential Library and Museum (Independence, MO)
+- `exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-director-of-education-public-programs` — Director of Education & Public Programs — under Herbert Hoover Presidential Library and Museum (West Branch, IA)
+- `exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-director-of-education-public-programs` — Director of Education & Public Programs — under Jimmy Carter Presidential Library and Museum (Atlanta, GA)
+- `exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-director-of-education-public-programs` — Director of Education & Public Programs — under John F. Kennedy Presidential Library and Museum (Boston, MA)
+- `exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx-director-of-education-public-programs` — Director of Education & Public Programs — under Lyndon Baines Johnson Presidential Library and Museum (Austin, TX)
 - `exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca-director-of-education-public-programs` — Director of Education & Public Programs — under Richard Nixon Presidential Library and Museum
-- `exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-director-of-education-public-programs` — Director of Education & Public Programs — under Ronald Reagan Presidential Library (Simi Valley, CA)
-- `exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-director-of-education-public-programs` — Director of Education & Public Programs — under William J. Clinton Presidential Library (Little Rock, AR)
+- `exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-director-of-education-public-programs` — Director of Education & Public Programs — under Ronald Reagan Presidential Library and Museum (Simi Valley, CA)
+- `exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-director-of-education-public-programs` — Director of Education & Public Programs — under William J. Clinton Presidential Library and Museum (Little Rock, AR)
 
 ### F034 — Director of Human Resources (14)
 
@@ -1166,19 +1166,19 @@ organisations; this lists the node ids.
 ### F035 — Museum Curator (14)
 
 - `exec-ind-nara-barack-obama-presidential-library-chicago-il-museum-curator` — Museum Curator — under Barack Obama Presidential Library (Chicago, IL)
-- `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-museum-curator` — Museum Curator — under Dwight D. Eisenhower Presidential Library (Abilene, KS)
+- `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-museum-curator` — Museum Curator — under Dwight D. Eisenhower Presidential Library and Museum (Abilene, KS)
 - `exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny-museum-curator` — Museum Curator — under Franklin D. Roosevelt Presidential Library and Museum
 - `exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx-museum-curator` — Museum Curator — under George Bush Presidential Library and Museum
 - `exec-ind-nara-george-w-bush-presidential-library-dallas-tx-museum-curator` — Museum Curator — under George W. Bush Presidential Library (Dallas, TX)
 - `exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi-museum-curator` — Museum Curator — under Gerald R. Ford Presidential Library (Ann Arbor, MI)
-- `exec-ind-nara-harry-s-truman-presidential-library-independence-mo-museum-curator` — Museum Curator — under Harry S. Truman Presidential Library (Independence, MO)
-- `exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-museum-curator` — Museum Curator — under Herbert Hoover Presidential Library (West Branch, IA)
-- `exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-museum-curator` — Museum Curator — under Jimmy Carter Presidential Library (Atlanta, GA)
-- `exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-museum-curator` — Museum Curator — under John F. Kennedy Presidential Library (Boston, MA)
-- `exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx-museum-curator` — Museum Curator — under Lyndon B. Johnson Presidential Library (Austin, TX)
+- `exec-ind-nara-harry-s-truman-presidential-library-independence-mo-museum-curator` — Museum Curator — under Harry S. Truman Presidential Library and Museum (Independence, MO)
+- `exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-museum-curator` — Museum Curator — under Herbert Hoover Presidential Library and Museum (West Branch, IA)
+- `exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-museum-curator` — Museum Curator — under Jimmy Carter Presidential Library and Museum (Atlanta, GA)
+- `exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-museum-curator` — Museum Curator — under John F. Kennedy Presidential Library and Museum (Boston, MA)
+- `exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx-museum-curator` — Museum Curator — under Lyndon Baines Johnson Presidential Library and Museum (Austin, TX)
 - `exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca-museum-curator` — Museum Curator — under Richard Nixon Presidential Library and Museum
-- `exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-museum-curator` — Museum Curator — under Ronald Reagan Presidential Library (Simi Valley, CA)
-- `exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-museum-curator` — Museum Curator — under William J. Clinton Presidential Library (Little Rock, AR)
+- `exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-museum-curator` — Museum Curator — under Ronald Reagan Presidential Library and Museum (Simi Valley, CA)
+- `exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-museum-curator` — Museum Curator — under William J. Clinton Presidential Library and Museum (Little Rock, AR)
 
 ### F036 — Staff Attorney (14)
 
@@ -1200,19 +1200,19 @@ organisations; this lists the node ids.
 ### F037 — Supervisory Archivist (14)
 
 - `exec-ind-nara-barack-obama-presidential-library-chicago-il-supervisory-archivist` — Supervisory Archivist — under Barack Obama Presidential Library (Chicago, IL)
-- `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-supervisory-archivist` — Supervisory Archivist — under Dwight D. Eisenhower Presidential Library (Abilene, KS)
+- `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-supervisory-archivist` — Supervisory Archivist — under Dwight D. Eisenhower Presidential Library and Museum (Abilene, KS)
 - `exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny-supervisory-archivist` — Supervisory Archivist — under Franklin D. Roosevelt Presidential Library and Museum
 - `exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx-supervisory-archivist` — Supervisory Archivist — under George Bush Presidential Library and Museum
 - `exec-ind-nara-george-w-bush-presidential-library-dallas-tx-supervisory-archivist` — Supervisory Archivist — under George W. Bush Presidential Library (Dallas, TX)
 - `exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi-supervisory-archivist` — Supervisory Archivist — under Gerald R. Ford Presidential Library (Ann Arbor, MI)
-- `exec-ind-nara-harry-s-truman-presidential-library-independence-mo-supervisory-archivist` — Supervisory Archivist — under Harry S. Truman Presidential Library (Independence, MO)
-- `exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-supervisory-archivist` — Supervisory Archivist — under Herbert Hoover Presidential Library (West Branch, IA)
-- `exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-supervisory-archivist` — Supervisory Archivist — under Jimmy Carter Presidential Library (Atlanta, GA)
-- `exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-supervisory-archivist` — Supervisory Archivist — under John F. Kennedy Presidential Library (Boston, MA)
-- `exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx-supervisory-archivist` — Supervisory Archivist — under Lyndon B. Johnson Presidential Library (Austin, TX)
+- `exec-ind-nara-harry-s-truman-presidential-library-independence-mo-supervisory-archivist` — Supervisory Archivist — under Harry S. Truman Presidential Library and Museum (Independence, MO)
+- `exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-supervisory-archivist` — Supervisory Archivist — under Herbert Hoover Presidential Library and Museum (West Branch, IA)
+- `exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-supervisory-archivist` — Supervisory Archivist — under Jimmy Carter Presidential Library and Museum (Atlanta, GA)
+- `exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-supervisory-archivist` — Supervisory Archivist — under John F. Kennedy Presidential Library and Museum (Boston, MA)
+- `exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx-supervisory-archivist` — Supervisory Archivist — under Lyndon Baines Johnson Presidential Library and Museum (Austin, TX)
 - `exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca-supervisory-archivist` — Supervisory Archivist — under Richard Nixon Presidential Library and Museum
-- `exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-supervisory-archivist` — Supervisory Archivist — under Ronald Reagan Presidential Library (Simi Valley, CA)
-- `exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-supervisory-archivist` — Supervisory Archivist — under William J. Clinton Presidential Library (Little Rock, AR)
+- `exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-supervisory-archivist` — Supervisory Archivist — under Ronald Reagan Presidential Library and Museum (Simi Valley, CA)
+- `exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-supervisory-archivist` — Supervisory Archivist — under William J. Clinton Presidential Library and Museum (Little Rock, AR)
 
 ### F038 — Chief Staff Attorney (13)
 

@@ -6837,28 +6837,27 @@
       }
     },
     "exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia": {
-      "name": "Herbert Hoover Presidential Library (West Branch, IA)",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "name": "Herbert Hoover Presidential Library and Museum (West Branch, IA)",
+      "checkedAt": "2026-10-22T04:27:48+00:00",
       "siteFrom": "exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia",
       "ownPage": true,
-      "status": "inconclusive",
-      "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
-      "failures": [
+      "status": "confirmed",
+      "sources": [
         {
           "url": "https://hoover.archives.gov/",
-          "reason": "name_not_labelled_on_page"
+          "matchedText": "Herbert Hoover Presidential Library-Museum | The Herbert Hoover Presidential Library and Museum",
+          "matchedIn": "content"
         }
       ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "exec-ind-nara",
-        "urlsRead": [
-          "https://www.archives.gov/about",
-          "https://www.archives.gov/presidential-libraries",
-          "https://www.archives.gov/about/organization"
-        ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "url": "https://www.archives.gov/presidential-libraries",
+        "matchedText": "Herbert Hoover Presidential Library and Museum",
+        "matchedIn": "content",
+        "checkedAt": "2026-10-22T04:27:48+00:00"
       }
     },
     "exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny": {
@@ -6892,33 +6891,32 @@
       }
     },
     "exec-ind-nara-harry-s-truman-presidential-library-independence-mo": {
-      "name": "Harry S. Truman Presidential Library (Independence, MO)",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "name": "Harry S. Truman Presidential Library and Museum (Independence, MO)",
+      "checkedAt": "2026-10-22T04:27:48+00:00",
       "siteFrom": "exec-ind-nara-harry-s-truman-presidential-library-independence-mo",
       "ownPage": true,
-      "status": "inconclusive",
-      "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
-      "failures": [
+      "status": "confirmed",
+      "sources": [
         {
           "url": "https://www.trumanlibrary.gov/",
-          "reason": "name_not_labelled_on_page"
+          "matchedText": "Welcome to the Harry S. Truman Presidential Library and Museum | Harry S. Truman",
+          "matchedIn": "content"
         }
       ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "exec-ind-nara",
-        "urlsRead": [
-          "https://www.archives.gov/about",
-          "https://www.archives.gov/presidential-libraries",
-          "https://www.archives.gov/about/organization"
-        ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "url": "https://www.archives.gov/presidential-libraries",
+        "matchedText": "Harry S. Truman Presidential Library and Museum",
+        "matchedIn": "content",
+        "checkedAt": "2026-10-22T04:27:48+00:00"
       }
     },
     "exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks": {
-      "name": "Dwight D. Eisenhower Presidential Library (Abilene, KS)",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "name": "Dwight D. Eisenhower Presidential Library and Museum (Abilene, KS)",
+      "checkedAt": "2026-10-22T04:27:48+00:00",
       "siteFrom": "exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks",
       "ownPage": true,
       "status": "not_found",
@@ -6930,31 +6928,32 @@
         }
       ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "exec-ind-nara",
-        "urlsRead": [
-          "https://www.archives.gov/about",
-          "https://www.archives.gov/presidential-libraries",
-          "https://www.archives.gov/about/organization"
-        ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "url": "https://www.archives.gov/presidential-libraries",
+        "matchedText": "Dwight D. Eisenhower Presidential Library and Museum",
+        "matchedIn": "content",
+        "checkedAt": "2026-10-22T04:27:48+00:00"
       }
     },
     "exec-ind-nara-john-f-kennedy-presidential-library-boston-ma": {
-      "name": "John F. Kennedy Presidential Library (Boston, MA)",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "name": "John F. Kennedy Presidential Library and Museum (Boston, MA)",
+      "checkedAt": "2026-10-22T04:27:48+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
+          "matchedText": "John F. Kennedy Presidential Library and Museum",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_parent_official_page",
       "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
-          "reason": "name_not_labelled_on_page"
-        },
-        {
-          "url": "https://www.archives.gov/presidential-libraries",
           "reason": "name_not_labelled_on_page"
         },
         {
@@ -6963,31 +6962,32 @@
         }
       ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "exec-ind-nara",
-        "urlsRead": [
-          "https://www.archives.gov/about",
-          "https://www.archives.gov/presidential-libraries",
-          "https://www.archives.gov/about/organization"
-        ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "url": "https://www.archives.gov/presidential-libraries",
+        "matchedText": "John F. Kennedy Presidential Library and Museum",
+        "matchedIn": "content",
+        "checkedAt": "2026-10-22T04:27:48+00:00"
       }
     },
     "exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx": {
-      "name": "Lyndon B. Johnson Presidential Library (Austin, TX)",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "name": "Lyndon Baines Johnson Presidential Library and Museum (Austin, TX)",
+      "checkedAt": "2026-10-22T04:27:48+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
+          "matchedText": "Lyndon Baines Johnson Presidential Library and Museum",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_parent_official_page",
       "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
-          "reason": "name_not_labelled_on_page"
-        },
-        {
-          "url": "https://www.archives.gov/presidential-libraries",
           "reason": "name_not_labelled_on_page"
         },
         {
@@ -6996,14 +6996,12 @@
         }
       ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "exec-ind-nara",
-        "urlsRead": [
-          "https://www.archives.gov/about",
-          "https://www.archives.gov/presidential-libraries",
-          "https://www.archives.gov/about/organization"
-        ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "url": "https://www.archives.gov/presidential-libraries",
+        "matchedText": "Lyndon Baines Johnson Presidential Library and Museum",
+        "matchedIn": "content",
+        "checkedAt": "2026-10-22T04:27:48+00:00"
       }
     },
     "exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca": {
@@ -7067,20 +7065,23 @@
       }
     },
     "exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga": {
-      "name": "Jimmy Carter Presidential Library (Atlanta, GA)",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "name": "Jimmy Carter Presidential Library and Museum (Atlanta, GA)",
+      "checkedAt": "2026-10-22T04:27:48+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
+          "matchedText": "Jimmy Carter Presidential Library and Museum",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_parent_official_page",
       "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
-          "reason": "name_not_labelled_on_page"
-        },
-        {
-          "url": "https://www.archives.gov/presidential-libraries",
           "reason": "name_not_labelled_on_page"
         },
         {
@@ -7089,39 +7090,36 @@
         }
       ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "exec-ind-nara",
-        "urlsRead": [
-          "https://www.archives.gov/about",
-          "https://www.archives.gov/presidential-libraries",
-          "https://www.archives.gov/about/organization"
-        ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "url": "https://www.archives.gov/presidential-libraries",
+        "matchedText": "Jimmy Carter Presidential Library and Museum",
+        "matchedIn": "content",
+        "checkedAt": "2026-10-22T04:27:48+00:00"
       }
     },
     "exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca": {
-      "name": "Ronald Reagan Presidential Library (Simi Valley, CA)",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "name": "Ronald Reagan Presidential Library and Museum (Simi Valley, CA)",
+      "checkedAt": "2026-10-22T04:27:48+00:00",
       "siteFrom": "exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca",
       "ownPage": true,
-      "status": "inconclusive",
-      "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
-      "failures": [
+      "status": "confirmed",
+      "sources": [
         {
           "url": "https://www.reaganlibrary.gov/",
-          "reason": "name_not_labelled_on_page"
+          "matchedText": "Ronald Reagan Presidential Library & Museum | Ronald Reagan",
+          "matchedIn": "content"
         }
       ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "exec-ind-nara",
-        "urlsRead": [
-          "https://www.archives.gov/about",
-          "https://www.archives.gov/presidential-libraries",
-          "https://www.archives.gov/about/organization"
-        ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "url": "https://www.archives.gov/presidential-libraries",
+        "matchedText": "Ronald Reagan Presidential Library and Museum",
+        "matchedIn": "content",
+        "checkedAt": "2026-10-22T04:27:48+00:00"
       }
     },
     "exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx": {
@@ -7155,28 +7153,27 @@
       }
     },
     "exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar": {
-      "name": "William J. Clinton Presidential Library (Little Rock, AR)",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "name": "William J. Clinton Presidential Library and Museum (Little Rock, AR)",
+      "checkedAt": "2026-10-22T04:27:48+00:00",
       "siteFrom": "exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar",
       "ownPage": true,
-      "status": "inconclusive",
-      "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
-      "failures": [
+      "status": "confirmed",
+      "sources": [
         {
           "url": "https://www.clintonlibrary.gov/",
-          "reason": "name_not_labelled_on_page"
+          "matchedText": "Homepage | William J. Clinton Presidential Library and Museum",
+          "matchedIn": "content"
         }
       ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "exec-ind-nara",
-        "urlsRead": [
-          "https://www.archives.gov/about",
-          "https://www.archives.gov/presidential-libraries",
-          "https://www.archives.gov/about/organization"
-        ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "url": "https://www.archives.gov/presidential-libraries",
+        "matchedText": "William J. Clinton Presidential Library and Museum",
+        "matchedIn": "content",
+        "checkedAt": "2026-10-22T04:27:48+00:00"
       }
     },
     "exec-ind-nara-george-w-bush-presidential-library-dallas-tx": {
@@ -66708,6 +66705,22 @@
         "matchedIn": "navigation",
         "checkedAt": "2026-09-21T17:57:28+00:00"
       }
+    },
+    "exec-ind-misc-macpac": {
+      "name": "Medicaid and CHIP Payment and Access Commission",
+      "checkedAt": "2026-10-22T04:27:48+00:00",
+      "siteFrom": "exec-ind-misc-macpac",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.macpac.gov/",
+          "matchedText": "Medicaid and CHIP Payment and Access Commission",
+          "matchedIn": "navigation"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
     }
   }
 }

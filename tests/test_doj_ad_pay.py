@@ -22,7 +22,7 @@ from data_pipeline.verification.pay_tables import BAND_HOLDERS_NOTE, withdraw_pa
 from scripts import validate_published_graph as gate
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-TODAY = "2026-10-08"
+TODAY = __import__("datetime").date.today().isoformat()  # the fixture is re-fetched by the update job, so its retrieval date can be today
 CIVIL = "exec-dept-doj-usao-assistant-u-s-attorney-civil-multiple"
 CRIMINAL = "exec-dept-doj-usao-assistant-u-s-attorney-criminal-multiple"
 USAO = "exec-dept-doj-usao"

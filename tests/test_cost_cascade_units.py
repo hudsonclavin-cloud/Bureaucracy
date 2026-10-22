@@ -744,9 +744,11 @@ class PostsAreNotBudgetUnitsTests(unittest.TestCase):
             self.assertEqual(nodes[post]["cost_validation"], "post_is_not_a_budget_unit", post)
 
     def test_withholding_a_post_s_share_does_not_move_an_organisation_s(self):
-        """The post keeps its weight in the split; it just publishes nothing.
+        """In a subtree-size split the post keeps its weight; it just publishes nothing.
 
-        So no organisation's estimate changes because of this rule — which is
+        (Since 2026-10-21 a post takes NO weight in a split by dollar figures --
+        tests/test_post_dollar_weights.py; this tree has none.) So no
+        organisation's estimate changes because of this rule — which is
         what makes it safe to apply to 4,232 nodes at once. The parent's shown
         children then sum to less than the parent, which is the honest
         reading: the remainder is not apportioned to anybody.

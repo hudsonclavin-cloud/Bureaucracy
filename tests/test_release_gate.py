@@ -296,6 +296,11 @@ class StatedCountGateTests(ReleaseGateTests):
         def mutate(graph):
             node = _find(graph, "legislative-branch")
             node["name"] = name
+            # The explained blank is tied to the name it was checked under, as
+            # every evidence block is, so the renamed node's is re-stated for
+            # the new name, which no held money document prints.
+            if isinstance(node.get("costNoDocument"), dict):
+                node["costNoDocument"].update({"name": name, "namedIn": [], "kind": "no_held_document_names_it"})
             node.update({"statedChildCount": 100, "carriedChildCount": 1, "childrenIncomplete": True, **fields})
         return self._write_corrupted(mutate)
 
@@ -326,6 +331,8 @@ class MultiplicityGateTests(ReleaseGateTests):
         def mutate(graph):
             node = _find(graph, "leg-senate")
             node["name"] = name
+            if isinstance(node.get("costNoDocument"), dict):
+                node["costNoDocument"].update({"name": name, "namedIn": [], "kind": "no_held_document_names_it"})
             node["representsPosts"] = represents
         return self._write_corrupted(mutate)
 

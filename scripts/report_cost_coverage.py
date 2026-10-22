@@ -96,6 +96,33 @@ CLASSES = {
         "the Treasury line within 1%, so the fallback is a different number under a different "
         "label, never the same claim.",
     ),
+    "estimate_explained_blank": (
+        "Estimate — an explained blank: no held money document names the unit",
+        "An apportioned share, and `costNoDocument` saying that none of the money documents this "
+        "project holds — the Monthly Treasury Statement the graph was built from, the Combined "
+        "Statement chapter in hand, OMB's Public Budget Database (agency, bureau and account names), "
+        "USAspending's agency and bureau lists, Treasury's Statement of Net Cost, the House's Statement "
+        "of Disbursements and the Senate Secretary's report — prints a row, account, bureau or entity "
+        "carrying this unit's name. The definition of done's explained blank: the documents checked are "
+        "named on the block and the panel, each with its version.",
+        "A document this project does not yet hold that prints the unit's money (an agency's AFR, "
+        "File B by Treasury Account Symbol, another Combined Statement chapter), or a reviewed alias "
+        "where a held document prints the unit under another name. Most of these are divisions, "
+        "regional offices and laboratories funded from a parent's accounts, for which no document "
+        "prints a separate line.",
+    ),
+    "estimate_named_in_a_held_document": (
+        "Estimate — a held document prints the name, no reviewed rule turns it into a figure",
+        "An apportioned share, and `costNoDocument` saying that a held document DOES print a row "
+        "carrying this unit's name — OMB's database prints an account named \"Board of Veterans "
+        "Appeals\" under the VA's Departmental Administration bureau; its bureau rows name the "
+        "Inter-American Foundation under the \"International Assistance Programs\" grouping — which "
+        "no reviewed rule has licensed as this unit's figure. The block names the document and the "
+        "printed row.",
+        "A reviewed row (an OMB account-level table in the shape of the Combined Statement's; a "
+        "bureau scoped to its agency's subtree), each a decision about whether the printed row IS the "
+        "unit's money, never a name match alone.",
+    ),
     "estimate": (
         "Estimate — no sourced figure of any kind",
         "An apportioned share of an ancestor's measured total, divided among siblings by budget, "
@@ -237,6 +264,12 @@ def classify(node, replaced: bool = False) -> str:
             return "estimate_committee"
         if any(isinstance(node.get(field), dict) for field in SOURCED_FIGURES_BESIDE):
             return "estimate_beside_sourced_figure"
+        blank = node.get("costNoDocument")
+        if isinstance(blank, dict):
+            if str(blank.get("kind") or "") == "named_in_a_held_document_without_a_licensed_figure":
+                return "estimate_named_in_a_held_document"
+            if str(blank.get("kind") or "") == "no_held_document_names_it":
+                return "estimate_explained_blank"
         return "estimate"
     return "other"
 
@@ -253,9 +286,19 @@ def collect(graph):
                 "type": str(node.get("type") or ""),
                 "parent": str((parent or {}).get("name") or ""),
                 "beside": [field for field in SOURCED_FIGURES_BESIDE if isinstance(node.get(field), dict)],
+                # a post's explained pay blank (pay_no_document.py): "named" where
+                # a held pay document prints the title, "none" where none does
+                "payBlank": pay_blank_of(node),
             }
         )
     return rows
+
+
+def pay_blank_of(node) -> str | None:
+    block = node.get("payNoDocument")
+    if not isinstance(block, dict):
+        return None
+    return "named" if block.get("namedIn") else "none"
 
 
 def render(rows) -> str:
@@ -276,16 +319,27 @@ def render(rows) -> str:
     w("")
     w(f"- nodes in the published graph: **{total:,}**")
     with_figure = sum(len(rows[c]) for c in ("measured", "measured_treasury_line", "salary"))
-    estimates = sum(len(rows[c]) for c in ("estimate", "estimate_committee", "estimate_beside_sourced_figure"))
+    estimates = sum(len(rows.get(c, [])) for c in ("estimate", "estimate_committee", "estimate_beside_sourced_figure",
+                                                   "estimate_explained_blank", "estimate_named_in_a_held_document"))
     none_ever = sum(len(rows[c]) for c in ("negative_pool", "superseded", "below_precision"))
     posts_researchable = sum(len(rows[c]) for c in ("post_multiplicity", "post_listed_no_rate", "post_unreached"))
     posts_paused = len(rows.get("post_beneath_replaced_unit", []))
     posts_unpaid = len(rows.get("post_not_federally_paid", []))
     w(f"- showing a figure a document states (measured cost or salary): **{with_figure:,}**")
     w(f"- carrying an apportioned estimate, withheld unless asked for: **{estimates:,}**")
+    bare = len(rows.get("estimate", []))
+    w(f"- **bare estimates — an organisation with only an estimate and no explanation (criterion 1 gap): {bare:,}**")
     w(f"- positions no document prices: **{posts_researchable + posts_paused + posts_unpaid:,}** — "
       f"{posts_researchable:,} research work, {posts_paused:,} paused beneath a replaced unit, "
       f"{posts_unpaid:,} a document places off every federal pay schedule")
+    pay_blanks = [n for c in ("post_multiplicity", "post_listed_no_rate", "post_unreached", "post_beneath_replaced_unit")
+                  for n in rows.get(c, []) if n.get("payBlank")]
+    pay_named = sum(1 for n in pay_blanks if n["payBlank"] == "named")
+    if pay_blanks:
+        w(f"- **posts with an explained pay blank (`payNoDocument`, the held title-listing pay documents checked): "
+          f"{len(pay_blanks):,}** — {len(pay_blanks) - pay_named:,} whose title none prints, {pay_named:,} whose title "
+          "a held document prints under a filing no rule ties to the post; an explained blank, not a terminal reason, "
+          "so criterion 2's gap is unchanged by it")
     w(f"- no figure now and none from any route (negative pool, replaced unit, below a cent): **{none_ever:,}**")
     w("")
     w("| class | nodes | what it means | route |")
@@ -300,10 +354,12 @@ def render(rows) -> str:
     w("")
     w("Where Table 5 stops is visible in which TYPES carry an estimate and no line:")
     w("")
-    w("| type | estimate (no sourced figure) | with a sourced figure beside | committee |")
+    w("| type | estimate (no sourced figure; explained blanks included) | with a sourced figure beside | committee |")
     w("|---|---|---|---|")
     types = Counter()
     per = {c: Counter(r["type"] for r in rows.get(c, [])) for c in ("estimate", "estimate_beside_sourced_figure", "estimate_committee")}
+    for c in ("estimate_explained_blank", "estimate_named_in_a_held_document"):
+        per["estimate"].update(Counter(r["type"] for r in rows.get(c, [])))
     for c in per.values():
         types.update(c)
     for type_name, _ in sorted(types.items(), key=lambda kv: (-kv[1], kv[0])):
