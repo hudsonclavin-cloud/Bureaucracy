@@ -7032,3 +7032,92 @@ corporation the Treasury prints no line for).
   the node and the report shows them, which is what an alias would buy
   without loosening a matcher.
 
+## 27. Money: how a measured unit's total adds up, part by part (2026-10-22)
+
+`docs/DEFINITION_OF_DONE.md` criterion 4(b) asks that for every unit with a
+measured total the panel show `parent = measured children + sourced figures +
+named remainder`, the remainder traced to the documents that explain it and
+anything untraceable labelled "not attributed", so that no remainder is
+silently spread across siblings as though it were their money. The reader
+feature "Totals add up visibly" is the same thing seen from the panel.
+
+### 27.1 The statement already says what a total is made of
+
+Table 5 prints each agency as a section — a header, the lines and
+sub-headers beneath it, its receipts-type lines, and a `Total--` line that is
+their sum — so the parts of a unit's total are not something this repository
+has to infer: they are the direct items the statement prints beneath the
+unit's header. `data_pipeline/exporter/treasury_sums.py` reads the committed
+statement the graph was built from (the one the root's anchor date names) and
+publishes `treasury_sum` on every measured organisation whose header has
+parts: each part by printed name and exact amount (a sub-header at the sum of
+its own lines, which is the statement's arithmetic), its kind (line, header,
+receipts), its classification id, and WHERE it landed in this graph — `child`
+(a direct child carries the line or the sub-header's total), `descendant`,
+`elsewhere` (a node outside the unit's subtree: the Tax Court, printed under
+the Legislative Branch and drawn under the judiciary; COPS inside OJP's header;
+the PBGC under Labor's) or `none`. Beside the parts: `partsSum`,
+`notAttributed = total − partsSum`, the three sums `landedOnChildren`,
+`appliedElsewhere` and `toNoNode`, and `estimatedChildren`, the direct
+organisation children whose figure is an apportioned share.
+
+### 27.2 Measured on the rebuild
+
+57 measured units carry a block, 391 parts in all, and **not attributed is
+zero on every one**: the statement's own arithmetic closes to the cent for
+every section this graph carries. Of the money printed beneath those units
+that reaches no node here, **$3.79tn beneath 35 units is the unit's own
+lines** — CMS's "Grants to States for Medicaid", the IRS's "Taxpayer
+Services", the VBA's "Compensation and Pensions" — not subdivided further in
+this graph and apportioned to nobody; and **$2.88tn beneath 22 units IS divided
+among estimated children by weight**: $1.65tn of the SSA's trust-fund and SSI
+lines across its two estimated offices, $835bn of the Defense Department's
+eight object-class headers across the Joint Chiefs, the military departments,
+the combatant commands and the Defense agencies, $100bn of the VHA's lines
+across its networks grouping, $58.5bn of the VA's "Departmental
+Administration" and the Joint DOD-VA fund across the NCA and the BVA, State's
+$29.8bn across its bureaus, and so on down to the SBA's $14.6bn across its
+district offices. That $2.88tn is the quantity the definition names: money the
+statement prints under a programme or object-class heading no node carries,
+divided among organisational siblings as though it were theirs. It was always
+in `graph.json` as the estimates; it is now named, part by part, on the
+measured parent's panel, with the children that take it, and the sentence
+says it is an apportionment and not a measurement. $1.90bn is measured under
+a unit drawn elsewhere and stays inside the total it is printed in.
+
+### 27.3 What was built
+
+The panel (`buildTreasurySumLines`) prints "How the total adds up — Table 5,
+statement of <date>", one line per part with its amount and landing, then the
+sums in words: what the children account for, what reaches no node and is
+divided among the named estimated children (or is the unit's own lines, not
+subdivided), what is measured elsewhere, and "The parts sum to the total
+exactly" or "Not attributed: $X". The directory prints the same as one
+sentence. The gate (`treasury_sum_violations`) re-derives every block from the
+committed statement with its own reader (`TreasuryStatementRows`), lands each
+part off the tree it is walking, recomputes the five sums and refuses a block
+whose parts, amounts, landings, sums or estimated children differ, a block on
+a post, a line or an estimate, and a measured unit whose header has parts with
+no block once the pass has run. `tests/test_treasury_sums.py` pins the VA's
+and the Legislative Branch's blocks and corrupts twenty dimensions. The field
+is in `MINIMAL_GRAPH_FIELDS`; `scripts/frontend_smoke.mjs` opens the VA and
+asserts the block names "Departmental Administration" as reaching no node, the
+VHA as the child its header landed on, the NCA and the BVA as the estimated
+children that divide the remainder, and that the parts sum exactly.
+
+### 27.4 What this does not do
+
+- It does not change a figure. The cascade still divides the no-node money
+  among the estimated children by weight; the block makes that visible and
+  names the children. Stopping the division is a decision the definition's
+  text could be read to ask for ("no remainder is silently spread"); it is
+  recorded here as visible rather than stopped, because the estimates are
+  withheld by default and every one says what it is.
+- The "sourced figures" term of the definition's formula is the estimated
+  children's own File A, OMB, Combined Statement and disbursement blocks,
+  which the panel already heads them with; the block names the children and
+  leaves the figures where they are.
+- A unit with no classification id (the root's three branches carry one; the
+  curated groupings beneath them do not) carries no block, and a plain line
+  (the FBI's) has no parts.
+

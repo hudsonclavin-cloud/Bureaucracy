@@ -483,6 +483,22 @@ function headerSumLinesText(node) {
   return ` Lines: ${parts.join("; ")}.`;
 }
 
+// How a measured unit's total adds up, as one sentence for the directory
+// (treasury_sums.py; ui.js buildTreasurySumLines is the panel's copy).
+function treasurySumText(node) {
+  const block = node && node.treasury_sum;
+  if (!block || typeof block !== "object" || !Array.isArray(block.parts) || !block.parts.length) return "";
+  const estimated = Array.isArray(block.estimatedChildren) ? block.estimatedChildren : [];
+  const noNode = toFiniteAmount(block.toNoNode) || 0;
+  const elsewhere = toFiniteAmount(block.appliedElsewhere) || 0;
+  const notAttributed = toFiniteAmount(block.notAttributed) || 0;
+  let text = ` How the total adds up (Table 5, statement of ${block.statementDate}): ${block.parts.length} parts; children account for ${formatExactMoney(toFiniteAmount(block.landedOnChildren) || 0)}`;
+  if (noNode !== 0) text += `; ${formatExactMoney(noNode)} reaches no node here${estimated.length ? ` and is divided among ${estimated.length} estimated children (${estimated.map((c) => c.name).join("; ")}) by weight, an apportionment the default view withholds` : ", the unit's own lines not subdivided further in this graph"}`;
+  if (elsewhere !== 0) text += `; ${formatExactMoney(elsewhere)} is measured under a unit drawn elsewhere`;
+  text += Math.abs(notAttributed) > 0.005 ? `; not attributed: ${formatExactMoney(notAttributed)}.` : "; the parts sum to the total exactly.";
+  return text;
+}
+
 function describeCost(node) {
   const status = String(node.cost_status || "").toLowerCase();
   const validation = String(node.cost_validation || "").toLowerCase();
@@ -520,6 +536,7 @@ function describeCost(node) {
       note = `U.S. Treasury outlays, from the Monthly Treasury Statement (Table 5).${headerSum}`;
     }
     if (counted && !isReceiptsLine(node)) note += counted;
+    note += treasurySumText(node);
     return { amount: formatExactMoney(amount), label, note, period: costPeriodLabel(node), sourceUrl };
   }
   if (validation === "post_is_not_a_budget_unit" && employerOf(node)) {

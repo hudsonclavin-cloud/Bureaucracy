@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261022c";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261022c";
+import { createGovernmentGraph } from "./graph.js?v=20261022d";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261022d";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -3033,6 +3033,66 @@ function buildEmployerLines(block) {
   return host;
 }
 
+// How a measured unit's total adds up, from the statement itself
+// (treasury_sums.py, since 2026-10-22): every part Table 5 prints beneath the
+// unit's header, where it landed in this graph, what no node carries and is
+// divided among the estimated children, what is measured under a unit drawn
+// elsewhere, and what is not attributed. Rendered only where the block is
+// present; the gate re-derived every figure in it from the committed statement.
+function buildTreasurySumLines(node) {
+  const block = node && node.treasury_sum;
+  if (!block || typeof block !== "object" || !Array.isArray(block.parts) || !block.parts.length) return null;
+  const exact = (value) => {
+    const amount = toFiniteAmount(value);
+    return amount === null ? "amount not stated" : `${amount < 0 ? "-" : ""}$${Math.round(Math.abs(amount)).toLocaleString("en-US")}`;
+  };
+  const host = document.createElement("div");
+  host.id = "info-cost-sum";
+  host.className = "info-cost-note";
+  const head = document.createElement("strong");
+  head.textContent = `How the total adds up — Table 5, statement of ${String(block.statementDate || "")}:`;
+  host.appendChild(head);
+  const list = document.createElement("ul");
+  list.className = "info-cost-components";
+  list.setAttribute("aria-label", "The parts the statement prints beneath this unit's header, and where each landed");
+  list.style.listStyle = "none";
+  list.style.margin = "4px 0 0";
+  list.style.padding = "0 0 0 10px";
+  list.style.borderLeft = "1px solid var(--line-strong)";
+  list.style.fontSize = "12px";
+  list.style.lineHeight = "1.6";
+  list.style.color = "var(--text-2)";
+  const estimated = Array.isArray(block.estimatedChildren) ? block.estimatedChildren : [];
+  for (const part of block.parts) {
+    const item = document.createElement("li");
+    let landing;
+    if (part.where === "child") landing = `→ ${part.nodeName || part.nodeId}`;
+    else if (part.where === "descendant") landing = `→ ${part.nodeName || part.nodeId}, deeper in this unit`;
+    else if (part.where === "elsewhere") landing = `→ measured as ${part.nodeName || part.nodeId}, drawn outside this unit; the money stays in this total`;
+    else landing = estimated.length ? "→ no node here" : "→ no node here (one of this unit's own lines, not subdivided further in this graph)";
+    item.textContent = `${String(part.name || "unnamed part")}${part.kind === "receipts" ? " (receipts)" : part.kind === "header" ? " (a header, at the sum of its lines)" : ""} — ${exact(part.amount)} ${landing}`;
+    list.appendChild(item);
+  }
+  host.appendChild(list);
+  const summary = document.createElement("div");
+  const noNode = toFiniteAmount(block.toNoNode) || 0;
+  const elsewhere = toFiniteAmount(block.appliedElsewhere) || 0;
+  const notAttributed = toFiniteAmount(block.notAttributed) || 0;
+  const sentences = [`Children account for ${exact(block.landedOnChildren)} of the ${exact(block.total)}.`];
+  if (noNode !== 0) {
+    sentences.push(estimated.length
+      ? `${exact(noNode)} printed beneath this unit reaches no node here and is divided among its ${estimated.length} estimated ${estimated.length === 1 ? "child" : "children"} (${estimated.map((c) => c.name).join("; ")}) by weight — an apportionment, not a measurement, and the default view withholds those estimates.`
+      : `${exact(noNode)} printed beneath this unit reaches no node here: these are the unit's own lines, not subdivided further in this graph, and nothing is apportioned from them.`);
+  }
+  if (elsewhere !== 0) sentences.push(`${exact(elsewhere)} is measured under a unit drawn elsewhere in this graph and stays inside this total.`);
+  sentences.push(Math.abs(notAttributed) > 0.005
+    ? `Not attributed: ${exact(notAttributed)} — the parts the statement prints do not sum to its total by this amount.`
+    : "The parts sum to the total exactly.");
+  summary.textContent = sentences.join(" ");
+  host.appendChild(summary);
+  return host;
+}
+
 // A post no pay document prices and no employer block explains says which
 // held title-listing pay documents were checked for its title and whether any
 // prints it (pay_no_document.py, since 2026-10-22). The reason is the unpriced
@@ -4055,6 +4115,8 @@ function buildCostBlock(node) {
   // statement prints beneath the unit's header, by printed name and amount.
   const headerSumLines = buildHeaderSumLines(node);
   if (headerSumLines) block.appendChild(headerSumLines);
+  const sumLines = buildTreasurySumLines(node);
+  if (sumLines) block.appendChild(sumLines);
   if (employer && amountText === null) block.appendChild(buildEmployerLines(employer));
   const payBlank = standIn || employer || amountText !== null ? null : payNoDocumentOf(node);
   if (payBlank) block.appendChild(buildPayNoDocumentLines(payBlank));

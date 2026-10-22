@@ -9913,6 +9913,171 @@ def pay_no_document_violations(graph, label):
     return out
 
 
+#: Mirror of data_pipeline.exporter.treasury_sums, stdlib-only; tests/
+#: test_treasury_sums.py pins the vocabulary and the published blocks equal to
+#: a re-derivation from the committed statement.
+TREASURY_SUM_FIELD = "treasury_sum"
+TREASURY_SUM_KINDS = ("line", "header", "receipts")
+TREASURY_SUM_WHERE = ("child", "descendant", "elsewhere", "none")
+TREASURY_SUM_BLOCK_KEYS = {"statementDate", "classificationId", "total", "parts", "partsSum", "notAttributed",
+                           "landedOnChildren", "appliedElsewhere", "toNoNode", "estimatedChildren"}
+TREASURY_SUM_PART_KEYS = {"name", "amount", "kind", "classificationId", "nodeId", "nodeName", "where"}
+
+
+def treasury_sum_takes_block(node):
+    if is_post(node) or node.get("synthetic") or "treasury accounting line" in str(node.get("type") or "").casefold():
+        return False
+    return str(node.get("cost_status") or "") == "official" and bool(str(node.get("treasury_classification_id") or "").strip())
+
+
+def treasury_sum_violations(nodes, graph, label):
+    """A measured unit's `treasury_sum` is re-derived from the committed
+    statement its date names: the parts are the direct items beneath the
+    unit's header (a sub-header at the sum of its lines, a Total-- row never a
+    part), in print order with the printed names and exact amounts; each
+    part's landing is the node carrying its classification id (a sub-header's
+    own or its Total-- row's; a receipts row the unit's receipts child), and
+    `where` is read off the tree the gate is walking; the three sums, the
+    parts' sum and the not-attributed remainder are recomputed; the estimated
+    children are the direct organisation children with an apportioned share.
+    In the other direction every measured organisation whose header has parts
+    carries a block, once the pass has run."""
+    out = []
+    parents, by_id, by_cid, receipts_child = {}, {}, {}, {}
+    for node, parent in walk(graph):
+        node_id = str(node.get("id") or "")
+        by_id[node_id] = node
+        parents[node_id] = str(parent.get("id") or "") if parent else None
+        cid = str(node.get("treasury_classification_id") or "").strip()
+        if cid and not node.get("synthetic"):
+            by_cid.setdefault(cid, node_id)
+        if str(node.get("synthetic") or "") == "treasury_receipts" and parent:
+            receipts_child[str(parent.get("id") or "")] = node_id
+
+    def where_of(target, node_id):
+        if not target:
+            return "none"
+        if parents.get(target) == node_id:
+            return "child"
+        cursor = parents.get(target)
+        while cursor:
+            if cursor == node_id:
+                return "descendant"
+            cursor = parents.get(cursor)
+        return "elsewhere"
+
+    committed = None
+    pass_ran = any(isinstance(n.get(TREASURY_SUM_FIELD), dict) for n in nodes)
+    for node in nodes:
+        block = node.get(TREASURY_SUM_FIELD)
+        node_id = str(node.get("id") or "")
+        takes = treasury_sum_takes_block(node) and node is not graph
+        if committed is None:
+            committed = load_committed_treasury_statements()
+        if block is None:
+            if pass_ran and takes:
+                date = str((graph.get("__budgetSummary") or {}).get("record_date") or "")[:10]
+                statement = committed.get(date)
+                if statement is not None:
+                    reading = statement[1]
+                    row = reading.rows.get(str(node.get("treasury_classification_id") or "").strip())
+                    header = reading.rows.get(reading.parent_of.get(str(row.get("classification_id")).strip())) if row is not None and reading.is_total(row) else (row if row is not None and reading.is_header(row) else None)
+                    if header is not None and any(not reading.is_total(k) for k in reading.kids(header)):
+                        out.append("{} is a measured unit whose Table 5 header has parts and carries no treasury_sum".format(label(node)))
+            continue
+        if not isinstance(block, dict):
+            out.append("{} treasury_sum is not an object".format(label(node)))
+            continue
+        if not takes:
+            out.append("{} carries a treasury_sum on a node that is not a measured organisation with a Table 5 classification id".format(label(node)))
+            continue
+        extra = set(block) - TREASURY_SUM_BLOCK_KEYS
+        if extra:
+            out.append("{} treasury_sum carries keys the module never writes: {}".format(label(node), sorted(extra)))
+        date = str(block.get("statementDate") or "")
+        statement = committed.get(date)
+        if statement is None:
+            out.append("{} treasury_sum cites a statement dated {!r} that is not committed".format(label(node), date))
+            continue
+        reading = statement[1]
+        cid = str(node.get("treasury_classification_id") or "").strip()
+        if str(block.get("classificationId") or "") != cid:
+            out.append("{} treasury_sum names classification id {!r}, not the node's {!r}".format(label(node), block.get("classificationId"), cid))
+        row = reading.rows.get(cid)
+        if row is None:
+            out.append("{} names classification id {!r}, which the {} statement does not print".format(label(node), cid, date))
+            continue
+        header = reading.rows.get(reading.parent_of.get(cid)) if reading.is_total(row) else (row if reading.is_header(row) else None)
+        if header is None:
+            out.append("{} treasury_sum sits on a plain line, which has no parts".format(label(node)))
+            continue
+        expected_parts = []
+        for kid in reading.kids(header):
+            if reading.is_total(kid):
+                continue
+            kid_id = str(kid.get("classification_id") or "").strip()
+            if reading.is_receipts(kid):
+                kind, landed = "receipts", receipts_child.get(node_id)
+            elif reading.is_header(kid):
+                kind = "header"
+                totals = [k for k in reading.kids(kid) if reading.is_total(k)]
+                landed = by_cid.get(kid_id) or (by_cid.get(str(totals[0].get("classification_id") or "").strip()) if len(totals) == 1 else None)
+            else:
+                kind, landed = "line", by_cid.get(kid_id)
+            if landed == node_id:
+                landed = None
+            expected_parts.append({
+                "name": reading.label(kid), "amount": round(reading.value(kid), 2), "kind": kind, "classificationId": kid_id,
+                "nodeId": landed, "nodeName": str((by_id.get(landed) or {}).get("name") or "") if landed else None, "where": where_of(landed, node_id),
+            })
+        parts = block.get("parts")
+        if not isinstance(parts, list) or not parts:
+            out.append("{} treasury_sum lists no parts".format(label(node)))
+            continue
+        got = []
+        for part in parts:
+            if not isinstance(part, dict) or set(part) - TREASURY_SUM_PART_KEYS:
+                out.append("{} treasury_sum part carries keys the module never writes".format(label(node)))
+                break
+            got.append({k: part.get(k) for k in TREASURY_SUM_PART_KEYS})
+            if part.get("kind") not in TREASURY_SUM_KINDS or part.get("where") not in TREASURY_SUM_WHERE:
+                out.append("{} treasury_sum part {!r} has a kind or landing outside the vocabulary".format(label(node), part.get("name")))
+        if got != expected_parts:
+            out.append("{} treasury_sum parts are not the statement's direct items beneath the unit's header, as landed in this tree".format(label(node)))
+        try:
+            total = float(block.get("total"))
+        except (TypeError, ValueError):
+            out.append("{} treasury_sum carries no total".format(label(node)))
+            continue
+        if abs(total - float(node.get("resolved_total_amount") or 0.0)) > 0.005:
+            out.append("{} treasury_sum total {:,.2f} is not the node's measured {:,.2f}".format(label(node), total, float(node.get("resolved_total_amount") or 0.0)))
+        parts_sum = round(sum(p["amount"] for p in expected_parts), 2)
+        checks = {
+            "partsSum": parts_sum,
+            "notAttributed": round(total - parts_sum, 2),
+            "landedOnChildren": round(sum(p["amount"] for p in expected_parts if p["where"] in ("child", "descendant")), 2),
+            "appliedElsewhere": round(sum(p["amount"] for p in expected_parts if p["where"] == "elsewhere"), 2),
+            "toNoNode": round(sum(p["amount"] for p in expected_parts if p["where"] == "none"), 2),
+        }
+        for key, want in checks.items():
+            try:
+                have = float(block.get(key))
+            except (TypeError, ValueError):
+                out.append("{} treasury_sum.{} is missing".format(label(node), key))
+                continue
+            if abs(have - want) > 0.005:
+                out.append("{} treasury_sum.{} is {:,.2f}; the statement and the tree give {:,.2f}".format(label(node), key, have, want))
+        expected_estimated = [
+            {"id": str(c.get("id") or ""), "name": str(c.get("name") or "")}
+            for c in node.get("children") or []
+            if isinstance(c, dict) and not is_post(c) and not c.get("synthetic")
+            and "treasury accounting line" not in str(c.get("type") or "").casefold() and str(c.get("cost_status") or "") == "allocated"
+        ]
+        if block.get("estimatedChildren") != expected_estimated:
+            out.append("{} treasury_sum.estimatedChildren is not the direct organisation children with an apportioned share".format(label(node)))
+    return out
+
+
 def is_committee(node):
     return str(node.get("type") or "").strip().casefold() in COMMITTEE_TYPES
 
@@ -12258,6 +12423,19 @@ def main(argv):
     for n in pay_blanks:
         reason = str(n[PAY_NO_DOCUMENT_FIELD].get("reason"))
         pay_reasons[reason] = pay_reasons.get(reason, 0) + 1
+    # How each measured unit's total adds up (criterion 4(b)): every part the
+    # statement prints beneath the unit's header, where it landed, and what is
+    # not attributed, re-derived from the committed statement.
+    gate.check("a measured unit's parts are the statement's own, landed as the tree lands them, and sum as published", treasury_sum_violations(nodes, graph, label))
+    sum_blocks = [n for n in nodes if isinstance(n.get(TREASURY_SUM_FIELD), dict)]
+    print("  totals add up        : {:,} measured units list the statement's parts beneath their header ({:,} parts); not attributed on {:,}; ${:,.2f} printed beneath {:,} of them reaches no node and is divided among their estimated children by weight; ${:,.2f} beneath {:,} others is the unit's own lines, not subdivided here; ${:,.2f} is measured under a unit drawn elsewhere (criterion 4b)".format(
+        len(sum_blocks), sum(len(n[TREASURY_SUM_FIELD].get("parts") or []) for n in sum_blocks),
+        sum(1 for n in sum_blocks if abs(float(n[TREASURY_SUM_FIELD].get("notAttributed") or 0)) > 0.005),
+        sum(float(n[TREASURY_SUM_FIELD].get("toNoNode") or 0) for n in sum_blocks if n[TREASURY_SUM_FIELD].get("estimatedChildren")),
+        sum(1 for n in sum_blocks if n[TREASURY_SUM_FIELD].get("estimatedChildren") and float(n[TREASURY_SUM_FIELD].get("toNoNode") or 0)),
+        sum(float(n[TREASURY_SUM_FIELD].get("toNoNode") or 0) for n in sum_blocks if not n[TREASURY_SUM_FIELD].get("estimatedChildren")),
+        sum(1 for n in sum_blocks if not n[TREASURY_SUM_FIELD].get("estimatedChildren") and float(n[TREASURY_SUM_FIELD].get("toNoNode") or 0)),
+        sum(float(n[TREASURY_SUM_FIELD].get("appliedElsewhere") or 0) for n in sum_blocks)))
     print("  pay blanks           : {:,} posts no document prices name the {:,} title-listing pay documents checked ({:,} of them a title a held document prints under a filing no rule ties to the post); by reason {}; an explained blank, not a terminal reason (criterion 2)".format(
         len(pay_blanks), len(graph.get(PAY_NO_DOCUMENT_ROOT_FIELD) or []), pay_named,
         ", ".join("{} {:,}".format(k, v) for k, v in sorted(pay_reasons.items(), key=lambda kv: -kv[1])) or "none"))

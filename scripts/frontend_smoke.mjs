@@ -1051,6 +1051,28 @@ try {
     check("a subcommittee says it is funded through its committee", /funded through its committee/.test(await text("#info-stats")), subcommittee.name);
   }
 
+  // A measured unit's total adds up visibly (criterion 4(b)): the panel lists
+  // every part the statement prints beneath its header, which node each landed
+  // on, what reaches no node and is divided among the estimated children, and
+  // says the parts sum to the total.
+  const sumNode = allNodes.find((n) => n.id === "exec-dept-va" && n.treasury_sum) || allNodes.find((n) => n.treasury_sum && n.treasury_sum.toNoNode && n.treasury_sum.estimatedChildren.length && unique(n));
+  check("some measured unit carries a treasury_sum block", Boolean(sumNode), "none");
+  if (sumNode) {
+    await openByName(sumNode.name);
+    const sumText = await text("#info-cost-sum");
+    const noNodePart = sumNode.treasury_sum.parts.find((p) => p.where === "none");
+    const childPart = sumNode.treasury_sum.parts.find((p) => p.where === "child" && p.kind !== "receipts");
+    check("the sum block names a part that reaches no node and says so", noNodePart ? sumText.includes(noNodePart.name) && /no node here/.test(sumText) : true, sumText.slice(0, 600));
+    check("the sum block names the child a part landed on", childPart ? sumText.includes(childPart.nodeName) : true, sumText.slice(0, 600));
+    check("the sum block names the estimated children that divide the no-node money, or says the lines are the unit's own",
+      sumNode.treasury_sum.estimatedChildren.length
+        ? sumNode.treasury_sum.estimatedChildren.every((c) => sumText.includes(c.name)) && /divided among/.test(sumText) && /an apportionment, not a measurement/.test(sumText)
+        : /not subdivided further/.test(sumText),
+      sumText.slice(0, 900));
+    check("the sum block says the parts sum to the total exactly", Math.abs(sumNode.treasury_sum.notAttributed) > 0.005 ? /Not attributed/.test(sumText) : /sum to the total exactly/.test(sumText), sumText.slice(-200));
+    measurements.treasurySum = { node: sumNode.id, parts: sumNode.treasury_sum.parts.length };
+  }
+
   // A post no pay document prices and no employer block explains says which
   // held title-listing pay documents were checked for its title (criterion
   // 2's explained blank), and one whose title a held document prints says so.

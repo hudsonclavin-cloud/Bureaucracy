@@ -209,6 +209,18 @@ Alcohol and Tobacco Tax and Trade Bureau (TTB) look larger than the IRS.
 the Legislative Branch to the cent (§22.6). The same check, per chapter, is
 the engine for (b).
 
+**Measured on 2026-10-22** (`treasury_sum`, CURATION.md §27): every one of
+the 57 measured units whose Table 5 header has parts now carries the
+statement's own parts beneath it, each landed on the node that carries it or
+marked as reaching no node, and **not attributed is zero on all 57** — the
+statement's arithmetic closes to the cent. The panel shows the sum. What the
+measurement exposes rather than fixes: $2.88tn printed beneath 22 units under
+programme and object-class headings no node carries is divided among their
+estimated children by weight (the SSA's $1.65tn, Defense's $835bn, the VA's
+$58.5bn), and the panel now names each part and each child that takes it,
+saying it is an apportionment. Whether to stop that division rather than show
+it is the owner's call; the estimates are withheld by default either way.
+
 ---
 
 ## Part 2 — What the reader gets
@@ -218,7 +230,7 @@ All four were chosen.
 | criterion | done when | today |
 |---|---|---|
 | **Every figure explains itself** | every figure on the panel and in the directory names its source, period and kind in words | largely met; keep the smoke check asserting it |
-| **Totals add up visibly** | a measured unit's panel shows the sum in criterion 4(b): what each child contributes, what is estimated, what is not attributed | not built; the data exists (`treasury_unapportioned`, receipts lines, `treasury_pool_negative`) |
+| **Totals add up visibly** | a measured unit's panel shows the sum in criterion 4(b): what each child contributes, what is estimated, what is not attributed | built 2026-10-22: `treasury_sum` on 57 measured units, the panel's "How the total adds up" block (CURATION.md §27) |
 | **Change history** | a reader can see what changed since the last update: figures that moved, nodes added or replaced, claims withdrawn, and why | not built; each build already knows what it withdrew and re-derived |
 | **Export / download** | a reader can download the graph and a flat CSV of nodes and figures, with the sources, from the site | partly: `graph.json` is public but not offered as a download; no CSV |
 
@@ -345,8 +357,8 @@ settle publishes automatically, and everything that needs judgement is held.
 | 2 | Pay | 0 posts unpriced and unexplained | 3,221 (every one with a documents-checked blank since 2026-10-22) | 3,221 |
 | 3 | Evidence | every current organisation sourced | 623 / 870 | 247 |
 | 4a | Lists | every list unit reconciled | 403 of 403 unmatched entries disposed, 21 of 21 curated names resolved (2026-10-22) | 19: 3 unsure + 16 real units not yet added |
-| 4b | Money traced | every measured parent sums visibly | Legislative Branch probed | only chapter c01 is fetched |
-| R | Reader | four features | 1 of 4 | 3 |
+| 4b | Money traced | every measured parent sums visibly | 57 of 57 measured units with parts show the sum; not attributed 0 (2026-10-22) | $2.88tn beneath 22 units is still apportioned to estimated children, now named |
+| R | Reader | four features | 2 of 4 (figures explain themselves; totals add up visibly) | change history, export |
 | 5 | Self-update | 3 clean automatic cycles | no scheduler | all |
 | 6 | Freshness | registry + overdue flag | periods shown | registry, flag |
 | 7 | Conflicts | review queue + change log | withdrawal built | queue, log |

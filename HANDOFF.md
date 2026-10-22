@@ -31,7 +31,7 @@ CLAUDE.md.
 | Staff payroll (OPM FedScope, Mar 2025, civilian basic pay) | 178 orgs; top-level $185.1bn for 1.65M civilians |
 | Spending by object class (USAspending, FY2025 obligations) | 86 agencies incl. all 15 departments; staff pay (11.x+12.x) $595.0bn of $10.09tn obligations |
 
-Cache stamp: `?v=20261022c` (bump index.html, js/ui.js, js/graph.js together
+Cache stamp: `?v=20261022d` (bump index.html, js/ui.js, js/graph.js together
 on any JS change).
 
 ## 2026-10-22: two definition-of-done criteria closed (see CURATION.md §23–24)
@@ -66,9 +66,14 @@ on any JS change).
   lack (21); `scripts/report_list_reconciliation.py` → `docs/LIST_RECONCILIATION.md`.
   **Gap 19** = 3 unsure (§13.6) + 16 real units not yet added (routes in §26.4:
   a toptier-reporter licence would add eight at once).
+- **Criterion 4(b) and the reader feature "totals add up visibly".**
+  `treasury_sum` (CURATION.md §27) on all 57 measured units whose Table 5
+  header has parts: each part, where it landed, the sums, not attributed 0
+  everywhere. $2.88tn beneath 22 units is apportioned to estimated children
+  and now named part by part on the parent's panel.
 - Still open in the definition of done: criterion 2's count itself, 4(a)'s 16
-  addable units, 4(b) totals that add up visibly, 5–7 self-update, the two
-  reader features.
+  addable units, whether to stop (rather than show) the $2.88tn apportionment,
+  5–7 self-update, change history and export.
 
 ## Next actions, in order
 

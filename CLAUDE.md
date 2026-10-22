@@ -4799,6 +4799,33 @@ routes are in `CURATION.md` §26.4; eight need a toptier-reporter licence that
 does not exist yet, six a fetch, two a decision. `tests/test_list_reconciliation.py`
 corrupts every refusal and pins the committed document to a fresh render.
 
+**How a measured unit's total adds up, part by part (`treasury_sums.py`,
+since 2026-10-22).** `docs/DEFINITION_OF_DONE.md` criterion 4(b) and the
+reader feature "Totals add up visibly": for every measured organisation whose
+Table 5 header has parts, `treasury_sum` lists the statement's direct items
+beneath the header from the committed statement the anchor date names — each
+by printed name, exact amount (a sub-header at the sum of its lines), kind
+(line, header, receipts), classification id, and where it landed in this graph
+(`child`, `descendant`, `elsewhere`, `none`) — with `partsSum`,
+`notAttributed`, the three sums `landedOnChildren`, `appliedElsewhere` and
+`toNoNode`, and `estimatedChildren`, the direct organisation children the
+cascade divides the no-node money among. Measured: 57 units, 391 parts, not
+attributed **0** on every one; $3.79tn beneath 35 units is the unit's own
+lines (CMS's Medicaid grants, the IRS's "Taxpayer Services"), not subdivided
+and apportioned to nobody; **$2.88tn beneath 22 units is divided among
+estimated children by weight** — the SSA's $1.65tn of trust-fund lines across
+two offices, Defense's $835bn of object-class headers across its four
+groupings, the VA's $58.5bn "Departmental Administration" across the NCA and
+the BVA — and the panel now names each part and the children that take it,
+saying it is an apportionment and not a measurement; $1.90bn is measured under
+a unit drawn elsewhere (the Tax Court inside the Legislative Branch's total).
+No figure changed. The gate re-derives every block from the committed
+statement with `TreasuryStatementRows`, lands each part off the tree it walks
+and refuses any difference, a block on a post, a line or an estimate, and a
+measured unit whose header has parts with no block; `tests/test_treasury_sums.py`
+pins the VA's and the Legislative Branch's blocks and corrupts twenty
+dimensions. `CURATION.md` §27.
+
 **An organisation's sourced figure of another kind is its headline, labelled
 by basis (since 2026-10-07, the owner's decision).** The cost-coverage report
 named two decisions only the owner could make; this is the first. An

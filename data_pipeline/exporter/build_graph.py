@@ -233,6 +233,10 @@ MINIMAL_GRAPH_FIELDS = (
     # header-sum node does not contain: which node's figure already holds the
     # money, and the sentence saying it is kept out of the parent's arithmetic
     "treasury_counted_in_header_sum", "treasury_counted_in_header_sum_note",
+    # how a measured unit's total adds up from the statement's own parts: each
+    # part, where it landed in this graph, the three sums and what is not
+    # attributed (treasury_sums.py)
+    "treasury_sum",
     # the verification box
     "sourceUrls", "sourceTypes", "sourceCount", "lastVerified",
     "verificationStatus", "confidenceScore", "verificationMethod",
@@ -3660,6 +3664,15 @@ def build_graph(
     # comparable with the children the published graph actually carries.
     validity_report["stated_counts"] = annotate_stated_counts(graph)
     validity_report["treasury_lines_recoloured"] = colour_treasury_lines(graph)
+    # How each measured unit's total adds up, part by part, from the committed
+    # statement the graph was built from: which part lands on which child,
+    # which is drawn elsewhere, which no node carries, and what is not
+    # attributed (treasury_sums.py). After the cascade, since it reads the
+    # final statuses and the estimated children the no-node money is divided
+    # among.
+    from data_pipeline.exporter.treasury_sums import annotate_treasury_sums  # noqa: E402 — imports this module
+
+    validity_report["treasury_sums"] = annotate_treasury_sums(graph)
     # And only now can a rate of basic pay be taken off a node that stands for
     # several posts: `representsPosts` does not exist until the line above
     # computes it, so the guard inside apply_pay_evidence (which runs at 2329,

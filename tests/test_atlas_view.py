@@ -78,9 +78,19 @@ def test_apportioned_estimates_are_withheld_in_the_panels_words():
     # figure, and through headerSumLinesText for the statement's own lines
     # beneath a header-sum unit, which that branch alone calls.
     assert "formatExactMoney" in ATLAS
-    assert ATLAS.count("formatExactMoney(") == 3  # the definition, the measured branch, the header-sum lines
+    # Since 2026-10-22 treasurySumText prints a measured unit's Table 5 parts
+    # (the block's own statement figures, never an apportioned amount) and is
+    # called from the measured branch alone, so its four uses are counted here.
+    sum_start = ATLAS.index("function treasurySumText(node) {")
+    sum_end = ATLAS.index("\n}\n", sum_start)
+    sum_body = ATLAS[sum_start:sum_end]
+    assert "resolved_total_amount" not in sum_body
+    assert sum_body.count("formatExactMoney(") == 4
+    assert ATLAS.count("formatExactMoney(") == 3 + 4  # the definition, the measured branch, the header-sum lines, the sum text
     assert ATLAS.count("headerSumLinesText(") == 2  # the definition and the measured branch
+    assert ATLAS.count("treasurySumText(") == 2  # the definition and the measured branch
     assert ATLAS.index("function headerSumLinesText(") < ATLAS.index("function describeCost(")
+    assert sum_start < ATLAS.index("function describeCost(")
 
 
 def test_a_sourced_figure_of_another_kind_heads_an_unmeasured_organisation_and_never_an_estimate():
