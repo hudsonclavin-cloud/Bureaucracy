@@ -12,6 +12,7 @@ The gate never writes. Run it before every push that touches output/.
 
 from __future__ import annotations
 
+import calendar
 import hashlib
 import io
 import json
@@ -10499,6 +10500,585 @@ def fedscope_payroll_violations(node, block, rows, digest, label):
         out.append("{} payroll equals the measured cost to the cent".format(who))
     return out
 
+
+# ---------------------------------------------------------------------------
+# The source registry (criterion 6), re-derived. A stdlib mirror of
+# data_pipeline/freshness.py: the registry's rows, the fixtures' own fetch
+# records and the graph's own blocks give each source's copy date and what is
+# due, and the root's `__sourceRegistry` must be exactly that. The two are
+# pinned equal by tests/test_source_registry.py.
+# ---------------------------------------------------------------------------
+
+SOURCE_REGISTRY_ROOT_FIELD = "__sourceRegistry"
+SOURCE_REGISTRY_PATH = PROJECT_ROOT / "data" / "source_registry.json"
+SOURCE_REGISTRY_FIXTURES = PROJECT_ROOT / "tests" / "fixtures"
+SOURCE_REGISTRY_PERIOD_MONTHS = {"period_end_monthly": 1, "period_end_quarterly": 3, "period_end_semiannual": 6, "period_end_annual": 12}
+SOURCE_REGISTRY_CADENCES = tuple(SOURCE_REGISTRY_PERIOD_MONTHS) + ("effective_annual", "fixed_month_day", "on_republication", "closed_record")
+SOURCE_REGISTRY_COPY_KINDS = ("graph_root", "graph_field_max", "stated", "fixture_meta", "fixture_meta_oldest")
+SOURCE_REGISTRY_FETCH_KINDS = ("api_latest_statement", "fixed_url", "refetch_each_fixture_url", "url_changes_each_period", "closed_record")
+SOURCE_REGISTRY_STATUSES = ("current", "newer_edition_expected", "overdue", "recheck_due", "closed_record", "copy_date_unknown")
+SOURCE_REGISTRY_ROW_KEYS = ("id", "label", "publisher", "cadence", "copy", "fixtures", "fetch", "graphFields", "note", "perNodeDate")
+SOURCE_REGISTRY_ENTRY_KEYS = ("id", "label", "publisher", "cadence", "copy", "expected", "statusAtBuild", "lastReadAfterExpected", "graphFields", "fixtureCount", "fetch", "note", "perNodeDate")
+
+
+def _sr_date(value):
+    text = str(value or "").strip()
+    if len(text) < 10:
+        return None
+    try:
+        return datetime.strptime(text[:10], "%Y-%m-%d").date()
+    except ValueError:
+        return None
+
+
+def _sr_month_end(year, month):
+    return datetime(year, month, calendar.monthrange(year, month)[1]).date()
+
+
+def _sr_add_months_end(day, months):
+    index = day.year * 12 + (day.month - 1) + months
+    return _sr_month_end(index // 12, index % 12 + 1)
+
+
+def _sr_add_days(day, days):
+    return day.fromordinal(day.toordinal() + int(days))
+
+
+def _sr_transform(value, transform):
+    text = str(value or "").strip()
+    if not text:
+        return None
+    if transform == "fiscal_year_end":
+        return datetime(int(text[:4]), 9, 30).date() if text[:4].isdigit() else None
+    if transform == "month_end":
+        return _sr_month_end(int(text[:4]), int(text[5:7])) if len(text) >= 7 and text[:4].isdigit() and text[5:7].isdigit() else None
+    return _sr_date(text)
+
+
+def _sr_dotted(value, path):
+    cursor = value
+    for part in str(path).split("."):
+        if not isinstance(cursor, dict):
+            return None
+        cursor = cursor.get(part)
+    return cursor
+
+
+def _sr_where(block, where):
+    if not where:
+        return True
+    for path, wanted in where:
+        actual = _sr_dotted(block, path)
+        if isinstance(wanted, dict) and "prefix" in wanted:
+            if not str(actual or "").startswith(str(wanted["prefix"])):
+                return False
+        elif str(actual if actual is not None else "") != str(wanted):
+            return False
+    return True
+
+
+def source_registry_node_uses(node, graph_fields):
+    for spec in graph_fields:
+        if isinstance(spec, str):
+            if isinstance(node.get(spec), dict):
+                return True
+        elif isinstance(spec, dict):
+            if "costStatus" in spec:
+                if str(node.get("cost_status") or "") in spec["costStatus"]:
+                    return True
+            elif "nodeWhere" in spec:
+                if _sr_where(node, spec["nodeWhere"]):
+                    return True
+            elif "field" in spec:
+                block = node.get(spec["field"])
+                if isinstance(block, dict) and _sr_where(block, spec.get("where")):
+                    return True
+    return False
+
+
+def _sr_field_max(nodes, spec):
+    field = spec.get("field")
+    best = None
+    for node in nodes:
+        holder = node if field in (None, "") else node.get(field)
+        if not isinstance(holder, dict) or not _sr_where(holder, spec.get("where")):
+            continue
+        found = _sr_transform(_sr_dotted(holder, str(spec.get("path") or "")), spec.get("transform"))
+        if found and (best is None or found > best):
+            best = found
+    return best
+
+
+def _sr_graph_check(nodes, check):
+    if not check:
+        return None
+    field = check.get("field")
+    for node in nodes:
+        holder = node if field in (None, "") else node.get(field)
+        if isinstance(holder, dict) and str(_sr_dotted(holder, str(check.get("path") or "")) or "") == str(check.get("equals")):
+            return True
+    return False
+
+
+def _sr_metas(fixtures, root=SOURCE_REGISTRY_FIXTURES):
+    out = []
+    for rel in fixtures:
+        target = root / rel
+        if target.is_dir():
+            paths = sorted(target.rglob("*.meta.json"))
+        elif target.is_file():
+            meta = target if target.name.endswith(".meta.json") else target.with_name(target.name + ".meta.json")
+            paths = [meta] if meta.is_file() else []
+        else:
+            paths = []
+        for path in paths:
+            try:
+                meta = json.loads(path.read_text(encoding="utf-8"))
+            except (OSError, ValueError):
+                continue
+            if isinstance(meta, dict) and meta.get("sha256"):
+                out.append({"path": str(path.relative_to(root)), "fetchedAt": str(meta.get("fetched_at") or ""),
+                            "url": str(meta.get("url") or ""), "sha256": str(meta.get("sha256") or "")})
+    return out
+
+
+def _sr_validate_row(row, root=SOURCE_REGISTRY_FIXTURES):
+    problems = []
+    for key in ("id", "label", "publisher", "cadence", "copy", "fixtures", "fetch", "graphFields"):
+        if key not in row:
+            problems.append("missing " + key)
+    if set(row) - set(SOURCE_REGISTRY_ROW_KEYS):
+        problems.append("unknown keys")
+    cadence = row.get("cadence") or {}
+    kind = str(cadence.get("kind") or "")
+    if kind not in SOURCE_REGISTRY_CADENCES:
+        problems.append("cadence kind")
+    if not str(cadence.get("basis") or "").strip():
+        problems.append("cadence basis")
+    if kind in SOURCE_REGISTRY_PERIOD_MONTHS or kind in ("effective_annual", "fixed_month_day"):
+        for key in ("lagDays", "overdueMarginDays"):
+            if not isinstance(cadence.get(key), int) or cadence[key] < 0:
+                problems.append("cadence " + key)
+    if kind == "fixed_month_day" and not (isinstance(cadence.get("month"), int) and isinstance(cadence.get("day"), int)):
+        problems.append("fixed_month_day month/day")
+    if kind == "on_republication" and not (isinstance(cadence.get("recheckDays"), int) and cadence["recheckDays"] > 0):
+        problems.append("recheckDays")
+    copy = row.get("copy") or {}
+    if str(copy.get("kind")) not in SOURCE_REGISTRY_COPY_KINDS:
+        problems.append("copy kind")
+    if copy.get("transform") is not None and copy.get("transform") not in ("fiscal_year_end", "month_end"):
+        problems.append("copy transform")
+    if copy.get("kind") == "stated" and (not _sr_date(copy.get("date")) or not str(copy.get("basis") or "").strip()):
+        problems.append("stated copy")
+    if not str(copy.get("meaning") or "").strip():
+        problems.append("copy meaning")
+    fixtures = row.get("fixtures") or []
+    if not isinstance(fixtures, list) or not fixtures or not any((root / rel).exists() for rel in fixtures):
+        problems.append("fixtures")
+    fetch = row.get("fetch") or {}
+    if str(fetch.get("kind")) not in SOURCE_REGISTRY_FETCH_KINDS:
+        problems.append("fetch kind")
+    if fetch.get("kind") in ("api_latest_statement", "fixed_url", "url_changes_each_period") and not str(fetch.get("url") or "").startswith("https://"):
+        problems.append("fetch url")
+    if fetch.get("kind") != "closed_record" and not isinstance(fetch.get("contentCheck"), dict):
+        problems.append("contentCheck")
+    if not isinstance(row.get("graphFields"), list) or not row.get("graphFields"):
+        problems.append("graphFields")
+    return problems
+
+
+def _sr_cadence_text(cadence):
+    kind = str(cadence.get("kind") or "")
+    words = {"period_end_monthly": "monthly", "period_end_quarterly": "quarterly", "period_end_semiannual": "twice a year",
+             "period_end_annual": "yearly, after the period ends", "effective_annual": "yearly, effective each January",
+             "fixed_month_day": "yearly, by a fixed date", "on_republication": "no fixed cycle; re-checked",
+             "closed_record": "a closed record; nothing newer is expected"}
+    text = words.get(kind, kind)
+    if kind == "fixed_month_day":
+        text = "yearly, by {} {}".format(calendar.month_name[int(cadence["month"])], int(cadence["day"]))
+    if kind == "on_republication":
+        text = "no fixed cycle; re-checked every {} days".format(int(cadence.get("recheckDays") or 0))
+    elif kind != "closed_record":
+        text += "; published about {} days after the period, overdue {} days after that".format(int(cadence.get("lagDays") or 0), int(cadence.get("overdueMarginDays") or 0))
+    return text
+
+
+def source_registry_expected(graph, registry, as_of, root=SOURCE_REGISTRY_FIXTURES):
+    """What the root block must be: the registry re-derived against this graph."""
+    nodes = [n for n, _ in walk(graph)]
+    entries, refused, unused, seen = [], [], [], set()
+    for row in registry.get("sources") or []:
+        problems = _sr_validate_row(row, root)
+        if str(row.get("id")) in seen:
+            problems.append("duplicate id")
+        seen.add(str(row.get("id")))
+        if problems:
+            refused.append({"id": str(row.get("id") or ""), "problems": problems})
+            continue
+        if not any(source_registry_node_uses(n, list(row.get("graphFields") or [])) for n in nodes):
+            unused.append(str(row.get("id") or ""))
+            continue
+        metas = _sr_metas(list(row.get("fixtures") or []), root)
+        spec = row.get("copy") or {}
+        kind = str(spec.get("kind") or "")
+        copy = {"kind": kind, "date": None, "meaning": str(spec.get("meaning") or ""), "basis": str(spec.get("basis") or "")}
+        if spec.get("edition"):
+            copy["edition"] = str(spec["edition"])
+        found = None
+        if kind == "graph_root":
+            found = _sr_transform(_sr_dotted(graph, str(spec.get("path") or "")), spec.get("transform"))
+        elif kind == "graph_field_max":
+            found = _sr_field_max(nodes, spec)
+        elif kind == "stated":
+            found = _sr_date(spec.get("date"))
+            holds = _sr_graph_check(nodes, spec.get("graphCheck"))
+            copy["graphCheck"] = "holds" if holds else ("not_made" if holds is None else "fails")
+        else:
+            dates = [d for d in (_sr_date(m["fetchedAt"]) for m in metas if m.get("fetchedAt")) if d]
+            if dates:
+                found = min(dates) if kind == "fixture_meta_oldest" else max(dates)
+        copy["date"] = found.isoformat() if found else None
+        fetched_all = [m["fetchedAt"] for m in metas if m.get("fetchedAt")]
+        copy["fetchedAt"] = max(fetched_all)[:10] if fetched_all else None
+        if copy.get("graphCheck") == "fails":
+            refused.append({"id": str(row.get("id")), "problems": ["graphCheck fails"]})
+            continue
+        cadence = dict(row.get("cadence") or {})
+        ckind = str(cadence.get("kind") or "")
+        if found is None and ckind not in ("on_republication", "closed_record"):
+            refused.append({"id": str(row.get("id")), "problems": ["no copy date"]})
+            continue
+        fetched = _sr_date(copy.get("fetchedAt"))
+        expected = {"next": None, "expectedBy": None, "overdueAfter": None, "recheckDue": None}
+        if ckind == "on_republication":
+            base = found or fetched
+            if base is not None:
+                expected["recheckDue"] = _sr_add_days(base, int(cadence.get("recheckDays") or 0)).isoformat()
+        elif ckind != "closed_record" and found is not None:
+            if ckind in SOURCE_REGISTRY_PERIOD_MONTHS:
+                nxt = _sr_add_months_end(found, SOURCE_REGISTRY_PERIOD_MONTHS[ckind])
+            elif ckind == "effective_annual":
+                nxt = datetime(found.year + 1, found.month, min(found.day, calendar.monthrange(found.year + 1, found.month)[1])).date()
+            else:
+                candidate = datetime(found.year, int(cadence["month"]), int(cadence["day"])).date()
+                nxt = candidate if candidate > found else datetime(found.year + 1, int(cadence["month"]), int(cadence["day"])).date()
+            expected_by = _sr_add_days(nxt, int(cadence.get("lagDays") or 0))
+            expected = {"next": nxt.isoformat(), "expectedBy": expected_by.isoformat(),
+                        "overdueAfter": _sr_add_days(expected_by, int(cadence.get("overdueMarginDays") or 0)).isoformat(), "recheckDue": None}
+        if ckind == "closed_record":
+            status = "closed_record"
+        elif ckind == "on_republication":
+            due = _sr_date(expected.get("recheckDue"))
+            status = "copy_date_unknown" if due is None else ("recheck_due" if as_of > due else "current")
+        elif found is None or not expected.get("expectedBy"):
+            status = "copy_date_unknown"
+        elif as_of <= _sr_date(expected["expectedBy"]):
+            status = "current"
+        elif as_of <= _sr_date(expected["overdueAfter"]):
+            status = "newer_edition_expected"
+        else:
+            status = "overdue"
+        expected_by = _sr_date(expected.get("expectedBy"))
+        fetch = dict(row.get("fetch") or {})
+        entries.append({
+            "id": str(row.get("id") or ""), "label": str(row.get("label") or ""), "publisher": str(row.get("publisher") or ""),
+            "cadence": dict(cadence, text=_sr_cadence_text(cadence)), "copy": copy, "expected": expected, "statusAtBuild": status,
+            "lastReadAfterExpected": (fetched > expected_by) if (fetched and expected_by) else None,
+            "graphFields": list(row.get("graphFields") or []), "fixtureCount": len(metas),
+            "fetch": {"kind": str(fetch.get("kind") or ""), "url": str(fetch.get("url") or "")},
+            "note": str(row.get("note") or ""), "perNodeDate": str(row.get("perNodeDate") or "") or None,
+        })
+    counts = {s: sum(1 for e in entries if e["statusAtBuild"] == s) for s in SOURCE_REGISTRY_STATUSES}
+    return {"asOf": as_of.isoformat(), "cadencesAre": str(registry.get("cadencesAre") or ""), "sources": entries, "unused": unused, "counts": counts}, refused
+
+
+def source_registry_violations(graph, label, registry_path=SOURCE_REGISTRY_PATH, fixtures_root=SOURCE_REGISTRY_FIXTURES):
+    """The root's `__sourceRegistry` is honest: every source it lists is the
+    registry's row re-derived against this graph as of the block's own build
+    date, used by some node, and in the vocabulary; every registry row is
+    either listed or named unused; the counts are the listed entries'; the
+    field sits on the root alone. A graph the exporter's final passes did not
+    run on (no `__heldPayDocuments` on the root) carries no block and is not
+    asked for one. A used source the block omits is not a gate violation --
+    a hand-edited test graph can grow a field after its build -- and
+    tests/test_source_registry.py asserts `unused` is empty on the published
+    graph, which is where that claim belongs."""
+    out = []
+    block = graph.get(SOURCE_REGISTRY_ROOT_FIELD)
+    for node, _ in walk(graph):
+        if node is not graph and SOURCE_REGISTRY_ROOT_FIELD in node:
+            out.append("{}: carries __sourceRegistry, a root-only field".format(label(node)))
+    if block is None:
+        if "__heldPayDocuments" in graph:
+            out.append("the root carries no __sourceRegistry block while the exporter's final passes ran")
+        return out
+    if not isinstance(block, dict):
+        return out + ["__sourceRegistry is not an object"]
+    as_of = _sr_date(block.get("asOf"))
+    if as_of is None:
+        return out + ["__sourceRegistry.asOf is not a date"]
+    if as_of > datetime.now(timezone.utc).date():
+        out.append("__sourceRegistry.asOf {} is in the future".format(block.get("asOf")))
+    try:
+        registry = json.loads(Path(registry_path).read_text(encoding="utf-8"))
+    except (OSError, ValueError) as error:
+        return out + ["the source registry could not be read: {}".format(error)]
+    expected, refused = source_registry_expected(graph, registry, as_of, fixtures_root)
+    expected_by_id = {e["id"]: e for e in expected["sources"]}
+    refused_ids = {r["id"]: r["problems"] for r in refused}
+    registry_ids = [str(r.get("id") or "") for r in registry.get("sources") or []]
+    listed = block.get("sources") if isinstance(block.get("sources"), list) else None
+    if listed is None:
+        return out + ["__sourceRegistry.sources is not a list"]
+    listed_ids = []
+    for entry in listed:
+        if not isinstance(entry, dict):
+            out.append("__sourceRegistry carries a source that is not an object")
+            continue
+        source_id = str(entry.get("id") or "")
+        listed_ids.append(source_id)
+        if source_id not in registry_ids:
+            out.append("__sourceRegistry carries a source the registry does not: {}".format(source_id))
+            continue
+        if source_id in refused_ids:
+            out.append("__sourceRegistry lists {} although its row does not re-adjudicate: {}".format(source_id, "; ".join(refused_ids[source_id])))
+            continue
+        mine = expected_by_id.get(source_id)
+        if mine is None:
+            out.append("__sourceRegistry lists {} although no node carries a field it feeds".format(source_id))
+            continue
+        if entry != mine:
+            keys = [k for k in set(entry) | set(mine) if entry.get(k) != mine.get(k)]
+            out.append("__sourceRegistry.{} differs from the re-derived entry on {}".format(source_id, ", ".join(sorted(keys))))
+        if set(entry) - set(SOURCE_REGISTRY_ENTRY_KEYS):
+            out.append("__sourceRegistry.{} carries keys outside the entry vocabulary".format(source_id))
+        if entry.get("statusAtBuild") not in SOURCE_REGISTRY_STATUSES:
+            out.append("__sourceRegistry.{} status {!r} is not in the vocabulary".format(source_id, entry.get("statusAtBuild")))
+    unused = block.get("unused") if isinstance(block.get("unused"), list) else None
+    if unused is None:
+        out.append("__sourceRegistry.unused is not a list")
+    else:
+        for source_id in unused:
+            if str(source_id) not in registry_ids:
+                out.append("__sourceRegistry.unused names a source the registry does not: {}".format(source_id))
+            elif str(source_id) in listed_ids:
+                out.append("__sourceRegistry names {} both listed and unused".format(source_id))
+        accounted = set(listed_ids) | {str(s) for s in unused}
+        for source_id in registry_ids:
+            if source_id not in accounted and source_id not in refused_ids:
+                out.append("__sourceRegistry neither lists nor names unused the registry row {}".format(source_id))
+    counts = {s: sum(1 for e in listed if isinstance(e, dict) and e.get("statusAtBuild") == s) for s in SOURCE_REGISTRY_STATUSES}
+    if block.get("counts") != counts:
+        out.append("__sourceRegistry.counts is not the count of the listed entries by status")
+    if block.get("cadencesAre") != expected.get("cadencesAre"):
+        out.append("__sourceRegistry.cadencesAre is not the registry's sentence")
+    if set(block) - {"asOf", "cadencesAre", "sources", "unused", "counts"}:
+        out.append("__sourceRegistry carries keys the derivation does not write: {}".format(sorted(set(block) - {"asOf", "cadencesAre", "sources", "unused", "counts"})))
+    return out
+
+
+
+# ---------------------------------------------------------------------------
+# The change history and the review queue (Part 2 "Change history", criteria
+# 5 and 7). The history next to the graph is a record of builds; the gate
+# cannot re-derive a diff against a graph it does not have, so it checks that
+# the LATEST entry describes THIS graph (its after-counts and anchor), that
+# every entry is well formed, and that the review queue's graph-derived
+# records are exactly the disagreements this graph publishes.
+# ---------------------------------------------------------------------------
+
+CHANGE_HISTORY_FILENAME = "change_history.json"
+REVIEW_QUEUE_PATH = PROJECT_ROOT / "data" / "audit" / "review_queue.json"
+CHANGE_BUDGET_RULES = ("node_count_drops", "measured_cost_moved_without_a_new_statement", "pay_claims_withdrawn_above_5_percent",
+                       "anchor_period_goes_backwards", "anchor_lost")
+CHANGE_PAY_FIELDS = ("positionStatutoryPay", "positionSchedulePay", "positionPayRate", "positionGradePay", "positionCurrentPay",
+                     "positionReportedPay", "positionDerivedPay", "positionTierPay", "positionTierReferencePay", "positionMilitaryPay")
+REVIEW_QUEUE_KINDS = ("budget_hold", "node_removed", "claim_withdrawn", "method_withdrawn", "sourced_figure_withdrawn",
+                      "measured_cost_moved_with_new_statement", "placement_directory_disagreement", "cost_weight_dispute",
+                      "verification_failure", "source_overdue")
+REVIEW_QUEUE_GRAPH_KINDS = ("placement_directory_disagreement", "cost_weight_dispute", "verification_failure", "source_overdue")
+REVIEW_QUEUE_STATUSES = ("open", "closed", "resolved")
+
+
+def review_queue_key(kind, *parts):
+    digest = hashlib.sha256("|".join(str(p) for p in parts).encode("utf-8")).hexdigest()[:12]
+    return "{}:{}".format(kind, digest)
+
+
+def review_queue_expected_keys(graph):
+    """The keys of every graph-derived record the queue must hold open."""
+    keys = set()
+    for node, _ in walk(graph):
+        d = node.get("placementDirectoryDisagreement")
+        if isinstance(d, dict):
+            keys.add(review_queue_key("placement_directory_disagreement", node.get("id"), d.get("source")))
+        w = node.get("cost_weight_dispute")
+        if isinstance(w, dict):
+            keys.add(review_queue_key("cost_weight_dispute", node.get("id"), w.get("period")))
+        if node.get("verificationFailure") and not node.get("verificationMethod"):
+            keys.add(review_queue_key("verification_failure", node.get("id"), node.get("verificationFailure")))
+    registry = graph.get(SOURCE_REGISTRY_ROOT_FIELD) if isinstance(graph.get(SOURCE_REGISTRY_ROOT_FIELD), dict) else {}
+    for entry in registry.get("sources") or []:
+        if isinstance(entry, dict) and entry.get("statusAtBuild") == "overdue":
+            keys.add(review_queue_key("source_overdue", entry.get("id"), (entry.get("expected") or {}).get("next")))
+    return keys
+
+
+def change_history_violations(graph, graph_path, label, queue_path=REVIEW_QUEUE_PATH):
+    out = []
+    history_path = Path(graph_path).parent / CHANGE_HISTORY_FILENAME
+    if not history_path.is_file():
+        return out
+    try:
+        history = json.loads(history_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as error:
+        return ["the change history could not be read: {}".format(error)]
+    if not isinstance(history, list) or not history:
+        return ["the change history is not a non-empty list"]
+    for i, entry in enumerate(history):
+        if not isinstance(entry, dict):
+            out.append("change history entry {} is not an object".format(i))
+            continue
+        for key in ("builtAt", "summary", "budget", "anchor"):
+            if key not in entry:
+                out.append("change history entry {} lacks {}".format(i, key))
+        budget = entry.get("budget") or {}
+        rules = budget.get("rules") if isinstance(budget, dict) else None
+        if not isinstance(rules, list) or {r.get("rule") for r in rules if isinstance(r, dict)} != set(CHANGE_BUDGET_RULES):
+            out.append("change history entry {} does not carry every budget rule".format(i))
+        elif budget.get("held") != any(bool(r.get("tripped")) for r in rules):
+            out.append("change history entry {}: held disagrees with its rules".format(i))
+        if isinstance(entry.get("builtAt"), str) and entry["builtAt"][:10] > datetime.now(timezone.utc).date().isoformat():
+            out.append("change history entry {} is dated in the future".format(i))
+    latest = history[0] if isinstance(history[0], dict) else {}
+    nodes = [n for n, _ in walk(graph)]
+    measured = sum(1 for n in nodes if str(n.get("cost_status") or "") in ("official", "root_total"))
+    posts_priced = sum(1 for n in nodes if is_post(n) and any(isinstance(n.get(f), dict) for f in CHANGE_PAY_FIELDS))
+    anchor = str((graph.get("__budgetSummary") or {}).get("record_date") or "")[:10] or None
+    after = {
+        "nodes.after": ((latest.get("nodes") or {}).get("after"), len(nodes)),
+        "measuredCosts.after": ((latest.get("measuredCosts") or {}).get("after"), measured),
+        "pay.claimsAfter": ((latest.get("pay") or {}).get("claimsAfter"), posts_priced),
+        "anchor.after.recordDate": (((latest.get("anchor") or {}).get("after") or {}).get("recordDate"), anchor),
+    }
+    for key, (recorded, actual) in after.items():
+        if recorded != actual:
+            out.append("the latest change history entry says {} = {!r}; this graph has {!r}".format(key, recorded, actual))
+    if latest.get("trimmed"):
+        out.append("the latest change history entry is trimmed; the newest entry must be whole")
+    if not Path(queue_path).is_file():
+        return out
+    try:
+        queue = json.loads(Path(queue_path).read_text(encoding="utf-8"))
+    except (OSError, ValueError) as error:
+        return out + ["the review queue could not be read: {}".format(error)]
+    if not isinstance(queue, list):
+        return out + ["the review queue is not a list"]
+    open_graph_keys = set()
+    seen = set()
+    for record in queue:
+        if not isinstance(record, dict):
+            out.append("a review queue record is not an object")
+            continue
+        key = str(record.get("key") or "")
+        if key in seen:
+            out.append("review queue key {} appears twice".format(key))
+        seen.add(key)
+        if record.get("kind") not in REVIEW_QUEUE_KINDS:
+            out.append("review queue record {} has kind {!r} outside the vocabulary".format(key, record.get("kind")))
+        if record.get("status") not in REVIEW_QUEUE_STATUSES:
+            out.append("review queue record {} has status {!r} outside the vocabulary".format(key, record.get("status")))
+        if not isinstance(record.get("documents"), list) or not record["documents"]:
+            out.append("review queue record {} names no document".format(key))
+        if not str(record.get("opened") or "")[:10] or str(record.get("opened"))[:10] > datetime.now(timezone.utc).date().isoformat():
+            out.append("review queue record {} has no past opening date".format(key))
+        if record.get("status") == "closed" and not record.get("closed"):
+            out.append("review queue record {} is closed with no closing date".format(key))
+        if record.get("kind") in REVIEW_QUEUE_GRAPH_KINDS and record.get("status") in ("open", "resolved"):
+            open_graph_keys.add(key)
+    expected = review_queue_expected_keys(graph)
+    for key in sorted(expected - open_graph_keys):
+        out.append("the graph publishes a disagreement the review queue does not hold open: {}".format(key))
+    for key in sorted(open_graph_keys - expected):
+        out.append("the review queue holds open a disagreement the graph no longer publishes: {}".format(key))
+    return out
+
+
+
+# ---------------------------------------------------------------------------
+# The flat CSV beside the graph (Part 2, "Export / download"): one row per
+# node, in tree order, with figures that are the nodes' own. Mirrors
+# scripts/export_flat_csv.py's columns; tests/test_export_csv.py pins them equal
+# and compares the committed file with a fresh render byte for byte.
+# ---------------------------------------------------------------------------
+
+FLAT_CSV_FILENAME = "nodes.csv"
+FLAT_CSV_COLUMNS = (
+    "id", "name", "type", "parent_id", "parent_name", "depth", "branch", "lifecycle",
+    "cost_status", "cost_amount_usd", "cost_basis", "cost_validation", "treasury_row_name", "treasury_section", "cost_source_url", "cost_period",
+    "usaspending_gross_outlays_usd", "usaspending_period", "usaspending_url",
+    "omb_outlays_usd", "omb_fiscal_year", "omb_url",
+    "audited_net_cost_usd", "audited_fiscal_year", "audited_url",
+    "combined_statement_net_outlays_usd", "combined_statement_fiscal_year", "combined_statement_url",
+    "disbursements_usd", "disbursements_period_start", "disbursements_period_end", "disbursements_url",
+    "employees_official", "employees_period", "employees_url", "payroll_official_usd",
+    "pay_field", "pay_amount_usd", "pay_minimum_usd", "pay_maximum_usd", "pay_source", "pay_url", "pay_documents",
+    "verification_method", "verification_url", "verification_date", "verification_no_document_kind",
+    "placement_method", "placement_url",
+    "cost_blank_kind", "pay_blank_kind", "pay_employer_kind",
+)
+
+
+def flat_csv_violations(graph, graph_path, label):
+    import csv
+
+    path = Path(graph_path).parent / FLAT_CSV_FILENAME
+    if not path.is_file():
+        return []
+    out = []
+    with path.open(encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        if tuple(reader.fieldnames or ()) != FLAT_CSV_COLUMNS:
+            return ["{} does not carry the expected columns".format(FLAT_CSV_FILENAME)]
+        rows = list(reader)
+    pairs = list(walk(graph))
+    nodes = {str(n.get("id") or ""): (n, p) for n, p in pairs}
+    if len(rows) != len(pairs):
+        out.append("{} has {:,} rows; the graph has {:,} nodes".format(FLAT_CSV_FILENAME, len(rows), len(pairs)))
+    seen = set()
+    for row in rows:
+        node_id = row.get("id") or ""
+        if node_id in seen:
+            out.append("{}: {} appears twice".format(FLAT_CSV_FILENAME, node_id))
+        seen.add(node_id)
+        if node_id not in nodes:
+            out.append("{}: {} is not a node of the graph".format(FLAT_CSV_FILENAME, node_id))
+            continue
+        node, parent = nodes[node_id]
+        if row.get("name") != str(node.get("name") or ""):
+            out.append("{}: {} carries the name {!r}, the graph {!r}".format(FLAT_CSV_FILENAME, node_id, row.get("name"), node.get("name")))
+        if row.get("parent_id") != str((parent or {}).get("id") or ""):
+            out.append("{}: {} is filed under {!r}, the tree under {!r}".format(FLAT_CSV_FILENAME, node_id, row.get("parent_id"), (parent or {}).get("id")))
+        if row.get("cost_status") != str(node.get("cost_status") or ""):
+            out.append("{}: {} cost_status {!r} is not the node's {!r}".format(FLAT_CSV_FILENAME, node_id, row.get("cost_status"), node.get("cost_status")))
+        status = str(node.get("cost_status") or "")
+        amount = node.get("resolved_total_amount")
+        expected_amount = "{:.2f}".format(float(amount)) if status in ("official", "root_total", "allocated", "scaled_official") and amount is not None else ""
+        if row.get("cost_amount_usd") != expected_amount:
+            out.append("{}: {} cost_amount_usd {!r} is not the node's {!r}".format(FLAT_CSV_FILENAME, node_id, row.get("cost_amount_usd"), expected_amount))
+        if row.get("cost_amount_usd") == "0.00":
+            out.append("{}: {} publishes a zero cost".format(FLAT_CSV_FILENAME, node_id))
+        if row.get("verification_method") != str(node.get("verificationMethod") or ""):
+            out.append("{}: {} verification_method is not the node's".format(FLAT_CSV_FILENAME, node_id))
+        if row.get("pay_field") and not isinstance(node.get(row["pay_field"]), dict):
+            out.append("{}: {} names a pay field {} the node does not carry".format(FLAT_CSV_FILENAME, node_id, row["pay_field"]))
+        if row.get("pay_amount_usd") and row.get("pay_field") and "{:.2f}".format(float(node[row["pay_field"]].get("amount") or 0)) != row["pay_amount_usd"]:
+            out.append("{}: {} pay_amount_usd is not the block's".format(FLAT_CSV_FILENAME, node_id))
+    for node_id in set(nodes) - seen:
+        out.append("{}: the node {} has no row".format(FLAT_CSV_FILENAME, node_id))
+    return out
+
+
 def main(argv):
     graph_path = Path(argv[1]) if len(argv) > 1 else DEFAULT_GRAPH
     if not graph_path.exists():
@@ -12439,6 +13019,46 @@ def main(argv):
     print("  pay blanks           : {:,} posts no document prices name the {:,} title-listing pay documents checked ({:,} of them a title a held document prints under a filing no rule ties to the post); by reason {}; an explained blank, not a terminal reason (criterion 2)".format(
         len(pay_blanks), len(graph.get(PAY_NO_DOCUMENT_ROOT_FIELD) or []), pay_named,
         ", ".join("{} {:,}".format(k, v) for k, v in sorted(pay_reasons.items(), key=lambda kv: -kv[1])) or "none"))
+
+    # Freshness (criterion 6): the source registry's block on the root is the
+    # registry re-derived against this graph, every source it names feeds a
+    # field some node carries, and the summary says what is due.
+    gate.check("the source registry on the root is re-derived from the registry, the fixtures and the graph, and names only sources the graph uses", source_registry_violations(graph, label))
+    registry_block = graph.get(SOURCE_REGISTRY_ROOT_FIELD) if isinstance(graph.get(SOURCE_REGISTRY_ROOT_FIELD), dict) else {"sources": [], "counts": {}, "asOf": "?"}
+    by_status = {}
+    for entry in registry_block.get("sources") or []:
+        by_status.setdefault(str(entry.get("statusAtBuild")), []).append(str(entry.get("id")))
+    print("  freshness            : {:,} sources in the registry as of {}; {} (criterion 6)".format(
+        len(registry_block.get("sources") or []), registry_block.get("asOf"),
+        "; ".join("{} {:,}{}".format(status, len(ids), "" if status == "current" else " (" + ", ".join(ids) + ")") for status, ids in sorted(by_status.items(), key=lambda kv: -len(kv[1]))) or "none"))
+
+    # The change history and the review queue (Part 2, criteria 5 and 7): the
+    # latest recorded build describes this graph, every entry carries the
+    # budget's verdict rule by rule, and the queue holds open exactly the
+    # disagreements the graph publishes.
+    gate.check("the change history next to the graph describes this graph, and the review queue holds every open disagreement the graph publishes", change_history_violations(graph, graph_path, label))
+    history_file = Path(graph_path).parent / CHANGE_HISTORY_FILENAME
+    if history_file.is_file():
+        try:
+            history_entries = json.loads(history_file.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            history_entries = []
+        queue_entries = json.loads(REVIEW_QUEUE_PATH.read_text(encoding="utf-8")) if REVIEW_QUEUE_PATH.is_file() else []
+        latest_entry = history_entries[0] if isinstance(history_entries, list) and history_entries and isinstance(history_entries[0], dict) else {}
+        print("  change history       : {:,} builds recorded; the latest ({}) is {}: {}; review queue {:,} open, {:,} resolved, {:,} closed (criteria 5, 7)".format(
+            len(history_entries) if isinstance(history_entries, list) else 0, str(latest_entry.get("builtAt", "?"))[:10],
+            "HELD" if (latest_entry.get("budget") or {}).get("held") else "within the budget", str(latest_entry.get("summary", ""))[:160],
+            sum(1 for r in queue_entries if isinstance(r, dict) and r.get("status") == "open"),
+            sum(1 for r in queue_entries if isinstance(r, dict) and r.get("status") == "resolved"),
+            sum(1 for r in queue_entries if isinstance(r, dict) and r.get("status") == "closed")))
+    else:
+        print("  change history       : none recorded beside this graph")
+
+    # The flat CSV beside the graph (Part 2): one row per node, figures the
+    # nodes' own, no zero for a missing figure.
+    gate.check("the flat CSV beside the graph has one row per node with the nodes' own figures", flat_csv_violations(graph, graph_path, label))
+    csv_path = Path(graph_path).parent / FLAT_CSV_FILENAME
+    print("  flat csv             : {}".format("{} rows beside the graph ({:,} bytes)".format(sum(1 for _ in csv_path.open(encoding="utf-8")) - 1, csv_path.stat().st_size) if csv_path.is_file() else "none beside this graph"))
 
     # A name that states how many things it stands for, against what the
     # graph carries. The claim is only ever "the name says N, we carry M";

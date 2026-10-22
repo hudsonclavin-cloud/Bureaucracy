@@ -1,0 +1,15 @@
+[
+ {
+  "startedAt": "2026-10-22T08:34:44Z",
+  "finishedAt": "2026-10-22T08:35:54Z",
+  "mode": "hold",
+  "clean": true,
+  "held": false,
+  "reasons": [],
+  "anchorBefore": "2026-08-31",
+  "anchorAfter": "2026-08-31",
+  "fetched": [],
+  "reviewQueueOpen": 53,
+  "publishable": false
+ }
+]

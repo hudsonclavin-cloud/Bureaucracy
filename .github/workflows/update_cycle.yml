@@ -1,0 +1,112 @@
+# One update cycle a month, in HOLD mode: fetch what the source registry says is
+# due, rebuild, run every check and the change budget, and open a pull request
+# with the result for a person to approve. Nothing here pushes to main.
+#
+# docs/DEFINITION_OF_DONE.md criterion 5: the job runs in hold-everything mode
+# for its first three cycles and a person approves each publish; after three
+# clean cycles `scripts/update_cycle.py --publish` is accepted. Switching this
+# workflow from --hold to --publish is that decision, and it is a person's.
+#
+# Several hosts refuse automated clients with an Akamai 403 and may refuse
+# GitHub's runners too; the script records such a source as unavailable this
+# cycle and carries on with the others.
+name: update cycle (hold mode)
+
+on:
+  schedule:
+    # the 12th of each month, 09:17 UTC: after the Monthly Treasury Statement's
+    # usual publication early in the month
+    - cron: "17 9 12 * *"
+  workflow_dispatch:
+    inputs:
+      offline:
+        description: "Skip the fetch step (rebuild from the committed fixtures)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-cycle
+  cancel-in-progress: false
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install the test and smoke dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest
+          npm install --no-save playwright-core three@0.160.1
+          npx playwright install --with-deps chromium
+
+      - name: Run the cycle in hold mode
+        id: cycle
+        continue-on-error: true
+        env:
+          BUREAUCRACY_PIPELINE_UA: "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy; scheduled update cycle)"
+        run: |
+          set -o pipefail
+          EXTRA=""
+          if [ "${{ inputs.offline }}" = "true" ]; then EXTRA="--offline"; fi
+          python scripts/update_cycle.py --hold $EXTRA 2>&1 | tee cycle.log
+          echo "exit=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+
+      - name: Upload the report and the log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: update-cycle-report
+          path: |
+            output/update_cycle_report.json
+            cycle.log
+            docs/CHANGE_HISTORY.md
+            data/audit/review_queue.json
+
+      - name: Open a pull request with the cycle's result
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          git config user.name "update-cycle"
+          git config user.email "update-cycle@users.noreply.github.com"
+          BRANCH="update/$(date -u +%Y-%m-%d)-${{ github.run_id }}"
+          git checkout -b "$BRANCH"
+          git add -A tests/fixtures data data/audit docs output/graph.json output/graph.min.json output/candidate_nodes.json output/change_history.json output/update_cycle_report.json output/pipeline_stats.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "nothing changed this cycle; no pull request"
+            exit 0
+          fi
+          VERDICT=$(python -c "import json;print(json.load(open('output/update_cycle_report.json')).get('verdict','?'))")
+          git commit -q -m "Update cycle $(date -u +%Y-%m-%d): ${VERDICT}" -m "Recorded by the scheduled update cycle in hold mode. Review output/update_cycle_report.json, docs/CHANGE_HISTORY.md and data/audit/review_queue.json before merging."
+          git push -u origin "$BRANCH"
+          {
+            echo "## Update cycle $(date -u +%Y-%m-%d) — ${VERDICT}"
+            echo
+            echo "Exit code of the cycle: ${{ steps.cycle.outputs.exit }} (0 clean, 3 held)."
+            echo
+            echo '```'
+            python -c "import json;r=json.load(open('output/update_cycle_report.json'));print('due:',[d['id'] for d in r['due']]);[print('fetch',f.get('source'),f.get('outcome'),f.get('reason') or '') for f in r['fetches']];[print('step',s.get('name'),'exit',s.get('exit')) for s in r['steps']];print('reasons:',r['reasons']);print('review queue open:',r.get('reviewQueueOpen'))"
+            echo '```'
+            echo
+            echo "The change history is in docs/CHANGE_HISTORY.md; the review queue in data/audit/review_queue.json."
+            echo "Merging this pull request is the publish step (GitHub Pages serves main). Hold mode: a person decides."
+          } > pr_body.md
+          gh pr create --title "Update cycle $(date -u +%Y-%m-%d): ${VERDICT}" --body-file pr_body.md --base main --head "$BRANCH" --label "update-cycle" || gh pr create --title "Update cycle $(date -u +%Y-%m-%d): ${VERDICT}" --body-file pr_body.md --base main --head "$BRANCH"

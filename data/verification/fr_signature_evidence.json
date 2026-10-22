@@ -2,7 +2,7 @@
   "_note": "Derived by scripts/derive_fr_signature_evidence.py from the signature blocks of Federal Register documents committed verbatim under tests/fixtures/federal_register/signatures/ with their digests and with the API listings that selected them. Each record says that the official who signed one published document stated this title, under an agency the Register's own `agencies` field reduces to exactly one organisation in this graph. The signer's name is never read. No placement is claimed: one document is one observation.",
   "source": {
     "kind": "federal_register_signature",
-    "derivedAt": "2026-09-21T17:45:07Z",
+    "derivedAt": "2026-10-22T08:34:48Z",
     "indexDir": "tests/fixtures/federal_register/signatures/index",
     "documentDir": "tests/fixtures/federal_register/signatures/documents"
   },

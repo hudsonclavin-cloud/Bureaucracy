@@ -67,6 +67,10 @@ python scripts/derive_us_code_stated_pay_evidence.py --dry-run   # an office's s
 python scripts/report_unpriced_positions.py --dry-run        # every position with no pay claim, and the prompt pack that covers all of them
 python scripts/report_cost_coverage.py --dry-run             # every node in exactly one cost class, and the route that would move each; writes docs/COST_COVERAGE.md
 python scripts/report_evidence_coverage.py --dry-run         # every current organisation in exactly one evidence class; the definition of done's criterion 3 gap as one number; writes docs/EVIDENCE_COVERAGE.md
+python scripts/export_flat_csv.py --dry-run                 # the flat CSV of every node with its figures and sources (one row per node, 52 columns); writes output/nodes.csv, which the Download card offers
+python scripts/update_cycle.py --plan                       # what the registry says is due and how each would be fetched; --hold runs the whole cycle (fetch, derive, rebuild, reports, gate, suite, smoke, budget) and never publishes; --offline skips the fetch; exit 3 = held
+python scripts/build_change_history.py --dry-run            # what this build changed against the committed graph, and the change budget's verdict (exit 3 = held); --record appends output/change_history.json, rewrites data/audit/review_queue.json and docs/CHANGE_HISTORY.md
+python scripts/report_source_registry.py --dry-run           # every source's cycle, the copy in use and what is due (data/source_registry.json re-derived against the graph); --due prints the update job's list; writes docs/SOURCE_REGISTRY.md
 python scripts/report_list_reconciliation.py --dry-run      # the five official lists against the graph: entries that reach a node, dispositions re-adjudicated, criterion 4(a)'s gap as one number; writes docs/LIST_RECONCILIATION.md
 python -c "import sys,json;sys.path.insert(0,'.');from data_pipeline.verification.pay_no_document import document_universes;print([(u['id'],len(u['names'])) for u in document_universes()])"  # the six title-listing pay documents the pay blanks are checked against, and how many titles each prints
 python scripts/report_research_prompts.py --dry-run         # the 100 title families holding the most unpriced posts in one prompt, the rest and every estimate in shards; writes docs/RESEARCH_PROMPT_4_*.md
@@ -6027,6 +6031,86 @@ nodes no document names. It would buy visibility, not evidence: the 90 priced
 posts among them are already priced and are drawn when the reader ticks "also
 show units the government has replaced". What would change it: the VA
 publishing which medical centres sit in which new network.
+
+### The source registry (`data_pipeline/freshness.py`, since 2026-10-22)
+
+`data/source_registry.json` is one row per source the graph publishes a figure
+or a piece of evidence from — 27 rows — each with the reviewer's statement of
+the publisher's cycle (eight cadence kinds), a publication lag and an overdue
+margin in days, how the copy's date is READ (off the graph root, off the
+maximum of a block field, off the fixtures' own fetch records, or a stated
+date tied to the graph by a `graphCheck`), the fixtures holding the copy, how
+the next copy would be fetched and what a fetched file must contain, and the
+published fields the source feeds (`graphFields`: a field name, a scoped
+`{field, where}` with `where` a list of `[path, value]` pairs, a `costStatus`
+list or a `nodeWhere`). `annotate_source_registry` runs last in the build and
+stamps the derivation on the root as `__sourceRegistry` (a root-only viewer
+field): per source the copy date, fetch date, next period end, expected-by and
+overdue-after dates (or a re-check date), and the status at build. Statuses:
+`current`, `newer_edition_expected`, `overdue`, `recheck_due`,
+`closed_record`, `copy_date_unknown`. The panel (`#info-freshness`) lists the
+sources behind the selected node and recomputes each status against the
+reader's date; the `official_pages` row is read per node from `lastVerified`.
+The gate mirrors the derivation stdlib-only (`source_registry_expected`) and
+refuses any difference; `tests/test_source_registry.py` pins the two equal.
+First derivation: 23 current, 1 newer edition expected (the Treasury
+statement), 2 overdue (FedScope, the AUSA pay chart), 1 closed record.
+`CURATION.md` §28.
+
+### The change history, the budget and the review queue (`data_pipeline/changes.py`, since 2026-10-22)
+
+`scripts/build_change_history.py` diffs the committed `output/graph.json`
+against the one just built (`changes.diff_graphs`): nodes added, removed,
+replaced, renamed, re-parented; measured costs moved, gained, lost; estimate
+moves; pay claims added, withdrawn (with why) and changed across the ten pay
+fields; verification and placement methods added, withdrawn, changed; sourced
+figures of another kind; the registry's copy dates; and the change budget rule
+by rule (`BUDGET_RULES`: node count drops, measured cost moved without a new
+statement, >5% of pay claims withdrawn, anchor backwards, anchor lost; a large
+move between statements is queued, not held). `--record` prepends the entry to
+`output/change_history.json` (served; the "What changed" card and the panel's
+"Changed in the build of" lines read it; older entries are trimmed to summary
+and budget), rewrites `data/audit/review_queue.json` (`changes.review_queue`:
+budget holds, withdrawals and removals from the entry, plus the graph's own
+`placementDirectoryDisagreement`, `cost_weight_dispute`, methodless
+`verificationFailure` and overdue registry sources; keyed by condition, so a
+re-found record keeps its opening date and a person's `resolved`; a vanished
+condition is closed, never deleted) and renders `docs/CHANGE_HISTORY.md`; it
+exits 3 when the budget held. The gate (`change_history_violations`) checks
+the latest entry's after-counts and anchor against the graph, every entry's
+rules and verdict, and that the queue holds open exactly the graph's
+disagreements. First record: within the budget; 53 open queue records.
+`CURATION.md` §29.
+
+### The update job (`scripts/update_cycle.py`, `.github/workflows/update_cycle.yml`, since 2026-10-22)
+
+One cycle: the registry's due list; a fetch per due row by its own rule (the
+statement through the crawler's functions into a dated fixture, taken by the
+rebuild through `--treasury-rows`; a fixed-address source re-fetched to a
+temporary file and swapped in only if the bytes differ; an address that
+changes each period recorded as needing a reviewed URL); a `contentCheck` per
+row that refuses a file that is not the document (type, byte floor, must and
+must-not strings, a statement's record date newer than the copy); then every
+derive step, the rebuild, the six reports, the gate, the suite, the smoke
+check and `build_change_history.py --record` (exit 3 = held). The report is
+`output/update_cycle_report.json`; `data/audit/update_cycles.json` counts
+cycles, and `--publish` is refused until three consecutive held cycles were
+clean. The workflow runs `--hold` monthly and on demand, uploads the report
+and opens a pull request from an `update/` branch; merging it is the publish
+step, and nothing pushes to `main`. `CURATION.md` §30.
+
+### Export and download (`scripts/export_flat_csv.py`, since 2026-10-22)
+
+`output/nodes.csv` is one row per node in tree order, 52 columns, each read
+off the node's published fields: the cost as published (blank, never zero,
+where none is), the sourced figures of other kinds with period and URL, the
+pay headline in the panel's own order with its document count, existence and
+placement evidence, the explained blanks' kinds. The gate
+(`flat_csv_violations`, `FLAT_CSV_COLUMNS` mirrored) refuses a file beside the
+graph whose rows or figures are not the nodes' own. The "Download" card lists
+the files `index.html` names in `GRAPH_DATA_SOURCES.downloads` with each one's
+served size; the smoke check HEAD-requests every link. The update job
+regenerates the CSV with the graph. `CURATION.md` §31.
 
 ### Names that state a count
 

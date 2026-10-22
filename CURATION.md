@@ -7121,3 +7121,288 @@ children that divide the remainder, and that the parts sum exactly.
   curated groupings beneath them do not) carries no block, and a plain line
   (the FBI's) has no parts.
 
+## 28. Freshness: the source registry, and two sources already overdue (2026-10-22)
+
+`docs/DEFINITION_OF_DONE.md` criterion 6 asks for a committed registry giving
+each source's expected cadence and the date of the copy in use, a job that
+reads it to decide what is due, and a panel that marks a figure "overdue" once
+its source has missed its expected publication by a stated margin. Before this
+every figure carried its period and nothing said whether a newer edition
+should exist.
+
+### 28.1 The registry proposes; the fixtures and the graph decide
+
+`data/source_registry.json` holds 27 rows, one per source this graph publishes
+a figure or a piece of evidence from. A row states the cadence (one of eight
+kinds: a period end rolling monthly, quarterly, twice a year or yearly; an
+effective date rolling yearly; a fixed month and day; no fixed cycle with a
+re-check interval; a closed record), the publication lag and the overdue
+margin in days, with a `basis` sentence beside each. **Every cadence is the
+reviewer's statement of the publisher's cycle, not a fact read from a
+publisher's document**, and the registry says so at its top; the lags and
+margins are starting values to be tuned on the first update cycles, which is
+what the definition of done itself says of them.
+
+What a row does NOT state is the date of the copy in use, wherever the
+repository already carries it. `data_pipeline/freshness.py` reads it on every
+build: off the graph root (the anchor's `record_date`), off the maximum of a
+block field across the nodes (`committeeDisbursements.period.end` for the
+House's rows alone, `employeesOfficialSource.period` turned into a month end,
+`govmanEntry.edition`), or off the fixtures' own `.meta.json` fetch records
+(the newest for a live export, the OLDEST for the Code sections, since the
+oldest copy is the one due a re-check). A refusal record, which carries no
+digest, is never a copy. Two rows state a date, and each is tied to the graph
+by a `graphCheck` the derivation re-makes: the White House report's
+"Wednesday, July 1, 2026" and the Plum archive's "January 21, 2021 - January
+20, 2025". A row is refused when its vocabulary is wrong, its fixtures do not
+exist, its stated date's check fails against the graph, or no copy date can
+be read; a refused row is not published.
+
+The derivation is stamped once on the graph root as `__sourceRegistry`
+(in `MINIMAL_GRAPH_ROOT_FIELDS`, so the viewer copy carries it): per source
+the copy's date and meaning, the fetch date, the next edition's period end,
+the date it was expected by, the date after which it counts as overdue (or the
+re-check date), the status at build time, and whether the copy was last read
+after its successor was expected. The gate (`source_registry_violations`)
+re-derives the whole block with its own stdlib reader from the registry, the
+meta files and the graph, as of the block's own build date, refuses a
+mismatch on any entry, a source the registry does not carry, a status outside
+the vocabulary, a key outside the entry vocabulary, the block on any node but
+the root, a future build date, and a source whose fields no node carries;
+`tests/test_source_registry.py` pins the module and the gate equal on four
+dates and corrupts the block nineteen ways.
+
+### 28.2 The status is judged by the reader's clock
+
+The panel (`#info-freshness`, under the cost block) lists every registry
+source whose fields the node carries — a measured unit names the Monthly
+Treasury Statement; a post priced from the Schedule names OPM's tables and the
+Code sections; a unit with a FedScope headcount names FedScope — and
+recomputes each status against the READER's date from the block's dates, so a
+source reads "OVERDUE" the day it becomes so and not on the next build. The
+`official_pages` row is read node by node: its `perNodeDate` is the node's
+own `lastVerified`, and the re-check line uses that. The directory view
+carries a one-sentence copy for a measured figure. The smoke check recomputes
+the Treasury statement's status from the served block with the same
+arithmetic and asserts the panel agrees, and opens a node fed by an overdue
+source and asserts the heading counts it.
+
+### 28.3 What the first derivation says
+
+As of 2026-10-22, of 27 sources: **23 current, 1 with a newer edition expected
+(the Monthly Treasury Statement: the September statement was expected by
+2026-10-20 and is not in use; it counts overdue after 2026-11-19), 2 overdue, 1
+closed record.** The two overdue sources are findings, not registry errors:
+
+- **OPM FedScope** — the copy in use counts March 2025, the September 2025
+  dataset was expected by 2026-05-28 on the registry's eight-month lag, and
+  the fixtures were last read 2026-09-08, after that date. Every headcount,
+  payroll figure and `cost_weight_dispute` rests on it, and the panel now says
+  so beside each.
+- **The U.S. Attorneys' AD pay chart** — the chart in use is the 2025 one
+  (effective 2026-01-12 for the 2026 edition), and the page read on 2026-10-08
+  carried no 2026 chart. `CURATION.md` §19.23 recorded the fact; the registry
+  makes it a flag on the two AUSA nodes.
+
+`scripts/report_source_registry.py` renders `docs/SOURCE_REGISTRY.md` and,
+with `--due`, prints the sources an update job should try this cycle — the
+three above today. Nothing fetches yet; that is criterion 5's job (§29).
+
+### 28.4 Declined
+
+- No cadence was asserted as the publisher's own: 2 U.S.C. 104a, 2 U.S.C.
+  4108 and 31 U.S.C. 1105(a) are named in the bases as the sections that set
+  the House's, the Senate's and the Budget's schedules, with the note that
+  this project has not read them.
+- `where` clauses in the registry are lists of `[path, value]` pairs rather
+  than objects, because `tests/test_viewer_graph.py` forbids `Object.entries`
+  and its kin in `js/`: the viewer copy is safe only because the viewer names
+  every key it reads, and a registry read with key enumeration would have been
+  the first exception.
+- The `official_pages` row's registry-level date is the newest page read
+  anywhere, which says little; the per-node date is the one the panel uses.
+
+## 29. The change history, the change budget and the review queue (2026-10-22)
+
+Three asks of `docs/DEFINITION_OF_DONE.md` share one mechanism: Part 2's
+"Change history" (a reader can see what changed since the last update),
+criterion 5's change budget (a build beyond the budget is held, not published)
+and criterion 7's review queue (one entry per held change, both documents and
+what each says, the only thing a person looks at between cycles). Before this
+each build knew what it withdrew and re-derived, and nothing recorded it.
+
+### 29.1 One diff, read off two graphs
+
+`data_pipeline/changes.diff_graphs(before, after)` compares the graph the site
+served (the committed `output/graph.json`) with the graph just built, node by
+node, and returns one history ENTRY: the anchor before and after; nodes added,
+removed, newly marked replaced, renamed and re-parented; every measured cost
+that moved, gained or lost its figure; the largest estimate moves; pay claims
+added, withdrawn (with why: the node is gone, now stands for several posts, or
+the record no longer applies) and changed, over all ten pay fields;
+verification and placement methods added, withdrawn and changed; sourced
+figures of another kind added, withdrawn and moved; the registry's copy dates
+that changed; and the budget's verdict rule by rule. Nothing in it is asserted
+— every item carries the node, the figures and the document the old claim
+rested on.
+
+### 29.2 The budget, as the definition starts it
+
+Five rules, each tripping on its own case and no other
+(`tests/test_change_history.py`): the node count drops; a measured cost moved
+while the statement did not change (with a NEW statement a move is the
+statement's own, so it is explained rather than held, and a line moving more
+than 50% on more than $1bn is queued for review); more than 5% of pay claims
+withdrawn; the anchor's period goes backwards; the anchor lost. The
+thresholds are the definition's own starting values, recorded on every entry,
+and are to be tuned on the first cycles. `scripts/build_change_history.py`
+exits 3 when a rule tripped, which is how the update job learns to hold.
+
+### 29.3 The queue keeps everything it ever opened
+
+`data/audit/review_queue.json` is rebuilt on every recorded build from two
+things: the entry (budget holds, nodes removed, claims and methods withdrawn,
+large measured moves between statements) and the graph's own published
+disagreements, which this project never resolves — `placementDirectoryDisagreement`
+(FERC: the Manual files it under Energy, the graph under the independent
+regulators), `cost_weight_dispute` (ten estimates divided by a curated
+headcount OPM's figure contradicts), a `verificationFailure` with no method (40
+units whose own document does not carry the graph's name, §23), and a registry
+source past its margin (§28). Each record is keyed by its condition, so a run
+re-finding it keeps the opening date and any `resolved` status a person wrote;
+a condition no longer found is CLOSED with the date and never deleted. First
+queue: **53 open** — 40 name questions, 10 headcount disputes, 2 overdue
+sources, 1 placement disagreement — and 0 budget holds, since the first
+recorded build changed nothing against the committed graph but the registry's
+appearance.
+
+### 29.4 What the reader gets
+
+`output/change_history.json` is served beside the graph. The "What changed"
+button under the title opens a card with the latest build's summary, the
+budget verdict, each rule, and the lists above by name, with a selector for
+earlier builds; older entries keep their summary and budget and drop the
+per-node lists (`FULL_ENTRIES`). The panel's cost block ends with "Changed in
+the build of <date>" on any node the latest entry touched, saying what — a
+measured figure's before and after with the two statements, a pay claim
+withdrawn and why, a renaming. The gate checks that the latest entry's
+after-counts and anchor are THIS graph's, that every entry carries every rule
+and its verdict agrees with them, and that the queue holds open exactly the
+disagreements the graph publishes; the smoke check opens the card and reads
+the summary off the served file.
+
+### 29.5 Declined
+
+- The gate does not re-run the diff: it has no "before" graph, and a check
+  that read git would be a check on the environment, not the file. It checks
+  the recorded entry against the graph it describes.
+- The queue is not shown on the site. It names documents and curation
+  decisions for the person who maintains the graph; the card tells a reader
+  how many items it holds and where it is.
+- No entry is ever rewritten by a later build, except that the same build
+  recorded twice replaces its own entry rather than stacking a duplicate.
+
+## 30. The update job, in hold mode (2026-10-22)
+
+`docs/DEFINITION_OF_DONE.md` criterion 5 names the job's six steps and a
+mitigation: for its first three cycles it runs in hold-everything mode and a
+person approves each publish. `scripts/update_cycle.py` is the job and
+`.github/workflows/update_cycle.yml` runs it on the 12th of each month and on
+demand.
+
+### 30.1 What one cycle does
+
+1. **What is due** comes from the registry (§28), re-derived against the
+   graph as of the day: today the September Treasury statement (expected, not
+   yet in use), FedScope and the AUSA pay chart (overdue).
+2. **How each is fetched** is the row's own rule. The statement is asked for
+   through the crawler's functions — the API's newest record date, and the
+   rows only when newer than the copy in use — and written as a dated
+   fixture with a `.meta.json`, which the rebuild then takes through
+   `--treasury-rows`. A fixed-address source is re-fetched to a temporary file
+   with `fetch_fixture.fetch` (its robots and User-Agent policy), checked, and
+   replaces the committed fixture only when the bytes differ. A source whose
+   address changes each period (FedScope, the House statement, OPM's yearly
+   tables) is recorded as **needing a reviewed URL**: a person finds the new
+   edition on the landing page and records it; nothing guesses an address.
+3. **A fetch that is not the document is refused** (criterion 5 step 2, the
+   two cases this project met): the registry row's `contentCheck` names the
+   content type, a byte floor, strings that must and must not appear ("Under
+   Maintenance", "Request Access") and, for a statement, that the newest
+   record date must be newer than the copy in use. A refused file is deleted
+   unread and recorded with its reason; a host that refuses is "unavailable
+   this cycle" and never blocks the other sources.
+4. **Then the pipeline**: all 27 derive steps in an order that puts a step
+   after the evidence it reads, the offline rebuild, the six generated
+   reports, the gate, the test suite, the browser smoke check, and
+   `build_change_history.py --record`, whose exit 3 is the budget's hold
+   (§29). Any required step failing holds the cycle.
+5. **The verdict** is written to `output/update_cycle_report.json` (every
+   fetch and refusal with its reason, every step's exit and the tail of its
+   output, the budget's reasons, the queue's open count) and a short record
+   is appended to `data/audit/update_cycles.json`. `--publish` is refused
+   until that file shows three consecutive clean held cycles; even then the
+   script never pushes — it marks the result publishable and the workflow
+   decides.
+
+### 30.2 The workflow is the person's approval point
+
+The workflow runs `--hold`, uploads the report and the log as artefacts, and
+opens a pull request from an `update/<date>-<run>` branch carrying the fetched
+fixtures, the re-derived evidence, the rebuilt graph, the reports, the change
+history and the queue, with the report's summary in its body. GitHub Pages
+serves `main`, so merging the pull request IS the publish step, and in hold
+mode a person does it. Switching the workflow to `--publish` after three clean
+cycles is the owner's decision and is written there as such. The workflow
+never pushes to `main` and never force-pushes; `tests/test_update_cycle.py`
+pins both and that every derive script the repository has is in the job's
+list.
+
+### 30.3 Measured, and not yet measured
+
+`--plan` on 2026-10-22 lists the three due sources and their fetch rules. The
+offline hold cycle (`--hold --offline --no-tests --no-smoke`) was run once from
+this sandbox to prove the orchestration: the result is in §30.4 below. No
+scheduled cycle has run: criterion 5's "done when" — three consecutive monthly
+cycles with no manual step and no bad publish — starts counting when the
+workflow first fires, and nothing here can make that happen sooner. Two
+things to expect on the first live cycle: the September statement will change
+every measured figure and the header-sum tests pinned to the cent against the
+August rows will fail, which holds the cycle correctly and asks a person to
+re-pin them against the new fixture; and hosts that refuse this sandbox's
+proxy may answer GitHub's runners, or refuse them too, which the report will
+say source by source.
+
+## 31. Export and download (2026-10-22)
+
+The fourth reader feature of `docs/DEFINITION_OF_DONE.md` Part 2: a reader can
+download the graph and a flat CSV of nodes and figures, with the sources, from
+the site. `graph.json` has been public since the site went up and was never
+offered; there was no CSV.
+
+`scripts/export_flat_csv.py` writes `output/nodes.csv` beside the graph: one row
+per node in tree order, 52 columns, every one read off the node's own published
+fields and nothing computed that the panel does not already say — the cost as
+published (status, figure, basis, the Treasury row and FiscalData URL for a
+measured line, the validation word for a withheld one; blank where the graph
+publishes none, and never a zero), the sourced figures of other kinds with
+their periods and URLs (File A, OMB, audited net cost, the Combined Statement,
+the chambers' disbursements, FedScope headcount and payroll), the pay headline
+the panel shows for a post in the panel's own order with the document's URL
+and the count of documents it rests on, existence and placement evidence with
+method, URL and date, and the kinds of the explained blanks. 5,512 rows, about
+2.2 MB. The gate re-reads the file beside the graph and refuses one whose rows
+are not the graph's nodes, whose parents, statuses, figures, methods or pay
+fields are not the nodes' own, or that prints a zero cost;
+`tests/test_export_csv.py` pins the gate's column mirror to the script's and
+the committed file to a fresh render.
+
+The "Download" button under the title opens a card listing the files the page
+itself names in `index.html` (`GRAPH_DATA_SOURCES.downloads`): the published
+graph, the viewer copy, the CSV, the change history, the source registry and
+the curated base graph, each with one sentence saying what it is and the size
+the server reports when the card opens. The smoke check opens the card,
+HEAD-requests every link and asserts each is served. The update job
+regenerates the CSV with the graph (`REPORT_STEPS`), so a download is never
+older than the page.
+

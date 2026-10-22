@@ -1051,6 +1051,93 @@ try {
     check("a subcommittee says it is funded through its committee", /funded through its committee/.test(await text("#info-stats")), subcommittee.name);
   }
 
+  // Freshness (criterion 6): the panel lists the sources behind a node and
+  // marks one overdue when the reader's date is past the registry's
+  // overdueAfter. The expected status is recomputed here from the served
+  // root block with the same date arithmetic, and the page must agree.
+  const registry = graphJson.__sourceRegistry;
+  check("the served graph's root carries the source registry", Boolean(registry && Array.isArray(registry.sources) && registry.sources.length > 10), JSON.stringify(registry && registry.counts));
+  if (registry && Array.isArray(registry.sources)) {
+    const today = new Date().toISOString().slice(0, 10);
+    const statusOf = (entry) => {
+      const kind = String((entry.cadence || {}).kind || "");
+      const e = entry.expected || {};
+      if (kind === "closed_record") return "closed_record";
+      if (kind === "on_republication") return !e.recheckDue ? "copy_date_unknown" : today > e.recheckDue ? "recheck_due" : "current";
+      if (!(entry.copy || {}).date || !e.expectedBy) return "copy_date_unknown";
+      return today <= e.expectedBy ? "current" : today <= e.overdueAfter ? "newer_edition_expected" : "overdue";
+    };
+    const mts = registry.sources.find((s) => s.id === "monthly_treasury_statement");
+    const measured = allNodes.find((n) => n.cost_status === "official" && !n.synthetic && unique(n) && /^Department of/.test(n.name));
+    check("a measured node and the Treasury statement's registry row exist", Boolean(mts && measured), `${Boolean(mts)} ${Boolean(measured)}`);
+    if (mts && measured) {
+      await openByName(measured.name);
+      const freshText = await text("#info-freshness");
+      const mtsLine = await page.$eval('#info-freshness li[data-source="monthly_treasury_statement"]', (el) => ({ text: el.textContent, status: el.dataset.status })).catch(() => null);
+      check("a measured node's panel lists the Treasury statement among its sources", Boolean(mtsLine) && mtsLine.text.includes(mts.label), freshText.slice(0, 400));
+      check("the panel's status for the statement is the registry's dates read against today", Boolean(mtsLine) && mtsLine.status === statusOf(mts) && (statusOf(mts) !== "overdue" || /^OVERDUE/.test(mtsLine.text)), mtsLine ? `${mtsLine.status} vs ${statusOf(mts)}` : "no line");
+      check("the panel names the copy in use by its date", Boolean(mtsLine) && mtsLine.text.includes(String(mts.copy.date)), mtsLine ? mtsLine.text : "");
+      measurements.freshness = { node: measured.id, statement: statusOf(mts), counts: registry.counts };
+    }
+    const overdue = registry.sources.filter((s) => statusOf(s) === "overdue");
+    const overdueNode = overdue.length
+      ? allNodes.find((n) => unique(n) && !/position/i.test(String(n.type || "")) && overdue.some((s) => (s.graphFields || []).some((spec) => typeof spec === "string" ? Boolean(n[spec] && typeof n[spec] === "object") : spec && spec.field && n[spec.field] && typeof n[spec.field] === "object" && (spec.where || []).every(([k, v]) => String(n[spec.field][k]) === String(v)))))
+      : null;
+    if (overdueNode) {
+      await openByName(overdueNode.name);
+      const overdueText = await text("#info-freshness");
+      check("a node fed by an overdue source says OVERDUE and counts it in the heading", /OVERDUE — /.test(overdueText) && /of \d+ overdue:/.test(overdueText), overdueText.slice(0, 400));
+      measurements.freshnessOverdue = { node: overdueNode.id, sources: overdue.map((s) => s.id) };
+    } else {
+      measurements.freshnessOverdue = overdue.length ? "skipped: no reachable organisation carries an overdue source's fields" : "skipped: no source is overdue today";
+    }
+  }
+
+  // What changed (Part 2): the card shows the latest recorded build's own
+  // summary and budget verdict from output/change_history.json, which the
+  // check reads for itself.
+  const historyPath = path.join(ROOT, "output", "change_history.json");
+  if (fs.existsSync(historyPath)) {
+    const history = JSON.parse(fs.readFileSync(historyPath, "utf8"));
+    const latest = Array.isArray(history) && history.length ? history[0] : null;
+    check("the change history has a latest entry", Boolean(latest && latest.summary), "none");
+    if (latest) {
+      await page.click("#btn-change-history");
+      await page.waitForTimeout(400);
+      const open = await page.$eval("#change-history", (el) => el.classList.contains("open") && el.getAttribute("aria-hidden") === "false");
+      check("the What changed card opens", open, String(open));
+      const body = await text("#change-history-body");
+      check("the card prints the latest entry's own summary", body.includes(latest.summary.slice(0, 80)), body.slice(0, 300));
+      check("the card states the budget verdict", latest.budget && latest.budget.held ? /HELD by the change budget/.test(body) : /Within the change budget/.test(body), body.slice(0, 120));
+      const foot = await text("#change-history-foot");
+      check("the card names the review queue and its open count", /review queue/.test(foot) && (typeof latest.reviewQueueOpen !== "number" || foot.includes(String(latest.reviewQueueOpen))), foot);
+      await page.keyboard.press("Escape");
+      await page.waitForTimeout(200);
+      check("Escape closes the card", await page.$eval("#change-history", (el) => !el.classList.contains("open")), "still open");
+      measurements.changeHistory = { builtAt: latest.builtAt, held: Boolean(latest.budget && latest.budget.held), touched: (latest.touched || []).length };
+    }
+  } else {
+    measurements.changeHistory = "skipped: no output/change_history.json";
+  }
+
+  // Download (Part 2): the card lists the files the page names, each a link
+  // the server actually serves, the CSV among them.
+  await page.click("#btn-download");
+  await page.waitForTimeout(600);
+  const downloadLinks = await page.$$eval("#download-body a", (els) => els.map((a) => ({ href: a.getAttribute("href"), name: a.textContent })));
+  check("the Download card lists the graph, the CSV and the registry", downloadLinks.some((l) => l.name === "graph.json") && downloadLinks.some((l) => l.name === "nodes.csv") && downloadLinks.some((l) => l.name === "source_registry.json"), JSON.stringify(downloadLinks));
+  let served = 0;
+  for (const link of downloadLinks) {
+    const response = await page.request.fetch(new URL(link.href, page.url()).toString(), { method: "HEAD" }).catch(() => null);
+    if (response && response.ok()) served += 1;
+  }
+  check("every file the Download card offers is served", served === downloadLinks.length, `${served} of ${downloadLinks.length}`);
+  const sizes = await page.$$eval("#download-body .dl-size", (els) => els.map((e) => e.textContent));
+  check("the card shows each file's size", sizes.length === downloadLinks.length && sizes.every((s) => /\d/.test(s)), JSON.stringify(sizes));
+  await page.keyboard.press("Escape");
+  await page.waitForTimeout(200);
+  measurements.downloads = downloadLinks.map((l) => l.name);
+
   // A measured unit's total adds up visibly (criterion 4(b)): the panel lists
   // every part the statement prints beneath its header, which node each landed
   // on, what reaches no node and is divided among the estimated children, and

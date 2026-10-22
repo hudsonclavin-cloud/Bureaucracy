@@ -81,12 +81,13 @@ class PrunerTests(unittest.TestCase):
     def test_root_only_fields_do_not_leak_onto_children(self):
         tree = {
             "id": "root", "name": "Root", "type": "Foundation",
-            "__budgetSummary": {"label": "x"}, "relationships": [], "__heldPayDocuments": [],
+            "__budgetSummary": {"label": "x"}, "relationships": [], "__heldPayDocuments": [], "__sourceRegistry": {"sources": []},
             "children": [{
                 "id": "kid", "name": "Kid", "type": "Agency",
                 "__budgetSummary": {"label": "should not survive"},
                 "relationships": [{"a": 1}],
                 "__heldPayDocuments": [{"id": "should not survive"}],
+                "__sourceRegistry": {"sources": ["should not survive"]},
                 "children": [],
             }],
         }

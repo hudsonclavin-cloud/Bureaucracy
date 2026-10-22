@@ -7,8 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="./css/shell.css?v=20261022d">
-<link rel="stylesheet" href="./css/atlas.css?v=20261022d">
+<link rel="stylesheet" href="./css/shell.css?v=20261022f">
+<link rel="stylesheet" href="./css/atlas.css?v=20261022f">
 <title>U.S. Federal Government — 3D Explorer</title>
 </head>
 <body>
@@ -100,6 +100,8 @@
   <div id="node-counter">0 / 0 nodes loaded</div>
   <div id="data-provenance">Reading the published graph…</div>
   <button id="btn-reading-guide" type="button" aria-label="Open the guide to reading this graph">How to read this</button>
+  <button id="btn-change-history" type="button" aria-label="Open the record of what the last build changed">What changed</button>
+  <button id="btn-download" type="button" aria-label="Download the graph and a flat CSV of nodes and figures">Download</button>
 </div>
 
 <div id="lens-ctrl" role="group" aria-label="Choose what the picture answers">
@@ -198,8 +200,45 @@
   </div>
 </div>
 
+<!-- Filled by js/ui.js from output/change_history.json, the record each
+     build writes of what it changed against the graph published before it. -->
+<div id="change-history" role="dialog" aria-modal="true" aria-labelledby="change-history-title" aria-hidden="true">
+  <div id="change-history-card">
+    <h2 id="change-history-title">What changed</h2>
+    <div class="rg-sub" id="change-history-sub">In the last build, against the graph published before it</div>
+    <div id="change-history-body"></div>
+    <div class="rg-foot" id="change-history-foot"></div>
+    <button id="btn-change-history-close" type="button">Back to the graph</button>
+  </div>
+</div>
+
+<!-- The downloads: the graph as published, the viewer copy, a flat CSV of
+     nodes and figures with their sources, the change history, the source
+     registry. Each line is written by js/ui.js from the file list below and
+     the files' own sizes, read when the card opens. -->
+<div id="download" role="dialog" aria-modal="true" aria-labelledby="download-title" aria-hidden="true">
+  <div id="download-card">
+    <h2 id="download-title">Download</h2>
+    <div class="rg-sub">The data behind this page, as the site serves it</div>
+    <div id="download-body"></div>
+    <div class="rg-foot" id="download-foot"></div>
+    <button id="btn-download-close" type="button">Back to the graph</button>
+  </div>
+</div>
+
 <script>
 window.GRAPH_DATA_SOURCES = {
+  // What the last build changed (scripts/build_change_history.py); null disables the card.
+  changeHistory: "./output/change_history.json",
+  // The downloads card (Part 2, "Export / download"): path, what it is, how it was made.
+  downloads: [
+    ["./output/graph.json", "graph.json", "the published graph: every node with every field, the pipeline's own state file; what the gate validates"],
+    ["./output/graph.min.json", "graph.min.json", "the viewer's copy: the same nodes with only the fields the page reads"],
+    ["./output/nodes.csv", "nodes.csv", "one row per node: cost as published, sourced figures of other kinds with their periods and URLs, the pay headline, existence and placement evidence (scripts/export_flat_csv.py)"],
+    ["./output/change_history.json", "change_history.json", "what each recorded build changed against the graph published before it, and the change budget's verdict"],
+    ["./data/source_registry.json", "source_registry.json", "every source's publication cycle, how the copy in use is dated, and how the next copy is fetched"],
+    ["./data/federal_gov_complete_1.json", "federal_gov_complete_1.json", "the curated base graph the pipeline builds from: names, types, descriptions and the uncited curated figures"],
+  ],
   // The exporter's gated tree is the site's base graph. `base` is the fallback
   // the loader drops to if the pipeline artefact is missing or malformed.
   //
@@ -250,8 +289,8 @@ window.setTimeout(function () {
   }
 }, 20000);
 </script>
-<script type="module" src="./js/atlas.js?v=20261022d"></script>
-<script type="module" src="./js/ui.js?v=20261022d"
+<script type="module" src="./js/atlas.js?v=20261022f"></script>
+<script type="module" src="./js/ui.js?v=20261022f"
   onerror="window.__graphBootFailed('Failed to load application scripts (network or CDN unreachable). Check your connection and reload.')"></script>
 </body>
 </html>

@@ -334,7 +334,10 @@ MINIMAL_GRAPH_FIELDS = (
 #: panel applies to every figure, and the edge index.
 #: `__heldPayDocuments` is the one list every `payNoDocument` block refers to
 #: (pay_no_document.py): six documents, stored once on the root in both copies.
-MINIMAL_GRAPH_ROOT_FIELDS = ("__budgetSummary", "relationships", "__heldPayDocuments")
+#: `__sourceRegistry` is the source registry's derived block (freshness.py):
+#: each source's cycle, the copy in use and what is due, which the panel reads
+#: against the reader's own date to mark a figure's source overdue.
+MINIMAL_GRAPH_ROOT_FIELDS = ("__budgetSummary", "relationships", "__heldPayDocuments", "__sourceRegistry")
 
 
 #: Blocks whose `documents` list is identical across many nodes. In the viewer
@@ -3766,6 +3769,11 @@ def build_graph(
     from data_pipeline.verification.pay_no_document import apply_pay_no_document  # noqa: E402 — imports this module
 
     validation["pay_no_document"] = apply_pay_no_document(graph) if pay_no_document else {"skipped": True}
+    # The source registry, last of all: each source's copy date is read off the
+    # FINAL blocks on the nodes, so it runs after every pass that stamps one.
+    from data_pipeline.freshness import annotate_source_registry  # noqa: E402
+
+    validation["source_registry"] = annotate_source_registry(graph)
     validity_report["audit_report"] = {"summary": deepcopy(audit_report.get("summary", {}))}
     validity_report["root_orphan_resolution"] = orphan_resolution
     validity_report["treasury_outlay_rows"] = outlay_stats

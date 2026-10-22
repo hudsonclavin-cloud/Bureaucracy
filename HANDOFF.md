@@ -75,10 +75,56 @@ on any JS change).
   addable units, whether to stop (rather than show) the $2.88tn apportionment,
   5–7 self-update, change history and export.
 
+- **Criterion 6 (Freshness), 2026-10-22.** `data/source_registry.json` (27
+  sources) derived onto the graph root as `__sourceRegistry` by
+  `data_pipeline/freshness.py`; the panel's `#info-freshness` block marks a
+  source overdue against the reader's date; `docs/SOURCE_REGISTRY.md` and
+  `--due` list what the update job should try. Today: the September Treasury
+  statement is expected and not in use; FedScope (March 2025) and the AUSA
+  pay chart (2025) are overdue. CURATION.md §28.
+
+- **Change history, budget and review queue, 2026-10-22.**
+  `scripts/build_change_history.py --record` diffs the committed graph
+  against the build (`data_pipeline/changes.py`), writes
+  `output/change_history.json` (the site's "What changed" card and the
+  panel's per-node lines), `data/audit/review_queue.json` (53 open: 40 name
+  questions, 10 headcount disputes, 2 overdue sources, 1 placement
+  disagreement) and `docs/CHANGE_HISTORY.md`; exit 3 means the change
+  budget held. The gate checks the latest entry against the graph and the
+  queue against the graph's disagreements. CURATION.md §29.
+
+- **The update job, 2026-10-22.** `scripts/update_cycle.py --plan|--hold`
+  (fetch what the registry says is due with a per-row content check, derive,
+  rebuild, reports, gate, suite, smoke, change budget; report in
+  `output/update_cycle_report.json`; `--publish` refused until three clean
+  held cycles) and `.github/workflows/update_cycle.yml` (12th of each month
+  and on demand, hold mode, opens a pull request; merging publishes). No
+  scheduled cycle has run. CURATION.md §30.
+
+- **Export, 2026-10-22.** `scripts/export_flat_csv.py` writes `output/nodes.csv`
+  (one row per node, 52 columns, figures the nodes' own); the "Download" card
+  offers it with both graph copies, the change history, the registry and the
+  base graph; the gate checks the CSV beside the graph. All four reader
+  features of the definition of done are built. CURATION.md §31.
+
 ## Next actions, in order
 
+0. **Run the first update cycle (built 2026-10-22, CURATION.md §30).**
+   `python scripts/update_cycle.py --plan` lists what is due;
+   `python scripts/update_cycle.py --hold` fetches it (the September statement
+   through the crawler's functions into a dated fixture, the AUSA chart in
+   place), re-derives, rebuilds, runs the gate, the suite, the smoke check and
+   the change budget, and writes `output/update_cycle_report.json`. Expect
+   the first live run to be HELD: `tests/test_treasury_header_sums.py` pins
+   nine sums to the cent against the August rows and must be re-pinned
+   against the new fixture, and `docs/GO.md`'s `--treasury-rows` path moves.
+   The monthly workflow (`.github/workflows/update_cycle.yml`) fires only
+   once it is on `main`; merge this branch, then use "Run workflow" for the
+   first cycle rather than waiting for the 12th. Three clean held cycles
+   before the owner switches it to `--publish`.
 1. **September Treasury statement (~Oct 14–15).** It closes FY2026, so every
-   measured cost moves (~1/12 up) and estimates shift. Procedure:
+   measured cost moves (~1/12 up) and estimates shift. The update job above
+   does this; the manual procedure stays recorded:
    ```bash
    python -c "import sys,json,datetime;sys.path.insert(0,'.');from data_pipeline.crawler import treasury_outlays as t;d=t.fetch_latest_record_date(timeout=60);print(d)"
    # if d == 2026-09-30: fetch rows with t.fetch_rows_for_record_date(d) and write

@@ -231,8 +231,8 @@ All four were chosen.
 |---|---|---|
 | **Every figure explains itself** | every figure on the panel and in the directory names its source, period and kind in words | largely met; keep the smoke check asserting it |
 | **Totals add up visibly** | a measured unit's panel shows the sum in criterion 4(b): what each child contributes, what is estimated, what is not attributed | built 2026-10-22: `treasury_sum` on 57 measured units, the panel's "How the total adds up" block (CURATION.md §27) |
-| **Change history** | a reader can see what changed since the last update: figures that moved, nodes added or replaced, claims withdrawn, and why | not built; each build already knows what it withdrew and re-derived |
-| **Export / download** | a reader can download the graph and a flat CSV of nodes and figures, with the sources, from the site | partly: `graph.json` is public but not offered as a download; no CSV |
+| **Change history** | a reader can see what changed since the last update: figures that moved, nodes added or replaced, claims withdrawn, and why | built 2026-10-22: `output/change_history.json` from `scripts/build_change_history.py`, the "What changed" card and the panel's per-node lines (CURATION.md §29) |
+| **Export / download** | a reader can download the graph and a flat CSV of nodes and figures, with the sources, from the site | built 2026-10-22: `output/nodes.csv` (`scripts/export_flat_csv.py`, 52 columns) and the "Download" card offering it, both graph copies, the change history and the registry (CURATION.md §31) |
 
 ---
 
@@ -247,9 +247,15 @@ about failures and held changes.
 **Done when** the job has run on its schedule for **three consecutive monthly
 cycles** with no manual step and no bad publish.
 
-**Today.** Nothing runs on a schedule. `data_pipeline/scheduler/nightly_update.py`
-exists but nothing invokes it, and there is no CI workflow. Every update is a
-person or an agent running commands.
+**Today.** **Built 2026-10-22:** `scripts/update_cycle.py` runs the six steps
+below (`--plan`, `--hold`, `--offline`; `--publish` refused until three clean held
+cycles are recorded in `data/audit/update_cycles.json`), with a per-source
+`contentCheck` for step 2 and `build_change_history.py` for step 5;
+`.github/workflows/update_cycle.yml` runs it in hold mode on the 12th of each
+month and on demand and opens a pull request, which a person merges to publish.
+No scheduled cycle has run yet; the three-cycle count starts when the workflow
+first fires (CURATION.md §30). `data_pipeline/scheduler/nightly_update.py` is
+still not invoked.
 
 **What the job does, in order:**
 
@@ -322,8 +328,16 @@ is written [Likely]:
 | Statement of Net Cost; Combined Statement | annual, after fiscal year end |
 | U.S. Code sections | when amended (re-check yearly) |
 
-**Today.** Every figure carries its period. There is no registry, no overdue
-flag, and nothing decides what is due.
+**Today.** Every figure carries its period. **Built 2026-10-22:**
+`data/source_registry.json` (27 sources, cadence with a stated basis, copy date
+read off the graph or the fixtures' fetch records), derived onto the graph root
+as `__sourceRegistry` by `data_pipeline/freshness.py`, mirrored by the gate;
+the panel lists the sources behind each node and marks one overdue against the
+reader's date; `scripts/report_source_registry.py --due` is the list the job
+reads. First derivation: 23 current, 1 newer edition expected (the Treasury
+statement), 2 overdue (FedScope March 2025; the 2025 AUSA pay chart), 1 closed
+record (CURATION.md §28). Cadences are the reviewer's, to be tuned on the first
+cycles; no job reads the registry yet (criterion 5).
 
 ### 7. Conflicts: hold and queue, never resolve automatically
 
@@ -341,8 +355,15 @@ never settles a disagreement by itself.
 **Today.** Withdrawal is already built in: every evidence field is owned and
 cleared each build, and a renamed node loses its evidence. Disagreements are
 already published, not resolved (`placementDirectoryDisagreement`,
-`cost_weight_dispute`, `CODE_CONTRADICTED_LISTINGS`). What is missing is the
-queue itself, and a record of what changed between two builds.
+`cost_weight_dispute`, `CODE_CONTRADICTED_LISTINGS`). **Built 2026-10-22:**
+`data/audit/review_queue.json`, rebuilt by `scripts/build_change_history.py --record`
+from each build's diff (holds, withdrawals, removals) and the graph's own
+disagreements, each record with both documents and what each says, closed and
+never deleted when its condition goes; and `output/change_history.json`, the
+record of what changed between two builds. First queue: 53 open (40 name
+questions, 10 headcount disputes, 2 overdue sources, 1 placement
+disagreement); CURATION.md §29. The job that writes both each cycle is
+criterion 5's.
 
 This sits inside criterion 5 without contradicting it: everything a check can
 settle publishes automatically, and everything that needs judgement is held.
@@ -358,10 +379,10 @@ settle publishes automatically, and everything that needs judgement is held.
 | 3 | Evidence | every current organisation sourced | 623 / 870 | 247 |
 | 4a | Lists | every list unit reconciled | 403 of 403 unmatched entries disposed, 21 of 21 curated names resolved (2026-10-22) | 19: 3 unsure + 16 real units not yet added |
 | 4b | Money traced | every measured parent sums visibly | 57 of 57 measured units with parts show the sum; not attributed 0 (2026-10-22) | $2.88tn beneath 22 units is still apportioned to estimated children, now named |
-| R | Reader | four features | 2 of 4 (figures explain themselves; totals add up visibly) | change history, export |
-| 5 | Self-update | 3 clean automatic cycles | no scheduler | all |
-| 6 | Freshness | registry + overdue flag | periods shown | registry, flag |
-| 7 | Conflicts | review queue + change log | withdrawal built | queue, log |
+| R | Reader | four features | 4 of 4 (figures explain themselves; totals add up visibly; change history; export/download) | — |
+| 5 | Self-update | 3 clean automatic cycles | job and monthly hold-mode workflow built 2026-10-22; 0 scheduled cycles run | three clean cycles, then the owner's switch to --publish |
+| 6 | Freshness | registry + overdue flag | registry (27 sources) + overdue flag built 2026-10-22; 2 sources overdue today | the job that acts on "due" (criterion 5); cadences to tune |
+| 7 | Conflicts | review queue + change log | queue (53 open) and change log built 2026-10-22; withdrawals recorded with the document and why | the job that writes both each cycle (criterion 5) |
 
 The 3,221 in row 2 is the 3,333 positions with no pay figure, less the 112
 already explained.

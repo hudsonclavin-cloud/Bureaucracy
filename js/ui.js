@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261022d";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261022d";
+import { createGovernmentGraph } from "./graph.js?v=20261022f";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261022f";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -2867,6 +2867,414 @@ function setGraphBudgetSummary(summary) {
   graphBudgetSummary = summary && typeof summary === "object" ? summary : null;
 }
 
+// The source registry (data/source_registry.json, derived by freshness.py onto
+// the root as `__sourceRegistry`): each source's cycle, the copy in use and
+// the dates by which the next copy was expected. The status is recomputed
+// here against the READER's date, not copied from the build, so a figure's
+// source reads "overdue" the day it becomes so and not on the next build.
+let graphSourceRegistry = null;
+function setGraphSourceRegistry(block) {
+  graphSourceRegistry = block && typeof block === "object" && Array.isArray(block.sources) ? block : null;
+}
+function isoToday() {
+  return new Date().toISOString().slice(0, 10);
+}
+function daysBetween(fromIso, toIso) {
+  return Math.round((Date.parse(`${toIso}T00:00:00Z`) - Date.parse(`${fromIso}T00:00:00Z`)) / 86400000);
+}
+function dottedValue(value, path) {
+  let cursor = value;
+  for (const part of String(path).split(".")) {
+    if (!cursor || typeof cursor !== "object") return undefined;
+    cursor = cursor[part];
+  }
+  return cursor;
+}
+// `where` is a list of [path, wanted] pairs (freshness.where_matches): a
+// list, so nothing here enumerates an object's keys.
+function whereMatches(block, where) {
+  if (!Array.isArray(where)) return true;
+  for (const [path, wanted] of where) {
+    const actual = dottedValue(block, path);
+    if (wanted && typeof wanted === "object" && "prefix" in wanted) {
+      if (!String(actual == null ? "" : actual).startsWith(String(wanted.prefix))) return false;
+    } else if (String(actual == null ? "" : actual) !== String(wanted)) {
+      return false;
+    }
+  }
+  return true;
+}
+// Mirrors freshness.node_uses_source: a string names a block field, {field,
+// where} scopes it, {costStatus} names a measured cost, {nodeWhere} tests
+// node-level keys.
+function nodeUsesSource(node, graphFields) {
+  for (const spec of Array.isArray(graphFields) ? graphFields : []) {
+    if (typeof spec === "string") {
+      if (node[spec] && typeof node[spec] === "object") return true;
+    } else if (spec && typeof spec === "object") {
+      if (Array.isArray(spec.costStatus)) {
+        if (spec.costStatus.includes(String(node.cost_status || ""))) return true;
+      } else if (spec.nodeWhere) {
+        if (whereMatches(node, spec.nodeWhere)) return true;
+      } else if (spec.field) {
+        const block = node[spec.field];
+        if (block && typeof block === "object" && whereMatches(block, spec.where)) return true;
+      }
+    }
+  }
+  return false;
+}
+// The status as of `today` (ISO), mirroring freshness.status_at; a per-node
+// date (a page's own lastVerified) replaces the registry's copy date for a
+// source read node by node.
+function sourceStatusToday(entry, today, nodeDate) {
+  const kind = String((entry.cadence || {}).kind || "");
+  const copyDate = nodeDate || (entry.copy || {}).date || null;
+  const expected = entry.expected || {};
+  if (kind === "closed_record") return { status: "closed_record", copyDate };
+  if (kind === "on_republication") {
+    let due = expected.recheckDue || null;
+    if (nodeDate && entry.cadence && entry.cadence.recheckDays) {
+      const base = new Date(`${nodeDate}T00:00:00Z`);
+      base.setUTCDate(base.getUTCDate() + Number(entry.cadence.recheckDays));
+      due = base.toISOString().slice(0, 10);
+    }
+    if (!due) return { status: "copy_date_unknown", copyDate };
+    return { status: today > due ? "recheck_due" : "current", copyDate, recheckDue: due };
+  }
+  if (!copyDate || !expected.expectedBy) return { status: "copy_date_unknown", copyDate };
+  if (today <= expected.expectedBy) return { status: "current", copyDate, expectedBy: expected.expectedBy, next: expected.next };
+  if (today <= expected.overdueAfter) return { status: "newer_edition_expected", copyDate, expectedBy: expected.expectedBy, overdueAfter: expected.overdueAfter, next: expected.next };
+  return { status: "overdue", copyDate, expectedBy: expected.expectedBy, overdueAfter: expected.overdueAfter, next: expected.next, daysLate: daysBetween(expected.expectedBy, today) };
+}
+function freshnessSentence(entry, verdict) {
+  const copy = entry.copy || {};
+  const read = copy.fetchedAt && copy.fetchedAt !== verdict.copyDate ? `, last read ${copy.fetchedAt}` : "";
+  switch (verdict.status) {
+    case "closed_record":
+      return `${entry.label}: a closed record (${copy.basis || copy.meaning}); nothing newer is expected.`;
+    case "recheck_due":
+      return `${entry.label}: no fixed publication cycle; the copy in use was read ${verdict.copyDate}, and a re-check was due after ${verdict.recheckDue} and has not been made.`;
+    case "newer_edition_expected":
+      return `${entry.label}: a newer edition was expected by ${verdict.expectedBy} and is not yet in use here; the copy in use is dated ${verdict.copyDate}${read}. Counted overdue after ${verdict.overdueAfter}.`;
+    case "overdue":
+      return `OVERDUE — ${entry.label}: the edition for ${verdict.next} was expected by ${verdict.expectedBy}, ${verdict.daysLate} days ago; the copy in use is dated ${verdict.copyDate}${read}.`;
+    case "copy_date_unknown":
+      return `${entry.label}: the date of the copy in use could not be read.`;
+    default:
+      if (String((entry.cadence || {}).kind || "") === "on_republication") {
+        return `${entry.label}: no fixed publication cycle; the copy in use was read ${verdict.copyDate}; a re-check is due after ${verdict.recheckDue}.`;
+      }
+      return `${entry.label}: the copy in use is dated ${verdict.copyDate} (${copy.meaning}); the next edition is expected by ${verdict.expectedBy}.`;
+  }
+}
+// What the last build changed (output/change_history.json, written by
+// scripts/build_change_history.py against the graph published before it).
+// Loaded once at boot; the card renders the latest entry and the panel says,
+// per node, what changed for it. A missing file disables both quietly: the
+// record is a reader feature, never a claim about the data.
+let graphChangeHistory = [];
+function changeHistoryUrl() {
+  const sources = window.GRAPH_DATA_SOURCES || {};
+  return "changeHistory" in sources ? sources.changeHistory : "./output/change_history.json";
+}
+async function loadChangeHistory() {
+  const url = changeHistoryUrl();
+  if (!url) return;
+  try {
+    const response = await fetch(url, { cache: "no-store" });
+    if (!response.ok) return;
+    const data = await response.json();
+    if (Array.isArray(data)) graphChangeHistory = data.filter((e) => e && typeof e === "object" && typeof e.summary === "string");
+  } catch (error) {
+    graphChangeHistory = [];
+  }
+  renderChangeHistory(0);
+}
+function latestChangeEntry() {
+  return graphChangeHistory.length ? graphChangeHistory[0] : null;
+}
+function exactMoney(value) {
+  const amount = toFiniteAmount(value);
+  return amount === null ? "amount not stated" : `${amount < 0 ? "-" : ""}$${Math.round(Math.abs(amount)).toLocaleString("en-US")}`;
+}
+function changeList(items, format, limit = 15) {
+  const list = document.createElement("ul");
+  list.className = "ch-list";
+  for (const item of items.slice(0, limit)) {
+    const li = document.createElement("li");
+    li.textContent = format(item);
+    list.appendChild(li);
+  }
+  if (items.length > limit) {
+    const li = document.createElement("li");
+    li.textContent = `… and ${items.length - limit} more, in output/change_history.json`;
+    list.appendChild(li);
+  }
+  return list;
+}
+function renderChangeHistory(index) {
+  const body = document.getElementById("change-history-body");
+  const sub = document.getElementById("change-history-sub");
+  const foot = document.getElementById("change-history-foot");
+  if (!body) return;
+  body.textContent = "";
+  const entry = graphChangeHistory[index] || null;
+  if (!entry) {
+    sub.textContent = "No build has recorded what it changed yet";
+    body.textContent = "The record each build writes of what it changed (output/change_history.json) is not available, so nothing can be said here about what moved since the last update.";
+    if (foot) foot.textContent = "";
+    return;
+  }
+  sub.textContent = `Build of ${String(entry.builtAt || "").slice(0, 16).replace("T", " ")} UTC, against the graph published before it`;
+  if (graphChangeHistory.length > 1) {
+    const select = document.createElement("select");
+    select.id = "change-history-builds";
+    select.setAttribute("aria-label", "Choose which build to read");
+    graphChangeHistory.forEach((e, i) => {
+      const option = document.createElement("option");
+      option.value = String(i);
+      option.textContent = `${String(e.builtAt || "").slice(0, 16).replace("T", " ")} — ${e.budget && e.budget.held ? "HELD" : "within the budget"}`;
+      if (i === index) option.selected = true;
+      select.appendChild(option);
+    });
+    select.addEventListener("change", () => renderChangeHistory(Number(select.value)));
+    body.appendChild(select);
+  }
+  const verdict = document.createElement("p");
+  verdict.className = entry.budget && entry.budget.held ? "ch-held" : "ch-ok";
+  verdict.textContent = entry.budget && entry.budget.held
+    ? "HELD by the change budget: this build was not to be published until a person had looked at the review queue."
+    : "Within the change budget.";
+  body.appendChild(verdict);
+  const summary = document.createElement("p");
+  summary.className = "ch-summary";
+  summary.textContent = entry.summary;
+  body.appendChild(summary);
+  const section = (title, items, format, limit) => {
+    if (!Array.isArray(items) || !items.length) return;
+    const block = document.createElement("div");
+    block.className = "rg-point";
+    const h = document.createElement("h3");
+    h.textContent = `${title} (${items.length})`;
+    block.appendChild(h);
+    block.appendChild(changeList(items, format, limit));
+    body.appendChild(block);
+  };
+  if (entry.budget && Array.isArray(entry.budget.rules)) {
+    section("The budget, rule by rule", entry.budget.rules, (r) => `${r.tripped ? "TRIPPED" : "ok"} — ${r.rule}: ${r.detail}`, 10);
+  }
+  if (!entry.trimmed) {
+    const m = entry.measuredCosts || {};
+    section("Measured costs that moved", m.moved || [], (x) => `${x.name}: ${exactMoney(x.before)} → ${exactMoney(x.after)}${x.percent === null || x.percent === undefined ? "" : ` (${x.percent}%)`}`);
+    section("Units that gained a measured figure", m.gained || [], (x) => `${x.name}: ${exactMoney(x.after)} (was ${x.before_status})`);
+    section("Units that lost a measured figure", m.lost || [], (x) => `${x.name}: was ${exactMoney(x.before)} (now ${x.after_status})`);
+    const n = entry.nodes || {};
+    section("Nodes added", n.added || [], (x) => `${x.name} (${x.type})`);
+    section("Nodes removed", n.removed || [], (x) => `${x.name} (${x.type})`);
+    section("Units newly marked as replaced", n.newlySuperseded || [], (x) => `${x.name}${x.supersededOn ? `, as of ${x.supersededOn}` : ""}`);
+    section("Nodes renamed", n.renamed || [], (x) => `${x.before} → ${x.after}`);
+    const p = entry.pay || {};
+    section("Pay claims added", p.added || [], (x) => `${x.name}: ${x.field}`);
+    section("Pay claims withdrawn, and why", p.withdrawn || [], (x) => `${x.name}: ${x.field} — ${x.why}`);
+    section("Pay figures that changed", p.moved || [], (x) => `${x.name}: ${x.field} ${JSON.stringify(x.before)} → ${JSON.stringify(x.after)}`);
+    const e = entry.evidence || {};
+    section("Evidence withdrawn, and why", e.withdrawn || [], (x) => `${x.name}: ${x.field} ${x.method} — ${x.why}`);
+    section("Evidence added", e.added || [], (x) => `${x.name}: ${x.field} ${x.method}`);
+    section("Sources whose copy changed", (entry.sources || {}).changed || [], (x) => `${x.id}: ${x.before || "—"} → ${x.after} (${x.status})`, 30);
+  }
+  if (foot) {
+    foot.textContent = `The full record is output/change_history.json; the review queue (data/audit/review_queue.json) holds ${typeof entry.reviewQueueOpen === "number" ? entry.reviewQueueOpen : "its"} open items, and is the one thing a person is asked to look at between builds.`;
+  }
+}
+function setChangeHistoryOpen(open) {
+  const wrap = document.getElementById("change-history");
+  if (!wrap) return;
+  wrap.classList.toggle("open", open);
+  wrap.setAttribute("aria-hidden", open ? "false" : "true");
+  const target = document.getElementById(open ? "btn-change-history-close" : "btn-change-history");
+  if (target) target.focus();
+}
+function bindChangeHistory() {
+  const wrap = document.getElementById("change-history");
+  const opener = document.getElementById("btn-change-history");
+  const close = document.getElementById("btn-change-history-close");
+  if (opener) opener.addEventListener("click", () => setChangeHistoryOpen(true));
+  if (close) close.addEventListener("click", () => setChangeHistoryOpen(false));
+  if (wrap) wrap.addEventListener("click", (event) => { if (event.target === wrap) setChangeHistoryOpen(false); });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && wrap && wrap.classList.contains("open")) {
+      event.preventDefault();
+      setChangeHistoryOpen(false);
+    }
+  });
+  loadChangeHistory();
+}
+// What the last build changed for THIS node, under the cost block
+// (`#info-changes`), read off the latest entry's own lists by node id.
+function buildChangeLines(node) {
+  const entry = latestChangeEntry();
+  if (!entry || entry.trimmed || !node || !Array.isArray(entry.touched) || !entry.touched.includes(node.id)) return null;
+  const lines = [];
+  const byId = (items) => (Array.isArray(items) ? items.filter((x) => x.id === node.id) : []);
+  for (const x of byId((entry.measuredCosts || {}).moved)) lines.push(`measured cost ${exactMoney(x.before)} → ${exactMoney(x.after)} (statement ${entry.anchor.before.recordDate} → ${entry.anchor.after.recordDate})`);
+  for (const x of byId((entry.measuredCosts || {}).gained)) lines.push(`gained a measured figure, ${exactMoney(x.after)}; it was ${x.before_status}`);
+  for (const x of byId((entry.measuredCosts || {}).lost)) lines.push(`lost its measured figure of ${exactMoney(x.before)}; it is now ${x.after_status}`);
+  for (const x of byId((entry.nodes || {}).added)) lines.push("added in this build");
+  for (const x of byId((entry.nodes || {}).newlySuperseded)) lines.push(`marked as replaced${x.supersededOn ? ` as of ${x.supersededOn}` : ""}`);
+  for (const x of byId((entry.nodes || {}).renamed)) lines.push(`renamed from "${x.before}"`);
+  for (const x of byId((entry.nodes || {}).reparented)) lines.push(`moved from under ${x.before} to under ${x.after}`);
+  for (const x of byId((entry.pay || {}).added)) lines.push(`pay claim added: ${x.field}`);
+  for (const x of byId((entry.pay || {}).withdrawn)) lines.push(`pay claim withdrawn: ${x.field} — ${x.why}`);
+  for (const x of byId((entry.pay || {}).moved)) lines.push(`pay figure changed: ${x.field} ${JSON.stringify(x.before)} → ${JSON.stringify(x.after)}`);
+  for (const x of byId((entry.evidence || {}).added)) lines.push(`evidence added: ${x.field} ${x.method}`);
+  for (const x of byId((entry.evidence || {}).withdrawn)) lines.push(`evidence withdrawn: ${x.field} ${x.method} — ${x.why}`);
+  for (const x of byId((entry.evidence || {}).changed)) lines.push(`${x.field} changed: ${x.before} → ${x.after}`);
+  const sourced = entry.sourcedFigures || {};
+  for (const field of ["usaspendingOutlays", "ombBudget", "auditedNetCost", "committeeDisbursements", "combinedStatementOutlays", "spendingByKind", "payrollOfficial"]) {
+    const changes = sourced[field];
+    if (!changes) continue;
+    for (const x of byId(changes.added)) lines.push(`${field} added`);
+    for (const x of byId(changes.withdrawn)) lines.push(`${field} withdrawn — ${x.why}`);
+    for (const x of byId(changes.moved)) lines.push(`${field} ${exactMoney(x.before)} → ${exactMoney(x.after)}`);
+  }
+  if (!lines.length) return null;
+  const host = document.createElement("div");
+  host.id = "info-changes";
+  host.className = "info-cost-note";
+  const head = document.createElement("strong");
+  head.textContent = `Changed in the build of ${String(entry.builtAt || "").slice(0, 10)}:`;
+  host.appendChild(head);
+  const list = document.createElement("ul");
+  list.className = "info-cost-components";
+  list.setAttribute("aria-label", "What the last build changed for this node");
+  list.style.listStyle = "none";
+  list.style.margin = "4px 0 0";
+  list.style.padding = "0 0 0 10px";
+  for (const line of lines) {
+    const li = document.createElement("li");
+    li.textContent = line;
+    list.appendChild(li);
+  }
+  host.appendChild(list);
+  return host;
+}
+
+// The downloads card (Part 2, "Export / download"): the files the site
+// serves, each with what it is and its size as the server reports it when the
+// card opens. The list lives in index.html's GRAPH_DATA_SOURCES.downloads so
+// the page names its own files; nothing here invents a path.
+function downloadList() {
+  const sources = window.GRAPH_DATA_SOURCES || {};
+  return Array.isArray(sources.downloads) ? sources.downloads.filter((d) => Array.isArray(d) && d.length >= 3) : [];
+}
+function formatBytes(n) {
+  if (!Number.isFinite(n)) return "size unknown";
+  if (n >= 1024 * 1024) return `${(n / (1024 * 1024)).toFixed(1)} MB`;
+  if (n >= 1024) return `${Math.round(n / 1024)} KB`;
+  return `${n} B`;
+}
+async function renderDownloads() {
+  const body = document.getElementById("download-body");
+  const foot = document.getElementById("download-foot");
+  if (!body) return;
+  body.textContent = "";
+  const items = downloadList();
+  if (!items.length) {
+    body.textContent = "This page names no files to download.";
+    return;
+  }
+  for (const [href, name, what] of items) {
+    const item = document.createElement("div");
+    item.className = "dl-item";
+    const link = document.createElement("a");
+    link.href = href;
+    link.download = name;
+    link.textContent = name;
+    link.setAttribute("aria-label", `Download ${name}`);
+    item.appendChild(link);
+    const size = document.createElement("span");
+    size.className = "dl-size";
+    size.textContent = "…";
+    item.appendChild(size);
+    const p = document.createElement("p");
+    p.textContent = what;
+    item.appendChild(p);
+    body.appendChild(item);
+    fetch(href, { method: "HEAD", cache: "no-store" })
+      .then((r) => { size.textContent = r.ok ? formatBytes(Number(r.headers.get("content-length"))) : "not served"; })
+      .catch(() => { size.textContent = "size unknown"; });
+  }
+  if (foot) {
+    foot.textContent = "Every figure in these files carries its status, period and source as the panel shows them: an estimate is marked allocated, a measured cost official, and a blank is a blank. The CSV is regenerated with the graph by scripts/export_flat_csv.py.";
+  }
+}
+function setDownloadOpen(open) {
+  const wrap = document.getElementById("download");
+  if (!wrap) return;
+  wrap.classList.toggle("open", open);
+  wrap.setAttribute("aria-hidden", open ? "false" : "true");
+  if (open) renderDownloads();
+  const target = document.getElementById(open ? "btn-download-close" : "btn-download");
+  if (target) target.focus();
+}
+function bindDownloads() {
+  const wrap = document.getElementById("download");
+  const opener = document.getElementById("btn-download");
+  const close = document.getElementById("btn-download-close");
+  if (opener) opener.addEventListener("click", () => setDownloadOpen(true));
+  if (close) close.addEventListener("click", () => setDownloadOpen(false));
+  if (wrap) wrap.addEventListener("click", (event) => { if (event.target === wrap) setDownloadOpen(false); });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && wrap && wrap.classList.contains("open")) {
+      event.preventDefault();
+      setDownloadOpen(false);
+    }
+  });
+}
+
+// The sources behind this node and how fresh each is: one line per registry
+// source whose fields the node carries, status as of today. `#info-freshness`.
+function buildFreshnessLines(node) {
+  if (!graphSourceRegistry || !node) return null;
+  const today = isoToday();
+  const used = graphSourceRegistry.sources.filter((entry) => nodeUsesSource(node, entry.graphFields));
+  if (!used.length) return null;
+  const host = document.createElement("div");
+  host.id = "info-freshness";
+  host.className = "info-cost-note";
+  const verdicts = used.map((entry) => {
+    const nodeDate = entry.perNodeDate && typeof node[entry.perNodeDate] === "string" ? String(node[entry.perNodeDate]).slice(0, 10) : null;
+    return { entry, verdict: sourceStatusToday(entry, today, nodeDate) };
+  });
+  const overdue = verdicts.filter((v) => v.verdict.status === "overdue").length;
+  const head = document.createElement("strong");
+  head.textContent = overdue
+    ? `Freshness of the sources behind this node — ${overdue} of ${used.length} overdue:`
+    : `Freshness of the sources behind this node (${used.length}):`;
+  host.appendChild(head);
+  const list = document.createElement("ul");
+  list.className = "info-cost-components";
+  list.setAttribute("aria-label", "Each source behind this node, the copy in use and whether a newer one is overdue");
+  list.style.listStyle = "none";
+  list.style.margin = "4px 0 0";
+  list.style.padding = "0 0 0 10px";
+  for (const { entry, verdict } of verdicts) {
+    const item = document.createElement("li");
+    item.dataset.source = entry.id;
+    item.dataset.status = verdict.status;
+    if (verdict.status === "overdue") item.className = "info-freshness-overdue";
+    item.textContent = freshnessSentence(entry, verdict);
+    list.appendChild(item);
+  }
+  host.appendChild(list);
+  const foot = document.createElement("div");
+  foot.style.marginTop = "4px";
+  foot.textContent = `Cycles are the registry's statements of each publisher's schedule (data/source_registry.json), checked against the reader's date, ${today}.`;
+  host.appendChild(foot);
+  return host;
+}
+
 function getCostPeriod(node) {
   const source =
     (node && typeof node.__budgetSummary === "object" && node.__budgetSummary) ||
@@ -4122,6 +4530,10 @@ function buildCostBlock(node) {
   if (payBlank) block.appendChild(buildPayNoDocumentLines(payBlank));
   const spending = buildSpendingByKind(node);
   if (spending) block.appendChild(spending);
+  const freshness = buildFreshnessLines(node);
+  if (freshness) block.appendChild(freshness);
+  const changed = buildChangeLines(node);
+  if (changed) block.appendChild(changed);
 
   // The estimate was always one tick away, and since 2026-10-05 the tick is
   // here too. The owner read "the costs have been disappearing" off a panel
@@ -5084,6 +5496,7 @@ async function initGraphApp() {
   });
   setGraphBudgetSummary(data && data.__budgetSummary);
   setGraphSharedDocuments(data && data.__sharedDocuments, data && data.__heldPayDocuments);
+  setGraphSourceRegistry(data && data.__sourceRegistry);
   const summary = summariseGraph(data);
   const provenance = document.getElementById("data-provenance");
   if (provenance) {
@@ -5093,6 +5506,8 @@ async function initGraphApp() {
         : describeProvenance(summary);
   }
   safeUiCall("bindReadingGuide", bindReadingGuide, summary);
+  safeUiCall("bindChangeHistory", bindChangeHistory);
+  safeUiCall("bindDownloads", bindDownloads);
   state.graph.loadData(data);
   state.searchIndex = state.graph.getSearchIndex();
   safeInitUI();

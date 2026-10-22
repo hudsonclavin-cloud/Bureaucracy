@@ -485,6 +485,42 @@ function headerSumLinesText(node) {
 
 // How a measured unit's total adds up, as one sentence for the directory
 // (treasury_sums.py; ui.js buildTreasurySumLines is the panel's copy).
+// The directory's one-line copy of the panel's freshness block, for the
+// sources behind a measured figure: status as of the reader's date, from the
+// root's __sourceRegistry (freshness.py).
+function freshnessText(node) {
+  const registry = state.root && state.root.__sourceRegistry;
+  if (!registry || !Array.isArray(registry.sources)) return "";
+  const today = new Date().toISOString().slice(0, 10);
+  const uses = (spec) => {
+    if (typeof spec === "string") return Boolean(node[spec] && typeof node[spec] === "object");
+    if (!spec || typeof spec !== "object") return false;
+    if (Array.isArray(spec.costStatus)) return spec.costStatus.includes(String(node.cost_status || ""));
+    const matches = (block, where) => (Array.isArray(where) ? where : []).every(([path, wanted]) => {
+      const actual = String(path).split(".").reduce((c, p) => (c && typeof c === "object" ? c[p] : undefined), block);
+      return wanted && typeof wanted === "object" && "prefix" in wanted
+        ? String(actual == null ? "" : actual).startsWith(String(wanted.prefix))
+        : String(actual == null ? "" : actual) === String(wanted);
+    });
+    if (spec.nodeWhere) return matches(node, spec.nodeWhere);
+    return Boolean(spec.field && node[spec.field] && typeof node[spec.field] === "object" && matches(node[spec.field], spec.where));
+  };
+  const parts = [];
+  for (const entry of registry.sources) {
+    if (!(entry.graphFields || []).some(uses)) continue;
+    const kind = String((entry.cadence || {}).kind || "");
+    const copyDate = (entry.copy || {}).date;
+    const expected = entry.expected || {};
+    if (kind === "closed_record") parts.push(`${entry.label} is a closed record`);
+    else if (kind === "on_republication") parts.push(`${entry.label} read ${copyDate}${expected.recheckDue && today > expected.recheckDue ? ", a re-check due since " + expected.recheckDue : ""}`);
+    else if (!expected.expectedBy) parts.push(`${entry.label}: copy date not read`);
+    else if (today <= expected.expectedBy) parts.push(`${entry.label} dated ${copyDate}, current`);
+    else if (today <= expected.overdueAfter) parts.push(`${entry.label} dated ${copyDate}; a newer edition was expected by ${expected.expectedBy}`);
+    else parts.push(`OVERDUE: ${entry.label} dated ${copyDate}; the next edition was expected by ${expected.expectedBy}`);
+  }
+  return parts.length ? ` Source freshness as of ${today}: ${parts.join("; ")}.` : "";
+}
+
 function treasurySumText(node) {
   const block = node && node.treasury_sum;
   if (!block || typeof block !== "object" || !Array.isArray(block.parts) || !block.parts.length) return "";
@@ -537,6 +573,7 @@ function describeCost(node) {
     }
     if (counted && !isReceiptsLine(node)) note += counted;
     note += treasurySumText(node);
+    note += freshnessText(node);
     return { amount: formatExactMoney(amount), label, note, period: costPeriodLabel(node), sourceUrl };
   }
   if (validation === "post_is_not_a_budget_unit" && employerOf(node)) {

@@ -1,0 +1,1115 @@
+[
+ {
+  "key": "cost_weight_dispute:5e673d9d551d",
+  "kind": "cost_weight_dispute",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-dept-defense-agency-dcaa",
+  "nodeName": "Defense Contract Audit Agency (DCAA)",
+  "detail": "the curated headcount ~5,000 and OPM's 3768 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~5,000"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 3768"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:7eeb6d4784e1",
+  "kind": "cost_weight_dispute",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-dept-defense-agency-dcma",
+  "nodeName": "Defense Contract Management Agency (DCMA)",
+  "detail": "the curated headcount ~12,000 and OPM's 9665 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~12,000"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 9665"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:cd96cc5c5e87",
+  "kind": "cost_weight_dispute",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-dept-defense-agency-dcsa",
+  "nodeName": "Defense Counterintelligence & Security Agency (DCSA)",
+  "detail": "the curated headcount ~12,000 and OPM's 5644 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~12,000"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 5644"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:59e3d3d9543a",
+  "kind": "cost_weight_dispute",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-dept-defense-agency-dfas",
+  "nodeName": "Defense Finance & Accounting Service (DFAS)",
+  "detail": "the curated headcount ~12,000 and OPM's 10735 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~12,000"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 10735"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:69c5ddef581f",
+  "kind": "cost_weight_dispute",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-dept-defense-agency-dha",
+  "nodeName": "Defense Health Agency (DHA)",
+  "detail": "the curated headcount ~130,000 and OPM's 6118 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~130,000"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 6118"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:004e096a0e50",
+  "kind": "cost_weight_dispute",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-dept-defense-agency-disa",
+  "nodeName": "Defense Information Systems Agency (DISA)",
+  "detail": "the curated headcount ~8,500 and OPM's 6823 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~8,500"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 6823"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:943ede80e146",
+  "kind": "cost_weight_dispute",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-dept-defense-agency-dtra",
+  "nodeName": "Defense Threat Reduction Agency (DTRA)",
+  "detail": "the curated headcount ~2,000 and OPM's 1344 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~2,000"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 1344"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:1406abbd6e6e",
+  "kind": "cost_weight_dispute",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-dept-treasury-fincen",
+  "nodeName": "Financial Crimes Enforcement Network (FinCEN)",
+  "detail": "the curated headcount ~350 and OPM's 287 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~350"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 287"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:0067e51db754",
+  "kind": "cost_weight_dispute",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-dept-defense-agency-mda",
+  "nodeName": "Missile Defense Agency (MDA)",
+  "detail": "the curated headcount ~9,000 and OPM's 2903 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~9,000"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 2903"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:fee9c03f0f15",
+  "kind": "cost_weight_dispute",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-dept-defense-agency-nro",
+  "nodeName": "National Reconnaissance Office (NRO)",
+  "detail": "the curated headcount ~3,000 (est.) and OPM's 1163 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~3,000 (est.)"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 1163"
+   }
+  ]
+ },
+ {
+  "key": "placement_directory_disagreement:e2e49c0f5b0d",
+  "kind": "placement_directory_disagreement",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-regulatory-ferc",
+  "nodeName": "Federal Energy Regulatory Commission (FERC)",
+  "detail": "us_government_manual files this unit under \"Department of Energy\"; this graph draws it under \"Independent Regulatory Commissions\"",
+  "documents": [
+   {
+    "role": "us_government_manual",
+    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-207",
+    "says": "listed under Department of Energy (exec-dept-doe)"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "drawn under Independent Regulatory Commissions (exec-regulatory)"
+   }
+  ]
+ },
+ {
+  "key": "source_overdue:add7b4cbcdef",
+  "kind": "source_overdue",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": null,
+  "nodeName": null,
+  "detail": "FedScope civilian employment (headcount and average pay by agency): the edition for 2025-09-30 was expected by 2026-05-28; the copy in use is dated 2025-03-31",
+  "documents": [
+   {
+    "role": "the registry",
+    "says": "expected by 2026-05-28, overdue after 2026-07-27"
+   },
+   {
+    "role": "the copy in use",
+    "url": "https://www.opm.gov/data/datasets/",
+    "says": "dated 2025-03-31, read 2026-09-08"
+   }
+  ]
+ },
+ {
+  "key": "source_overdue:cbdddb980952",
+  "kind": "source_overdue",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": null,
+  "nodeName": null,
+  "detail": "U.S. Attorneys' Administratively Determined pay plan chart: the edition for 2026-01-12 was expected by 2026-03-13; the copy in use is dated 2025-01-12",
+  "documents": [
+   {
+    "role": "the registry",
+    "says": "expected by 2026-03-13, overdue after 2026-05-12"
+   },
+   {
+    "role": "the copy in use",
+    "url": "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts",
+    "says": "dated 2025-01-12, read 2026-10-08"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:cf2eeb8c69f9",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-senate-cmte-health-education-labor-pensions-sub-children-families",
+  "nodeName": "Children & Families",
+  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "senate_committee_list",
+    "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSHR.xml",
+    "says": "does not carry the name Children & Families"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Children & Families"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:d90ad00baa3d",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-support",
+  "nodeName": "Congressional Support Agencies",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.aoc.gov/explore-capitol-campus/buildings-grounds",
+    "says": "does not carry the name Congressional Support Agencies"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Congressional Support Agencies"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:49263effeb07",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-senate-cmte-appropriations-sub-defense",
+  "nodeName": "Defense",
+  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "senate_committee_list",
+    "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
+    "says": "does not carry the name Defense"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Defense"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:bfa6ded5ced9",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-ind-nsf-mathematical-physical-sciences-mps-astronomical-sciences",
+  "nodeName": "Division of Astronomical Sciences",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.nsf.gov/mps/astronomical-sciences",
+    "says": "does not carry the name Division of Astronomical Sciences"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Division of Astronomical Sciences"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:0cf630d18599",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-ind-nsf-geosciences-geo-atmospheric-geospace-sciences",
+  "nodeName": "Division of Atmospheric & Geospace Sciences",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.nsf.gov/geo/core-geoscience-research",
+    "says": "does not carry the name Division of Atmospheric & Geospace Sciences"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Division of Atmospheric & Geospace Sciences"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:95cafc081b99",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-ind-nsf-mathematical-physical-sciences-mps-chemistry",
+  "nodeName": "Division of Chemistry",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.nsf.gov/mps/chemistry",
+    "says": "does not carry the name Division of Chemistry"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Division of Chemistry"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:9bd58a58b823",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-ind-nsf-engineering-eng-civil-mechanical-manufacturing-innovation",
+  "nodeName": "Division of Civil, Mechanical & Manufacturing Innovation",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.nsf.gov/eng/civil-mechanical-manufacturing-innovation",
+    "says": "does not carry the name Division of Civil, Mechanical & Manufacturing Innovation"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Division of Civil, Mechanical & Manufacturing Innovation"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:e16229cf05f1",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-ind-nsf-technology-innovation-partnerships-tip-directorate-for-tip-programs",
+  "nodeName": "Division of Directorate for TIP Programs",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.nsf.gov/tip",
+    "says": "does not carry the name Division of Directorate for TIP Programs"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Division of Directorate for TIP Programs"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:8b535b667c61",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-ind-nsf-engineering-eng-electrical-communications-cyber-systems",
+  "nodeName": "Division of Electrical, Communications & Cyber Systems",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.nsf.gov/div/index.jsp?div=ECCS",
+    "says": "does not carry the name Division of Electrical, Communications & Cyber Systems"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Division of Electrical, Communications & Cyber Systems"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:fa02e27a83dc",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-ind-nsf-computer-information-science-engineering-cise-information-intelligent-systems",
+  "nodeName": "Division of Information & Intelligent Systems",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.nsf.gov/cise",
+    "says": "does not carry the name Division of Information & Intelligent Systems"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Division of Information & Intelligent Systems"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:8f53f598824c",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-ind-nsf-mathematical-physical-sciences-mps-materials-research",
+  "nodeName": "Division of Materials Research",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.nsf.gov/mps/materials-research",
+    "says": "does not carry the name Division of Materials Research"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Division of Materials Research"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:5b9f3c8c0fff",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-ind-nsf-mathematical-physical-sciences-mps-mathematical-sciences",
+  "nodeName": "Division of Mathematical Sciences",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.nsf.gov/mps/mathematical-sciences",
+    "says": "does not carry the name Division of Mathematical Sciences"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Division of Mathematical Sciences"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:f41cd123dfab",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-ind-nsf-geosciences-geo-ocean-sciences",
+  "nodeName": "Division of Ocean Sciences",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.nsf.gov/geo",
+    "says": "does not carry the name Division of Ocean Sciences"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Division of Ocean Sciences"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:25ff84eb7213",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-ind-nsf-mathematical-physical-sciences-mps-physics",
+  "nodeName": "Division of Physics",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.nsf.gov/mps/physics",
+    "says": "does not carry the name Division of Physics"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Division of Physics"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:6da220a3a7d9",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks",
+  "nodeName": "Dwight D. Eisenhower Presidential Library and Museum (Abilene, KS)",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.eisenhowerlibrary.gov/",
+    "says": "does not carry the name Dwight D. Eisenhower Presidential Library and Museum (Abilene, KS)"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Dwight D. Eisenhower Presidential Library and Museum (Abilene, KS)"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:da7aeb9ca27e",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-senate-cmte-homeland-security-governmental-affairs-sub-emerging-threats-spending-oversight",
+  "nodeName": "Emerging Threats & Spending Oversight",
+  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "senate_committee_list",
+    "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSGA.xml",
+    "says": "does not carry the name Emerging Threats & Spending Oversight"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Emerging Threats & Spending Oversight"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:48b92707233b",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-house-admin",
+  "nodeName": "House Administrative Offices",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.house.gov/the-house-explained/officers-and-organizations",
+    "says": "does not carry the name House Administrative Offices"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it House Administrative Offices"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:0c1531d1e275",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-house-chaplain",
+  "nodeName": "House Chaplain",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://chaplain.house.gov/",
+    "says": "does not carry the name House Chaplain"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it House Chaplain"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:b7acb5a32285",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-house-committees",
+  "nodeName": "House Committees",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://rules.house.gov/about/subcommittees",
+    "says": "does not carry the name House Committees"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it House Committees"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:3fa5e51a9de0",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-senate-cmte-judiciary-sub-human-rights-the-law",
+  "nodeName": "Human Rights & the Law",
+  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "senate_committee_list",
+    "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+    "says": "does not carry the name Human Rights & the Law"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Human Rights & the Law"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:812d70de1843",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-independent",
+  "nodeName": "Independent Establishments & Government Corporations",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.archives.gov/presidential-libraries",
+    "says": "does not carry the name Independent Establishments & Government Corporations"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Independent Establishments & Government Corporations"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:94fcb9109fcf",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "jud-support",
+  "nodeName": "Judicial Support Organizations",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.uscourts.gov/about-federal-courts/defender-services",
+    "says": "does not carry the name Judicial Support Organizations"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Judicial Support Organizations"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:1484e12c069d",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-senate-cmte-commerce-science-transportation-sub-oceans-fisheries-climate-change-manufacturing",
+  "nodeName": "Oceans, Fisheries, Climate Change & Manufacturing",
+  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "senate_committee_list",
+    "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml",
+    "says": "does not carry the name Oceans, Fisheries, Climate Change & Manufacturing"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Oceans, Fisheries, Climate Change & Manufacturing"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:d0d01be1c4fa",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-support-uscp-protective-services-bureau",
+  "nodeName": "Protective Services Bureau",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.uscp.gov/the-department/our-mission",
+    "says": "does not carry the name Protective Services Bureau"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Protective Services Bureau"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:a0010f591be2",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-senate-cmte-commerce-science-transportation-sub-science-space",
+  "nodeName": "Science & Space",
+  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "senate_committee_list",
+    "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml",
+    "says": "does not carry the name Science & Space"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Science & Space"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:db63b02f07da",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government",
+  "nodeName": "Select Subcommittee on the Weaponization of the Federal Government",
+  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "house_clerk_committee_list",
+    "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+    "says": "does not carry the name Select Subcommittee on the Weaponization of the Federal Government"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Select Subcommittee on the Weaponization of the Federal Government"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:6f65fd9917ed",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-senate-admin",
+  "nodeName": "Senate Administrative Offices",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.senate.gov/about/officers-staff.htm",
+    "says": "does not carry the name Senate Administrative Offices"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Senate Administrative Offices"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:fd7a2bb99d2e",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-senate-admin-saa",
+  "nodeName": "Sergeant at Arms of the Senate",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.senate.gov/about/officers-staff/sergeant-at-arms.htm",
+    "says": "does not carry the name Sergeant at Arms of the Senate"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Sergeant at Arms of the Senate"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:9217cf99c455",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "jud-specialized",
+  "nodeName": "Specialized Federal Courts",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
+    "says": "does not carry the name Specialized Federal Courts"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Specialized Federal Courts"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:965f149e4bd7",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-house-cmte-veterans-affairs-sub-benefits",
+  "nodeName": "Subcommittee on Benefits",
+  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "house_clerk_committee_list",
+    "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+    "says": "does not carry the name Subcommittee on Benefits"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Subcommittee on Benefits"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:3a8d24df5071",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-house-cmte-house-administration-sub-committees",
+  "nodeName": "Subcommittee on Committees",
+  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "house_clerk_committee_list",
+    "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+    "says": "does not carry the name Subcommittee on Committees"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Subcommittee on Committees"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:9795e79a696a",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-house-cmte-foreign-affairs-sub-global-health-global-human-rights-international-organizations",
+  "nodeName": "Subcommittee on Global Health, Global Human Rights & International Organizations",
+  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "house_clerk_committee_list",
+    "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+    "says": "does not carry the name Subcommittee on Global Health, Global Human Rights & International Organizations"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Subcommittee on Global Health, Global Human Rights & International Organizations"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:75b548b50864",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-house-cmte-agriculture-sub-horticulture-farm-inputs-subcommittee-on-precision-agriculture",
+  "nodeName": "Subcommittee on Horticulture, Farm Inputs & Subcommittee on Precision Agriculture",
+  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "house_clerk_committee_list",
+    "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+    "says": "does not carry the name Subcommittee on Horticulture, Farm Inputs & Subcommittee on Precision Agriculture"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Subcommittee on Horticulture, Farm Inputs & Subcommittee on Precision Agriculture"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:79e43e3dc460",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-house-cmte-oversight-accountability-sub-national-security-the-border-foreign-affairs",
+  "nodeName": "Subcommittee on National Security, the Border & Foreign Affairs",
+  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "house_clerk_committee_list",
+    "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+    "says": "does not carry the name Subcommittee on National Security, the Border & Foreign Affairs"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Subcommittee on National Security, the Border & Foreign Affairs"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:c6eababfb2dd",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-house-cmte-judiciary-sub-responsiveness-accountability-to-americans",
+  "nodeName": "Subcommittee on Responsiveness & Accountability to Americans",
+  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "house_clerk_committee_list",
+    "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+    "says": "does not carry the name Subcommittee on Responsiveness & Accountability to Americans"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Subcommittee on Responsiveness & Accountability to Americans"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:2123dece8270",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-house-cmte-ways-means-sub-select-revenue-measures",
+  "nodeName": "Subcommittee on Select Revenue Measures",
+  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "house_clerk_committee_list",
+    "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+    "says": "does not carry the name Subcommittee on Select Revenue Measures"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Subcommittee on Select Revenue Measures"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:53a422c6df21",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-house-cmte-intelligence-sub-strategic-technologies-advanced-research",
+  "nodeName": "Subcommittee on Strategic Technologies & Advanced Research",
+  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "house_clerk_committee_list",
+    "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+    "says": "does not carry the name Subcommittee on Strategic Technologies & Advanced Research"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Subcommittee on Strategic Technologies & Advanced Research"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:83ec209d6c00",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-senate-cmte-commerce-science-transportation-sub-surface-transportation-maritime-freight-ports",
+  "nodeName": "Surface Transportation, Maritime, Freight & Ports",
+  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "senate_committee_list",
+    "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml",
+    "says": "does not carry the name Surface Transportation, Maritime, Freight & Ports"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Surface Transportation, Maritime, Freight & Ports"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:8f0d6624bd6e",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "leg-senate-cmte-commerce-science-transportation-sub-tourism-trade-export-promotion",
+  "nodeName": "Tourism, Trade & Export Promotion",
+  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "senate_committee_list",
+    "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml",
+    "says": "does not carry the name Tourism, Trade & Export Promotion"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Tourism, Trade & Export Promotion"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:c7b07b6c3105",
+  "kind": "verification_failure",
+  "status": "open",
+  "opened": "2026-10-22",
+  "closed": null,
+  "nodeId": "exec-dept-defense-cocom-ussocom",
+  "nodeName": "USSOCOM — Special Operations Command",
+  "detail": "a document was read and does not carry this node's name (not_found); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "own_official_page",
+    "url": "https://www.socom.mil/",
+    "says": "does not carry the name USSOCOM — Special Operations Command"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it USSOCOM — Special Operations Command"
+   }
+  ]
+ }
+]

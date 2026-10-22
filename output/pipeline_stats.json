@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-22T07:07:56.533539+00:00",
+  "timestamp": "2026-10-22T08:35:19.193041+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5483,
@@ -503,6 +503,19 @@
         "listed_no_rate": 20,
         "beneath_replaced_unit": 432
       }
+    },
+    "source_registry": {
+      "sources": 27,
+      "refused": [],
+      "counts": {
+        "current": 23,
+        "newer_edition_expected": 1,
+        "overdue": 2,
+        "recheck_due": 0,
+        "closed_record": 1,
+        "copy_date_unknown": 0
+      },
+      "asOf": "2026-10-22"
     },
     "budget_reconciliation": {
       "nodes_seen": 5512,
