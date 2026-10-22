@@ -45,8 +45,8 @@ on any JS change).
    # (keys: api_url, fetched_at, record_date, rows). Keep 08-31 and latest.json untouched.
    python scripts/regenerate_published_graph.py --treasury-rows tests/fixtures/mts_table5_2026-09-30.json
    ```
-   Then: regenerate the 3 reports (`report_cost_coverage`, `report_unpriced_positions`,
-   `report_research_prompts`), gate, full suite, smoke, update the
+   Then: regenerate the 4 reports (`report_cost_coverage`, `report_unpriced_positions`,
+   `report_research_prompts`, `report_evidence_coverage`), gate, full suite, smoke, update the
    `--treasury-rows` path in `docs/GO.md`, commit, push main + branch.
    Report which measured nodes moved and by how much.
 2. **"Committed vs paid out" (owner decision, open).** `spendingByKind` is

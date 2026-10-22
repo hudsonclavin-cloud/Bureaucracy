@@ -2995,7 +2995,7 @@ THE TITLES:
 ### Division of Undergraduate Education  [exec-ind-nsf-education-human-resources-ehr-undergraduate-education]
 - exec-ind-nsf-education-human-resources-ehr-undergraduate-education-division-director-undergraduate-education | Division Director, Undergraduate Education
 
-### Dwight D. Eisenhower Presidential Library (Abilene, KS)  [exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks]
+### Dwight D. Eisenhower Presidential Library and Museum (Abilene, KS)  [exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks]
 - exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-director-dwight-d-eisenhower-presidential-library | Director, Dwight D. Eisenhower Presidential Library
 
 ### East Asia, The Pacific & International Cybersecurity Policy  [leg-senate-cmte-foreign-relations-sub-east-asia-the-pacific-international-cybersecurity-policy]
@@ -3061,13 +3061,13 @@ THE TITLES:
 ### Goddard Space Flight Center (GSFC)  [exec-ind-nasa-goddard-space-flight-center-gsfc]
 - exec-ind-nasa-goddard-space-flight-center-gsfc-center-director-goddard-space-flight-center-gsfc | Center Director, Goddard Space Flight Center (GSFC)
 
-### Harry S. Truman Presidential Library (Independence, MO)  [exec-ind-nara-harry-s-truman-presidential-library-independence-mo]
+### Harry S. Truman Presidential Library and Museum (Independence, MO)  [exec-ind-nara-harry-s-truman-presidential-library-independence-mo]
 - exec-ind-nara-harry-s-truman-presidential-library-independence-mo-director-harry-s-truman-presidential-library | Director, Harry S. Truman Presidential Library
 
 ### Health Care  [leg-senate-cmte-finance-sub-health-care]
 - leg-senate-cmte-finance-sub-health-care-staff-director-subcommittee-on-health-care | Staff Director, Subcommittee on Health Care
 
-### Herbert Hoover Presidential Library (West Branch, IA)  [exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia]
+### Herbert Hoover Presidential Library and Museum (West Branch, IA)  [exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia]
 - exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-director-herbert-hoover-presidential-library | Director, Herbert Hoover Presidential Library
 
 ### Homeland Security  [leg-senate-cmte-appropriations-sub-homeland-security]
@@ -3103,10 +3103,10 @@ THE TITLES:
 ### Jet Propulsion Laboratory (JPL)  [exec-ind-nasa-jet-propulsion-laboratory-jpl]
 - exec-ind-nasa-jet-propulsion-laboratory-jpl-center-director-jet-propulsion-laboratory-jpl | Center Director, Jet Propulsion Laboratory (JPL)
 
-### Jimmy Carter Presidential Library (Atlanta, GA)  [exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga]
+### Jimmy Carter Presidential Library and Museum (Atlanta, GA)  [exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga]
 - exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-director-jimmy-carter-presidential-library | Director, Jimmy Carter Presidential Library
 
-### John F. Kennedy Presidential Library (Boston, MA)  [exec-ind-nara-john-f-kennedy-presidential-library-boston-ma]
+### John F. Kennedy Presidential Library and Museum (Boston, MA)  [exec-ind-nara-john-f-kennedy-presidential-library-boston-ma]
 - exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-director-john-f-kennedy-presidential-library | Director, John F. Kennedy Presidential Library
 
 ### Johnson Space Center (JSC)  [exec-ind-nasa-johnson-space-center-jsc]
@@ -3127,7 +3127,7 @@ THE TITLES:
 ### Library of Congress  [leg-support-loc]
 - leg-support-loc-deputy-librarian-of-congress | Deputy Librarian of Congress
 
-### Lyndon B. Johnson Presidential Library (Austin, TX)  [exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx]
+### Lyndon Baines Johnson Presidential Library and Museum (Austin, TX)  [exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx]
 - exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx-director-lyndon-b-johnson-presidential-library | Director, Lyndon B. Johnson Presidential Library
 ```
 
@@ -3266,7 +3266,7 @@ THE TITLES:
 ### Richard Nixon Presidential Library and Museum  [exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca]
 - exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca-director-richard-nixon-presidential-library | Director, Richard Nixon Presidential Library
 
-### Ronald Reagan Presidential Library (Simi Valley, CA)  [exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca]
+### Ronald Reagan Presidential Library and Museum (Simi Valley, CA)  [exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca]
 - exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-director-ronald-reagan-presidential-library | Director, Ronald Reagan Presidential Library
 
 ### Science & Space  [leg-senate-cmte-commerce-science-transportation-sub-science-space]
@@ -3386,7 +3386,7 @@ THE TITLES:
 ### Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights & Global Women's Issues  [leg-senate-cmte-foreign-relations-sub-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues]
 - leg-senate-cmte-foreign-relations-sub-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues-staff-director-subcommittee-on-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues | Staff Director, Subcommittee on Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights & Global Women's Issues
 
-### William J. Clinton Presidential Library (Little Rock, AR)  [exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar]
+### William J. Clinton Presidential Library and Museum (Little Rock, AR)  [exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar]
 - exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-director-william-j-clinton-presidential-library | Director, William J. Clinton Presidential Library
 ```
 
@@ -3800,19 +3800,19 @@ THE UNITS:
 
 ### beneath National Archives & Records Administration (NARA)  [exec-ind-nara]
 - exec-ind-nara-barack-obama-presidential-library-chicago-il | Barack Obama Presidential Library (Chicago, IL) | Presidential Library
-- exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks | Dwight D. Eisenhower Presidential Library (Abilene, KS) | Presidential Library
+- exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks | Dwight D. Eisenhower Presidential Library and Museum (Abilene, KS) | Presidential Library
 - exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny | Franklin D. Roosevelt Presidential Library and Museum | Presidential Library
 - exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx | George Bush Presidential Library and Museum | Presidential Library
 - exec-ind-nara-george-w-bush-presidential-library-dallas-tx | George W. Bush Presidential Library (Dallas, TX) | Presidential Library
 - exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi | Gerald R. Ford Presidential Library (Ann Arbor, MI) | Presidential Library
-- exec-ind-nara-harry-s-truman-presidential-library-independence-mo | Harry S. Truman Presidential Library (Independence, MO) | Presidential Library
-- exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia | Herbert Hoover Presidential Library (West Branch, IA) | Presidential Library
-- exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga | Jimmy Carter Presidential Library (Atlanta, GA) | Presidential Library
-- exec-ind-nara-john-f-kennedy-presidential-library-boston-ma | John F. Kennedy Presidential Library (Boston, MA) | Presidential Library
-- exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx | Lyndon B. Johnson Presidential Library (Austin, TX) | Presidential Library
+- exec-ind-nara-harry-s-truman-presidential-library-independence-mo | Harry S. Truman Presidential Library and Museum (Independence, MO) | Presidential Library
+- exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia | Herbert Hoover Presidential Library and Museum (West Branch, IA) | Presidential Library
+- exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga | Jimmy Carter Presidential Library and Museum (Atlanta, GA) | Presidential Library
+- exec-ind-nara-john-f-kennedy-presidential-library-boston-ma | John F. Kennedy Presidential Library and Museum (Boston, MA) | Presidential Library
+- exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx | Lyndon Baines Johnson Presidential Library and Museum (Austin, TX) | Presidential Library
 - exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca | Richard Nixon Presidential Library and Museum | Presidential Library
-- exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca | Ronald Reagan Presidential Library (Simi Valley, CA) | Presidential Library
-- exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar | William J. Clinton Presidential Library (Little Rock, AR) | Presidential Library
+- exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca | Ronald Reagan Presidential Library and Museum (Simi Valley, CA) | Presidential Library
+- exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar | William J. Clinton Presidential Library and Museum (Little Rock, AR) | Presidential Library
 
 ### beneath Department of Justice (DOJ)  [exec-dept-doj]
 - exec-dept-doj-div-antitrust | Antitrust Division | Division

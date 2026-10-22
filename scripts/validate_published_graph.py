@@ -9273,6 +9273,220 @@ def list_subcommittee_key(key):
     return text.strip()
 
 
+#: Mirror of data_pipeline.verification.no_document, stdlib-only by design
+#: (this file imports nothing from data_pipeline); tests/test_no_document.py
+#: pins every mirror below equal to the module's own.
+NO_DOCUMENT_FIELD = "verificationNoDocument"
+NO_DOCUMENT_NAME_FLOOR_KINDS = ("curated_count_label", "name_too_generic")
+NO_DOCUMENT_LEDGER_KINDS = (
+    "editorial_grouping", "covered_by_parent", "no_public_page_known",
+    "not_on_a_gov_host", "host_refuses_crawler", "page_read_does_not_name_it",
+)
+NO_DOCUMENT_PROBE_KINDS = ("host_refuses_crawler", "page_read_does_not_name_it")
+NO_DOCUMENT_NOTE_CHARS = 320
+NO_DOCUMENT_LEDGER_DIR = PROJECT_ROOT / "data" / "audit" / "nominations"
+NO_DOCUMENT_RENAMES_PATH = PROJECT_ROOT / "data" / "curation" / "unit_renames.json"
+# Mirrors of evidence.COUNT_LABEL_PATTERN, the count-in-prose segments and
+# GENERIC_SINGLE_TOKENS: the verifier's floor on a NAME, recomputed here from
+# the node's current name so a block cannot outlive a rename.
+_NO_DOCUMENT_COUNT_LABEL = re.compile(r"\(\s*[≈~]?\d[\d,]*\s*\+?\s*(?:[A-Za-z .&-]{0,30})?\)|\(\s*\d+\s*\)|\b\d+\s*\+")
+_NO_DOCUMENT_SEGMENT = re.compile(r"\s*[—–]\s*|\s+[-]\s+")
+_NO_DOCUMENT_PARENTHETICAL = re.compile(r"\(([^)]*)\)")
+_NO_DOCUMENT_CARDINAL = re.compile(r"^\d[\d,]*$")
+_NO_DOCUMENT_WORD = re.compile(r"[^\s(),./]+")
+NO_DOCUMENT_GENERIC_SINGLE_TOKENS = frozenset(
+    "defense energy personnel cybersecurity seapower airland constitution security policy operations "
+    "administration management leadership committees districts offices staff research development "
+    "science engineering geosciences education health justice labor commerce interior state treasury".split()
+)
+
+
+def no_document_states_a_count(name):
+    parts = []
+    for segment in _NO_DOCUMENT_SEGMENT.split(str(name or "")):
+        parts.append(_NO_DOCUMENT_PARENTHETICAL.sub(" ", segment))
+        parts.extend(_NO_DOCUMENT_PARENTHETICAL.findall(segment))
+    for segment in parts:
+        tokens = _NO_DOCUMENT_WORD.findall(segment)
+        for index, token in enumerate(tokens):
+            if not _NO_DOCUMENT_CARDINAL.match(token):
+                continue
+            for later in tokens[index + 1:]:
+                if later.isalpha() and later.lower().endswith("s"):
+                    return True
+    return False
+
+
+def no_document_name_floor(name):
+    """Mirror of evidence.uncheckable_reason for an ORGANISATION's name: the
+    kind the floor gives, or None where the name could be a label."""
+    text = str(name or "").strip()
+    if not text:
+        return "empty_name"
+    if _NO_DOCUMENT_COUNT_LABEL.search(text):
+        return "curated_count_label"
+    key = canonical_key(text)
+    if not key:
+        return "no_canonical_key"
+    if no_document_states_a_count(text):
+        return "curated_count_label"
+    tokens = key.split()
+    if len(tokens) == 1 and (len(key) < 4 or key in NO_DOCUMENT_GENERIC_SINGLE_TOKENS):
+        return "name_too_generic"
+    return None
+
+
+def no_document_read_ledger(ledger_dir):
+    """Mirror of no_document.read_source_ledger: the LATEST record per node by
+    nominatedAt, then file order, with the file's name under `_file`."""
+    records, stamps = {}, {}
+    directory = Path(ledger_dir)
+    if not directory.is_dir():
+        return records
+    for order, path in enumerate(sorted(directory.glob("source-*.jsonl"))):
+        for line in path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                record = json.loads(line)
+            except ValueError:
+                continue
+            if isinstance(record, dict) and record.get("id"):
+                node_id = str(record["id"])
+                stamp = (str(record.get("nominatedAt") or ""), order)
+                if node_id not in stamps or stamp >= stamps[node_id]:
+                    stamps[node_id] = stamp
+                    record = dict(record)
+                    record["_file"] = path.name
+                    records[node_id] = record
+    return records
+
+
+def no_document_rename_dates(path):
+    out = {}
+    table_path = Path(path)
+    if not table_path.is_file():
+        return out
+    try:
+        table = json.loads(table_path.read_text(encoding="utf-8"))
+    except ValueError:
+        return out
+    for row in table.get("renames") or []:
+        if isinstance(row, dict) and row.get("id") and row.get("addedOn"):
+            if str(row["addedOn"]) > out.get(str(row["id"]), ""):
+                out[str(row["id"])] = str(row["addedOn"])
+    return out
+
+
+def no_document_is_current_organisation(node):
+    if is_post(node):
+        return False
+    type_text = str(node.get("type") or "").casefold()
+    if node.get("synthetic") or "treasury accounting line" in type_text or "caucus" in type_text:
+        return False
+    return str(node.get("lifecycle") or "") != "superseded"
+
+
+def no_document_violations(nodes, label, ledger_dir=NO_DOCUMENT_LEDGER_DIR, renames_path=NO_DOCUMENT_RENAMES_PATH, today=None):
+    """A recorded reason no official document can be read for a unit is
+    checked in both directions: every block is the verifier's own name floor
+    recomputed from the node's current name, or the nomination ledger's LATEST
+    record for the node quoted field for field; and every organisation whose
+    name trips the floor and carries no method and no unread record carries
+    the block. Refused: a block on a post, a line or a replaced unit; beside a
+    method or an unread record; a kind this pipeline does not produce; a name
+    the node no longer carries; a ledger block whose record is not the latest,
+    nominates a page, carries another reason, date, run, file or note, was
+    written before the node was renamed, or needs a probe and has none, or a
+    probe off every .gov/.mil host; and any key the module never writes."""
+    from datetime import date
+
+    ledger = no_document_read_ledger(ledger_dir)
+    renames = no_document_rename_dates(renames_path)
+    today = today or date.today()
+    out = []
+    # The other direction is owed only by a graph the pass has run over: a
+    # graph carrying no block anywhere was built before the field existed (or
+    # is a test fixture built by hand), and refusing every count-label name
+    # in it would report a missing pass as a hundred missing blocks.
+    pass_ran = any(isinstance(n.get(NO_DOCUMENT_FIELD), dict) for n in nodes)
+    for node in nodes:
+        block = node.get(NO_DOCUMENT_FIELD)
+        if block is None:
+            if (pass_ran and no_document_is_current_organisation(node) and not node.get("verificationMethod")
+                    and not isinstance(node.get("verificationUnread"), dict)
+                    and no_document_name_floor(node.get("name")) in NO_DOCUMENT_NAME_FLOOR_KINDS
+                    and node.get("id") != "the-constitution-of-the-united-states"):
+                out.append("{} trips the verifier's name floor and carries no verificationNoDocument block".format(label(node)))
+            continue
+        if not isinstance(block, dict):
+            out.append("{} verificationNoDocument is not an object".format(label(node)))
+            continue
+        if not no_document_is_current_organisation(node):
+            out.append("{} carries verificationNoDocument on a post, a line or a replaced unit".format(label(node)))
+        if node.get("verificationMethod"):
+            out.append("{} says no document can be read beside verificationMethod {!r}".format(label(node), node.get("verificationMethod")))
+        if isinstance(node.get("verificationUnread"), dict):
+            out.append("{} says no document can be read beside an unread record for a queued page".format(label(node)))
+        kind = str(block.get("kind") or "")
+        if kind not in NO_DOCUMENT_NAME_FLOOR_KINDS + NO_DOCUMENT_LEDGER_KINDS:
+            out.append("{} verificationNoDocument.kind {!r} is not one this pipeline produces".format(label(node), kind))
+            continue
+        if str(block.get("name") or "") != str(node.get("name") or ""):
+            out.append("{} verificationNoDocument names {!r}, not the node's name".format(label(node), block.get("name")))
+        if kind in NO_DOCUMENT_NAME_FLOOR_KINDS:
+            if block.get("basis") != "verifier_name_floor":
+                out.append("{} name-floor block claims basis {!r}".format(label(node), block.get("basis")))
+            if no_document_name_floor(node.get("name")) != kind:
+                out.append("{} claims the name floor {!r}, which the name {!r} does not trip".format(label(node), kind, node.get("name")))
+            extra = set(block) - {"kind", "basis", "name"}
+            if extra:
+                out.append("{} name-floor block carries keys the module never writes: {}".format(label(node), sorted(extra)))
+            continue
+        if block.get("basis") != "nomination_ledger":
+            out.append("{} ledger block claims basis {!r}".format(label(node), block.get("basis")))
+        record = ledger.get(str(node.get("id") or ""))
+        if not record:
+            out.append("{} cites the nomination ledger, which has no record for it".format(label(node)))
+            continue
+        if not record.get("noCandidate"):
+            out.append("{} cites a ledger record that NOMINATES a page rather than declining one".format(label(node)))
+        if str(record.get("reason") or "") != kind:
+            out.append("{} claims {!r}; the ledger's latest record says {!r}".format(label(node), kind, record.get("reason")))
+        recorded = str(block.get("recordedAt") or "")
+        if recorded != str(record.get("nominatedAt") or "") or len(recorded) < 10:
+            out.append("{} recordedAt {!r} is not the ledger record's nominatedAt".format(label(node), recorded))
+        else:
+            try:
+                if date.fromisoformat(recorded[:10]) > today:
+                    out.append("{} recordedAt {!r} is in the future".format(label(node), recorded))
+            except ValueError:
+                out.append("{} recordedAt {!r} is not an ISO date".format(label(node), recorded))
+        renamed_on = renames.get(str(node.get("id") or ""))
+        if renamed_on and recorded and renamed_on > recorded[:10]:
+            out.append("{} was renamed on {} after the ledger record of {}".format(label(node), renamed_on, recorded[:10]))
+        meta = block.get("ledger") if isinstance(block.get("ledger"), dict) else {}
+        if str(meta.get("file") or "") != str(record.get("_file") or "") or str(meta.get("run") or "") != str(record.get("run") or ""):
+            out.append("{} ledger file/run {!r} is not the record's ({!r}, {!r})".format(label(node), meta, record.get("_file"), record.get("run")))
+        if str(block.get("note") or "") != str(record.get("note") or "")[:NO_DOCUMENT_NOTE_CHARS]:
+            out.append("{} quotes a note the ledger record does not carry".format(label(node)))
+        probe = block.get("probe")
+        record_probe = record.get("probe") if isinstance(record.get("probe"), dict) else None
+        if kind in NO_DOCUMENT_PROBE_KINDS and not isinstance(probe, dict):
+            out.append("{} claims {!r} with no probe".format(label(node), kind))
+        if isinstance(probe, dict):
+            if not record_probe or str(probe.get("url") or "") != str(record_probe.get("url") or "") or str(probe.get("verdict") or "") != str(record_probe.get("verdict") or ""):
+                out.append("{} probe is not the ledger record's".format(label(node)))
+            host = urlparse(str(probe.get("url") or "")).netloc.lower()
+            if not host.endswith((".gov", ".mil")):
+                out.append("{} probe cites a non-official host {!r}".format(label(node), host))
+        extra = set(block) - {"kind", "basis", "name", "recordedAt", "ledger", "note", "probe"}
+        if extra:
+            out.append("{} ledger block carries keys the module never writes: {}".format(label(node), sorted(extra)))
+    return out
+
+
 def is_committee(node):
     return str(node.get("type") or "").strip().casefold() in COMMITTEE_TYPES
 
@@ -10477,6 +10691,7 @@ def main(argv):
 
     gate.check("no node claims a failed check beside a source", failure_beside_source)
     gate.check("an unread page says which host, why, and when, and never beside a page method", unread_violations)
+    gate.check("a recorded reason no document can be read is the name floor or the ledger's latest record, and sits beside no method", no_document_violations(nodes, label))
     gate.check("an official source type has a .gov/.mil URL behind it", unofficial_official)
     gate.check("every verification method is one this pipeline can produce", unknown_method)
     gate.check("a salary-table rate names a level the archive still reports and the rate that table prints", bad_table_pay)
@@ -11719,6 +11934,22 @@ def main(argv):
     unread_kinds = Counter(str(n["verificationUnread"].get("kind")) for n in unread_orgs)
     print("  page unread          : {:,} organisations have a queued page that could not be read and no other method {}".format(
         len(unread_orgs), dict(unread_kinds) or ""))
+    # The definition of done's criterion 3: a method, or a recorded reason no
+    # official document can be read. The last line is the gap, by its own
+    # number, so it cannot be read as "unread" or as "not yet looked at".
+    current_orgs = [n for n in nodes if no_document_is_current_organisation(n) and n.get("id") != "the-constitution-of-the-united-states"]
+    no_document_orgs = [n for n in current_orgs if isinstance(n.get(NO_DOCUMENT_FIELD), dict) and not n.get("verificationMethod")]
+    no_document_kinds = Counter(str(n[NO_DOCUMENT_FIELD].get("kind")) for n in no_document_orgs)
+    print("  no document          : {:,} organisations carry a recorded reason no official document can be read for them {}".format(
+        len(no_document_orgs), dict(no_document_kinds) or ""))
+    # A document that WAS read and does not carry the name (verificationFailure)
+    # is a negative about the graph's wording, not a reason no document can be
+    # read, so it is the gap even where a ledger decline sits beside it; the
+    # report (scripts/report_evidence_coverage.py) counts the same set.
+    neither = [n for n in current_orgs if not n.get("verificationMethod") and not isinstance(n.get("verificationUnread"), dict)
+               and (n.get("verificationFailure") or not isinstance(n.get(NO_DOCUMENT_FIELD), dict))]
+    print("  evidence gap         : {:,} of {:,} current organisations carry neither a verification method nor a recorded reason, or were checked and not found (criterion 3)".format(
+        len(neither), len(current_orgs)))
     # Positions are 85% of this graph and carried no evidence of any kind
     # until 2026-09-15, so their coverage is reported on its own line rather
     # than buried in a total the organisations dominate.

@@ -162,6 +162,27 @@ function unreadText(unread) {
   return UNREAD_TEXT[String(unread.kind || "")] || UNREAD_TEXT.other;
 }
 
+// No page was ever queued for the unit, and the record says why: the panel's
+// own vocabulary (ui.js NO_DOCUMENT_TEXT), a fact about what this project can
+// read and never a finding about the unit.
+function noDocumentText(b) {
+  const when = formatDate(b.recordedAt);
+  const on = when ? ` on ${when}` : "";
+  const host = (b.probe && hostnameOf(b.probe.url)) || "the host";
+  const TEXT = {
+    curated_count_label: `Not verified: the name "${b.name}" is this graph's own count label, not a unit's name — no official page can carry it as a heading or link, so none was fetched`,
+    name_too_generic: `Not verified: the name "${b.name}" is one common word, which a page may use without naming this unit, so no page is checked for it`,
+    editorial_grouping: `Not verified: this is the graph's own grouping; the nomination pass${on} found no official page that names a unit of this name`,
+    covered_by_parent: `Not verified: it has no page of its own; the nomination pass${on} found its parent's page the right place to look, and that page does not label it`,
+    no_public_page_known: `Not verified: the nomination pass${on} could name no official page for it`,
+    not_on_a_gov_host: `Not verified: its site is not on a .gov or .mil host, which this verifier does not read (recorded${on})`,
+    host_refuses_crawler: `Not verified: ${host} refuses this crawler (probed${on}), so no page on it can be read — a fact about the host, not about the unit`,
+    page_read_does_not_name_it: `Not verified: ${host} was read${on} and does not carry this graph's name for the unit as a heading or link — a question about the name, not about whether the unit exists`,
+  };
+  const note = b.note ? ` — the ledger's note: “${b.note}”` : "";
+  return `${TEXT[String(b.kind || "")] || `Not verified: no official page could be named for it${on}`}${note}`;
+}
+
 // The panel's rule, not keyed on verificationStatus: that string is stamped
 // "unverified" on every node the normaliser touches, so it is a default, not
 // a finding. Zero sources and no timestamp means nothing was checked.
@@ -203,6 +224,10 @@ function describeEvidence(node) {
   const unread = node.verificationUnread;
   if (!node.verificationMethod && unread && typeof unread === "object") {
     return { status: "unread", short: "page could not be read", text: unreadText(unread) };
+  }
+  const noDocument = node.verificationNoDocument;
+  if (!node.verificationMethod && noDocument && typeof noDocument === "object") {
+    return { status: "nodocument", short: "no page could be named", text: noDocumentText(noDocument) };
   }
   if (isNeverChecked(node)) {
     const headcount = node.employeesOfficial !== undefined && node.employeesOfficial !== null;

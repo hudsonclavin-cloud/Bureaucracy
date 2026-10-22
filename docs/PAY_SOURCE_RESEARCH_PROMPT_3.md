@@ -2873,7 +2873,7 @@ THE TITLES:
 - exec-dept-doc-census-regional-director-12-regional-offices | Regional Director — 12 Regional Offices
 - exec-dept-doc-census-statistician-demographer-multiple | Statistician / Demographer (×multiple)  [×N]
 
-### Dwight D. Eisenhower Presidential Library (Abilene, KS)  [exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks]
+### Dwight D. Eisenhower Presidential Library and Museum (Abilene, KS)  [exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks]
 - exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-archivist-multiple | Archivist (×multiple)  [×N]
 - exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-deputy-director | Deputy Director
 - exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks-director-of-education-public-programs | Director of Education & Public Programs
@@ -2979,7 +2979,7 @@ THE TITLES:
 - exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi-museum-curator | Museum Curator
 - exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi-supervisory-archivist | Supervisory Archivist
 
-### Harry S. Truman Presidential Library (Independence, MO)  [exec-ind-nara-harry-s-truman-presidential-library-independence-mo]
+### Harry S. Truman Presidential Library and Museum (Independence, MO)  [exec-ind-nara-harry-s-truman-presidential-library-independence-mo]
 - exec-ind-nara-harry-s-truman-presidential-library-independence-mo-archivist-multiple | Archivist (×multiple)  [×N]
 - exec-ind-nara-harry-s-truman-presidential-library-independence-mo-deputy-director | Deputy Director
 - exec-ind-nara-harry-s-truman-presidential-library-independence-mo-director-of-education-public-programs | Director of Education & Public Programs
@@ -2987,7 +2987,7 @@ THE TITLES:
 - exec-ind-nara-harry-s-truman-presidential-library-independence-mo-museum-curator | Museum Curator
 - exec-ind-nara-harry-s-truman-presidential-library-independence-mo-supervisory-archivist | Supervisory Archivist
 
-### Herbert Hoover Presidential Library (West Branch, IA)  [exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia]
+### Herbert Hoover Presidential Library and Museum (West Branch, IA)  [exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia]
 - exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-archivist-multiple | Archivist (×multiple)  [×N]
 - exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-deputy-director | Deputy Director
 - exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-director-of-education-public-programs | Director of Education & Public Programs
@@ -2995,7 +2995,7 @@ THE TITLES:
 - exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-museum-curator | Museum Curator
 - exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-supervisory-archivist | Supervisory Archivist
 
-### Jimmy Carter Presidential Library (Atlanta, GA)  [exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga]
+### Jimmy Carter Presidential Library and Museum (Atlanta, GA)  [exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga]
 - exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-archivist-multiple | Archivist (×multiple)  [×N]
 - exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-deputy-director | Deputy Director
 - exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-director-of-education-public-programs | Director of Education & Public Programs
@@ -3003,7 +3003,7 @@ THE TITLES:
 - exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-museum-curator | Museum Curator
 - exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-supervisory-archivist | Supervisory Archivist
 
-### John F. Kennedy Presidential Library (Boston, MA)  [exec-ind-nara-john-f-kennedy-presidential-library-boston-ma]
+### John F. Kennedy Presidential Library and Museum (Boston, MA)  [exec-ind-nara-john-f-kennedy-presidential-library-boston-ma]
 - exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-archivist-multiple | Archivist (×multiple)  [×N]
 - exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-deputy-director | Deputy Director
 - exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-director-of-education-public-programs | Director of Education & Public Programs
@@ -3011,7 +3011,7 @@ THE TITLES:
 - exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-museum-curator | Museum Curator
 - exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-supervisory-archivist | Supervisory Archivist
 
-### Lyndon B. Johnson Presidential Library (Austin, TX)  [exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx]
+### Lyndon Baines Johnson Presidential Library and Museum (Austin, TX)  [exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx]
 - exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx-archivist-multiple | Archivist (×multiple)  [×N]
 - exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx-deputy-director | Deputy Director
 - exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx-director-of-education-public-programs | Director of Education & Public Programs
@@ -3051,7 +3051,7 @@ THE TITLES:
 - exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca-museum-curator | Museum Curator
 - exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca-supervisory-archivist | Supervisory Archivist
 
-### Ronald Reagan Presidential Library (Simi Valley, CA)  [exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca]
+### Ronald Reagan Presidential Library and Museum (Simi Valley, CA)  [exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca]
 - exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-archivist-multiple | Archivist (×multiple)  [×N]
 - exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-deputy-director | Deputy Director
 - exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca-director-of-education-public-programs | Director of Education & Public Programs
@@ -3075,7 +3075,7 @@ THE TITLES:
 - exec-dept-dhs-uscis-director-field-office-89-offices | Director — Field Office (×89 offices)  [×N]
 - exec-dept-dhs-uscis-immigration-services-officer-multiple | Immigration Services Officer (×multiple)  [×N]
 
-### William J. Clinton Presidential Library (Little Rock, AR)  [exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar]
+### William J. Clinton Presidential Library and Museum (Little Rock, AR)  [exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar]
 - exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-archivist-multiple | Archivist (×multiple)  [×N]
 - exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-deputy-director | Deputy Director
 - exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar-director-of-education-public-programs | Director of Education & Public Programs

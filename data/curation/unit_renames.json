@@ -859,6 +859,70 @@
    "url": "https://docs.house.gov/Committee/Committees.aspx?Code=IG00",
    "basis": "The House Clerk's committee list (tests/fixtures/directories/house/committees.xlsx, fetched 2026-09-13) is the complete list of the 119th Congress's House subcommittees and carries the proposed name under this committee; docs.house.gov's listing for the Permanent Select Committee on Intelligence prints 'Subcommittee on Defense Intelligence and Overhead Architecture' in page content, the same page that licensed this committee's NSA and Cyber rename in §9 (intelligence.house.gov's own /subcommittees page is a script shell below the readable floor). Same committee, same seat: 'Defense Intelligence' is the jurisdiction phrase shared, with '& Warfighter Support' replaced by 'and Overhead Architecture' for the 119th Congress. CURATION.md §16.",
    "addedOn": "2026-09-21"
-  }
- ]
+  },
+    {
+      "id": "exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia",
+      "from": "Herbert Hoover Presidential Library (West Branch, IA)",
+      "to": "Herbert Hoover Presidential Library and Museum (West Branch, IA)",
+      "url": "https://www.archives.gov/presidential-libraries",
+      "basis": "NARA's own directory of its presidential libraries (archives.gov/presidential-libraries, the page already queued under the National Archives' key) labels the library as a heading with the words 'Presidential Library and Museum', which is also how the library's own site styles itself (hoover.archives.gov: 'Herbert Hoover Presidential Library-Museum'); the curated name dropped 'and Museum', so neither page could label it. The city and state stay in brackets, which canonical_name_key drops.",
+      "addedOn": "2026-10-22"
+    },
+    {
+      "id": "exec-ind-nara-harry-s-truman-presidential-library-independence-mo",
+      "from": "Harry S. Truman Presidential Library (Independence, MO)",
+      "to": "Harry S. Truman Presidential Library and Museum (Independence, MO)",
+      "url": "https://www.archives.gov/presidential-libraries",
+      "basis": "NARA's own directory of its presidential libraries (archives.gov/presidential-libraries, the page already queued under the National Archives' key) labels the library as a heading with the words 'Presidential Library and Museum', which is also how the library's own site styles itself (trumanlibrary.gov's title: 'Welcome to the Harry S. Truman Presidential Library and Museum'); the curated name dropped 'and Museum', so neither page could label it. The city and state stay in brackets, which canonical_name_key drops.",
+      "addedOn": "2026-10-22"
+    },
+    {
+      "id": "exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks",
+      "from": "Dwight D. Eisenhower Presidential Library (Abilene, KS)",
+      "to": "Dwight D. Eisenhower Presidential Library and Museum (Abilene, KS)",
+      "url": "https://www.archives.gov/presidential-libraries",
+      "basis": "NARA's own directory of its presidential libraries (archives.gov/presidential-libraries, the page already queued under the National Archives' key) labels the library as a heading with the words 'Presidential Library and Museum', which is also how the library's own site styles itself (eisenhowerlibrary.gov labels only the short form 'Eisenhower Presidential Library'); the curated name dropped 'and Museum', so neither page could label it. The city and state stay in brackets, which canonical_name_key drops.",
+      "addedOn": "2026-10-22"
+    },
+    {
+      "id": "exec-ind-nara-john-f-kennedy-presidential-library-boston-ma",
+      "from": "John F. Kennedy Presidential Library (Boston, MA)",
+      "to": "John F. Kennedy Presidential Library and Museum (Boston, MA)",
+      "url": "https://www.archives.gov/presidential-libraries",
+      "basis": "NARA's own directory of its presidential libraries (archives.gov/presidential-libraries, the page already queued under the National Archives' key) labels the library as a heading with the words 'Presidential Library and Museum', which is also how the library's own site styles itself (the library's own site is jfklibrary.org, which this verifier does not read); the curated name dropped 'and Museum', so neither page could label it. The city and state stay in brackets, which canonical_name_key drops.",
+      "addedOn": "2026-10-22"
+    },
+    {
+      "id": "exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx",
+      "from": "Lyndon B. Johnson Presidential Library (Austin, TX)",
+      "to": "Lyndon Baines Johnson Presidential Library and Museum (Austin, TX)",
+      "url": "https://www.archives.gov/presidential-libraries",
+      "basis": "NARA's own directory of its presidential libraries (archives.gov/presidential-libraries, the page already queued under the National Archives' key) labels the library as a heading with the words 'Presidential Library and Museum', which is also how the library's own site styles itself (NARA spells the name out in full; the library's own site is lbjlibrary.org, which this verifier does not read); the curated name dropped 'and Museum', so neither page could label it. The city and state stay in brackets, which canonical_name_key drops.",
+      "addedOn": "2026-10-22"
+    },
+    {
+      "id": "exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga",
+      "from": "Jimmy Carter Presidential Library (Atlanta, GA)",
+      "to": "Jimmy Carter Presidential Library and Museum (Atlanta, GA)",
+      "url": "https://www.archives.gov/presidential-libraries",
+      "basis": "NARA's own directory of its presidential libraries (archives.gov/presidential-libraries, the page already queued under the National Archives' key) labels the library as a heading with the words 'Presidential Library and Museum', which is also how the library's own site styles itself (jimmycarterlibrary.gov's robots.txt disallows the whole site); the curated name dropped 'and Museum', so neither page could label it. The city and state stay in brackets, which canonical_name_key drops.",
+      "addedOn": "2026-10-22"
+    },
+    {
+      "id": "exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca",
+      "from": "Ronald Reagan Presidential Library (Simi Valley, CA)",
+      "to": "Ronald Reagan Presidential Library and Museum (Simi Valley, CA)",
+      "url": "https://www.archives.gov/presidential-libraries",
+      "basis": "NARA's own directory of its presidential libraries (archives.gov/presidential-libraries, the page already queued under the National Archives' key) labels the library as a heading with the words 'Presidential Library and Museum', which is also how the library's own site styles itself (reaganlibrary.gov: 'Ronald Reagan Presidential Library & Museum'); the curated name dropped 'and Museum', so neither page could label it. The city and state stay in brackets, which canonical_name_key drops.",
+      "addedOn": "2026-10-22"
+    },
+    {
+      "id": "exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar",
+      "from": "William J. Clinton Presidential Library (Little Rock, AR)",
+      "to": "William J. Clinton Presidential Library and Museum (Little Rock, AR)",
+      "url": "https://www.archives.gov/presidential-libraries",
+      "basis": "NARA's own directory of its presidential libraries (archives.gov/presidential-libraries, the page already queued under the National Archives' key) labels the library as a heading with the words 'Presidential Library and Museum', which is also how the library's own site styles itself (clintonlibrary.gov's title: 'Homepage | William J. Clinton Presidential Library and Museum'); the curated name dropped 'and Museum', so neither page could label it. The city and state stay in brackets, which canonical_name_key drops.",
+      "addedOn": "2026-10-22"
+    }
+]
 }

@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261021c";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261021c";
+import { createGovernmentGraph } from "./graph.js?v=20261022a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261022a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -244,7 +244,7 @@ function summariseGraph(root) {
     nodes: 0, measured: 0, capped: 0, receipts: 0, sourced: 0,
     placed: 0, orgEdges: 0, unreachable: 0, posts: 0, paidPosts: 0,
     allocated: 0, noFigure: 0, postsWithoutFigure: 0,
-    orgs: 0, orgsSourced: 0, orgsUnread: 0, orgsHostRefuses: 0,
+    orgs: 0, orgsSourced: 0, orgsUnread: 0, orgsHostRefuses: 0, orgsNoDocument: 0,
     sourcedFigure: 0, sourcedFigureFileA: 0, sourcedFigureCombined: 0, sourcedFigureOmb: 0, sourcedFigureAudited: 0, sourcedFigureDisbursed: 0,
     sourcedFigureWithEstimate: 0, sourcedFigureNoFigure: 0,
   };
@@ -315,6 +315,11 @@ function summariseGraph(root) {
         if (unread && typeof unread === "object" && !node.verificationMethod) {
           count.orgsUnread += 1;
           if (String(unread.kind || "") === "host_refuses_crawler") count.orgsHostRefuses += 1;
+        }
+        // No page was queued at all, and the record says why (the name is a
+        // count label, the graph's own grouping, a site off every .gov host).
+        if (node.verificationNoDocument && typeof node.verificationNoDocument === "object" && !node.verificationMethod && !(unread && typeof unread === "object")) {
+          count.orgsNoDocument += 1;
         }
       }
       if (node.placementVerified === true) count.placed += 1;
@@ -398,7 +403,8 @@ function readingGuidePoints(count) {
       + `"no source recorded" on a post is this site declining to claim what it cannot show, not a check `
       + `that was skipped. Of the ${count.orgs.toLocaleString()} organisations, ${count.orgsSourced.toLocaleString()} `
       + `carry a source and ${count.orgsUnread.toLocaleString()} have a page queued that could not be read`
-      + `${count.orgsHostRefuses ? ` — for ${count.orgsHostRefuses.toLocaleString()} of them because the host refuses this crawler outright, which is a fact about the host and not about the unit` : ""}; `
+      + `${count.orgsHostRefuses ? ` — for ${count.orgsHostRefuses.toLocaleString()} of them because the host refuses this crawler outright, which is a fact about the host and not about the unit` : ""}`
+      + `${count.orgsNoDocument ? `, and ${count.orgsNoDocument.toLocaleString()} carry a recorded reason no page could be named for them: the name is this graph's own count label or grouping, the site is not on a .gov host, or the host refuses every crawler` : ""}; `
       + `each panel says which. The written descriptions carry no citation at all, and are labelled that way `
       + `wherever they appear.`,
     ],
@@ -846,6 +852,7 @@ const LENS_LEGENDS = {
       ["Partial — one document", "#E0A83C"],
       ["Checked, not found", "#E06A4F"],
       ["Host refuses the crawler", "#9A86CF"],
+      ["No page could be named — reason recorded", "#B7A9DC"],
       ["No source recorded", "#6E7079"],
       ["Treasury accounting line", "#8AA0B0"],
     ],
@@ -2362,6 +2369,38 @@ function describeUnreadPage(data) {
   return UNREAD_TEXT[String(u.kind || "")] || UNREAD_TEXT.other;
 }
 
+// No page was ever queued for the unit, and the record says why: the
+// verifier's own floor on the NAME (a count label, one common word), or the
+// phase 1b nomination ledger's latest decline, quoted. Said as a fact about
+// what this project can read, never as a finding about the unit. Null where
+// a method confirmed the node or a queued page's own unread record stands.
+const NO_DOCUMENT_TEXT = {
+  curated_count_label: (b) => `Not verified: the name "${b.name}" is this graph's own count label, not a unit's name — no official page can carry it as a heading or link, so none was fetched`,
+  name_too_generic: (b) => `Not verified: the name "${b.name}" is one common word, which a page may use without naming this unit, so no page is checked for it`,
+  editorial_grouping: (b, on, host) => `Not verified: this is the graph's own grouping; the nomination pass${on} found no official page that names a unit of this name`,
+  covered_by_parent: (b, on, host) => `Not verified: it has no page of its own; the nomination pass${on} found its parent's page the right place to look, and that page does not label it`,
+  no_public_page_known: (b, on, host) => `Not verified: the nomination pass${on} could name no official page for it`,
+  not_on_a_gov_host: (b, on, host) => `Not verified: its site is not on a .gov or .mil host, which this verifier does not read (recorded${on})`,
+  host_refuses_crawler: (b, on, host) => `Not verified: ${host} refuses this crawler (probed${on}), so no page on it can be read — a fact about the host, not about the unit`,
+  page_read_does_not_name_it: (b, on, host) => `Not verified: ${host} was read${on} and does not carry this graph's name for the unit as a heading or link — a question about the name, not about whether the unit exists`,
+};
+
+function describeNoDocument(data) {
+  const b = data.verificationNoDocument;
+  if (data.verificationMethod || !b || typeof b !== "object") {
+    return null;
+  }
+  const when = b.recordedAt ? new Date(b.recordedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "";
+  const on = when ? ` on ${when}` : "";
+  const host = (b.probe && hostnameOf(b.probe.url)) || "the host";
+  const render = NO_DOCUMENT_TEXT[String(b.kind || "")];
+  if (!render) {
+    return null;
+  }
+  const note = b.note ? ` — the ledger's note: “${b.note}”` : "";
+  return `${render(b, on, host)}${note}`;
+}
+
 function renderVerificationPanel(data, isRoot = false) {
   if (!dom.verificationWrap) {
     return;
@@ -2393,15 +2432,19 @@ function renderVerificationPanel(data, isRoot = false) {
     // work in a unit of this name, not that this unit exists as the graph
     // draws it — so the panel says which one is missing rather than denying
     // the one it has.
+    // A never-checked node can still have a page queued that went unread, or
+    // a recorded reason no page could be named; that is the line a reader
+    // most needs, and it was never printed here. Where one exists, the
+    // sentence above it must not say nothing was attached "yet", which reads
+    // as a check nobody got to.
+    const whyUnread = describeUnreadPage(data) || describeNoDocument(data);
     setText(
       dom.verificationConfidence,
       data.employeesOfficial === undefined || data.employeesOfficial === null
-        ? "No source URL has been attached to it yet."
+        ? (whyUnread ? "No source recorded, and the reason none could be read is recorded below." : "No source URL has been attached to it yet.")
         : "No source has been attached for its existence. OPM's employment table, linked below, names a unit of this name — evidence about its staffing, not about whether it exists as drawn."
     );
-    // A never-checked node can still have a page queued that went unread;
-    // that is the line a reader most needs, and it was never printed here.
-    setText(dom.verificationLastVerified, describeUnreadPage(data) || "");
+    setText(dom.verificationLastVerified, whyUnread || "");
     renderPlacementLine(data, isRoot);
   } else {
     setText(dom.verificationStatus, `Verification Status: ${status}`);
@@ -2479,8 +2522,8 @@ function renderVerificationPanel(data, isRoot = false) {
       checkLine = checkedOn
         ? `Checked ${checkedOn}: its official page${where} does not name it as a heading or link`
         : `Its official page${where} does not name it as a heading or link`;
-    } else if (describeUnreadPage(data)) {
-      checkLine = describeUnreadPage(data);
+    } else if (describeUnreadPage(data) || describeNoDocument(data)) {
+      checkLine = describeUnreadPage(data) || describeNoDocument(data);
     } else if (checkedOn) {
       const how = METHOD_TEXT[String(data.verificationMethod || "")];
       const where = data.verificationMatchedIn === "navigation" ? " (in the site-wide navigation)" : "";

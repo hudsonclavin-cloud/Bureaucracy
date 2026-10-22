@@ -3124,7 +3124,7 @@ same list in the same run.
 - `exec-dept-doc-census-regional-director-12-regional-offices` — Regional Director — 12 Regional Offices — `unreached`
 - `exec-dept-doc-census-statistician-demographer-multiple` — Statistician / Demographer (×multiple) — `multiplicity`
 
-## Dwight D. Eisenhower Presidential Library (Abilene, KS)  — 6 unpriced
+## Dwight D. Eisenhower Presidential Library and Museum (Abilene, KS)  — 6 unpriced
 
 `exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks`
 
@@ -3190,7 +3190,7 @@ same list in the same run.
 - `exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi-museum-curator` — Museum Curator — `unreached`
 - `exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi-supervisory-archivist` — Supervisory Archivist — `unreached`
 
-## Harry S. Truman Presidential Library (Independence, MO)  — 6 unpriced
+## Harry S. Truman Presidential Library and Museum (Independence, MO)  — 6 unpriced
 
 `exec-ind-nara-harry-s-truman-presidential-library-independence-mo`
 
@@ -3201,7 +3201,7 @@ same list in the same run.
 - `exec-ind-nara-harry-s-truman-presidential-library-independence-mo-museum-curator` — Museum Curator — `unreached`
 - `exec-ind-nara-harry-s-truman-presidential-library-independence-mo-supervisory-archivist` — Supervisory Archivist — `unreached`
 
-## Herbert Hoover Presidential Library (West Branch, IA)  — 6 unpriced
+## Herbert Hoover Presidential Library and Museum (West Branch, IA)  — 6 unpriced
 
 `exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia`
 
@@ -3212,7 +3212,7 @@ same list in the same run.
 - `exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-museum-curator` — Museum Curator — `unreached`
 - `exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia-supervisory-archivist` — Supervisory Archivist — `unreached`
 
-## Jimmy Carter Presidential Library (Atlanta, GA)  — 6 unpriced
+## Jimmy Carter Presidential Library and Museum (Atlanta, GA)  — 6 unpriced
 
 `exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga`
 
@@ -3223,7 +3223,7 @@ same list in the same run.
 - `exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-museum-curator` — Museum Curator — `unreached`
 - `exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga-supervisory-archivist` — Supervisory Archivist — `unreached`
 
-## John F. Kennedy Presidential Library (Boston, MA)  — 6 unpriced
+## John F. Kennedy Presidential Library and Museum (Boston, MA)  — 6 unpriced
 
 `exec-ind-nara-john-f-kennedy-presidential-library-boston-ma`
 
@@ -3234,7 +3234,7 @@ same list in the same run.
 - `exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-museum-curator` — Museum Curator — `unreached`
 - `exec-ind-nara-john-f-kennedy-presidential-library-boston-ma-supervisory-archivist` — Supervisory Archivist — `unreached`
 
-## Lyndon B. Johnson Presidential Library (Austin, TX)  — 6 unpriced
+## Lyndon Baines Johnson Presidential Library and Museum (Austin, TX)  — 6 unpriced
 
 `exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx`
 
@@ -3289,7 +3289,7 @@ same list in the same run.
 - `exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca-museum-curator` — Museum Curator — `unreached`
 - `exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca-supervisory-archivist` — Supervisory Archivist — `unreached`
 
-## Ronald Reagan Presidential Library (Simi Valley, CA)  — 6 unpriced
+## Ronald Reagan Presidential Library and Museum (Simi Valley, CA)  — 6 unpriced
 
 `exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca`
 
@@ -3322,7 +3322,7 @@ same list in the same run.
 - `exec-dept-dhs-uscis-director-field-office-89-offices` — Director — Field Office (×89 offices) — `multiplicity`
 - `exec-dept-dhs-uscis-immigration-services-officer-multiple` — Immigration Services Officer (×multiple) — `multiplicity`
 
-## William J. Clinton Presidential Library (Little Rock, AR)  — 6 unpriced
+## William J. Clinton Presidential Library and Museum (Little Rock, AR)  — 6 unpriced
 
 `exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar`
 

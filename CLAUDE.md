@@ -66,6 +66,7 @@ python scripts/derive_military_pay_evidence.py --dry-run  # Schedule 8 of the pa
 python scripts/derive_us_code_stated_pay_evidence.py --dry-run   # an office's salary a Code section states in dollars (3 U.S.C. 102, the President); writes nothing
 python scripts/report_unpriced_positions.py --dry-run        # every position with no pay claim, and the prompt pack that covers all of them
 python scripts/report_cost_coverage.py --dry-run             # every node in exactly one cost class, and the route that would move each; writes docs/COST_COVERAGE.md
+python scripts/report_evidence_coverage.py --dry-run         # every current organisation in exactly one evidence class; the definition of done's criterion 3 gap as one number; writes docs/EVIDENCE_COVERAGE.md
 python scripts/report_research_prompts.py --dry-run         # the 100 title families holding the most unpriced posts in one prompt, the rest and every estimate in shards; writes docs/RESEARCH_PROMPT_4_*.md
 python scripts/export_research_pack.py                      # the node lists docs/RESEARCH_PROMPT_5_DEEP_RESEARCH.md attaches, as CSVs in output/research_pack/ (gitignored; regenerate, never commit)
 python scripts/derive_congressional_pay_evidence.py --dry-run  # senate.gov's own salary schedule; writes nothing
@@ -571,6 +572,47 @@ Five statuses in `evidence.json`, and only the first two are applied:
   label; it is not, and the correction is the same distinction the nomination
   vocabulary draws — "this name could never be evidence" and "the page does
   not carry the whole curated name" are different claims with different fixes.
+
+**A recorded reason where no document can be read (`no_document.py`, since
+2026-10-22).** `docs/DEFINITION_OF_DONE.md` criterion 3 asks that every current
+organisation carry a `verificationMethod` or a recorded reason no official
+document can be read for it. `verificationUnread` was the only such reason and
+covers a page that was QUEUED and went unread; 175 of the 247 unsourced
+organisations had no page queued at all, and the panel said "no source URL has
+been attached to it yet" — while every one of them had a record in the phase
+1b nomination ledger (`data/audit/nominations/source-*.jsonl`) saying what was
+tried, or a `not_checkable` record saying the NAME could never be evidence.
+`verificationNoDocument` publishes that and no more: `kind` is the ledger's own
+decline vocabulary (`editorial_grouping`, `covered_by_parent`,
+`no_public_page_known`, `not_on_a_gov_host`, `host_refuses_crawler`,
+`page_read_does_not_name_it`) plus the verifier's two name floors
+(`curated_count_label`, `name_too_generic`); a name-floor block is recomputed
+from the name every build, and a ledger block quotes the node's LATEST record
+(the `nominate.read_ledger` rule) only when it is a decline — a record that
+nominates a page licenses nothing — with the date, run, file, a 320-character
+note and, for the two probe-requiring reasons, the probe's .gov/.mil URL and
+verdict; a record older than a rename row for the node is refused. Never on a
+post, a line or a replaced unit, never beside a method or an unread record;
+no `sourceUrls`, `lastVerified` or status. The gate mirrors the floor, the
+ledger reader and the vocabulary stdlib-only, re-reads the committed ledger
+and refuses in both directions (a block that is not the latest record's, and
+a floor-tripping name with no block); the panel, the directory and the
+Evidence lens each say the reason in words and never "no source recorded".
+`scripts/report_evidence_coverage.py` → `docs/EVIDENCE_COVERAGE.md` partitions
+the 870 current organisations and prints the criterion-3 gap as one number.
+Measured on 2026-10-22: methods 623 → 631 (eight presidential libraries
+renamed to NARA's "… Presidential Library and Museum" and confirmed on NARA's
+own directory page; MACPAC confirmed on macpac.gov), 166 blocks stamped, and
+the gap **247 → 40**. The 40 are every `verificationFailure` with no method —
+a document WAS read and does not carry the graph's name, which the report and
+the gate's "evidence gap" line both count above a block, since a reason no
+document can be read is not the answer to a document that was read: 17
+subcommittees a complete committee list does not carry, 17 units whose own
+page labels another wording (ten NSF divisions, the breadcrumb §9 declined),
+4 of the graph's own groupings, the Eisenhower library (its site labels the
+short form while NARA's page lists it; the rule that an own-page negative is
+never overwritten by a parent's listing stands) and one more. All are name
+questions or curation decisions. `CURATION.md` §23.
 
 **Committees, with the graph's type words set aside (since 2026-09-13).**
 The graph names every committee with a type word in front — "House

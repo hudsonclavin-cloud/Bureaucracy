@@ -318,6 +318,17 @@ try {
     check("an unread page says why it went unread", /^Not verified: /.test(evidenceRow) && /(could not be read|was not read|answered 404|refused until|could not be reached)/.test(evidenceRow), evidenceRow);
   }
 
+  // An organisation with a recorded reason no page could be named: the
+  // directory says the reason, never "no source recorded".
+  const noDocumentDirOrg = allNodes.find((n) => !isPostNode(n) && n.verificationNoDocument && !n.verificationMethod && !n.verificationUnread && !n.verificationFailure && reachable(n));
+  check("a no-document organisation is reachable in the directory", Boolean(noDocumentDirOrg), "none");
+  if (noDocumentDirOrg) {
+    check("the directory opens a no-document organisation", await openInDirectory(noDocumentDirOrg), noDocumentDirOrg.name);
+    const evidenceRow = await rowText(".detail-row:first-child dd");
+    check("a recorded reason is not called no source recorded in the directory", !/no source recorded/i.test(evidenceRow), evidenceRow);
+    check("the directory says why no page could be named", /^Not verified: /.test(evidenceRow), evidenceRow);
+  }
+
   // A checked-and-failed node says what was tested and against what.
   const failedNode = allNodes.find((n) => n.verificationFailure && reachable(n));
   if (failedNode) {
@@ -1878,6 +1889,21 @@ try {
     check("a never-checked node with an unread page says the page went unread", /Not verified: .*(could not be read|nothing could be read|refuses this crawler|answered 404|could not be reached|server error)/.test(unreadPanel), unreadPanel.slice(-700));
     check("an unread page is described as a fact about the page or host, not the unit", !/Not yet verified/.test(unreadPanel), unreadPanel.slice(0, 700));
   }
+  // An organisation for which no page was ever queued, and the record says
+  // why — the verifier's name floor or the nomination ledger's decline. The
+  // panel prints the reason where it said "hand-compiled base graph", and
+  // never calls it a finding about the unit.
+  const noDocumentNode = allNodes.find((n) =>
+    n.verificationNoDocument && typeof n.verificationNoDocument === "object" && !n.verificationMethod
+    && !n.verificationUnread && !n.verificationFailure && !(n.sourceUrls || []).length && unique(n));
+  check("some organisation carries a recorded reason no document can be read", Boolean(noDocumentNode), "none");
+  if (noDocumentNode) {
+    await openByName(noDocumentNode.name);
+    const noDocPanel = await text("#info-panel");
+    check("a unit with a recorded reason says why no page could be named", /Not verified: .*(count label|one common word|graph's own grouping|no page of its own|could name no official page|not on a \.gov or \.mil host|refuses this crawler|does not carry this graph's name)/.test(noDocPanel), noDocPanel.slice(-900));
+    check("a recorded reason is not described as a page that was never looked for", !/No source URL has been attached to it yet/.test(noDocPanel), noDocPanel.slice(0, 700));
+    measurements.noDocumentKind = noDocumentNode.verificationNoDocument.kind;
+  }
   // OPM's PLUM archive as the method that confirmed a post and placed it:
   // 125 and 129 nodes, which the wording maps did not know, so the panel
   // fell to "Last checked: <date>" and "no evidence recorded".
@@ -2167,7 +2193,8 @@ try {
     const isPost = (n) => /position|\brole\b|office holder/i.test(String(n.type || ""));
     const measuredOrg = allNodes.find((n) => n.cost_status === "official" && !isPost(n) && !n.synthetic && Number(n.resolved_total_amount) > 1e9 && n.__depth > 0);
     const verifiedOrg = allNodes.find((n) => n.verificationStatus === "verified" && (n.sourceUrls || []).length >= 2 && !isPost(n));
-    const unsourced = allNodes.find((n) => !n.lastVerified && !(n.sourceUrls || []).length && !n.verificationUnread && !n.synthetic);
+    const unsourced = allNodes.find((n) => !n.lastVerified && !(n.sourceUrls || []).length && !n.verificationUnread && !n.verificationNoDocument && !n.synthetic);
+    const noDocumentOrg = allNodes.find((n) => !isPost(n) && n.verificationNoDocument && !n.verificationMethod && !n.verificationUnread && !n.verificationFailure);
     const statutoryPost = allNodes.find((n) => isPost(n) && n.positionStatutoryPay && Number(n.positionStatutoryPay.amount) > 0 && !n.representsPosts);
     const unpricedPost = allNodes.find((n) => isPost(n) && !n.positionStatutoryPay && !n.positionSchedulePay && !n.positionTierReferencePay && !n.positionDerivedPay && !n.positionMilitaryPay && !n.positionReportedPay && !n.positionCurrentPay && !n.positionPayRate && !n.positionGradePay && !n.positionTierPay && !n.positionEmployer);
     const estimateOrg = allNodes.find((n) => n.cost_status === "allocated" && !isPost(n) && Number(n.resolved_total_amount) > 0);
@@ -2179,6 +2206,10 @@ try {
     if (verifiedOrg) {
       const v = await verdictOf(verifiedOrg.id);
       check("under Evidence a verified unit draws as verified", v && v.key === "verified" && v.color === "#4FBF8C", JSON.stringify(v));
+    }
+    if (noDocumentOrg) {
+      const v = await verdictOf(noDocumentOrg.id);
+      check("under Evidence a unit with a recorded reason draws as no page could be named, never as unsourced", v && v.key === "noDocument" && /no page could be named/.test(v.text), JSON.stringify(v));
     }
     if (unsourced) {
       const v = await verdictOf(unsourced.id);

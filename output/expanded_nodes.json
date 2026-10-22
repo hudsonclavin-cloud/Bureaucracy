@@ -48260,7 +48260,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "parentId": "exec-dept-doj"
+    "parentId": "exec-dept-doj",
+    "verificationNoDocument": {
+      "kind": "curated_count_label",
+      "basis": "verifier_name_floor",
+      "name": "U.S. Attorneys Office (USAO — 94 Districts)"
+    }
   },
   {
     "id": "exec-dept-doj-div-antitrust",
@@ -82486,7 +82491,7 @@
     "cost_status": "official",
     "cost_basis": "treasury_rollup",
     "cost_validation": "matched_official_rollup",
-    "child_cost_basis": "dollars",
+    "child_cost_basis": "subtree",
     "costVerificationStatus": "verified",
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
@@ -83177,7 +83182,6 @@
       },
       "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
     },
-    "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
   },
   {
@@ -84379,6 +84383,16 @@
     "sourceCount": 3,
     "confidenceScore": 0.9,
     "verificationStatus": "verified",
+    "rollup_total_amount": 242849884236.03,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Benefits Programs",
+    "budget_as_of": "2026-08-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "treasury_section": "Department of Veterans Affairs",
+    "treasury_classification_id": "59309690",
     "lastVerified": "2026-09-20T00:33:15+00:00",
     "evidenceUrls": [
       "https://department.va.gov/veterans-benefits-administration/",
@@ -117067,7 +117081,18 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "verificationNoDocument": {
+      "kind": "not_on_a_gov_host",
+      "basis": "nomination_ledger",
+      "name": "Corporation for Public Broadcasting",
+      "recordedAt": "2026-09-20T23:44:26Z",
+      "ledger": {
+        "file": "source-sweep-2026-09-20.jsonl",
+        "run": "sweep-2026-09-20"
+      },
+      "note": "CPB's official site is cpb.org, a .org domain the verifier does not fetch (not .gov/.mil). Not probed: this is a well-established, unambiguous fact about CPB's domain and probing a .org URL would not change what the verifier can act on."
+    }
   },
   {
     "id": "exec-ind-misc-holocaust-memorial-museum",
@@ -126618,7 +126643,22 @@
     "placementParentId": "exec-independent",
     "placementVerifiedAt": "2026-09-21T05:26:27+00:00",
     "treasury_unapportioned": 12003552434.13,
-    "parentId": "exec-independent"
+    "parentId": "exec-independent",
+    "verificationNoDocument": {
+      "kind": "host_refuses_crawler",
+      "basis": "nomination_ledger",
+      "name": "Corps of Engineers",
+      "recordedAt": "2026-09-20T23:44:26Z",
+      "ledger": {
+        "file": "source-sweep-2026-09-20.jsonl",
+        "run": "sweep-2026-09-20"
+      },
+      "note": "Already measured official via the Treasury rollup ('Total--Corps of Engineers', $10.9B). Probed the unit's real site, https://www.usace.army.mil/, this session for existence verification: robots.txt refused (403 on all 3 attempts). No readable page found; the measured cost is unaffected.",
+      "probe": {
+        "url": "https://www.archives.gov/presidential-libraries",
+        "verdict": "fetch_failed"
+      }
+    }
   },
   {
     "id": "exec-independent-corps-of-engineers--treasury-receipts",

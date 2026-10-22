@@ -3,7 +3,8 @@
 Decided by the owner on 2026-10-21, in two rounds of multiple-choice questions.
 Every "today" figure below was measured on the published graph that day
 (`output/graph.json`, 5,510 nodes) by `scripts/validate_published_graph.py`,
-`scripts/report_cost_coverage.py`, `scripts/report_unpriced_positions.py` and
+`scripts/report_cost_coverage.py`, `scripts/report_unpriced_positions.py`,
+`scripts/report_evidence_coverage.py` (criterion 3, since 2026-10-22) and
 `python scripts/nominate.py status --kind source`. Re-measure them with those
 commands; do not restate them by hand.
 
@@ -110,7 +111,13 @@ listing already evidences most priced posts.
 
 **Done when** every current organisation carries a `verificationMethod`, or a
 recorded reason no official document can be read for it (for example, a host
-that refuses every crawler and no directory lists the unit).
+that refuses every crawler and no directory lists the unit). Measured by
+`scripts/report_evidence_coverage.py`, whose one number is the gap; the
+recorded reasons are `verificationUnread` (a queued page went unread) and,
+since 2026-10-22, `verificationNoDocument` (no page was queued: the name is the
+graph's own count label or grouping, the site is off every .gov host, the only
+host refuses the crawler, or the page read does not carry the graph's name —
+CURATION.md §23).
 
 | measure | today |
 |---|---|

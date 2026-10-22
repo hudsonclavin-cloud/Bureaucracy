@@ -6509,3 +6509,170 @@ licence for a header sum, keyed by section, or the account-line route the
 Combined Statement chapter for the VA would give. Definition-of-done criterion
 4(b) asks for exactly this: the remainder named, not spread.
 
+## 23. Evidence: a recorded reason where no official document can be read (2026-10-22)
+
+`docs/DEFINITION_OF_DONE.md` criterion 3 is done when every current
+organisation carries a `verificationMethod`, or a recorded reason no official
+document can be read for it. On the 2026-10-21 graph 870 current organisations
+(not posts, not Treasury lines, not replaced units) split 623 with a method and
+247 without, and of the 247 only 72 published anything about why: the
+`verificationUnread` record for a page that was queued and could not be read.
+The other 175 read "No source recorded … no source URL has been attached to it
+yet", as though nobody had looked.
+
+### 23.1 What the 175 actually were
+
+Joined to the phase 1b nomination ledger (`data/audit/nominations/source-*.jsonl`,
+latest record per node by `nominatedAt`) and the verifier's own evidence file,
+every one of the 175 had a record:
+
+| latest record says | nodes | examples |
+|---|---|---|
+| `page_read_does_not_name_it` (probe) | 55 | NSF's divisions ("Mathematical Sciences" on the page, "Division of Mathematical Sciences" here); the Department of Education's ten regions; the Architect's "Library of Congress Buildings" |
+| `host_refuses_crawler` (probe) | 31 | GAO's fifteen mission teams (gao.gov 403), State's bureaus (state.gov 403), the combatant commands (.mil hosts) |
+| `not_on_a_gov_host` | 31 | the Smithsonian's 21 museums and units (si.edu), the seven USPS areas (usps.com), the CPB (cpb.org) |
+| `editorial_grouping` | 39 | "Joint Congressional Bodies", "Judicial Support Organizations", the eighteen per-VISN "VA Medical Centers" templates |
+| `no_public_page_known` | 8 | the Office of the Attending Physician (four pages read, the office appears on none); the NSC's directorates |
+| `covered_by_parent` | 2 | |
+| the verifier's `not_checkable` (a count label or a generic word) | 19 | "Mission Teams (15)", "Individual Senator Offices (100)", "Districts (multiple)", the Senate Appropriations subcommittee named "Defense" |
+| a record that NOMINATES a page (no reason) | 9 | seven presidential libraries, House Leadership, MACPAC, NSF's Division of Mathematical Sciences |
+
+So the gap was not evidence that was never sought; it was evidence sought and
+refused for a recorded reason that reached the site nowhere.
+
+### 23.2 What was built
+
+`data_pipeline/verification/no_document.py` publishes `verificationNoDocument`
+on a current organisation with no method and no unread record, from two
+sources and nothing else:
+
+- the verifier's own name floor (`evidence.uncheckable_reason`), recomputed
+  from the node's current name on every build: `curated_count_label` (11
+  nodes) and `name_too_generic` (8);
+- the nomination ledger's LATEST record for the node, when it is a decline
+  (`noCandidate: true`) with one of the ledger's own six reasons — the kind,
+  the date, the run and file, the note (bounded at 320 characters, quoted on
+  the panel) and, for the two reasons the ledger requires a probe for, the
+  probe's URL and verdict, which must be on a .gov/.mil host. A latest record
+  that nominates a page licenses nothing: there is a page to check and the
+  verifier decides. A record older than a rename row for the node
+  (`unit_renames.json`, `addedOn`) is refused, since the agent read against a
+  name the graph no longer uses.
+
+It is never stamped on a post, a receipts or accounting line, a replaced unit,
+or beside a method or an unread record. It writes no `sourceUrls`, no
+`lastVerified`, no failure and no status. The field is evidence-owned and in
+the viewer copy. The gate (`no_document_violations`) mirrors the floor
+(`COUNT_LABEL_PATTERN`, the count-in-prose rule, `GENERIC_SINGLE_TOKENS`), the
+ledger reader and the vocabulary stdlib-only, re-reads the committed ledger,
+checks every field of every block against the latest record, and refuses in
+the other direction too: an organisation whose name trips the floor and
+carries no method, no unread record and no block.
+`tests/test_no_document.py` pins the mirrors equal to the module's and to
+`nominate.read_ledger`, and corrupts 23 dimensions in turn.
+
+The panel prints one sentence per kind where it printed "hand-compiled base
+graph" — "Not verified: the name "Mission Teams (15)" is this graph's own count
+label, not a unit's name — no official page can carry it as a heading or link,
+so none was fetched"; "Not verified: its site is not on a .gov or .mil host,
+which this verifier does not read" — with the ledger's note quoted after it,
+and the reading guide counts them as a group of their own. The directory view
+and the Evidence lens (a new key, "No page could be named — reason recorded")
+say the same.
+
+`scripts/report_evidence_coverage.py` writes `docs/EVIDENCE_COVERAGE.md`: every
+current organisation in exactly one class (two method classes, `unread`, eight
+`no_document_*` kinds, and two gap classes), the criterion-3 gap as one number,
+and the parents holding the most unsourced units. `tests/test_evidence_coverage.py`
+asserts the partition, that the gap equals the gate's own "evidence gap" line,
+and the committed document byte for byte.
+
+### 23.3 The nine that nominated a page, resolved
+
+Seven presidential libraries were unconfirmed because the graph's name dropped
+"and Museum": NARA's own directory (`archives.gov/presidential-libraries`,
+already queued under the National Archives' key) labels each as "<President>
+Presidential Library and Museum", and so do most of the libraries' own sites
+(trumanlibrary.gov's title, clintonlibrary.gov's, reaganlibrary.gov's "&
+Museum"). Eight rows were added to `data/curation/unit_renames.json` and
+applied by `rename_units_to_official_wording.py` against the live page (8
+renamed, 0 refused): Hoover, Truman, Eisenhower, Kennedy, Johnson (NARA spells
+it "Lyndon Baines Johnson"), Carter, Reagan and Clinton, each keeping its city
+and state in brackets. Re-verified: **seven confirmed** on NARA's page
+(`name_labelled_on_parent_official_page`, with placement), and one, the
+**Eisenhower** library, `not_found` on its own site — eisenhowerlibrary.gov
+labels only the short form "Eisenhower Presidential Library" — while NARA's page
+lists it. This project's rule, pinned by a test since 2026-09-20, is that a
+checked negative on the unit's OWN page is the stronger fact and is never
+overwritten by the parent's listing; the rule stands, and the Eisenhower
+library is the one organisation in the gap with no ledger decline beside it.
+It is a question about the name (the site's short form against NARA's full
+one), not about whether the library exists, and it is left open rather than
+resolved by loosening the rule.
+
+MACPAC had been added on 2026-09-21 under the `official_page_label` licence
+tested against usa.gov's A-to-Z index, a directory that files nowhere, so no
+page of its own was ever queued. `https://www.macpac.gov/` was nominated
+(run `evidence-coverage-2026-10-22`), promoted and verified: confirmed, the
+name in the site's navigation.
+
+House Leadership (house.gov/leadership labels "Leadership", "Republican
+Leadership" and "Democratic Leadership"; the page's own word reduces to the
+single generic token the floor refuses) and NSF's Division of Mathematical
+Sciences (the page labels "Mathematical Sciences"; §9 declined renaming NSF's
+divisions to their breadcrumbs) each got a `page_read_does_not_name_it` decline
+in the same ledger run, with the probe, so the state reads as a question about
+the name.
+
+### 23.4 Measured on the rebuild, and what "the gap" counts
+
+Current organisations 870: with a method **623 → 631** (72.5%). 166 carry the
+new block (57 `page_read_does_not_name_it`, 29 `host_refuses_crawler`, 29
+`not_on_a_gov_host`, 24 `editorial_grouping`, 11 `curated_count_label`, 8
+`name_too_generic`, 8 `no_public_page_known`), 72 carry `verificationUnread`.
+The per-node diff against the previous graph: 175 nodes changed, 166 by gaining
+the block alone, 8 libraries by the rename and its evidence, MACPAC by its
+confirmation; no cost figure, status or weight moved. The viewer copy grew by
+the blocks (about 89 KB, 537 bytes a block) and sits about 108 KB under the
+half-of-`graph.json` rule.
+
+The gap is **247 → 40**, and the 40 are deliberately not counted as "a recorded
+reason", though 39 of them carry a ledger decline beside the finding: each is a
+`verificationFailure` — a document WAS read and does not carry the graph's
+name — which is a negative about the wording and not a reason no document can
+be read. The report puts a read document's negative above the block and the
+gate's "evidence gap" line counts the same set, so the number cannot be made
+smaller by stamping a reason on a node a page already answered. The 40 are:
+
+- **17 subcommittees a complete committee list does not carry**
+  (`not_in_official_list`; 9 House, 8 Senate — the names the definition of
+  done's criterion 4(a) already lists as unresolved): a rename to the Clerk's
+  or the Senate's wording, a supersession, or a recorded decision;
+- **17 units whose own queued page was read and labels another wording**
+  (`not_found` with a `page_read_does_not_name_it` decline): ten NSF divisions
+  whose pages label the breadcrumb ("Mathematical Sciences"), which §9
+  declined to adopt as a name; USSOCOM; the Capitol Police's Protective
+  Services Bureau; the Sergeant at Arms of the Senate; the Senate's and House's
+  administrative groupings, the House Chaplain and "Congressional Support
+  Agencies";
+- **4 of the graph's own groupings** whose misfiled "own" page was read
+  ("Judicial Support Organizations", "Specialized Federal Courts",
+  "Independent Establishments & Government Corporations", "House Committees");
+- the Eisenhower library (above), and NSF's Division of Information &
+  Intelligent Systems (`no_public_page_known` beside a `not_found`).
+
+Every one is a name question or a curation decision, which is the honest shape
+of what is left: the evidence routes are exhausted for them and the gate says
+so in one number.
+
+### 23.5 What this does and does not settle
+
+A recorded reason is a fact about what this project can read, and the report
+keeps the kinds apart so the owner can see which have a route: 57 are a page
+that was read and does not carry the graph's wording (a rename, as §9 did
+sixty-nine times, or a recorded refusal); 29 are sites off every .gov host,
+which only an owner's decision on the host policy could reach; 29 are hosts
+that refuse every crawler, reachable only through a different document; 24
+are the graph's own groupings, which no document will ever name; 19 are names
+the floor refuses; 8 have no public page anybody could find. None of them is
+"not yet looked at", and the panel no longer says so.

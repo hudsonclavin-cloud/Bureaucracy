@@ -239,6 +239,10 @@ MINIMAL_GRAPH_FIELDS = (
     "verificationMatchedIn", "verificationMatchRule", "verificationMatchedText",
     "verificationFailure", "verificationFailureSource", "directoryListing",
     "pageReadNotNamed", "verificationUnread",
+    # a recorded reason no official document can be read for the unit: the
+    # verifier's name floor, or the nomination ledger's latest decline, with
+    # the note the panel quotes
+    "verificationNoDocument",
     # the alternative name a claim was reached through, and the basis the
     # reviewed table states for it; the panel quotes both names
     "verificationAliasMatch",
@@ -2998,6 +3002,7 @@ def build_graph(
     doj_ad_pay_evidence_path: str | Path | None = "default",
     derived_pay_evidence_path: str | Path | None = "default",
     tier_reference_pay_evidence_path: str | Path | None = "default",
+    no_document_ledger_dir: str | Path | None = "default",
     military_pay_evidence_path: str | Path | None = "default",
     whitehouse_pay_evidence_path: str | Path | None = "default",
     usaspending_evidence_path: str | Path | None = "default",
@@ -3660,6 +3665,23 @@ def build_graph(
     from data_pipeline.verification.aliases import cap_alias_only_confirmations  # noqa: E402
 
     validation["alias_matches"] = cap_alias_only_confirmations(graph, index_tree=index_tree)
+    # A recorded reason no official document can be read for a unit, where
+    # every route above left an organisation with no method and no queued page
+    # that went unread: the verifier's own name floor, or the phase 1b
+    # nomination ledger's latest decline, quoted and never invented. It runs
+    # after every evidence pass because it must read the FINAL method.
+    from data_pipeline.verification.no_document import (  # noqa: E402 — no_document imports evidence, which imports this module
+        DEFAULT_LEDGER_DIR as DEFAULT_NO_DOCUMENT_LEDGER_DIR,
+        apply_no_document_evidence,
+        read_source_ledger,
+    )
+
+    resolved_ledger_dir = DEFAULT_NO_DOCUMENT_LEDGER_DIR if no_document_ledger_dir == "default" else no_document_ledger_dir
+    validation["no_document_evidence"] = apply_no_document_evidence(
+        graph,
+        ledger=read_source_ledger(resolved_ledger_dir) if resolved_ledger_dir else {},
+        index_tree=index_tree,
+    )
     validation["pay_evidence"]["stands_for_many_posts"] = multi_post_withdrawn
     validation["grade_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["judicial_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn

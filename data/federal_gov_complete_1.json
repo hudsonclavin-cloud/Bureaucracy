@@ -50469,7 +50469,7 @@
                 },
                 {
                   "id": "exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia",
-                  "name": "Herbert Hoover Presidential Library (West Branch, IA)",
+                  "name": "Herbert Hoover Presidential Library and Museum (West Branch, IA)",
                   "type": "Presidential Library",
                   "desc": "Houses records and artifacts from the presidential administration.",
                   "employees": null,
@@ -50536,7 +50536,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.archives.gov/presidential-libraries",
+                  "nameVerifiedAt": "2026-10-22",
+                  "nameMatchedText": "Herbert Hoover Presidential Library and Museum"
                 },
                 {
                   "id": "exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny",
@@ -50615,7 +50619,7 @@
                 },
                 {
                   "id": "exec-ind-nara-harry-s-truman-presidential-library-independence-mo",
-                  "name": "Harry S. Truman Presidential Library (Independence, MO)",
+                  "name": "Harry S. Truman Presidential Library and Museum (Independence, MO)",
                   "type": "Presidential Library",
                   "desc": "Houses records and artifacts from the presidential administration.",
                   "employees": null,
@@ -50682,11 +50686,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.archives.gov/presidential-libraries",
+                  "nameVerifiedAt": "2026-10-22",
+                  "nameMatchedText": "Harry S. Truman Presidential Library and Museum"
                 },
                 {
                   "id": "exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks",
-                  "name": "Dwight D. Eisenhower Presidential Library (Abilene, KS)",
+                  "name": "Dwight D. Eisenhower Presidential Library and Museum (Abilene, KS)",
                   "type": "Presidential Library",
                   "desc": "Houses records and artifacts from the presidential administration.",
                   "employees": null,
@@ -50753,11 +50761,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.archives.gov/presidential-libraries",
+                  "nameVerifiedAt": "2026-10-22",
+                  "nameMatchedText": "Dwight D. Eisenhower Presidential Library and Museum"
                 },
                 {
                   "id": "exec-ind-nara-john-f-kennedy-presidential-library-boston-ma",
-                  "name": "John F. Kennedy Presidential Library (Boston, MA)",
+                  "name": "John F. Kennedy Presidential Library and Museum (Boston, MA)",
                   "type": "Presidential Library",
                   "desc": "Houses records and artifacts from the presidential administration.",
                   "employees": null,
@@ -50824,11 +50836,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.archives.gov/presidential-libraries",
+                  "nameVerifiedAt": "2026-10-22",
+                  "nameMatchedText": "John F. Kennedy Presidential Library and Museum"
                 },
                 {
                   "id": "exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx",
-                  "name": "Lyndon B. Johnson Presidential Library (Austin, TX)",
+                  "name": "Lyndon Baines Johnson Presidential Library and Museum (Austin, TX)",
                   "type": "Presidential Library",
                   "desc": "Houses records and artifacts from the presidential administration.",
                   "employees": null,
@@ -50895,7 +50911,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.archives.gov/presidential-libraries",
+                  "nameVerifiedAt": "2026-10-22",
+                  "nameMatchedText": "Lyndon Baines Johnson Presidential Library and Museum"
                 },
                 {
                   "id": "exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca",
@@ -51045,7 +51065,7 @@
                 },
                 {
                   "id": "exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga",
-                  "name": "Jimmy Carter Presidential Library (Atlanta, GA)",
+                  "name": "Jimmy Carter Presidential Library and Museum (Atlanta, GA)",
                   "type": "Presidential Library",
                   "desc": "Houses records and artifacts from the presidential administration.",
                   "employees": null,
@@ -51112,11 +51132,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.archives.gov/presidential-libraries",
+                  "nameVerifiedAt": "2026-10-22",
+                  "nameMatchedText": "Jimmy Carter Presidential Library and Museum"
                 },
                 {
                   "id": "exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca",
-                  "name": "Ronald Reagan Presidential Library (Simi Valley, CA)",
+                  "name": "Ronald Reagan Presidential Library and Museum (Simi Valley, CA)",
                   "type": "Presidential Library",
                   "desc": "Houses records and artifacts from the presidential administration.",
                   "employees": null,
@@ -51183,7 +51207,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.archives.gov/presidential-libraries",
+                  "nameVerifiedAt": "2026-10-22",
+                  "nameMatchedText": "Ronald Reagan Presidential Library and Museum"
                 },
                 {
                   "id": "exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx",
@@ -51262,7 +51290,7 @@
                 },
                 {
                   "id": "exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar",
-                  "name": "William J. Clinton Presidential Library (Little Rock, AR)",
+                  "name": "William J. Clinton Presidential Library and Museum (Little Rock, AR)",
                   "type": "Presidential Library",
                   "desc": "Houses records and artifacts from the presidential administration.",
                   "employees": null,
@@ -51329,7 +51357,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.archives.gov/presidential-libraries",
+                  "nameVerifiedAt": "2026-10-22",
+                  "nameMatchedText": "William J. Clinton Presidential Library and Museum"
                 },
                 {
                   "id": "exec-ind-nara-george-w-bush-presidential-library-dallas-tx",
