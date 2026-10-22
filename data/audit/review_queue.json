@@ -210,146 +210,6 @@
   ]
  },
  {
-  "key": "measured_moved:0973a365f5e9",
-  "kind": "measured_cost_moved_with_new_statement",
-  "status": "open",
-  "opened": "2026-10-22",
-  "closed": null,
-  "nodeId": "exec-dept-treasury-fiscal",
-  "nodeName": "Bureau of the Fiscal Service",
-  "detail": "measured cost moved 122.78% between the statements of 2026-08-31 and 2026-09-30",
-  "documents": [
-   {
-    "role": "the statement of 2026-08-31",
-    "says": "$9,899,395,085.72"
-   },
-   {
-    "role": "the statement of 2026-09-30",
-    "says": "$22,054,348,276.79"
-   }
-  ]
- },
- {
-  "key": "measured_moved:4644083ca528",
-  "kind": "measured_cost_moved_with_new_statement",
-  "status": "open",
-  "opened": "2026-10-22",
-  "closed": null,
-  "nodeId": "exec-dept-doi-office-surface-mining-reclamation-enforcement",
-  "nodeName": "Office of Surface Mining Reclamation and Enforcement",
-  "detail": "measured cost moved 67.16% between the statements of 2026-08-31 and 2026-09-30",
-  "documents": [
-   {
-    "role": "the statement of 2026-08-31",
-    "says": "$1,184,535,259.80"
-   },
-   {
-    "role": "the statement of 2026-09-30",
-    "says": "$1,980,077,900.35"
-   }
-  ]
- },
- {
-  "key": "measured_moved:045455db6ff0",
-  "kind": "measured_cost_moved_with_new_statement",
-  "status": "open",
-  "opened": "2026-10-22",
-  "closed": null,
-  "nodeId": "exec-dept-treasury--treasury-receipts",
-  "nodeName": "Offsetting receipts and intrabudgetary transactions",
-  "detail": "measured cost moved -368.36% between the statements of 2026-08-31 and 2026-09-30",
-  "documents": [
-   {
-    "role": "the statement of 2026-08-31",
-    "says": "$-18,372,459,773.08"
-   },
-   {
-    "role": "the statement of 2026-09-30",
-    "says": "$-86,048,959,037.96"
-   }
-  ]
- },
- {
-  "key": "measured_moved:68af0c220867",
-  "kind": "measured_cost_moved_with_new_statement",
-  "status": "open",
-  "opened": "2026-10-22",
-  "closed": null,
-  "nodeId": "exec-ind-opm--treasury-receipts",
-  "nodeName": "Offsetting receipts and intrabudgetary transactions",
-  "detail": "measured cost moved -9377.92% between the statements of 2026-08-31 and 2026-09-30",
-  "documents": [
-   {
-    "role": "the statement of 2026-08-31",
-    "says": "$-515,041,268.23"
-   },
-   {
-    "role": "the statement of 2026-09-30",
-    "says": "$-48,815,222,499.47"
-   }
-  ]
- },
- {
-  "key": "measured_moved:dd373b747528",
-  "kind": "measured_cost_moved_with_new_statement",
-  "status": "open",
-  "opened": "2026-10-22",
-  "closed": null,
-  "nodeId": "exec-dept-dol--treasury-receipts",
-  "nodeName": "Offsetting receipts and intrabudgetary transactions",
-  "detail": "measured cost moved -66.04% between the statements of 2026-08-31 and 2026-09-30",
-  "documents": [
-   {
-    "role": "the statement of 2026-08-31",
-    "says": "$-759,419,059.04"
-   },
-   {
-    "role": "the statement of 2026-09-30",
-    "says": "$-1,260,924,834.19"
-   }
-  ]
- },
- {
-  "key": "measured_moved:b6445994b139",
-  "kind": "measured_cost_moved_with_new_statement",
-  "status": "open",
-  "opened": "2026-10-22",
-  "closed": null,
-  "nodeId": "exec-regulatory-sec",
-  "nodeName": "Securities & Exchange Commission (SEC)",
-  "detail": "measured cost moved -127.77% between the statements of 2026-08-31 and 2026-09-30",
-  "documents": [
-   {
-    "role": "the statement of 2026-08-31",
-    "says": "$1,799,067,031.03"
-   },
-   {
-    "role": "the statement of 2026-09-30",
-    "says": "$-499,610,699.87"
-   }
-  ]
- },
- {
-  "key": "measured_moved:dfcff617091e",
-  "kind": "measured_cost_moved_with_new_statement",
-  "status": "open",
-  "opened": "2026-10-22",
-  "closed": null,
-  "nodeId": "exec-ind-misc-tennessee-valley-authority-tva",
-  "nodeName": "Tennessee Valley Authority (TVA)",
-  "detail": "measured cost moved -53.13% between the statements of 2026-08-31 and 2026-09-30",
-  "documents": [
-   {
-    "role": "the statement of 2026-08-31",
-    "says": "$-945,112,444.17"
-   },
-   {
-    "role": "the statement of 2026-09-30",
-    "says": "$-1,447,263,334.54"
-   }
-  ]
- },
- {
   "key": "placement_directory_disagreement:e2e49c0f5b0d",
   "kind": "placement_directory_disagreement",
   "status": "open",
@@ -1249,6 +1109,146 @@
    {
     "role": "this graph (curated)",
     "says": "names it USSOCOM — Special Operations Command"
+   }
+  ]
+ },
+ {
+  "key": "measured_moved:0973a365f5e9",
+  "kind": "measured_cost_moved_with_new_statement",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-10-22",
+  "nodeId": "exec-dept-treasury-fiscal",
+  "nodeName": "Bureau of the Fiscal Service",
+  "detail": "measured cost moved 122.78% between the statements of 2026-08-31 and 2026-09-30",
+  "documents": [
+   {
+    "role": "the statement of 2026-08-31",
+    "says": "$9,899,395,085.72"
+   },
+   {
+    "role": "the statement of 2026-09-30",
+    "says": "$22,054,348,276.79"
+   }
+  ]
+ },
+ {
+  "key": "measured_moved:4644083ca528",
+  "kind": "measured_cost_moved_with_new_statement",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-10-22",
+  "nodeId": "exec-dept-doi-office-surface-mining-reclamation-enforcement",
+  "nodeName": "Office of Surface Mining Reclamation and Enforcement",
+  "detail": "measured cost moved 67.16% between the statements of 2026-08-31 and 2026-09-30",
+  "documents": [
+   {
+    "role": "the statement of 2026-08-31",
+    "says": "$1,184,535,259.80"
+   },
+   {
+    "role": "the statement of 2026-09-30",
+    "says": "$1,980,077,900.35"
+   }
+  ]
+ },
+ {
+  "key": "measured_moved:045455db6ff0",
+  "kind": "measured_cost_moved_with_new_statement",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-10-22",
+  "nodeId": "exec-dept-treasury--treasury-receipts",
+  "nodeName": "Offsetting receipts and intrabudgetary transactions",
+  "detail": "measured cost moved -368.36% between the statements of 2026-08-31 and 2026-09-30",
+  "documents": [
+   {
+    "role": "the statement of 2026-08-31",
+    "says": "$-18,372,459,773.08"
+   },
+   {
+    "role": "the statement of 2026-09-30",
+    "says": "$-86,048,959,037.96"
+   }
+  ]
+ },
+ {
+  "key": "measured_moved:68af0c220867",
+  "kind": "measured_cost_moved_with_new_statement",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-10-22",
+  "nodeId": "exec-ind-opm--treasury-receipts",
+  "nodeName": "Offsetting receipts and intrabudgetary transactions",
+  "detail": "measured cost moved -9377.92% between the statements of 2026-08-31 and 2026-09-30",
+  "documents": [
+   {
+    "role": "the statement of 2026-08-31",
+    "says": "$-515,041,268.23"
+   },
+   {
+    "role": "the statement of 2026-09-30",
+    "says": "$-48,815,222,499.47"
+   }
+  ]
+ },
+ {
+  "key": "measured_moved:dd373b747528",
+  "kind": "measured_cost_moved_with_new_statement",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-10-22",
+  "nodeId": "exec-dept-dol--treasury-receipts",
+  "nodeName": "Offsetting receipts and intrabudgetary transactions",
+  "detail": "measured cost moved -66.04% between the statements of 2026-08-31 and 2026-09-30",
+  "documents": [
+   {
+    "role": "the statement of 2026-08-31",
+    "says": "$-759,419,059.04"
+   },
+   {
+    "role": "the statement of 2026-09-30",
+    "says": "$-1,260,924,834.19"
+   }
+  ]
+ },
+ {
+  "key": "measured_moved:b6445994b139",
+  "kind": "measured_cost_moved_with_new_statement",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-10-22",
+  "nodeId": "exec-regulatory-sec",
+  "nodeName": "Securities & Exchange Commission (SEC)",
+  "detail": "measured cost moved -127.77% between the statements of 2026-08-31 and 2026-09-30",
+  "documents": [
+   {
+    "role": "the statement of 2026-08-31",
+    "says": "$1,799,067,031.03"
+   },
+   {
+    "role": "the statement of 2026-09-30",
+    "says": "$-499,610,699.87"
+   }
+  ]
+ },
+ {
+  "key": "measured_moved:dfcff617091e",
+  "kind": "measured_cost_moved_with_new_statement",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-10-22",
+  "nodeId": "exec-ind-misc-tennessee-valley-authority-tva",
+  "nodeName": "Tennessee Valley Authority (TVA)",
+  "detail": "measured cost moved -53.13% between the statements of 2026-08-31 and 2026-09-30",
+  "documents": [
+   {
+    "role": "the statement of 2026-08-31",
+    "says": "$-945,112,444.17"
+   },
+   {
+    "role": "the statement of 2026-09-30",
+    "says": "$-1,447,263,334.54"
    }
   ]
  }

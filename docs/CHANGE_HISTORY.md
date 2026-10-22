@@ -5,31 +5,7 @@ the graph just built, `output/change_history.json` and `data/audit/review_queue.
 Do not edit by hand. `docs/DEFINITION_OF_DONE.md` Part 2 ("Change history"), criterion 5
 (the change budget) and criterion 7 (the review queue).
 
-**Review queue: 60 open**, 0 resolved, 0 closed. The queue is the only thing a person is asked to look at between cycles.
-
-### Open: `measured_cost_moved_with_new_statement` (7)
-
-- opened 2026-10-22 — Bureau of the Fiscal Service (`exec-dept-treasury-fiscal`): measured cost moved 122.78% between the statements of 2026-08-31 and 2026-09-30
-  - the statement of 2026-08-31: $9,899,395,085.72
-  - the statement of 2026-09-30: $22,054,348,276.79
-- opened 2026-10-22 — Office of Surface Mining Reclamation and Enforcement (`exec-dept-doi-office-surface-mining-reclamation-enforcement`): measured cost moved 67.16% between the statements of 2026-08-31 and 2026-09-30
-  - the statement of 2026-08-31: $1,184,535,259.80
-  - the statement of 2026-09-30: $1,980,077,900.35
-- opened 2026-10-22 — Offsetting receipts and intrabudgetary transactions (`exec-dept-treasury--treasury-receipts`): measured cost moved -368.36% between the statements of 2026-08-31 and 2026-09-30
-  - the statement of 2026-08-31: $-18,372,459,773.08
-  - the statement of 2026-09-30: $-86,048,959,037.96
-- opened 2026-10-22 — Offsetting receipts and intrabudgetary transactions (`exec-ind-opm--treasury-receipts`): measured cost moved -9377.92% between the statements of 2026-08-31 and 2026-09-30
-  - the statement of 2026-08-31: $-515,041,268.23
-  - the statement of 2026-09-30: $-48,815,222,499.47
-- opened 2026-10-22 — Offsetting receipts and intrabudgetary transactions (`exec-dept-dol--treasury-receipts`): measured cost moved -66.04% between the statements of 2026-08-31 and 2026-09-30
-  - the statement of 2026-08-31: $-759,419,059.04
-  - the statement of 2026-09-30: $-1,260,924,834.19
-- opened 2026-10-22 — Securities & Exchange Commission (SEC) (`exec-regulatory-sec`): measured cost moved -127.77% between the statements of 2026-08-31 and 2026-09-30
-  - the statement of 2026-08-31: $1,799,067,031.03
-  - the statement of 2026-09-30: $-499,610,699.87
-- opened 2026-10-22 — Tennessee Valley Authority (TVA) (`exec-ind-misc-tennessee-valley-authority-tva`): measured cost moved -53.13% between the statements of 2026-08-31 and 2026-09-30
-  - the statement of 2026-08-31: $-945,112,444.17
-  - the statement of 2026-09-30: $-1,447,263,334.54
+**Review queue: 53 open**, 0 resolved, 7 closed. The queue is the only thing a person is asked to look at between cycles.
 
 ### Open: `placement_directory_disagreement` (1)
 
@@ -203,6 +179,16 @@ Do not edit by hand. `docs/DEFINITION_OF_DONE.md` Part 2 ("Change history"), cri
   - the copy in use: dated 2025-01-12, read 2026-10-22 — https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts
 
 ## Builds, newest first
+
+### 2026-10-22T16:17:39.010506+00:00 — within the budget
+
+the Treasury anchor is still the statement of 2026-09-30; 5,512 nodes before and 5,512 after (0 added, 0 removed, 0 newly marked replaced, 0 renamed); 0 measured costs moved, 0 gained a measured figure, 0 lost one; 0 estimates moved; pay claims 1,258 -> 1,258 (0 added, 0 withdrawn, 0 changed figure); verification or placement methods: 0 added, 0 withdrawn, 0 changed; within the change budget.
+
+- `node_count_drops`: ok — 5,512 nodes before, 5,512 after; 0 removed
+- `anchor_lost`: ok — anchor record date after: 2026-09-30
+- `anchor_period_goes_backwards`: ok — anchor 2026-09-30 -> 2026-09-30
+- `measured_cost_moved_without_a_new_statement`: ok — the statement is unchanged (2026-09-30) and 0 measured costs moved
+- `pay_claims_withdrawn_above_5_percent`: ok — 0 of 1,258 pay claims withdrawn (0.0%; the limit is 5%)
 
 ### 2026-10-22T08:53:12.726654+00:00 — within the budget
 

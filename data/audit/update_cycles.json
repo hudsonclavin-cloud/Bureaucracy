@@ -30,5 +30,18 @@
   ],
   "reviewQueueOpen": 60,
   "publishable": false
+ },
+ {
+  "startedAt": "2026-10-22T16:17:16Z",
+  "finishedAt": "2026-10-22T16:34:08Z",
+  "mode": "hold",
+  "clean": true,
+  "held": false,
+  "reasons": [],
+  "anchorBefore": "2026-09-30",
+  "anchorAfter": "2026-09-30",
+  "fetched": [],
+  "reviewQueueOpen": 53,
+  "publishable": false
  }
 ]
