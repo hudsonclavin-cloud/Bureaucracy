@@ -1311,6 +1311,21 @@ TREASURY_ROW_ALIASES = {
     # 1723) on a post beneath this very node. Filed by the statement under the
     # Department of Housing and Urban Development, where the node sits.
     "government national mortgage association": "exec-dept-hud-ginnie",
+    # Added 2026-10-22, the owner's decision. The statement prints the VA's
+    # benefits as a "Benefits Programs:" header over Compensation and Pensions,
+    # Readjustment Benefits, the Veterans Housing Benefit Program Fund, the
+    # insurance funds and two public enterprise funds, closed by its own
+    # "Total--Benefits Programs" line ($242,849,884,236.03 on the 2026-08-31
+    # statement) -- a printed line, the ordinary one-unit-reported-twice shape,
+    # so no header sum is involved. The basis is the organic statute: 38 U.S.C.
+    # 7701(a), committed at tests/fixtures/uscode/va_38_usc_7701_govinfo2024.html,
+    # "The primary function of the Veterans Benefits Administration is the
+    # administration of nonmedical benefits programs of the Department which
+    # provide assistance to veterans and their dependents and survivors." Filed
+    # by the statement under the Department of Veterans Affairs, where the node
+    # sits. Until this row the $242.85bn was divided among the VBA, the NCA and
+    # the BVA by a curated budget note and their siblings' implied rate.
+    "benefits programs": "exec-dept-va-vba",
 }
 #: An alias is a reviewed identification of a PRINTED line, and a header sum is
 #: already one step from a printed figure, so by default the two are not

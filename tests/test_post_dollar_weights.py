@@ -139,13 +139,18 @@ class GateTests(unittest.TestCase):
             stack.extend((child, node["id"]) for child in node.get("children") or [])
         self.assertEqual(gate.post_dollar_weight_violations(nodes, parents, lambda n: n["id"]), [])
         by_id = {n["id"]: n for n in nodes}
-        va = by_id["exec-dept-va"]
-        shown = sum(c["resolved_total_amount"] for c in va["children"]
+        # The Department of Labor divides its pool by curated budgets, so its
+        # measured net total is carried by its children to the cent: the
+        # measured lines, the receipts and the unlined units, no post. (The VA
+        # was the example until 2026-10-22, when the Total--Benefits Programs
+        # alias measured the VBA and left the NCA and the BVA with no dollar
+        # figure, so that set fell back to a subtree split, where posts count.)
+        dol = by_id["exec-dept-dol"]
+        self.assertEqual(dol.get("child_cost_basis"), "dollars")
+        shown = sum(c["resolved_total_amount"] for c in dol["children"]
                     if c.get("resolved_total_amount") is not None)
-        # The VA's measured net total is now carried by its children to the cent:
-        # the VHA's line, the receipts and the three unlined units, no post.
-        self.assertAlmostEqual(shown, va["resolved_total_amount"], places=1)
-        self.assertEqual(sum(1 for n in nodes if n.get("cost_basis") == POST_UNWEIGHTED_BASIS), 84)
+        self.assertAlmostEqual(shown, dol["resolved_total_amount"], places=1)
+        self.assertEqual(sum(1 for n in nodes if n.get("cost_basis") == POST_UNWEIGHTED_BASIS), 68)
 
 
 if __name__ == "__main__":

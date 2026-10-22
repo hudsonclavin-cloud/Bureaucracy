@@ -11,18 +11,18 @@ this project publishes is one a committed document states and a matcher re-deriv
 on every run; nothing here is a number somebody reports.
 
 - nodes in the published graph: **5,512**
-- showing a figure a document states (measured cost or salary): **1,430**
-- carrying an apportioned estimate, withheld unless asked for: **683**
+- showing a figure a document states (measured cost or salary): **1,431**
+- carrying an apportioned estimate, withheld unless asked for: **682**
 - positions no document prices: **3,333** — 2,789 research work, 432 paused beneath a replaced unit, 112 a document places off every federal pay schedule
 - no figure now and none from any route (negative pool, replaced unit, below a cent): **66**
 
 | class | nodes | what it means | route |
 |---|---|---|---|
 | Measured — a Treasury accounting line | 30 | The receipts and transfers the Monthly Treasury Statement nets inside a unit's published total, carried as explicit children so the arithmetic closes, plus Interest on the Public Debt and the government-wide offsetting receipts. Not organisations. | Nothing to do: these ARE the statement's own lines. |
-| Measured — the Treasury's own figure for the unit | 142 | The root's anchor and every Table 5 line applied to the node it names (`cost_status: official`). The only costs this graph calls measured. | Nothing to do for the node; the statement is re-fetched and re-applied on each run. |
+| Measured — the Treasury's own figure for the unit | 143 | The root's anchor and every Table 5 line applied to the node it names (`cost_status: official`). The only costs this graph calls measured. | Nothing to do for the node; the statement is re-fetched and re-applied on each run. |
 | Estimate — a committee or subcommittee | 240 | An apportioned share of the chamber's measured total. No line of Table 5 names a committee, so no Treasury alias can ever reach one of these. | Since 2026-10-07 a committee carries `committeeDisbursements` beside the estimate: what its chamber paid out for the committee's account over a stated period, from the House's Statement of Disbursements and the Report of the Secretary of the Senate (40 of the 41 chamber committees). A different basis on a different clock, never a cost. Subcommittees have no figure of their own in either document. |
 | Estimate — with a sourced figure already published beside it | 83 | An apportioned share, and beside it at least one figure an official source states for this unit under its own heading: USAspending File A gross outlays (fiscal year to date), OMB's Public Budget Database outlays (last completed year, summed over the unit's account rows), Treasury's audited Statement of Net Cost (last completed year), the net outlays the Treasury's Combined Statement prints for the unit's reviewed accounts (last completed year, since 2026-10-21), or — for the House's own officer offices, since 2026-10-20 — what the House's Statement of Disbursements paid out for the officer's organisation over a quarter. Each is on the panel today; none is headed COST, because each measures something different from the Treasury's net outlays on a different clock. | Decided by the owner: the headline falls back to one of these, labelled by its basis and period, when the Treasury prints no line (File A, OMB and audited net cost since 2026-10-07; a chamber's payout for a committee or an officer office since 2026-10-20; the Combined Statement since 2026-10-21) — the same move the panel makes for a post's salary. The estimate stays withheld behind its button. Measured on the 94 nodes that carry both, not one OMB FY2025 figure agrees with the Treasury line within 1%, so the fallback is a different number under a different label, never the same claim. |
-| Estimate — no sourced figure of any kind | 360 | An apportioned share of an ancestor's measured total, divided among siblings by budget, headcount or subtree size. Table 5 stops at the bureau, so divisions, regional offices, laboratories, centres and the courts beneath a circuit print no line of their own. | Three routes, in order of reach: OMB's Public Budget Database bureau rows (committed; 72 bureaus matched so far, more need a node whose name the file carries); USAspending File B by Treasury Account Symbol, which reaches programme level and has not been fetched; an agency's own Agency Financial Report. Each yields a figure beside the estimate, not a cost, until the decision above is made. |
+| Estimate — no sourced figure of any kind | 359 | An apportioned share of an ancestor's measured total, divided among siblings by budget, headcount or subtree size. Table 5 stops at the bureau, so divisions, regional offices, laboratories, centres and the courts beneath a circuit print no line of their own. | Three routes, in order of reach: OMB's Public Budget Database bureau rows (committed; 72 bureaus matched so far, more need a node whose name the file carries); USAspending File B by Treasury Account Symbol, which reaches programme level and has not been fetched; an agency's own Agency Financial Report. Each yields a figure beside the estimate, not a cost, until the decision above is made. |
 | Salary — a pay claim an official document supports | 1,258 | A position carrying at least one of the ten pay fields: a printed rate, a schedule level priced by OPM's table, a statutory rate, a roster figure, a derivation the block carries in the open, twelve months of a printed monthly military rate, or a range. Since 2026-10-05 it is the post's headline figure, headed as pay and never as COST. | Nothing to do for the node; each pay field is re-derived from its committed document on every run and withdrawn when the document stops supporting it. |
 | Post with no figure — stands for several holders | 611 | The node's name states a multiplicity and no claim that holds for every holder has reached it. An incumbency-shaped claim (one listing's level, one row of the current export) is refused on such a node because it is one appointment's figure, not the group's. | A tier, a statutory rate, a parity provision or a roster listing every holder at one figure IS published on such a node with a `holders` block. Finding which pay SYSTEM governs the title is the useful step: it lets the graph carry the schedule rather than a rate. `docs/UNPRICED_POSITIONS.md` lists every one. |
 | Post with no figure — OPM lists it and prints no rate | 20 | The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. | A salary table for the pay plan (AD, OT and the others) where OPM publishes one; most of these plans have none, and the honest state is a listing with no figure. |
@@ -49,8 +49,8 @@ Where Table 5 stops is visible in which TYPES carry an estimate and no line:
 | Museum/Unit | 24 | 0 | 0 |
 | Defense Agency | 22 | 0 | 0 |
 | National Laboratory | 17 | 0 | 0 |
-| Agency | 7 | 7 | 0 |
 | Presidential Library | 14 | 0 | 0 |
+| Agency | 6 | 7 | 0 |
 | Circuit Court | 13 | 0 | 0 |
 | Directorate | 12 | 0 | 0 |
 | Combatant Command | 11 | 0 | 0 |
@@ -108,7 +108,7 @@ The receipts and transfers the Monthly Treasury Statement nets inside a unit's p
 - `exec-ind-ssa--treasury-receipts` — Offsetting receipts and intrabudgetary transactions (Treasury accounting line; under Social Security Administration (SSA))
 - `treasury-undistributed-offsetting-receipts` — Undistributed offsetting receipts (Treasury accounting line; under The Constitution of the United States)
 
-## Measured — the Treasury's own figure for the unit — 142
+## Measured — the Treasury's own figure for the unit — 143
 
 The root's anchor and every Table 5 line applied to the node it names (`cost_status: official`). The only costs this graph calls measured.
 
@@ -182,6 +182,7 @@ The root's anchor and every Table 5 line applied to the node it names (`cost_sta
 - `exec-dept-dot-fta` — Federal Transit Administration (FTA) (Agency; under Department of Transportation (DOT)) — beside it: ombBudget
 - `exec-dept-dot-marad` — Maritime Administration (MARAD) (Agency; under Department of Transportation (DOT)) — beside it: ombBudget
 - `exec-dept-dot-nhtsa` — National Highway Traffic Safety Admin (NHTSA) (Agency; under Department of Transportation (DOT))
+- `exec-dept-va-vba` — Veterans Benefits Administration (VBA) (Agency; under Department of Veterans Affairs (VA))
 - `exec-dept-va-vha` — Veterans Health Administration (VHA) (Agency; under Department of Veterans Affairs (VA)) — beside it: usaspendingOutlays, ombBudget
 - `exec-dept-doi-bia` — Bureau of Indian Affairs (BIA) (Bureau; under Department of the Interior (DOI)) — beside it: ombBudget
 - `exec-dept-doi-blm` — Bureau of Land Management (BLM) (Bureau; under Department of the Interior (DOI)) — beside it: usaspendingOutlays, ombBudget
@@ -594,7 +595,7 @@ An apportioned share, and beside it at least one figure an official source state
 - `leg-senate-admin-legal` — Office of Senate Legal Counsel (Office; under Senate Administrative Offices) — beside it: combinedStatementOutlays
 - `jud-specialized-cavc` — Court of Appeals for Veterans Claims (CAVC) (Specialized Court; under Specialized Federal Courts) — beside it: usaspendingOutlays
 
-## Estimate — no sourced figure of any kind — 360
+## Estimate — no sourced figure of any kind — 359
 
 An apportioned share of an ancestor's measured total, divided among siblings by budget, headcount or subtree size. Table 5 stops at the bureau, so divisions, regional offices, laboratories, centres and the courts beneath a circuit print no line of their own.
 
@@ -708,7 +709,6 @@ An apportioned share of an ancestor's measured total, divided among siblings by 
 - `exec-dept-dot-great-lakes-saint-lawrence-seaway-development-corporatio` — Great Lakes Saint Lawrence Seaway Development Corporation (Government Corporation; under Department of Transportation (DOT))
 - `exec-dept-va-bva` — Board of Veterans Appeals (BVA) (Office; under Department of Veterans Affairs (VA))
 - `exec-dept-va-nca` — National Cemetery Administration (NCA) (Agency; under Department of Veterans Affairs (VA))
-- `exec-dept-va-vba` — Veterans Benefits Administration (VBA) (Agency; under Department of Veterans Affairs (VA))
 - `exec-dept-treasury-ofr` — Office of Financial Research (OFR) (Bureau; under Department of the Treasury)
 - `exec-dept-treasury-ofac` — Office of Foreign Assets Control (OFAC) (Bureau; under Department of the Treasury)
 - `exec-ind-nsf-engineering-eng-chemical-bioengineering-environmental-transport-systems` — Chemical, Bioengineering, Energy and Transport Systems (CBET) (Division; under Directorate for Engineering (ENG))

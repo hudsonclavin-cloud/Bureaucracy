@@ -375,9 +375,15 @@ VBA) and, where they carry none, by their siblings' rate times their subtree
 size, so the NCA and the BVA were already apportioned tens of billions on no
 evidence and now carry 64% more of it. The post weight had been absorbing part
 of a pool the graph has no node for; it now lands on the units beside it, and
-the estimates are withheld by default, as every estimate is. The real fix for
-the VA is the statement's "Benefits Programs" lines reaching the VBA, which
-this file refused for USAspending's broader key and which is the owner's call.
+the estimates are withheld by default, as every estimate is. The owner then
+aliased the statement's `Total--Benefits Programs` line to the VBA
+(2026-10-22, 38 U.S.C. 7701(a) as the basis, `CURATION.md` §22.11): the VBA is
+measured at **$242,849,884,236.03**, and because the NCA and the BVA then carry
+no dollar figure the VA's set falls back to a subtree split, where posts keep
+their weight — the sixteen posts hold $34.7bn of the $58.5bn remainder again,
+which is the statement's "Departmental Administration" header and the Joint
+DOD-VA fund, neither with a node. The remainder needs a node (a header-sum
+licence or the VA's Combined Statement chapter), not a weight rule.
 
 **The template half, since 2026-09-15 — and a correction.** The note above
 used BSEE drawing a larger share than its measured sibling BOEM as the

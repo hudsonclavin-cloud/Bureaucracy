@@ -7,11 +7,11 @@ Do not edit by hand; regenerate it. The 100 largest title families are in
 ## What this covers
 
 - **Part A — 1,562 unpriced positions** in the 1,542 title families outside the top 100, across **15 shards**, whole organisations per shard.
-- **Part B — 683 organisation nodes** that publish an apportioned estimate rather than a measured
+- **Part B — 682 organisation nodes** that publish an apportioned estimate rather than a measured
   cost, across **7 shards**, whole parents per shard:
   - 240 — a committee or subcommittee (no Table 5 line can ever name one)
   - 83 — an estimate with a sourced non-cost figure already beside it
-  - 360 — an estimate with no sourced figure of any kind
+  - 359 — an estimate with no sourced figure of any kind
 
 Not asked about, by construction: measured nodes and priced posts (done), and the units
 beneath a Treasury pool that nets below zero or replaced by the government (no route
@@ -4531,18 +4531,18 @@ THE UNITS:
 - exec-dept-doe-em | Office of Environmental Management (EM) | Office
 - exec-dept-doe-sc | Office of Science (SC) | Office
 
-### beneath Department of Veterans Affairs (VA)  [exec-dept-va]
-- exec-dept-va-bva | Board of Veterans Appeals (BVA) | Office
-- exec-dept-va-nca | National Cemetery Administration (NCA) | Agency
-- exec-dept-va-vba | Veterans Benefits Administration (VBA) | Agency
-
 ### beneath Department of the Treasury  [exec-dept-treasury]
 - exec-dept-treasury-fincen | Financial Crimes Enforcement Network (FinCEN) | Bureau  [already carries: ombBudget, usaspendingOutlays]
 - exec-dept-treasury-ofr | Office of Financial Research (OFR) | Bureau
 - exec-dept-treasury-ofac | Office of Foreign Assets Control (OFAC) | Bureau
+
+### beneath Directorate for Geosciences (GEO)  [exec-ind-nsf-geosciences-geo]
+- exec-ind-nsf-geosciences-geo-atmospheric-geospace-sciences | Division of Atmospheric & Geospace Sciences | Division
+- exec-ind-nsf-geosciences-geo-earth-sciences | Division of Earth Sciences | Division
+- exec-ind-nsf-geosciences-geo-ocean-sciences | Division of Ocean Sciences | Division
 ```
 
-## Prompt B7 — 28 parent(s), 45 unit(s)
+## Prompt B7 — 28 parent(s), 44 unit(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -4601,11 +4601,6 @@ official-published or third-party-estimated.
 
 THE UNITS:
 
-### beneath Directorate for Geosciences (GEO)  [exec-ind-nsf-geosciences-geo]
-- exec-ind-nsf-geosciences-geo-atmospheric-geospace-sciences | Division of Atmospheric & Geospace Sciences | Division
-- exec-ind-nsf-geosciences-geo-earth-sciences | Division of Earth Sciences | Division
-- exec-ind-nsf-geosciences-geo-ocean-sciences | Division of Ocean Sciences | Division
-
 ### beneath Executive Branch  [executive-branch]
 - exec-independent | Independent Establishments & Government Corporations | Division
 - exec-regulatory | Independent Regulatory Commissions | Division
@@ -4629,6 +4624,10 @@ THE UNITS:
 ### beneath Department of Transportation (DOT)  [exec-dept-dot]
 - exec-dept-dot-great-lakes-saint-lawrence-seaway-development-corporatio | Great Lakes Saint Lawrence Seaway Development Corporation | Government Corporation
 - exec-dept-dot-phmsa | Pipeline & Hazardous Materials Safety Admin (PHMSA) | Agency  [already carries: usaspendingOutlays]
+
+### beneath Department of Veterans Affairs (VA)  [exec-dept-va]
+- exec-dept-va-bva | Board of Veterans Appeals (BVA) | Office
+- exec-dept-va-nca | National Cemetery Administration (NCA) | Agency
 
 ### beneath House Committee on Rules  [leg-house-cmte-rules]
 - leg-house-cmte-rules-sub-legislative-budget-process | Subcommittee on Legislative & Budget Process | Subcommittee

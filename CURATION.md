@@ -6453,3 +6453,59 @@ a figure; `combined_statement_weight_violations` now refuses an implied weight
 on a post too. `tests/test_post_dollar_weights.py` pins the cascade and the
 gate.
 
+### 22.11 The VA's Benefits Programs line reaches the VBA (2026-10-22)
+
+The owner's decision: alias the statement's "Benefits Programs" header to the
+Veterans Benefits Administration. The shape is the ordinary one: Table 5 prints
+"Benefits Programs:" as a header over Compensation and Pensions, Readjustment
+Benefits, the Veterans Housing Benefit Program Fund, two insurance funds and two
+public enterprise funds, and closes it with its own "Total--Benefits Programs"
+line, $242,849,884,236.03 on the 2026-08-31 statement. That is a printed line
+beside its own header (one unit reported twice), so the alias is a row of
+`TREASURY_ROW_ALIASES` and no header sum is involved. Filed by the statement
+under the Department of Veterans Affairs, where the node sits.
+
+**Basis.** 38 U.S.C. 7701(a), fetched from govinfo's 2024-edition rendering and
+committed at `tests/fixtures/uscode/va_38_usc_7701_govinfo2024.html`: "There
+is in the Department of Veterans Affairs a Veterans Benefits Administration.
+The primary function of the Veterans Benefits Administration is the
+administration of nonmedical benefits programs of the Department which provide
+assistance to veterans and their dependents and survivors." The statement's
+header groups exactly those programs.
+
+**What moved, per-node diff against the graph after §22.10**, both builds
+from the 2026-08-31 statement: 20 nodes, all the VA's children.
+
+| node | before | after |
+|---|---|---|
+| Veterans Benefits Administration | ≈ $168.8bn, a curated budget note | **$242,849,884,236.03, measured** |
+| National Cemetery Administration | ≈ $72.3bn, implied budget | ≈ $13.0bn, subtree size |
+| Board of Veterans' Appeals | ≈ $60.3bn, implied budget | ≈ $10.8bn, subtree size |
+| the sixteen posts | no weight (dollar split) | subtree weight again |
+
+Measured nodes 172 → 173; the VA's `child_cost_basis` went from `dollars`
+(implied) to `subtree`.
+
+**The consequence §22.10 predicted, and the rule as decided.** The VBA was the
+only VA unit with a curated dollar figure. Once it is measured, the NCA and the
+BVA carry no dollar figure, the set is split by subtree size, and a post keeps
+its weight in a subtree split. So the sixteen posts hold **$34.69bn** of the
+$58.53bn remainder again, published as nobody's; the NCA and the BVA split the
+other $23.85bn. The remainder is the statement's "Departmental Administration"
+header ($57,827,407,301.43: Construction, Information Technology Systems,
+General Operating Expenses, Other) and the Joint DOD-VA Medical Facility
+Demonstration Fund ($706,164,140.79), neither of which has a node. The NCA's
+and the BVA's estimates are still apportioned from money the statement does
+not attribute to them.
+
+**Next step, not taken here.** `derive_header_sum_rows` already derives
+"Departmental Administration" as a header sum. A Treasury accounting line node
+of that name under the VA (the shape "Interest on the Public Debt" and the
+Architect's two accounts take) would carry it measured and leave the NCA and
+the BVA dividing $0.7bn. "Departmental Administration" is a name several
+departments' headers may share; `add_curated_nodes.py`'s `treasury_statement_line`
+licence refuses a header (it reads non-header rows only), so this needs a
+licence for a header sum, keyed by section, or the account-line route the
+Combined Statement chapter for the VA would give. Definition-of-done criterion
+4(b) asks for exactly this: the remainder named, not spread.
+
