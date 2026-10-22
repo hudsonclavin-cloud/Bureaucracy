@@ -7457,3 +7457,41 @@ check passed on the new graph inside the cycle, and the result was committed
 by hand: this cycle is the proving run, not one of the three the criterion
 counts, which start when the workflow fires on `main`.
 
+
+### 30.5 The first run on GitHub's runner (2026-10-22)
+
+Dispatched by hand twice (runs 1 and 2 of `update_cycle.yml`). Run 1: every
+derive, report, change-budget, gate (9 s), suite (373 s) and browser smoke
+(481 s) step exited 0 on a clean Ubuntu checkout with Playwright's own
+Chromium — the setup path this repository had only exercised in the sandbox.
+The cycle's verdict was CLEAN, held by mode, and `update_cycles.json` counted
+**1 of 3**. The job nevertheless ended red, for a reason outside the cycle:
+`gh pr create` failed with "GitHub Actions is not permitted to create or
+approve pull requests" (a repository setting) after the branch had been
+pushed, and the `update-cycle` label did not exist.
+
+Reading the pushed branch against `main` found two defects in this
+repository's own work, neither visible in the sandbox:
+
+- **The rebuild read no statement.** Nothing was due (the September
+  statement was already committed), so `regenerate_published_graph.py` ran
+  without `--treasury-rows`, took its carry-forward path, stamped
+  `reused_from_previous_build` on the budget summary and dropped
+  `attachToRoot` from `treasury-undistributed-offsetting-receipts` — 62
+  nodes semantically different from the committed graph, with no new data.
+  The gate and the change budget passed it, which is a gap in both
+  (recorded, not fixed here). `update_cycle.py` now rebuilds from the newest
+  committed `mts_table5_<date>.json` whenever it fetched no newer one.
+- **An evidence file recorded an absolute path.** `grade_pay_evidence.json`
+  carried `/home/user/Bureaucracy/...` and the runner wrote
+  `/home/runner/work/...`, so every cycle on a different machine would have
+  produced a diff of no substance. `gs_pay` records the repository-relative
+  path. Other modules record a `file` field too; only this one held an
+  absolute path in the committed evidence (`grep` for the sandbox's root over
+  `data/` and `tests/fixtures/` finds nothing else).
+
+The workflow no longer fails when the pull request cannot be opened: it
+creates the label if missing, tries with and without it, and otherwise prints
+the compare URL as a warning and in the job summary. Enabling *Allow GitHub
+Actions to create and approve pull requests* (Settings > Actions > General) is
+the owner's repository setting and was not changed.
