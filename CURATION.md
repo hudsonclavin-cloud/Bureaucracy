@@ -6881,3 +6881,154 @@ structural, not a pay document.
   available", because the blank is not a figure and not a reason a document
   states.
 
+## 26. Structure: the government's own lists reconciled, and the gap as one number (2026-10-22)
+
+`docs/DEFINITION_OF_DONE.md` criterion 4(a) is done when every unit on five
+official lists is a node or recorded as deliberately not one, and every curated
+committee name a complete list does not carry is renamed, superseded or kept
+with the reason. Until today the dispositions sat in prose across §5, §13 and
+§16 and nothing counted them. `data/curation/list_dispositions.json` is now the
+record (403 entry rows, 21 curated-name rows), `data_pipeline/verification/
+list_dispositions.py` its only reader, and `scripts/report_list_reconciliation.py`
+→ `docs/LIST_RECONCILIATION.md` the measure.
+
+### 26.1 The lists as the modules read them
+
+Each list is re-read from its committed fixture and matched by the SAME
+function the evidence modules use, so "reaches no node" means what it means
+everywhere else: `govman.match_organisations` (with the alias table, as the
+Manual's derive step runs it), `directories.match_federal_register`,
+USAspending's toptier names against the organisations' canonical keys and
+`USASPENDING_NAME_ALIASES`, `congress.match_senate` / `match_house`, and
+`plum_current.match_organisations` for the export's agencies.
+
+| list | entries | reach a node | do not |
+|---|---|---|---|
+| Government Manual, agency entries (edition 2025-12-31) | 231 | 187 | 44 |
+| Federal Register agency directory (fetched 2026-09-08) | 472 | 202 | 270 |
+| USAspending toptier agencies | 111 | 91 | 20 |
+| Senate committee list (committees and subcommittees) | 94 | 86 | 8 |
+| House Clerk committee list | 136 | 129 | 7 |
+| Current Plum Book export, agencies | 174 | 120 | 54 |
+
+### 26.2 The vocabulary, and why each kind is a different claim
+
+A row disposes of one entry of one list with one of fourteen kinds, each a
+different statement about the entry (the module's docstring defines them):
+`scaffolding` (the list's own heading), `distinct_from_the_graphs_unit` (the
+civilian department against the uniformed service), `carried_as_a_post` (an
+Office of Inspector General carried as the Inspector General),
+`names_a_node_under_another_wording`, `carried_outside_the_lists_scope` (a
+joint committee under a chamber's list), `predecessor_of_a_node`,
+`former_body`, `unit_beneath_a_node_not_drawn`,
+`umbrella_body_drawn_as_its_members`, `body_outside_the_graphs_scope`,
+`non_federal_or_international_body`, `fund_or_account_not_a_unit`,
+`unit_the_list_names_not_added` and `unsure`. The table proposes and the lists
+decide: a row is refused when its entry is not on the list, when the entry now
+reaches a node (a stale disposition), when its node or parent is missing or of
+the wrong kind, when a `unit_beneath_a_node_not_drawn` parent is not the node
+the list's own parent entry reaches nor beneath it (one row disputes the
+directory's parent and says so: the directory files the National Civilian
+Community Corps under the Interior Department), when its kind is unknown, or
+when its quote is not in the list's own text. `tests/test_list_reconciliation.py`
+corrupts each in turn.
+
+Two honesty markers ride on the rows. A `former_body` or `predecessor_of_a_node`
+row may carry a `quote` from the list's own text — the Federal Register's
+descriptions say "The Commission was terminated December 31, 1997" for 36 of
+the 92 former bodies — and the report says which rows rest on the list's words
+and which on the reviewer's statement (the basis ends "Reviewer's statement"
+where no committed document establishes it). And `body_outside_the_graphs_scope`
+is a reviewer's SCOPE decision, recorded for the owner to overturn: advisory
+committees (the President's Committee on the Arts and the Humanities),
+interagency councils (FSOC, the FFIEC, the Permitting Council), temporary
+commissions (the Semiquincentennial Commission) and special inspectors general
+(SIGAR, SIGPR) are not drawn in this graph. 33 entries carry it.
+
+### 26.3 What the lists say, list by list
+
+**The Manual's 44.** Sixteen international organisations and four federally
+aided institutions (Howard, Gallaudet, the Printing House for the Blind, the
+NTID) are not federal units; eight are the Manual's own headings; three are the
+civilian military departments; the President and the Vice President are posts;
+"Congress" is the legislative branch; NSA/CSS names the NSA jointly with a body
+the graph lacks; OPIC's functions are the DFC's; the National Foundation on the
+Arts and the Humanities is drawn as its members. Four are real units the graph
+lacks — the Botanic Garden, the Judicial Panel on Multidistrict Litigation, the
+Bureau of Indian Education (§13.5) and Amtrak — and two stay unsure (§13.6).
+
+**The directory's 270** are what an index of everybody who has ever published
+in the Federal Register looks like: 92 bodies that no longer exist (36 of them
+on the directory's own sentence), 21 predecessors of units the graph carries
+(the Customs Service of CBP, the Defense Mapping Agency of the NGA, the Public
+Debt Bureau of the Fiscal Service), 79 live offices beneath a node the graph
+draws coarser (the power administrations under DOE, USDA's rural services, the
+Office of Refugee Resettlement beneath ACF), 22 nodes under another wording
+("Engineers Corps", "Comptroller of the Currency", "Government National
+Mortgage Association"), 23 bodies outside the scope, 14 non-federal, 4 IG
+offices carried as posts, the three departments, the Foundation umbrella, nine
+real units not added (the Goldwater and Udall foundations, Denali, the FCSIC,
+ONHIR, the Presidio Trust, the USCC, the Utah Commission, Amtrak) and ESA
+unsure.
+
+**USAspending's 20**: eight real units the graph lacks (the two foundations,
+Denali, the FCSIC, ONHIR, the Presidio Trust and two regional commissions of
+the same kind as the three the graph carries), four nodes under another wording
+(the CFPB's statutory name, "Corps of Engineers - Civil Works", CSOSA's short
+name, the AbilityOne Committee's statutory name), three interagency councils,
+the DC Courts, a trust fund, OPIC and a foundation that closed.
+
+**The two chambers**: the eight Senate and seven House entries that reach no
+node are the four joint committees on each (carried under the graph's joint
+grouping, outside each chamber's subtree), the Senate Appropriations
+subcommittees under the XML's "Department(s) of" spelling (§16.3), the House
+Clerk's "Education and Workforce", and two real seats the graph lacks — the
+House Committee on Ethics (§5.7) and the 119th Congress's January 6 select
+subcommittee. All 21 curated names the lists do not carry are resolved as
+§16.3 recorded: four kept in the committee's own wording, fifteen former seats
+kept as records, two whose successor is already a sibling (merge leads).
+
+**The Plum Book's 54**: 26 Offices of Inspector General carried as posts, three
+more beneath agencies that carry no IG post (the RRB, GSA, USAID), the Office
+of the Secretary of War (OSD, 506 live rows, the one gap CLAUDE.md records as
+needing a node), four EOP offices the graph does not draw (the National Cyber
+Director, the DOGE Service, IPEC, pandemic preparedness), TIGTA beneath the
+Treasury, the three military departments, the Vice President's office carried
+as the post and the residence as an account, five international or compact
+bodies, five bodies outside the scope, the Interagency Council on Homelessness
+under its older name, and four real units not added.
+
+### 26.4 The number
+
+**criterion 4(a) gap: 19** = 3 unresolved entries (the Economics and Statistics
+Administration on two lists and the Defense Acquisition University, both §13.6)
++ **16 distinct real units the lists name and the graph has not added** + 0
+curated names unresolved. The second term is counted deliberately: a unit
+recorded as "not added, here is the route" is neither a node nor deliberately
+not one, so the definition's own words put it in the gap. The sixteen, and the
+route for each: the Goldwater and Udall foundations, the Denali Commission, the
+FCSIC, ONHIR, the Presidio Trust and the Southeast Crescent and Southwest
+Border regional commissions (a toptier-reporter licence for
+`add_curated_nodes.py`, since each is exactly one row of the committed
+USAspending list, under the independent establishments; File A would then land
+by name equality); the USCC and the Utah Reclamation Commission (their own
+pages under `official_page_label`); the Botanic Garden, the JPML, the House
+Ethics Committee and the January 6 select subcommittee (a page or the Clerk's
+list, with a placement decision); the Bureau of Indian Education (§13.5, a
+decision rather than a fetch); Amtrak (no licence places a quasi-official
+corporation the Treasury prints no line for).
+
+### 26.5 Declined
+
+- Adding the sixteen in this slice. Eight need a licence that does not exist
+  yet (a toptier reporter), six need a fetch, two are decisions; each is
+  listed with its route and the report counts them until they land.
+- Reading the Federal Register directory's defunct bodies as a supersession
+  table: `superseded.json` quotes an official page about a unit the graph
+  carries; these are units it never carried, and a disposition is the right
+  record.
+- Any fold in a list's matcher to absorb the 22+4+1 "another wording" rows:
+  the same containment failure this file records three times; the rows name
+  the node and the report shows them, which is what an alias would buy
+  without loosening a matcher.
+

@@ -180,6 +180,19 @@ names and the House Clerk's lacks 9. Beyond the lists, the graph may carry
 units no list names (offices, posts, regional structure) when a document
 supports them.
 
+**Measured on 2026-10-22** (`scripts/report_list_reconciliation.py` →
+`docs/LIST_RECONCILIATION.md`, CURATION.md §26): `data/curation/
+list_dispositions.json` disposes of every one of the 403 entries that reach no
+node across the five lists (44 Manual, 270 directory, 20 toptier, 8 Senate, 7
+House, 54 Plum) and of all 21 curated committee names the two complete lists
+lack (11 Senate, 10 House), each row re-adjudicated against the committed list
+on every run. **Gap: 19** = 3 entries left unsure + 16 distinct real units the
+lists name and the graph has not added + 0 curated names unresolved. The
+sixteen are counted on purpose: a unit recorded as "not added, here is the
+route" is neither a node nor deliberately not one. Eight of them need a
+toptier-reporter licence for `add_curated_nodes.py`, six a page fetch, two a
+decision (the Bureau of Indian Education, Amtrak).
+
 **(b) The money is reconciled.** For every unit with a measured total, the
 panel shows:
 
@@ -331,7 +344,7 @@ settle publishes automatically, and everything that needs judgement is held.
 | 1 | Money | 0 bare estimates | 373 | 373 |
 | 2 | Pay | 0 posts unpriced and unexplained | 3,221 (every one with a documents-checked blank since 2026-10-22) | 3,221 |
 | 3 | Evidence | every current organisation sourced | 623 / 870 | 247 |
-| 4a | Lists | every list unit reconciled | partly | not yet measured as one number |
+| 4a | Lists | every list unit reconciled | 403 of 403 unmatched entries disposed, 21 of 21 curated names resolved (2026-10-22) | 19: 3 unsure + 16 real units not yet added |
 | 4b | Money traced | every measured parent sums visibly | Legislative Branch probed | only chapter c01 is fetched |
 | R | Reader | four features | 1 of 4 | 3 |
 | 5 | Self-update | 3 clean automatic cycles | no scheduler | all |

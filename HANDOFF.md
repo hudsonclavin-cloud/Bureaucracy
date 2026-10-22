@@ -60,8 +60,14 @@ on any JS change).
   "0 in the four reasons" the gap is unchanged at 3,221: an explained blank is
   not a terminal reason. `docs/UNPRICED_POSITIONS.md` prints the verdict per
   post.
-- Still open in the definition of done: criterion 2's count itself, 4(a) list
-  reconciliation, 4(b) totals that add up visibly, 5–7 self-update, the two
+- **Criterion 4(a) (Lists), measured as one number.** `data/curation/
+  list_dispositions.json` (CURATION.md §26) disposes of every list entry that
+  reaches no node (403) and every curated committee name the complete lists
+  lack (21); `scripts/report_list_reconciliation.py` → `docs/LIST_RECONCILIATION.md`.
+  **Gap 19** = 3 unsure (§13.6) + 16 real units not yet added (routes in §26.4:
+  a toptier-reporter licence would add eight at once).
+- Still open in the definition of done: criterion 2's count itself, 4(a)'s 16
+  addable units, 4(b) totals that add up visibly, 5–7 self-update, the two
   reader features.
 
 ## Next actions, in order

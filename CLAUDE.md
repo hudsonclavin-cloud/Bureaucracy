@@ -67,6 +67,7 @@ python scripts/derive_us_code_stated_pay_evidence.py --dry-run   # an office's s
 python scripts/report_unpriced_positions.py --dry-run        # every position with no pay claim, and the prompt pack that covers all of them
 python scripts/report_cost_coverage.py --dry-run             # every node in exactly one cost class, and the route that would move each; writes docs/COST_COVERAGE.md
 python scripts/report_evidence_coverage.py --dry-run         # every current organisation in exactly one evidence class; the definition of done's criterion 3 gap as one number; writes docs/EVIDENCE_COVERAGE.md
+python scripts/report_list_reconciliation.py --dry-run      # the five official lists against the graph: entries that reach a node, dispositions re-adjudicated, criterion 4(a)'s gap as one number; writes docs/LIST_RECONCILIATION.md
 python -c "import sys,json;sys.path.insert(0,'.');from data_pipeline.verification.pay_no_document import document_universes;print([(u['id'],len(u['names'])) for u in document_universes()])"  # the six title-listing pay documents the pay blanks are checked against, and how many titles each prints
 python scripts/report_research_prompts.py --dry-run         # the 100 title families holding the most unpriced posts in one prompt, the rest and every estimate in shards; writes docs/RESEARCH_PROMPT_4_*.md
 python scripts/export_research_pack.py                      # the node lists docs/RESEARCH_PROMPT_5_DEEP_RESEARCH.md attaches, as CSVs in output/research_pack/ (gitignored; regenerate, never commit)
@@ -4764,6 +4765,39 @@ no block once the pass has run; `tests/test_pay_no_document.py` pins the two
 sides equal and corrupts twenty dimensions. `docs/UNPRICED_POSITIONS.md`
 prints the verdict per post and says in its headline that the blank does not
 move criterion 2's count. `CURATION.md` §25.
+
+**The government's own lists, reconciled, with the gap as one number
+(`list_dispositions.py`, since 2026-10-22).** `docs/DEFINITION_OF_DONE.md`
+criterion 4(a) asks that every unit on five official lists be a node or be
+recorded as deliberately not one, and that every curated committee name a
+complete list lacks be resolved. `data/curation/list_dispositions.json` is the
+record (403 entry rows, 21 curated-name rows), `data_pipeline/verification/
+list_dispositions.py` its only reader, and `scripts/report_list_reconciliation.py`
+→ `docs/LIST_RECONCILIATION.md` the measure. Each list is re-read from its
+committed fixture and matched by the SAME function the evidence modules use
+(the Manual's `match_organisations` with the alias table, the directory's
+`match_federal_register`, the toptier names against the organisations and
+`USASPENDING_NAME_ALIASES`, `congress.match_senate`/`match_house`, the Plum
+export's `match_organisations`): 231/472/111/94/136/174 entries, of which
+44/270/20/8/7/54 reach no node. A row disposes of one such entry with one of
+fourteen kinds (the module's docstring defines each as a different claim), and
+the table proposes while the lists decide: a row is refused when its entry is
+not on the list, when it now reaches a node (stale), when its node or parent is
+missing or of the wrong kind, when a `unit_beneath_a_node_not_drawn` parent is
+not the node the list's own parent entry reaches nor beneath it (a row may
+dispute the list's parent only by saying so), when its kind is unknown, or when
+its quote is not in the list's own text. A `former_body` row may quote the
+list's own words (36 of the directory's 92 do) and the report says which rows
+rest on the list and which on the reviewer's statement;
+`body_outside_the_graphs_scope` (advisory committees, interagency councils,
+temporary commissions, special IGs; 33 entries) is a reviewer's scope decision
+recorded for the owner. **Gap: 19** = 3 unresolved (the §13.6 unknowns) + 16
+distinct real units the lists name and the graph has not added (counted
+deliberately: "not added, here is the route" is neither a node nor
+deliberately not one) + 0 curated names unresolved. The sixteen and their
+routes are in `CURATION.md` §26.4; eight need a toptier-reporter licence that
+does not exist yet, six a fetch, two a decision. `tests/test_list_reconciliation.py`
+corrupts every refusal and pins the committed document to a fresh render.
 
 **An organisation's sourced figure of another kind is its headline, labelled
 by basis (since 2026-10-07, the owner's decision).** The cost-coverage report
