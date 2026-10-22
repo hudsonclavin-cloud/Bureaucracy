@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261021b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261021b";
+import { createGovernmentGraph } from "./graph.js?v=20261021c";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261021c";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -2769,6 +2769,7 @@ const COST_BASIS_PHRASES = {
   implied_disbursement_weight: "a payout implied from its sibling committees' reported payouts and its size",
   combined_statement_weight: "each unit's net outlays for the last completed fiscal year, as the Treasury's Combined Statement prints them for its accounts",
   implied_combined_statement_weight: "a figure implied from its sibling units' Combined Statement net outlays and its size",
+  post_unweighted_beside_dollar_figures: "no weight: a post takes none in a split by dollar figures",
 };
 
 const COST_STATUS_COPY = {

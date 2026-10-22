@@ -801,6 +801,15 @@ IMPLIED_WEIGHT_BASES = {
     "employees": "implied_employee_weight",
 }
 
+# The classes whose weights are dollar figures. In a sibling set split by one
+# of them a post takes no weight at all (since 2026-10-21, the owner's
+# decision): a post is not a budget unit, so a dollar rate implied for it
+# would withhold a share of real money from every unit beside it and publish
+# that share as nobody's. In a headcount or subtree-size split a post still
+# counts, because there the organisation really is that many people or nodes.
+DOLLAR_WEIGHT_CLASSES = frozenset({"disbursements", "combined_statement", "dollars"})
+POST_UNWEIGHTED_BASIS = "post_unweighted_beside_dollar_figures"
+
 
 def disbursement_document_key(node: dict[str, Any]) -> tuple[str, str, str] | None:
     """The statement and period a committee's disbursements were read from.
@@ -893,6 +902,19 @@ def resolve_sibling_weights(
     if len(classes) == 1:
         return weighted_children, next(iter(classes)), False
     dominant = next(cls for cls in WEIGHT_CLASS_PRIORITY if cls in classes)
+    if dominant in DOLLAR_WEIGHT_CLASSES:
+        # A post takes no share of a dollar split; see DOLLAR_WEIGHT_CLASSES.
+        # No post carries a dollar figure of its own, so every post here is
+        # one that would otherwise have been implied.
+        weighted_children = [
+            (child, 0.0, POST_UNWEIGHTED_BASIS)
+            if is_post_node(child) and WEIGHT_BASIS_CLASSES.get(basis, "subtree") != dominant
+            else (child, weight, basis)
+            for child, weight, basis in weighted_children
+        ]
+        if all(basis == POST_UNWEIGHTED_BASIS or WEIGHT_BASIS_CLASSES.get(basis, "subtree") == dominant
+               for _, _, basis in weighted_children):
+            return weighted_children, dominant, False
     reported = [
         (child, weight)
         for child, weight, basis in weighted_children
@@ -910,7 +932,7 @@ def resolve_sibling_weights(
     implied_basis = IMPLIED_WEIGHT_BASES[dominant]
     resolved: list[tuple[dict[str, Any], float, str]] = []
     for child, weight, basis in weighted_children:
-        if WEIGHT_BASIS_CLASSES.get(basis, "subtree") == dominant:
+        if WEIGHT_BASIS_CLASSES.get(basis, "subtree") == dominant or basis == POST_UNWEIGHTED_BASIS:
             resolved.append((child, weight, basis))
         else:
             resolved.append((child, max(rate_per_node * get_subtree_weight(child, subtree_sizes), 1e-9), implied_basis))
@@ -2347,6 +2369,7 @@ def annotate_resolved_costs(
         "headcount_weights_disputed_by_opm": 0,
         "allocations_below_precision": 0,
         "posts_not_apportioned": 0,
+        "posts_unweighted_in_dollar_splits": 0,
         "superseded_units_not_apportioned": 0,
         "sibling_sets_scaled_to_official_floors": 0,
         "treasury_pools_negative": 0,
@@ -2530,7 +2553,13 @@ def annotate_resolved_costs(
                 floor_scale = remainder_total / floor_sum
                 counters["sibling_sets_scaled_to_official_floors"] += 1
         excess_total = max(remainder_total - floor_sum * floor_scale, 0.0)
-        weighted_remaining = len(weighted_children)
+        # The last child takes what is left, so the shares sum to the pool to
+        # the cent -- the last child with a weight, since a post in a dollar
+        # split takes none and must not be handed the remainder.
+        weighted_remaining = max(
+            (index + 1 for index, (_, weight, _) in enumerate(weighted_children) if weight > 0),
+            default=len(weighted_children),
+        )
         remainder_left = remainder_total
         # Nothing left for the unlined children — or less than nothing: the
         # measured lines under this unit exceed its net total, which after
@@ -2559,9 +2588,26 @@ def annotate_resolved_costs(
                 continue
             if weighted_remaining <= 0:
                 child_total = remainder_left
+                remainder_left = 0.0
             else:
                 child_total = floor * floor_scale + excess_total * (weight / total_weight)
                 remainder_left -= child_total
+            if is_post_node(child):
+                # A post is not a budget unit. See POST_TYPE_KEYWORDS. Checked
+                # before the precision rule: a post given no weight in a dollar
+                # split has a share of exactly zero, and that is this rule, not
+                # a figure too small to print.
+                counters["posts_not_apportioned"] += 1
+                if weight_basis == POST_UNWEIGHTED_BASIS:
+                    counters["posts_unweighted_in_dollar_splits"] += 1
+                recurse(
+                    child,
+                    None,
+                    inherited_basis=weight_basis,
+                    inherited_validation="post_is_not_a_budget_unit",
+                    section=current_section,
+                )
+                continue
             if allocated_total != 0 and abs(child_total) < 0.005:
                 # A share that rounds to $0.00 is not a cost of zero; publishing
                 # it as one asserts the Peace Corps is free. Say "not available".
@@ -2571,17 +2617,6 @@ def annotate_resolved_costs(
                     None,
                     inherited_basis=weight_basis,
                     inherited_validation="allocation_below_precision",
-                    section=current_section,
-                )
-                continue
-            if is_post_node(child):
-                # A post is not a budget unit. See POST_TYPE_KEYWORDS.
-                counters["posts_not_apportioned"] += 1
-                recurse(
-                    child,
-                    None,
-                    inherited_basis=weight_basis,
-                    inherited_validation="post_is_not_a_budget_unit",
                     section=current_section,
                 )
                 continue
@@ -2770,6 +2805,7 @@ def annotate_resolved_costs(
             "headcount_weights_disputed_by_opm": counters["headcount_weights_disputed_by_opm"],
             "allocations_below_precision": counters["allocations_below_precision"],
             "posts_not_apportioned": counters["posts_not_apportioned"],
+            "posts_unweighted_in_dollar_splits": counters["posts_unweighted_in_dollar_splits"],
             "superseded_units_not_apportioned": counters["superseded_units_not_apportioned"],
             "sibling_sets_scaled_to_official_floors": counters["sibling_sets_scaled_to_official_floors"],
             "treasury_lines_counted_in_header_sums": counters["treasury_lines_counted_in_header_sums"],

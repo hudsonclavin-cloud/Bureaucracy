@@ -2011,6 +2011,7 @@ KNOWN_COST_BASES = {
     "implied_budget_weight", "employee_weight", "implied_employee_weight",
     "subtree_weight", "disbursement_weight", "implied_disbursement_weight",
     "combined_statement_weight", "implied_combined_statement_weight",
+    "post_unweighted_beside_dollar_figures",
 }
 
 
@@ -8699,6 +8700,52 @@ def combined_statement_violations(node, block, docs, label, tree_parents):
     return out
 
 
+DOLLAR_WEIGHT_CLASSES = ("disbursements", "combined_statement", "dollars")
+POST_UNWEIGHTED_BASIS = "post_unweighted_beside_dollar_figures"
+IMPLIED_DOLLAR_BASES = ("implied_budget_weight", "implied_combined_statement_weight", "implied_disbursement_weight")
+
+
+def post_dollar_weight_violations(nodes, tree_parents, label):
+    """A post takes no weight in a split by dollar figures, and keeps it elsewhere.
+
+    Since 2026-10-21 (the owner's decision) a sibling set the cascade divides
+    by a dollar class -- curated budgets, Combined Statement figures, a
+    chamber's payouts -- gives a post no weight, so no share of real money is
+    withheld from the units beside it and published as nobody's. In a
+    headcount or subtree-size split a post still counts. So, read off the
+    parent's own `child_cost_basis`: under a dollar-class parent every living
+    post carries the unweighted basis and none carries an implied dollar
+    weight; the unweighted basis sits only on a post, only under such a
+    parent, and only beside a figure it does not publish.
+    """
+    by_id = {str(n.get("id") or ""): n for n in nodes}
+
+    def is_post(node):
+        type_text = str(node.get("type") or "").casefold()
+        return any(w in type_text for w in ("position", "role", "office holder"))
+
+    out = []
+    for node in nodes:
+        node_id = str(node.get("id") or "")
+        basis = str(node.get("cost_basis") or "")
+        parent = by_id.get(tree_parents.get(node_id) or "") or {}
+        dollar_parent = str(parent.get("child_cost_basis") or "") in DOLLAR_WEIGHT_CLASSES
+        living = str(node.get("lifecycle") or "") != "superseded"
+        if basis == POST_UNWEIGHTED_BASIS:
+            if not is_post(node):
+                out.append("{} is a unit carrying the post's no-weight basis".format(label(node)))
+            elif not dollar_parent:
+                out.append("{} carries the no-weight basis under a parent divided by {!r}, not by dollar figures".format(
+                    label(node), parent.get("child_cost_basis")))
+            if node.get("resolved_total_amount") is not None:
+                out.append("{} carries the no-weight basis beside a figure".format(label(node)))
+        elif is_post(node) and living and dollar_parent:
+            out.append("{} is a post weighted by {!r} in a split by dollar figures".format(label(node), basis))
+        elif is_post(node) and basis in IMPLIED_DOLLAR_BASES and dollar_parent:
+            out.append("{} is a post given an implied dollar weight".format(label(node)))
+    return out
+
+
 def combined_statement_weight_violations(nodes, tree_parents, label):
     """An estimate divided by the Combined Statement's figures, both ways.
 
@@ -8736,15 +8783,15 @@ def combined_statement_weight_violations(nodes, tree_parents, label):
         units = [n for n in living if not is_post(n)]
         weighted = [n for n in members if n.get("cost_basis") == "combined_statement_weight"]
         implied = [n for n in members if n.get("cost_basis") == "implied_combined_statement_weight"]
-        # A weighted unit's share is an estimate. An implied weight sits only on
-        # a post, which keeps its weight in the split and publishes no figure
-        # (`post_is_not_a_budget_unit`), so its status is not checked here.
+        # A weighted unit's share is an estimate. Since 2026-10-21 a post beside
+        # these figures takes no weight at all (post_dollar_weight_violations),
+        # so any implied weight here is refused, on a post or a unit.
         for node in weighted:
             if str(node.get("cost_status") or "") != "allocated":
                 out.append("{} carries a Combined Statement weight on a {!r} figure".format(label(node), node.get("cost_status")))
         for node in implied:
-            if not is_post(node):
-                out.append("{} is a unit given a share implied from its siblings' Combined Statement figures".format(label(node)))
+            out.append("{} is a {} given a share implied from its siblings' Combined Statement figures".format(
+                label(node), "post" if is_post(node) else "unit"))
         keys = {usable_key(n) for n in units}
         licensed = len(units) >= 2 and None not in keys and len(keys) == 1
         if licensed:
@@ -10948,6 +10995,14 @@ def main(argv):
             sum(1 for n in combined_nodes if isinstance(n.get("combinedStatementOutlays"), dict)
                 and (n["combinedStatementOutlays"].get("treasurySection") or {}).get("filedInAnotherSection")),
         ) if not combined_violations else "",
+    )
+    post_weight_violations = post_dollar_weight_violations(nodes, tree_parents, label)
+    gate.check(
+        "a post takes no weight in a split by dollar figures, and keeps it in a headcount or size split",
+        post_weight_violations,
+        " — {} post(s) unweighted beside dollar figures".format(
+            sum(1 for n in nodes if n.get("cost_basis") == POST_UNWEIGHTED_BASIS),
+        ) if not post_weight_violations else "",
     )
     combined_weight_violations = combined_statement_weight_violations(nodes, tree_parents, label)
     gate.check(

@@ -325,6 +325,55 @@ children can now sum to less than the parent, which is the honest reading:
 the remainder is not apportioned to anybody. Allocated nodes fell from 4,885
 to 653, and "with a cost" from 5,021 to 789.
 
+**Except in a split by dollar figures (since 2026-10-21, the owner's
+decision).** Where a sibling set is divided by a dollar class — curated
+budgets (`dollars`), the Combined Statement's figures (`combined_statement`)
+or a chamber's payouts (`disbursements`), `DOLLAR_WEIGHT_CLASSES` — a post now
+takes **no** weight: `resolve_sibling_weights` gives it 0 and the basis
+`post_unweighted_beside_dollar_figures`, so the units beside it divide the
+whole pool and nothing is published as nobody's. In a headcount or
+subtree-size split a post keeps its weight as above, because there the
+organisation really is that many people or nodes. No post in the curated file
+carries a dollar figure of its own, so every post the rule reaches is one that
+had been given an IMPLIED dollar rate (its siblings' geometric-mean rate times
+its size) — a rate for spending a post does not do. Two mechanical changes
+came with it: the last child to take the rounding remainder is the last one
+with a weight, never a zero-weight post; and the post check runs before the
+below-precision check, so a post's exact zero reads as this rule rather than
+as a figure too small to print (no post was below precision before).
+
+Per-node diff against the graph before the rule, both built from the
+2026-08-31 statement: **124 nodes changed and only beneath six parents.** 84
+posts changed basis only; 39 units moved; one parent lost
+`child_cost_basis_implied`. The money released from post weight to units:
+
+| parent | released to units | units moved |
+|---|---|---|
+| Department of Veterans Affairs | $117.61bn | 3, +64.0% each |
+| Department of Labor | $3.38bn | 5, +110.7% |
+| Department of Energy | $2.24bn | 3, +10.4%, and the 17 laboratories beneath its grouping |
+| Department of Transportation | $1.85bn | 2, +228.6% |
+| Architect of the Capitol | $211.8m | 9, +34.5% |
+| Department of Commerce | $0 | none: its pool nets below zero (−$108.4m) |
+
+The VA's unshown $117.6bn was **all post weight**; none of it was a line going
+nowhere (the VA carries no `treasury_unapportioned`). What it was a share of
+is Table 5 lines with no node: after the VHA's header sum ($100.36bn) and the
+receipts line (−$6.69bn), the VA's pool of $301.39bn is "Benefits Programs"
+($242.85bn), "Departmental Administration" ($57.83bn) and the Joint DOD-VA
+Medical Facility Demonstration Fund ($0.71bn). The VBA, NCA and BVA now
+divide all of it — $168.8bn, $72.3bn and $60.3bn — where they divided $183.8bn.
+
+**What the rule exposes rather than fixes.** The units that take the released
+money are weighted by uncited curated budgets ("~$170B (benefits paid)" for the
+VBA) and, where they carry none, by their siblings' rate times their subtree
+size, so the NCA and the BVA were already apportioned tens of billions on no
+evidence and now carry 64% more of it. The post weight had been absorbing part
+of a pool the graph has no node for; it now lands on the units beside it, and
+the estimates are withheld by default, as every estimate is. The real fix for
+the VA is the statement's "Benefits Programs" lines reaching the VBA, which
+this file refused for USAspending's broader key and which is the owner's call.
+
 **The template half, since 2026-09-15 — and a correction.** The note above
 used BSEE drawing a larger share than its measured sibling BOEM as the
 reason to do this. Checked directly against the data while building it:
@@ -5552,8 +5601,9 @@ The estimate stays withheld behind its button.
 
 It is also a split weight (`combined_statement_weight`), but only where every
 sibling that is a unit carries one from the one chapter and year, filed in the
-graph's own section. Posts keep their implied weight, and no unit's share is
-ever implied from these figures. That is stricter than the House payouts,
+graph's own section. Posts take no weight in such a split (since the same
+evening, the dollar-split rule under "A post is not a budget unit"), and no
+unit's share is ever implied from these figures. That is stricter than the House payouts,
 which do imply a missing sibling. One parent qualifies: the Architect of the
 Capitol, whose seven divisions and two account lines each carry a row.
 
@@ -5587,12 +5637,11 @@ itself changed, for example:
 - Capitol Grounds → $11.4m;
 - the Capitol Police line ≈ $130.4m.
 
-The four posts still hold **$211.8m** of the Architect's measured $826.1m,
-published as nobody's. That is the post rule's implied weight (four times the
-siblings' geometric-mean rate), not a missing account. The nine units plus
-eight small funds are the Architect's whole chapter total, so that remainder
-is double counting. Zeroing posts' weight in a set whose accounts cover the
-unit's total is recorded in §22.9 as an open decision.
+The four posts then still held **$211.8m** of the Architect's measured
+$826.1m, published as nobody's: the post rule's implied weight, not a missing
+account. The owner decided it the same evening, and generally: a post takes no
+weight in any dollar split (above, under "A post is not a budget unit"), so the
+nine units carry the whole $826.1m, each 34.5% higher.
 
 The gate checks both the block and the weights:
 

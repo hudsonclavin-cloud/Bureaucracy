@@ -290,14 +290,15 @@ class WeightTests(unittest.TestCase):
         weighted = [(c, *get_node_weight(c, sizes)) for c in children]
         return resolve_sibling_weights(weighted, sizes)
 
-    def test_every_unit_with_a_figure_divides_by_it_and_a_post_is_implied(self):
+    def test_every_unit_with_a_figure_divides_by_it_and_a_post_takes_no_weight(self):
         children = [self.unit("a", 300.0), self.unit("b", 100.0), self.unit("p", type_="Position")]
         resolved, cls, implied = self.resolve(children)
         self.assertEqual(cls, "combined_statement")
         bases = {c["id"]: basis for c, _, basis in resolved}
         self.assertEqual(bases, {"a": "combined_statement_weight", "b": "combined_statement_weight",
-                                 "p": "implied_combined_statement_weight"})
-        self.assertTrue(implied)
+                                 "p": "post_unweighted_beside_dollar_figures"})
+        self.assertEqual({c["id"]: w for c, w, _ in resolved}["p"], 0.0)
+        self.assertFalse(implied)
 
     def test_one_unit_without_a_figure_and_none_divides_by_them(self):
         resolved, cls, _ = self.resolve([self.unit("a", 300.0), self.unit("b", 100.0), self.unit("c")])
@@ -326,21 +327,21 @@ class WeightTests(unittest.TestCase):
     def gate_check(self, nodes):
         return gate.combined_statement_weight_violations(nodes, {n["id"]: "parent" for n in nodes}, lambda n: n["id"])
 
-    def test_the_gate_accepts_a_licensed_proportional_split(self):
-        nodes = [self.placed("a", 300.0, 750.0, "combined_statement_weight"),
-                 self.placed("b", 100.0, 250.0, "combined_statement_weight"),
-                 self.placed("p", None, 10.0, "implied_combined_statement_weight", type_="Position")]
-        self.assertEqual(self.gate_check(nodes), [])
-
-    def test_the_gate_accepts_a_post_that_keeps_its_implied_weight_and_publishes_nothing(self):
-        # The counterfactual with all seven of the Architect's divisions found
-        # this: the four posts beside them keep an implied weight and publish
-        # `unavailable` under the post rule, which the gate first refused.
-        post = self.placed("p", None, None, "implied_combined_statement_weight", type_="Position")
+    def test_the_gate_accepts_a_licensed_proportional_split_beside_an_unweighted_post(self):
+        post = self.placed("p", None, None, "post_unweighted_beside_dollar_figures", type_="Position")
         post["cost_status"] = "unavailable"
         nodes = [self.placed("a", 300.0, 750.0, "combined_statement_weight"),
                  self.placed("b", 100.0, 250.0, "combined_statement_weight"), post]
         self.assertEqual(self.gate_check(nodes), [])
+
+    def test_the_gate_refuses_a_post_given_an_implied_weight(self):
+        # Until 2026-10-21 a post kept an implied weight here and published
+        # nothing, so its share of the pool was nobody's; it takes none now.
+        post = self.placed("p", None, None, "implied_combined_statement_weight", type_="Position")
+        post["cost_status"] = "unavailable"
+        nodes = [self.placed("a", 300.0, 750.0, "combined_statement_weight"),
+                 self.placed("b", 100.0, 250.0, "combined_statement_weight"), post]
+        self.assertTrue(any("post given a share implied" in v for v in self.gate_check(nodes)))
 
     def test_the_gate_refuses_a_licensed_set_left_unweighted(self):
         nodes = [self.placed("a", 300.0, 500.0, "subtree_weight"), self.placed("b", 100.0, 500.0, "subtree_weight")]
@@ -376,14 +377,16 @@ class WeightTests(unittest.TestCase):
         self.assertEqual(gate.combined_statement_weight_violations(nodes, parents, lambda n: n["id"]), [])
         # Only the Architect of the Capitol has a figure on every unit beneath
         # it: seven divisions and the two accounts carried as lines. Its four
-        # posts take an implied weight and publish nothing. The Library's Law
+        # posts take no weight and publish nothing. The Library's Law
         # Library and Folklife Center, and every other set, carry none.
         weighted = sorted(n["id"] for n in nodes if n.get("cost_basis") == "combined_statement_weight")
         self.assertEqual(len(weighted), 9)
         self.assertEqual({parents[i] for i in weighted}, {"leg-support-aoc"})
-        implied = [n for n in nodes if n.get("cost_basis") == "implied_combined_statement_weight"]
-        self.assertEqual(len(implied), 4)
-        self.assertTrue(all(n.get("cost_status") == "unavailable" and "Position" in n.get("type", "") for n in implied))
+        self.assertFalse(any(n.get("cost_basis") == "implied_combined_statement_weight" for n in nodes))
+        unweighted = [n for n in nodes if n.get("cost_basis") == "post_unweighted_beside_dollar_figures"
+                      and parents[n["id"]] == "leg-support-aoc"]
+        self.assertEqual(len(unweighted), 4)
+        self.assertTrue(all(n.get("cost_status") == "unavailable" and "Position" in n.get("type", "") for n in unweighted))
         self.assertEqual(sum(1 for n in nodes if cs.FIELD in n), 15)
         by_id = {n["id"]: n for n in nodes}
         aoc = by_id["leg-support-aoc"]
@@ -391,8 +394,9 @@ class WeightTests(unittest.TestCase):
         # Each unit's share is its FY2025 figure times one rate.
         rates = {round(by_id[i]["resolved_total_amount"] / by_id[i][cs.FIELD]["amount"], 9) for i in weighted}
         self.assertEqual(len(rates), 1)
-        # What the posts' implied weight withholds is published by nobody.
-        self.assertLess(units, aoc["resolved_total_amount"])
+        # The posts take no weight, so the nine units carry the Architect's
+        # whole measured figure, to within a cent of rounding per share.
+        self.assertLessEqual(abs(units - aoc["resolved_total_amount"]), 0.01 * len(weighted) + 1e-6)
 
 
 @unittest.skipUnless(PUBLISHED.is_file(), "no published graph")

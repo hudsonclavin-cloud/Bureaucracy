@@ -6388,3 +6388,68 @@ remaining $211.8m across the nine units. That changes the post rule's
 weighting, which `CLAUDE.md` records as deliberately left alone ("no
 organisation's estimate moved"), so it is the owner's decision.
 
+The owner decided it the same evening, generalised rather than special-cased
+(§22.10).
+
+### 22.10 A post takes no weight in a split by dollar figures (2026-10-21)
+
+The owner's decision, made general: in any sibling set split by dollar weights
+(curated budgets, the Combined Statement's figures, a chamber's payouts) a post
+takes zero implied weight; in a headcount or subtree-size split it keeps its
+weight. No post in the curated file carries a dollar figure of its own, so
+every post the rule reaches had been given an implied dollar rate.
+
+**What moved, per-node diff of `output/graph.json` before and after**, both
+built from the 2026-08-31 statement. 124 nodes changed, all beneath six
+parents: 84 posts changed basis only (to
+`post_unweighted_beside_dollar_figures`), 39 units moved, and the Architect lost
+`child_cost_basis_implied`.
+
+| parent | posts | released to units | each unit |
+|---|---|---|---|
+| Department of Veterans Affairs | 16 | $117,613,055,874 | +64.0% |
+| Department of Labor | 16 | $3,380,091,321 | +110.7% |
+| Department of Energy | 16 | $2,236,621,498 | +10.4% (and the 17 laboratories beneath its grouping) |
+| Department of Transportation | 16 | $1,854,124,207 | +228.6% |
+| Architect of the Capitol | 4 | $211,771,812 | +34.5% |
+| Department of Commerce | 16 | $0 | its pool nets below zero (−$108.4m), so nothing is apportioned either way |
+
+**The VA's unshown $117.6bn was all post weight.** None of it was a Treasury
+line going nowhere: the VA carries no `treasury_unapportioned`, because it has
+unlined children to apportion to. What it was a share of is the statement's
+lines with no node. The VA's net total is $395,059,405,295.38. After the VHA's
+header sum ($100,361,712,221.24) and the receipts line (−$6,685,762,604.11),
+the pool is $301,383,455,678.25, which is exactly:
+
+- "Benefits Programs" (the header's own subtotal line), $242,849,884,236.03;
+- "Departmental Administration": Construction, Information Technology Systems,
+  General Operating Expenses and Other, $57,827,407,301.43;
+- the Joint DOD-VA Medical Facility Demonstration Fund, $706,164,140.79.
+
+The VBA, NCA and BVA divided $183.8bn of it and the sixteen posts held the
+rest. They now divide all of it: $168.8bn, $72.3bn and $60.3bn.
+
+**The strongest argument against the rule, recorded because it is real.** The
+units that take the released money are weighted by uncited curated budgets
+("~$170B (benefits paid)" for the VBA) or, where
+they carry none, by their siblings' rate times their subtree size. So the NCA
+and the BVA, apportioned tens of billions on no evidence before, now carry 64%
+more, and the Great Lakes St. Lawrence Seaway's share went from $116m to $381m.
+The post weight had been absorbing part of a pool the graph has no node for;
+the rule moves it onto the units beside it. The estimates remain withheld by
+default. The fix that would make the VA's figures right is the statement's
+"Benefits Programs" lines reaching the VBA, which `CLAUDE.md` records as
+refused for USAspending's equivalent key ("broader than the node"); whether the
+Table 5 header is the VBA is the owner's call, and so is a node for
+Departmental Administration.
+
+**Built:** `DOLLAR_WEIGHT_CLASSES` and `POST_UNWEIGHTED_BASIS` in
+`build_graph.py`; the remainder now goes to the last child with a weight; the
+post check runs before the below-precision check. The gate's
+`post_dollar_weight_violations` refuses, both ways: a living post under a
+dollar-class parent weighted by anything else, an implied dollar weight on a
+post, the no-weight basis on a unit, under a headcount or size split, or beside
+a figure; `combined_statement_weight_violations` now refuses an implied weight
+on a post too. `tests/test_post_dollar_weights.py` pins the cascade and the
+gate.
+
