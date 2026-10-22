@@ -43,6 +43,14 @@ is **0**, and every other organisation is in one of these states:
 Subcommittees may read "funded through its committee": the owner's decision
 of 2026-10-07 already says neither chamber's document prints them.
 
+Since 2026-10-22 the explained blank is `costNoDocument`
+(`data_pipeline/verification/cost_no_document.py`, CURATION.md §24): every
+organisation left with only an estimate names the seven money documents this
+project holds, each with its version and digest, and says whether any prints
+a row carrying the unit's name. `scripts/report_cost_coverage.py` prints the
+remaining bare count as one number ("bare estimates — … criterion 1 gap"),
+and the gate's "explained blanks" line counts the same set.
+
 | measure | today |
 |---|---|
 | measured cost | 172 nodes (99.0% of the anchor) |

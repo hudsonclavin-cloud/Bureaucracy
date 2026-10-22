@@ -420,6 +420,25 @@ function describeDescription(node) {
 // to divide and says so in the panel's words.
 // ---------------------------------------------------------------------------
 
+// An organisation left with only an estimate says which held money documents
+// were checked for its name (cost_no_document.py; ui.js describeCostNoDocument
+// is the panel's copy). The document list is shared across nodes in the viewer
+// copy and resolved off the root.
+function costNoDocumentText(node) {
+  const block = node && node.costNoDocument;
+  if (!block || typeof block !== "object") return "";
+  const shared = state.root && state.root.__sharedDocuments && block.documentsRef
+    ? state.root.__sharedDocuments[block.documentsRef] : null;
+  const docs = Array.isArray(block.documents) ? block.documents : (Array.isArray(shared) ? shared : []);
+  const named = docs.map((d) => `${d.document}${d.version ? ` (${d.version})` : ""}`).join("; ");
+  const checked = docs.length ? ` The ${docs.length} documents checked for a row carrying this unit's name: ${named}.` : "";
+  if (String(block.kind) === "named_in_a_held_document_without_a_licensed_figure" && Array.isArray(block.namedIn) && block.namedIn.length) {
+    const where = block.namedIn.map((h) => `"${h.printed}" in ${String(h.document).replace(/_/g, " ")}`).join("; ");
+    return ` A held document does print this unit's name — ${where} — under a heading no reviewed rule has yet turned into a figure for this unit, so no sourced figure is shown.${checked}`;
+  }
+  return ` No document this project holds prints a figure for this unit: none of them carries a row, account, bureau or entity of this name.${checked}`;
+}
+
 const ESTIMATE_WITHHELD_NOTE =
   "No record names this node's own cost. The figure this graph could otherwise show is its share of an ancestor's measured total, " +
   "divided among siblings by budget, headcount or subtree size — a number nobody measured, so it is not shown here. " +
@@ -529,7 +548,7 @@ function describeCost(node) {
     return { ...sourced, note: `${sourced.note}${withheld}`, sourceUrl: null };
   }
   if (status === "allocated") {
-    return { amount: null, label: "Estimate withheld", note: ESTIMATE_WITHHELD_NOTE, period: "", sourceUrl: null };
+    return { amount: null, label: "Estimate withheld", note: `${ESTIMATE_WITHHELD_NOTE}${costNoDocumentText(node)}`, period: "", sourceUrl: null };
   }
   if (validation === "allocation_below_precision") {
     return { amount: null, label: "Not available", note: "Its share of the estimate above it rounds to less than one cent (or an ancestor's did), so no figure is shown rather than $0.", period: "", sourceUrl: null };

@@ -243,6 +243,10 @@ MINIMAL_GRAPH_FIELDS = (
     # verifier's name floor, or the nomination ledger's latest decline, with
     # the note the panel quotes
     "verificationNoDocument",
+    # an explained blank where no held money document prints a figure for the
+    # unit: the kind, the rows that do carry the name, and the shared document
+    # list (cost_no_document.py)
+    "costNoDocument",
     # the alternative name a claim was reached through, and the basis the
     # reviewed table states for it; the panel quotes both names
     "verificationAliasMatch",
@@ -328,7 +332,9 @@ MINIMAL_GRAPH_ROOT_FIELDS = ("__budgetSummary", "relationships")
 #: same three documents' quotes on each of its 112 posts, about 1.9 KB a node.
 #: graph.json keeps every block whole (the gate reads it there); only the
 #: browser's copy is deduplicated, and the panel resolves the reference.
-SHARED_DOCUMENT_BLOCKS = ("positionEmployer",)
+#: `costNoDocument` since 2026-10-22: the same seven-document list on every
+#: organisation left with only an estimate, stored once.
+SHARED_DOCUMENT_BLOCKS = ("positionEmployer", "costNoDocument")
 
 
 def share_repeated_documents(root: dict[str, Any]) -> None:
@@ -3003,6 +3009,7 @@ def build_graph(
     derived_pay_evidence_path: str | Path | None = "default",
     tier_reference_pay_evidence_path: str | Path | None = "default",
     no_document_ledger_dir: str | Path | None = "default",
+    cost_no_document: bool = True,
     military_pay_evidence_path: str | Path | None = "default",
     whitehouse_pay_evidence_path: str | Path | None = "default",
     usaspending_evidence_path: str | Path | None = "default",
@@ -3682,6 +3689,13 @@ def build_graph(
         ledger=read_source_ledger(resolved_ledger_dir) if resolved_ledger_dir else {},
         index_tree=index_tree,
     )
+    # The money analogue, after every sourced-figure pass: an organisation
+    # left with only an apportioned estimate says which held money documents
+    # were checked for its name and found none, or which one prints the name
+    # under a heading no reviewed rule has turned into a figure.
+    from data_pipeline.verification.cost_no_document import apply_cost_no_document  # noqa: E402
+
+    validation["cost_no_document"] = apply_cost_no_document(graph, index_tree=index_tree) if cost_no_document else {"skipped": True}
     validation["pay_evidence"]["stands_for_many_posts"] = multi_post_withdrawn
     validation["grade_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["judicial_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn

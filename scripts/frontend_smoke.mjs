@@ -1025,6 +1025,32 @@ try {
     measurements.combinedAccountLine = "skipped: no account line in the served graph";
   }
 
+  // An organisation left with only an estimate says which held money
+  // documents were checked for its name (criterion 1's explained blank), and
+  // one a held document names says which row it prints.
+  const blankOrg = allNodes.find((n) => n.costNoDocument && n.costNoDocument.kind === "no_held_document_names_it" && unique(n));
+  check("some organisation carries an explained blank", Boolean(blankOrg), "none");
+  if (blankOrg) {
+    await openByName(blankOrg.name);
+    const blankPanel = await text("#info-stats");
+    check("an explained blank names the documents checked", /No document this project holds prints a figure for this unit/.test(blankPanel) && /documents checked for a row carrying this unit's name: Monthly Treasury Statement/.test(blankPanel), blankPanel.slice(0, 900));
+    measurements.explainedBlank = blankOrg.id;
+  }
+  const namedOrg = allNodes.find((n) => n.costNoDocument && n.costNoDocument.kind === "named_in_a_held_document_without_a_licensed_figure" && unique(n));
+  if (namedOrg) {
+    await openByName(namedOrg.name);
+    const namedPanel = await text("#info-stats");
+    check("a unit a held document names says which row it prints", /A held document does print this unit's name/.test(namedPanel) && new RegExp(namedOrg.costNoDocument.namedIn[0].printed.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(namedPanel), namedPanel.slice(0, 900));
+    measurements.namedBlank = namedOrg.id;
+  } else {
+    measurements.namedBlank = "skipped: no organisation a held document names without a licensed figure";
+  }
+  const subcommittee = allNodes.find((n) => /^subcommittee$/i.test(String(n.type || "")) && n.cost_status === "allocated" && unique(n));
+  if (subcommittee) {
+    await openByName(subcommittee.name);
+    check("a subcommittee says it is funded through its committee", /funded through its committee/.test(await text("#info-stats")), subcommittee.name);
+  }
+
   // A negative OMB figure is shown as the database gives it, with OMB's own
   // sentence saying amounts are net of offsetting collections.
   const negativeOmb = allNodes.find((n) => sourcedKindOf(n) === "omb" && n.ombBudget.outlays < 0 && unique(n));

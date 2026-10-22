@@ -9487,6 +9487,204 @@ def no_document_violations(nodes, label, ledger_dir=NO_DOCUMENT_LEDGER_DIR, rena
     return out
 
 
+#: Mirror of data_pipeline.verification.cost_no_document, stdlib-only by
+#: design; tests/test_cost_no_document.py pins the vocabulary, the document
+#: labels and every universe equal to the module's on the committed fixtures.
+COST_NO_DOCUMENT_FIELD = "costNoDocument"
+COST_NO_DOCUMENT_KIND_NONE = "no_held_document_names_it"
+COST_NO_DOCUMENT_KIND_NAMED = "named_in_a_held_document_without_a_licensed_figure"
+COST_NO_DOCUMENT_SOURCED_FIGURES = ("usaspendingOutlays", "combinedStatementOutlays", "ombBudget", "auditedNetCost",
+                                    "committeeDisbursements")
+COST_NO_DOCUMENT_COMMITTEE_WORDS = ("committee", "subcommittee", "caucus")
+COST_NO_DOCUMENT_LABELS = {
+    "monthly_treasury_statement": "Monthly Treasury Statement, Table 5 (every line, headers included)",
+    "treasury_combined_statement_c01": "Treasury Combined Statement of Receipts, Outlays, and Balances, chapter c01 (unit totals and account titles)",
+    "omb_public_budget_database": "OMB Public Budget Database (agency, bureau and account names, budget authority and outlays)",
+    "usaspending_agency_lists": "USAspending toptier agency list and the committed bureau (sub-component) lists",
+    "treasury_statement_of_net_cost": "Treasury Statement of Net Cost (reporting entities)",
+    "house_statement_of_disbursements": "House Statement of Disbursements, summary (organisations, the fiscal-year prefix set aside)",
+    "senate_secretary_report": "Report of the Secretary of the Senate, Part II (committee headings)",
+}
+_COST_NO_DOCUMENT_HOUSE_ORG = re.compile(r"^(?:FISCAL YEAR )?(\d{4}) (.+?)\s*$")
+_COST_NO_DOCUMENT_UNIVERSES = {}
+
+
+def _cost_no_document_keys(values):
+    out = {}
+    for value in values:
+        text = str(value or "").strip()
+        key = canonical_key(text)
+        if key and key not in out:
+            out[key] = text
+    return out
+
+
+def cost_no_document_universes(graph):
+    """Mirror of cost_no_document.document_universes: the unit names every held
+    money document prints, re-read from the committed fixtures with this
+    gate's own readers. Keyed by document id, in the module's order."""
+    import csv as _csv
+    import hashlib as _hashlib
+    import zipfile as _zipfile
+
+    summary = graph.get("__budgetSummary") if isinstance(graph.get("__budgetSummary"), dict) else {}
+    record_date = str(summary.get("record_date") or "")[:10]
+    cache_key = record_date
+    if cache_key in _COST_NO_DOCUMENT_UNIVERSES:
+        return _COST_NO_DOCUMENT_UNIVERSES[cache_key]
+    fixtures = PROJECT_ROOT / "tests" / "fixtures"
+    universes = []
+    mts_path = fixtures / "mts_table5_{}.json".format(record_date)
+    if record_date and mts_path.is_file():
+        raw = mts_path.read_bytes()
+        payload = json.loads(raw.decode("utf-8"))
+        universes.append({"id": "monthly_treasury_statement", "version": "statement of {}".format(payload.get("record_date") or record_date),
+                          "sha256": _hashlib.sha256(raw).hexdigest(),
+                          "names": _cost_no_document_keys(r.get("classification_desc") for r in payload.get("rows") or [] if isinstance(r, dict))})
+    docs = combined_statement_documents()
+    if "error" not in docs:
+        values = []
+        for account in docs["accounts"]:
+            values.append(account.get("title"))
+            values.append(account.get("unit"))
+        universes.append({"id": "treasury_combined_statement_c01", "version": "FY{}".format(COMBINED_STATEMENT_FISCAL_YEAR),
+                          "sha256": docs["xlsxSha256"], "names": _cost_no_document_keys(values)})
+    omb_raw = OMB_FIXTURE.read_bytes()
+    last_actual = omb_database()[0]
+    archive = _zipfile.ZipFile(io.BytesIO(omb_raw))
+    values = []
+    for member in ("1", "2"):
+        rows = _omb_sheet_rows(archive.read("{}/xls/{}-{}.xlsx".format(OMB_PACKAGE, OMB_PACKAGE, member)))
+        header = rows[0]
+        columns = [header.index(c) for c in ("Agency Name", "Bureau Name", "Account Name") if c in header]
+        for row in rows[1:]:
+            for index in columns:
+                if index < len(row):
+                    values.append(row[index])
+    universes.append({"id": "omb_public_budget_database",
+                      "version": "package {}, last actual year FY{}".format(OMB_PACKAGE, last_actual),
+                      "sha256": _hashlib.sha256(omb_raw).hexdigest(), "names": _cost_no_document_keys(values)})
+    toptier = fixtures / "usaspending" / "toptier_agencies.json"
+    values, digests, files = [], [_hashlib.sha256(toptier.read_bytes()).hexdigest()], 1
+    for row in json.loads(toptier.read_text(encoding="utf-8")).get("results") or []:
+        values.append(row.get("agency_name"))
+        values.append(row.get("abbreviation"))
+    for path in sorted((fixtures / "usaspending" / "sub_components").glob("*.json")):
+        if path.name.endswith(".meta.json"):
+            continue
+        files += 1
+        digests.append(_hashlib.sha256(path.read_bytes()).hexdigest())
+        for row in json.loads(path.read_text(encoding="utf-8")).get("results") or []:
+            values.append(row.get("name"))
+    universes.append({"id": "usaspending_agency_lists", "version": "{} files".format(files),
+                      "sha256": _hashlib.sha256("\n".join(digests).encode("ascii")).hexdigest(),
+                      "names": _cost_no_document_keys(values)})
+    net_path = fixtures / "treasury" / "net_cost" / "statement_net_cost_2025-09-30.json"
+    net_raw = net_path.read_bytes()
+    net_rows = (json.loads(net_raw.decode("utf-8")).get("data") or [])
+    years = sorted({str(r.get("stmt_fiscal_year") or "") for r in net_rows if isinstance(r, dict) and r.get("stmt_fiscal_year")})
+    universes.append({"id": "treasury_statement_of_net_cost", "version": "FY{}".format(years[-1]) if years else "FY2025",
+                      "sha256": _hashlib.sha256(net_raw).hexdigest(),
+                      "names": _cost_no_document_keys(r.get("agency_nm") for r in net_rows if isinstance(r, dict))})
+    house_raw = DISBURSEMENT_HOUSE_CSV.read_bytes()
+    values = []
+    for row in _csv.reader(io.StringIO(house_raw.decode("utf-8-sig"))):
+        if row:
+            found = _COST_NO_DOCUMENT_HOUSE_ORG.match(str(row[0] or "").strip())
+            if found:
+                values.append(found.group(2))
+    universes.append({"id": "house_statement_of_disbursements", "version": "April 1 - June 30, 2026",
+                      "sha256": _hashlib.sha256(house_raw).hexdigest(), "names": _cost_no_document_keys(values)})
+    senate_raw = DISBURSEMENT_SENATE_PDF.read_bytes()
+    heading = re.compile(r"STATEMENT OF EXPENDITURES ([A-Z][A-Z ,.'&-]+?) (S\.RES\. \S+ \(\d+TH\)|COMMITTEE ON [A-Z ]+ - FY \d{4}) "
+                         r"EXPENSES OF INQUIRIES AND INVESTIGATIONS (B-[\d-]+)")
+    period_re = re.compile(r"NET EXPENDITURES FOR THE PERIOD OF \d\d/\d\d/\d{4} THRU \d\d/\d\d/\d{4} \(\$\)")
+    labels, printed = [], None
+    for text in _disbursement_pdf_pages(senate_raw, b"ORGANIZ"):
+        found = heading.findall(text)
+        if len(found) != 1:
+            continue
+        labels.append(found[0][0].strip())
+        period = period_re.search(text)
+        if period and printed is None:
+            printed = period.group(0)
+    universes.append({"id": "senate_secretary_report", "version": printed or "October 1, 2025 - March 31, 2026",
+                      "sha256": _hashlib.sha256(senate_raw).hexdigest(), "names": _cost_no_document_keys(labels)})
+    result = [u for u in universes if u["names"]]
+    _COST_NO_DOCUMENT_UNIVERSES[cache_key] = result
+    return result
+
+
+def cost_no_document_takes_block(node):
+    if is_post(node):
+        return False
+    type_text = str(node.get("type") or "").casefold()
+    if node.get("synthetic") or "treasury accounting line" in type_text or any(w in type_text for w in COST_NO_DOCUMENT_COMMITTEE_WORDS):
+        return False
+    if str(node.get("lifecycle") or "") == "superseded":
+        return False
+    if str(node.get("cost_status") or "") not in ("allocated", "scaled_official"):
+        return False
+    return not any(isinstance(node.get(f), dict) for f in COST_NO_DOCUMENT_SOURCED_FIGURES)
+
+
+def cost_no_document_violations(nodes, graph, label):
+    """An explained blank is re-derived from the committed money documents:
+    every block's document list is the fixtures' (id, label, version, digest,
+    distinct names), its name hits are recomputed by canonical-key equality,
+    its kind follows from the hits, and it sits only on an organisation left
+    with an apportioned estimate and no sourced figure of another kind. In the
+    other direction every such organisation carries one, once the pass has run."""
+    try:
+        universes = cost_no_document_universes(graph)
+    except (OSError, ValueError, KeyError, IndexError) as error:
+        return ["the money documents could not be re-read for the explained blanks: {}".format(error)]
+    expected_docs = [{"id": u["id"], "document": COST_NO_DOCUMENT_LABELS.get(u["id"]), "version": u["version"],
+                      "sha256": u["sha256"], "namesChecked": len(u["names"])} for u in universes]
+    out = []
+    pass_ran = any(isinstance(n.get(COST_NO_DOCUMENT_FIELD), dict) for n in nodes)
+    for node in nodes:
+        block = node.get(COST_NO_DOCUMENT_FIELD)
+        takes = cost_no_document_takes_block(node) and node.get("id") != "the-constitution-of-the-united-states"
+        if block is None:
+            if pass_ran and takes:
+                out.append("{} is left with only an estimate and carries no costNoDocument block".format(label(node)))
+            continue
+        if not isinstance(block, dict):
+            out.append("{} costNoDocument is not an object".format(label(node)))
+            continue
+        if not takes:
+            out.append("{} carries an explained blank on a node that is not an organisation left with only an estimate".format(label(node)))
+        if str(block.get("name") or "") != str(node.get("name") or ""):
+            out.append("{} costNoDocument names {!r}, not the node's name".format(label(node), block.get("name")))
+        key = canonical_key(node.get("name"))
+        hits = [{"document": u["id"], "printed": u["names"][key]} for u in universes if key in u["names"]]
+        got_hits = block.get("namedIn")
+        if not isinstance(got_hits, list) or [(str(h.get("document")), str(h.get("printed"))) for h in got_hits if isinstance(h, dict)] != [(h["document"], h["printed"]) for h in hits]:
+            out.append("{} costNoDocument.namedIn is not what the held documents print for this name".format(label(node)))
+        kind = str(block.get("kind") or "")
+        expected_kind = COST_NO_DOCUMENT_KIND_NAMED if hits else COST_NO_DOCUMENT_KIND_NONE
+        if kind != expected_kind:
+            out.append("{} costNoDocument.kind {!r}; the documents say {!r}".format(label(node), kind, expected_kind))
+        docs = block.get("documents")
+        if not isinstance(docs, list):
+            out.append("{} costNoDocument lists no documents".format(label(node)))
+        else:
+            got = [{"id": str(d.get("id")), "document": str(d.get("document")), "version": str(d.get("version")),
+                    "sha256": str(d.get("sha256")), "namesChecked": d.get("namesChecked")} for d in docs if isinstance(d, dict)]
+            want = [dict(d, document=str(d["document"])) for d in expected_docs]
+            if [dict(d) for d in got] != want:
+                out.append("{} costNoDocument.documents is not the committed documents' list (ids, labels, versions, digests, counts)".format(label(node)))
+            for d in docs:
+                if isinstance(d, dict) and set(d) - {"id", "document", "version", "file", "sha256", "namesChecked"}:
+                    out.append("{} costNoDocument document carries keys the module never writes".format(label(node)))
+                    break
+        extra = set(block) - {"kind", "name", "namedIn", "documents"}
+        if extra:
+            out.append("{} costNoDocument carries keys the module never writes: {}".format(label(node), sorted(extra)))
+    return out
+
+
 def is_committee(node):
     return str(node.get("type") or "").strip().casefold() in COMMITTEE_TYPES
 
@@ -11812,6 +12010,15 @@ def main(argv):
         if not url.startswith("https://www.govinfo.gov/"):
             omb_violations.append("{}'s OMB block cites {!r}, not the package on govinfo".format(label(node), url))
     gate.check("an OMB budget figure is a completed year the package really prints", omb_violations)
+    # The explained blank (criterion 1): an organisation left with only an
+    # estimate names the money documents checked for its name, re-derived here
+    # from the committed fixtures, and every such organisation carries one.
+    gate.check("an explained blank lists the held money documents, re-derived, and every bare estimate carries one", cost_no_document_violations(nodes, graph, label))
+    blanks = [n for n in nodes if isinstance(n.get(COST_NO_DOCUMENT_FIELD), dict)]
+    named = sum(1 for n in blanks if str(n[COST_NO_DOCUMENT_FIELD].get("kind")) == COST_NO_DOCUMENT_KIND_NAMED)
+    bare = [n for n in nodes if cost_no_document_takes_block(n) and not isinstance(n.get(COST_NO_DOCUMENT_FIELD), dict) and n.get("id") != "the-constitution-of-the-united-states"]
+    print("  explained blanks     : {:,} organisations left with only an estimate name the money documents checked ({:,} of them named in one without a licensed figure); bare estimates with no explanation: {:,} (criterion 1)".format(
+        len(blanks), named, len(bare)))
 
     # A name that states how many things it stands for, against what the
     # graph carries. The claim is only ever "the name says N, we carry M";

@@ -4674,6 +4674,55 @@ cost) where the Treasury prints no line, labelled by basis and period as a
 salary now is; and whether to read the chambers' own disbursement reports
 for the 240 committees, which no Table 5 line can ever name.
 
+**An explained blank where no held money document names the unit
+(`cost_no_document.py`, since 2026-10-22).** `docs/DEFINITION_OF_DONE.md`
+criterion 1 is done when no organisation is left with only an apportioned
+estimate: each shows a figure a document states or "says in words why none
+exists", an explained blank that "must name the documents checked". 359
+organisations were bare estimates on 2026-10-22, and every one now carries
+`costNoDocument`: the unit's name checked by canonical-key equality against
+the unit names every held money document prints — the Monthly Treasury
+Statement the graph was built from (every Table 5 line, 553 names), the
+Combined Statement chapter in hand (account titles and units, 117), OMB's
+Public Budget Database (agency, bureau and account names, both measures,
+4,145), USAspending's toptier list and the 52 committed sub-component lists
+(395), Treasury's Statement of Net Cost (40), the House's Statement of
+Disbursements (543 organisations, the fiscal-year prefix set aside) and the
+Senate Secretary's report (20 headings). `kind` is
+`no_held_document_names_it` (341) or
+`named_in_a_held_document_without_a_licensed_figure` (18: OMB prints an
+ACCOUNT named "Board of Veterans Appeals" under the VA's Departmental
+Administration bureau, "Executive Office for Immigration Review" under
+Justice, and bureau rows for the Inter-American Foundation and the Trade and
+Development Agency under the "International Assistance Programs" grouping the
+graph refuses as a parent; the Court of International Trade and the Federal
+Circuit under OMB's "Judicial Branch"; the Secretary of the Senate; the
+Kennedy Center), with the printed rows listed. The claim is exactly "none of
+THESE documents prints a row carrying this name", each document named with a
+version and a digest, never "no published document states this unit's
+money". It writes no cost field, no figure and no source; never on a post, a
+committee or subcommittee (a subcommittee reads "funded through its
+committee", the owner's rule of 2026-10-07), a line, a replaced unit, a
+measured node or a node that shows a sourced figure of another kind. The
+seven-document list is the same on every node and the viewer copy stores it
+once (`SHARED_DOCUMENT_BLOCKS`). The gate re-derives every universe from the
+fixtures with its own readers — the OMB xlsx, the Combined Statement chapter
+(accounts with figures, 105), the House CSV, the Senate PDF's headings, the
+three JSON documents — and refuses a block whose documents, versions, digests
+or counts are not the fixtures', whose name hits are not what the documents
+print, whose kind does not follow from the hits, that sits where no blank
+belongs, or that is missing from an organisation left with only an estimate.
+`scripts/report_cost_coverage.py` splits the bare class into "an explained
+blank" and "a held document prints the name" and prints the remaining bare
+count as one number; the panel and the directory list the documents checked
+under the withheld-estimate sentence. The 18 named rows are the route to a
+few more sourced figures (an OMB account-level reviewed table, the shape of
+the Combined Statement's; bureau rows scoped to the agency's subtree, which
+would reach exactly one more unit, Justice's National Security Division);
+the 341 are, as the definition of done anticipated, divisions, regions and
+laboratories funded from a parent's accounts for which no held document
+prints a separate line. `CURATION.md` §24.
+
 **An organisation's sourced figure of another kind is its headline, labelled
 by basis (since 2026-10-07, the owner's decision).** The cost-coverage report
 named two decisions only the owner could make; this is the first. An

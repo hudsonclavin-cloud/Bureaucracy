@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261022a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261022a";
+import { createGovernmentGraph } from "./graph.js?v=20261022b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261022b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -3652,6 +3652,34 @@ function buildHeaderSumLines(node) {
   return list;
 }
 
+// An organisation left with only an estimate says which held money documents
+// were checked for its name (cost_no_document.py): none prints a figure for
+// it, or one prints the name under a heading no reviewed rule has turned into
+// a figure. The document list is shared across nodes in the viewer copy.
+function describeCostNoDocument(node) {
+  const block = node && node.costNoDocument;
+  if (!block || typeof block !== "object") return "";
+  const docs = documentsOfBlock(block);
+  const named = docs.map((d) => `${d.document}${d.version ? ` (${d.version})` : ""}`).join("; ");
+  const checked = docs.length
+    ? ` The ${docs.length} documents checked for a row carrying this unit's name: ${named}.`
+    : "";
+  if (String(block.kind) === "named_in_a_held_document_without_a_licensed_figure" && Array.isArray(block.namedIn) && block.namedIn.length) {
+    const where = block.namedIn.map((h) => `"${h.printed}" in ${h.document.replace(/_/g, " ")}`).join("; ");
+    return ` A held document does print this unit's name — ${where} — under a heading no reviewed rule has yet turned into a figure for this unit, so no sourced figure is shown.${checked}`;
+  }
+  return ` No document this project holds prints a figure for this unit: none of them carries a row, account, bureau or entity of this name.${checked}`;
+}
+
+// A subcommittee is funded through its committee: neither chamber's
+// disbursement document prints one by name (the owner's decision of
+// 2026-10-07), so the blank is the structure's, not a gap in the documents.
+function describeSubcommitteeFunding(node) {
+  return /subcommittee/i.test(String(node && node.type || ""))
+    ? " A subcommittee is funded through its committee: neither chamber's statement of disbursements prints a subcommittee by name, so no document can state its own figure."
+    : "";
+}
+
 function describeCost(node) {
   const standIn = costStandInOf(node);
   const payNote = standIn ? standInNote(standIn) : "";
@@ -3670,6 +3698,8 @@ function describeCost(node) {
         "No record names this node's own cost. The figure this graph could otherwise show is its share of an ancestor's " +
         "measured total, divided among siblings by budget, headcount or subtree size — a number nobody measured, so it is " +
         "not shown here. Tick \u201cAlso show estimated shares of a parent's total\u201d to see it, labelled as the estimate it is." +
+        describeCostNoDocument(node) +
+        describeSubcommitteeFunding(node) +
         payNote,
     };
   }

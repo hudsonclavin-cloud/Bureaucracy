@@ -6676,3 +6676,83 @@ that refuse every crawler, reachable only through a different document; 24
 are the graph's own groupings, which no document will ever name; 19 are names
 the floor refuses; 8 have no public page anybody could find. None of them is
 "not yet looked at", and the panel no longer says so.
+
+## 24. Money: the explained blank, and what the held documents name (2026-10-22)
+
+`docs/DEFINITION_OF_DONE.md` criterion 1 is done when the cost-coverage class
+"Estimate — no sourced figure of any kind" is 0 and every other organisation is
+measured, headed by a sourced figure of another kind, or an explained blank
+"which must name the documents checked". On the 2026-10-22 graph 359
+organisations were bare estimates.
+
+### 24.1 Measured first: what the held documents name
+
+Before building the blank, every bare estimate's name was checked by
+canonical-key equality against the unit names in every money document this
+project holds. 341 appear in none. 18 appear in at least one, and the hits
+sort into four shapes, none of which a name rule may publish as a figure:
+
+| shape | units | why no figure follows |
+|---|---|---|
+| an OMB ACCOUNT under a bureau the graph has no node for | EOIR, the Education Department's Office for Civil Rights, the BVA, the NCA (two accounts), the Kennedy Center, FERC (under DOE's "Energy Programs"), the CAAF (under DoD), the Secretary of the Senate | OMB's module matches agencies and bureaus; an account is one level further down and this project has no reviewed table saying which account IS the unit's money — the Combined Statement's reviewed rows are that shape and would be the model |
+| an OMB bureau under a grouping with no node | the Inter-American Foundation, the African Development Foundation, the Trade and Development Agency ("International Assistance Programs"), the Armed Forces Retirement Home ("Other Defense--Civil Programs", where Table 5 files it too) | the same-section rule: the graph places these among the independent agencies; the Treasury's line for AFRH was refused across sections for the same reason, and OMB's module refuses a bureau whose agency matched no node |
+| an OMB bureau whose name two nodes share | Justice's National Security Division (CBO has a division of the same name) | `omb_budget` requires the bureau name to reach one node graph-wide before scoping; scoping to the agency's subtree would reach exactly this one unit and no other — measured on every bureau row |
+| OMB's "Judicial Branch" bureaus | the Court of International Trade, the Federal Circuit | `omb_budget.NON_BUDGET_TYPE_WORDS` excludes courts from the name index |
+
+The USAspending hits are weaker than they look and the module says so only
+implicitly: the sub-component lists name DOJ's litigating divisions and NSF's
+divisions as awarding offices, not as units File A reports outlays for, so
+they are "named in a held document" and no more.
+
+### 24.2 What was built
+
+`data_pipeline/verification/cost_no_document.py` publishes `costNoDocument` on
+every organisation whose `cost_status` is `allocated` or `scaled_official`
+and which carries none of the five sourced figures — never on a post, a
+committee or subcommittee, a Treasury line, a replaced unit or a measured
+node. The block names the seven documents (id, label, version, file, digest,
+distinct names checked) and lists `namedIn`: each document that prints the
+unit's name and the row as printed. `kind` follows from the hits. The
+document list is identical on every node and the viewer copy stores it once
+(`SHARED_DOCUMENT_BLOCKS`); the panel and the directory print "No document
+this project holds prints a figure for this unit … The 7 documents checked
+for a row carrying this unit's name: …" or "A held document does print this
+unit's name — "Board of Veterans Appeals" in omb public budget database —
+under a heading no reviewed rule has yet turned into a figure for this unit".
+A subcommittee reads "funded through its committee" (the owner's 2026-10-07
+rule) and carries no block.
+
+The gate (`cost_no_document_violations`) re-derives every universe from the
+committed fixtures with its own readers and refuses a block whose documents
+are not the fixtures' (id, label, version, digest, count), whose hits are not
+what the documents print, whose kind does not follow, that sits where no
+blank belongs, or that is missing from a bare estimate once the pass has
+run; `tests/test_cost_no_document.py` pins the two universes equal name for
+name and corrupts seventeen dimensions. One alignment was needed: the
+module's chapter reader keeps 115 accounts and the gate's 105 — the ten the
+chapter prints with no figure — so the module checks only accounts with
+figure cells, which is also the honest set for "prints a figure".
+
+### 24.3 Measured on the rebuild
+
+`docs/COST_COVERAGE.md`: "Estimate — no sourced figure of any kind" **359 →
+0**; "an explained blank" 341; "a held document prints the name" 18. No cost
+figure, status or weight moved; the only change to any node is the block.
+The criterion is met in the sense the definition of done states — every
+organisation shows a figure or says in words why none exists, naming the
+documents checked — and the honest caveat is the one the definition itself
+anticipated: most of the 341 are divisions, regional offices and laboratories
+funded from a parent's accounts, for which no document anybody holds prints a
+separate line, so the blank is the end state and not a queue.
+
+### 24.4 Routes the measurement leaves open
+
+- An OMB account-level reviewed table (the Combined Statement's shape) would
+  reach EOIR, the BVA, the NCA, OCR, the Kennedy Center and the Secretary of
+  the Senate; each row is a decision that the printed account IS the unit's
+  money.
+- Scoping OMB's bureau match to the agency's subtree reaches Justice's NSD and
+  nothing else; the court exclusion is a decision the module's docstring does
+  not explain and could be revisited for the CIT and the Federal Circuit.
+- The cross-section bureaus (IAF, ADF, TDA, AFRH) are the same-section rule's,
+  and the owner's.

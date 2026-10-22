@@ -13,6 +13,7 @@ on every run; nothing here is a number somebody reports.
 - nodes in the published graph: **5,512**
 - showing a figure a document states (measured cost or salary): **1,431**
 - carrying an apportioned estimate, withheld unless asked for: **682**
+- **bare estimates — an organisation with only an estimate and no explanation (criterion 1 gap): 0**
 - positions no document prices: **3,333** — 2,789 research work, 432 paused beneath a replaced unit, 112 a document places off every federal pay schedule
 - no figure now and none from any route (negative pool, replaced unit, below a cent): **66**
 
@@ -22,7 +23,9 @@ on every run; nothing here is a number somebody reports.
 | Measured — the Treasury's own figure for the unit | 143 | The root's anchor and every Table 5 line applied to the node it names (`cost_status: official`). The only costs this graph calls measured. | Nothing to do for the node; the statement is re-fetched and re-applied on each run. |
 | Estimate — a committee or subcommittee | 240 | An apportioned share of the chamber's measured total. No line of Table 5 names a committee, so no Treasury alias can ever reach one of these. | Since 2026-10-07 a committee carries `committeeDisbursements` beside the estimate: what its chamber paid out for the committee's account over a stated period, from the House's Statement of Disbursements and the Report of the Secretary of the Senate (40 of the 41 chamber committees). A different basis on a different clock, never a cost. Subcommittees have no figure of their own in either document. |
 | Estimate — with a sourced figure already published beside it | 83 | An apportioned share, and beside it at least one figure an official source states for this unit under its own heading: USAspending File A gross outlays (fiscal year to date), OMB's Public Budget Database outlays (last completed year, summed over the unit's account rows), Treasury's audited Statement of Net Cost (last completed year), the net outlays the Treasury's Combined Statement prints for the unit's reviewed accounts (last completed year, since 2026-10-21), or — for the House's own officer offices, since 2026-10-20 — what the House's Statement of Disbursements paid out for the officer's organisation over a quarter. Each is on the panel today; none is headed COST, because each measures something different from the Treasury's net outlays on a different clock. | Decided by the owner: the headline falls back to one of these, labelled by its basis and period, when the Treasury prints no line (File A, OMB and audited net cost since 2026-10-07; a chamber's payout for a committee or an officer office since 2026-10-20; the Combined Statement since 2026-10-21) — the same move the panel makes for a post's salary. The estimate stays withheld behind its button. Measured on the 94 nodes that carry both, not one OMB FY2025 figure agrees with the Treasury line within 1%, so the fallback is a different number under a different label, never the same claim. |
-| Estimate — no sourced figure of any kind | 359 | An apportioned share of an ancestor's measured total, divided among siblings by budget, headcount or subtree size. Table 5 stops at the bureau, so divisions, regional offices, laboratories, centres and the courts beneath a circuit print no line of their own. | Three routes, in order of reach: OMB's Public Budget Database bureau rows (committed; 72 bureaus matched so far, more need a node whose name the file carries); USAspending File B by Treasury Account Symbol, which reaches programme level and has not been fetched; an agency's own Agency Financial Report. Each yields a figure beside the estimate, not a cost, until the decision above is made. |
+| Estimate — an explained blank: no held money document names the unit | 341 | An apportioned share, and `costNoDocument` saying that none of the money documents this project holds — the Monthly Treasury Statement the graph was built from, the Combined Statement chapter in hand, OMB's Public Budget Database (agency, bureau and account names), USAspending's agency and bureau lists, Treasury's Statement of Net Cost, the House's Statement of Disbursements and the Senate Secretary's report — prints a row, account, bureau or entity carrying this unit's name. The definition of done's explained blank: the documents checked are named on the block and the panel, each with its version. | A document this project does not yet hold that prints the unit's money (an agency's AFR, File B by Treasury Account Symbol, another Combined Statement chapter), or a reviewed alias where a held document prints the unit under another name. Most of these are divisions, regional offices and laboratories funded from a parent's accounts, for which no document prints a separate line. |
+| Estimate — a held document prints the name, no reviewed rule turns it into a figure | 18 | An apportioned share, and `costNoDocument` saying that a held document DOES print a row carrying this unit's name — OMB's database prints an account named "Board of Veterans Appeals" under the VA's Departmental Administration bureau; its bureau rows name the Inter-American Foundation under the "International Assistance Programs" grouping — which no reviewed rule has licensed as this unit's figure. The block names the document and the printed row. | A reviewed row (an OMB account-level table in the shape of the Combined Statement's; a bureau scoped to its agency's subtree), each a decision about whether the printed row IS the unit's money, never a name match alone. |
+| Estimate — no sourced figure of any kind | 0 | An apportioned share of an ancestor's measured total, divided among siblings by budget, headcount or subtree size. Table 5 stops at the bureau, so divisions, regional offices, laboratories, centres and the courts beneath a circuit print no line of their own. | Three routes, in order of reach: OMB's Public Budget Database bureau rows (committed; 72 bureaus matched so far, more need a node whose name the file carries); USAspending File B by Treasury Account Symbol, which reaches programme level and has not been fetched; an agency's own Agency Financial Report. Each yields a figure beside the estimate, not a cost, until the decision above is made. |
 | Salary — a pay claim an official document supports | 1,258 | A position carrying at least one of the ten pay fields: a printed rate, a schedule level priced by OPM's table, a statutory rate, a roster figure, a derivation the block carries in the open, twelve months of a printed monthly military rate, or a range. Since 2026-10-05 it is the post's headline figure, headed as pay and never as COST. | Nothing to do for the node; each pay field is re-derived from its committed document on every run and withdrawn when the document stops supporting it. |
 | Post with no figure — stands for several holders | 611 | The node's name states a multiplicity and no claim that holds for every holder has reached it. An incumbency-shaped claim (one listing's level, one row of the current export) is refused on such a node because it is one appointment's figure, not the group's. | A tier, a statutory rate, a parity provision or a roster listing every holder at one figure IS published on such a node with a `holders` block. Finding which pay SYSTEM governs the title is the useful step: it lets the graph carry the schedule rather than a rate. `docs/UNPRICED_POSITIONS.md` lists every one. |
 | Post with no figure — OPM lists it and prints no rate | 20 | The PLUM archive or the current export names the title under this organisation but the Level/Grade/Pay cell carries a rank or is empty, and no salary table this project has read prices that pay plan. | A salary table for the pay plan (AD, OT and the others) where OPM publishes one; most of these plans have none, and the honest state is a listing with no figure. |
@@ -37,7 +40,7 @@ on every run; nothing here is a number somebody reports.
 
 Where Table 5 stops is visible in which TYPES carry an estimate and no line:
 
-| type | estimate (no sourced figure) | with a sourced figure beside | committee |
+| type | estimate (no sourced figure; explained blanks included) | with a sourced figure beside | committee |
 |---|---|---|---|
 | Subcommittee | 0 | 0 | 195 |
 | Division | 108 | 7 | 0 |
@@ -595,11 +598,11 @@ An apportioned share, and beside it at least one figure an official source state
 - `leg-senate-admin-legal` — Office of Senate Legal Counsel (Office; under Senate Administrative Offices) — beside it: combinedStatementOutlays
 - `jud-specialized-cavc` — Court of Appeals for Veterans Claims (CAVC) (Specialized Court; under Specialized Federal Courts) — beside it: usaspendingOutlays
 
-## Estimate — no sourced figure of any kind — 359
+## Estimate — an explained blank: no held money document names the unit — 341
 
-An apportioned share of an ancestor's measured total, divided among siblings by budget, headcount or subtree size. Table 5 stops at the bureau, so divisions, regional offices, laboratories, centres and the courts beneath a circuit print no line of their own.
+An apportioned share, and `costNoDocument` saying that none of the money documents this project holds — the Monthly Treasury Statement the graph was built from, the Combined Statement chapter in hand, OMB's Public Budget Database (agency, bureau and account names), USAspending's agency and bureau lists, Treasury's Statement of Net Cost, the House's Statement of Disbursements and the Senate Secretary's report — prints a row, account, bureau or entity carrying this unit's name. The definition of done's explained blank: the documents checked are named on the block and the panel, each with its version.
 
-**Route.** Three routes, in order of reach: OMB's Public Budget Database bureau rows (committed; 72 bureaus matched so far, more need a node whose name the file carries); USAspending File B by Treasury Account Symbol, which reaches programme level and has not been fetched; an agency's own Agency Financial Report. Each yields a figure beside the estimate, not a cost, until the decision above is made.
+**Route.** A document this project does not yet hold that prints the unit's money (an agency's AFR, File B by Treasury Account Symbol, another Combined Statement chapter), or a reviewed alias where a held document prints the unit under another name. Most of these are divisions, regional offices and laboratories funded from a parent's accounts, for which no document prints a separate line.
 
 - `leg-support-cbo-budget-analysis-division` — Budget Analysis Division (Division; under Analytical Divisions)
 - `leg-support-cbo-budget-review-division` — Budget Review Division (Division; under Analytical Divisions)
@@ -607,7 +610,6 @@ An apportioned share of an ancestor's measured total, divided among siblings by 
 - `leg-support-cbo-financial-analysis-division` — Financial Analysis Division (Division; under Analytical Divisions)
 - `leg-support-cbo-health-retirement-long-term-analysis-division` — Health, Retirement & Long-Term Analysis Division (Division; under Analytical Divisions)
 - `leg-support-cbo-microeconomic-studies-division` — Microeconomic Studies Division (Division; under Analytical Divisions)
-- `leg-support-cbo-national-security-division` — National Security Division (Division; under Analytical Divisions)
 - `leg-support-cbo-tax-analysis-division` — Tax Analysis Division (Division; under Analytical Divisions)
 - `exec-ind-nsf-biological-sciences-bio-biological-infrastructure` — Division of Biological Infrastructure (Division; under Biological Sciences (BIO))
 - `exec-ind-nsf-biological-sciences-bio-environmental-biology` — Division of Environmental Biology (Division; under Biological Sciences (BIO))
@@ -659,7 +661,6 @@ An apportioned share of an ancestor's measured total, divided among siblings by 
 - `exec-dept-ed-region-vii-plains` — Dept of Education Region VII — Plains (Regional Office; under Department of Education)
 - `exec-dept-ed-region-viii-mountain` — Dept of Education Region VIII — Mountain (Regional Office; under Department of Education)
 - `exec-dept-ed-region-x-northwest` — Dept of Education Region X — Northwest (Regional Office; under Department of Education)
-- `exec-dept-ed-ocr` — Office for Civil Rights (OCR) (Office; under Department of Education)
 - `exec-dept-doe-natl-labs` — National Laboratories (Division; under Department of Energy (DOE))
 - `exec-dept-doe-em` — Office of Environmental Management (EM) (Office; under Department of Energy (DOE))
 - `exec-dept-doe-sc` — Office of Science (SC) (Office; under Department of Energy (DOE))
@@ -680,10 +681,8 @@ An apportioned share of an ancestor's measured total, divided among siblings by 
 - `exec-dept-doj-div-civil-rights` — Civil Rights Division (Division; under Department of Justice (DOJ))
 - `exec-dept-doj-div-criminal` — Criminal Division (Division; under Department of Justice (DOJ))
 - `exec-dept-doj-div-enrd` — Environment & Natural Resources Division (Division; under Department of Justice (DOJ))
-- `exec-dept-doj-executive-office-immigration-review` — Executive Office for Immigration Review (Office; under Department of Justice (DOJ))
 - `exec-dept-doj-foreign-claims-settlement-commission` — Foreign Claims Settlement Commission of the United States (Office; under Department of Justice (DOJ))
 - `exec-dept-doj-international-criminal-police-organization-washington` — International Criminal Police Organization (INTERPOL)-Washington (Bureau; under Department of Justice (DOJ))
-- `exec-dept-doj-div-nsd` — National Security Division (Division; under Department of Justice (DOJ))
 - `exec-dept-doj-solicitor` — Office of the Solicitor General (Office; under Department of Justice (DOJ))
 - `exec-dept-doj-office-violence-against-women` — Office on Violence Against Women (Office; under Department of Justice (DOJ))
 - `exec-dept-doj-div-tax` — Tax Division (Division; under Department of Justice (DOJ))
@@ -707,8 +706,6 @@ An apportioned share of an ancestor's measured total, divided among siblings by 
 - `exec-dept-state-embassy` — U.S. Embassies & Consulates (180+) (Field Structure; under Department of State)
 - `exec-dept-state-u-s-mission-to-the-united-nations` — U.S. Mission to the United Nations (Bureau; under Department of State)
 - `exec-dept-dot-great-lakes-saint-lawrence-seaway-development-corporatio` — Great Lakes Saint Lawrence Seaway Development Corporation (Government Corporation; under Department of Transportation (DOT))
-- `exec-dept-va-bva` — Board of Veterans Appeals (BVA) (Office; under Department of Veterans Affairs (VA))
-- `exec-dept-va-nca` — National Cemetery Administration (NCA) (Agency; under Department of Veterans Affairs (VA))
 - `exec-dept-treasury-ofr` — Office of Financial Research (OFR) (Bureau; under Department of the Treasury)
 - `exec-dept-treasury-ofac` — Office of Foreign Assets Control (OFAC) (Bureau; under Department of the Treasury)
 - `exec-ind-nsf-engineering-eng-chemical-bioengineering-environmental-transport-systems` — Chemical, Bioengineering, Energy and Transport Systems (CBET) (Division; under Directorate for Engineering (ENG))
@@ -748,9 +745,7 @@ An apportioned share of an ancestor's measured total, divided among siblings by 
 - `leg-support-gpo-plant` — Plant Operations (Division; under Government Publishing Office (GPO))
 - `leg-support-gpo-security` — Security & Intelligent Documents (Division; under Government Publishing Office (GPO))
 - `leg-house-chaplain` — House Chaplain (Office; under House Administrative Offices)
-- `leg-house-parliamentarian` — Office of the Parliamentarian (Office; under House Administrative Offices)
 - `exec-ind-misc` — Other Independent Agencies (25+) (Division; under Independent Establishments & Government Corporations)
-- `exec-regulatory-ferc` — Federal Energy Regulatory Commission (FERC) (Independent Regulatory Commission; under Independent Regulatory Commissions)
 - `exec-regulatory-fed` — Federal Reserve System (Independent Regulatory Commission; under Independent Regulatory Commissions)
 - `jud-support` — Judicial Support Organizations (Division; under Judicial Branch)
 - `jud-specialized` — Specialized Federal Courts (Division; under Judicial Branch)
@@ -847,17 +842,11 @@ An apportioned share of an ancestor's measured total, divided among siblings by 
 - `exec-eop-omb-office-of-federal-procurement-policy` — Office of Federal Procurement Policy (Division; under Office of Management and Budget (OMB))
 - `exec-eop-omb-oira-office-of-information-regulatory-affairs` — Office of Information and Regulatory Affairs (OIRA) (Division; under Office of Management and Budget (OMB))
 - `exec-eop-omb-performance-personnel-management` — Performance & Personnel Management (Division; under Office of Management and Budget (OMB))
-- `exec-ind-misc-armed-forces-retirement-home` — Armed Forces Retirement Home (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-inter-american-foundation` — Inter-American Foundation (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-odni` — Office of the Director of National Intelligence (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission` — Postal Regulatory Commission (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-abilityone-commission` — U.S. AbilityOne Commission (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-african-development-foundation` — United States African Development Foundation (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-arctic-research-commission` — United States Arctic Research Commission (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-heritage-abroad-commission` — United States Commission for the Preservation of America's Heritage Abroad (Independent Agency; under Other Independent Agencies (25+))
-- `exec-ind-misc-trade-and-development-agency` — United States Trade and Development Agency (Independent Agency; under Other Independent Agencies (25+))
 - `leg-senate-admin-physician` — Office of the Senate Physician (Office; under Senate Administrative Offices)
-- `leg-senate-admin-secretary` — Secretary of the Senate (Office; under Senate Administrative Offices)
 - `leg-senate-admin-chaplain` — Senate Chaplain (Office; under Senate Administrative Offices)
 - `leg-senate-admin-saa` — Sergeant at Arms of the Senate (Office; under Senate Administrative Offices)
 - `exec-ind-sba-districts` — District Offices (68) (Division; under Small Business Administration (SBA))
@@ -865,7 +854,6 @@ An apportioned share of an ancestor's measured total, divided among siblings by 
 - `exec-ind-smithsonian-anacostia-community-museum` — Anacostia Community Museum (Museum/Unit; under Smithsonian Institution)
 - `exec-ind-smithsonian-cooper-hewitt-smithsonian-design-museum` — Cooper Hewitt (Smithsonian Design Museum) (Museum/Unit; under Smithsonian Institution)
 - `exec-ind-smithsonian-hirshhorn-museum-sculpture-garden` — Hirshhorn Museum & Sculpture Garden (Museum/Unit; under Smithsonian Institution)
-- `exec-ind-smithsonian-john-f-kennedy-center-performing-arts` — John F. Kennedy Center for the Performing Arts (Museum/Unit; under Smithsonian Institution)
 - `exec-ind-smithsonian-lemelson-center-for-invention-innovation` — Lemelson Center for Invention & Innovation (Museum/Unit; under Smithsonian Institution)
 - `exec-ind-smithsonian-national-air-space-museum` — National Air & Space Museum (Museum/Unit; under Smithsonian Institution)
 - `exec-ind-smithsonian-national-gallery-art` — National Gallery of Art (Museum/Unit; under Smithsonian Institution)
@@ -890,10 +878,8 @@ An apportioned share of an ancestor's measured total, divided among siblings by 
 - `exec-ind-nsf-social-behavioral-economic-sciences-sbe-behavioral-cognitive-sciences` — Division of Behavioral & Cognitive Sciences (Division; under Social, Behavioral & Economic Sciences (SBE))
 - `exec-ind-nsf-social-behavioral-economic-sciences-sbe-social-economic-sciences` — Division of Social & Economic Sciences (Division; under Social, Behavioral & Economic Sciences (SBE))
 - `exec-ind-nsf-social-behavioral-economic-sciences-sbe-national-center-for-science-engineering-statistics` — National Center for Science and Engineering Statistics (NCSES) (Division; under Social, Behavioral & Economic Sciences (SBE))
-- `jud-specialized-caaf` — Court of Appeals for the Armed Forces (CAAF) (Specialized Court; under Specialized Federal Courts)
 - `jud-specialized-fisc` — Foreign Intelligence Surveillance Court (FISC) (Specialized Court; under Specialized Federal Courts)
 - `jud-specialized-claims` — U.S. Court of Federal Claims (Specialized Court; under Specialized Federal Courts)
-- `jud-specialized-intl-trade` — U.S. Court of International Trade (CIT) (Specialized Court; under Specialized Federal Courts)
 - `exec-ind-nsf-technology-innovation-partnerships-tip-convergence-accelerator` — Convergence Accelerator (Division; under Technology, Innovation & Partnerships (TIP))
 - `exec-ind-nsf-technology-innovation-partnerships-tip-directorate-for-tip-programs` — Division of Directorate for TIP Programs (Division; under Technology, Innovation & Partnerships (TIP))
 - `executive-branch` — Executive Branch (Branch; under The Constitution of the United States)
@@ -912,7 +898,6 @@ An apportioned share of an ancestor's measured total, divided among siblings by 
 - `jud-circuit-10th-circuit` — Tenth Circuit (Circuit Court; under U.S. Courts of Appeals (13 Circuits))
 - `jud-circuit-3rd-circuit` — Third Circuit (Circuit Court; under U.S. Courts of Appeals (13 Circuits))
 - `jud-circuit-d-c-circuit` — U.S. Court of Appeals for the D.C. Circuit (Circuit Court; under U.S. Courts of Appeals (13 Circuits))
-- `jud-circuit-federal-circuit` — U.S. Court of Appeals for the Federal Circuit (Circuit Court; under U.S. Courts of Appeals (13 Circuits))
 - `jud-circuit-5th-circuit` — U.S. Court of Appeals for the Fifth Circuit (Circuit Court; under U.S. Courts of Appeals (13 Circuits))
 - `jud-circuit-4th-circuit` — U.S. Court of Appeals for the Fourth Circuit (Circuit Court; under U.S. Courts of Appeals (13 Circuits))
 - `jud-circuit-9th-circuit` — U.S. Court of Appeals for the Ninth Circuit (Circuit Court; under U.S. Courts of Appeals (13 Circuits))
@@ -960,6 +945,38 @@ An apportioned share of an ancestor's measured total, divided among siblings by 
 - `exec-dept-va-vha-visn-3` — VISN 3 (Regional Office; under Veterans Integrated Service Networks)
 - `exec-dept-va-vha-visn-4` — VISN 4 (Regional Office; under Veterans Integrated Service Networks)
 - `exec-dept-va-vha-visn-5` — VISN 5 (Regional Office; under Veterans Integrated Service Networks)
+
+## Estimate — a held document prints the name, no reviewed rule turns it into a figure — 18
+
+An apportioned share, and `costNoDocument` saying that a held document DOES print a row carrying this unit's name — OMB's database prints an account named "Board of Veterans Appeals" under the VA's Departmental Administration bureau; its bureau rows name the Inter-American Foundation under the "International Assistance Programs" grouping — which no reviewed rule has licensed as this unit's figure. The block names the document and the printed row.
+
+**Route.** A reviewed row (an OMB account-level table in the shape of the Combined Statement's; a bureau scoped to its agency's subtree), each a decision about whether the printed row IS the unit's money, never a name match alone.
+
+- `leg-support-cbo-national-security-division` — National Security Division (Division; under Analytical Divisions)
+- `exec-dept-ed-ocr` — Office for Civil Rights (OCR) (Office; under Department of Education)
+- `exec-dept-doj-executive-office-immigration-review` — Executive Office for Immigration Review (Office; under Department of Justice (DOJ))
+- `exec-dept-doj-div-nsd` — National Security Division (Division; under Department of Justice (DOJ))
+- `exec-dept-va-bva` — Board of Veterans Appeals (BVA) (Office; under Department of Veterans Affairs (VA))
+- `exec-dept-va-nca` — National Cemetery Administration (NCA) (Agency; under Department of Veterans Affairs (VA))
+- `leg-house-parliamentarian` — Office of the Parliamentarian (Office; under House Administrative Offices)
+- `exec-regulatory-ferc` — Federal Energy Regulatory Commission (FERC) (Independent Regulatory Commission; under Independent Regulatory Commissions)
+- `exec-ind-misc-armed-forces-retirement-home` — Armed Forces Retirement Home (Independent Agency; under Other Independent Agencies (25+))
+- `exec-ind-misc-inter-american-foundation` — Inter-American Foundation (Independent Agency; under Other Independent Agencies (25+))
+- `exec-ind-misc-african-development-foundation` — United States African Development Foundation (Independent Agency; under Other Independent Agencies (25+))
+- `exec-ind-misc-heritage-abroad-commission` — United States Commission for the Preservation of America's Heritage Abroad (Independent Agency; under Other Independent Agencies (25+))
+- `exec-ind-misc-trade-and-development-agency` — United States Trade and Development Agency (Independent Agency; under Other Independent Agencies (25+))
+- `leg-senate-admin-secretary` — Secretary of the Senate (Office; under Senate Administrative Offices)
+- `exec-ind-smithsonian-john-f-kennedy-center-performing-arts` — John F. Kennedy Center for the Performing Arts (Museum/Unit; under Smithsonian Institution)
+- `jud-specialized-caaf` — Court of Appeals for the Armed Forces (CAAF) (Specialized Court; under Specialized Federal Courts)
+- `jud-specialized-intl-trade` — U.S. Court of International Trade (CIT) (Specialized Court; under Specialized Federal Courts)
+- `jud-circuit-federal-circuit` — U.S. Court of Appeals for the Federal Circuit (Circuit Court; under U.S. Courts of Appeals (13 Circuits))
+
+## Estimate — no sourced figure of any kind — 0
+
+An apportioned share of an ancestor's measured total, divided among siblings by budget, headcount or subtree size. Table 5 stops at the bureau, so divisions, regional offices, laboratories, centres and the courts beneath a circuit print no line of their own.
+
+**Route.** Three routes, in order of reach: OMB's Public Budget Database bureau rows (committed; 72 bureaus matched so far, more need a node whose name the file carries); USAspending File B by Treasury Account Symbol, which reaches programme level and has not been fetched; an agency's own Agency Financial Report. Each yields a figure beside the estimate, not a cost, until the decision above is made.
+
 
 ## Salary — a pay claim an official document supports — 1,258
 

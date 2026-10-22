@@ -34,6 +34,26 @@ CLAUDE.md.
 Cache stamp: `?v=20261020a` (bump index.html, js/ui.js, js/graph.js together
 on any JS change).
 
+## 2026-10-22: two definition-of-done criteria closed (see CURATION.md §23–24)
+
+- **Criterion 3 (Evidence).** `verificationNoDocument` publishes a recorded
+  reason where no official document can be read (the verifier's name floor or
+  the nomination ledger's latest decline). `scripts/report_evidence_coverage.py`
+  → `docs/EVIDENCE_COVERAGE.md` is the measure: 870 current organisations,
+  631 with a method, gap **247 → 40** — every one a document that WAS read and
+  does not carry the graph's name (17 subcommittees absent from a complete
+  committee list, 17 units whose page labels another wording, 4 groupings,
+  the Eisenhower library and one more): curation or rename decisions.
+- **Criterion 1 (Money).** `costNoDocument` is the explained blank: every
+  organisation left with only an estimate names the seven held money
+  documents (version, digest, names checked) and whether any prints its name.
+  `docs/COST_COVERAGE.md`: bare estimates **359 → 0** (341 explained blanks,
+  18 named in a held document without a licensed figure — the route to a few
+  more sourced figures, §24.4).
+- Still open in the definition of done: criterion 2 (pay), 4(a) list
+  reconciliation, 4(b) totals that add up visibly, 5–7 self-update, the two
+  reader features.
+
 ## Next actions, in order
 
 1. **September Treasury statement (~Oct 14–15).** It closes FY2026, so every

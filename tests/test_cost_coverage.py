@@ -91,6 +91,10 @@ class PartitionTests(unittest.TestCase):
         self.assertEqual(classify({"type": "Subcommittee", "cost_status": "allocated"}), "estimate_committee")
         self.assertEqual(classify({"type": "Bureau", "cost_status": "allocated", "ombBudget": {}}), "estimate_beside_sourced_figure")
         self.assertEqual(classify({"type": "Bureau", "cost_status": "allocated"}), "estimate")
+        self.assertEqual(classify({"type": "Bureau", "cost_status": "allocated", "costNoDocument": {"kind": "no_held_document_names_it"}}), "estimate_explained_blank")
+        self.assertEqual(classify({"type": "Bureau", "cost_status": "allocated", "costNoDocument": {"kind": "named_in_a_held_document_without_a_licensed_figure"}}), "estimate_named_in_a_held_document")
+        # a sourced figure beside the estimate outranks an explained blank
+        self.assertEqual(classify({"type": "Bureau", "cost_status": "allocated", "ombBudget": {}, "costNoDocument": {"kind": "no_held_document_names_it"}}), "estimate_beside_sourced_figure")
         self.assertEqual(classify({"type": "Office", "cost_status": "unavailable", "cost_validation": "treasury_pool_negative"}), "negative_pool")
         self.assertEqual(classify({"type": "VISN", "cost_status": "unavailable", "cost_validation": "unit_superseded"}), "superseded")
         self.assertEqual(classify({"type": "Office", "cost_status": "unavailable", "cost_validation": "allocation_below_precision"}), "below_precision")
