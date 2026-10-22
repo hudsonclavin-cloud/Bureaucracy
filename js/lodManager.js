@@ -6,6 +6,14 @@ const DISTANCE_THRESHOLDS = {
   POSITION_VIEW: 60,
 };
 
+// No tier opens nodes by itself (since 2026-10-21). `autoExpand` used to be
+// on from Agency View down: for four seconds after any selection,
+// `ensureLodCoverage` opened every unexpanded node within the tier's
+// `autoExpandDistance` of it, ten a frame, so clicking the Executive Branch
+// only to read its panel loaded 123 nodes under 15 parents, the Judicial
+// and Legislative branches' among them, and the density cap then folded the
+// pile into clusters. A node opens only when a reader asks: the Expand
+// buttons, the children list, a click on a folded group, search, a link.
 const LEVELS = [
   {
     level: 0,
@@ -54,7 +62,7 @@ const LEVELS = [
     nodeScale: 0.5,
     tileSize: 100,
     nodesPerTile: 3,
-    autoExpand: true,
+    autoExpand: false,
     autoExpandDistance: 220,
     visibleNodeBudget: 8000,
   },
@@ -71,7 +79,7 @@ const LEVELS = [
     nodeScale: 0.68,
     tileSize: 92,
     nodesPerTile: 4,
-    autoExpand: true,
+    autoExpand: false,
     autoExpandDistance: 180,
     visibleNodeBudget: 18000,
   },
@@ -88,7 +96,7 @@ const LEVELS = [
     nodeScale: 1,
     tileSize: 84,
     nodesPerTile: 6,
-    autoExpand: true,
+    autoExpand: false,
     autoExpandDistance: 150,
     visibleNodeBudget: 28000,
   },

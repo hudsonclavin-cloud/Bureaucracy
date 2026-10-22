@@ -9,6 +9,11 @@ This file was lost in the 2026-08-04 merge and rewritten from the code on
 **`HANDOFF.md` first**: the current state, headline numbers and the ordered
 next actions as of the last session's close (2026-10-12).
 
+`docs/DEFINITION_OF_DONE.md` is the finish line the owner set on 2026-10-21:
+seven criteria (money, pay, evidence, structure, self-updating, freshness,
+conflicts) plus four reader features, each with a measured target and gap.
+Work that does not move one of its gaps should say why.
+
 `docs/GO.md` is the standing instruction for agent work on this repository.
 When the owner says **go**, read it and follow it from Step 0; it decides
 which of the three phases the work is currently in by reading state off disk,
@@ -4526,6 +4531,47 @@ before the label-against-label pass runs. Geometry is untouched: a cluster
 ring that drifts behind the breadcrumb is where the data puts it, and moving
 it would be a lie about the scene; only the text the renderer chooses to draw
 is suppressed.
+
+**A click selects and opens nothing; what a reader opened stays laid out
+(since 2026-10-21).** The owner's standing report was that clicking a node
+expanded children it should not, and groups of nodes compressed into one.
+Both reproduced with real mouse clicks in headless Chromium. Agency, Office
+and Position View had `autoExpand: true`, and every selection stamped
+`lastUserDrillAt`. For four seconds `ensureLodCoverage` then opened every
+unexpanded node within the tier's `autoExpandDistance`, ten a frame.
+Clicking the Executive Branch to read it loaded 123 nodes under 15 parents,
+the other two branches' among them. The smoke check had recorded the same
+thing as "63 loaded at the selection, 904 a few seconds later" and waited it
+out. Separately, `isProtectedFromClustering` protected only the selection's
+ancestors and descendants. After expanding the Cabinet, clicking one
+department folded the other fourteen into group rings: 22 drawn → 7.
+
+The fix has two parts:
+
+- **No tier opens anything by itself.** `autoExpand` is false on every tier
+  in `lodManager.js`. A node opens only when a reader asks: the Expand
+  buttons, the children list, a folded group clicked open, search or a link.
+- **What a reader opened is protected.** The exported `expandNode` and
+  `expandNodesBatch` mark the parent `readerOpened`, as do `activateCluster`
+  and `revealNodeById`; the boot expansion does not. A reader-opened node and
+  its children are protected from clustering, and its children are exempt
+  from the density cap, the exemption the selection's own brood already had.
+  `collapseNode` clears the mark.
+
+Measured after the fix:
+
+- clicks load nothing;
+- the Cabinet holds 21–26 drawn as departments are clicked in turn, and what
+  leaves the view does so by panning off-screen, not by folding.
+
+`scripts/frontend_smoke.mjs` clicks the Executive Branch and asserts nothing
+loaded. It then opens the Cabinet, clicks one department, and asserts the
+others stayed drawn.
+
+**Risk.** "Expand All Below" on a large subtree marks every brood it opens,
+so none of it clusters or is density-capped. The label overlap pass still
+runs, but a deep subtree opened in full is drawn in full. That is what the
+reader asked for.
 
 **A priced post's salary is its headline figure, and the estimate is one
 click away (since 2026-10-05).** The owner reported two things on the same

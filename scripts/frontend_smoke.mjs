@@ -1917,6 +1917,65 @@ try {
     }
   }
 
+  // A click selects; it never opens anything, and what a reader opened stays
+  // laid out (2026-10-21). Clicking the Executive Branch only to read its
+  // panel used to load 123 nodes under 15 parents through the auto-expansion
+  // that followed every selection, and clicking one department of an
+  // expanded Cabinet folded the other fourteen into group rings (22 drawn ->
+  // 7). Both are measured here with real mouse clicks on a fresh load.
+  {
+    await page.goto(`http://127.0.0.1:${PORT}/index.html`, { waitUntil: "domcontentloaded" });
+    await page.waitForFunction(
+      () => window.__bureaucracy_ui_loaded__ && (() => { const el = document.getElementById("loading"); return !el || getComputedStyle(el).opacity === "0"; })(),
+      null,
+      { timeout: 90000 },
+    );
+    await page.evaluate(() => document.getElementById("btn-reading-guide-close")?.click());
+    const drain = async () => {
+      await page.waitForTimeout(1500);
+      await page.waitForFunction(() => (window.__bureaucracy_pending_expansions__?.() ?? 0) === 0, null, { timeout: 90000 });
+      await page.waitForTimeout(5000);
+    };
+    await drain();
+    const loadedIds = () => page.evaluate(() => window.__bureaucracy_loaded_node_ids__());
+    const clickById = async (id) => {
+      const where = await page.evaluate((nodeId) => window.__bureaucracy_node_screen__(nodeId), id);
+      if (!where || !where.drawn) return false;
+      await page.mouse.click(where.screen.x, where.screen.y);
+      await drain();
+      return true;
+    };
+    const execBranch = allNodes.find((n) => n.__depth === 1 && n.name === "Executive Branch");
+    const cabinet = execBranch && (execBranch.children || []).find((n) => /^The Cabinet/.test(n.name));
+    const before = new Set(await loadedIds());
+    const clickedExec = execBranch && (await clickById(execBranch.id));
+    const opened = (await loadedIds()).filter((id) => !before.has(id));
+    check("a click on a node selects it", clickedExec && (await text("#info-name")) === execBranch.name, `panel reads ${await text("#info-name")}`);
+    check("a click opens nothing", opened.length === 0, `${opened.length} nodes loaded by a click, e.g. ${opened.slice(0, 5).join(", ")}`);
+    measurements.nodesLoadedByAClick = opened.length;
+    if (clickedExec && cabinet) {
+      await page.click("#btn-expand");
+      await drain();
+      const clickedCabinet = await clickById(cabinet.id);
+      await page.click("#btn-expand");
+      await drain();
+      const departments = (cabinet.children || []).map((n) => n.id);
+      const foldedNow = () => page.evaluate((ids) => ids.filter((id) => { const w = window.__bureaucracy_node_screen__(id); return w && !w.drawn; }).length, departments);
+      const foldedBefore = await foldedNow();
+      const first = departments[0];
+      const clickedDept = clickedCabinet && (await clickById(first));
+      const foldedAfter = await foldedNow();
+      measurements.cabinetDepartmentsHiddenAfterClickingOne = { before: foldedBefore, after: foldedAfter, of: departments.length };
+      check(
+        "clicking one department of an opened Cabinet keeps the others laid out",
+        clickedDept && foldedAfter <= foldedBefore + 1,
+        `${foldedAfter} of ${departments.length} departments not drawn after the click, ${foldedBefore} before`,
+      );
+    } else {
+      check("the click test found the Executive Branch and the Cabinet", false, "missing from the served graph or not drawn at boot");
+    }
+  }
+
   // "Expand All Below" is scoped to the selection's subtree: on the
   // Department of the Interior it used to open all 5,402 nodes.
   const interior = byId("exec-dept-doi");
