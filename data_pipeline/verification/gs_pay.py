@@ -132,6 +132,15 @@ VACANCY_LISTING_FIELD = "positionVacancyListing"
 METHOD_GS_FROM_VACANCIES = "base_range_for_the_grade_every_usajobs_announcement_for_the_title_family_states"
 
 
+def _repo_relative(path: Path) -> str:
+    """The path as the repository names it, so an evidence file derived on a
+    runner and one derived on a laptop are the same bytes."""
+    try:
+        return Path(path).resolve().relative_to(Path(__file__).resolve().parents[2]).as_posix()
+    except ValueError:
+        return str(path)
+
+
 def grade_listing_field_for(source: Any) -> str | None:
     """Which published field carries the listing a range claim names: the
     two PLUM listings through `positions.listing_field_for`, and the USAJOBS
@@ -535,7 +544,7 @@ def _load_fixture(path: str | Path) -> dict[str, Any]:
         # OPM's homepage. A fetch that landed somewhere else served some
         # other page, whatever its status code said.
         raise Unreadable(f"{meta_path.name} records a redirect to {final_url!r}; the page fetched is not the page cited")
-    return {"raw": raw, "url": url, "fetched_at": fetched_at, "sha256": digest, "file": str(file_path)}
+    return {"raw": raw, "url": url, "fetched_at": fetched_at, "sha256": digest, "file": _repo_relative(file_path)}
 
 
 def load_general_schedule(

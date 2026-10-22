@@ -91,6 +91,12 @@ CONTENT_TYPES = {
 }
 
 
+def newest_committed_statement() -> Path | None:
+    """The date-named Monthly Treasury Statement fixture with the latest record date."""
+    found = sorted(FIXTURES.glob("mts_table5_[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9].json"))
+    return found[-1] if found else None
+
+
 def now_iso() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -337,8 +343,15 @@ def main(argv: list[str] | None = None) -> int:
     for script in DERIVE_STEPS:
         step(f"derive {script}", [PYTHON, str(PROJECT_ROOT / "scripts" / script)])
     regen = [PYTHON, str(PROJECT_ROOT / "scripts" / "regenerate_published_graph.py")]
-    if new_statement is not None:
-        regen += ["--treasury-rows", str(new_statement)]
+    # A rebuild handed no statement carries the published Treasury lines forward
+    # (`reused_from_previous_build`) and, on a clean checkout, drops the
+    # attachToRoot mark the receipts line earned in the build that applied the
+    # statement. The first scheduled run showed it: nothing was due, so the
+    # rebuild read none. The newest committed statement is the input whenever no
+    # newer one was fetched, so the same checkout always rebuilds the same graph.
+    rebuild_from = new_statement or newest_committed_statement()
+    if rebuild_from is not None:
+        regen += ["--treasury-rows", str(rebuild_from)]
     step("regenerate the graph", regen)
     for script in REPORT_STEPS:
         step(f"report {script}", [PYTHON, str(PROJECT_ROOT / "scripts" / script)])

@@ -109,4 +109,15 @@ jobs:
             echo "The change history is in docs/CHANGE_HISTORY.md; the review queue in data/audit/review_queue.json."
             echo "Merging this pull request is the publish step (GitHub Pages serves main). Hold mode: a person decides."
           } > pr_body.md
-          gh pr create --title "Update cycle $(date -u +%Y-%m-%d): ${VERDICT}" --body-file pr_body.md --base main --head "$BRANCH" --label "update-cycle" || gh pr create --title "Update cycle $(date -u +%Y-%m-%d): ${VERDICT}" --body-file pr_body.md --base main --head "$BRANCH"
+          gh label create update-cycle --color 5319e7 --description "Opened by the scheduled update cycle" 2>/dev/null || true
+          TITLE="Update cycle $(date -u +%Y-%m-%d): ${VERDICT}"
+          if ! gh pr create --title "$TITLE" --body-file pr_body.md --base main --head "$BRANCH" --label "update-cycle"; then
+            if ! gh pr create --title "$TITLE" --body-file pr_body.md --base main --head "$BRANCH"; then
+              # The branch is pushed. When the repository forbids Actions to open
+              # pull requests (Settings > Actions > General > Workflow
+              # permissions), say where to open it instead of failing the run.
+              URL="https://github.com/${{ github.repository }}/compare/main...${BRANCH}?expand=1"
+              echo "::warning::Could not open the pull request; open it from ${URL}"
+              { echo "### Pull request not opened"; echo; echo "The branch \`${BRANCH}\` is pushed. Open the pull request: ${URL}"; echo; echo "To let the job do this itself, enable *Allow GitHub Actions to create and approve pull requests* under Settings > Actions > General."; } >> "$GITHUB_STEP_SUMMARY"
+            fi
+          fi

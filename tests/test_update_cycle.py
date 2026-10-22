@@ -113,5 +113,23 @@ class WorkflowTests(unittest.TestCase):
         self.assertIn("schedule", parsed[True] if True in parsed else parsed["on"])
 
 
+class RebuildInputTests(unittest.TestCase):
+    def test_a_cycle_that_fetched_nothing_still_rebuilds_from_the_newest_committed_statement(self):
+        newest = uc.newest_committed_statement()
+        self.assertIsNotNone(newest)
+        self.assertRegex(newest.name, r"^mts_table5_\d{4}-\d{2}-\d{2}\.json$")
+        import re
+        dated = sorted(p.name for p in uc.FIXTURES.glob("mts_table5_*.json") if re.fullmatch(r"mts_table5_\d{4}-\d{2}-\d{2}\.json", p.name))
+        self.assertEqual(newest.name, dated[-1])
+        source = Path(uc.__file__).read_text(encoding="utf-8")
+        self.assertIn("rebuild_from = new_statement or newest_committed_statement()", source)
+
+    def test_the_workflow_does_not_fail_when_the_repository_forbids_opening_the_pull_request(self):
+        text = (PROJECT_ROOT / ".github" / "workflows" / "update_cycle.yml").read_text(encoding="utf-8")
+        self.assertIn("gh label create update-cycle", text)
+        self.assertIn("compare/main...", text)
+        self.assertIn("::warning::", text)
+
+
 if __name__ == "__main__":
     unittest.main()
