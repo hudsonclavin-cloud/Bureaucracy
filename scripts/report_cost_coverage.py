@@ -286,9 +286,19 @@ def collect(graph):
                 "type": str(node.get("type") or ""),
                 "parent": str((parent or {}).get("name") or ""),
                 "beside": [field for field in SOURCED_FIGURES_BESIDE if isinstance(node.get(field), dict)],
+                # a post's explained pay blank (pay_no_document.py): "named" where
+                # a held pay document prints the title, "none" where none does
+                "payBlank": pay_blank_of(node),
             }
         )
     return rows
+
+
+def pay_blank_of(node) -> str | None:
+    block = node.get("payNoDocument")
+    if not isinstance(block, dict):
+        return None
+    return "named" if block.get("namedIn") else "none"
 
 
 def render(rows) -> str:
@@ -322,6 +332,14 @@ def render(rows) -> str:
     w(f"- positions no document prices: **{posts_researchable + posts_paused + posts_unpaid:,}** — "
       f"{posts_researchable:,} research work, {posts_paused:,} paused beneath a replaced unit, "
       f"{posts_unpaid:,} a document places off every federal pay schedule")
+    pay_blanks = [n for c in ("post_multiplicity", "post_listed_no_rate", "post_unreached", "post_beneath_replaced_unit")
+                  for n in rows.get(c, []) if n.get("payBlank")]
+    pay_named = sum(1 for n in pay_blanks if n["payBlank"] == "named")
+    if pay_blanks:
+        w(f"- **posts with an explained pay blank (`payNoDocument`, the held title-listing pay documents checked): "
+          f"{len(pay_blanks):,}** — {len(pay_blanks) - pay_named:,} whose title none prints, {pay_named:,} whose title "
+          "a held document prints under a filing no rule ties to the post; an explained blank, not a terminal reason, "
+          "so criterion 2's gap is unchanged by it")
     w(f"- no figure now and none from any route (negative pool, replaced unit, below a cent): **{none_ever:,}**")
     w("")
     w("| class | nodes | what it means | route |")

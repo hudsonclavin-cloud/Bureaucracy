@@ -67,6 +67,7 @@ python scripts/derive_us_code_stated_pay_evidence.py --dry-run   # an office's s
 python scripts/report_unpriced_positions.py --dry-run        # every position with no pay claim, and the prompt pack that covers all of them
 python scripts/report_cost_coverage.py --dry-run             # every node in exactly one cost class, and the route that would move each; writes docs/COST_COVERAGE.md
 python scripts/report_evidence_coverage.py --dry-run         # every current organisation in exactly one evidence class; the definition of done's criterion 3 gap as one number; writes docs/EVIDENCE_COVERAGE.md
+python -c "import sys,json;sys.path.insert(0,'.');from data_pipeline.verification.pay_no_document import document_universes;print([(u['id'],len(u['names'])) for u in document_universes()])"  # the six title-listing pay documents the pay blanks are checked against, and how many titles each prints
 python scripts/report_research_prompts.py --dry-run         # the 100 title families holding the most unpriced posts in one prompt, the rest and every estimate in shards; writes docs/RESEARCH_PROMPT_4_*.md
 python scripts/export_research_pack.py                      # the node lists docs/RESEARCH_PROMPT_5_DEEP_RESEARCH.md attaches, as CSVs in output/research_pack/ (gitignored; regenerate, never commit)
 python scripts/derive_congressional_pay_evidence.py --dry-run  # senate.gov's own salary schedule; writes nothing
@@ -4722,6 +4723,47 @@ would reach exactly one more unit, Justice's National Security Division);
 the 341 are, as the definition of done anticipated, divisions, regions and
 laboratories funded from a parent's accounts for which no held document
 prints a separate line. `CURATION.md` §24.
+
+**An explained blank on a post no pay document prices
+(`pay_no_document.py`, since 2026-10-22).** The pay analogue of the paragraph
+above, and NOT a terminal reason: `docs/DEFINITION_OF_DONE.md` criterion 2 says
+"a terminal reason needs a document exactly as a figure does", and this block
+is the record that six documents were read and what they print. Every position
+with no pay claim and no `positionEmployer` block — 3,221 on 2026-10-22 —
+carries `payNoDocument`: `reason` is `report_unpriced_positions.classify`'s
+(`unreached` 2,158, `multiplicity` 611, `beneath_replaced_unit` 432,
+`listed_no_rate` 20), `kind` is `no_held_pay_document_prints_the_title`
+(2,558) or `title_printed_in_a_held_pay_document_without_a_row_reaching_this_
+post` (663), `namedIn` lists each document that prints the title and the title
+as printed, and `documentsRef`/`documentsChecked` point at the root's
+`__heldPayDocuments`: the six TITLE-LISTING pay documents this project holds —
+5 U.S.C. §§5312–5316 (417 positions), OPM's current Plum Book export (5,495
+distinct live titles; incumbent columns never read), OPM's PLUM archive
+(6,782), the White House staff report (233; names discarded), the Government
+Manual's leadership tables (361) and Schedule 8's enlisted footnote (8) — each
+with its version, file, digest and distinct titles checked. The list sits once
+on the root in both copies (`MINIMAL_GRAPH_ROOT_FIELDS`), because a copy on
+3,221 posts would add four megabytes to the pipeline's own state file; the
+viewer resolves it through `graphSharedDocuments.heldPayDocuments`. The tier
+documents (uscourts.gov, senate.gov, Schedules 5–7, the VA's Title 38 ranges,
+the GS/SES/SL tables, the DOJ AD chart, USAJOBS) are not title lists and are
+not checked; the panel names what was. The 663 hits are almost all a stamped
+title the export or the archive prints under other organisations, and the
+panel says so: "under a filing no reviewed rule ties to this post". The panel
+prints "Why no pay figure:" under the post's unchanged "Not available"
+headline, the directory a "No pay figure" row, and the Pay lens "no held pay
+document prints the title (6 checked)" or "a held document prints the title;
+no row reaches this post". The gate re-derives all six universes with its own
+readers (a stdlib port of the Executive Schedule parser, the export's
+column-indexed reader, the archive CSV, the roster reader's printed titles,
+the Manual's rows, Schedule 8's footnote), refuses a root list or a block that
+is not what the fixtures give, a reason that is not the report's for that node
+with a replaced ancestor read off the tree, a block on a priced post or an
+organisation or beside an employer block, and a post no document prices with
+no block once the pass has run; `tests/test_pay_no_document.py` pins the two
+sides equal and corrupts twenty dimensions. `docs/UNPRICED_POSITIONS.md`
+prints the verdict per post and says in its headline that the blank does not
+move criterion 2's count. `CURATION.md` §25.
 
 **An organisation's sourced figure of another kind is its headline, labelled
 by basis (since 2026-10-07, the owner's decision).** The cost-coverage report

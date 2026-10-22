@@ -15,6 +15,7 @@ on every run; nothing here is a number somebody reports.
 - carrying an apportioned estimate, withheld unless asked for: **682**
 - **bare estimates — an organisation with only an estimate and no explanation (criterion 1 gap): 0**
 - positions no document prices: **3,333** — 2,789 research work, 432 paused beneath a replaced unit, 112 a document places off every federal pay schedule
+- **posts with an explained pay blank (`payNoDocument`, the held title-listing pay documents checked): 3,221** — 2,558 whose title none prints, 663 whose title a held document prints under a filing no rule ties to the post; an explained blank, not a terminal reason, so criterion 2's gap is unchanged by it
 - no figure now and none from any route (negative pool, replaced unit, below a cent): **66**
 
 | class | nodes | what it means | route |

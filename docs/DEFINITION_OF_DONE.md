@@ -94,6 +94,18 @@ posts carry `not_federally_paid`.
 | stands for several holders | 611 |
 | paused beneath a replaced VA network | 432 |
 | listed with no rate | 20 |
+| carrying `payNoDocument`, the explained blank (2026-10-22) | 3,221 — 2,558 whose title none of the six held title-listing pay documents prints, 663 whose title one prints under a filing no rule ties to the post |
+
+**Measured on 2026-10-22, and what it is not.** Every one of the 3,221 now
+carries `payNoDocument` (`pay_no_document.py`, CURATION.md §25): the six
+title-listing pay documents this project holds, each with version and digest,
+and whether any prints the title. That is criterion 1's "explained blank"
+applied to posts, and it is deliberately NOT counted as a terminal reason here:
+the gap by this criterion's own test stays **3,221**, because "six documents
+were read and none prints the title" is a fact about this repository's
+holdings, not a document establishing that no figure exists. The measurement
+sharpens the counterargument below: 1,624 of the 2,158 `unreached` titles
+appear in no held document at all, and most are curated templates.
 
 **Route.**
 - Research packs 3–5.
@@ -317,7 +329,7 @@ settle publishes automatically, and everything that needs judgement is held.
 | # | criterion | target | today | gap |
 |---|---|---|---|---|
 | 1 | Money | 0 bare estimates | 373 | 373 |
-| 2 | Pay | 0 posts unpriced and unexplained | 3,221 | 3,221 |
+| 2 | Pay | 0 posts unpriced and unexplained | 3,221 (every one with a documents-checked blank since 2026-10-22) | 3,221 |
 | 3 | Evidence | every current organisation sourced | 623 / 870 | 247 |
 | 4a | Lists | every list unit reconciled | partly | not yet measured as one number |
 | 4b | Money traced | every measured parent sums visibly | Legislative Branch probed | only chapter c01 is fetched |

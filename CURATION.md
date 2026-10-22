@@ -6756,3 +6756,128 @@ separate line, so the blank is the end state and not a queue.
   not explain and could be revisited for the CIT and the Federal Circuit.
 - The cross-section bureaus (IAF, ADF, TDA, AFRH) are the same-section rule's,
   and the owner's.
+
+## 25. Pay: the explained blank, and what the held title-listing documents print (2026-10-22)
+
+`docs/DEFINITION_OF_DONE.md` criterion 2 is done when every position carries a
+pay claim an official document supports or "a stated reason no such figure
+exists", and the owner's own words there are that "a terminal reason needs a
+document exactly as a figure does". On the 2026-10-22 graph 3,333 of 4,591
+positions carried no pay claim; 112 of those carry the one terminal reason this
+project has (`positionEmployer`, a DOE laboratory a contractor operates), and
+3,221 carried nothing but the unpriced report's reason.
+
+### 25.1 Measured first: what the held documents print
+
+Before building anything, every unpriced post's title (its "(×N)" suffix set
+aside, which `canonical_name_key` does on its own) was checked by canonical-key
+equality against the titles printed in every title-listing pay document this
+project holds. Six documents list titles as rows: 5 U.S.C. §§5312–5316 (417
+positions), OPM's current Plum Book export (5,495 distinct live titles), OPM's
+PLUM archive (6,782), the White House staff report (233), the Government
+Manual's leadership tables (361 rows the complete-title rule admits) and
+Schedule 8's enlisted footnote (8). The documents that print TIERS rather than
+titles — uscourts.gov's compensation table, senate.gov's salary table,
+Schedules 5–7, the VA's Title 38 ranges, OPM's GS/SES/SL tables, the DOJ AD
+chart, the USAJOBS announcements — are not title lists and were not checked.
+
+| reason | posts | title printed in a held document | in none |
+|---|---|---|---|
+| `unreached` | 2,158 | 534 | 1,624 |
+| `multiplicity` | 611 | 105 | 506 |
+| `beneath_replaced_unit` | 432 | 0 | 432 |
+| `listed_no_rate` | 20 | 19 | 1 |
+
+The 663 hits are almost all one shape: a stamped administrative title the
+export or the archive prints under OTHER organisations — "General Counsel",
+"Chief Information Officer", "Staff Director", "Economist" — which a row reaches
+only under the organisation the document files it under. The White House
+roster's 47 hits are titles the report lists several times at differing rates
+("Advance Representative (×2)"), which the uniform-rate rule refuses on
+purpose. None of the 663 is a figure a name rule may publish, and the hits say
+so in words.
+
+### 25.2 What was built
+
+`data_pipeline/verification/pay_no_document.py` publishes `payNoDocument` on
+every position with no pay claim and no employer block — never on an
+organisation or a Treasury line. The block carries `reason` (the unpriced
+report's own: `unreached`, `multiplicity`, `listed_no_rate`,
+`beneath_replaced_unit`), `kind` (`no_held_pay_document_prints_the_title`, or
+`title_printed_in_a_held_pay_document_without_a_row_reaching_this_post`), the
+node's name, `namedIn` (each document that prints the title and the title as
+printed), `documentsChecked` and a `documentsRef` to the root's
+`__heldPayDocuments` — the six documents with id, label, version, file, digest
+and distinct titles checked, stored ONCE on the root in both copies because
+3,221 copies of it would have added four megabytes to the pipeline's own state
+file. The panel prints "Why no pay figure:" under the post's "Not available"
+headline with the reason in the report's words, the six documents by name and
+version, "None of them prints this title." or the document and the printed
+title, and the sentence "This is an explained blank, not a document saying the
+post is unpaid or paid off every federal schedule." The directory's Pay row and
+the Pay lens say the same in fewer words.
+
+The gate (`pay_no_document_violations`) re-derives all six universes from the
+committed fixtures with its own readers — a stdlib port of the Executive
+Schedule's body-paragraph rule including the Code's closing footnote-reference
+element, the current export through the gate's own column-indexed reader, the
+archive CSV, the roster reader (which now keeps the printed titles it already
+parsed), the Manual's leadership rows and Schedule 8's footnote — and refuses a
+root list that is not the fixtures' (ids, labels, versions, digests, counts), a
+block whose hits are not what the documents print, whose kind does not follow,
+whose reason is not the report's for that node (a replaced ancestor read off
+the tree), that refers to another list or miscounts it, that sits on a priced
+post, an organisation or beside an employer block, and a post no document
+prices with no block once the pass has run. `tests/test_pay_no_document.py`
+pins the six universes equal title for title and corrupts twenty dimensions.
+
+### 25.3 Measured on the rebuild
+
+3,221 blocks, 2,558 `no_held_pay_document_prints_the_title`, 663
+`title_printed_…`; no pay figure, cost figure, status or weight moved; the only
+changes to any node are the block and the root's list, plus one field on one
+node that is not this slice's: the government-wide receipts line
+(`treasury-undistributed-offsetting-receipts`) lost `attachToRoot: true`. A
+control rebuild with the committed exporter and the committed graph, into a
+scratch directory, dropped it too, so it is a pre-existing offline-rebuild
+drift and not this change: the re-fed copy of the line arrives as a child of
+the root with a `parentId`, the attach loop in `build_graph_tree` pops the
+flag because a parent was named, and the export sync at the end drops the
+`parentId` for a root child without restoring the flag. The line still sits
+under the root (the root guard and the gate both read the tree, not the
+flag), the viewer reads `attachToRoot` only for the expansion overlays, which
+are off, and the invariant the gate enforces is "never both", so nothing
+published changes; a build handed a statement sets the flag again at
+`make_receipts_node`. Recorded here rather than fixed, because restoring the
+flag in the export sync would also stamp the three branches, which have never
+carried it. `docs/UNPRICED_POSITIONS.md` now prints, per post, whether the six
+documents print the title and which; its headline count says in words that an
+explained blank is not a terminal reason.
+
+**What this does and does not do for criterion 2.** By the definition's own
+"done when" — 0 in the four reasons — the gap is **unchanged at 3,221**, and
+this section does not claim otherwise. What changed is that every one of the
+3,221 now says what was checked, which is the state criterion 1 accepted for
+an organisation and the state a reader needs to tell "nobody looked" from
+"six documents were read and none prints it". Closing the gap is the three
+routes the definition already names: the research packs (a document that
+prints the title with a rate or a system), the VA re-homing, and new terminal
+reasons where a document establishes one. The strongest counterargument stands
+and is sharpened by the measurement: 1,624 of the 2,158 `unreached` posts are
+titles no held document prints at all, and most are curated templates
+("Chief — Medicine Service" under eighteen medical centres, the Capitol
+Police's "Lieutenant" under every bureau); for those the honest fix is
+structural, not a pay document.
+
+### 25.4 Declined
+
+- A VA Title 38 universe: Table 3 prints "Chief of Staff", which would have
+  stamped "a held document prints this title" on seventy departmental Chiefs
+  of Staff from a VA clinical pay table. The document prints tiers, and a tier
+  table is not a title list.
+- Any fold on the title (a leading "Deputy", a trailing ", <organisation>"):
+  the same containment failure this file records three times already.
+- Publishing the blank as the post's headline: the headline stays "Not
+  available", because the blank is not a figure and not a reason a document
+  states.
+

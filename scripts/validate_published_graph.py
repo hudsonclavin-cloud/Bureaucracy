@@ -2505,6 +2505,7 @@ def whitehouse_roster(path=None):
     money = re.compile(r"^\$([\d,]+\.\d{2})$")
     person = re.compile(r"^[A-Z][A-Za-z.'\- ]*, [A-Z]")
     counts = {}
+    printed_titles = []  # every row's title as printed, for the pay blanks' title universe
     for match in re.finditer(rb"stream\r?\n", raw):
         start = match.end()
         end = raw.find(b"endstream", start)
@@ -2546,6 +2547,7 @@ def whitehouse_roster(path=None):
             if len(names) != 1 or len(titles) != 1:
                 continue
             value = float(amounts[0][1:].replace(",", ""))
+            printed_titles.append(titles[0])
             entry = counts.setdefault(whitehouse_canonical(titles[0]), [value, 0, set(), set(), set()])
             entry[1] += 1
             entry[2].add(value)
@@ -2560,7 +2562,20 @@ def whitehouse_roster(path=None):
     roster = {title: (value, held, len(distinct), frozenset(statuses), frozenset(bases))
               for title, (value, held, distinct, statuses, bases) in counts.items()}
     _ROSTER_CACHE[key] = roster
+    _ROSTER_TITLES[key] = printed_titles
     return roster
+
+
+_ROSTER_TITLES = {}
+
+
+def whitehouse_roster_titles(path=None):
+    """Every row's title as the committed report prints it (names never
+    kept), read by the same pass as `whitehouse_roster`; [] when the report
+    cannot be read."""
+    fixture = Path(path) if path else WHITEHOUSE_REPORT_FIXTURE
+    whitehouse_roster(fixture)
+    return list(_ROSTER_TITLES.get(str(fixture), []))
 
 
 #: The multiplicity suffix the expanded White House subtree writes on a node
@@ -9685,6 +9700,219 @@ def cost_no_document_violations(nodes, graph, label):
     return out
 
 
+#: Mirror of data_pipeline.verification.pay_no_document, stdlib-only by
+#: design; tests/test_pay_no_document.py pins the vocabulary, the document
+#: labels and every title universe equal to the module's on the committed
+#: fixtures.
+PAY_NO_DOCUMENT_FIELD = "payNoDocument"
+PAY_NO_DOCUMENT_ROOT_FIELD = "__heldPayDocuments"
+PAY_NO_DOCUMENT_REF = "heldPayDocuments"
+PAY_NO_DOCUMENT_KIND_NONE = "no_held_pay_document_prints_the_title"
+PAY_NO_DOCUMENT_KIND_NAMED = "title_printed_in_a_held_pay_document_without_a_row_reaching_this_post"
+PAY_NO_DOCUMENT_REASONS = ("unreached", "multiplicity", "listed_no_rate", "beneath_replaced_unit")
+PAY_NO_DOCUMENT_LABELS = {
+    "executive_schedule_5_usc_5312_5316": "5 U.S.C. §§5312–5316, the Executive Schedule (every position the five sections enumerate)",
+    "opm_current_plum_export": "OPM's current Plum Book export (the title of every Filled or Vacant row; incumbent columns never read)",
+    "opm_plum_archive": "OPM's PLUM archive of the previous administration (the title of every row; incumbent columns never read)",
+    "whitehouse_staff_report": "the White House Office's Annual Report to Congress on White House Staff (the title of every row; names discarded)",
+    "us_government_manual_leadership_tables": "the United States Government Manual's leadership tables (every row the complete-title rule admits; names never read)",
+    "schedule_8_enlisted_footnote": "Schedule 8 of the pay-adjustment order, the enlisted footnote (the senior enlisted advisers it names)",
+}
+#: Every pay field a blank may not sit beside. Mirrors pay_documents.PAY_FIELDS;
+#: tests/test_pay_no_document.py pins the two equal.
+PAY_NO_DOCUMENT_PAY_FIELDS = (
+    "positionPayRate", "positionGradePay", "positionCurrentPay", "positionSchedulePay", "positionStatutoryPay",
+    "positionDerivedPay", "positionTierPay", "positionTierReferencePay", "positionReportedPay", "positionMilitaryPay",
+)
+PLUM_ARCHIVE_FIXTURE = Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "opm" / "plum" / "plum-archive-biden-administration.csv"
+#: The Executive Schedule's body paragraphs as uscode.house.gov marks them up,
+#: and the Code's closing footnote-reference element; mirrors
+#: statutory_schedule._BODY, _TRAILING_FOOTNOTE_REF, _HEADING, MIN/MAX_TITLE_CHARS.
+_PAY_ES_BODY = re.compile(r'<p class="statutory-body[^"]*">(.*?)</p>', re.S)
+_PAY_ES_TRAILING_REF = re.compile(r'(?:&nbsp;|\s)*<sup>\s*<a href="#\d{4}_\d+_target" name="\d{4}_\d+">\d+</a>\s*</sup>\s*$')
+_PAY_ES_HEADING = re.compile(r"^level\s+[ivx]+\b", re.IGNORECASE)
+_PAY_ES_TITLE_CHARS = (6, 140)
+_PAY_NO_DOCUMENT_UNIVERSES = {}
+
+
+def _pay_executive_schedule_titles():
+    """Every position the five committed sections enumerate, by the module's
+    own shallow rule: a body paragraph ending in a full stop (or closed by the
+    Code's footnote-reference element), not a Level heading, 6-140 characters,
+    at least two canonical tokens. Returns (titles, joined digest)."""
+    import hashlib as _hashlib
+    import html as _html
+
+    titles, digests = [], []
+    for section in ("5312", "5313", "5314", "5315", "5316"):
+        raw = (US_CODE_BASIS_FIXTURE_DIR / "exec_schedule_{}.html".format(section)).read_bytes()
+        digests.append(_hashlib.sha256(raw).hexdigest())
+        for fragment in _PAY_ES_BODY.findall(raw.decode("utf-8", errors="replace")):
+            stripped = _PAY_ES_TRAILING_REF.sub("", fragment, count=1)
+            closed_by_mark = stripped != fragment
+            text = " ".join(_html.unescape(re.sub(r"<[^>]+>", "", stripped)).split())
+            if not text or _PAY_ES_HEADING.match(text):
+                continue
+            if text.endswith("."):
+                title = text[:-1].strip()
+            elif closed_by_mark:
+                title = text
+            else:
+                continue
+            if not (_PAY_ES_TITLE_CHARS[0] <= len(title) <= _PAY_ES_TITLE_CHARS[1]):
+                continue
+            key = canonical_key(title)
+            if not key or len(key.split()) < 2:
+                continue
+            titles.append(title)
+    return titles, _hashlib.sha256("\n".join(digests).encode("ascii")).hexdigest()
+
+
+def pay_no_document_universes():
+    """Mirror of pay_no_document.document_universes: the titles every held
+    title-listing pay document prints, re-read from the committed fixtures
+    with this gate's own readers, in the module's order."""
+    import csv as _csv
+    import hashlib as _hashlib
+
+    if "all" in _PAY_NO_DOCUMENT_UNIVERSES:
+        return _PAY_NO_DOCUMENT_UNIVERSES["all"]
+    universes = []
+    es_titles, es_digest = _pay_executive_schedule_titles()
+    universes.append({"id": "executive_schedule_5_usc_5312_5316", "version": "the five sections as committed",
+                      "sha256": es_digest, "names": _cost_no_document_keys(es_titles)})
+    export = plum_current_export()
+    if export:
+        universes.append({"id": "opm_current_plum_export", "version": "fetched {}".format(export["fetched_at"][:10]),
+                          "sha256": export["sha256"],
+                          "names": _cost_no_document_keys(key[2] for key, entry in export["index"].items() if entry["live"])})
+    raw = PLUM_ARCHIVE_FIXTURE.read_bytes()
+    meta = json.loads(PLUM_ARCHIVE_FIXTURE.with_name(PLUM_ARCHIVE_FIXTURE.name + ".meta.json").read_text(encoding="utf-8"))
+    titles = []
+    for row in _csv.DictReader(io.StringIO(raw.decode("utf-8-sig"), newline="")):
+        if str(row.get("AgencyName") or "").strip() and str(row.get("PositionTitle") or "").strip():
+            titles.append(str(row.get("PositionTitle") or "").strip())
+    universes.append({"id": "opm_plum_archive", "version": "fetched {}".format(str(meta.get("fetched_at") or "")[:10]),
+                      "sha256": _hashlib.sha256(raw).hexdigest(), "names": _cost_no_document_keys(titles)})
+    roster_titles = whitehouse_roster_titles()
+    if roster_titles:
+        universes.append({"id": "whitehouse_staff_report", "version": "as of {}".format(WHITEHOUSE_REPORT_AS_OF_TEXT),
+                          "sha256": _hashlib.sha256(WHITEHOUSE_REPORT_FIXTURE.read_bytes()).hexdigest(),
+                          "names": _cost_no_document_keys(roster_titles)})
+    entries = govman_entries()
+    titles = []
+    for _name, by_key in entries.values():
+        for printed in by_key.values():
+            titles.extend(printed)
+    universes.append({"id": "us_government_manual_leadership_tables", "version": "edition {}".format(GOVMAN_PACKAGE[len("GOVMAN-"):]),
+                      "sha256": _GOVMAN_CACHE["digest"], "names": _cost_no_document_keys(titles)})
+    schedule = military_schedule_8()
+    if "error" not in schedule:
+        universes.append({"id": "schedule_8_enlisted_footnote", "version": "effective January 1, {}".format(schedule["year"]),
+                          "sha256": schedule["sha256"],
+                          "names": _cost_no_document_keys(t["title"] for t in schedule["footnote"]["titles"])})
+    result = [u for u in universes if u["names"]]
+    _PAY_NO_DOCUMENT_UNIVERSES["all"] = result
+    return result
+
+
+def pay_no_document_reason(node, beneath_replaced):
+    """The reason a blank carries, or None where none belongs: a post that is
+    not a Treasury line, with no pay claim and no employer block. Mirrors
+    pay_no_document.takes_block (report_unpriced_positions.classify's order)."""
+    if not is_post(node):
+        return None
+    if node.get("synthetic") or "treasury accounting line" in str(node.get("type") or "").casefold():
+        return None
+    if any(isinstance(node.get(f), dict) for f in PAY_NO_DOCUMENT_PAY_FIELDS):
+        return None
+    employer = node.get("positionEmployer")
+    if isinstance(employer, dict) and employer.get("federallyPaid") is False:
+        return None
+    if beneath_replaced:
+        return "beneath_replaced_unit"
+    if node.get("representsPosts"):
+        return "multiplicity"
+    if isinstance(node.get("positionListing"), dict) or isinstance(node.get("positionCurrentListing"), dict):
+        return "listed_no_rate"
+    return "unreached"
+
+
+def pay_no_document_violations(graph, label):
+    """The pay blank is re-derived from the committed pay documents: the root's
+    `__heldPayDocuments` list is the fixtures' (id, label, version, digest,
+    distinct titles), every block refers to it and counts it, its title hits
+    are recomputed by canonical-key equality, its kind follows from the hits,
+    its reason is the unpriced report's, and it sits only on a post with no pay
+    claim and no employer block. In the other direction every such post carries
+    one, once the pass has run."""
+    try:
+        universes = pay_no_document_universes()
+    except (OSError, ValueError, KeyError, IndexError) as error:
+        return ["the pay documents could not be re-read for the pay blanks: {}".format(error)]
+    expected_docs = [{"id": u["id"], "document": PAY_NO_DOCUMENT_LABELS.get(u["id"]), "version": u["version"],
+                      "sha256": u["sha256"], "titlesChecked": len(u["names"])} for u in universes]
+    out = []
+    # (node, beneath a replaced unit?) for every node, the way the report walks
+    stack = [(graph, False)]
+    rows = []
+    while stack:
+        node, replaced = stack.pop()
+        replaced = replaced or str(node.get("lifecycle") or "") == "superseded"
+        rows.append((node, replaced))
+        for child in node.get("children") or []:
+            if isinstance(child, dict):
+                stack.append((child, replaced))
+    pass_ran = any(isinstance(n.get(PAY_NO_DOCUMENT_FIELD), dict) for n, _ in rows)
+    held = graph.get(PAY_NO_DOCUMENT_ROOT_FIELD)
+    if pass_ran:
+        if not isinstance(held, list):
+            out.append("the root carries no __heldPayDocuments list while posts carry pay blanks referring to it")
+        else:
+            got = [{"id": str(d.get("id")), "document": str(d.get("document")), "version": str(d.get("version")),
+                    "sha256": str(d.get("sha256")), "titlesChecked": d.get("titlesChecked")} for d in held if isinstance(d, dict)]
+            if got != [dict(d, document=str(d["document"])) for d in expected_docs]:
+                out.append("the root's __heldPayDocuments is not the committed pay documents' list (ids, labels, versions, digests, counts)")
+            for d in held:
+                if isinstance(d, dict) and set(d) - {"id", "document", "version", "file", "sha256", "titlesChecked"}:
+                    out.append("a __heldPayDocuments entry carries keys the module never writes")
+                    break
+    elif held is not None:
+        out.append("the root carries __heldPayDocuments while no post carries a pay blank")
+    for node, replaced in rows:
+        block = node.get(PAY_NO_DOCUMENT_FIELD)
+        reason = pay_no_document_reason(node, replaced) if node is not graph else None
+        if block is None:
+            if pass_ran and reason is not None:
+                out.append("{} is a post no document prices and carries no payNoDocument block".format(label(node)))
+            continue
+        if not isinstance(block, dict):
+            out.append("{} payNoDocument is not an object".format(label(node)))
+            continue
+        if reason is None:
+            out.append("{} carries a pay blank on a node that is not a post left with no pay claim and no employer block".format(label(node)))
+        elif str(block.get("reason") or "") != reason:
+            out.append("{} payNoDocument.reason {!r}; the unpriced report's reason is {!r}".format(label(node), block.get("reason"), reason))
+        if str(block.get("name") or "") != str(node.get("name") or ""):
+            out.append("{} payNoDocument names {!r}, not the node's name".format(label(node), block.get("name")))
+        key = canonical_key(node.get("name"))
+        hits = [{"document": u["id"], "printed": u["names"][key]} for u in universes if key in u["names"]]
+        got_hits = block.get("namedIn")
+        if not isinstance(got_hits, list) or [(str(h.get("document")), str(h.get("printed"))) for h in got_hits if isinstance(h, dict)] != [(h["document"], h["printed"]) for h in hits]:
+            out.append("{} payNoDocument.namedIn is not what the held pay documents print for this title".format(label(node)))
+        expected_kind = PAY_NO_DOCUMENT_KIND_NAMED if hits else PAY_NO_DOCUMENT_KIND_NONE
+        if str(block.get("kind") or "") != expected_kind:
+            out.append("{} payNoDocument.kind {!r}; the documents say {!r}".format(label(node), block.get("kind"), expected_kind))
+        if block.get("documentsRef") != PAY_NO_DOCUMENT_REF:
+            out.append("{} payNoDocument does not refer to the root's held-document list".format(label(node)))
+        if block.get("documentsChecked") != len(expected_docs):
+            out.append("{} payNoDocument says {!r} documents were checked; the committed list holds {}".format(label(node), block.get("documentsChecked"), len(expected_docs)))
+        extra = set(block) - {"kind", "reason", "name", "namedIn", "documentsRef", "documentsChecked"}
+        if extra:
+            out.append("{} payNoDocument carries keys the module never writes: {}".format(label(node), sorted(extra)))
+    return out
+
+
 def is_committee(node):
     return str(node.get("type") or "").strip().casefold() in COMMITTEE_TYPES
 
@@ -12019,6 +12247,20 @@ def main(argv):
     bare = [n for n in nodes if cost_no_document_takes_block(n) and not isinstance(n.get(COST_NO_DOCUMENT_FIELD), dict) and n.get("id") != "the-constitution-of-the-united-states"]
     print("  explained blanks     : {:,} organisations left with only an estimate name the money documents checked ({:,} of them named in one without a licensed figure); bare estimates with no explanation: {:,} (criterion 1)".format(
         len(blanks), named, len(bare)))
+    # The pay analogue (criterion 2): a post no document prices and no employer
+    # block explains names the title-listing pay documents checked, re-derived
+    # here, and every such post carries one. An explained blank, not a terminal
+    # reason; the summary line says so.
+    gate.check("a pay blank lists the held pay documents, re-derived, and every post no document prices carries one", pay_no_document_violations(graph, label))
+    pay_blanks = [n for n in nodes if isinstance(n.get(PAY_NO_DOCUMENT_FIELD), dict)]
+    pay_named = sum(1 for n in pay_blanks if str(n[PAY_NO_DOCUMENT_FIELD].get("kind")) == PAY_NO_DOCUMENT_KIND_NAMED)
+    pay_reasons = {}
+    for n in pay_blanks:
+        reason = str(n[PAY_NO_DOCUMENT_FIELD].get("reason"))
+        pay_reasons[reason] = pay_reasons.get(reason, 0) + 1
+    print("  pay blanks           : {:,} posts no document prices name the {:,} title-listing pay documents checked ({:,} of them a title a held document prints under a filing no rule ties to the post); by reason {}; an explained blank, not a terminal reason (criterion 2)".format(
+        len(pay_blanks), len(graph.get(PAY_NO_DOCUMENT_ROOT_FIELD) or []), pay_named,
+        ", ".join("{} {:,}".format(k, v) for k, v in sorted(pay_reasons.items(), key=lambda kv: -kv[1])) or "none"))
 
     # A name that states how many things it stands for, against what the
     # graph carries. The claim is only ever "the name says N, we carry M";

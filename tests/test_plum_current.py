@@ -17,6 +17,7 @@ from pathlib import Path
 
 from data_pipeline.exporter.build_graph import MINIMAL_GRAPH_FIELDS, build_graph, index_tree
 from data_pipeline.verification.pay_documents import annotate_pay_documents
+from data_pipeline.verification.pay_no_document import apply_pay_no_document  # noqa: E402
 from data_pipeline.verification import financial_evidence as fe
 from data_pipeline.verification import gs_pay, pay_tables, plum_current, positions
 from data_pipeline.verification.evidence import EVIDENCE_OWNED_FIELDS, clear_evidence_fields
@@ -716,6 +717,11 @@ class _GateHarness(unittest.TestCase):
         # say how many documents it rests on. Run the production pass rather
         # than hand-writing the count, so this fixture cannot drift from it.
         annotate_pay_documents(graph)
+        # The same for the pay blank: a pay field added by hand above makes the
+        # blank the build stamped stale, and the gate refuses a blank beside a
+        # figure -- correctly. Run the production pass so the fixture carries
+        # what a build would.
+        apply_pay_no_document(graph)
         path = self.tmp / "bad.json"
         path.write_text(json.dumps(graph), encoding="utf-8")
         return self._gate(path)

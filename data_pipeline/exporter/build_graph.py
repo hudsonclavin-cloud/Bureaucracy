@@ -247,6 +247,11 @@ MINIMAL_GRAPH_FIELDS = (
     # unit: the kind, the rows that do carry the name, and the shared document
     # list (cost_no_document.py)
     "costNoDocument",
+    # the pay analogue on a post no document prices: the unpriced report's
+    # reason, the kind the held pay documents support, the title as a document
+    # prints it, and a reference to the root's `__heldPayDocuments` list
+    # (pay_no_document.py)
+    "payNoDocument",
     # the alternative name a claim was reached through, and the basis the
     # reviewed table states for it; the panel quotes both names
     "verificationAliasMatch",
@@ -323,7 +328,9 @@ MINIMAL_GRAPH_FIELDS = (
 
 #: Root-only keys the viewer also needs: the anchor's period label, which the
 #: panel applies to every figure, and the edge index.
-MINIMAL_GRAPH_ROOT_FIELDS = ("__budgetSummary", "relationships")
+#: `__heldPayDocuments` is the one list every `payNoDocument` block refers to
+#: (pay_no_document.py): six documents, stored once on the root in both copies.
+MINIMAL_GRAPH_ROOT_FIELDS = ("__budgetSummary", "relationships", "__heldPayDocuments")
 
 
 #: Blocks whose `documents` list is identical across many nodes. In the viewer
@@ -3010,6 +3017,7 @@ def build_graph(
     tier_reference_pay_evidence_path: str | Path | None = "default",
     no_document_ledger_dir: str | Path | None = "default",
     cost_no_document: bool = True,
+    pay_no_document: bool = True,
     military_pay_evidence_path: str | Path | None = "default",
     whitehouse_pay_evidence_path: str | Path | None = "default",
     usaspending_evidence_path: str | Path | None = "default",
@@ -3737,6 +3745,14 @@ def build_graph(
         index_tree=index_tree,
     )
     validation["whitehouse_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
+    # The pay analogue of the explained blank, last of all: a post no pay
+    # document prices and no employer block explains says which held
+    # title-listing pay documents were checked for its title and whether any
+    # prints it. It must read the FINAL pay fields and the employer block, so it
+    # runs after every pay pass, the multi-post sweep and the employer pass.
+    from data_pipeline.verification.pay_no_document import apply_pay_no_document  # noqa: E402 — imports this module
+
+    validation["pay_no_document"] = apply_pay_no_document(graph) if pay_no_document else {"skipped": True}
     validity_report["audit_report"] = {"summary": deepcopy(audit_report.get("summary", {}))}
     validity_report["root_orphan_resolution"] = orphan_resolution
     validity_report["treasury_outlay_rows"] = outlay_stats

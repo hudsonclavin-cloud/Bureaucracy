@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261022b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261022b";
+import { createGovernmentGraph } from "./graph.js?v=20261022c";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261022c";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -2850,8 +2850,11 @@ let graphBudgetSummary = null;
 // Documents the viewer copy stores once on the root (`__sharedDocuments`) and
 // a block names by `documentsRef`; graph.json keeps each block whole.
 let graphSharedDocuments = {};
-function setGraphSharedDocuments(shared) {
-  graphSharedDocuments = shared && typeof shared === "object" ? shared : {};
+function setGraphSharedDocuments(shared, heldPayDocuments) {
+  graphSharedDocuments = shared && typeof shared === "object" ? { ...shared } : {};
+  // The pay blanks' one list (pay_no_document.py) sits on the root as
+  // `__heldPayDocuments` in both copies and every block refers to it by name.
+  if (Array.isArray(heldPayDocuments)) graphSharedDocuments.heldPayDocuments = heldPayDocuments;
 }
 function documentsOfBlock(block) {
   if (!block || typeof block !== "object") return [];
@@ -3027,6 +3030,55 @@ function buildEmployerLines(block) {
     }
     host.appendChild(document.createTextNode(" None of them names this post, and none is a source of its existence."));
   }
+  return host;
+}
+
+// A post no pay document prices and no employer block explains says which
+// held title-listing pay documents were checked for its title and whether any
+// prints it (pay_no_document.py, since 2026-10-22). The reason is the unpriced
+// report's own; the kind is what the documents print. It is an explained
+// blank, not a terminal reason: the sentence says so.
+const PAY_BLANK_REASONS = {
+  unreached: "no pay document this project has read names this title under this organisation, so nothing could have reached it",
+  multiplicity: "this node stands for several holders, and no claim that holds for every holder by its own terms (a tier, a statutory rate, a roster listing each holder at one figure) has reached it; one appointment's figure is refused on such a node",
+  listed_no_rate: "OPM lists this post under its organisation and the row prints no rate — a rank or an empty cell — and no salary table this project has read prices that pay plan",
+  beneath_replaced_unit: "the post sits beneath a unit the government has replaced; research on it is paused until a VA document maps medical centres to the five current networks",
+};
+function payNoDocumentOf(node) {
+  const block = node && node.payNoDocument;
+  if (!block || typeof block !== "object" || !isPostType(node)) return null;
+  if (employerOf(node)) return null;
+  for (const [, read] of PAY_STAND_IN_ORDER) {
+    if (read(node)) return null;
+  }
+  return block;
+}
+function describePayNoDocument(block) {
+  const docs = documentsOfBlock(block);
+  const reason = PAY_BLANK_REASONS[String(block.reason)] || "no pay claim an official document supports has reached this post";
+  const checked = docs.length
+    ? ` The ${docs.length} title-listing pay documents this project holds were checked for the title: ${docs.map((d) => `${d.document}${d.version ? ` (${d.version})` : ""}`).join("; ")}.`
+    : "";
+  const named = Array.isArray(block.namedIn) ? block.namedIn.filter((h) => h && typeof h.printed === "string") : [];
+  let verdict;
+  if (String(block.kind) === "title_printed_in_a_held_pay_document_without_a_row_reaching_this_post" && named.length) {
+    const where = named.map((h) => `"${h.printed}" in ${String(h.document).replace(/_/g, " ")}`).join("; ");
+    verdict = String(block.reason) === "listed_no_rate"
+      ? ` A held document does print this title — ${where} — and the row OPM files under this organisation is the listing above, which prints no rate, so no figure is shown.`
+      : ` A held document does print this title — ${where} — under a filing no reviewed rule ties to this post (a title filed under another organisation, or refused by a rule recorded in CLAUDE.md), so no figure is shown.`;
+  } else {
+    verdict = " None of them prints this title.";
+  }
+  return `Why no pay figure: ${reason}.${checked}${verdict} This is an explained blank, not a document saying the post is unpaid or paid off every federal schedule.`;
+}
+function buildPayNoDocumentLines(block) {
+  const host = document.createElement("div");
+  host.id = "info-pay-blank";
+  host.className = "info-cost-note";
+  const head = document.createElement("strong");
+  head.textContent = "Why no pay figure:";
+  host.appendChild(head);
+  host.appendChild(document.createTextNode(describePayNoDocument(block).replace(/^Why no pay figure:/, "")));
   return host;
 }
 
@@ -4004,6 +4056,8 @@ function buildCostBlock(node) {
   const headerSumLines = buildHeaderSumLines(node);
   if (headerSumLines) block.appendChild(headerSumLines);
   if (employer && amountText === null) block.appendChild(buildEmployerLines(employer));
+  const payBlank = standIn || employer || amountText !== null ? null : payNoDocumentOf(node);
+  if (payBlank) block.appendChild(buildPayNoDocumentLines(payBlank));
   const spending = buildSpendingByKind(node);
   if (spending) block.appendChild(spending);
 
@@ -4967,7 +5021,7 @@ async function initGraphApp() {
     onStatus: (message) => setText(dom.loadStatus, message),
   });
   setGraphBudgetSummary(data && data.__budgetSummary);
-  setGraphSharedDocuments(data && data.__sharedDocuments);
+  setGraphSharedDocuments(data && data.__sharedDocuments, data && data.__heldPayDocuments);
   const summary = summariseGraph(data);
   const provenance = document.getElementById("data-provenance");
   if (provenance) {

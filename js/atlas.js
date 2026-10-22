@@ -742,6 +742,34 @@ function describePay(node) {
     }];
   }
   const blocks = [];
+  // A post no pay document prices says which held title-listing pay documents
+  // were checked for its title (pay_no_document.py; ui.js describePayNoDocument
+  // is the panel's copy). The list sits once on the root as __heldPayDocuments.
+  const blank = node.payNoDocument;
+  if (blank && typeof blank === "object" && !isMeasured(node) && !PAY_FIELDS.some((field) => node[field])) {
+    const docs = state.root && Array.isArray(state.root.__heldPayDocuments) ? state.root.__heldPayDocuments : [];
+    const reasons = {
+      unreached: "no pay document this project has read names this title under this organisation",
+      multiplicity: "this node stands for several holders and no claim that holds for every holder has reached it",
+      listed_no_rate: "OPM lists the post and the row prints no rate",
+      beneath_replaced_unit: "the post sits beneath a unit the government has replaced; research on it is paused",
+    };
+    const named = Array.isArray(blank.namedIn) ? blank.namedIn.filter((h) => h && typeof h.printed === "string") : [];
+    const where = named.map((h) => `"${h.printed}" in ${String(h.document).replace(/_/g, " ")}`).join("; ");
+    const verdict = blank.kind === "title_printed_in_a_held_pay_document_without_a_row_reaching_this_post" && named.length
+      ? (String(blank.reason) === "listed_no_rate"
+        ? ` A held document does print this title — ${where} — and the row OPM files under this organisation is the listing above, which prints no rate.`
+        : ` A held document does print this title — ${where} — under a filing no reviewed rule ties to this post.`)
+      : " None of them prints this title.";
+    blocks.push({
+      heading: "No pay figure",
+      notARate: true,
+      text: `${reasons[String(blank.reason)] || "no pay claim an official document supports has reached this post"}.${
+        docs.length ? ` The ${docs.length} title-listing pay documents this project holds were checked for the title: ${docs.map((d) => `${d.document}${d.version ? ` (${d.version})` : ""}`).join("; ")}.` : ""
+      }${verdict} An explained blank, not a document saying the post is unpaid.`,
+    });
+    return blocks;
+  }
   const listing = node.positionListing;
   if (listing && typeof listing === "object" && typeof listing.reportedPay === "number" && listing.reportedPay > 0) {
     blocks.push({

@@ -1,5 +1,5 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20261022b";
+import { createLodManager } from "./lodManager.js?v=20261022c";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
@@ -643,6 +643,14 @@ export function createGovernmentGraph({
     const employer = data.positionEmployer;
     if (employer && typeof employer === "object" && employer.federallyPaid === false) {
       return { key: "notFederal", text: "not on a federal pay schedule" };
+    }
+    const blank = data.payNoDocument;
+    if (blank && typeof blank === "object") {
+      if (blank.kind === "title_printed_in_a_held_pay_document_without_a_row_reaching_this_post") {
+        return { key: "unpriced", text: "a held document prints the title; no row reaches this post" };
+      }
+      const checked = Number(blank.documentsChecked);
+      return { key: "unpriced", text: `no held pay document prints the title${Number.isFinite(checked) && checked > 0 ? ` (${checked} checked)` : ""}` };
     }
     return { key: "unpriced", text: "no document names the title" };
   }

@@ -31,7 +31,7 @@ CLAUDE.md.
 | Staff payroll (OPM FedScope, Mar 2025, civilian basic pay) | 178 orgs; top-level $185.1bn for 1.65M civilians |
 | Spending by object class (USAspending, FY2025 obligations) | 86 agencies incl. all 15 departments; staff pay (11.x+12.x) $595.0bn of $10.09tn obligations |
 
-Cache stamp: `?v=20261020a` (bump index.html, js/ui.js, js/graph.js together
+Cache stamp: `?v=20261022c` (bump index.html, js/ui.js, js/graph.js together
 on any JS change).
 
 ## 2026-10-22: two definition-of-done criteria closed (see CURATION.md §23–24)
@@ -50,7 +50,17 @@ on any JS change).
   `docs/COST_COVERAGE.md`: bare estimates **359 → 0** (341 explained blanks,
   18 named in a held document without a licensed figure — the route to a few
   more sourced figures, §24.4).
-- Still open in the definition of done: criterion 2 (pay), 4(a) list
+- **Criterion 2 (Pay), measured and explained but NOT closed.** `payNoDocument`
+  (CURATION.md §25) sits on all 3,221 posts with no pay claim and no employer
+  block: the six held title-listing pay documents (Executive Schedule, current
+  Plum export, PLUM archive, White House roster, Manual leadership tables,
+  Schedule 8 footnote), each with digest and count, and whether any prints the
+  title (663 yes — stamped titles under other organisations; 2,558 no). The
+  list sits once on the root as `__heldPayDocuments`. By the definition's own
+  "0 in the four reasons" the gap is unchanged at 3,221: an explained blank is
+  not a terminal reason. `docs/UNPRICED_POSITIONS.md` prints the verdict per
+  post.
+- Still open in the definition of done: criterion 2's count itself, 4(a) list
   reconciliation, 4(b) totals that add up visibly, 5–7 self-update, the two
   reader features.
 

@@ -1051,6 +1051,40 @@ try {
     check("a subcommittee says it is funded through its committee", /funded through its committee/.test(await text("#info-stats")), subcommittee.name);
   }
 
+  // A post no pay document prices and no employer block explains says which
+  // held title-listing pay documents were checked for its title (criterion
+  // 2's explained blank), and one whose title a held document prints says so.
+  const blankPost = allNodes.find((n) => n.payNoDocument && n.payNoDocument.kind === "no_held_pay_document_prints_the_title" && n.payNoDocument.reason === "unreached" && unique(n));
+  check("some post carries an explained pay blank", Boolean(blankPost), "none");
+  if (blankPost) {
+    await openByName(blankPost.name);
+    const blankText = await text("#info-pay-blank");
+    check("a post's pay blank names the documents checked and says none prints the title",
+      /Why no pay figure:/.test(blankText) && /no pay document this project has read names this title under this organisation/.test(blankText)
+        && /title-listing pay documents this project holds were checked for the title: 5 U\.S\.C/.test(blankText) && /None of them prints this title\./.test(blankText)
+        && /an explained blank, not a document saying the post is unpaid/.test(blankText),
+      blankText.slice(0, 900));
+    const blankHead = await text("#info-stats .info-cost-amount");
+    check("a post's headline still reads Not available: the blank is not a figure", /Not available/.test(blankHead), blankHead);
+    measurements.payBlank = blankPost.id;
+  }
+  const namedPost = allNodes.find((n) => n.payNoDocument && n.payNoDocument.kind === "title_printed_in_a_held_pay_document_without_a_row_reaching_this_post" && unique(n));
+  if (namedPost) {
+    await openByName(namedPost.name);
+    const namedText = await text("#info-pay-blank");
+    check("a post whose title a held document prints says so and which document",
+      /A held document does print this title/.test(namedText) && new RegExp(namedPost.payNoDocument.namedIn[0].printed.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(namedText) && /no reviewed rule ties to this post/.test(namedText),
+      namedText.slice(0, 900));
+    measurements.payBlankNamed = namedPost.id;
+  } else {
+    measurements.payBlankNamed = "skipped: no post whose title a held pay document prints";
+  }
+  const pricedPost = allNodes.find((n) => n.positionStatutoryPay && !n.payNoDocument && unique(n));
+  if (pricedPost) {
+    await openByName(pricedPost.name);
+    check("a priced post carries no pay blank line", !(await page.$("#info-pay-blank")), pricedPost.id);
+  }
+
   // A negative OMB figure is shown as the database gives it, with OMB's own
   // sentence saying amounts are net of offsetting collections.
   const negativeOmb = allNodes.find((n) => sourcedKindOf(n) === "omb" && n.ombBudget.outlays < 0 && unique(n));
@@ -2252,7 +2286,10 @@ try {
     }
     if (unpricedPost) {
       const v = await verdictOf(unpricedPost.id);
-      check("under Pay an unpriced post says no document names the title", v && v.key === "unpriced", JSON.stringify(v));
+      check("under Pay an unpriced post says no held pay document prints the title, or that one prints it under a filing no rule ties to the post",
+        v && v.key === "unpriced" && (unpricedPost.payNoDocument
+          ? (unpricedPost.payNoDocument.namedIn && unpricedPost.payNoDocument.namedIn.length ? /a held document prints the title/.test(v.text) : /no held pay document prints the title \(\d+ checked\)/.test(v.text))
+          : /no document names the title/.test(v.text)), JSON.stringify(v));
     }
     if (measuredOrg) {
       const v = await verdictOf(measuredOrg.id);
