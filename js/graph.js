@@ -1,5 +1,5 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20261021b";
+import { createLodManager } from "./lodManager.js?v=20261021c";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
@@ -1633,11 +1633,18 @@ export function createGovernmentGraph({
     // lasted, then 26 once it expired, with 244 "density-hidden". A reader
     // who pressed Expand asked to see these; the cap's job is the pile a
     // reader did not ask for.
-    if (state.selectedNode && !state.selectedNode.isCluster) {
-      for (const nodeObj of nodeObjs) {
-        if (nodeObj.parent === state.selectedNode) {
-          allowed.add(nodeObj.data.id);
-        }
+    //
+    // Since 2026-10-21 the same holds for every brood a reader opened, not
+    // only the selection's: clicking one department of an expanded Cabinet
+    // to read it took the other fourteen out of the exemption, and the cap
+    // hid some of them the moment the selection moved.
+    for (const nodeObj of nodeObjs) {
+      const parentObj = nodeObj.parent;
+      if (!parentObj) {
+        continue;
+      }
+      if ((parentObj === state.selectedNode && !state.selectedNode.isCluster) || parentObj.readerOpened) {
+        allowed.add(nodeObj.data.id);
       }
     }
 
@@ -2760,9 +2767,17 @@ export function createGovernmentGraph({
     }
   }
 
-  function expandNodesBatch(nodes, animate = true) {
+  // `byReader` marks an expansion a reader asked for -- a button, the
+  // children list, a folded group clicked open, a search or a link -- as
+  // opposed to the boot expansion. What a reader opened stays laid out:
+  // `isProtectedFromClustering` never folds it or its children into a group
+  // ring until the reader collapses it (since 2026-10-21; see there).
+  function expandNodesBatch(nodes, animate = true, byReader = false) {
     const expandedParents = [];
     for (const nodeObj of nodes.slice(0, EXPANSION_PARENT_BATCH)) {
+      if (byReader && nodeObj) {
+        nodeObj.readerOpened = true;
+      }
       if (nodeObj.expanded || nodeObj.expanding) {
         continue;
       }
@@ -2773,8 +2788,8 @@ export function createGovernmentGraph({
     return expandedParents;
   }
 
-  function expandNode(nodeObj, animate = true) {
-    return expandNodesBatch([nodeObj], animate);
+  function expandNode(nodeObj, animate = true, byReader = false) {
+    return expandNodesBatch([nodeObj], animate, byReader);
   }
 
   function disposeNodeObject(nodeObj) {
@@ -2841,6 +2856,7 @@ export function createGovernmentGraph({
     parentObj.childObjs = [];
     parentObj.expanded = false;
     parentObj.expanding = false;
+    parentObj.readerOpened = false;
     state.renderDirty = true;
     notifyCounts();
   }
@@ -2911,6 +2927,17 @@ export function createGovernmentGraph({
     if (state.highlightedPathIds.has(nodeObj.data.id)) {
       return true;
     }
+    // What a reader opened stays laid out. Protection used to follow the
+    // SELECTION alone, so expanding the Cabinet drew its fifteen departments
+    // and clicking one of them to read it folded the other fourteen into
+    // group rings (22 nodes drawn -> 7, measured 2026-10-21): they were no
+    // longer the selection's ancestors or descendants. A node the reader
+    // expanded, and every child it laid out, is never folded until the
+    // reader collapses it; the boot expansion and the distant tree still
+    // cluster as before.
+    if (nodeObj.readerOpened || nodeObj.parent?.readerOpened) {
+      return true;
+    }
     if (!state.selectedNode || state.selectedNode.isCluster) {
       return false;
     }
@@ -2968,9 +2995,8 @@ export function createGovernmentGraph({
       state.targetZoom = Math.max(state.targetZoom, 2.4);
     }
 
-    if (!sourceNode.expanded && !sourceNode.expanding) {
-      expandNode(sourceNode, true);
-    }
+    // A folded group clicked open is a reader's request for what is inside.
+    expandNode(sourceNode, true, true);
     state.lastUserDrillAt = performance.now();
     setSelectedNode(sourceNode);
   }
@@ -3247,8 +3273,9 @@ export function createGovernmentGraph({
       if (!ancestorObj) {
         return null;
       }
-      if (ancestorObj.depth < MAX_DEPTH && !ancestorObj.expanded) {
-        expandNode(ancestorObj, animate);
+      // The path to a searched or linked node is what the reader asked for.
+      if (ancestorObj.depth < MAX_DEPTH) {
+        expandNode(ancestorObj, animate, true);
       }
       flushPendingExpansions(Number.POSITIVE_INFINITY, Number.POSITIVE_INFINITY);
     }
@@ -4543,8 +4570,15 @@ export function createGovernmentGraph({
 
   return {
     loadData,
-    expandNode,
-    expandNodesBatch,
+    // Every caller outside this file is a reader's action, so the exported
+    // functions mark what they open (`byReader`); the boot expansion calls
+    // the inner ones directly and does not.
+    expandNode(nodeObj, animate = true) {
+      return expandNode(nodeObj, animate, true);
+    },
+    expandNodesBatch(nodes, animate = true) {
+      return expandNodesBatch(nodes, animate, true);
+    },
     collapseNode,
     pruneDistantNodes,
     estimateExpansionSize,

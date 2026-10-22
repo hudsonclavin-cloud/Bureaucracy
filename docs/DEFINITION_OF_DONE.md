@@ -314,20 +314,29 @@ settle publishes automatically, and everything that needs judgement is held.
 The 3,221 in row 2 is the 3,333 positions with no pay figure, less the 112
 already explained.
 
-**Suggested order.** Self-update (5, 6 and 7) is built before the long tails of
-1–3. Every month the site is not refreshing, the figures already published age.
-The research tails will take many batches, and automation makes each batch
-stay true once landed.
+**Order — the owner's decision (2026-10-21): every node verified and given a
+cost comes before everything else.** Criteria 1, 2 and 3 are the work; 4–7
+and the reader features wait until those gaps close. This overrides the first
+draft of this document, which put self-updating first on the grounds that
+published figures age while nothing refreshes. That risk still stands and is
+accepted.
 
-1. Source registry and change log.
-2. Scheduled job in hold mode.
-3. Change budget.
-4. Three approved cycles.
-5. Switch to automatic.
+1. **Evidence (3):** the 247 unsourced organisations, starting with the 358
+   that have no candidate page at all (nominations, the Manual, directories).
+2. **Money (1):** the bare estimates, by the routes in criterion 1: the other
+   Combined Statement chapters first, since the Legislative Branch chapter
+   showed the route works to the cent.
+3. **Pay (2):** the unpriced posts, by title family (research pack 4),
+   with a terminal reason recorded wherever no figure exists.
 
-In parallel: the Combined Statement chapters (1, 4b), research packs (2) and
-nominations (3). Then the reader features, "totals add up" first, because it
-is the visible form of 4b.
+"A cost" means, for an organisation, a measured figure, a sourced figure of
+another kind labelled by basis and period, or an explained blank; for a post,
+pay or an explained blank. A post never carries a share of a budget. That
+reading is criterion 1 and 2's, unchanged.
+
+After those: self-update (5–7: source registry and change log, a scheduled job
+in hold mode, the change budget, three approved cycles, then automatic), then
+the reader features, "totals add up" first.
 
 Row 4a needs a single number before it can be tracked. The first task under
 it is a report, in the shape of `report_cost_coverage.py`, that reconciles
