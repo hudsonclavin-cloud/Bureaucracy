@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-22T08:35:19.193041+00:00",
+  "timestamp": "2026-10-22T08:53:12.726654+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5483,
@@ -69,28 +69,319 @@
     },
     "cycle_fallback_root_attachments": 0,
     "treasury_outlay_rows": {
-      "rows": 0,
-      "rows_applied": 0,
-      "rows_negative_applied": 0,
-      "rows_unmatched": 0,
+      "rows": 645,
+      "rows_applied": 143,
+      "rows_negative_applied": 11,
+      "rows_unmatched": 428,
       "rows_ambiguous": 0,
       "rows_superseded": 0,
-      "rows_negative_skipped": 0,
-      "negative_sample": [],
-      "header_sums_derived": 0,
-      "header_sums_applied": 0,
-      "header_sums": [],
-      "header_sums_by_alias": 0,
-      "lines_counted_in_header_sums": [],
-      "stale_rollups_cleared": 0,
-      "synthetic_receipts_cleared": 0,
+      "rows_negative_skipped": 113,
+      "negative_sample": [
+        "Proprietary Receipts from the Public",
+        "Intrabudgetary Transactions",
+        "Offsetting Governmental Receipts",
+        "Proprietary Receipts from the Public",
+        "Intrabudgetary Transactions",
+        "Proprietary Receipts from the Public",
+        "Proprietary Receipts from the Public",
+        "Offsetting Governmental Receipts",
+        "Department of the Army",
+        "Department of the Navy",
+        "Department of the Air Force",
+        "Defense Agencies",
+        "Department of the Army",
+        "Department of the Navy",
+        "Department of the Air Force",
+        "Defense Agencies",
+        "Department of the Army",
+        "Proprietary Receipts from the Public",
+        "Proprietary Receipts from the Public",
+        "Intrabudgetary Transactions"
+      ],
+      "header_sums_derived": 39,
+      "header_sums_applied": 10,
+      "header_sums": [
+        {
+          "id": "exec-dept-va-vha",
+          "header": "Veterans Health Administration:",
+          "amount": 113755226913.66,
+          "lines": 5
+        },
+        {
+          "id": "exec-dept-doe-nnsa",
+          "header": "National Nuclear Security Administration:",
+          "amount": 26192332286.47,
+          "lines": 4
+        },
+        {
+          "id": "exec-regulatory-fcc",
+          "header": "Federal Communications Commission:",
+          "amount": 10547464011.73,
+          "lines": 3
+        },
+        {
+          "id": "exec-dept-usda-nrcs",
+          "header": "Natural Resources Conservation Service:",
+          "amount": 5698293571.02,
+          "lines": 3
+        },
+        {
+          "id": "exec-dept-doj-office-justice-programs",
+          "header": "Office of Justice Programs:",
+          "amount": 5004301766.21,
+          "lines": 4
+        },
+        {
+          "id": "exec-ind-usps",
+          "header": "Postal Service:",
+          "amount": 1402790573.83,
+          "lines": 3
+        },
+        {
+          "id": "exec-dept-hud-ginnie",
+          "header": "Government National Mortgage Association:",
+          "amount": -1386250708.7,
+          "lines": 1
+        },
+        {
+          "id": "exec-dept-treasury-ttb",
+          "header": "Alcohol and Tobacco Tax and Trade Bureau:",
+          "amount": 553582210.07,
+          "lines": 2
+        },
+        {
+          "id": "exec-dept-doi-bor",
+          "header": "Bureau of Reclamation:",
+          "amount": 3343771342.38,
+          "lines": 2
+        },
+        {
+          "id": "exec-dept-doi-blm",
+          "header": "Bureau of Land Management:",
+          "amount": 1612117509.7,
+          "lines": 2
+        }
+      ],
+      "header_sums_by_alias": 1,
+      "lines_counted_in_header_sums": [
+        {
+          "id": "exec-dept-doj-office-community-oriented-policing-services",
+          "holder": "exec-dept-doj-office-justice-programs",
+          "row": "Community Oriented Policing Services",
+          "amount": 495705881.08
+        }
+      ],
+      "stale_rollups_cleared": 143,
+      "synthetic_receipts_cleared": 29,
       "carried_forward_citations_restored": 0,
-      "unmatched_sample": [],
+      "unmatched_sample": [
+        "Total--Other Defense Civil Programs",
+        "Total--International Assistance Programs",
+        "Total--Independent Agencies",
+        "Total--Federal Old-Age and Survivors Insurance Trust Fund (Off-Budget)",
+        "Total--Operation and Maintenance",
+        "Total--Military Personnel",
+        "Total--Procurement",
+        "Total--Federal Disability Insurance Trust Fund (Off-Budget)",
+        "Total--Research, Development, Test, and Evaluation",
+        "Total--Energy Programs",
+        "Total--Administration of Foreign Affairs",
+        "Total--Military Construction",
+        "Total--Departmental Offices",
+        "Total--International Security Assistance",
+        "Total--Fish and Wildlife and Parks",
+        "Total--Water and Science",
+        "Total--Housing Programs",
+        "Total--Office of Postsecondary Education",
+        "Total--Land and Minerals Management",
+        "Total--Indian Affairs",
+        "Total--Multilateral Assistance",
+        "Total--Overseas Private Investment Corporation",
+        "Total--Interest on Treasury Debt Securities (Gross)",
+        "Total--Federal Supplementary Medical Insurance Trust Fund",
+        "Total--Federal Hospital Insurance Trust Fund",
+        "Total--Unemployment Trust Fund",
+        "Total--Airport and Airway Trust Fund",
+        "Military Retirement:",
+        "Civil Service Retirement and Disability Fund",
+        "Supplemental Security Income Program",
+        "Departmental Administration:",
+        "Payments to Social Security Trust Funds",
+        "Payment to Civil Service Retirement and Disability Fund",
+        "Retiree Health Care:",
+        "Other",
+        "Office of Special Education and Rehabilitative Services:",
+        "Government Payment for Annuitants, Employees Health and Life Insurance Benefits",
+        "Risk Management Agency:",
+        "Legal Activities and U.S. Marshals:",
+        "Disaster Loans Program"
+      ],
       "ambiguous_sample": [],
       "treasury_netting": {
         "applied": true,
-        "reason": "carried_forward",
-        "receipts_lines": 29
+        "identity": {
+          "anchor": 7395799983313.23,
+          "sections": 30,
+          "section_totals_sum": 7395799983313.23,
+          "difference": -0.0,
+          "holds": true
+        },
+        "section_mismatches": [
+          {
+            "section": "International Assistance Programs",
+            "lines_sum": 20389511693.8,
+            "printed_total": 20388048615.38
+          }
+        ],
+        "receipts_lines": 28,
+        "receipts_total": -1261772958311.46,
+        "sections_netted": [
+          {
+            "id": "exec-dept-hhs",
+            "section": "Department of Health and Human Services",
+            "amount": -902694749259.04
+          },
+          {
+            "id": "exec-ind-ssa",
+            "section": "Social Security Administration",
+            "amount": -61664480382.33
+          },
+          {
+            "id": "exec-dept-treasury",
+            "section": "Department of the Treasury",
+            "amount": -86048959037.96
+          },
+          {
+            "id": "exec-dept-defense",
+            "section": "Department of Defense--Military Programs",
+            "amount": -2611688680.53
+          },
+          {
+            "id": "exec-dept-va",
+            "section": "Department of Veterans Affairs",
+            "amount": -7061489118.96
+          },
+          {
+            "id": "exec-dept-usda",
+            "section": "Department of Agriculture",
+            "amount": -3613654526.75
+          },
+          {
+            "id": "exec-ind-opm",
+            "section": "Office of Personnel Management",
+            "amount": -48815222499.47
+          },
+          {
+            "id": "exec-dept-dot",
+            "section": "Department of Transportation",
+            "amount": -820973263.72
+          },
+          {
+            "id": "exec-dept-dhs",
+            "section": "Department of Homeland Security",
+            "amount": -17400018011.26
+          },
+          {
+            "id": "exec-dept-ed",
+            "section": "Department of Education",
+            "amount": -76266994413.29
+          },
+          {
+            "id": "exec-dept-hud",
+            "section": "Department of Housing and Urban Development",
+            "amount": -1524308437.81
+          },
+          {
+            "id": "exec-dept-dol",
+            "section": "Department of Labor",
+            "amount": -1260924834.19
+          },
+          {
+            "id": "exec-dept-doe",
+            "section": "Department of Energy",
+            "amount": -3367567486.3
+          },
+          {
+            "id": "exec-dept-doj",
+            "section": "Department of Justice",
+            "amount": -4110456246.08
+          },
+          {
+            "id": "exec-dept-state",
+            "section": "Department of State",
+            "amount": -5917598707.83
+          },
+          {
+            "id": "exec-ind-nasa",
+            "section": "National Aeronautics and Space Administration",
+            "amount": -3650977.1
+          },
+          {
+            "id": "exec-ind-epa",
+            "section": "Environmental Protection Agency",
+            "amount": -502451764.67
+          },
+          {
+            "id": "exec-dept-doi",
+            "section": "Department of the Interior",
+            "amount": -18431417057.41
+          },
+          {
+            "id": "exec-dept-doc",
+            "section": "Department of Commerce",
+            "amount": -273497240.56
+          },
+          {
+            "id": "exec-ind-sba",
+            "section": "Small Business Administration",
+            "amount": -2853787832.63
+          },
+          {
+            "id": "exec-independent-corps-of-engineers",
+            "section": "Corps of Engineers",
+            "amount": -1142745719.5
+          },
+          {
+            "id": "judicial-branch",
+            "section": "Judicial Branch",
+            "amount": -1261648599.37
+          },
+          {
+            "id": "exec-ind-nsf",
+            "section": "National Science Foundation",
+            "amount": -19330217.11
+          },
+          {
+            "id": "legislative-branch",
+            "section": "Legislative Branch",
+            "amount": -63881478.52
+          },
+          {
+            "id": "exec-eop",
+            "section": "Executive Office of the President",
+            "amount": -1215347727.58
+          },
+          {
+            "id": "exec-independent-general-services-administration",
+            "section": "General Services Administration",
+            "amount": -247446685.44
+          },
+          {
+            "id": "exec-independent-agency-for-international-development",
+            "section": "International Assistance Programs",
+            "amount": -366098148.4
+          },
+          {
+            "id": "exec-ind-misc-railroad-retirement-board",
+            "section": "Independent Agencies",
+            "amount": -12212569957.65
+          }
+        ],
+        "government_wide": {
+          "id": "treasury-undistributed-offsetting-receipts",
+          "amount": -369128261110.47,
+          "printed_total": -372699041560.47
+        }
       }
     },
     "verification_evidence": {
@@ -104,7 +395,7 @@
       "unknown_node": 10,
       "unknown_status": 0,
       "urls_added": 638,
-      "stale_claims_cleared": 1046,
+      "stale_claims_cleared": 1045,
       "alias_confirmations": 0,
       "alias_records_without_a_row": 0,
       "placements_refused_alias": 0,
@@ -406,15 +697,14 @@
     },
     "budget_summary_reused_from_previous_build": false,
     "budget_summary": {
-      "government_total_outlay_amount": 6811043257196.1,
+      "government_total_outlay_amount": 7395799983313.23,
       "amount_kind": "fytd_net_outlays",
       "fiscal_year": "2026",
-      "record_date": "2026-08-31",
-      "label": "FYTD net outlays through 2026-08-31",
+      "record_date": "2026-09-30",
+      "label": "FYTD net outlays through 2026-09-30",
       "source_system": "Treasury Fiscal Data",
       "source_url": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
-      "statement_file": "tests/fixtures/mts_table5_2026-08-31.json",
-      "reused_from_previous_build": true
+      "statement_file": "/home/user/Bureaucracy/tests/fixtures/mts_table5_2026-09-30.json"
     },
     "alias_matches": {
       "nodes_with_an_alias_match": 19,
@@ -508,8 +798,8 @@
       "sources": 27,
       "refused": [],
       "counts": {
-        "current": 23,
-        "newer_edition_expected": 1,
+        "current": 24,
+        "newer_edition_expected": 0,
         "overdue": 2,
         "recheck_due": 0,
         "closed_record": 1,
@@ -530,8 +820,8 @@
       "missing_actual_rows": 19,
       "variance_status_counts": {
         "unavailable": 102,
-        "under_budget": 48,
-        "over_budget": 41
+        "over_budget": 57,
+        "under_budget": 32
       },
       "budget_source_counts": {
         "curated budget note": 108
@@ -542,7 +832,7 @@
       "reconciled_rows": 89,
       "incomplete_rows": 102
     },
-    "verified_treasury_total": 6811043257196.1,
+    "verified_treasury_total": 7395799983313.23,
     "cost_status_counts": {
       "root_total": 1,
       "official": 172,
@@ -553,8 +843,8 @@
       "verified_with_treasury_total": 1,
       "matched_official_rollup": 172,
       "estimated_from_parent": 682,
-      "post_is_not_a_budget_unit": 3887,
-      "treasury_pool_negative": 212,
+      "post_is_not_a_budget_unit": 3859,
+      "treasury_pool_negative": 240,
       "unit_superseded": 558
     },
     "cost_verification_status_counts": {
@@ -578,7 +868,7 @@
     "mixed_weight_sibling_sets_implied": 15,
     "headcount_weights_disputed_by_opm": 10,
     "allocations_below_precision": 0,
-    "posts_not_apportioned": 3887,
+    "posts_not_apportioned": 3859,
     "posts_unweighted_in_dollar_splits": 52,
     "superseded_units_not_apportioned": 18,
     "sibling_sets_scaled_to_official_floors": 0,
@@ -591,7 +881,7 @@
       "published_share_of_reported": null
     },
     "graph_summary": {
-      "verified_treasury_total": 6811043257196.1,
+      "verified_treasury_total": 7395799983313.23,
       "verification_status_counts": {
         "partial": 469,
         "verified": 558,
@@ -607,8 +897,8 @@
         "verified_with_treasury_total": 1,
         "matched_official_rollup": 172,
         "estimated_from_parent": 682,
-        "post_is_not_a_budget_unit": 3887,
-        "treasury_pool_negative": 212,
+        "post_is_not_a_budget_unit": 3859,
+        "treasury_pool_negative": 240,
         "unit_superseded": 558
       },
       "cost_verification_status_counts": {
@@ -632,7 +922,7 @@
       "mixed_weight_sibling_sets_implied": 15,
       "headcount_weights_disputed_by_opm": 10,
       "allocations_below_precision": 0,
-      "posts_not_apportioned": 3887,
+      "posts_not_apportioned": 3859,
       "posts_unweighted_in_dollar_splits": 52,
       "superseded_units_not_apportioned": 18,
       "sibling_sets_scaled_to_official_floors": 0,

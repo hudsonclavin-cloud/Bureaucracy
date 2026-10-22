@@ -342,15 +342,9 @@ def main(argv: list[str] | None = None) -> int:
     step("regenerate the graph", regen)
     for script in REPORT_STEPS:
         step(f"report {script}", [PYTHON, str(PROJECT_ROOT / "scripts" / script)])
-    step("gate", [PYTHON, str(PROJECT_ROOT / "scripts" / "validate_published_graph.py")])
-    if not args.no_tests:
-        step("test suite", [PYTHON, "-m", "pytest", "tests/", "-q", "-p", "no:cacheprovider"], timeout=5400)
-    else:
-        report["steps"].append({"name": "test suite", "exit": None, "skipped": "--no-tests"})
-    if not args.no_smoke:
-        step("browser smoke check", ["node", str(PROJECT_ROOT / "scripts" / "frontend_smoke.mjs"), *args.smoke_args.split()], timeout=2400)
-    else:
-        report["steps"].append({"name": "browser smoke check", "exit": None, "skipped": "--no-smoke"})
+    # The change budget and the queue BEFORE the gate: the gate checks that the
+    # history's latest entry describes the graph beside it, so the entry must
+    # be recorded first. Exit 3 is the budget's hold and is read below.
     budget = run([PYTHON, str(PROJECT_ROOT / "scripts" / "build_change_history.py"), "--record"])
     budget["name"] = "change budget and review queue"
     budget["required"] = True
@@ -362,6 +356,15 @@ def main(argv: list[str] | None = None) -> int:
     elif budget["exit"] != 0:
         report["held"] = True
         report["reasons"].append(f"the change history step exited {budget['exit']}")
+    step("gate", [PYTHON, str(PROJECT_ROOT / "scripts" / "validate_published_graph.py")])
+    if not args.no_tests:
+        step("test suite", [PYTHON, "-m", "pytest", "tests/", "-q", "-p", "no:cacheprovider"], timeout=5400)
+    else:
+        report["steps"].append({"name": "test suite", "exit": None, "skipped": "--no-tests"})
+    if not args.no_smoke:
+        step("browser smoke check", ["node", str(PROJECT_ROOT / "scripts" / "frontend_smoke.mjs"), *args.smoke_args.split()], timeout=2400)
+    else:
+        report["steps"].append({"name": "browser smoke check", "exit": None, "skipped": "--no-smoke"})
     try:
         queue = json.loads((PROJECT_ROOT / "data" / "audit" / "review_queue.json").read_text(encoding="utf-8"))
         report["reviewQueueOpen"] = sum(1 for r in queue if isinstance(r, dict) and r.get("status") == "open")

@@ -15,10 +15,12 @@ CLAUDE.md.
   `graph.json` identical field-for-field except dates; the three generated
   reports byte-identical; gate `PASSED`; suite 2,234 passed / 1 skipped;
   browser smoke `ok: true`. Nothing is stale.
-- Treasury anchor: the **2026-08-31** Monthly Treasury Statement
-  (`tests/fixtures/mts_table5_2026-08-31.json`). The September statement was
-  **not yet published** on 2026-10-12 (API checked directly: no record_date
-  ≥ 2026-09-01). Expected ~2026-10-14/15.
+- Treasury anchor: the **2026-09-30** Monthly Treasury Statement, the fiscal
+  year's close (`tests/fixtures/mts_table5_2026-09-30.json`), fetched by the
+  first live update cycle on 2026-10-22 (CURATION.md §30.4): anchor
+  $7,395,799,983,313, 173 measured nodes, 171 of them moved against the
+  August statement. The 2026-08-31 fixture stays committed for the tests
+  pinned to it.
 
 ## Headline numbers (published graph)
 
@@ -109,7 +111,11 @@ on any JS change).
 
 ## Next actions, in order
 
-0. **Run the first update cycle (built 2026-10-22, CURATION.md §30).**
+0. **The first live cycle was run from the sandbox on 2026-10-22 (CURATION.md
+   §30.4)**: it fetched the September statement, rebuilt, was held by the
+   suite on August-pinned tests (re-pinned) and by a job ordering defect
+   (fixed). The next cycle is the workflow's. **Run the update cycle (built
+   2026-10-22, CURATION.md §30).**
    `python scripts/update_cycle.py --plan` lists what is due;
    `python scripts/update_cycle.py --hold` fetches it (the September statement
    through the crawler's functions into a dated fixture, the AUSA chart in

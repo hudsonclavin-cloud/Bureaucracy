@@ -121,7 +121,7 @@ python scripts/verify_base_graph.py --dry-run                # what it would fet
 python scripts/verify_base_graph.py                          # fetch and adjudicate
 python scripts/derive_usaspending_evidence.py --dry-run       # File A keys the crosswalk names by an equal name; read this
 python scripts/derive_usaspending_evidence.py                 # then write them (since 2026-09-17; beside the cost, never as it)
-python scripts/regenerate_published_graph.py --treasury-rows tests/fixtures/mts_table5_2026-08-31.json   # the statement the published anchor names (__budgetSummary.statement_file); mts_table5_latest.json is the pinned 2026-07-31 test fixture and would roll the anchor back a month
+python scripts/regenerate_published_graph.py --treasury-rows tests/fixtures/mts_table5_2026-09-30.json   # the statement the published anchor names (__budgetSummary.statement_file); mts_table5_latest.json is the pinned 2026-07-31 test fixture and would roll the anchor back a month
 python -m pytest tests/ -q
 git add -A && git add -f output/graph.json output/expanded_nodes.json output/pipeline_stats.json
 git commit -q -m "Verify nominated pages" && git push

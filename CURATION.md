@@ -7406,3 +7406,54 @@ HEAD-requests every link and asserts each is served. The update job
 regenerates the CSV with the graph (`REPORT_STEPS`), so a download is never
 older than the page.
 
+### 30.4 The first live cycle, run from this sandbox (2026-10-22)
+
+`python scripts/update_cycle.py --hold` was run once from the sandbox, with
+the fetch step on, the afternoon the job was built. What it did, in the
+report's own order:
+
+- **Due**: the Monthly Treasury Statement (a newer edition expected),
+  FedScope and the AUSA pay chart (overdue).
+- **Fetched**: the API's newest record date was **2026-09-30**, the fiscal
+  year's closing statement, and its 811 rows were written verbatim to
+  `tests/fixtures/mts_table5_2026-09-30.json` with a `.meta.json`. The AUSA
+  chart was re-fetched and the bytes differed by six lines of page chrome;
+  the table is still the 2025 one, so the source stays overdue and the
+  registry now records that it was read after its expected date. FedScope
+  was recorded as needing a reviewed URL, since OPM publishes each dataset
+  at a new address.
+- **Rebuilt** from the new statement: the anchor moved from $6,811,043,257,196
+  (FYTD through August) to **$7,395,799,983,313** (the full fiscal year); all
+  173 measured nodes stayed measured and **171 moved**, by a median factor of
+  1.096 (twelve months against eleven); every header sum and every `treasury_sum`
+  block still attributes to the cent; 1,258 pay claims unchanged; the
+  Student Aid alias $80.53bn → $92.90bn.
+- **Held**, for two reasons the report names. The standalone gate failed
+  one check, because the job recorded the change history AFTER the gate and
+  the gate found the previous entry describing the August graph — an
+  ordering defect in the job, fixed the same hour (the budget step now runs
+  before the gate, so the gate reads the entry that describes the graph
+  beside it). And the suite failed six tests: two on the same stale entry,
+  one pinning Federal Student Aid's measured figure to the August statement
+  (its own comment says to move it when the anchor advances, and it was
+  moved to $92,903,788,398), one whose registry corruption case set the copy
+  date to the very date the new statement carries (changed to a date no
+  statement has), one on the gate's stale-history check, and the DOJ AD
+  band's "honest record passes" case, which fixed its notion of today at the
+  fixture's old fetch date.
+- **The change budget passed**: no node removed, the anchor forward, no pay
+  claim withdrawn, every measured move explained by the new statement. Seven
+  measured moves exceeded the review threshold (more than 50% on more than
+  $1bn) and are in the queue as the statement's own explanation to be looked
+  at, not held: the Bureau of the Fiscal Service +122.8%, OSMRE +67.2%, the
+  SEC −127.8% and the TVA −53.1% (both net below zero at year end), and three
+  receipts lines, whose base is small and negative. The queue holds 60 open
+  records.
+
+So the first live run behaved as §30.3 predicted — the suite held it on
+pins that name the August statement — and surfaced one defect in the job
+itself. The suite was re-run clean after the re-pins and the fix, the smoke
+check passed on the new graph inside the cycle, and the result was committed
+by hand: this cycle is the proving run, not one of the three the criterion
+counts, which start when the workflow fires on `main`.
+

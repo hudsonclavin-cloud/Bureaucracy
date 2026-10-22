@@ -159,7 +159,7 @@ class GateCorruptionTests(unittest.TestCase):
             "not an object": lambda g, b: g.__setitem__(fr.ROOT_FIELD, "yes"),
             "a source dropped": lambda g, b: b["sources"].pop(),
             "a source invented": lambda g, b: b["sources"].append(dict(b["sources"][0], id="made_up")),
-            "a copy date changed": lambda g, b: entry(b, "monthly_treasury_statement")["copy"].__setitem__("date", "2026-09-30"),
+            "a copy date changed": lambda g, b: entry(b, "monthly_treasury_statement")["copy"].__setitem__("date", "2019-01-31"),
             "an expected date changed": lambda g, b: entry(b, "monthly_treasury_statement")["expected"].__setitem__("expectedBy", "2030-01-01"),
             "a status relabelled": lambda g, b: entry(b, "opm_fedscope_employment").__setitem__("statusAtBuild", "current"),
             "a status outside the vocabulary": lambda g, b: entry(b, "opm_plum_archive").__setitem__("statusAtBuild", "fresh"),

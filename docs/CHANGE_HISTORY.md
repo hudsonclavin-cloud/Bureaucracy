@@ -5,7 +5,31 @@ the graph just built, `output/change_history.json` and `data/audit/review_queue.
 Do not edit by hand. `docs/DEFINITION_OF_DONE.md` Part 2 ("Change history"), criterion 5
 (the change budget) and criterion 7 (the review queue).
 
-**Review queue: 53 open**, 0 resolved, 0 closed. The queue is the only thing a person is asked to look at between cycles.
+**Review queue: 60 open**, 0 resolved, 0 closed. The queue is the only thing a person is asked to look at between cycles.
+
+### Open: `measured_cost_moved_with_new_statement` (7)
+
+- opened 2026-10-22 — Bureau of the Fiscal Service (`exec-dept-treasury-fiscal`): measured cost moved 122.78% between the statements of 2026-08-31 and 2026-09-30
+  - the statement of 2026-08-31: $9,899,395,085.72
+  - the statement of 2026-09-30: $22,054,348,276.79
+- opened 2026-10-22 — Office of Surface Mining Reclamation and Enforcement (`exec-dept-doi-office-surface-mining-reclamation-enforcement`): measured cost moved 67.16% between the statements of 2026-08-31 and 2026-09-30
+  - the statement of 2026-08-31: $1,184,535,259.80
+  - the statement of 2026-09-30: $1,980,077,900.35
+- opened 2026-10-22 — Offsetting receipts and intrabudgetary transactions (`exec-dept-treasury--treasury-receipts`): measured cost moved -368.36% between the statements of 2026-08-31 and 2026-09-30
+  - the statement of 2026-08-31: $-18,372,459,773.08
+  - the statement of 2026-09-30: $-86,048,959,037.96
+- opened 2026-10-22 — Offsetting receipts and intrabudgetary transactions (`exec-ind-opm--treasury-receipts`): measured cost moved -9377.92% between the statements of 2026-08-31 and 2026-09-30
+  - the statement of 2026-08-31: $-515,041,268.23
+  - the statement of 2026-09-30: $-48,815,222,499.47
+- opened 2026-10-22 — Offsetting receipts and intrabudgetary transactions (`exec-dept-dol--treasury-receipts`): measured cost moved -66.04% between the statements of 2026-08-31 and 2026-09-30
+  - the statement of 2026-08-31: $-759,419,059.04
+  - the statement of 2026-09-30: $-1,260,924,834.19
+- opened 2026-10-22 — Securities & Exchange Commission (SEC) (`exec-regulatory-sec`): measured cost moved -127.77% between the statements of 2026-08-31 and 2026-09-30
+  - the statement of 2026-08-31: $1,799,067,031.03
+  - the statement of 2026-09-30: $-499,610,699.87
+- opened 2026-10-22 — Tennessee Valley Authority (TVA) (`exec-ind-misc-tennessee-valley-authority-tva`): measured cost moved -53.13% between the statements of 2026-08-31 and 2026-09-30
+  - the statement of 2026-08-31: $-945,112,444.17
+  - the statement of 2026-09-30: $-1,447,263,334.54
 
 ### Open: `placement_directory_disagreement` (1)
 
@@ -176,9 +200,51 @@ Do not edit by hand. `docs/DEFINITION_OF_DONE.md` Part 2 ("Change history"), cri
   - the copy in use: dated 2025-03-31, read 2026-09-08 — https://www.opm.gov/data/datasets/
 - opened 2026-10-22: U.S. Attorneys' Administratively Determined pay plan chart: the edition for 2026-01-12 was expected by 2026-03-13; the copy in use is dated 2025-01-12
   - the registry: expected by 2026-03-13, overdue after 2026-05-12
-  - the copy in use: dated 2025-01-12, read 2026-10-08 — https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts
+  - the copy in use: dated 2025-01-12, read 2026-10-22 — https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts
 
 ## Builds, newest first
+
+### 2026-10-22T08:53:12.726654+00:00 — within the budget
+
+the Treasury anchor moved from the statement of 2026-08-31 to 2026-09-30; 5,512 nodes before and 5,512 after (0 added, 0 removed, 0 newly marked replaced, 0 renamed); 171 measured costs moved, 0 gained a measured figure, 0 lost one; 682 estimates moved; pay claims 1,258 -> 1,258 (0 added, 0 withdrawn, 0 changed figure); verification or placement methods: 0 added, 0 withdrawn, 0 changed; within the change budget.
+
+- `node_count_drops`: ok — 5,512 nodes before, 5,512 after; 0 removed
+- `anchor_lost`: ok — anchor record date after: 2026-09-30
+- `anchor_period_goes_backwards`: ok — anchor 2026-08-31 -> 2026-09-30
+- `measured_cost_moved_without_a_new_statement`: ok — a new statement (2026-08-31 -> 2026-09-30): 171 measured costs moved, which the statement explains
+- `pay_claims_withdrawn_above_5_percent`: ok — 0 of 1,258 pay claims withdrawn (0.0%; the limit is 5%)
+
+Measured costs that moved (largest first):
+
+- The Constitution of the United States (`the-constitution-of-the-united-states`): $6,811,043,257,196.10 → $7,395,799,983,313.23 (8.59%)
+- Centers for Medicare & Medicaid Services (CMS) (`exec-dept-hhs-cms`): $2,486,049,653,525.63 → $2,732,873,583,522.79 (9.93%)
+- Department of Health & Human Services (HHS) (`exec-dept-hhs`): $1,822,378,202,029.11 → $2,003,813,410,605.72 (9.96%)
+- Social Security Administration (SSA) (`exec-ind-ssa`): $1,586,725,434,763.84 → $1,733,853,189,988.17 (9.27%)
+- Interest on the Public Debt (`exec-dept-treasury-interest-on-the-public-debt`): $1,267,361,531,632.09 → $1,359,953,253,416.84 (7.31%)
+- Department of Defense (DoD) (`exec-dept-defense`): $832,633,471,247.51 → $916,836,451,162.99 (10.11%)
+- Offsetting receipts and intrabudgetary transactions (`exec-dept-hhs--treasury-receipts`): $-823,236,969,714.51 → $-902,694,749,259.04 (-9.65%)
+- Offsetting receipts and intrabudgetary transactions (`exec-dept-treasury--treasury-receipts`): $-18,372,459,773.08 → $-86,048,959,037.96 (-368.36%)
+- Department of the Treasury (`exec-dept-treasury`): $1,520,317,300,729.70 → $1,580,963,564,396.77 (3.99%)
+- Offsetting receipts and intrabudgetary transactions (`exec-ind-opm--treasury-receipts`): $-515,041,268.23 → $-48,815,222,499.47 (-9377.92%)
+- Internal Revenue Service (IRS) (`exec-dept-treasury-irs`): $260,269,276,851.62 → $280,977,373,896.34 (7.96%)
+- Department of Veterans Affairs (VA) (`exec-dept-va`): $395,059,405,295.38 → $415,574,777,773.02 (5.19%)
+- Department of Transportation (DOT) (`exec-dept-dot`): $109,594,889,432.49 → $124,270,631,233.59 (13.39%)
+- Department of Agriculture (USDA) (`exec-dept-usda`): $202,292,623,413.60 → $216,669,564,389.41 (7.11%)
+- Department of Education (`exec-dept-ed`): $61,327,395,379.76 → $75,226,473,850.21 (22.66%)
+- Veterans Health Administration (VHA) (`exec-dept-va-vha`): $100,361,712,221.24 → $113,755,226,913.66 (13.35%)
+- Federal Student Aid (FSA) (`exec-dept-ed-fsa`): $80,531,492,080.33 → $92,903,788,398.06 (15.36%)
+- Bureau of the Fiscal Service (`exec-dept-treasury-fiscal`): $9,899,395,085.72 → $22,054,348,276.79 (122.78%)
+- Office of Personnel Management (OPM) (`exec-ind-opm`): $124,287,409,220.60 → $135,808,863,209.02 (9.27%)
+- Department of Homeland Security (DHS) (`exec-dept-dhs`): $98,222,170,059.21 → $109,528,448,164.37 (11.51%)
+- Undistributed offsetting receipts (`treasury-undistributed-offsetting-receipts`): $-358,094,223,680.81 → $-369,128,261,110.47 (-3.08%)
+- Food and Nutrition Administration (FNA) (`exec-dept-usda-fns`): $127,220,788,208.37 → $137,040,427,117.23 (7.72%)
+- Federal Highway Administration (FHWA) (`exec-dept-dot-fhwa`): $58,322,278,678.82 → $65,950,614,452.73 (13.08%)
+- Department of Housing & Urban Development (HUD) (`exec-dept-hud`): $61,686,962,442.33 → $68,263,373,803.71 (10.66%)
+- Administration for Children and Families (`exec-dept-hhs-administration-for-children-and-families`): $65,640,372,808.49 → $71,890,019,941.72 (9.52%)
+
+Sources whose copy changed:
+
+- `monthly_treasury_statement`: 2026-08-31 → 2026-09-30 (current)
 
 ### 2026-10-22T08:35:19.193041+00:00 — within the budget
 

@@ -463,12 +463,13 @@ class StudentAidAliasTests(unittest.TestCase):
         self.assertEqual(fsa["cost_status"], "official")
         self.assertEqual(fsa["costVerificationStatus"], "verified")
         # The statement's own figure, so it moves when the statement does: this
-        # was $76,054,364,353 through 2026-07-31 and is $80,531,492,080 through
-        # 2026-08-31. What the test is really pinning is that the measured line
+        # was $76,054,364,353 through 2026-07-31, $80,531,492,080 through
+        # 2026-08-31 and is $92,903,788,398 through 2026-09-30, the fiscal
+        # year's close. What the test is really pinning is that the measured line
         # reaches this node at all -- an apportioned share was $13.37B -- so
         # update the figure when the anchor advances and treat the row name,
         # the status and the section below as the invariants.
-        self.assertEqual(round(fsa["resolved_total_amount"]), 80_531_492_080)
+        self.assertEqual(round(fsa["resolved_total_amount"]), 92_903_788_398)
         self.assertEqual(fsa["treasury_row_name"], "Total--Office of Federal Student Aid")
         self.assertTrue(any("fiscaldata.treasury.gov" in str(u) for u in fsa["sourceUrls"]))
 

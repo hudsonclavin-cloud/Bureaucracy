@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-22T08:52:40Z",
+ "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date:eq:2026-09-30&sort=print_order_nbr",
+ "status": 200,
+ "final_url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date:eq:2026-09-30&sort=print_order_nbr",
+ "content_type": "application/json",
+ "user_agent": "data_pipeline.crawler.treasury_outlays",
+ "robots": "api.fiscaldata.treasury.gov answers robots.txt 404; nothing published to obey",
+ "bytes": 807967,
+ "sha256": "5ebbdae774fb68536e829929ceff8ad7995a76708063d26ec1faff86735e4564",
+ "error": null
+}

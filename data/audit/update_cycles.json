@@ -11,5 +11,24 @@
   "fetched": [],
   "reviewQueueOpen": 53,
   "publishable": false
+ },
+ {
+  "startedAt": "2026-10-22T08:52:38Z",
+  "finishedAt": "2026-10-22T09:15:40Z",
+  "mode": "hold",
+  "clean": false,
+  "held": true,
+  "reasons": [
+   "gate exited 1",
+   "test suite exited 1"
+  ],
+  "anchorBefore": "2026-08-31",
+  "anchorAfter": "2026-09-30",
+  "fetched": [
+   "monthly_treasury_statement",
+   "doj_usao_ad_pay_plan"
+  ],
+  "reviewQueueOpen": 60,
+  "publishable": false
  }
 ]
