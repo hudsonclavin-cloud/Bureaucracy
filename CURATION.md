@@ -7495,3 +7495,20 @@ creates the label if missing, tries with and without it, and otherwise prints
 the compare URL as a warning and in the job summary. Enabling *Allow GitHub
 Actions to create and approve pull requests* (Settings > Actions > General) is
 the owner's repository setting and was not changed.
+
+### 30.6 The second run on the runner (2026-10-22)
+
+Run 3 (after §30.5's fixes) ended green: the cycle was CLEAN, held by mode,
+and the branch `update/2026-10-22-39812485761` was pushed. The repository
+still forbids Actions to open pull requests, so the job printed the compare
+link instead (no pull request exists until a person opens one). Against
+`main` the published graph differed by two lines: the budget summary's
+`derivedAt` time, and `statement_file`, which `regenerate_published_graph.py`
+wrote as the checkout's absolute path. It is repository-relative now; the
+same change covers `pipeline_stats.json`. The remaining differences between
+a runner's build and a committed one are timestamps, the cycle's own
+records, and seven review-queue records closed because the committed graph
+already carries the September statement (a vanished condition is closed,
+never deleted). `pipeline_stats.json` on the runner counts one node
+re-attached to the root (the receipts line) where the sandbox's counted none;
+the graph itself is equal, so the count describes how the build reached it.

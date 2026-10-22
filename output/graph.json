@@ -402598,7 +402598,7 @@
     "label": "FYTD net outlays through 2026-09-30",
     "source_system": "Treasury Fiscal Data",
     "source_url": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
-    "statement_file": "/home/user/Bureaucracy/tests/fixtures/mts_table5_2026-09-30.json"
+    "statement_file": "tests/fixtures/mts_table5_2026-09-30.json"
   },
   "__heldPayDocuments": [
     {

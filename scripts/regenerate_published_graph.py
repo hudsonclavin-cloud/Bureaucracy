@@ -83,7 +83,12 @@ def main(argv: list[str]) -> int:
         rows, summary = parse_outlay_rows(raw.get("rows") or [])
         if summary is None or usable_budget_total({"budgetSummary": summary}) is None:
             raise SystemExit(f"{args.treasury_rows} carries no Total Outlays line; nothing to anchor on.")
-        summary["statement_file"] = str(args.treasury_rows)
+        # Repository-relative, so the same statement rebuilds the same bytes on a
+        # runner and on a laptop (the first scheduled run wrote its own checkout path).
+        try:
+            summary["statement_file"] = Path(args.treasury_rows).resolve().relative_to(PROJECT_ROOT).as_posix()
+        except ValueError:
+            summary["statement_file"] = str(args.treasury_rows)
         statement_payload = {"nodes": [], "edges": [], "budgetSummary": summary, "outlayRows": rows}
     anchor = statement_payload["budgetSummary"] if statement_payload else load_anchor(args.anchor)
     output_dir = args.output_dir
