@@ -267,9 +267,29 @@ def load_cycles() -> list[dict[str, Any]]:
         return []
 
 
+SCHEDULED_TRIGGER = "schedule"
+
+
+def trigger_of_this_run() -> str:
+    """What started this run: GitHub's event name on a runner (`schedule`,
+    `workflow_dispatch`), `manual` anywhere else."""
+    return os.environ.get("GITHUB_EVENT_NAME") or "manual"
+
+
 def clean_streak(cycles: list[dict[str, Any]]) -> int:
+    """Consecutive clean held cycles that the SCHEDULE started, newest first.
+
+    Criterion 5 asks for three monthly cycles with no manual step. A cycle a
+    person dispatched, or ran from a laptop, proves the job works but is not the
+    schedule keeping its appointment, so it neither counts nor — being a record
+    of something other than the schedule — breaks the run: only a scheduled
+    cycle that was held does. A record from before the trigger was recorded has
+    none and is not counted.
+    """
     streak = 0
     for record in reversed(cycles):
+        if record.get("trigger") != SCHEDULED_TRIGGER:
+            continue
         if record.get("mode") == "hold" and record.get("clean"):
             streak += 1
         else:
@@ -297,7 +317,7 @@ def main(argv: list[str] | None = None) -> int:
     block, refused_rows = fr.derive(graph, registry, today)
     due = [e for e in block["sources"] if e["statusAtBuild"] not in (fr.STATUS_CURRENT, fr.STATUS_CLOSED)]
     report: dict[str, Any] = {
-        "startedAt": started, "mode": "plan" if args.plan else "publish" if args.publish else "hold", "asOf": today.isoformat(),
+        "startedAt": started, "mode": "plan" if args.plan else "publish" if args.publish else "hold", "trigger": trigger_of_this_run(), "asOf": today.isoformat(),
         "anchorBefore": str((graph.get("__budgetSummary") or {}).get("record_date") or "")[:10],
         "due": [{"id": e["id"], "status": e["statusAtBuild"], "copy": e["copy"]["date"], "expectedBy": e["expected"].get("expectedBy") or e["expected"].get("recheckDue")} for e in due],
         "registryRowsRefused": refused_rows, "fetches": [], "steps": [], "held": False, "reasons": [], "publishable": False,
@@ -309,7 +329,7 @@ def main(argv: list[str] | None = None) -> int:
         for f in report["fetches"]:
             print(f"  {f['source']:34} {f['kind']:26} {f.get('would') or f.get('reason') or ''}")
         print(f"derive steps: {len(DERIVE_STEPS)}; then regenerate, {len(REPORT_STEPS)} reports, the gate, the suite, the smoke check, the change budget")
-        print(f"clean held cycles so far: {clean_streak(load_cycles())} of {CLEAN_CYCLES_BEFORE_PUBLISH} needed before --publish is accepted")
+        print(f"clean scheduled held cycles so far: {clean_streak(load_cycles())} of {CLEAN_CYCLES_BEFORE_PUBLISH} needed before --publish is accepted")
         return 0
 
     streak = clean_streak(load_cycles())
@@ -395,11 +415,12 @@ def main(argv: list[str] | None = None) -> int:
     report["finishedAt"] = now_iso()
     report["verdict"] = ("PUBLISHABLE: every check passed and three held cycles were clean" if report["publishable"]
                          else "HELD: a person must look" if report["held"]
-                         else f"CLEAN, held by mode: {streak + 1} of {CLEAN_CYCLES_BEFORE_PUBLISH} clean held cycles once this one is recorded")
+                         else f"CLEAN, held by mode: {streak + 1} of {CLEAN_CYCLES_BEFORE_PUBLISH} clean scheduled held cycles once this one is recorded" if report["trigger"] == SCHEDULED_TRIGGER
+                         else f"CLEAN, held by mode; started by {report['trigger']}, so it does not count toward the {CLEAN_CYCLES_BEFORE_PUBLISH} scheduled cycles ({streak} so far)")
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(report, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     cycles = load_cycles()
-    cycles.append({"startedAt": started, "finishedAt": report["finishedAt"], "mode": report["mode"], "clean": clean, "held": report["held"],
+    cycles.append({"startedAt": started, "finishedAt": report["finishedAt"], "mode": report["mode"], "trigger": report["trigger"], "clean": clean, "held": report["held"],
                    "reasons": report["reasons"], "anchorBefore": report["anchorBefore"], "anchorAfter": report.get("anchorAfter"),
                    "fetched": [f.get("source") for f in report["fetches"] if f.get("outcome") == "fetched"],
                    "reviewQueueOpen": report.get("reviewQueueOpen"), "publishable": report["publishable"]})

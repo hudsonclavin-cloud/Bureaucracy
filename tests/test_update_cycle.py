@@ -57,15 +57,40 @@ class ContentCheckTests(unittest.TestCase):
 
 
 class StreakTests(unittest.TestCase):
-    def test_three_consecutive_clean_held_cycles_are_needed(self):
+    def test_three_consecutive_clean_scheduled_held_cycles_are_needed(self):
         self.assertEqual(uc.clean_streak([]), 0)
-        clean = {"mode": "hold", "clean": True}
-        held = {"mode": "hold", "clean": False}
+        clean = {"mode": "hold", "clean": True, "trigger": "schedule"}
+        held = {"mode": "hold", "clean": False, "trigger": "schedule"}
         self.assertEqual(uc.clean_streak([clean, clean]), 2)
         self.assertEqual(uc.clean_streak([clean, clean, held]), 0)
         self.assertEqual(uc.clean_streak([held, clean, clean, clean]), 3)
         self.assertEqual(uc.CLEAN_CYCLES_BEFORE_PUBLISH, 3)
-        self.assertEqual(uc.clean_streak([{"mode": "publish", "clean": True}, clean]), 1)
+        self.assertEqual(uc.clean_streak([{"mode": "publish", "clean": True, "trigger": "schedule"}, clean]), 1)
+
+    def test_a_cycle_a_person_started_does_not_count_and_does_not_break_the_run(self):
+        clean = {"mode": "hold", "clean": True, "trigger": "schedule"}
+        for trigger in ("workflow_dispatch", "manual", None):
+            record = {"mode": "hold", "clean": True}
+            if trigger:
+                record["trigger"] = trigger
+            self.assertEqual(uc.clean_streak([record, record, record]), 0, trigger)
+            self.assertEqual(uc.clean_streak([clean, record, clean]), 2, trigger)
+        self.assertEqual(uc.clean_streak([clean, {"mode": "hold", "clean": False, "trigger": "workflow_dispatch"}, clean]), 2,
+                         "a held manual run says nothing about the schedule")
+
+    def test_the_run_records_what_started_it(self):
+        import os
+        saved = os.environ.get("GITHUB_EVENT_NAME")
+        try:
+            os.environ.pop("GITHUB_EVENT_NAME", None)
+            self.assertEqual(uc.trigger_of_this_run(), "manual")
+            os.environ["GITHUB_EVENT_NAME"] = "schedule"
+            self.assertEqual(uc.trigger_of_this_run(), uc.SCHEDULED_TRIGGER)
+        finally:
+            if saved is None:
+                os.environ.pop("GITHUB_EVENT_NAME", None)
+            else:
+                os.environ["GITHUB_EVENT_NAME"] = saved
 
 
 class PlanTests(unittest.TestCase):
@@ -123,6 +148,15 @@ class RebuildInputTests(unittest.TestCase):
         self.assertEqual(newest.name, dated[-1])
         source = Path(uc.__file__).read_text(encoding="utf-8")
         self.assertIn("rebuild_from = new_statement or newest_committed_statement()", source)
+
+    def test_the_schedule_fires_after_the_statements_latest_possible_publication(self):
+        import re
+        text = (PROJECT_ROOT / ".github" / "workflows" / "update_cycle.yml").read_text(encoding="utf-8")
+        match = re.search(r'cron:\s*"(\d+) (\d+) (\d+) \* \*"', text)
+        self.assertIsNotNone(match)
+        # The statement appears on the 8th business day: never later than the 13th.
+        self.assertGreaterEqual(int(match.group(3)), 14)
+        self.assertLessEqual(int(match.group(3)), 28, "every month has the day")
 
     def test_the_workflow_does_not_fail_when_the_repository_forbids_opening_the_pull_request(self):
         text = (PROJECT_ROOT / ".github" / "workflows" / "update_cycle.yml").read_text(encoding="utf-8")

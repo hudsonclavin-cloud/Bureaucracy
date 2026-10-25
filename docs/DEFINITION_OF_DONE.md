@@ -1,8 +1,9 @@
 # What "done" means for Bureaucracy
 
 Decided by the owner on 2026-10-21, in two rounds of multiple-choice questions.
-Every "today" figure below was measured on the published graph that day
-(`output/graph.json`, 5,510 nodes) by `scripts/validate_published_graph.py`,
+Every "today" figure below was last re-measured on 2026-10-25 on the published
+graph (`output/graph.json`, 5,512 nodes); the criteria sections keep the day each
+figure was first taken where the history matters by `scripts/validate_published_graph.py`,
 `scripts/report_cost_coverage.py`, `scripts/report_unpriced_positions.py`,
 `scripts/report_evidence_coverage.py` (criterion 3, since 2026-10-22) and
 `python scripts/nominate.py status --kind source`. Re-measure them with those
@@ -53,10 +54,11 @@ and the gate's "explained blanks" line counts the same set.
 
 | measure | today |
 |---|---|
-| measured cost | 172 nodes (99.0% of the anchor) |
-| estimate beside a sourced figure | 68 |
+| measured cost | 173 nodes (98.9% of the anchor) |
+| estimate beside a sourced figure | 83 |
 | committee/subcommittee estimate | 240 (40 committees carry disbursements) |
-| **bare estimate — the gap** | **373** |
+| explained blank (`costNoDocument`) | 359: 341 no held document names the unit, 18 named in one without a licensed figure |
+| **bare estimate — the gap** | **0** |
 
 **Route.**
 - The Combined Statement reviewed table (in progress; CURATION.md §22.6–22.7)
@@ -142,8 +144,9 @@ CURATION.md §23).
 | measure | today |
 |---|---|
 | current organisations | 870 |
-| with a verification method | 623 (71.6%) |
-| **without — the gap** | **247** |
+| with a verification method | 631 (72.5%) |
+| a recorded reason no document can be read (`verificationNoDocument`) | 166 |
+| **neither — the gap** | **40** |
 | organisations with no candidate page | 358 (of 890 incl. replaced/lines) |
 | queued page unreadable, no other method | 72 (42 hosts refuse the crawler) |
 | placement evidenced | 405 of 918 edges (44.1%) |
@@ -251,10 +254,18 @@ cycles** with no manual step and no bad publish.
 below (`--plan`, `--hold`, `--offline`; `--publish` refused until three clean held
 cycles are recorded in `data/audit/update_cycles.json`), with a per-source
 `contentCheck` for step 2 and `build_change_history.py` for step 5;
-`.github/workflows/update_cycle.yml` runs it in hold mode on the 12th of each
+`.github/workflows/update_cycle.yml` runs it in hold mode on the 16th of each
 month and on demand and opens a pull request, which a person merges to publish.
-No scheduled cycle has run yet; the three-cycle count starts when the workflow
-first fires (CURATION.md §30). `data_pipeline/scheduler/nightly_update.py` is
+Two cycles have run on GitHub's runner, both started by hand (CURATION.md
+§30.5, §30.6): the first exposed two defects in this repository's own work, the
+second came out clean. Neither counts. Each cycle records what started it
+(`trigger`), and the clean streak counts only cycles the SCHEDULE started, so
+the three-cycle count starts when the workflow first fires on the 16th
+(2026-11-16 is the first), and a person's dispatch neither adds to it nor
+breaks it. The reading of "three consecutive monthly cycles" used is the
+strict-but-cheaper one: three scheduled hold-mode cycles before the owner's
+switch to `--publish`; whether it means three more after the switch is the
+owner's to settle (CURATION.md §30.7). `data_pipeline/scheduler/nightly_update.py` is
 still not invoked.
 
 **What the job does, in order:**
@@ -374,15 +385,15 @@ settle publishes automatically, and everything that needs judgement is held.
 
 | # | criterion | target | today | gap |
 |---|---|---|---|---|
-| 1 | Money | 0 bare estimates | 373 | 373 |
+| 1 | Money | 0 bare estimates | 0 (359 explained blanks; 341 have no held document naming the unit) | 0 by the test; the 18 named-but-unlicensed rows are the route to more figures |
 | 2 | Pay | 0 posts unpriced and unexplained | 3,221 (every one with a documents-checked blank since 2026-10-22) | 3,221 |
-| 3 | Evidence | every current organisation sourced | 623 / 870 | 247 |
+| 3 | Evidence | every current organisation sourced | 631 with a method + 166 with a recorded reason, of 870 | 40: name questions and curation decisions |
 | 4a | Lists | every list unit reconciled | 403 of 403 unmatched entries disposed, 21 of 21 curated names resolved (2026-10-22) | 19: 3 unsure + 16 real units not yet added |
-| 4b | Money traced | every measured parent sums visibly | 57 of 57 measured units with parts show the sum; not attributed 0 (2026-10-22) | $2.88tn beneath 22 units is still apportioned to estimated children, now named |
+| 4b | Money traced | every measured parent sums visibly | 57 of 57 measured units with parts show the sum; not attributed 0 (2026-10-22) | $3.15tn beneath 22 units (September statement) is still apportioned to estimated children, now named |
 | R | Reader | four features | 4 of 4 (figures explain themselves; totals add up visibly; change history; export/download) | — |
-| 5 | Self-update | 3 clean automatic cycles | job and monthly hold-mode workflow built 2026-10-22; 0 scheduled cycles run | three clean cycles, then the owner's switch to --publish |
-| 6 | Freshness | registry + overdue flag | registry (27 sources) + overdue flag built 2026-10-22; 2 sources overdue today | the job that acts on "due" (criterion 5); cadences to tune |
-| 7 | Conflicts | review queue + change log | queue (53 open) and change log built 2026-10-22; withdrawals recorded with the document and why | the job that writes both each cycle (criterion 5) |
+| 5 | Self-update | 3 clean automatic cycles | job and monthly hold-mode workflow (the 16th, after the statement's latest possible publication) built 2026-10-22; run on GitHub's runner 2026-10-22 (clean); 0 SCHEDULED cycles counted — a cycle a person started proves the job works and is not counted | three clean scheduled cycles, then the owner's switch to --publish; earliest mid-January 2027 |
+| 6 | Freshness | registry + overdue flag | registry (27 sources) + overdue flag built 2026-10-22; 24 current, 2 overdue (FedScope, the AUSA pay chart) on 2026-10-25 | the job that acts on "due" (criterion 5); cadences to tune |
+| 7 | Conflicts | review queue + change log | queue (53 open) and change log built 2026-10-22; withdrawals recorded with the document and why; the change budget has six rules since 2026-10-25 (a build that read no statement is held) | the job that writes both each cycle (criterion 5) |
 
 The 3,221 in row 2 is the 3,333 positions with no pay figure, less the 112
 already explained.

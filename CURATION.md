@@ -7307,7 +7307,7 @@ the summary off the served file.
 `docs/DEFINITION_OF_DONE.md` criterion 5 names the job's six steps and a
 mitigation: for its first three cycles it runs in hold-everything mode and a
 person approves each publish. `scripts/update_cycle.py` is the job and
-`.github/workflows/update_cycle.yml` runs it on the 12th of each month and on
+`.github/workflows/update_cycle.yml` runs it on the 16th of each month and on
 demand.
 
 ### 30.1 What one cycle does
@@ -7512,3 +7512,61 @@ already carries the September statement (a vanished condition is closed,
 never deleted). `pipeline_stats.json` on the runner counts one node
 re-attached to the root (the receipts line) where the sandbox's counted none;
 the graph itself is equal, so the count describes how the build reached it.
+
+### 30.7 What counts as a cycle, and when the schedule fires (2026-10-25)
+
+Four changes to the job after the first two runs on the runner, with the reason
+for each:
+
+- **Only a scheduled cycle counts.** `update_cycles.json` records `trigger`
+  (GitHub's event name, `manual` elsewhere); `clean_streak` counts consecutive
+  clean held cycles whose trigger is `schedule`. A cycle somebody dispatched
+  proves the job works and is not the schedule keeping its appointment, so it
+  neither counts nor — it says nothing about the schedule — breaks the run; a
+  cycle from before the field existed has none and is not counted. The two
+  runner cycles of 2026-10-22 and the sandbox cycles are therefore 0 of 3.
+- **The 16th, not the 12th.** The Monthly Treasury Statement appears on the 8th
+  business day: the 12th or 13th in some months (November 2026, January 2027),
+  so a run on the 12th could precede the statement and leave the anchor a month
+  stale while reporting a clean cycle. The 16th follows it in every month; a test
+  pins the day at 14 or later. The registry's own 20-day lag for the statement
+  is unchanged.
+- **The carry-forward rebuild is the same graph.** A build handed no statement
+  dropped `attachToRoot` from the government-wide receipts line on the tree node
+  (the mark landed on the exported node list instead). `mark_government_wide_
+  receipts_attached` sets it after the tree is final, as `colour_treasury_lines`
+  does for colour. `tests/test_statementless_rebuild.py` rebuilds with no
+  statement and compares node for node with the published graph; the only
+  differences allowed are the root's registry block and the budget summary's
+  `reused_from_previous_build`.
+- **A sixth budget rule.** `rebuilt_without_a_statement` holds a build whose
+  budget summary says it carried the published lines forward when the committed
+  graph's did not. It would have caught the first run. The gate requires the
+  newest change-history entry to carry all six rules and accepts the original
+  five on older entries. Why a gap this size existed: every other rule compares
+  figures, and a carry-forward rebuild reproduces the figures; only a rule about
+  how the build was made could see it.
+
+Not settled here, because it is the owner's: whether "three consecutive monthly
+cycles with no manual step" means three hold-mode cycles (the earliest is the
+16th of November, December and January, so mid-January 2027) or three more
+after the switch to `--publish` (the earliest then is the spring). The code
+counts the first; changing the count to the second is one constant.
+
+Two more defects of the same family, found while re-recording the history to
+carry the sixth rule:
+
+- **Re-recording a build erased its entry.** `build_change_history.py --record`
+  replaced the entry sharing a build's timestamp. Run again after the build was
+  committed, it compares the graph with itself, so the September statement's
+  entry (anchor 2026-08-31 → 2026-09-30, 173 measured costs moved) was replaced
+  by "nothing changed". The first record now stands; `--replace` exists for an
+  entry recorded in error. Caught in the working tree before it was committed.
+- **The queue closed events nobody had reviewed.** A record of something a
+  build DID (a hold, a removal, a withdrawal, a measured cost that moved under a
+  new statement) closed when the next build, finding nothing, no longer
+  produced it; the first scheduled run closed seven this way, the September
+  moves, unreviewed. `EVENT_QUEUE_KINDS` stay open until a person resolves them;
+  the four condition kinds (a disagreement, a dispute, an unreadable page, an
+  overdue source) still close when the graph stops being in that state.
+  `tests/test_change_history.py` pins both directions.

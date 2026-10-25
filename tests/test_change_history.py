@@ -70,6 +70,57 @@ class DiffTests(unittest.TestCase):
         entry = ch.diff_graphs(before, after, built_at="2026-10-22T00:00:00Z")
         return {r["rule"]: r["tripped"] for r in entry["budget"]["rules"]}, entry
 
+    def test_a_build_that_read_no_statement_is_held_and_a_carried_forward_baseline_is_not_blamed_again(self):
+        base = small_graph()
+        after = copy.deepcopy(base); after["__budgetSummary"]["reused_from_previous_build"] = True
+        rules, entry = self._rules(base, after)
+        self.assertTrue(rules[ch.RULE_REBUILT_WITHOUT_STATEMENT]); self.assertTrue(entry["budget"]["held"])
+        self.assertFalse(rules[ch.RULE_NODE_COUNT]); self.assertFalse(rules[ch.RULE_MEASURED_SAME_STATEMENT])
+        rules, entry = self._rules(after, copy.deepcopy(after))
+        self.assertFalse(rules[ch.RULE_REBUILT_WITHOUT_STATEMENT], "blamed once, when it began")
+        rules, _ = self._rules(base, copy.deepcopy(base))
+        self.assertFalse(rules[ch.RULE_REBUILT_WITHOUT_STATEMENT])
+        self.assertEqual(ch.BUDGET_RULES[:5], ch.BUDGET_RULES_ORIGINAL)
+        self.assertEqual(tuple(gate.CHANGE_BUDGET_RULES), ch.BUDGET_RULES)
+
+    def test_the_gate_accepts_the_original_five_rules_only_on_an_entry_recorded_before_the_sixth_existed(self):
+        import tempfile
+        history = json.loads(HISTORY.read_text(encoding="utf-8"))
+        graph = json.loads(PUBLISHED.read_text(encoding="utf-8"))
+
+        def budget_violations(entries):
+            with tempfile.TemporaryDirectory() as tmp:
+                tmp = Path(tmp)
+                (tmp / "graph.json").write_text("{}", encoding="utf-8")
+                (tmp / "change_history.json").write_text(json.dumps(entries), encoding="utf-8")
+                return [v for v in gate.change_history_violations(graph, tmp / "graph.json", gate.label, QUEUE) if "budget rule" in v]
+
+        five = copy.deepcopy(history[0])
+        five["budget"]["rules"] = [r for r in five["budget"]["rules"] if r["rule"] in ch.BUDGET_RULES_ORIGINAL]
+        five["builtAt"] = "2026-10-22T08:00:00Z"
+        self.assertEqual(budget_violations([five, five]), [], "recorded before the sixth rule existed")
+        five["builtAt"] = gate.CHANGE_BUDGET_SIXTH_RULE_FROM + "T08:00:00Z"
+        self.assertTrue(budget_violations([five]), "recorded after it, so it must carry all six")
+        six = copy.deepcopy(five)
+        six["budget"]["rules"] = [{"rule": r, "tripped": False, "detail": "x"} for r in ch.BUDGET_RULES]
+        self.assertEqual(budget_violations([six]), [])
+
+    def test_an_event_record_stays_open_until_a_person_resolves_it_and_a_condition_record_closes(self):
+        today = "2026-10-25"
+        event = {"key": "e1", "kind": "measured_cost_moved_with_new_statement", "status": "open", "opened": "2026-10-22", "closed": None}
+        condition = {"key": "c1", "kind": "placement_directory_disagreement", "status": "open", "opened": "2026-10-22", "closed": None}
+        resolved = {"key": "e2", "kind": "node_removed", "status": "resolved", "resolution": "intended", "opened": "2026-10-20", "closed": None}
+        out = {r["key"]: r for r in ch.merge_queue([event, condition, resolved], [], today)}
+        self.assertEqual(out["e1"]["status"], "open", "the next build finds nothing, but nobody has looked")
+        self.assertEqual(out["c1"]["status"], "closed")
+        self.assertEqual(out["c1"]["closed"], today)
+        self.assertEqual(out["e2"]["status"], "resolved")
+        self.assertEqual(out["e2"]["resolution"], "intended")
+        for kind in ch.EVENT_QUEUE_KINDS:
+            self.assertIn(kind, ch.QUEUE_KINDS)
+        for kind in ("placement_directory_disagreement", "cost_weight_dispute", "verification_failure", "source_overdue"):
+            self.assertNotIn(kind, ch.EVENT_QUEUE_KINDS)
+
     def test_each_budget_rule_trips_on_its_own_case(self):
         base = small_graph()
         # the node count drops
