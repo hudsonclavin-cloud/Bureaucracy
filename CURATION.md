@@ -7547,7 +7547,7 @@ for each:
   figures, and a carry-forward rebuild reproduces the figures; only a rule about
   how the build was made could see it.
 
-Not settled here, because it is the owner's: whether "three consecutive monthly
+Settled on 2026-10-26 by the owner's delegation (§32.3): three scheduled hold-mode cycles. The question was whether "three consecutive monthly
 cycles with no manual step" means three hold-mode cycles (the earliest is the
 16th of November, December and January, so mid-January 2027) or three more
 after the switch to `--publish` (the earliest then is the spring). The code
@@ -7660,3 +7660,84 @@ committee lists they sort as follows:
 - **Eleven NSF divisions and five other units** (the House Chaplain, the Senate
   Sergeant at Arms, the Capitol Police's Protective Services Bureau, USSOCOM, the
   Eisenhower library). Each is a wording question answered one page at a time (§9, §10).
+
+### 32.3 The four decisions, taken on the owner's delegation (2026-10-26)
+
+The owner left the four decisions §32.2 and §30.7 named to this repository's
+judgement ("your prerogative"). Each is recorded with the alternative that was
+rejected, so a later reader can reverse it knowing what it cost.
+
+**Decision 1 — a complete list's silence does not supersede a subcommittee.**
+Rejected: marking the 17 stale subcommittees `superseded` on the strength of the
+Senate's or the House Clerk's list not carrying them. A supersession is a
+positive claim ("the government replaced this") and this file's rule is that it
+needs an official page that states it. A list that omits a body says the list
+does not carry it, which is also true of a body the list's maintainer never
+catalogued, and the Congress boundary is an inference this repository would be
+drawing, not reading. The 17 stay in the tree, keep the published negative
+("checked against the Senate's / House Clerk's official committee list: it
+carries no unit of this name") and carry a standing decision to keep the name,
+the `curatedNames` rows of `list_dispositions.json`. Cost: the graph keeps
+showing some previous-Congress bodies as current; a document that states a
+replacement (a committee's own page, a Congress.gov entry the allowlist can read)
+would move one to `supersededBy` row by row. What would change the decision: the
+owner accepting list silence plus the Congress boundary as a licence.
+
+**Decision 2 — a decision explains a negative, it never removes it, and it never
+evidences existence.** Rejected: dropping a read negative from criterion 3's gap
+for a grouping. The first reading ("a negative about a name the graph itself
+invented is uninformative") is true, but deleting the count would make the gap
+smaller by changing what is counted, which is the move this project refuses.
+`data/curation/name_decisions.json` (23 rows, each re-adjudicated by
+`data_pipeline/verification/name_decisions.py` on every run: the node must exist,
+still carry the name the row was written against, carry a basis, use a kind from
+the closed vocabulary, and still carry the negative it explains) holds two kinds:
+`graphs_own_grouping` (seven groupings no document is expected to print) and
+`page_prints_another_wording` (eleven NSF divisions, USSOCOM, the House Chaplain,
+the Senate Sergeant at Arms, the Capitol Police's Protective Services Bureau, the
+Eisenhower library; each quotes the page's own headline and URL). The node keeps
+`verificationFailure`, the panel keeps saying what was read, and
+`scripts/report_evidence_coverage.py` counts it in its own class,
+`decided_negative`, outside the gap. The gate mirrors the module stdlib-only
+(`name_decisions_standing`) and prints any stale row. Criterion 3 therefore reads
+**0 open** on 2026-10-26: 39 decided negatives (23 + the 16 `curatedNames`
+subcommittee rows that carry a negative), and the Southwest Border Regional
+Commission, the one node of the forty with no negative at all, recorded in the
+phase 1b ledger as `no_public_page_known`. The honest summary is "forty reasons",
+not "forty sources": none of the forty gained a verification method.
+
+**Decision 3 — "three consecutive monthly cycles" means three scheduled hold-mode
+cycles.** Rejected: three more cycles after the switch to `--publish`. The
+criterion's own text says the job runs "with no manual step and no bad publish";
+a hold-mode cycle that passes every check and opens a pull request is the whole
+job short of the merge, and the merge is the owner's approval point by design
+(§30.2). Waiting for three post-switch cycles would delay the finish line by a
+quarter while testing nothing the first three do not. Risk: a publish step that
+has never run unattended is exercised first on the fourth cycle. Mitigation: the
+fourth cycle's first publish still goes through the same change budget and the
+same gate, and `--publish` stays refused until the streak is three. The earliest
+completion is the third scheduled run, 2027-01-16. What would change it: a bad
+publish, or the owner preferring the stricter reading, which is one constant
+(`CLEAN_CYCLES_BEFORE_PUBLISH`) plus the streak rule.
+
+**Decision 4 — Amtrak and the Bureau of Indian Education.** Amtrak is disposed as
+`non_federal_or_international_body`: 49 U.S.C. 24301(a)(3) says it "is not a
+department, agency, or instrumentality of the United States Government"
+(committed at `tests/fixtures/uscode/amtrak_49_usc_24301_govinfo2024.html`, the
+GPO 2024 edition through the link service, digest recorded). Adding it as a
+node would assert the opposite of the statute, whatever the lists print. The
+Bureau of Indian Education is disposed as the new kind
+`carried_in_a_jointly_measured_node`, pointing at `exec-dept-doi-bia`: Table 5
+prints one row, "Bureau of Indian Affairs and Bureau of Indian Education", and
+the graph applies its $2.43bn to the existing Indian Affairs node; a separate
+node would add no measured figure and would take an apportioned share from a pool
+the statement reports for the two together (the guard of §13.4 refuses it for
+every licence). The kind counts as reconciled and does not hide the fact that the
+graph draws one node for two bodies. With both, criterion 4(a)'s gap is **3** (the
+three §13.6 unknowns: Defense Acquisition University and the Economics and
+Statistics Administration, the latter on two lists).
+
+Not decided here because it is not this repository's to decide: the repository
+setting "Allow GitHub Actions to create and approve pull requests". Without it
+each scheduled cycle ends with an `update/` branch and a compare link in the job
+summary instead of a pull request; the cycle still counts.

@@ -1,0 +1,218 @@
+{
+ "_comment": [
+  "Reviewed decisions to KEEP a name that an official document was read and does not carry — the third route DEFINITION_OF_DONE.md criterion 3 names beside a rename and a supersession.",
+  "A row is kept only while the node exists and still carries the name the row was written against; data_pipeline/verification/name_decisions.py refuses a stale row and the release gate mirrors the check.",
+  "A decision explains a negative; it does not remove it. The panel still says the page was read and does not carry the name. Nothing here is evidence that the unit exists.",
+  "Kinds: graphs_own_grouping (a grouping this graph made, which no document is expected to name); page_prints_another_wording (the page read headlines the unit in other words, quoted in `observed`).",
+  "The units whose curated name a complete committee list lacks are decided in list_dispositions.json (curatedNames), not here."
+ ],
+ "decisions": [
+  {
+   "nodeId": "exec-independent",
+   "name": "Independent Establishments & Government Corporations",
+   "kind": "graphs_own_grouping",
+   "basis": "The graph's own grouping of the independent establishments and government corporations; the government prints no body of that name, and the page read for it (NARA's presidential-libraries index) is a page about one of its children.",
+   "url": "https://www.archives.gov/presidential-libraries",
+   "observed": "Presidential Libraries and Museums of the National Archives | National Archives",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "jud-support",
+   "name": "Judicial Support Organizations",
+   "kind": "graphs_own_grouping",
+   "basis": "The graph's own grouping of the judicial branch's support organisations (the Administrative Office, the Federal Judicial Center, the Sentencing Commission); no official document names the set.",
+   "url": "https://www.uscourts.gov/about-federal-courts/defender-services",
+   "observed": "Defender Services",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "jud-specialized",
+   "name": "Specialized Federal Courts",
+   "kind": "graphs_own_grouping",
+   "basis": "The graph's own grouping of the specialized federal courts; uscourts.gov's 'Court Role and Structure' page, the page read for it, describes them and does not use this name.",
+   "url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
+   "observed": "Court Role and Structure",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "leg-support",
+   "name": "Congressional Support Agencies",
+   "kind": "graphs_own_grouping",
+   "basis": "The graph's own grouping of the congressional support agencies; the Government Manual and the agencies' own pages name the agencies, not the set.",
+   "url": "https://www.aoc.gov/explore-capitol-campus/buildings-grounds",
+   "observed": "Buildings & Grounds",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "leg-house-admin",
+   "name": "House Administrative Offices",
+   "kind": "graphs_own_grouping",
+   "basis": "The graph's own grouping of the House's officers and administrative offices; house.gov's 'Officers and Organizations of the House' lists them under that heading, not under this name.",
+   "url": "https://www.house.gov/the-house-explained/officers-and-organizations",
+   "observed": "Officers and Organizations of the House",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "leg-house-committees",
+   "name": "House Committees",
+   "kind": "graphs_own_grouping",
+   "basis": "The graph's own grouping of the House's committees; the Clerk's list prints each committee and no body that contains them all.",
+   "url": "https://rules.house.gov/about/subcommittees",
+   "observed": "Subcommittees",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "leg-senate-admin",
+   "name": "Senate Administrative Offices",
+   "kind": "graphs_own_grouping",
+   "basis": "The graph's own grouping of the Senate's officers and administrative offices; senate.gov's 'Officers and Staff' page lists them under that heading, not under this name.",
+   "url": "https://www.senate.gov/about/officers-staff.htm",
+   "observed": "Officers and Staff",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "exec-ind-nsf-computer-information-science-engineering-cise-information-intelligent-systems",
+   "name": "Division of Information & Intelligent Systems",
+   "kind": "page_prints_another_wording",
+   "basis": "NSF's own page for this unit (https://www.nsf.gov/cise) was read and headlines it 'Directorate for Computer and Information Science and Engineering (CISE)', the site's directorate-prefix convention, not the division's name as the graph writes it. The graph keeps the organisation-chart name; a rename to the site's heading would give the unit a name no NSF organisation chart uses (CURATION.md §9 declined the same case for the MPS divisions).",
+   "url": "https://www.nsf.gov/cise",
+   "observed": "Directorate for Computer and Information Science and Engineering (CISE)",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "exec-ind-nsf-engineering-eng-civil-mechanical-manufacturing-innovation",
+   "name": "Division of Civil, Mechanical & Manufacturing Innovation",
+   "kind": "page_prints_another_wording",
+   "basis": "NSF's own page for this unit (https://www.nsf.gov/eng/civil-mechanical-manufacturing-innovation) was read and headlines it 'ENG Civil, Mechanical, and Manufacturing Innovation', the site's directorate-prefix convention, not the division's name as the graph writes it. The graph keeps the organisation-chart name; a rename to the site's heading would give the unit a name no NSF organisation chart uses (CURATION.md §9 declined the same case for the MPS divisions).",
+   "url": "https://www.nsf.gov/eng/civil-mechanical-manufacturing-innovation",
+   "observed": "ENG Civil, Mechanical, and Manufacturing Innovation",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "exec-ind-nsf-engineering-eng-electrical-communications-cyber-systems",
+   "name": "Division of Electrical, Communications & Cyber Systems",
+   "kind": "page_prints_another_wording",
+   "basis": "NSF's own page for this unit (https://www.nsf.gov/div/index.jsp?div=ECCS) was read and headlines it 'ENG Electrical, Communications and Computing Systems', the site's directorate-prefix convention, not the division's name as the graph writes it. The graph keeps the organisation-chart name; a rename to the site's heading would give the unit a name no NSF organisation chart uses (CURATION.md §9 declined the same case for the MPS divisions).",
+   "url": "https://www.nsf.gov/div/index.jsp?div=ECCS",
+   "observed": "ENG Electrical, Communications and Computing Systems",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "exec-ind-nsf-geosciences-geo-atmospheric-geospace-sciences",
+   "name": "Division of Atmospheric & Geospace Sciences",
+   "kind": "page_prints_another_wording",
+   "basis": "NSF's own page for this unit (https://www.nsf.gov/geo/core-geoscience-research) was read and headlines it 'Core Geoscience Research', the site's directorate-prefix convention, not the division's name as the graph writes it. The graph keeps the organisation-chart name; a rename to the site's heading would give the unit a name no NSF organisation chart uses (CURATION.md §9 declined the same case for the MPS divisions).",
+   "url": "https://www.nsf.gov/geo/core-geoscience-research",
+   "observed": "Core Geoscience Research",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "exec-ind-nsf-geosciences-geo-ocean-sciences",
+   "name": "Division of Ocean Sciences",
+   "kind": "page_prints_another_wording",
+   "basis": "NSF's own page for this unit (https://www.nsf.gov/geo) was read and headlines it 'Directorate for Geosciences (GEO)', the site's directorate-prefix convention, not the division's name as the graph writes it. The graph keeps the organisation-chart name; a rename to the site's heading would give the unit a name no NSF organisation chart uses (CURATION.md §9 declined the same case for the MPS divisions).",
+   "url": "https://www.nsf.gov/geo",
+   "observed": "Directorate for Geosciences (GEO)",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "leg-house-chaplain",
+   "name": "House Chaplain",
+   "kind": "page_prints_another_wording",
+   "basis": "The Chaplain's own site (https://chaplain.house.gov/) headlines 'The Office of the Chaplain United States House of Representatives'. The graph's 'House Chaplain' is the office under the Clerk's and the House's own listing; the page's wording is longer and is not a label of the graph's name.",
+   "url": "https://chaplain.house.gov/",
+   "observed": "The Office of the Chaplain United States House of Representatives",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "exec-ind-nsf-mathematical-physical-sciences-mps-astronomical-sciences",
+   "name": "Division of Astronomical Sciences",
+   "kind": "page_prints_another_wording",
+   "basis": "NSF's own page for this unit (https://www.nsf.gov/mps/astronomical-sciences) was read and headlines it 'MPS Astronomical Sciences', the site's directorate-prefix convention, not the division's name as the graph writes it. The graph keeps the organisation-chart name; a rename to the site's heading would give the unit a name no NSF organisation chart uses (CURATION.md §9 declined the same case for the MPS divisions).",
+   "url": "https://www.nsf.gov/mps/astronomical-sciences",
+   "observed": "MPS Astronomical Sciences",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "exec-ind-nsf-mathematical-physical-sciences-mps-chemistry",
+   "name": "Division of Chemistry",
+   "kind": "page_prints_another_wording",
+   "basis": "NSF's own page for this unit (https://www.nsf.gov/mps/chemistry) was read and headlines it 'MPS Chemistry', the site's directorate-prefix convention, not the division's name as the graph writes it. The graph keeps the organisation-chart name; a rename to the site's heading would give the unit a name no NSF organisation chart uses (CURATION.md §9 declined the same case for the MPS divisions).",
+   "url": "https://www.nsf.gov/mps/chemistry",
+   "observed": "MPS Chemistry",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "exec-ind-nsf-mathematical-physical-sciences-mps-materials-research",
+   "name": "Division of Materials Research",
+   "kind": "page_prints_another_wording",
+   "basis": "NSF's own page for this unit (https://www.nsf.gov/mps/materials-research) was read and headlines it 'MPS Materials Research', the site's directorate-prefix convention, not the division's name as the graph writes it. The graph keeps the organisation-chart name; a rename to the site's heading would give the unit a name no NSF organisation chart uses (CURATION.md §9 declined the same case for the MPS divisions).",
+   "url": "https://www.nsf.gov/mps/materials-research",
+   "observed": "MPS Materials Research",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "exec-ind-nsf-mathematical-physical-sciences-mps-mathematical-sciences",
+   "name": "Division of Mathematical Sciences",
+   "kind": "page_prints_another_wording",
+   "basis": "NSF's own page for this unit (https://www.nsf.gov/mps/mathematical-sciences) was read and headlines it 'MPS Mathematical Sciences', the site's directorate-prefix convention, not the division's name as the graph writes it. The graph keeps the organisation-chart name; a rename to the site's heading would give the unit a name no NSF organisation chart uses (CURATION.md §9 declined the same case for the MPS divisions).",
+   "url": "https://www.nsf.gov/mps/mathematical-sciences",
+   "observed": "MPS Mathematical Sciences",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "exec-ind-nsf-mathematical-physical-sciences-mps-physics",
+   "name": "Division of Physics",
+   "kind": "page_prints_another_wording",
+   "basis": "NSF's own page for this unit (https://www.nsf.gov/mps/physics) was read and headlines it 'MPS Physics', the site's directorate-prefix convention, not the division's name as the graph writes it. The graph keeps the organisation-chart name; a rename to the site's heading would give the unit a name no NSF organisation chart uses (CURATION.md §9 declined the same case for the MPS divisions).",
+   "url": "https://www.nsf.gov/mps/physics",
+   "observed": "MPS Physics",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks",
+   "name": "Dwight D. Eisenhower Presidential Library and Museum (Abilene, KS)",
+   "kind": "page_prints_another_wording",
+   "basis": "The library's own site (https://www.eisenhowerlibrary.gov/) headlines 'Eisenhower Presidential Library - Home', the short form, while NARA's directory page lists the longer name the graph carries; the rule that an own-page negative is never overwritten by a parent's listing (CLAUDE.md, existence evidence) stands, so the negative stays and the name is kept.",
+   "url": "https://www.eisenhowerlibrary.gov/",
+   "observed": "Eisenhower Presidential Library - Home",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "leg-senate-admin-saa",
+   "name": "Sergeant at Arms of the Senate",
+   "kind": "page_prints_another_wording",
+   "basis": "The Senate's page for the office (https://www.senate.gov/about/officers-staff/sergeant-at-arms.htm) headlines 'About the Sergeant at Arms', which names the office with the verb phrase of the page, not as a label of the graph's name.",
+   "url": "https://www.senate.gov/about/officers-staff/sergeant-at-arms.htm",
+   "observed": "About the Sergeant at Arms",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "exec-ind-nsf-technology-innovation-partnerships-tip-directorate-for-tip-programs",
+   "name": "Division of Directorate for TIP Programs",
+   "kind": "page_prints_another_wording",
+   "basis": "NSF's own page for this unit (https://www.nsf.gov/tip) was read and headlines it 'Technology, Innovation and Partnerships', the site's directorate-prefix convention, not the division's name as the graph writes it. The graph keeps the organisation-chart name; a rename to the site's heading would give the unit a name no NSF organisation chart uses (CURATION.md §9 declined the same case for the MPS divisions).",
+   "url": "https://www.nsf.gov/tip",
+   "observed": "Technology, Innovation and Partnerships",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "leg-support-uscp-protective-services-bureau",
+   "name": "Protective Services Bureau",
+   "kind": "page_prints_another_wording",
+   "basis": "The Capitol Police's page read for the Bureau (https://www.uscp.gov/the-department/our-mission) is its mission page, headlined 'Mission & History', and does not label the Bureau; no page read here labels it, and the unit is the graph's own subdivision.",
+   "url": "https://www.uscp.gov/the-department/our-mission",
+   "observed": "Mission & History",
+   "addedOn": "2026-10-26"
+  },
+  {
+   "nodeId": "exec-dept-defense-cocom-ussocom",
+   "name": "USSOCOM — Special Operations Command",
+   "kind": "page_prints_another_wording",
+   "basis": "USSOCOM's own site (https://www.socom.mil/) headlines itself '​USSOCOM Ignite Truly Joint, Expanding Opportunities​​​​​​'. The graph's name carries a dash-and-expansion typography no page prints; the unit is not in doubt and the wording is the graph's own convention, kept pending a rename the page would have to label.",
+   "url": "https://www.socom.mil/",
+   "observed": "​USSOCOM Ignite Truly Joint, Expanding Opportunities​​​​​​",
+   "addedOn": "2026-10-26"
+  }
+ ]
+}

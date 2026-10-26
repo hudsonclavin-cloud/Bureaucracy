@@ -51,6 +51,12 @@ The vocabulary, and what each kind claims:
 - `non_federal_or_international_body` -- a body that is not a unit of the
   federal government (an international organisation, an interstate compact,
   a federally chartered private corporation).
+- `carried_in_a_jointly_measured_node` -- a real unit the Treasury reports on
+  one Table 5 line together with a unit the graph already draws (the Bureau of
+  Indian Education with the Bureau of Indian Affairs). A node of its own would
+  take an apportioned share out of a pool the statement measures for the two
+  together, so the graph carries it in that node; the node is required. It is
+  a statement about how the money is reported, not about where the unit sits.
 - `fund_or_account_not_a_unit` -- an appropriation account or trust fund a
   list reports beside its agencies.
 - `unit_the_list_names_not_added` -- a real unit the graph lacks, recorded
@@ -109,6 +115,7 @@ KINDS = {
     "umbrella_body_drawn_as_its_members": (False, False, False, KIND_RECONCILED),
     "body_outside_the_graphs_scope": (False, False, False, KIND_RECONCILED),
     "non_federal_or_international_body": (False, False, False, KIND_RECONCILED),
+    "carried_in_a_jointly_measured_node": (True, False, False, KIND_RECONCILED),
     "fund_or_account_not_a_unit": (False, False, False, KIND_RECONCILED),
     "unit_the_list_names_not_added": (False, False, False, KIND_ADDABLE),
     "unsure": (False, False, False, KIND_UNRESOLVED),

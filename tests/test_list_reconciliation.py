@@ -70,7 +70,13 @@ class ListTests(unittest.TestCase):
         # one unit named by three lists counts once
         addable = distinct_addable(_Shared.result)
         self.assertEqual(len(addable), terms["addableUnits"])
-        self.assertTrue(any(len(v) >= 2 for v in addable.values()), "Amtrak is named by two lists and counts once")
+        # one unit named by two lists counts once (Amtrak did until it was
+        # disposed of as non-federal; the rule is pinned on a synthetic result)
+        synthetic = {"lists": [
+            {"id": "a", "addable": ["X Agency"], "rows": {"X Agency": {"unitKey": "x"}}},
+            {"id": "b", "addable": ["Y :: X Agency Inc"], "rows": {"Y :: X Agency Inc": {"unitKey": "x"}}},
+        ]}
+        self.assertEqual({k: len(v) for k, v in distinct_addable(synthetic).items()}, {"x": 2})
 
     def test_the_vocabulary_is_closed_and_every_kind_declares_its_count(self):
         for kind, spec in ld.KINDS.items():

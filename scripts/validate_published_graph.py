@@ -10926,6 +10926,53 @@ def review_queue_expected_keys(graph):
     return keys
 
 
+NAME_DECISIONS_TABLE = PROJECT_ROOT / "data" / "curation" / "name_decisions.json"
+NAME_DECISIONS_DISPOSITIONS = PROJECT_ROOT / "data" / "curation" / "list_dispositions.json"
+NAME_DECISION_KINDS = ("graphs_own_grouping", "page_prints_another_wording")
+
+
+def name_decisions_standing(nodes):
+    """Mirror of data_pipeline.verification.name_decisions.decided_ids, stdlib only:
+    (ids of nodes a standing decision explains, {id: why} for rows that do not stand)."""
+    def collapse(text):
+        return " ".join(str(text or "").split())
+
+    def load(path):
+        try:
+            data = json.loads(Path(path).read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            return {}
+        return data if isinstance(data, dict) else {}
+
+    rows = {}
+    for row in load(NAME_DECISIONS_DISPOSITIONS).get("curatedNames") or []:
+        if isinstance(row, dict) and row.get("nodeId"):
+            rows[str(row["nodeId"])] = (collapse(row.get("name")), str(row.get("disposition") or ""), collapse(row.get("basis")), "list_dispositions")
+    for row in load(NAME_DECISIONS_TABLE).get("decisions") or []:
+        if isinstance(row, dict) and row.get("nodeId"):
+            rows[str(row["nodeId"])] = (collapse(row.get("name")), str(row.get("kind") or ""), collapse(row.get("basis")), "name_decisions")
+    by_id = {str(n.get("id")): n for n in nodes}
+    standing, stale = set(), {}
+    for node_id, (name, kind, basis, source) in rows.items():
+        node = by_id.get(node_id)
+        if node is None:
+            why = "the node is not in the graph"
+        elif collapse(node.get("name")) != name:
+            why = "the node no longer carries the name the row was written against"
+        elif not basis:
+            why = "a decision with no basis is an assertion"
+        elif source == "name_decisions" and kind not in NAME_DECISION_KINDS:
+            why = "kind " + repr(kind) + " is not in the vocabulary"
+        elif not node.get("verificationFailure"):
+            why = "the node carries no negative for the decision to explain"
+        else:
+            standing.add(node_id)
+            continue
+        if node is not None and node.get("verificationFailure"):
+            stale[node_id] = why
+    return standing, stale
+
+
 def change_history_violations(graph, graph_path, label, queue_path=REVIEW_QUEUE_PATH):
     out = []
     history_path = Path(graph_path).parent / CHANGE_HISTORY_FILENAME
@@ -13202,8 +13249,16 @@ def main(argv):
     # report (scripts/report_evidence_coverage.py) counts the same set.
     neither = [n for n in current_orgs if not n.get("verificationMethod") and not isinstance(n.get("verificationUnread"), dict)
                and (n.get("verificationFailure") or not isinstance(n.get(NO_DOCUMENT_FIELD), dict))]
-    print("  evidence gap         : {:,} of {:,} current organisations carry neither a verification method nor a recorded reason, or were checked and not found (criterion 3)".format(
-        len(neither), len(current_orgs)))
+    # A negative beside a standing reviewed decision to keep the name is decided
+    # rather than open (the third route criterion 3 names, beside a rename and a
+    # supersession). It is still published as a negative; only the count differs.
+    standing, stale_decisions = name_decisions_standing(nodes)
+    decided_negatives = [n for n in neither if n.get("verificationFailure") and str(n.get("id")) in standing]
+    open_negatives = [n for n in neither if n not in decided_negatives]
+    print("  evidence gap         : {:,} of {:,} current organisations carry neither a verification method nor a recorded reason, or were checked and not found and left undecided (criterion 3); {:,} more were checked and not found and carry a standing decision to keep the name".format(
+        len(open_negatives), len(current_orgs), len(decided_negatives)))
+    if stale_decisions:
+        print("  stale decisions      : {:,} decision row(s) no longer stand against the graph: {}".format(len(stale_decisions), sorted(stale_decisions)[:5]))
     # Positions are 85% of this graph and carried no evidence of any kind
     # until 2026-09-15, so their coverage is reported on its own line rather
     # than buried in a total the organisations dominate.

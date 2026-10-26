@@ -13,8 +13,9 @@ never a finding about the unit; every panel says which.
 
 - current organisations: **884**
 - with a verification method: **645** (73.0%)
-- with a recorded reason no official document can be read: **199**
-- **criterion 3 gap — neither: 40**
+- with a recorded reason no official document can be read: **200**
+- checked and not found, with a standing decision to keep the name: **39**
+- **criterion 3 gap — neither: 0**
 
 | class | organisations | what it means | route |
 |---|---|---|---|
@@ -25,12 +26,13 @@ never a finding about the unit; every panel says which.
 | Recorded reason — the name is one common word | 7 | `verificationNoDocument.kind: name_too_generic`: a one-token name a page may use without naming the unit ("Defense", "Districts (multiple)"), refused by the verifier's floor before any fetch. | A rename to the wording the parent's page carries, where the page carries a fuller one. |
 | Recorded reason — the graph's own grouping | 20 | `verificationNoDocument.kind: editorial_grouping`: the phase 1b nomination ledger's latest record for the node declines a page because the node is this graph's organising header ("Joint Congressional Bodies", "Judicial Support Organizations"), which no official page names. The ledger's note is quoted on the panel. | None by evidence: a grouping is curation. Dissolving or renaming it is a curation decision. |
 | Recorded reason — no page of its own; the parent's is the check | 0 | `verificationNoDocument.kind: covered_by_parent`: the ledger's latest record says the unit has no page of its own and its parent's page is the right place to look — and that page does not label it. | A rename to what the parent's page calls it, or a page of its own if one appears. |
-| Recorded reason — no official page could be named | 7 | `verificationNoDocument.kind: no_public_page_known`: a real unit for which the nomination pass, with network, could name no official page at all (the Office of the Attending Physician; the NSC's directorates). | A document that names it: the Government Manual, a directory, a statute committed as a fixture. The page route is exhausted for these. |
+| Recorded reason — no official page could be named | 8 | `verificationNoDocument.kind: no_public_page_known`: a real unit for which the nomination pass, with network, could name no official page at all (the Office of the Attending Physician; the NSC's directorates). | A document that names it: the Government Manual, a directory, a statute committed as a fixture. The page route is exhausted for these. |
 | Recorded reason — its site is not on a .gov or .mil host | 29 | `verificationNoDocument.kind: not_on_a_gov_host`: the unit's site exists and is on a host this verifier does not read (si.edu for the Smithsonian's museums, usps.com for the Postal Service's areas, cpb.org). A fact about the policy, recorded so it does not read as "nobody looked". | An owner's decision to admit a named non-.gov host for a named unit, as `politeness.STANDARD_4XX_HOSTS` admits two hosts to a different rule; or a .gov document that names the unit (the Smithsonian's museums appear in no committed list). |
 | Recorded reason — the host that would carry it refuses this crawler | 29 | `verificationNoDocument.kind: host_refuses_crawler`: no page was queued for the node itself, and the ledger's probe found the only host that would carry it answering 401/403 (gao.gov for GAO's mission teams, state.gov for State's bureaus, the .mil hosts for the combatant commands). The probe's URL and verdict ride on the record. | The same as `unread/host_refuses_crawler`: a different document, never that host. |
 | Recorded reason — the page was read and does not carry the graph's name | 24 | `verificationNoDocument.kind: page_read_does_not_name_it`: the ledger's probe read the page that would name it and the graph's wording is not a label on it (NSF's divisions, whose pages label "Mathematical Sciences" where the graph says "Division of Mathematical Sciences"; the Department of Education's regions). A question about the NAME, not about whether the unit exists. | A reviewed row in `data/curation/unit_renames.json` where the page's wording names the same unit (`CURATION.md` §9), re-tested against the live page on every run; or a recorded refusal to rename, where the page's label is a breadcrumb rather than the unit's name. |
-| Gap — checked and not found | 39 | `verificationFailure`: the unit's own page or a complete official list was read and does not carry the name. A real negative about the graph's wording, not a reason no document can be read — a document was read — so it counts against criterion 3 until the name is fixed, the unit superseded, or the name kept with its reason in CURATION.md. Where the nomination ledger also declines a page for the node, the panel prints the negative, which a reader can audit against its URL. | A rename to the document's wording (`unit_renames.json`), a supersession, or a recorded decision to keep the name. |
-| Gap — no method, no unread page and no recorded reason | 1 | Nothing is published about this unit's existence and the nomination ledger's latest record for it NOMINATES a page (so no reason applies) or is missing. The page is queued or queueable and has not confirmed the unit. | Run the verifier on the queued page; where the page labels a different wording, a reviewed rename (`CURATION.md` §9). |
+| Decided — checked and not found, the name kept with its reason | 39 | `verificationFailure` beside a standing reviewed decision to keep the name: a grouping this graph made, a unit whose own page headlines it in other words (the headline quoted), or a curated committee name a complete list does not carry (`data/curation/name_decisions.json`, the `curatedNames` rows of `list_dispositions.json`). The negative is still published and the panel still says what was read; the decision explains it and is not evidence that the unit exists. | A rename or a supersession where a document states one; otherwise the decision stands and is re-adjudicated on every run (the node must still carry the name the row was written against). |
+| Gap — checked and not found | 0 | `verificationFailure`: the unit's own page or a complete official list was read and does not carry the name. A real negative about the graph's wording, not a reason no document can be read — a document was read — so it counts against criterion 3 until the name is fixed, the unit superseded, or the name kept with its reason in CURATION.md. Where the nomination ledger also declines a page for the node, the panel prints the negative, which a reader can audit against its URL. | A rename to the document's wording (`unit_renames.json`), a supersession, or a recorded decision to keep the name. |
+| Gap — no method, no unread page and no recorded reason | 0 | Nothing is published about this unit's existence and the nomination ledger's latest record for it NOMINATES a page (so no reason applies) or is missing. The page is queued or queueable and has not confirmed the unit. | Run the verifier on the queued page; where the page labels a different wording, a reviewed rename (`CURATION.md` §9). |
 
 ## Where the recorded reasons and the gap sit
 
@@ -43,42 +45,42 @@ taken a parent at a time:
 | Department of State | 16 | 1 | 0 |
 | National Security Council | 17 | 0 | 0 |
 | Mission Teams (15) | 0 | 15 | 0 |
-| Unified Combatant Commands (11) | 7 | 3 | 1 |
+| Unified Combatant Commands (11) | 7 | 4 | 0 |
 | Department of Education | 0 | 10 | 0 |
 | Analytical Divisions | 0 | 8 | 0 |
-| U.S. Capitol Police | 0 | 6 | 1 |
+| U.S. Capitol Police | 0 | 7 | 0 |
 | U.S. Postal Service (USPS) | 0 | 7 | 0 |
 | Office of Management and Budget (OMB) | 6 | 0 | 0 |
 | Department of Justice (DOJ) | 3 | 2 | 0 |
-| Mathematical & Physical Sciences (MPS) | 0 | 0 | 5 |
+| Mathematical & Physical Sciences (MPS) | 0 | 5 | 0 |
 | Defense Agencies & Field Activities | 4 | 0 | 0 |
 | Department of Defense (DoD) | 3 | 1 | 0 |
-| Directorate for Engineering (ENG) | 0 | 2 | 2 |
+| Directorate for Engineering (ENG) | 0 | 4 | 0 |
 | Military Departments & Services | 4 | 0 | 0 |
-| Senate Committee on Commerce, Science & Transportation | 0 | 0 | 4 |
-| United States House of Representatives | 0 | 2 | 2 |
+| Senate Committee on Commerce, Science & Transportation | 0 | 4 | 0 |
+| United States House of Representatives | 0 | 4 | 0 |
 | Department of Housing & Urban Development (HUD) | 3 | 0 | 0 |
-| Directorate for Geosciences (GEO) | 0 | 1 | 2 |
-| Executive Branch | 2 | 0 | 1 |
+| Directorate for Geosciences (GEO) | 0 | 3 | 0 |
+| Executive Branch | 2 | 1 | 0 |
 | Government Publishing Office (GPO) | 0 | 3 | 0 |
-| House Administrative Offices | 0 | 2 | 1 |
-| Senate Administrative Offices | 0 | 2 | 1 |
+| House Administrative Offices | 0 | 3 | 0 |
+| Senate Administrative Offices | 0 | 3 | 0 |
 | Department of Homeland Security (DHS) | 2 | 0 | 0 |
 | Independent Establishments & Government Corporations | 0 | 2 | 0 |
-| Judicial Branch | 0 | 0 | 2 |
-| Legislative Branch | 0 | 1 | 1 |
-| Other Independent Agencies (25+) | 0 | 1 | 1 |
+| Judicial Branch | 0 | 2 | 0 |
+| Legislative Branch | 0 | 2 | 0 |
+| Other Independent Agencies (25+) | 0 | 2 | 0 |
 | Social Security Administration (SSA) | 2 | 0 | 0 |
-| United States Senate | 0 | 1 | 1 |
+| United States Senate | 0 | 2 | 0 |
 | Architect of the Capitol | 0 | 1 | 0 |
 | Central Intelligence Agency (CIA) | 0 | 1 | 0 |
-| Computer & Information Science & Engineering (CISE) | 0 | 0 | 1 |
+| Computer & Information Science & Engineering (CISE) | 0 | 1 | 0 |
 | Congressional Budget Office (CBO) | 1 | 0 | 0 |
 | Directorate for STEM Education (EDU) | 0 | 1 | 0 |
 | Environmental Protection Agency (EPA) | 0 | 1 | 0 |
 | Executive Office of the President (EOP) | 0 | 1 | 0 |
 | Government Accountability Office (GAO) | 0 | 1 | 0 |
-| House Committee on Agriculture | 0 | 0 | 1 |
+| House Committee on Agriculture | 0 | 1 | 0 |
 
 ---
 
@@ -247,7 +249,7 @@ taken a parent at a time:
 **Route.** A rename to what the parent's page calls it, or a page of its own if one appears.
 
 
-## Recorded reason — no official page could be named — 7
+## Recorded reason — no official page could be named — 8
 
 `verificationNoDocument.kind: no_public_page_known`: a real unit for which the nomination pass, with network, could name no official page at all (the Office of the Attending Physician; the NSC's directorates).
 
@@ -257,6 +259,7 @@ taken a parent at a time:
 - `exec-dept-ed-region-iii-mid-atlantic` — Dept of Education Region III — Mid-Atlantic (Regional Office; under Department of Education)
 - `exec-dept-ed-region-vii-plains` — Dept of Education Region VII — Plains (Regional Office; under Department of Education)
 - `leg-house-physician` — Office of the Attending Physician (Office; under House Administrative Offices)
+- `exec-ind-misc-southwest-border-regional-commission` — Southwest Border Regional Commission (Independent Agency; under Other Independent Agencies (25+))
 - `leg-senate-admin-legal` — Office of Senate Legal Counsel (Office; under Senate Administrative Offices)
 - `leg-senate-admin-physician` — Office of the Senate Physician (Office; under Senate Administrative Offices)
 - `leg-support-uscp-communications-division` — Communications Division (Bureau; under U.S. Capitol Police)
@@ -364,11 +367,11 @@ taken a parent at a time:
 - `leg-support-uscp-patrol-mobile-response-bureau` — Patrol & Mobile Response Bureau (Bureau; under U.S. Capitol Police) — probed www.uscp.gov
 - `leg-house-leadership` — House Leadership (Division; under United States House of Representatives) — probed www.house.gov
 
-## Gap — checked and not found — 39
+## Decided — checked and not found, the name kept with its reason — 39
 
-`verificationFailure`: the unit's own page or a complete official list was read and does not carry the name. A real negative about the graph's wording, not a reason no document can be read — a document was read — so it counts against criterion 3 until the name is fixed, the unit superseded, or the name kept with its reason in CURATION.md. Where the nomination ledger also declines a page for the node, the panel prints the negative, which a reader can audit against its URL.
+`verificationFailure` beside a standing reviewed decision to keep the name: a grouping this graph made, a unit whose own page headlines it in other words (the headline quoted), or a curated committee name a complete list does not carry (`data/curation/name_decisions.json`, the `curatedNames` rows of `list_dispositions.json`). The negative is still published and the panel still says what was read; the decision explains it and is not evidence that the unit exists.
 
-**Route.** A rename to the document's wording (`unit_renames.json`), a supersession, or a recorded decision to keep the name.
+**Route.** A rename or a supersession where a document states one; otherwise the decision stands and is re-adjudicated on every run (the node must still carry the name the row was written against).
 
 - `exec-ind-nsf-computer-information-science-engineering-cise-information-intelligent-systems` — Division of Information & Intelligent Systems (Division; under Computer & Information Science & Engineering (CISE)) — not_found
 - `exec-ind-nsf-engineering-eng-civil-mechanical-manufacturing-innovation` — Division of Civil, Mechanical & Manufacturing Innovation (Division; under Directorate for Engineering (ENG)) — probed www.nsf.gov
@@ -410,11 +413,17 @@ taken a parent at a time:
 - `leg-senate-admin` — Senate Administrative Offices (Division; under United States Senate) — probed www.senate.gov
 - `leg-senate-cmte-judiciary-sub-human-rights-the-law` — Human Rights & the Law (Subcommittee; under United States Senate Committee on the Judiciary) — probed www.judiciary.senate.gov
 
-## Gap — no method, no unread page and no recorded reason — 1
+## Gap — checked and not found — 0
+
+`verificationFailure`: the unit's own page or a complete official list was read and does not carry the name. A real negative about the graph's wording, not a reason no document can be read — a document was read — so it counts against criterion 3 until the name is fixed, the unit superseded, or the name kept with its reason in CURATION.md. Where the nomination ledger also declines a page for the node, the panel prints the negative, which a reader can audit against its URL.
+
+**Route.** A rename to the document's wording (`unit_renames.json`), a supersession, or a recorded decision to keep the name.
+
+
+## Gap — no method, no unread page and no recorded reason — 0
 
 Nothing is published about this unit's existence and the nomination ledger's latest record for it NOMINATES a page (so no reason applies) or is missing. The page is queued or queueable and has not confirmed the unit.
 
 **Route.** Run the verifier on the queued page; where the page labels a different wording, a reviewed rename (`CURATION.md` §9).
 
-- `exec-ind-misc-southwest-border-regional-commission` — Southwest Border Regional Commission (Independent Agency; under Other Independent Agencies (25+))
 

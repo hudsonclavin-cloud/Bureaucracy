@@ -9,6 +9,7 @@ import unittest
 from pathlib import Path
 
 from data_pipeline.verification.no_document import FIELD, is_current_organisation
+from data_pipeline.verification import name_decisions
 from scripts.report_evidence_coverage import CLASSES, GAP_CLASSES, ROOT_ID, classify, collect, render, walk
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -42,12 +43,15 @@ class PartitionTests(unittest.TestCase):
             self.skipTest("no published graph")
         rows = collect(graph)
         gap = {r["id"] for cls in GAP_CLASSES for r in rows.get(cls, [])}
+        nodes = [n for n, _ in walk(graph)]
+        decided, _refused = name_decisions.decided_ids(nodes)
         expected = {
             str(n.get("id"))
-            for n, _ in walk(graph)
+            for n in nodes
             if n.get("id") != ROOT_ID and is_current_organisation(n)
             and not n.get("verificationMethod") and not isinstance(n.get("verificationUnread"), dict)
             and (n.get("verificationFailure") or not isinstance(n.get(FIELD), dict))
+            and str(n.get("id")) not in decided
         }
         self.assertEqual(gap, expected)
 
@@ -61,6 +65,12 @@ class PartitionTests(unittest.TestCase):
         # a read document's negative outranks a recorded reason on the same node
         self.assertEqual(classify({"verificationFailure": "not_in_official_list", FIELD: {"kind": "name_too_generic"}}), "negative_read")
         self.assertEqual(classify({}), "unrecorded")
+        # a standing decision explains a negative; it never removes one and
+        # never stands in for one that is not there
+        self.assertEqual(classify({"id": "a", "verificationFailure": "not_found"}, frozenset({"a"})), "decided_negative")
+        self.assertEqual(classify({"id": "b", "verificationFailure": "not_found"}, frozenset({"a"})), "negative_read")
+        self.assertEqual(classify({"id": "a"}, frozenset({"a"})), "unrecorded")
+        self.assertEqual(classify({"id": "a", "verificationMethod": "listed_in_us_government_manual", "verificationFailure": "not_found"}, frozenset({"a"})), "method_list")
         # a method wins over everything; an unread record over a block; an
         # invented kind is not a recorded reason
         self.assertEqual(classify({"verificationMethod": "listed_in_us_government_manual", FIELD: {"kind": "editorial_grouping"}}), "method_list")

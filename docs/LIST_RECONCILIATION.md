@@ -9,13 +9,13 @@ the dispositions re-adjudicate.
 node or recorded as deliberately not one, and every curated committee name a complete
 list lacks is resolved. The gap, as one number:
 
-- **criterion 4(a) gap: 5** = 3 list entries unresolved + 2 distinct real units the lists name and the graph has not added + 0 curated committee names unresolved
+- **criterion 4(a) gap: 3** = 3 list entries unresolved + 0 distinct real units the lists name and the graph has not added + 0 curated committee names unresolved
 - rows refused on re-adjudication: 0
 
 | list | version | entries | reach a node | disposed | unresolved | addable | curated names the list lacks | of them unresolved |
 |---|---|---|---|---|---|---|---|---|
-| United States Government Manual, agency entries | edition 2025-12-31 | 231 | 189 | 42 | 2 | 2 | 0 | 0 |
-| Federal Register agency directory | fetched 2026-09-08 | 472 | 210 | 262 | 1 | 1 | 0 | 0 |
+| United States Government Manual, agency entries | edition 2025-12-31 | 231 | 189 | 42 | 2 | 0 | 0 | 0 |
+| Federal Register agency directory | fetched 2026-09-08 | 472 | 210 | 262 | 1 | 0 | 0 | 0 |
 | USAspending toptier agencies | 111 agencies as committed | 111 | 97 | 14 | 0 | 0 | 0 | 0 |
 | Senate committee list (committees and subcommittees) | 24 committees as committed | 94 | 86 | 8 | 0 | 0 | 11 | 0 |
 | House Clerk committee list (committees and subcommittees) | 27 committees as committed | 136 | 131 | 5 | 0 | 0 | 10 | 0 |
@@ -26,26 +26,19 @@ no committed document; a row with a quote rests on the list's own words, re-foun
 every run. `unit_the_list_names_not_added` is a real unit recorded with the route that
 would add it, counted in the gap and never as reconciled.
 
-## Real units the lists name and the graph has not added
-
-Each is counted once in the gap however many lists name it.
-
-- National Railroad Passenger Corporation (AMTRAK) — named by 2 list(s): `government_manual`; `federal_register_directory`
-- Bureau of Indian Education — named by 1 list(s): `government_manual`
-
 ## United States Government Manual, agency entries
 
 231 entries (edition 2025-12-31); 189 reach a node by the list's own matcher; 42 do not, of which 42 carry an accepted disposition.
 
 | disposition | entries |
 |---|---|
-| `non_federal_or_international_body` — not a unit of the federal government | 21 |
+| `non_federal_or_international_body` — not a unit of the federal government | 22 |
 | `scaffolding` — the list's own grouping heading | 8 |
 | `distinct_from_the_graphs_unit` — a different unit from the graph's, by population | 3 |
 | `names_a_node_under_another_wording` — names a node under another wording | 2 |
 | `carried_as_a_post` — carried as its head's post | 2 |
 | `unsure` — left unsure (unresolved) | 2 |
-| `unit_the_list_names_not_added` — a real unit the graph lacks, recorded with its route (addable) | 2 |
+| `carried_in_a_jointly_measured_node` — carried_in_a_jointly_measured_node | 1 |
 | `umbrella_body_drawn_as_its_members` — a statutory umbrella drawn as its members | 1 |
 | `predecessor_of_a_node` — a former unit whose functions a node holds | 1 |
 
@@ -54,16 +47,12 @@ Each is counted once in the gap however many lists name it.
 - Defense Acquisition University — `unsure`: CURATION.md §13.6: absence confirmed; whether it belongs under 'Defense Agencies & Field Activities' beside the intelligence agencies or under a schools grouping the graph lacks was questioned and not settled.
 - Economics and Statistics Administration — `unsure`: CURATION.md §13.6: absent by every probe, and whether it still exists as a distinct unit rather than as the Under Secretary for Economic Affairs' office could not be established. Left unsure rather than guessed.
 
-**Real units the graph lacks (addable):**
-
-- Bureau of Indian Education — CURATION.md §13.5: the Treasury reports the Bureau jointly with the Bureau of Indian Affairs on one Table 5 line applied to the BIA node, and a separate node would take an apportioned share out of a jointly measured pool; add_curated_nodes.py refuses it by rule (jointly_measured_names).
-- National Railroad Passenger Corporation (AMTRAK) — A federally chartered corporation the Manual lists among quasi-official agencies. Table 5 prints no line for it (its federal grants flow through the Federal Railroad Administration), the Manual files it at the top level so its chain licenses no placement, and the graph draws no quasi-official corporations today except where the Treasury prints a line (the Legal Services Corporation, the CPB).
-
 <details><summary>Every other disposition, entry by entry</summary>
 
 - African Development Bank — `non_federal_or_international_body`: An international organisation the United States belongs to, which the Manual lists among multilateral organisations; not a unit of the federal government.
 - American Printing House for the Blind — `non_federal_or_international_body`: Listed by the Manual under its own heading 'Federally Aided Corporations': a private or chartered institution that receives federal appropriations, not a unit of the federal government.
 - Asian Development Bank — `non_federal_or_international_body`: An international organisation the United States belongs to, which the Manual lists among multilateral organisations; not a unit of the federal government.
+- Bureau of Indian Education — `carried_in_a_jointly_measured_node` (node `exec-dept-doi-bia`): The Treasury reports the Bureau jointly with the Bureau of Indian Affairs on one Table 5 line ('Bureau of Indian Affairs and Bureau of Indian Education'), measured on the node exec-dept-doi-bia. A node of its own would take an apportioned share out of a pool the statement measures for the two together, and add_curated_nodes.py refuses such a row by rule (jointly_measured_names, CURATION.md §13.5). The graph therefore carries the Bureau in that node. This says how the money is reported; it does not say the Bureau sits beneath the Bureau of Indian Affairs. Decided on 2026-10-26.
 - Bureaus — `scaffolding`: One of the Manual's own grouping headings, the way 'Other Defense Civil Programs' is a Treasury grouping; the graph groups the same units differently and neither is wrong (CURATION.md §13.2).
 - Congress — `names_a_node_under_another_wording` (node `legislative-branch`): The Manual's entry heads its legislative-branch section; the graph's root child 'Legislative Branch' is that body, with the Senate and the House beneath it.
 - Defense Agencies — `scaffolding`: One of the Manual's own grouping headings, the way 'Other Defense Civil Programs' is a Treasury grouping; the graph groups the same units differently and neither is wrong (CURATION.md §13.2).
@@ -87,6 +76,7 @@ Each is counted once in the gap however many lists name it.
 - Lower Courts — `scaffolding`: One of the Manual's own grouping headings, the way 'Other Defense Civil Programs' is a Treasury grouping; the graph groups the same units differently and neither is wrong (CURATION.md §13.2).
 - Multilateral Investment Guarantee Agency — `non_federal_or_international_body`: An international organisation the United States belongs to, which the Manual lists among multilateral organisations; not a unit of the federal government.
 - National Foundation on the Arts and the Humanities — `umbrella_body_drawn_as_its_members`: The statutory foundation (20 U.S.C. 953) comprises the National Endowment for the Arts, the National Endowment for the Humanities, the Institute of Museum and Library Services and the Federal Council on the Arts and the Humanities; the graph carries the three agencies as nodes and the Foundation has no staff or appropriation of its own.
+- National Railroad Passenger Corporation (AMTRAK) — `non_federal_or_international_body`: Amtrak is not a unit of the federal government by statute: 49 U.S.C. 24301(a), committed from the Government Publishing Office's 2024 edition at tests/fixtures/uscode/amtrak_49_usc_24301_govinfo2024.html, reads 'Amtrak— (1) is a railroad carrier ...; (2) shall be operated and managed as a for-profit corporation; and (3) is not a department, agency, or instrumentality of the United States Government, and shall not be subject to title 31.' It is a federally chartered corporation the lists name beside the agencies, and the graph carries a chartered corporation only where the Treasury prints a line for it or its page labels it (the Legal Services Corporation, the Corporation for Public Broadcasting); Table 5 prints none for Amtrak. Decided on 2026-10-26.
 - National Security Agency / Central Security Service — `names_a_node_under_another_wording` (node `exec-dept-defense-agency-nsa`): The Manual's joint name for the NSA and the Central Security Service; the graph carries the NSA and has no node for the CSS, so an alias was declined (CURATION.md §17.4) and the entry is recorded here instead.
 - National Technical Institute for the Deaf / Rochester Institute of Technology — `non_federal_or_international_body`: Listed by the Manual under its own heading 'Federally Aided Corporations': a private or chartered institution that receives federal appropriations, not a unit of the federal government.
 - Offices / Boards — `scaffolding`: One of the Manual's own grouping headings, the way 'Other Defense Civil Programs' is a Treasury grouping; the graph groups the same units differently and neither is wrong (CURATION.md §13.2).
@@ -113,20 +103,15 @@ Each is counted once in the gap however many lists name it.
 | `body_outside_the_graphs_scope` — an advisory, interagency or temporary body outside the graph's scope | 23 |
 | `names_a_node_under_another_wording` — names a node under another wording | 22 |
 | `predecessor_of_a_node` — a former unit whose functions a node holds | 21 |
-| `non_federal_or_international_body` — not a unit of the federal government | 14 |
+| `non_federal_or_international_body` — not a unit of the federal government | 15 |
 | `carried_as_a_post` — carried as its head's post | 4 |
 | `distinct_from_the_graphs_unit` — a different unit from the graph's, by population | 3 |
 | `unsure` — left unsure (unresolved) | 1 |
 | `umbrella_body_drawn_as_its_members` — a statutory umbrella drawn as its members | 1 |
-| `unit_the_list_names_not_added` — a real unit the graph lacks, recorded with its route (addable) | 1 |
 
 **Unresolved:**
 
 - Economics and Statistics Administration — `unsure`: CURATION.md §13.6 and the Manual's row: whether it still exists as a distinct unit rather than as the Under Secretary for Economic Affairs' office could not be established.
-
-**Real units the graph lacks (addable):**
-
-- National Railroad Passenger Corporation — Amtrak, a federally chartered corporation; recorded as the Manual's row is: Table 5 prints no line for it and no licence in hand places it, so it is not added.
 
 <details><summary>Every other disposition, entry by entry</summary>
 
@@ -304,6 +289,7 @@ Each is counted once in the gap however many lists name it.
 - National Oceanic and Atmospheric Administration — `names_a_node_under_another_wording` (node `exec-dept-doc-noaa`): The graph writes 'NOAA — National Oceanic & Atmospheric Administration' (node_aliases.json records the Manual's spelling for name evidence; the directory module reads no alias table).
 - National Partnership for Reinventing Government — `former_body`: The Clinton administration's reform office, closed in January 2001; the directory lists no site. Reviewer's statement: the directory's text does not itself state the ending.
 - National Prison Rape Elimination Commission — `former_body` (the list's words: "The Commission was terminated on August 22, 2009 after submitting its final report in June 2009."): A body that no longer exists. The directory's own description says so; the quoted sentence is re-found in it on every run.
+- National Railroad Passenger Corporation — `non_federal_or_international_body`: Amtrak is not a unit of the federal government by statute: 49 U.S.C. 24301(a), committed from the Government Publishing Office's 2024 edition at tests/fixtures/uscode/amtrak_49_usc_24301_govinfo2024.html, reads 'Amtrak— (1) is a railroad carrier ...; (2) shall be operated and managed as a for-profit corporation; and (3) is not a department, agency, or instrumentality of the United States Government, and shall not be subject to title 31.' It is a federally chartered corporation the lists name beside the agencies, and the graph carries a chartered corporation only where the Treasury prints a line for it or its page labels it (the Legal Services Corporation, the Corporation for Public Broadcasting); Table 5 prints none for Amtrak. Decided on 2026-10-26.
 - National Security Agency/Central Security Service — `names_a_node_under_another_wording` (node `exec-dept-defense-agency-nsa`): The joint name for the NSA and the Central Security Service; the graph carries the NSA and no CSS node (CURATION.md §17.4 declined the alias).
 - National Security Commission on Artificial Intelligence — `former_body`: Reported in March 2021 and terminated on October 1, 2021 under the FY2019 National Defense Authorization Act; the directory describes it as temporary. Reviewer's statement: the directory's text does not itself state the ending.
 - National Shipping Authority — `former_body`: The Maritime Administration's standby wartime authority, inactive since the 1950s; the directory lists no site and no description. Reviewer's statement: the directory's text does not itself state the ending.

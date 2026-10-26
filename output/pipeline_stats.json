@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-26T00:41:44.818197+00:00",
+  "timestamp": "2026-10-26T05:54:29.567687+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5497,
@@ -715,21 +715,20 @@
       "organisations": 884,
       "with_method": 645,
       "unread": 72,
-      "stamped": 165,
+      "stamped": 166,
       "kinds": {
         "name_too_generic": 8,
         "page_read_does_not_name_it": 56,
         "curated_count_label": 11,
-        "no_public_page_known": 8,
+        "no_public_page_known": 9,
         "editorial_grouping": 24,
         "host_refuses_crawler": 29,
         "not_on_a_gov_host": 29
       },
       "refusals": {
-        "latest_record_nominates_a_page": 1,
-        "no_ledger_record": 1
+        "latest_record_nominates_a_page": 1
       },
-      "no_record": 1
+      "no_record": 0
     },
     "cost_no_document": {
       "documents": [

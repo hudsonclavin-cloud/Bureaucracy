@@ -809,7 +809,7 @@
             "date": "2026-09-18",
             "meaning": "the date the OLDEST section in use was fetched",
             "basis": "",
-            "fetchedAt": "2026-10-22"
+            "fetchedAt": "2026-10-26"
           },
           "expected": {
             "next": null,
@@ -835,7 +835,7 @@
             },
             "positionEmployer"
           ],
-          "fixtureCount": 170,
+          "fixtureCount": 171,
           "fetch": {
             "kind": "refetch_each_fixture_url",
             "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim"
@@ -20736,27 +20736,10 @@
     "sourceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceUrls": [
-      "https://clerk.house.gov/Committees/ExcelCommitteeData"
-    ],
     "sourceTypes": [
       "house_clerk_committee_list",
       "official_site"
     ],
-    "directoryListing": {
-      "source": "house_clerk_committee_list",
-      "listedName": "Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021",
-      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
-      "agencyUrl": null,
-      "parentListedName": null,
-      "checkedAt": "2026-09-13T22:51:28Z"
-    },
-    "lastVerified": "2026-09-13T22:51:28Z",
-    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
-    "verificationMethod": "listed_in_house_clerk_committee_list",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 2,
     "proofSourceTypes": [
       "house_clerk_committee_list",
@@ -20774,6 +20757,23 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T22:51:28Z",
+    "evidenceUrls": [
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
+    ],
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": null,
+      "checkedAt": "2026-09-13T22:51:28Z"
+    },
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
+    "verificationMethod": "listed_in_house_clerk_committee_list",
     "parentId": "leg-house-committees"
   },
   {
