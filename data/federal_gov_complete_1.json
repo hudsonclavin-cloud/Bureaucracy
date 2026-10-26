@@ -9705,6 +9705,32 @@
                       "descriptionSource": "generated_from_its_official_page"
                     }
                   ]
+                },
+                {
+                  "id": "leg-house-cmte-ethics",
+                  "name": "House Committee on Ethics",
+                  "type": "Committee",
+                  "desc": "House Committee on Ethics is named on https://ethics.house.gov/, which labels it as 'Home - House Committee on Ethics'. This node exists because that page names the unit; nothing further about it has been read.",
+                  "structureSource": "named_on_an_official_page",
+                  "structureSourceDetail": "https://ethics.house.gov/",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_its_official_page"
+                },
+                {
+                  "id": "leg-house-cmte-jan6-select",
+                  "name": "Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021",
+                  "type": "Committee",
+                  "desc": "Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021 is listed by the House Clerk's committee list (every committee and subcommittee, with its code and parent) (as committed under tests/fixtures/directories/house) as 'Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021'. This node exists because that list names the unit; where it sits in this graph is the row author's assertion, which no list read here states, and nothing further about it has been read.",
+                  "structureSource": "named_in_an_official_list",
+                  "structureSourceDetail": "house_clerk_committee_list: Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_an_official_list"
                 }
               ]
             },
@@ -12764,6 +12790,32 @@
                   ]
                 }
               ]
+            },
+            {
+              "id": "leg-support-uscc",
+              "name": "U.S.-China Economic and Security Review Commission",
+              "type": "Agency",
+              "desc": "U.S.-China Economic and Security Review Commission is listed by the Federal Register's agency directory (fetched 2026-09-08) as 'U.S.-China Economic and Security Review Commission'. This node exists because that list names the unit; where it sits in this graph is the row author's assertion, which no list read here states, and nothing further about it has been read.",
+              "structureSource": "named_in_an_official_list",
+              "structureSourceDetail": "federal_register_directory: U.S.-China Economic and Security Review Commission",
+              "employees": null,
+              "budget": null,
+              "color": "#c84a4a",
+              "children": [],
+              "descriptionSource": "generated_from_an_official_list"
+            },
+            {
+              "id": "leg-support-usbg",
+              "name": "United States Botanic Garden",
+              "type": "Agency",
+              "desc": "United States Botanic Garden is named on https://www.usbg.gov/, which labels it as 'Home | United States Botanic Garden'. This node exists because that page names the unit; nothing further about it has been read.",
+              "structureSource": "named_on_an_official_page",
+              "structureSourceDetail": "https://www.usbg.gov/",
+              "employees": null,
+              "budget": null,
+              "color": "#c84a4a",
+              "children": [],
+              "descriptionSource": "generated_from_its_official_page"
             }
           ]
         }
@@ -53738,6 +53790,123 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page"
+                },
+                {
+                  "id": "exec-ind-misc-denali-commission",
+                  "name": "Denali Commission",
+                  "type": "Independent Agency",
+                  "desc": "Denali Commission is listed by USAspending's toptier agency list (the agencies that report under the DATA Act) (fetched 2026-09-17) as 'Denali Commission'. This node exists because that list names the unit; where it sits in this graph is the row author's assertion, which no list read here states, and nothing further about it has been read.",
+                  "structureSource": "named_in_an_official_list",
+                  "structureSourceDetail": "usaspending_toptier: Denali Commission",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_an_official_list"
+                },
+                {
+                  "id": "exec-ind-misc-presidio-trust",
+                  "name": "Presidio Trust",
+                  "type": "Government Corporation",
+                  "desc": "Presidio Trust is listed by USAspending's toptier agency list (the agencies that report under the DATA Act) (fetched 2026-09-17) as 'Presidio Trust'. This node exists because that list names the unit; where it sits in this graph is the row author's assertion, which no list read here states, and nothing further about it has been read.",
+                  "structureSource": "named_in_an_official_list",
+                  "structureSourceDetail": "usaspending_toptier: Presidio Trust",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_an_official_list"
+                },
+                {
+                  "id": "exec-ind-misc-farm-credit-system-insurance-corporation",
+                  "name": "Farm Credit System Insurance Corporation",
+                  "type": "Government Corporation",
+                  "desc": "Farm Credit System Insurance Corporation is named on https://www.fcsic.gov/, which labels it as 'Home | Farm Credit System Insurance Corporation'. This node exists because that page names the unit; nothing further about it has been read.",
+                  "structureSource": "named_on_an_official_page",
+                  "structureSourceDetail": "https://www.fcsic.gov/",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_its_official_page"
+                },
+                {
+                  "id": "exec-ind-misc-udall-foundation",
+                  "name": "Morris K. Udall and Stewart L. Udall Foundation",
+                  "type": "Independent Agency",
+                  "desc": "Morris K. Udall and Stewart L. Udall Foundation is listed by the Federal Register's agency directory (fetched 2026-09-08) as 'Morris K. Udall and Stewart L. Udall Foundation'. This node exists because that list names the unit; where it sits in this graph is the row author's assertion, which no list read here states, and nothing further about it has been read.",
+                  "structureSource": "named_in_an_official_list",
+                  "structureSourceDetail": "federal_register_directory: Morris K. Udall and Stewart L. Udall Foundation",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_an_official_list"
+                },
+                {
+                  "id": "exec-ind-misc-goldwater-scholarship-foundation",
+                  "name": "Barry M. Goldwater Scholarship and Excellence in Education Foundation",
+                  "type": "Independent Agency",
+                  "desc": "Barry M. Goldwater Scholarship and Excellence in Education Foundation is listed by the Federal Register's agency directory (fetched 2026-09-08) as 'Barry M. Goldwater Scholarship and Excellence in Education Foundation'. This node exists because that list names the unit; where it sits in this graph is the row author's assertion, which no list read here states, and nothing further about it has been read.",
+                  "structureSource": "named_in_an_official_list",
+                  "structureSourceDetail": "federal_register_directory: Barry M. Goldwater Scholarship and Excellence in Education Foundation",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_an_official_list"
+                },
+                {
+                  "id": "exec-ind-misc-utah-reclamation-mitigation-and-conservation-commission",
+                  "name": "Utah Reclamation Mitigation and Conservation Commission",
+                  "type": "Independent Agency",
+                  "desc": "Utah Reclamation Mitigation and Conservation Commission is listed by the Federal Register's agency directory (fetched 2026-09-08) as 'Utah Reclamation Mitigation and Conservation Commission'. This node exists because that list names the unit; where it sits in this graph is the row author's assertion, which no list read here states, and nothing further about it has been read.",
+                  "structureSource": "named_in_an_official_list",
+                  "structureSourceDetail": "federal_register_directory: Utah Reclamation Mitigation and Conservation Commission",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_an_official_list"
+                },
+                {
+                  "id": "exec-ind-misc-southeast-crescent-regional-commission",
+                  "name": "Southeast Crescent Regional Commission",
+                  "type": "Independent Agency",
+                  "desc": "Southeast Crescent Regional Commission is named on https://scrc.gov/, which labels it as 'Home | Southeast Crescent Regional Commission'. This node exists because that page names the unit; nothing further about it has been read.",
+                  "structureSource": "named_on_an_official_page",
+                  "structureSourceDetail": "https://scrc.gov/",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_its_official_page"
+                },
+                {
+                  "id": "exec-ind-misc-office-of-navajo-and-hopi-indian-relocation",
+                  "name": "Navajo and Hopi Indian Relocation Office",
+                  "type": "Independent Agency",
+                  "desc": "Navajo and Hopi Indian Relocation Office is listed by the Federal Register's agency directory (fetched 2026-09-08) as 'Navajo and Hopi Indian Relocation Office'. This node exists because that list names the unit; where it sits in this graph is the row author's assertion, which no list read here states, and nothing further about it has been read.",
+                  "structureSource": "named_in_an_official_list",
+                  "structureSourceDetail": "federal_register_directory: Navajo and Hopi Indian Relocation Office",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_an_official_list"
+                },
+                {
+                  "id": "exec-ind-misc-southwest-border-regional-commission",
+                  "name": "Southwest Border Regional Commission",
+                  "type": "Independent Agency",
+                  "desc": "Southwest Border Regional Commission is listed by USAspending's toptier agency list (the agencies that report under the DATA Act) (fetched 2026-09-17) as 'Southwest Border Regional Commission'. This node exists because that list names the unit; where it sits in this graph is the row author's assertion, which no list read here states, and nothing further about it has been read.",
+                  "structureSource": "named_in_an_official_list",
+                  "structureSourceDetail": "usaspending_toptier: Southwest Border Regional Commission",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_an_official_list"
                 }
               ]
             },
@@ -57255,6 +57424,19 @@
                   "children": []
                 }
               ]
+            },
+            {
+              "id": "jud-specialized-jpml",
+              "name": "Judicial Panel on Multidistrict Litigation",
+              "type": "Specialized Court",
+              "desc": "Judicial Panel on Multidistrict Litigation is named on https://www.jpml.uscourts.gov/, which labels it as 'Judicial Panel on Multidistrict Litigation | United States'. This node exists because that page names the unit; nothing further about it has been read.",
+              "structureSource": "named_on_an_official_page",
+              "structureSourceDetail": "https://www.jpml.uscourts.gov/",
+              "employees": null,
+              "budget": null,
+              "color": "#c84a4a",
+              "children": [],
+              "descriptionSource": "generated_from_its_official_page"
             }
           ]
         },

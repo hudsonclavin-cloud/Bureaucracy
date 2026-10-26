@@ -5,7 +5,7 @@
       "name": "Defense",
       "status": "not_checkable",
       "reason": "name_too_generic",
-      "checkedAt": "2026-09-21T05:26:27+00:00"
+      "checkedAt": "2026-10-26T00:02:46+00:00"
     },
     "leg-senate-cmte-armed-services-sub-airland": {
       "name": "Airland",
@@ -1110,11 +1110,11 @@
     },
     "leg-senate-admin": {
       "name": "Senate Administrative Offices",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-senate-admin",
       "ownPage": true,
       "status": "not_found",
-      "pagesRead": 2,
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.senate.gov/about/officers-staff.htm",
@@ -1122,17 +1122,9 @@
         },
         {
           "url": "https://www.senate.gov/",
-          "reason": "name_not_labelled_on_page"
+          "reason": "HTTPError: HTTP Error 403: Forbidden"
         }
-      ],
-      "placement": {
-        "status": "not_listed",
-        "parentId": "leg-senate",
-        "urlsRead": [
-          "https://www.senate.gov/"
-        ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
-      }
+      ]
     },
     "leg-house": {
       "name": "United States House of Representatives",
@@ -1183,7 +1175,7 @@
     },
     "leg-house-committees": {
       "name": "House Committees",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-house-committees",
       "ownPage": true,
       "status": "not_found",
@@ -1218,12 +1210,12 @@
         "urlsRead": [
           "https://www.house.gov/"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "leg-house-admin": {
       "name": "House Administrative Offices",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-house-admin",
       "ownPage": true,
       "status": "not_found",
@@ -1244,7 +1236,7 @@
         "urlsRead": [
           "https://www.house.gov/"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "leg-joint": {
@@ -1282,7 +1274,7 @@
     },
     "leg-support": {
       "name": "Congressional Support Agencies",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-support",
       "ownPage": true,
       "status": "not_found",
@@ -1299,7 +1291,7 @@
         "urlsRead": [
           "https://www.usa.gov/branches-of-government"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00",
+        "checkedAt": "2026-10-26T00:02:46+00:00",
         "failures": [
           {
             "url": "https://www.congress.gov/",
@@ -1858,7 +1850,7 @@
     },
     "leg-support-uscp-protective-services-bureau": {
       "name": "Protective Services Bureau",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-support-uscp-protective-services-bureau",
       "ownPage": true,
       "status": "not_found",
@@ -1875,7 +1867,7 @@
         "url": "https://www.uscp.gov/about/leadership",
         "matchedText": "Protective Services Bureau",
         "matchedIn": "content",
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "leg-support-uscp-hazardous-incident-response-division": {
@@ -5721,7 +5713,7 @@
     },
     "exec-independent": {
       "name": "Independent Establishments & Government Corporations",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "exec-independent",
       "ownPage": true,
       "status": "not_found",
@@ -6916,7 +6908,7 @@
     },
     "exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks": {
       "name": "Dwight D. Eisenhower Presidential Library and Museum (Abilene, KS)",
-      "checkedAt": "2026-10-22T04:27:48+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks",
       "ownPage": true,
       "status": "not_found",
@@ -6933,7 +6925,7 @@
         "url": "https://www.archives.gov/presidential-libraries",
         "matchedText": "Dwight D. Eisenhower Presidential Library and Museum",
         "matchedIn": "content",
-        "checkedAt": "2026-10-22T04:27:48+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "exec-ind-nara-john-f-kennedy-presidential-library-boston-ma": {
@@ -7533,7 +7525,7 @@
     },
     "jud-specialized": {
       "name": "Specialized Federal Courts",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "jud-specialized",
       "ownPage": true,
       "status": "not_found",
@@ -7551,7 +7543,7 @@
           "https://www.uscourts.gov/about-federal-courts",
           "https://www.usa.gov/branches-of-government"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "jud-specialized-tax": {
@@ -7628,7 +7620,7 @@
     },
     "jud-support": {
       "name": "Judicial Support Organizations",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "jud-support",
       "ownPage": true,
       "status": "not_found",
@@ -7646,7 +7638,7 @@
           "https://www.uscourts.gov/about-federal-courts",
           "https://www.usa.gov/branches-of-government"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "jud-support-aousc": {
@@ -8944,7 +8936,7 @@
     },
     "leg-senate-cmte-commerce-science-transportation-sub-oceans-fisheries-climate-change-manufacturing": {
       "name": "Oceans, Fisheries, Climate Change & Manufacturing",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-senate-cmte-commerce-science-transportation",
       "ownPage": false,
       "status": "inconclusive",
@@ -8953,6 +8945,10 @@
       "failures": [
         {
           "url": "https://www.commerce.senate.gov/",
+          "reason": "HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -8960,14 +8956,20 @@
         "status": "not_listed",
         "parentId": "leg-senate-cmte-commerce-science-transportation",
         "urlsRead": [
-          "https://www.commerce.senate.gov/"
+          "https://www.commerce.senate.gov/about/commerce-subcommittees/"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00",
+        "failures": [
+          {
+            "url": "https://www.commerce.senate.gov/",
+            "reason": "HTTPError: HTTP Error 403: Forbidden"
+          }
+        ]
       }
     },
     "leg-senate-cmte-commerce-science-transportation-sub-science-space": {
       "name": "Science & Space",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-senate-cmte-commerce-science-transportation",
       "ownPage": false,
       "status": "inconclusive",
@@ -8976,6 +8978,10 @@
       "failures": [
         {
           "url": "https://www.commerce.senate.gov/",
+          "reason": "HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -8983,14 +8989,20 @@
         "status": "not_listed",
         "parentId": "leg-senate-cmte-commerce-science-transportation",
         "urlsRead": [
-          "https://www.commerce.senate.gov/"
+          "https://www.commerce.senate.gov/about/commerce-subcommittees/"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00",
+        "failures": [
+          {
+            "url": "https://www.commerce.senate.gov/",
+            "reason": "HTTPError: HTTP Error 403: Forbidden"
+          }
+        ]
       }
     },
     "leg-senate-cmte-commerce-science-transportation-sub-surface-transportation-maritime-freight-ports": {
       "name": "Surface Transportation, Maritime, Freight & Ports",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-senate-cmte-commerce-science-transportation",
       "ownPage": false,
       "status": "inconclusive",
@@ -8999,6 +9011,10 @@
       "failures": [
         {
           "url": "https://www.commerce.senate.gov/",
+          "reason": "HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -9006,14 +9022,20 @@
         "status": "not_listed",
         "parentId": "leg-senate-cmte-commerce-science-transportation",
         "urlsRead": [
-          "https://www.commerce.senate.gov/"
+          "https://www.commerce.senate.gov/about/commerce-subcommittees/"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00",
+        "failures": [
+          {
+            "url": "https://www.commerce.senate.gov/",
+            "reason": "HTTPError: HTTP Error 403: Forbidden"
+          }
+        ]
       }
     },
     "leg-senate-cmte-commerce-science-transportation-sub-tourism-trade-export-promotion": {
       "name": "Tourism, Trade & Export Promotion",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-senate-cmte-commerce-science-transportation",
       "ownPage": false,
       "status": "inconclusive",
@@ -9022,6 +9044,10 @@
       "failures": [
         {
           "url": "https://www.commerce.senate.gov/",
+          "reason": "HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -9029,9 +9055,15 @@
         "status": "not_listed",
         "parentId": "leg-senate-cmte-commerce-science-transportation",
         "urlsRead": [
-          "https://www.commerce.senate.gov/"
+          "https://www.commerce.senate.gov/about/commerce-subcommittees/"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00",
+        "failures": [
+          {
+            "url": "https://www.commerce.senate.gov/",
+            "reason": "HTTPError: HTTP Error 403: Forbidden"
+          }
+        ]
       }
     },
     "leg-senate-cmte-energy-natural-resources": {
@@ -9923,16 +9955,16 @@
     },
     "leg-senate-cmte-health-education-labor-pensions-sub-children-families": {
       "name": "Children & Families",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-senate-cmte-health-education-labor-pensions",
       "ownPage": false,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 3,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.help.senate.gov/",
-          "reason": "name_not_labelled_on_page"
+          "reason": "HTTPError: HTTP Error 403: Forbidden"
         },
         {
           "url": "https://www.help.senate.gov/about/subcommittees#employment-ii-workplace-safety",
@@ -9947,11 +9979,16 @@
         "status": "not_listed",
         "parentId": "leg-senate-cmte-health-education-labor-pensions",
         "urlsRead": [
-          "https://www.help.senate.gov/",
           "https://www.help.senate.gov/about/subcommittees#employment-ii-workplace-safety",
           "https://www.help.senate.gov/about/subcommittees#primary-health-ii-retirement-security"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00",
+        "failures": [
+          {
+            "url": "https://www.help.senate.gov/",
+            "reason": "HTTPError: HTTP Error 403: Forbidden"
+          }
+        ]
       }
     },
     "leg-senate-cmte-health-education-labor-pensions-sub-employment-workplace-safety": {
@@ -10047,7 +10084,7 @@
     },
     "leg-senate-cmte-homeland-security-governmental-affairs-sub-emerging-threats-spending-oversight": {
       "name": "Emerging Threats & Spending Oversight",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-senate-cmte-homeland-security-governmental-affairs",
       "ownPage": false,
       "status": "inconclusive",
@@ -10056,6 +10093,10 @@
       "failures": [
         {
           "url": "https://www.hsgac.senate.gov/",
+          "reason": "HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "url": "https://www.hsgac.senate.gov/subcommittees/",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -10063,9 +10104,15 @@
         "status": "not_listed",
         "parentId": "leg-senate-cmte-homeland-security-governmental-affairs",
         "urlsRead": [
-          "https://www.hsgac.senate.gov/"
+          "https://www.hsgac.senate.gov/subcommittees/"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00",
+        "failures": [
+          {
+            "url": "https://www.hsgac.senate.gov/",
+            "reason": "HTTPError: HTTP Error 403: Forbidden"
+          }
+        ]
       }
     },
     "leg-senate-cmte-homeland-security-governmental-affairs-sub-government-operations-border-management": {
@@ -10204,16 +10251,16 @@
     },
     "leg-senate-cmte-judiciary-sub-human-rights-the-law": {
       "name": "Human Rights & the Law",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-senate-cmte-judiciary",
       "ownPage": false,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 2,
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.judiciary.senate.gov/",
-          "reason": "name_not_labelled_on_page"
+          "reason": "HTTPError: HTTP Error 403: Forbidden"
         },
         {
           "url": "https://www.judiciary.senate.gov/about/subcommittees",
@@ -10224,10 +10271,15 @@
         "status": "not_listed",
         "parentId": "leg-senate-cmte-judiciary",
         "urlsRead": [
-          "https://www.judiciary.senate.gov/",
           "https://www.judiciary.senate.gov/about/subcommittees"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00",
+        "failures": [
+          {
+            "url": "https://www.judiciary.senate.gov/",
+            "reason": "HTTPError: HTTP Error 403: Forbidden"
+          }
+        ]
       }
     },
     "leg-senate-cmte-judiciary-sub-immigration-citizenship-border-safety": {
@@ -10609,15 +10661,19 @@
     },
     "leg-house-cmte-agriculture-sub-horticulture-farm-inputs-subcommittee-on-precision-agriculture": {
       "name": "Subcommittee on Horticulture, Farm Inputs & Subcommittee on Precision Agriculture",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-house-cmte-agriculture",
       "ownPage": false,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://agriculture.house.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://docs.house.gov/Committee/Committees.aspx?Code=AG00",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -10625,9 +10681,10 @@
         "status": "not_listed",
         "parentId": "leg-house-cmte-agriculture",
         "urlsRead": [
-          "https://agriculture.house.gov/"
+          "https://agriculture.house.gov/",
+          "https://docs.house.gov/Committee/Committees.aspx?Code=AG00"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "leg-house-cmte-agriculture-sub-livestock-dairy-poultry": {
@@ -11674,15 +11731,19 @@
     },
     "leg-house-cmte-foreign-affairs-sub-global-health-global-human-rights-international-organizations": {
       "name": "Subcommittee on Global Health, Global Human Rights & International Organizations",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-house-cmte-foreign-affairs",
       "ownPage": false,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://foreignaffairs.house.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://foreignaffairs.house.gov/subcommittees/",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -11690,9 +11751,10 @@
         "status": "not_listed",
         "parentId": "leg-house-cmte-foreign-affairs",
         "urlsRead": [
-          "https://foreignaffairs.house.gov/"
+          "https://foreignaffairs.house.gov/",
+          "https://foreignaffairs.house.gov/subcommittees/"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "leg-house-cmte-foreign-affairs-sub-indo-pacific": {
@@ -12033,15 +12095,19 @@
     },
     "leg-house-cmte-house-administration-sub-committees": {
       "name": "Subcommittee on Committees",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-house-cmte-house-administration",
       "ownPage": false,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://cha.house.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://docs.house.gov/Committee/Committees.aspx?Code=HA00",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -12049,9 +12115,10 @@
         "status": "not_listed",
         "parentId": "leg-house-cmte-house-administration",
         "urlsRead": [
-          "https://cha.house.gov/"
+          "https://cha.house.gov/",
+          "https://docs.house.gov/Committee/Committees.aspx?Code=HA00"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "leg-house-cmte-house-administration-sub-elections": {
@@ -12236,15 +12303,19 @@
     },
     "leg-house-cmte-judiciary-sub-responsiveness-accountability-to-americans": {
       "name": "Subcommittee on Responsiveness & Accountability to Americans",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-house-cmte-judiciary",
       "ownPage": false,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://judiciary.house.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://judiciary.house.gov/about/subcommittees",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -12252,19 +12323,27 @@
         "status": "not_listed",
         "parentId": "leg-house-cmte-judiciary",
         "urlsRead": [
-          "https://judiciary.house.gov/"
+          "https://judiciary.house.gov/",
+          "https://judiciary.house.gov/about/subcommittees"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government": {
       "name": "Select Subcommittee on the Weaponization of the Federal Government",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-house-cmte-judiciary",
       "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://judiciary.house.gov/about/subcommittees",
+          "matchedText": "Select Subcommittee on the Weaponization of the Federal Government",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://judiciary.house.gov/",
@@ -12272,12 +12351,12 @@
         }
       ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-house-cmte-judiciary",
-        "urlsRead": [
-          "https://judiciary.house.gov/"
-        ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "url": "https://judiciary.house.gov/about/subcommittees",
+        "matchedText": "Select Subcommittee on the Weaponization of the Federal Government",
+        "matchedIn": "content",
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "leg-house-cmte-natural-resources": {
@@ -13046,7 +13125,7 @@
     },
     "leg-house-cmte-veterans-affairs-sub-benefits": {
       "name": "Subcommittee on Benefits",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-house-cmte-veterans-affairs",
       "ownPage": false,
       "status": "inconclusive",
@@ -13064,7 +13143,7 @@
         "urlsRead": [
           "https://veterans.house.gov/"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "leg-house-cmte-veterans-affairs-sub-disability-assistance-memorial-affairs": {
@@ -13291,7 +13370,7 @@
     },
     "leg-house-cmte-ways-means-sub-select-revenue-measures": {
       "name": "Subcommittee on Select Revenue Measures",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-house-cmte-ways-means",
       "ownPage": false,
       "status": "inconclusive",
@@ -13314,7 +13393,7 @@
           "https://waysandmeans.house.gov/",
           "https://waysandmeans.house.gov/subcommittees/"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "leg-house-cmte-ways-means-sub-social-security": {
@@ -14118,15 +14197,19 @@
     },
     "leg-house-cmte-oversight-accountability-sub-national-security-the-border-foreign-affairs": {
       "name": "Subcommittee on National Security, the Border & Foreign Affairs",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-house-cmte-oversight-accountability",
       "ownPage": false,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://oversight.house.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://docs.house.gov/Committee/Committees.aspx?Code=GO00",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -14134,9 +14217,10 @@
         "status": "not_listed",
         "parentId": "leg-house-cmte-oversight-accountability",
         "urlsRead": [
-          "https://oversight.house.gov/"
+          "https://oversight.house.gov/",
+          "https://docs.house.gov/Committee/Committees.aspx?Code=GO00"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "leg-house-cmte-select-committee-on-the-chinese-communist-party": {
@@ -14285,7 +14369,7 @@
     },
     "leg-senate-admin-saa": {
       "name": "Sergeant at Arms of the Senate",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-senate-admin-saa",
       "ownPage": true,
       "status": "not_found",
@@ -14300,10 +14384,15 @@
         "status": "not_listed",
         "parentId": "leg-senate-admin",
         "urlsRead": [
-          "https://www.senate.gov/about/officers-staff.htm",
-          "https://www.senate.gov/"
+          "https://www.senate.gov/about/officers-staff.htm"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00",
+        "failures": [
+          {
+            "url": "https://www.senate.gov/",
+            "reason": "HTTPError: HTTP Error 403: Forbidden"
+          }
+        ]
       }
     },
     "leg-house-saa": {
@@ -14336,7 +14425,7 @@
     },
     "leg-house-chaplain": {
       "name": "House Chaplain",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-house-chaplain",
       "ownPage": true,
       "status": "not_found",
@@ -14354,7 +14443,7 @@
           "https://www.house.gov/the-house-explained/officers-and-organizations",
           "https://www.house.gov/"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "leg-house-parliamentarian": {
@@ -14614,7 +14703,7 @@
     },
     "exec-dept-defense-cocom-ussocom": {
       "name": "USSOCOM — Special Operations Command",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "exec-dept-defense-cocom-ussocom",
       "ownPage": true,
       "status": "not_found",
@@ -15425,7 +15514,7 @@
     },
     "exec-ind-nsf-computer-information-science-engineering-cise-information-intelligent-systems": {
       "name": "Division of Information & Intelligent Systems",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "exec-ind-nsf-computer-information-science-engineering-cise-information-intelligent-systems",
       "ownPage": true,
       "status": "not_found",
@@ -15444,7 +15533,7 @@
           "https://www.nsf.gov/funding/opportunities/additional-funding-opportunities-cns-community",
           "https://www.nsf.gov/funding/opportunities/additional-funding-opportunities-ccf-community"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "exec-ind-nsf-computer-information-science-engineering-cise-advanced-cyberinfrastructure": {
@@ -15574,7 +15663,7 @@
     },
     "exec-ind-nsf-engineering-eng-civil-mechanical-manufacturing-innovation": {
       "name": "Division of Civil, Mechanical & Manufacturing Innovation",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "exec-ind-nsf-engineering-eng-civil-mechanical-manufacturing-innovation",
       "ownPage": true,
       "status": "not_found",
@@ -15591,12 +15680,12 @@
         "urlsRead": [
           "https://www.nsf.gov/eng"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "exec-ind-nsf-engineering-eng-electrical-communications-cyber-systems": {
       "name": "Division of Electrical, Communications & Cyber Systems",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "exec-ind-nsf-engineering-eng-electrical-communications-cyber-systems",
       "ownPage": true,
       "status": "not_found",
@@ -15613,12 +15702,12 @@
         "urlsRead": [
           "https://www.nsf.gov/eng"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "exec-ind-nsf-geosciences-geo-atmospheric-geospace-sciences": {
       "name": "Division of Atmospheric & Geospace Sciences",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "exec-ind-nsf-geosciences-geo-atmospheric-geospace-sciences",
       "ownPage": true,
       "status": "not_found",
@@ -15635,12 +15724,12 @@
         "urlsRead": [
           "https://www.nsf.gov/geo"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "exec-ind-nsf-geosciences-geo-ocean-sciences": {
       "name": "Division of Ocean Sciences",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "exec-ind-nsf-geosciences-geo-ocean-sciences",
       "ownPage": true,
       "status": "not_found",
@@ -15657,12 +15746,12 @@
         "urlsRead": [
           "https://www.nsf.gov/geo"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "exec-ind-nsf-mathematical-physical-sciences-mps-astronomical-sciences": {
       "name": "Division of Astronomical Sciences",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "exec-ind-nsf-mathematical-physical-sciences-mps-astronomical-sciences",
       "ownPage": true,
       "status": "not_found",
@@ -15679,12 +15768,12 @@
         "urlsRead": [
           "https://www.nsf.gov/mps"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "exec-ind-nsf-mathematical-physical-sciences-mps-chemistry": {
       "name": "Division of Chemistry",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "exec-ind-nsf-mathematical-physical-sciences-mps-chemistry",
       "ownPage": true,
       "status": "not_found",
@@ -15701,12 +15790,12 @@
         "urlsRead": [
           "https://www.nsf.gov/mps"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "exec-ind-nsf-mathematical-physical-sciences-mps-materials-research": {
       "name": "Division of Materials Research",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "exec-ind-nsf-mathematical-physical-sciences-mps-materials-research",
       "ownPage": true,
       "status": "not_found",
@@ -15723,12 +15812,12 @@
         "urlsRead": [
           "https://www.nsf.gov/mps"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "exec-ind-nsf-mathematical-physical-sciences-mps-mathematical-sciences": {
       "name": "Division of Mathematical Sciences",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "exec-ind-nsf-mathematical-physical-sciences-mps-mathematical-sciences",
       "ownPage": true,
       "status": "not_found",
@@ -15745,12 +15834,12 @@
         "urlsRead": [
           "https://www.nsf.gov/mps"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "exec-ind-nsf-mathematical-physical-sciences-mps-physics": {
       "name": "Division of Physics",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "exec-ind-nsf-mathematical-physical-sciences-mps-physics",
       "ownPage": true,
       "status": "not_found",
@@ -15767,7 +15856,7 @@
         "urlsRead": [
           "https://www.nsf.gov/mps"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "exec-ind-nsf-social-behavioral-economic-sciences-sbe-behavioral-cognitive-sciences": {
@@ -15868,7 +15957,7 @@
     },
     "exec-ind-nsf-technology-innovation-partnerships-tip-directorate-for-tip-programs": {
       "name": "Division of Directorate for TIP Programs",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "exec-ind-nsf-technology-innovation-partnerships-tip-directorate-for-tip-programs",
       "ownPage": true,
       "status": "not_found",
@@ -15885,7 +15974,7 @@
         "urlsRead": [
           "https://www.nsf.gov/tip/latest"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-10-26T00:02:46+00:00"
       }
     },
     "exec-ind-misc-peace-corps": {
@@ -61581,7 +61670,7 @@
     },
     "leg-house-cmte-intelligence-sub-strategic-technologies-advanced-research": {
       "name": "Subcommittee on Strategic Technologies & Advanced Research",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-26T00:02:46+00:00",
       "siteFrom": "leg-house-cmte-permanent-select-committee-on-intelligence",
       "ownPage": false,
       "status": "inconclusive",
@@ -61609,7 +61698,7 @@
           "https://intelligence.house.gov/",
           "https://docs.house.gov/Committee/Committees.aspx?Code=IG00"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00",
+        "checkedAt": "2026-10-26T00:02:46+00:00",
         "failures": [
           {
             "url": "https://intelligence.house.gov/subcommittees/",
@@ -66721,6 +66810,124 @@
       ],
       "method": "name_labelled_on_own_official_page",
       "pagesRead": 1
+    },
+    "exec-ind-misc-farm-credit-system-insurance-corporation": {
+      "name": "Farm Credit System Insurance Corporation",
+      "checkedAt": "2026-10-26T00:07:26+00:00",
+      "siteFrom": "exec-ind-misc-farm-credit-system-insurance-corporation",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.fcsic.gov/",
+          "matchedText": "Home | Farm Credit System Insurance Corporation",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-southeast-crescent-regional-commission": {
+      "name": "Southeast Crescent Regional Commission",
+      "checkedAt": "2026-10-26T00:07:26+00:00",
+      "siteFrom": "exec-ind-misc-southeast-crescent-regional-commission",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://scrc.gov/",
+          "matchedText": "Home | Southeast Crescent Regional Commission",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "leg-support-usbg": {
+      "name": "United States Botanic Garden",
+      "checkedAt": "2026-10-26T00:07:26+00:00",
+      "siteFrom": "leg-support-usbg",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.usbg.gov/",
+          "matchedText": "Home | United States Botanic Garden",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-support",
+        "url": "https://www.aoc.gov/explore-capitol-campus/buildings-grounds",
+        "matchedText": "U.S. Botanic Garden",
+        "matchedIn": "content",
+        "checkedAt": "2026-10-26T00:07:26+00:00"
+      }
+    },
+    "jud-specialized-jpml": {
+      "name": "Judicial Panel on Multidistrict Litigation",
+      "checkedAt": "2026-10-26T00:07:26+00:00",
+      "siteFrom": "jud-specialized-jpml",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.jpml.uscourts.gov/",
+          "matchedText": "Judicial Panel on Multidistrict Litigation | United States",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
+      "placement": {
+        "status": "not_listed",
+        "parentId": "jud-specialized",
+        "urlsRead": [
+          "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
+        ],
+        "checkedAt": "2026-10-26T00:07:26+00:00"
+      }
+    },
+    "leg-house-cmte-ethics": {
+      "name": "House Committee on Ethics",
+      "checkedAt": "2026-10-26T00:07:26+00:00",
+      "siteFrom": "leg-house-cmte-ethics",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://ethics.house.gov/",
+          "matchedText": "Home - House Committee on Ethics",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
+      "placement": {
+        "status": "not_listed",
+        "parentId": "leg-house-committees",
+        "urlsRead": [
+          "https://rules.house.gov/about/subcommittees",
+          "https://transportation.house.gov/subcommittees/",
+          "https://veterans.house.gov/issues"
+        ],
+        "checkedAt": "2026-10-26T00:07:26+00:00",
+        "failures": [
+          {
+            "url": "https://science.house.gov/subcommittees",
+            "reason": "no_readable_text",
+            "contentChars": 351
+          },
+          {
+            "url": "https://smallbusiness.house.gov/subcommittees/",
+            "reason": "no_readable_text",
+            "contentChars": 288
+          }
+        ]
+      }
     }
   }
 }

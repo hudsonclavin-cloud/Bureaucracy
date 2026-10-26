@@ -10889,8 +10889,10 @@ def source_registry_violations(graph, label, registry_path=SOURCE_REGISTRY_PATH,
 
 CHANGE_HISTORY_FILENAME = "change_history.json"
 REVIEW_QUEUE_PATH = PROJECT_ROOT / "data" / "audit" / "review_queue.json"
-CHANGE_BUDGET_RULES = ("node_count_drops", "measured_cost_moved_without_a_new_statement", "pay_claims_withdrawn_above_5_percent",
-                       "anchor_period_goes_backwards", "anchor_lost")
+CHANGE_BUDGET_RULES_ORIGINAL = ("node_count_drops", "measured_cost_moved_without_a_new_statement", "pay_claims_withdrawn_above_5_percent",
+                                "anchor_period_goes_backwards", "anchor_lost")
+CHANGE_BUDGET_RULES = CHANGE_BUDGET_RULES_ORIGINAL + ("rebuilt_without_a_statement",)
+CHANGE_BUDGET_SIXTH_RULE_FROM = "2026-10-25"
 CHANGE_PAY_FIELDS = ("positionStatutoryPay", "positionSchedulePay", "positionPayRate", "positionGradePay", "positionCurrentPay",
                      "positionReportedPay", "positionDerivedPay", "positionTierPay", "positionTierReferencePay", "positionMilitaryPay")
 REVIEW_QUEUE_KINDS = ("budget_hold", "node_removed", "claim_withdrawn", "method_withdrawn", "sourced_figure_withdrawn",
@@ -10944,7 +10946,12 @@ def change_history_violations(graph, graph_path, label, queue_path=REVIEW_QUEUE_
                 out.append("change history entry {} lacks {}".format(i, key))
         budget = entry.get("budget") or {}
         rules = budget.get("rules") if isinstance(budget, dict) else None
-        if not isinstance(rules, list) or {r.get("rule") for r in rules if isinstance(r, dict)} != set(CHANGE_BUDGET_RULES):
+        carried = {r.get("rule") for r in rules if isinstance(r, dict)} if isinstance(rules, list) else set()
+        # An entry recorded before the sixth rule existed (2026-10-25) carries the
+        # original five and no other; every later entry carries all six.
+        built = str(entry.get("builtAt") or "")[:10]
+        required = set(CHANGE_BUDGET_RULES) if built >= CHANGE_BUDGET_SIXTH_RULE_FROM else set(CHANGE_BUDGET_RULES_ORIGINAL)
+        if not isinstance(rules, list) or not (required <= carried <= set(CHANGE_BUDGET_RULES)):
             out.append("change history entry {} does not carry every budget rule".format(i))
         elif budget.get("held") != any(bool(r.get("tripped")) for r in rules):
             out.append("change history entry {}: held disagrees with its rules".format(i))

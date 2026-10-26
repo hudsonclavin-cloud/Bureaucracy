@@ -97,10 +97,9 @@ class MatchingTests(unittest.TestCase):
         # 33 -> 34 on 2026-09-20 (later): the DFC's rename to its full name made
         # its curated name equal the statement's reporting-entity name, so the
         # audited row applies by name equality with no alias.
-        self.assertEqual(self.report["applied"], 34)
+        self.assertEqual(self.report["applied"], 35)
         self.assertEqual(self.report["refused"], {
-            "no_node_carries_this_name": 1,
-            "row_names_no_unit_of_government": 5,
+            "row_names_no_unit_of_government": 5,  # the sixth, the Farm Credit System Insurance Corporation, reached a node on 2026-10-26
         })
 
     def test_every_record_names_the_node_it_sits_on(self) -> None:

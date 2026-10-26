@@ -2,16 +2,22 @@
   "_note": "Derived by scripts/derive_object_class_evidence.py from USAspending's FY2025 object-class breakdowns, committed verbatim under tests/fixtures/usaspending/object_class/ with their digests, for the toptier agencies usaspending.py applies. Obligations by what the money was spent on; never the node's cost.",
   "source": {
     "kind": "usaspending_file_b_object_class",
-    "derivedAt": "2026-10-22T08:52:48Z"
+    "derivedAt": "2026-10-26T00:40:56Z"
   },
   "report": {
-    "matched": 91,
+    "matched": 97,
     "applied": 86,
     "refused": {
       "exec-ind-misc-appalachian-regional-commission-arc": "endpoints_disagree: minor classes sum to 190227483.43, major groups to 9215690.61",
+      "exec-ind-misc-denali-commission": "fixture_unreadable: 513.json.meta.json: no readable meta file (FileNotFoundError)",
+      "exec-ind-misc-farm-credit-system-insurance-corporation": "fixture_unreadable: 7802.json.meta.json: no readable meta file (FileNotFoundError)",
       "exec-ind-misc-interagency-council-on-homelessness": "total_obligations_not_positive",
       "exec-ind-misc-national-council-on-disability": "total_obligations_not_positive",
       "exec-ind-misc-national-credit-union-administration-ncua": "personnel_group_disagrees_with_its_rows",
+      "exec-ind-misc-presidio-trust": "fixture_unreadable: 512.json.meta.json: no readable meta file (FileNotFoundError)",
+      "exec-ind-misc-southeast-crescent-regional-commission": "fixture_unreadable: 574.json.meta.json: no readable meta file (FileNotFoundError)",
+      "exec-ind-misc-southwest-border-regional-commission": "fixture_unreadable: 569.json.meta.json: no readable meta file (FileNotFoundError)",
+      "exec-ind-misc-udall-foundation": "fixture_unreadable: 487.json.meta.json: no readable meta file (FileNotFoundError)",
       "exec-ind-smithsonian-john-f-kennedy-center-performing-arts": "total_obligations_not_positive"
     },
     "staffPayTotal": 594969961790.88

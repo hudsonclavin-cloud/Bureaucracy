@@ -14,9 +14,11 @@ name: update cycle (hold mode)
 
 on:
   schedule:
-    # the 12th of each month, 09:17 UTC: after the Monthly Treasury Statement's
-    # usual publication early in the month
-    - cron: "17 9 12 * *"
+    # the 16th of each month, 09:17 UTC. The Monthly Treasury Statement appears on
+    # the 8th business day, which is the 12th or 13th in some months (November
+    # 2026, January 2027), so the 12th could run before the statement exists and
+    # leave the anchor a month stale. The 16th is after it in every month.
+    - cron: "17 9 16 * *"
   workflow_dispatch:
     inputs:
       offline:

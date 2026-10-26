@@ -450,7 +450,7 @@ class RealFixturePinTests(unittest.TestCase):
         # fifteen, and each landed the moment the node existed. Sub-agency
         # matches are unchanged at 105 -- none of the 39 has a sub-unit in the
         # table -- so every one of the 15 new records is an agency row.
-        self.assertEqual((self.report["agencies_matched"], self.report["subagencies_matched"], len(self.records)), (74, 105, 179))
+        self.assertEqual((self.report["agencies_matched"], self.report["subagencies_matched"], len(self.records)), (76, 105, 181))
         self.assertEqual((len(self.report["ambiguous_agencies"]), len(self.report["ambiguous_subagencies"])), (0, 0))
         # Two fewer unmatched agencies: NASA and NARA, whose names the table
         # truncates ("NAT ...") and whose truncation is now undone, so their
@@ -468,8 +468,8 @@ class RealFixturePinTests(unittest.TestCase):
         # of placement, so those nine publish nothing; undoing FedScope's
         # agency abbreviations the way the leading "NATIONAL" is undone would
         # reach them, and that is a matcher decision, not a curation one.
-        self.assertEqual((len(self.report["unmatched_agencies"]), len(self.report["unmatched_subagencies"])), (39, 313))
-        self.assertEqual(len(self.report["unscoped_refused"]), 17)
+        self.assertEqual((len(self.report["unmatched_agencies"]), len(self.report["unmatched_subagencies"])), (37, 308))
+        self.assertEqual(len(self.report["unscoped_refused"]), 20)
         # 10 -> 3 and 331 -> 337 on 2026-09-20 (later): the House Inspector
         # General was renamed from "Office of the Inspector General", a name
         # FedScope's sub-agency rows carry under several agencies, each of
@@ -482,7 +482,7 @@ class RealFixturePinTests(unittest.TestCase):
         # 45 with the fifteen added units, for the same reason. 45 -> 60 with
         # the 39 PLUM units, again for the same reason: fifteen of them are
         # agencies whose only table row is named after the agency itself.
-        self.assertEqual(len(self.report["self_named_rows"]), 60)
+        self.assertEqual(len(self.report["self_named_rows"]), 62)
         irs = self.records["exec-dept-treasury-irs"]
         self.assertEqual((irs["employees"], irs["previous"]["employees"], irs["agencyMatched"]), (101_312, 99_001, "exec-dept-treasury"))
         va = self.records["exec-dept-va"]
@@ -519,7 +519,7 @@ class RealFixturePinTests(unittest.TestCase):
         # ten more -- and each landed the moment the node existed, with no
         # matcher change at all. "compared" is unchanged at 128, so no figure
         # that was already being compared moved.
-        self.assertEqual((comparison["compared"], comparison["no_curated_figure"]), (128, 51))
+        self.assertEqual((comparison["compared"], comparison["no_curated_figure"]), (128, 53))
         self.assertEqual(sum(comparison["bands"].values()), 128)
         # Defense heads the list now that the judicial branch's record is
         # refused: a curated "~750,000 civilian + 1.3M active military"

@@ -2317,6 +2317,26 @@ def colour_treasury_lines(root: dict[str, Any]) -> int:
     return changed
 
 
+def mark_government_wide_receipts_attached(root: dict[str, Any]) -> int:
+    """Say that the government-wide receipts line hangs off the root, however it got here.
+
+    A build handed the statement creates the line with `attachToRoot` on the
+    tree node. A build handed none carries the published line forward as a
+    payload node, and the mark landed on the exported node list instead of the
+    tree, so the same checkout produced two different graphs depending on
+    whether a statement happened to be fetched that day (the first scheduled run
+    found it: 62 nodes differing, no new data). The line is attached to the root
+    by construction, so one sweep after the tree is final makes both routes the
+    same graph. Idempotent.
+    """
+    changed = 0
+    for child in root.get("children") or []:
+        if child.get("id") == UNDISTRIBUTED_NODE_ID and not child.get("attachToRoot"):
+            child["attachToRoot"] = True
+            changed += 1
+    return changed
+
+
 def annotate_stated_counts(root: dict[str, Any]) -> dict[str, Any]:
     """Say when a node's own name states that it stands for more than it shows.
 
@@ -3667,6 +3687,7 @@ def build_graph(
     # comparable with the children the published graph actually carries.
     validity_report["stated_counts"] = annotate_stated_counts(graph)
     validity_report["treasury_lines_recoloured"] = colour_treasury_lines(graph)
+    validity_report["government_wide_receipts_attached_to_root"] = mark_government_wide_receipts_attached(graph)
     # How each measured unit's total adds up, part by part, from the committed
     # statement the graph was built from: which part lands on which child,
     # which is drawn elsewhere, which no node carries, and what is not

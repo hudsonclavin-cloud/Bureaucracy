@@ -475,7 +475,7 @@ class RealFixtureTests(unittest.TestCase):
         # files rows under too, so the archive reached 33 more agencies the
         # moment the nodes existed. Published records are unchanged at 129 --
         # none of the 39 has a position child for a row to reach.
-        self.assertEqual((r["agencies_matched"], len(r["agencies_unmatched"]), len(r["agencies_ambiguous"])), (103, 66, 0))
+        self.assertEqual((r["agencies_matched"], len(r["agencies_unmatched"]), len(r["agencies_ambiguous"])), (106, 63, 0))
         # The same rename reaches one more organisation and seven more positions
         # beneath it (180 -> 181, 939 -> 946); published records stayed at 129.
         # The two ambiguous organisations are both the USPTO's: the archive
@@ -496,7 +496,7 @@ class RealFixtureTests(unittest.TestCase):
         # agencies becoming matchable moves their sub-units from the second
         # bucket into the first, where most of them then fail to name a node.
         self.assertEqual((r["organizations_matched"], r["organizations_of_agency"], len(r["organizations_unmatched"]), len(r["organizations_ambiguous"]), r["organizations_under_unmatched_agency"]),
-                         (208, 61, 972, 2, 295))
+                         (209, 62, 974, 2, 292))
         # 4,382 before the White House Office roster expansion added 222, then
         # 13 fewer when the duplicate Coast Guard and House intelligence
         # committee subtrees were merged away (scripts/merge_duplicate_nodes.py).

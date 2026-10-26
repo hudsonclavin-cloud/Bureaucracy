@@ -25,7 +25,7 @@
     "directory_url": "https://www.federalregister.gov/api/v1/agencies.json",
     "fetched_at": "2026-09-08T19:19:15Z",
     "entries": 472,
-    "matched": 202,
+    "matched": 210,
     "ambiguous_entries": [],
     "ambiguous_names_in_graph": [
       "agriculture rural development food and drug administration and related agencies",
@@ -53,7 +53,7 @@
       }
     ],
     "placements_parent_unmatched": 3,
-    "top_level_entries": 109,
+    "top_level_entries": 117,
     "unmatched_sample": [
       "ACTION",
       "Advocacy and Outreach Office",
@@ -70,7 +70,6 @@
       "Arms Control and Disarmament Agency",
       "Army Department",
       "Assassination Records Review Board",
-      "Barry M. Goldwater Scholarship and Excellence in Education Foundation",
       "Benefits Review Board",
       "Bipartisan Commission on Entitlement and Tax Reform",
       "Board of Directors of the Hope for Homeowners Program",
@@ -109,12 +108,13 @@
       "Defense Mapping Agency",
       "Defense Special Weapons Agency",
       "Delaware River Basin Commission",
-      "Denali Commission",
       "Disability Employment Policy Office",
       "Economic Analysis Staff",
       "Economic Research Service",
       "Economics and Statistics Administration",
-      "Electronic Commerce Advisory Commission"
+      "Electronic Commerce Advisory Commission",
+      "Emergency Oil and Gas Guaranteed Loan Board",
+      "Emergency Steel Guarantee Loan Board"
     ]
   },
   "senate_report": {
@@ -210,15 +210,13 @@
   "house_report": {
     "source": "house_clerk_committee_list",
     "committees_in_list": 27,
-    "committees_matched": 20,
+    "committees_matched": 22,
     "committees_not_in_graph": [
       "Committee on Education and Workforce",
-      "Committee on Ethics",
       "Joint Committee on the Library",
       "Joint Committee on Printing",
       "Joint Committee on Taxation",
-      "Joint Economic Committee",
-      "Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021"
+      "Joint Economic Committee"
     ],
     "graph_committees_not_in_list": [
       {
@@ -520,6 +518,16 @@
       "listedName": "Armed Forces Retirement Home",
       "url": "https://www.federalregister.gov/agencies/armed-forces-retirement-home",
       "agencyUrl": "https://www.afrh.gov/afrh/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-goldwater-scholarship-foundation": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 36,
+      "listedName": "Barry M. Goldwater Scholarship and Excellence in Education Foundation",
+      "url": "https://www.federalregister.gov/agencies/barry-m-goldwater-scholarship-and-excellence-in-education-foundation",
+      "agencyUrl": "http://www.act.org/goldwater/",
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
@@ -889,6 +897,16 @@
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
+    "exec-ind-misc-denali-commission": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 113,
+      "listedName": "Denali Commission",
+      "url": "https://www.federalregister.gov/agencies/denali-commission",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "exec-dept-doj-dea": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -1084,6 +1102,16 @@
       "listedName": "Farm Credit Administration",
       "url": "https://www.federalregister.gov/agencies/farm-credit-administration",
       "agencyUrl": "http://www.fca.gov/index.html",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-farm-credit-system-insurance-corporation": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 156,
+      "listedName": "Farm Credit System Insurance Corporation",
+      "url": "https://www.federalregister.gov/agencies/farm-credit-system-insurance-corporation",
+      "agencyUrl": "http://www.fcsic.gov/",
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
@@ -1941,6 +1969,16 @@
         "parentListedName": "Commerce Department"
       }
     },
+    "exec-ind-misc-udall-foundation": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 296,
+      "listedName": "Morris K. Udall and Stewart L. Udall Foundation",
+      "url": "https://www.federalregister.gov/agencies/morris-k-udall-and-stewart-l-udall-foundation",
+      "agencyUrl": "http://www.udall.gov/AboutUs/AboutUs.aspx",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "exec-ind-nasa": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -2203,6 +2241,16 @@
         "parentListedName": "Agriculture Department"
       }
     },
+    "exec-ind-misc-office-of-navajo-and-hopi-indian-relocation": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 377,
+      "listedName": "Navajo and Hopi Indian Relocation Office",
+      "url": "https://www.federalregister.gov/agencies/navajo-and-hopi-indian-relocation-office",
+      "agencyUrl": "https://www.onhir.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "exec-ind-misc-northern-border-regional-commission": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -2369,6 +2417,16 @@
       "entryId": 410,
       "listedName": "Postal Service",
       "url": "https://www.federalregister.gov/agencies/postal-service",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-presidio-trust": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 436,
+      "listedName": "Presidio Trust",
+      "url": "https://www.federalregister.gov/agencies/presidio-trust",
       "agencyUrl": null,
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
@@ -2723,6 +2781,16 @@
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
+    "leg-support-uscc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 505,
+      "listedName": "U.S.-China Economic and Security Review Commission",
+      "url": "https://www.federalregister.gov/agencies/u-s-china-economic-and-security-review-commission",
+      "agencyUrl": "https://www.uscc.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "exec-dept-defense-agency-uniformed-services-university-health-sciences": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -2809,6 +2877,16 @@
       "entryId": 515,
       "listedName": "United States Sentencing Commission",
       "url": "https://www.federalregister.gov/agencies/united-states-sentencing-commission",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-utah-reclamation-mitigation-and-conservation-commission": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 518,
+      "listedName": "Utah Reclamation Mitigation and Conservation Commission",
+      "url": "https://www.federalregister.gov/agencies/utah-reclamation-mitigation-and-conservation-commission",
       "agencyUrl": null,
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
@@ -4617,6 +4695,15 @@
         "parentListedName": "Committee on Energy and Commerce"
       }
     },
+    "leg-house-cmte-ethics": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Ethics",
+      "code": "SO00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://ethics.house.gov"
+    },
     "leg-house-cmte-financial-services": {
       "source": "house_clerk_committee_list",
       "status": "listed",
@@ -5901,6 +5988,14 @@
       "status": "listed",
       "listedName": "Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party",
       "code": "ZS00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    },
+    "leg-house-cmte-jan6-select": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021",
+      "code": "QJ00",
       "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
       "checkedAt": "2026-09-13T22:51:28Z"
     },

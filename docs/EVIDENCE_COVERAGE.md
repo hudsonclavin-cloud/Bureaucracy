@@ -11,15 +11,15 @@ receipts line and not a unit the government has replaced. A recorded reason is a
 about what this project can read — a host, a policy, a name that counts things — and
 never a finding about the unit; every panel says which.
 
-- current organisations: **870**
-- with a verification method: **631** (72.5%)
+- current organisations: **884**
+- with a verification method: **645** (73.0%)
 - with a recorded reason no official document can be read: **199**
 - **criterion 3 gap — neither: 40**
 
 | class | organisations | what it means | route |
 |---|---|---|---|
-| Sourced — an official page labels it | 491 | `verificationMethod` is one of the page methods: the unit's own page, its parent's page or (for a post) its organisation's page names it as a heading, link or list item of its own. The strongest claim this project makes about a unit's existence. | Nothing to do; the page is re-fetched and the label re-tested by `scripts/verify_base_graph.py`. |
-| Sourced — an official list or document names it | 140 | `verificationMethod` is one of the document methods: the Federal Register's agency directory, the Senate's or the House Clerk's committee list, the Government Manual's entry, OPM's PLUM archive or current export, or a Federal Register signature. A different document from a page, and the panel says which. | Nothing to do; each list is committed verbatim and re-matched on every build. |
+| Sourced — an official page labels it | 497 | `verificationMethod` is one of the page methods: the unit's own page, its parent's page or (for a post) its organisation's page names it as a heading, link or list item of its own. The strongest claim this project makes about a unit's existence. | Nothing to do; the page is re-fetched and the label re-tested by `scripts/verify_base_graph.py`. |
+| Sourced — an official list or document names it | 148 | `verificationMethod` is one of the document methods: the Federal Register's agency directory, the Senate's or the House Clerk's committee list, the Government Manual's entry, OPM's PLUM archive or current export, or a Federal Register signature. A different document from a page, and the panel says which. | Nothing to do; each list is committed verbatim and re-matched on every build. |
 | Recorded reason — a page queued for it could not be read | 72 | `verificationUnread`: a candidate page WAS queued and the verifier could not read it — the host refuses the crawler (401/403 to robots.txt or the page), robots.txt is unreachable, the page answered 404, served under 400 readable characters, or the site was failing. A dated fact about the host or the page, never about the unit. | For `page_not_found` and the readable floor, nominate a better page (phase 1b). For a host that refuses the crawler, nothing on that host can ever be read under the robots policy (`docs/NETWORK_ACCESS.md` §11: 67 of 68 such hosts refuse the page too); the route is a different document — the Manual, a directory, a committee list. |
 | Recorded reason — the name is this graph's own count label | 11 | `verificationNoDocument.kind: curated_count_label`: the name counts things ("Mission Teams (15)", "All 94 District Courts — Standard Structure"), so no official page can carry it as a label and none was fetched. Recomputed from the name on every build by the verifier's own floor. | None by evidence: the name is the graph's annotation. Renaming the grouping to a unit's real name would make it checkable, where one exists. |
 | Recorded reason — the name is one common word | 7 | `verificationNoDocument.kind: name_too_generic`: a one-token name a page may use without naming the unit ("Defense", "Districts (multiple)"), refused by the verifier's floor before any fetch. | A rename to the wording the parent's page carries, where the page carries a fuller one. |
@@ -29,8 +29,8 @@ never a finding about the unit; every panel says which.
 | Recorded reason — its site is not on a .gov or .mil host | 29 | `verificationNoDocument.kind: not_on_a_gov_host`: the unit's site exists and is on a host this verifier does not read (si.edu for the Smithsonian's museums, usps.com for the Postal Service's areas, cpb.org). A fact about the policy, recorded so it does not read as "nobody looked". | An owner's decision to admit a named non-.gov host for a named unit, as `politeness.STANDARD_4XX_HOSTS` admits two hosts to a different rule; or a .gov document that names the unit (the Smithsonian's museums appear in no committed list). |
 | Recorded reason — the host that would carry it refuses this crawler | 29 | `verificationNoDocument.kind: host_refuses_crawler`: no page was queued for the node itself, and the ledger's probe found the only host that would carry it answering 401/403 (gao.gov for GAO's mission teams, state.gov for State's bureaus, the .mil hosts for the combatant commands). The probe's URL and verdict ride on the record. | The same as `unread/host_refuses_crawler`: a different document, never that host. |
 | Recorded reason — the page was read and does not carry the graph's name | 24 | `verificationNoDocument.kind: page_read_does_not_name_it`: the ledger's probe read the page that would name it and the graph's wording is not a label on it (NSF's divisions, whose pages label "Mathematical Sciences" where the graph says "Division of Mathematical Sciences"; the Department of Education's regions). A question about the NAME, not about whether the unit exists. | A reviewed row in `data/curation/unit_renames.json` where the page's wording names the same unit (`CURATION.md` §9), re-tested against the live page on every run; or a recorded refusal to rename, where the page's label is a breadcrumb rather than the unit's name. |
-| Gap — checked and not found | 40 | `verificationFailure`: the unit's own page or a complete official list was read and does not carry the name. A real negative about the graph's wording, not a reason no document can be read — a document was read — so it counts against criterion 3 until the name is fixed, the unit superseded, or the name kept with its reason in CURATION.md. Where the nomination ledger also declines a page for the node, the panel prints the negative, which a reader can audit against its URL. | A rename to the document's wording (`unit_renames.json`), a supersession, or a recorded decision to keep the name. |
-| Gap — no method, no unread page and no recorded reason | 0 | Nothing is published about this unit's existence and the nomination ledger's latest record for it NOMINATES a page (so no reason applies) or is missing. The page is queued or queueable and has not confirmed the unit. | Run the verifier on the queued page; where the page labels a different wording, a reviewed rename (`CURATION.md` §9). |
+| Gap — checked and not found | 39 | `verificationFailure`: the unit's own page or a complete official list was read and does not carry the name. A real negative about the graph's wording, not a reason no document can be read — a document was read — so it counts against criterion 3 until the name is fixed, the unit superseded, or the name kept with its reason in CURATION.md. Where the nomination ledger also declines a page for the node, the panel prints the negative, which a reader can audit against its URL. | A rename to the document's wording (`unit_renames.json`), a supersession, or a recorded decision to keep the name. |
+| Gap — no method, no unread page and no recorded reason | 1 | Nothing is published about this unit's existence and the nomination ledger's latest record for it NOMINATES a page (so no reason applies) or is missing. The page is queued or queueable and has not confirmed the unit. | Run the verifier on the queued page; where the page labels a different wording, a reviewed rename (`CURATION.md` §9). |
 
 ## Where the recorded reasons and the gap sit
 
@@ -64,10 +64,10 @@ taken a parent at a time:
 | House Administrative Offices | 0 | 2 | 1 |
 | Senate Administrative Offices | 0 | 2 | 1 |
 | Department of Homeland Security (DHS) | 2 | 0 | 0 |
-| House Committee on Judiciary | 0 | 0 | 2 |
 | Independent Establishments & Government Corporations | 0 | 2 | 0 |
 | Judicial Branch | 0 | 0 | 2 |
 | Legislative Branch | 0 | 1 | 1 |
+| Other Independent Agencies (25+) | 0 | 1 | 1 |
 | Social Security Administration (SSA) | 2 | 0 | 0 |
 | United States Senate | 0 | 1 | 1 |
 | Architect of the Capitol | 0 | 1 | 0 |
@@ -82,24 +82,24 @@ taken a parent at a time:
 
 ---
 
-## Sourced — an official page labels it — 491
+## Sourced — an official page labels it — 497
 
 `verificationMethod` is one of the page methods: the unit's own page, its parent's page or (for a post) its organisation's page names it as a heading, link or list item of its own. The strongest claim this project makes about a unit's existence.
 
 **Route.** Nothing to do; the page is re-fetched and the label re-tested by `scripts/verify_base_graph.py`.
 
-- `name_labelled_on_own_official_page` — 376
-- `name_labelled_on_parent_official_page` — 115
+- `name_labelled_on_own_official_page` — 381
+- `name_labelled_on_parent_official_page` — 116
 
-## Sourced — an official list or document names it — 140
+## Sourced — an official list or document names it — 148
 
 `verificationMethod` is one of the document methods: the Federal Register's agency directory, the Senate's or the House Clerk's committee list, the Government Manual's entry, OPM's PLUM archive or current export, or a Federal Register signature. A different document from a page, and the panel says which.
 
 **Route.** Nothing to do; each list is committed verbatim and re-matched on every build.
 
-- `listed_in_federal_register_agency_directory` — 76
+- `listed_in_federal_register_agency_directory` — 83
 - `listed_in_us_government_manual` — 29
-- `listed_in_house_clerk_committee_list` — 18
+- `listed_in_house_clerk_committee_list` — 19
 - `listed_in_senate_committee_list` — 17
 
 ## Recorded reason — a page queued for it could not be read — 72
@@ -364,7 +364,7 @@ taken a parent at a time:
 - `leg-support-uscp-patrol-mobile-response-bureau` — Patrol & Mobile Response Bureau (Bureau; under U.S. Capitol Police) — probed www.uscp.gov
 - `leg-house-leadership` — House Leadership (Division; under United States House of Representatives) — probed www.house.gov
 
-## Gap — checked and not found — 40
+## Gap — checked and not found — 39
 
 `verificationFailure`: the unit's own page or a complete official list was read and does not carry the name. A real negative about the graph's wording, not a reason no document can be read — a document was read — so it counts against criterion 3 until the name is fixed, the unit superseded, or the name kept with its reason in CURATION.md. Where the nomination ledger also declines a page for the node, the panel prints the negative, which a reader can audit against its URL.
 
@@ -380,7 +380,6 @@ taken a parent at a time:
 - `leg-house-cmte-agriculture-sub-horticulture-farm-inputs-subcommittee-on-precision-agriculture` — Subcommittee on Horticulture, Farm Inputs & Subcommittee on Precision Agriculture (Subcommittee; under House Committee on Agriculture) — probed agriculture.house.gov
 - `leg-house-cmte-foreign-affairs-sub-global-health-global-human-rights-international-organizations` — Subcommittee on Global Health, Global Human Rights & International Organizations (Subcommittee; under House Committee on Foreign Affairs) — probed foreignaffairs.house.gov
 - `leg-house-cmte-house-administration-sub-committees` — Subcommittee on Committees (Subcommittee; under House Committee on House Administration) — probed cha.house.gov
-- `leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government` — Select Subcommittee on the Weaponization of the Federal Government (Subcommittee; under House Committee on Judiciary) — probed judiciary.house.gov
 - `leg-house-cmte-judiciary-sub-responsiveness-accountability-to-americans` — Subcommittee on Responsiveness & Accountability to Americans (Subcommittee; under House Committee on Judiciary) — probed judiciary.house.gov
 - `leg-house-cmte-oversight-accountability-sub-national-security-the-border-foreign-affairs` — Subcommittee on National Security, the Border & Foreign Affairs (Subcommittee; under House Committee on Oversight and Government Reform) — probed oversight.house.gov
 - `leg-house-cmte-veterans-affairs-sub-benefits` — Subcommittee on Benefits (Subcommittee; under House Committee on Veterans' Affairs) — probed veterans.house.gov
@@ -411,10 +410,11 @@ taken a parent at a time:
 - `leg-senate-admin` — Senate Administrative Offices (Division; under United States Senate) — probed www.senate.gov
 - `leg-senate-cmte-judiciary-sub-human-rights-the-law` — Human Rights & the Law (Subcommittee; under United States Senate Committee on the Judiciary) — probed www.judiciary.senate.gov
 
-## Gap — no method, no unread page and no recorded reason — 0
+## Gap — no method, no unread page and no recorded reason — 1
 
 Nothing is published about this unit's existence and the nomination ledger's latest record for it NOMINATES a page (so no reason applies) or is missing. The page is queued or queueable and has not confirmed the unit.
 
 **Route.** Run the verifier on the queued page; where the page labels a different wording, a reviewed rename (`CURATION.md` §9).
 
+- `exec-ind-misc-southwest-border-regional-commission` — Southwest Border Regional Commission (Independent Agency; under Other Independent Agencies (25+))
 

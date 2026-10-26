@@ -147,7 +147,7 @@ class MatchingTests(unittest.TestCase):
         records = self.s["records"]
         house = [r for r in records.values() if r["chamber"] == "house" and r["unitKind"] == cd.UNIT_COMMITTEE]
         senate = [r for r in records.values() if r["chamber"] == "senate"]
-        self.assertEqual(len(house), 21)
+        self.assertEqual(len(house), 22)  # 21 until 2026-10-26, when the House Committee on Ethics was added and matched its printed row
         self.assertEqual(len(senate), 19)
         # The Senate Appropriations Committee is not funded from the Inquiries
         # and Investigations account Part II prints; it carries nothing.
@@ -377,7 +377,7 @@ class GateTests(unittest.TestCase):
     def test_the_true_blocks_pass(self) -> None:
         self.assertEqual(self.check(json.loads(json.dumps(self.graph))), [])
         carried = [n for n, _ in walk(self.graph) if n.get(cd.FIELD)]
-        self.assertEqual(len(carried), 46)
+        self.assertEqual(len(carried), 47)
         self.assertEqual(sum(1 for n in carried if n[cd.FIELD]["unitKind"] == cd.UNIT_OFFICE), 6)
 
     def test_each_corruption_is_refused(self) -> None:
@@ -518,10 +518,12 @@ class PayoutWeightGateTests(unittest.TestCase):
                 parents[str(child["id"])] = str(node["id"])
                 stack.append(child)
         self.assertEqual(gate.disbursement_weight_violations(nodes, parents, lambda n: n["id"]), [])
-        self.assertEqual(sum(1 for n in nodes if n.get("cost_basis") == "disbursement_weight"), 46)
+        self.assertEqual(sum(1 for n in nodes if n.get("cost_basis") == "disbursement_weight"), 47)
         # The Senate Appropriations Committee, the House Chaplain and the
-        # Parliamentarian: implied from their siblings' payouts.
-        self.assertEqual(sum(1 for n in nodes if n.get("cost_basis") == "implied_disbursement_weight"), 3)
+        # Parliamentarian: implied from their siblings' payouts; and since
+        # 2026-10-26 the January 6 select committee, a House committee the
+        # statement prints no row for.
+        self.assertEqual(sum(1 for n in nodes if n.get("cost_basis") == "implied_disbursement_weight"), 4)
 
 
 class HouseOfficerOfficeTests(unittest.TestCase):

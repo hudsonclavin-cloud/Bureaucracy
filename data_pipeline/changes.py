@@ -89,12 +89,34 @@ RULE_MEASURED_SAME_STATEMENT = "measured_cost_moved_without_a_new_statement"
 RULE_PAY_WITHDRAWN = "pay_claims_withdrawn_above_5_percent"
 RULE_ANCHOR_BACKWARDS = "anchor_period_goes_backwards"
 RULE_ANCHOR_LOST = "anchor_lost"
-BUDGET_RULES = (RULE_NODE_COUNT, RULE_MEASURED_SAME_STATEMENT, RULE_PAY_WITHDRAWN, RULE_ANCHOR_BACKWARDS, RULE_ANCHOR_LOST)
+#: Added after the first scheduled run: a build handed no statement carries the
+#: published Treasury lines forward and stamps `reused_from_previous_build` on the
+#: budget summary. It rebuilds the same figures, which is exactly why nothing else
+#: noticed that the cycle had not read a statement at all.
+RULE_REBUILT_WITHOUT_STATEMENT = "rebuilt_without_a_statement"
+BUDGET_RULES = (RULE_NODE_COUNT, RULE_MEASURED_SAME_STATEMENT, RULE_PAY_WITHDRAWN, RULE_ANCHOR_BACKWARDS, RULE_ANCHOR_LOST,
+                RULE_REBUILT_WITHOUT_STATEMENT)
+#: The rules every entry recorded before RULE_REBUILT_WITHOUT_STATEMENT carries.
+BUDGET_RULES_ORIGINAL = BUDGET_RULES[:5]
 
 QUEUE_KINDS = (
     "budget_hold", "node_removed", "claim_withdrawn", "method_withdrawn", "sourced_figure_withdrawn",
     "measured_cost_moved_with_new_statement", "placement_directory_disagreement", "cost_weight_dispute",
     "verification_failure", "source_overdue",
+)
+
+
+#: Records that name something a build DID (a hold, a removal, a withdrawal, a
+#: measured cost that moved under a new statement). The next build, comparing the
+#: committed graph with itself, finds none of them, so a record of this kind that
+#: closed when it was no longer found would close itself unreviewed: the first
+#: scheduled run closed seven this way, the September statement's moves, before
+#: anyone had looked. They stay open until a person resolves them. The other kinds
+#: name a CONDITION the graph is in (a disagreement, a dispute, a source overdue),
+#: and one that no longer holds is rightly closed.
+EVENT_QUEUE_KINDS = (
+    "budget_hold", "node_removed", "claim_withdrawn", "method_withdrawn", "sourced_figure_withdrawn",
+    "measured_cost_moved_with_new_statement",
 )
 
 
@@ -289,6 +311,11 @@ def diff_graphs(before: dict[str, Any], after: dict[str, Any], *, built_at: str 
     withdrawn_share = (len(pay_withdrawn) / claims_before) if claims_before else 0.0
     rules.append({"rule": RULE_PAY_WITHDRAWN, "tripped": withdrawn_share > PAY_WITHDRAWAL_LIMIT,
                   "detail": f"{len(pay_withdrawn)} of {claims_before:,} pay claims withdrawn ({withdrawn_share:.1%}; the limit is {PAY_WITHDRAWAL_LIMIT:.0%})"})
+    reused_a = bool((after.get("__budgetSummary") or {}).get("reused_from_previous_build"))
+    reused_b = bool((before.get("__budgetSummary") or {}).get("reused_from_previous_build"))
+    rules.append({"rule": RULE_REBUILT_WITHOUT_STATEMENT, "tripped": reused_a and not reused_b,
+                  "detail": ("the build read no Monthly Treasury Statement and carried the published lines forward" if reused_a and not reused_b
+                             else "the build read a statement" if not reused_a else "the committed graph was already a carried-forward build")})
     held = any(r["tripped"] for r in rules)
     review_moves = [m for m in measured_moved if not same_statement and m["percent"] is not None and abs(m["percent"]) > MEASURED_REVIEW_MOVE * 100 and max(abs(m["before"]), abs(m["after"])) >= MEASURED_REVIEW_FLOOR]
 
@@ -422,8 +449,9 @@ def queue_records_from_graph(after: dict[str, Any], opened: str) -> list[dict[st
 
 def merge_queue(previous: list[dict[str, Any]], current: list[dict[str, Any]], today: str) -> list[dict[str, Any]]:
     """Keep every record ever opened: a re-found condition keeps its opening
-    date and any resolution a person recorded; a condition no longer found is
-    closed with today's date, never deleted; a new one is opened today."""
+    date and any resolution a person recorded; a CONDITION no longer found is
+    closed with today's date, never deleted; an EVENT (EVENT_QUEUE_KINDS) stays
+    open until a person resolves it; a new one is opened today."""
     by_key = {str(r.get("key")): dict(r) for r in previous if isinstance(r, dict) and r.get("key")}
     found = {r["key"] for r in current}
     out = []
@@ -443,6 +471,9 @@ def merge_queue(previous: list[dict[str, Any]], current: list[dict[str, Any]], t
         out.append(merged)
     for key, old in by_key.items():
         if key not in found:
+            if old.get("kind") in EVENT_QUEUE_KINDS and old.get("status") in ("open", "resolved"):
+                out.append(dict(old))
+                continue
             closed = dict(old)
             if closed.get("status") != "closed":
                 closed["status"] = "closed"

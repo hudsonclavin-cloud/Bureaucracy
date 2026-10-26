@@ -99,7 +99,7 @@ on any JS change).
   (fetch what the registry says is due with a per-row content check, derive,
   rebuild, reports, gate, suite, smoke, change budget; report in
   `output/update_cycle_report.json`; `--publish` refused until three clean
-  held cycles) and `.github/workflows/update_cycle.yml` (12th of each month
+  held cycles) and `.github/workflows/update_cycle.yml` (16th of each month
   and on demand, hold mode, opens a pull request; merging publishes). No
   scheduled cycle has run. CURATION.md §30.
 

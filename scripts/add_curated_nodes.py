@@ -119,7 +119,22 @@ LICENCE_TREASURY = "treasury_statement_line"
 LICENCE_PAGE = "official_page_label"
 LICENCE_MANUAL = "government_manual_entry"
 LICENCE_ACCOUNT = "combined_statement_account"
-LICENCES = (LICENCE_TREASURY, LICENCE_PAGE, LICENCE_MANUAL, LICENCE_ACCOUNT)
+LICENCE_LIST = "official_list_entry"
+LICENCES = (LICENCE_TREASURY, LICENCE_PAGE, LICENCE_MANUAL, LICENCE_ACCOUNT, LICENCE_LIST)
+
+#: The official lists an `official_list_entry` row may name, each read from the
+#: committed copy and described the way its own evidence module describes it.
+LIST_TOPTIER = "usaspending_toptier"
+LIST_PLUM = "plum_current_agencies"
+LIST_FEDERAL_REGISTER = "federal_register_directory"
+LIST_HOUSE_CLERK = "house_clerk_committee_list"
+LISTS = (LIST_TOPTIER, LIST_PLUM, LIST_FEDERAL_REGISTER, LIST_HOUSE_CLERK)
+LIST_LABEL = {
+    LIST_TOPTIER: "USAspending's toptier agency list (the agencies that report under the DATA Act)",
+    LIST_PLUM: "OPM's current Plum Book export (its agency column)",
+    LIST_FEDERAL_REGISTER: "the Federal Register's agency directory",
+    LIST_HOUSE_CLERK: "the House Clerk's committee list (every committee and subcommittee, with its code and parent)",
+}
 
 #: The only type a `combined_statement_account` node may carry: an account is
 #: not an office, and the exporter draws this type as a line.
@@ -132,12 +147,14 @@ STRUCTURE_SOURCE = {
     LICENCE_PAGE: "named_on_an_official_page",
     LICENCE_MANUAL: "named_in_the_us_government_manual",
     LICENCE_ACCOUNT: "named_in_the_treasury_combined_statement",
+    LICENCE_LIST: "named_in_an_official_list",
 }
 DESCRIPTION_SOURCE = {
     LICENCE_TREASURY: "generated_from_the_monthly_treasury_statement",
     LICENCE_PAGE: "generated_from_its_official_page",
     LICENCE_MANUAL: "generated_from_the_us_government_manual",
     LICENCE_ACCOUNT: "generated_from_the_treasury_combined_statement",
+    LICENCE_LIST: "generated_from_an_official_list",
 }
 
 MIN_NAME_TOKENS = 2
@@ -354,6 +371,51 @@ def account_refusal(row: dict, parent: dict, chapter: dict) -> tuple[str, str] |
     return None, account
 
 
+def official_list_entries(list_id: str) -> tuple[dict[str, list[str]], str]:
+    """The committed list as {canonical key: [names as printed]} and a sentence
+    saying which copy it is. Offline: each file's digest is recomputed (the Plum
+    export's by its loader, the toptier list's against its own fetch record)
+    before an entry is read."""
+    import hashlib  # noqa: PLC0415
+
+    entries: dict[str, list[str]] = {}
+    if list_id == LIST_TOPTIER:
+        path = PROJECT_ROOT / "tests" / "fixtures" / "usaspending" / "toptier_agencies.json"
+        meta = json.loads(path.with_name(path.name + ".meta.json").read_text(encoding="utf-8"))
+        raw = path.read_bytes()
+        if hashlib.sha256(raw).hexdigest() != meta.get("sha256"):
+            raise SystemExit(f"{path.name} does not match the digest its fetch recorded")
+        for row in json.loads(raw).get("results") or []:
+            entries.setdefault(canonical_name_key(row.get("agency_name")), []).append(" ".join(str(row.get("agency_name") or "").split()))
+        return entries, f"fetched {str(meta.get('fetched_at') or '')[:10]}"
+    if list_id == LIST_PLUM:
+        from data_pipeline.verification import plum_current  # noqa: PLC0415
+        export = plum_current.load_plum_export()
+        for agency in sorted({agency for agency, _org in export["groups"]}):
+            entries.setdefault(canonical_name_key(agency), []).append(" ".join(str(agency).split()))
+        return entries, f"fetched {str(export.get('fetched_at') or '')[:10]}"
+    if list_id == LIST_FEDERAL_REGISTER:
+        from data_pipeline.verification import directories  # noqa: PLC0415
+        payload = directories.load_directory_file(PROJECT_ROOT / "tests" / "fixtures" / "directories" / "federal_register_agencies.json")
+        for row in payload["data"]:
+            entries.setdefault(canonical_name_key(row.get("name")), []).append(" ".join(str(row.get("name") or "").split()))
+        return entries, f"fetched {str(payload.get('fetched_at') or '')[:10]}"
+    if list_id == LIST_HOUSE_CLERK:
+        from data_pipeline.verification import congress, list_dispositions  # noqa: PLC0415
+        for committee in congress.load_house_committees(list_dispositions.HOUSE_FIXTURE):
+            for printed in [committee.get("name")] + [sub.get("name") for sub in committee.get("subcommittees") or []]:
+                entries.setdefault(canonical_name_key(printed), []).append(" ".join(str(printed or "").split()))
+        return entries, "as committed under tests/fixtures/directories/house"
+    raise SystemExit(f"unknown list {list_id!r}")
+
+
+def describe_from_list(name: str, list_id: str, printed: str, version: str) -> str:
+    return (f"{name} is listed by {LIST_LABEL[list_id]} ({version}) as {printed!r}. This node "
+            f"exists because that list names the unit; where it sits in this graph is the row "
+            f"author's assertion, which no list read here states, and nothing further about it "
+            f"has been read.")
+
+
 def describe_from_page(name: str, url: str, matched: str) -> str:
     return (f"{name} is named on {url}, which labels it as {matched!r}. This node "
             f"exists because that page names the unit; nothing further about it "
@@ -417,6 +479,7 @@ def main(argv: list[str] | None = None) -> int:
     by_key = treasury_rows_by_key(statement)
     period = str((statement.get("budgetSummary") or {}).get("label") or "the current statement")
 
+    list_cache: dict[str, tuple[dict[str, list[str]], str]] = {}
     robots = RobotsPolicy(user_agent=USER_AGENT, timeout=args.timeout)
     pages: dict[str, tuple[str, object]] = {}
     results: list[dict] = []
@@ -499,6 +562,23 @@ def main(argv: list[str] | None = None) -> int:
             node_desc = describe_from_manual(name, manual, chain, url)
             structure_detail = url
             manual_placement = placement
+            row_section = ""
+        elif licence == LICENCE_LIST:
+            list_id = str(row.get("list") or "")
+            if list_id not in LISTS:
+                results.append({"id": node_id, "added": False, "reason": "row_names_no_known_list",
+                                "detail": f"list must be one of {LISTS}"})
+                continue
+            if list_id not in list_cache:
+                list_cache[list_id] = official_list_entries(list_id)
+            by_list_key, version = list_cache[list_id]
+            hits = by_list_key.get(canonical_name_key(name)) or []
+            if len(hits) != 1:
+                results.append({"id": node_id, "added": False, "reason": "list_does_not_name_one_such_unit",
+                                "detail": f"{len(hits)} entries of {list_id} reduce to this name"})
+                continue
+            node_desc = describe_from_list(name, list_id, hits[0], version)
+            structure_detail = f"{list_id}: {hits[0]}"
             row_section = ""
         elif licence == LICENCE_ACCOUNT:
             refusal, detail = account_refusal(row, node_map[parent_id], chapter)

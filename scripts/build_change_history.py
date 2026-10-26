@@ -176,6 +176,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--stats", type=Path, default=DEFAULT_STATS)
     parser.add_argument("--record", action="store_true", help="write the history entry, the queue and the document")
     parser.add_argument("--dry-run", action="store_true", help="print the summary and the budget; write nothing")
+    parser.add_argument("--replace", action="store_true", help="replace the entry already recorded for this build's timestamp (default: keep it)")
     args = parser.parse_args((argv or sys.argv)[1:])
 
     if not args.after.exists():
@@ -209,8 +210,16 @@ def main(argv: list[str] | None = None) -> int:
           f"{sum(1 for r in queue if r.get('status') == 'closed')} closed, {sum(1 for r in queue if r.get('status') == 'resolved')} resolved")
     if args.dry_run or not args.record:
         return EXIT_HELD if entry["budget"]["held"] else 0
-    # The same build recorded twice (a re-run of the job on an unchanged
-    # graph) replaces its own entry rather than stacking a duplicate.
+    # The same build recorded twice is not stacked, and the FIRST record stands:
+    # it was taken against the baseline that did not yet contain the build, while
+    # a second one, taken after the build was committed, compares the graph with
+    # itself and says "nothing changed" (re-recording the first scheduled run's
+    # graph would have replaced the September statement's entry with exactly
+    # that). --replace is for a build whose entry was recorded in error.
+    already = [h for h in history if h.get("builtAt") == entry["builtAt"]]
+    if already and not args.replace:
+        print(f"an entry for the build of {entry['builtAt']} is already recorded; kept (use --replace to replace it)")
+        return EXIT_HELD if entry["budget"]["held"] else 0
     history = [h for h in history if h.get("builtAt") != entry["builtAt"]]
     history.insert(0, entry)
     history = [h if i < FULL_ENTRIES or h.get("trimmed") else trim(h) for i, h in enumerate(history)]

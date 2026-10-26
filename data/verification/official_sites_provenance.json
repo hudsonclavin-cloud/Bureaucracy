@@ -4509,5 +4509,60 @@
   "run": "evidence-coverage-2026-10-22",
   "nominatedAt": "2026-10-22T04:27:22Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-misc-farm-credit-system-insurance-corporation": {
+  "url": "https://www.fcsic.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "exec-ind-misc-farm-credit-system-insurance-corporation",
+  "basis": "The page that licensed the node when scripts/add_curated_nodes.py added it (official_page_label): it labels the name in page content, so the verifier is queued to read it again as the node's own page.",
+  "confidence": "likely",
+  "run": "add-curated-nodes-2026-10-26",
+  "nominatedAt": "2026-10-26T00:00:00Z",
+  "note": "Not evidence: a candidate for the verifier to fetch. The node earns a source only when the verifier reads the page and finds the name as a label of its own."
+ },
+ "exec-ind-misc-southeast-crescent-regional-commission": {
+  "url": "https://scrc.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "exec-ind-misc-southeast-crescent-regional-commission",
+  "basis": "The page that licensed the node when scripts/add_curated_nodes.py added it (official_page_label): it labels the name in page content, so the verifier is queued to read it again as the node's own page.",
+  "confidence": "likely",
+  "run": "add-curated-nodes-2026-10-26",
+  "nominatedAt": "2026-10-26T00:00:00Z",
+  "note": "Not evidence: a candidate for the verifier to fetch. The node earns a source only when the verifier reads the page and finds the name as a label of its own."
+ },
+ "leg-support-usbg": {
+  "url": "https://www.usbg.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "leg-support-usbg",
+  "basis": "The page that licensed the node when scripts/add_curated_nodes.py added it (official_page_label): it labels the name in page content, so the verifier is queued to read it again as the node's own page.",
+  "confidence": "likely",
+  "run": "add-curated-nodes-2026-10-26",
+  "nominatedAt": "2026-10-26T00:00:00Z",
+  "note": "Not evidence: a candidate for the verifier to fetch. The node earns a source only when the verifier reads the page and finds the name as a label of its own."
+ },
+ "jud-specialized-jpml": {
+  "url": "https://www.jpml.uscourts.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "jud-specialized-jpml",
+  "basis": "The page that licensed the node when scripts/add_curated_nodes.py added it (official_page_label): it labels the name in page content, so the verifier is queued to read it again as the node's own page.",
+  "confidence": "likely",
+  "run": "add-curated-nodes-2026-10-26",
+  "nominatedAt": "2026-10-26T00:00:00Z",
+  "note": "Not evidence: a candidate for the verifier to fetch. The node earns a source only when the verifier reads the page and finds the name as a label of its own."
+ },
+ "leg-house-cmte-ethics": {
+  "url": "https://ethics.house.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "leg-house-cmte-ethics",
+  "basis": "The page that licensed the node when scripts/add_curated_nodes.py added it (official_page_label): it labels the name in page content, so the verifier is queued to read it again as the node's own page.",
+  "confidence": "likely",
+  "run": "add-curated-nodes-2026-10-26",
+  "nominatedAt": "2026-10-26T00:00:00Z",
+  "note": "Not evidence: a candidate for the verifier to fetch. The node earns a source only when the verifier reads the page and finds the name as a label of its own."
  }
 }
