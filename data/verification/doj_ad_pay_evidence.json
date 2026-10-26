@@ -1,11 +1,11 @@
 {
-  "_note": "Derived by scripts/derive_doj_ad_pay_evidence.py from two committed pages of the U.S. Attorneys' career centre, fetched 2026-10-22T08:52:40Z: the Administratively Determined pay plan chart (the table headed 'Assistant United States Attorneys (AUSA)', grades AD-21 to AD-29, base pay before locality, tables for 2025) and the salary information page (the AD plan pays Assistant United States Attorneys; Supervisory AUSAs and Senior Litigation Counsel are categories of their own). Every figure is a band the chart prints, never a rate paid, and not the node's cost. The chart's second table names no post and is not read. Regenerate by re-running the script; never edit by hand.",
+  "_note": "Derived by scripts/derive_doj_ad_pay_evidence.py from two committed pages of the U.S. Attorneys' career centre, fetched 2026-10-26T05:51:00Z: the Administratively Determined pay plan chart (the table headed 'Assistant United States Attorneys (AUSA)', grades AD-21 to AD-29, base pay before locality, tables for 2025) and the salary information page (the AD plan pays Assistant United States Attorneys; Supervisory AUSAs and Senior Litigation Counsel are categories of their own). Every figure is a band the chart prints, never a rate paid, and not the node's cost. The chart's second table names no post and is not read. Regenerate by re-running the script; never edit by hand.",
   "source": {
     "kind": "doj_usao_ad_pay_plan",
     "chart": {
       "url": "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts",
-      "sha256": "904d57e71a717c465b5e4b6749a6f20ba1f6bb06b6451dfa3b2bb9bd12dd9114",
-      "fetchedAt": "2026-10-22T08:52:40Z",
+      "sha256": "34a20ba74b8138dd0e7f098e51fadf91ed62aec3684fe15e06caa47a882ce559",
+      "fetchedAt": "2026-10-26T05:51:00Z",
       "file": "tests/fixtures/doj/usao_ad_pay_plan_charts.html"
     },
     "planPage": {
@@ -20,8 +20,8 @@
     "source": "doj_usao_ad_pay_plan",
     "chart": {
       "url": "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts",
-      "sha256": "904d57e71a717c465b5e4b6749a6f20ba1f6bb06b6451dfa3b2bb9bd12dd9114",
-      "fetchedAt": "2026-10-22T08:52:40Z"
+      "sha256": "34a20ba74b8138dd0e7f098e51fadf91ed62aec3684fe15e06caa47a882ce559",
+      "fetchedAt": "2026-10-26T05:51:00Z"
     },
     "planPage": {
       "url": "https://www.justice.gov/usao/career-center/salary-information",
@@ -107,8 +107,8 @@
       "rollupRole": "line",
       "sourceType": "doj_usao_ad_pay_plan_chart",
       "sourceUrl": "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts",
-      "documentSha256": "904d57e71a717c465b5e4b6749a6f20ba1f6bb06b6451dfa3b2bb9bd12dd9114",
-      "retrievedAt": "2026-10-22T08:52:40Z",
+      "documentSha256": "34a20ba74b8138dd0e7f098e51fadf91ed62aec3684fe15e06caa47a882ce559",
+      "retrievedAt": "2026-10-26T05:51:00Z",
       "locator": {
         "page": "Assistant United States Attorneys (AUSA)",
         "section": "AD-21 to AD-29"
@@ -143,8 +143,8 @@
       "rollupRole": "line",
       "sourceType": "doj_usao_ad_pay_plan_chart",
       "sourceUrl": "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts",
-      "documentSha256": "904d57e71a717c465b5e4b6749a6f20ba1f6bb06b6451dfa3b2bb9bd12dd9114",
-      "retrievedAt": "2026-10-22T08:52:40Z",
+      "documentSha256": "34a20ba74b8138dd0e7f098e51fadf91ed62aec3684fe15e06caa47a882ce559",
+      "retrievedAt": "2026-10-26T05:51:00Z",
       "locator": {
         "page": "Assistant United States Attorneys (AUSA)",
         "section": "AD-21 to AD-29"

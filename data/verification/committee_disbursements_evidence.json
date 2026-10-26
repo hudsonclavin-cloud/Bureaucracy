@@ -2,7 +2,7 @@
   "_note": "Derived by scripts/derive_committee_disbursements_evidence.py from the House's Statement of Disbursements and the Senate's Report of the Secretary of the Senate, committed verbatim under tests/fixtures/disbursements/ with their digests. Each record is the sum of the totals the chamber prints for one committee's account -- or, for the House's own officer offices, that office's organisation -- over the report's period, every component listed. No row about a person is read. It is not a cost and the exporter never writes it into one.",
   "source": {
     "kind": "committee_disbursements",
-    "derivedAt": "2026-10-26T00:41:02Z"
+    "derivedAt": "2026-10-26T05:51:07Z"
   },
   "report": {
     "house": {

@@ -2,7 +2,7 @@
   "_note": "Derived by scripts/derive_combined_statement_evidence.py from the Combined Statement's Legislative Branch chapter (c01, XLSX and PDF) and the September 2025 Monthly Treasury Statement, committed verbatim under tests/fixtures/ with their digests. Each record is one reviewed row: every account the chapter prints for the unit, summed. It is not a cost and the exporter never writes it into one.",
   "source": {
     "kind": "combined_statement",
-    "derivedAt": "2026-10-26T00:41:02Z"
+    "derivedAt": "2026-10-26T05:51:07Z"
   },
   "report": {
     "chapter": "c01",

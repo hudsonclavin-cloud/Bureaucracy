@@ -163798,8 +163798,8 @@
                         "scopeNote": "The chart's first table, headed 'Assistant United States Attorneys (AUSA)', prints this range. Its second table, headed 'Executive, Managerial, Supervisory, Special Assistant or Senior Litigation Counsel AUSAs', is not included: the salary page lists Supervisory Assistant United States Attorneys and Senior Litigation Counsel as categories of their own beside Assistant United States Attorneys, and says promotions to those positions are made on a temporary basis.",
                         "quote": "These tables are for 2025 and are effective as of January 12, 2025. · The tables below do not include locality based comparability adjustments (locality pay). · Assistant United States Attorneys (AUSA) · AD-21 minimum $63,163 · AD-29 maximum $165,209",
                         "url": "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts",
-                        "documentSha256": "904d57e71a717c465b5e4b6749a6f20ba1f6bb06b6451dfa3b2bb9bd12dd9114",
-                        "checkedAt": "2026-10-22T08:52:40Z",
+                        "documentSha256": "34a20ba74b8138dd0e7f098e51fadf91ed62aec3684fe15e06caa47a882ce559",
+                        "checkedAt": "2026-10-26T05:51:00Z",
                         "planDocument": {
                           "url": "https://www.justice.gov/usao/career-center/salary-information",
                           "sha256": "5042c378ebd6896d24a62c71b8c15f0a1c457e2b6e8a902243f8be9fe3b8cb1c",
@@ -163891,8 +163891,8 @@
                         "scopeNote": "The chart's first table, headed 'Assistant United States Attorneys (AUSA)', prints this range. Its second table, headed 'Executive, Managerial, Supervisory, Special Assistant or Senior Litigation Counsel AUSAs', is not included: the salary page lists Supervisory Assistant United States Attorneys and Senior Litigation Counsel as categories of their own beside Assistant United States Attorneys, and says promotions to those positions are made on a temporary basis.",
                         "quote": "These tables are for 2025 and are effective as of January 12, 2025. · The tables below do not include locality based comparability adjustments (locality pay). · Assistant United States Attorneys (AUSA) · AD-21 minimum $63,163 · AD-29 maximum $165,209",
                         "url": "https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts",
-                        "documentSha256": "904d57e71a717c465b5e4b6749a6f20ba1f6bb06b6451dfa3b2bb9bd12dd9114",
-                        "checkedAt": "2026-10-22T08:52:40Z",
+                        "documentSha256": "34a20ba74b8138dd0e7f098e51fadf91ed62aec3684fe15e06caa47a882ce559",
+                        "checkedAt": "2026-10-26T05:51:00Z",
                         "planDocument": {
                           "url": "https://www.justice.gov/usao/career-center/salary-information",
                           "sha256": "5042c378ebd6896d24a62c71b8c15f0a1c457e2b6e8a902243f8be9fe3b8cb1c",
@@ -405077,7 +405077,7 @@
           "date": "2025-01-12",
           "meaning": "the chart's own effective date",
           "basis": "",
-          "fetchedAt": "2026-10-22"
+          "fetchedAt": "2026-10-26"
         },
         "expected": {
           "next": "2026-01-12",

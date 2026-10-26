@@ -197,9 +197,20 @@ Do not edit by hand. `docs/DEFINITION_OF_DONE.md` Part 2 ("Change history"), cri
   - the copy in use: dated 2025-03-31, read 2026-09-08 — https://www.opm.gov/data/datasets/
 - opened 2026-10-22: U.S. Attorneys' Administratively Determined pay plan chart: the edition for 2026-01-12 was expected by 2026-03-13; the copy in use is dated 2025-01-12
   - the registry: expected by 2026-03-13, overdue after 2026-05-12
-  - the copy in use: dated 2025-01-12, read 2026-10-22 — https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts
+  - the copy in use: dated 2025-01-12, read 2026-10-26 — https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts
 
 ## Builds, newest first
+
+### 2026-10-26T05:51:17.373903+00:00 — within the budget
+
+the Treasury anchor is still the statement of 2026-09-30; 5,526 nodes before and 5,526 after (0 added, 0 removed, 0 newly marked replaced, 0 renamed); 0 measured costs moved, 0 gained a measured figure, 0 lost one; 0 estimates moved; pay claims 1,258 -> 1,258 (0 added, 0 withdrawn, 0 changed figure); verification or placement methods: 0 added, 0 withdrawn, 0 changed; within the change budget.
+
+- `node_count_drops`: ok — 5,526 nodes before, 5,526 after; 0 removed
+- `anchor_lost`: ok — anchor record date after: 2026-09-30
+- `anchor_period_goes_backwards`: ok — anchor 2026-09-30 -> 2026-09-30
+- `measured_cost_moved_without_a_new_statement`: ok — the statement is unchanged (2026-09-30) and 0 measured costs moved
+- `pay_claims_withdrawn_above_5_percent`: ok — 0 of 1,258 pay claims withdrawn (0.0%; the limit is 5%)
+- `rebuilt_without_a_statement`: ok — the build read a statement
 
 ### 2026-10-26T00:41:44.818197+00:00 — within the budget
 

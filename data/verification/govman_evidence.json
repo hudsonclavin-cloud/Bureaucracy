@@ -7,7 +7,7 @@
     "url": "https://www.govinfo.gov/content/pkg/GOVMAN-2025-12-31/xml/GOVMAN-2025-12-31.xml",
     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138",
     "fetchedAt": "2026-09-20T02:40:27Z",
-    "derivedAt": "2026-10-26T00:40:51Z",
+    "derivedAt": "2026-10-26T05:51:01Z",
     "fixture": "tests/fixtures/govman/GOVMAN-2025-12-31.xml"
   },
   "report": {
