@@ -938,27 +938,6 @@
   ]
  },
  {
-  "key": "verification_failure:db63b02f07da",
-  "kind": "verification_failure",
-  "status": "open",
-  "opened": "2026-10-22",
-  "closed": null,
-  "nodeId": "leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government",
-  "nodeName": "Select Subcommittee on the Weaponization of the Federal Government",
-  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
-  "documents": [
-   {
-    "role": "house_clerk_committee_list",
-    "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
-    "says": "does not carry the name Select Subcommittee on the Weaponization of the Federal Government"
-   },
-   {
-    "role": "this graph (curated)",
-    "says": "names it Select Subcommittee on the Weaponization of the Federal Government"
-   }
-  ]
- },
- {
   "key": "verification_failure:6f65fd9917ed",
   "kind": "verification_failure",
   "status": "open",
@@ -1249,6 +1228,27 @@
    {
     "role": "this graph (curated)",
     "says": "names it USSOCOM — Special Operations Command"
+   }
+  ]
+ },
+ {
+  "key": "verification_failure:db63b02f07da",
+  "kind": "verification_failure",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-10-26",
+  "nodeId": "leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government",
+  "nodeName": "Select Subcommittee on the Weaponization of the Federal Government",
+  "detail": "a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision",
+  "documents": [
+   {
+    "role": "house_clerk_committee_list",
+    "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+    "says": "does not carry the name Select Subcommittee on the Weaponization of the Federal Government"
+   },
+   {
+    "role": "this graph (curated)",
+    "says": "names it Select Subcommittee on the Weaponization of the Federal Government"
    }
   ]
  }

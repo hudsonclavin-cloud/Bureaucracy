@@ -7,10 +7,10 @@ Do not edit by hand; regenerate it. The 100 largest title families are in
 ## What this covers
 
 - **Part A — 1,562 unpriced positions** in the 1,542 title families outside the top 100, across **15 shards**, whole organisations per shard.
-- **Part B — 323 organisation nodes** that publish an apportioned estimate rather than a measured
-  cost, across **3 shards**, whole parents per shard:
-  - 240 — a committee or subcommittee (no Table 5 line can ever name one)
-  - 83 — an estimate with a sourced non-cost figure already beside it
+- **Part B — 332 organisation nodes** that publish an apportioned estimate rather than a measured
+  cost, across **4 shards**, whole parents per shard:
+  - 242 — a committee or subcommittee (no Table 5 line can ever name one)
+  - 90 — an estimate with a sourced non-cost figure already beside it
   - 0 — an estimate with no sourced figure of any kind
 
 Not asked about, by construction: measured nodes and priced posts (done), and the units
@@ -3394,7 +3394,7 @@ THE TITLES:
 
 # Part B — organisations that publish an estimate
 
-## Prompt B1 — 5 parent(s), 110 unit(s)
+## Prompt B1 — 4 parent(s), 106 unit(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -3464,8 +3464,10 @@ THE UNITS:
 - exec-ind-misc-csosa | Court Services and Offender Supervision Agency for the District of Columbia | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-defense-nuclear-facilities-safety-board | Defense Nuclear Facilities Safety Board | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-delta-regional-authority | Delta Regional Authority | Independent Agency  [already carries: ombBudget]
+- exec-ind-misc-denali-commission | Denali Commission | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-election-assistance-commission-eac | Election Assistance Commission (EAC) | Independent Agency  [already carries: ombBudget, usaspendingOutlays]
 - exec-ind-misc-farm-credit-administration | Farm Credit Administration | Independent Agency  [already carries: ombBudget]
+- exec-ind-misc-farm-credit-system-insurance-corporation | Farm Credit System Insurance Corporation | Government Corporation  [already carries: auditedNetCost, ombBudget]
 - exec-ind-misc-federal-election-commission-fec | Federal Election Commission (FEC) | Independent Agency  [already carries: ombBudget, usaspendingOutlays]
 - exec-ind-misc-federal-labor-relations-authority-flra | Federal Labor Relations Authority (FLRA) | Independent Agency  [already carries: ombBudget, usaspendingOutlays]
 - exec-ind-misc-federal-mediation-and-conciliation-service | Federal Mediation and Conciliation Service | Independent Agency  [already carries: ombBudget]
@@ -3478,6 +3480,7 @@ THE UNITS:
 - exec-ind-misc-macpac | Medicaid and CHIP Payment and Access Commission | Independent Agency  [already carries: combinedStatementOutlays]
 - exec-ind-misc-medpac | Medicare Payment Advisory Commission | Independent Agency  [already carries: combinedStatementOutlays]
 - exec-ind-misc-merit-systems-protection-board-mspb | Merit Systems Protection Board (MSPB) | Independent Agency  [already carries: ombBudget, usaspendingOutlays]
+- exec-ind-misc-udall-foundation | Morris K. Udall and Stewart L. Udall Foundation | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-national-capital-planning-commission-ncpc | National Capital Planning Commission (NCPC) | Independent Agency  [already carries: ombBudget, usaspendingOutlays]
 - exec-ind-misc-national-council-on-disability | National Council on Disability | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-national-mediation-board-nmb | National Mediation Board (NMB) | Independent Agency  [already carries: ombBudget, usaspendingOutlays]
@@ -3486,9 +3489,12 @@ THE UNITS:
 - exec-ind-misc-nuclear-waste-technical-review-board | Nuclear Waste Technical Review Board | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-occupational-safety-and-health-review-commission | Occupational Safety and Health Review Commission | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-office-of-special-counsel-osc | Office of Special Counsel (OSC) | Independent Agency  [already carries: ombBudget, usaspendingOutlays]
+- exec-ind-misc-presidio-trust | Presidio Trust | Government Corporation  [already carries: ombBudget]
 - exec-ind-misc-privacy-civil-liberties-oversight-board-pclob | Privacy & Civil Liberties Oversight Board (PCLOB) | Independent Agency  [already carries: ombBudget, usaspendingOutlays]
 - exec-ind-misc-public-buildings-reform-board | Public Buildings Reform Board | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-selective-service-system | Selective Service System | Independent Agency  [already carries: usaspendingOutlays]
+- exec-ind-misc-southeast-crescent-regional-commission | Southeast Crescent Regional Commission | Independent Agency  [already carries: ombBudget]
+- exec-ind-misc-southwest-border-regional-commission | Southwest Border Regional Commission | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-surface-transportation-board | Surface Transportation Board | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-access-board | U.S. Access Board (Architectural and Transportation Barriers Compliance Board) | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-u-s-international-development-finance-corp-dfc | U.S. International Development Finance Corporation | Independent Agency  [already carries: auditedNetCost, usaspendingOutlays]
@@ -3507,6 +3513,7 @@ THE UNITS:
 - leg-house-cmte-budget | House Committee on Budget | Committee
 - leg-house-cmte-education-the-workforce | House Committee on Education & the Workforce | Committee
 - leg-house-cmte-energy-commerce | House Committee on Energy & Commerce | Committee
+- leg-house-cmte-ethics | House Committee on Ethics | Committee
 - leg-house-cmte-financial-services | House Committee on Financial Services | Committee
 - leg-house-cmte-foreign-affairs | House Committee on Foreign Affairs | Committee
 - leg-house-cmte-homeland-security | House Committee on Homeland Security | Committee
@@ -3522,6 +3529,7 @@ THE UNITS:
 - leg-house-cmte-ways-means | House Committee on Ways & Means | Committee
 - leg-house-cmte-permanent-select-committee-on-intelligence | House Permanent Select Committee on Intelligence | Committee
 - leg-house-cmte-select-committee-on-the-chinese-communist-party | Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party | Committee
+- leg-house-cmte-jan6-select | Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021 | Committee
 
 ### beneath Senate Committees  [leg-senate-committees]
 - leg-senate-cmte-agriculture-nutrition-and-forestry | Senate Committee on Agriculture, Nutrition, and Forestry | Committee
@@ -3558,23 +3566,9 @@ THE UNITS:
 - leg-house-cmte-appropriations-sub-legislative-branch | Subcommittee on Legislative Branch | Subcommittee
 - leg-house-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies | Subcommittee on Military Construction, Veterans Affairs & Related Agencies | Subcommittee
 - leg-house-cmte-appropriations-sub-transportation-hud-related-agencies | Transportation, Housing and Urban Development, and Related Agencies | Subcommittee
-
-### beneath Senate Committee on Appropriations  [leg-senate-cmte-appropriations]
-- leg-senate-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies | Agriculture, Rural Development, Food and Drug Administration, and Related Agencies | Subcommittee
-- leg-senate-cmte-appropriations-sub-commerce-justice-science-related-agencies | Commerce, Justice, Science & Related Agencies | Subcommittee
-- leg-senate-cmte-appropriations-sub-defense | Defense | Subcommittee
-- leg-senate-cmte-appropriations-sub-energy-water-development | Energy & Water Development | Subcommittee
-- leg-senate-cmte-appropriations-sub-financial-services-general-government | Financial Services & General Government | Subcommittee
-- leg-senate-cmte-appropriations-sub-homeland-security | Homeland Security | Subcommittee
-- leg-senate-cmte-appropriations-sub-interior-environment-related-agencies | Interior, Environment & Related Agencies | Subcommittee
-- leg-senate-cmte-appropriations-sub-labor-hhs-education-related-agencies | Labor, Health and Human Services, Education, and Related Agencies | Subcommittee
-- leg-senate-cmte-appropriations-sub-legislative-branch | Legislative Branch | Subcommittee
-- leg-senate-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies | Military Construction, Veterans Affairs & Related Agencies | Subcommittee
-- leg-senate-cmte-appropriations-sub-state-foreign-operations-related-programs | State, Foreign Operations & Related Programs | Subcommittee
-- leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies | Transportation, Housing and Urban Development, and Related Agencies | Subcommittee
 ```
 
-## Prompt B2 — 14 parent(s), 105 unit(s)
+## Prompt B2 — 13 parent(s), 105 unit(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -3632,6 +3626,20 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE UNITS:
+
+### beneath Senate Committee on Appropriations  [leg-senate-cmte-appropriations]
+- leg-senate-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies | Agriculture, Rural Development, Food and Drug Administration, and Related Agencies | Subcommittee
+- leg-senate-cmte-appropriations-sub-commerce-justice-science-related-agencies | Commerce, Justice, Science & Related Agencies | Subcommittee
+- leg-senate-cmte-appropriations-sub-defense | Defense | Subcommittee
+- leg-senate-cmte-appropriations-sub-energy-water-development | Energy & Water Development | Subcommittee
+- leg-senate-cmte-appropriations-sub-financial-services-general-government | Financial Services & General Government | Subcommittee
+- leg-senate-cmte-appropriations-sub-homeland-security | Homeland Security | Subcommittee
+- leg-senate-cmte-appropriations-sub-interior-environment-related-agencies | Interior, Environment & Related Agencies | Subcommittee
+- leg-senate-cmte-appropriations-sub-labor-hhs-education-related-agencies | Labor, Health and Human Services, Education, and Related Agencies | Subcommittee
+- leg-senate-cmte-appropriations-sub-legislative-branch | Legislative Branch | Subcommittee
+- leg-senate-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies | Military Construction, Veterans Affairs & Related Agencies | Subcommittee
+- leg-senate-cmte-appropriations-sub-state-foreign-operations-related-programs | State, Foreign Operations & Related Programs | Subcommittee
+- leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies | Transportation, Housing and Urban Development, and Related Agencies | Subcommittee
 
 ### beneath Senate Committee on Commerce, Science & Transportation  [leg-senate-cmte-commerce-science-transportation]
 - leg-senate-cmte-commerce-science-transportation-sub-aviation-safety-operations-innovation | Aviation, Space, & Innovation | Subcommittee
@@ -3749,25 +3757,9 @@ THE UNITS:
 - leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism | Near East, South Asia, Central Asia & Counterterrorism | Subcommittee
 - leg-senate-cmte-foreign-relations-sub-state-department-usaid-management-international-operations-bilateral-international-development | State Department & USAID Management, International Operations & Bilateral International Development | Subcommittee
 - leg-senate-cmte-foreign-relations-sub-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues | Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights & Global Women's Issues | Subcommittee
-
-### beneath House Administrative Offices  [leg-house-admin]
-- leg-house-cao | Chief Administrative Officer | Office
-- leg-house-clerk | Clerk of the House | Office
-- leg-house-ig | Inspector General of the House | Office
-- leg-house-physician | Office of the Attending Physician | Office
-- leg-house-counsel | Office of the Legislative Counsel | Office
-- leg-house-saa | Sergeant at Arms of the House | Office
-
-### beneath House Committee on Energy & Commerce  [leg-house-cmte-energy-commerce]
-- leg-house-cmte-energy-commerce-sub-innovation-data-commerce | Subcommittee on Commerce, Manufacturing, and Trade | Subcommittee
-- leg-house-cmte-energy-commerce-sub-communications-technology | Subcommittee on Communications & Technology | Subcommittee
-- leg-house-cmte-energy-commerce-sub-energy-climate-grid-security | Subcommittee on Energy | Subcommittee
-- leg-house-cmte-energy-commerce-sub-environment-manufacturing-critical-materials | Subcommittee on Environment | Subcommittee
-- leg-house-cmte-energy-commerce-sub-health | Subcommittee on Health | Subcommittee
-- leg-house-cmte-energy-commerce-sub-oversight-investigations | Subcommittee on Oversight & Investigations | Subcommittee
 ```
 
-## Prompt B3 — 32 parent(s), 108 unit(s)
+## Prompt B3 — 24 parent(s), 109 unit(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -3825,6 +3817,22 @@ above, one line each, with the document URL it came from and whether it is
 official-published or third-party-estimated.
 
 THE UNITS:
+
+### beneath House Administrative Offices  [leg-house-admin]
+- leg-house-cao | Chief Administrative Officer | Office
+- leg-house-clerk | Clerk of the House | Office
+- leg-house-ig | Inspector General of the House | Office
+- leg-house-physician | Office of the Attending Physician | Office
+- leg-house-counsel | Office of the Legislative Counsel | Office
+- leg-house-saa | Sergeant at Arms of the House | Office
+
+### beneath House Committee on Energy & Commerce  [leg-house-cmte-energy-commerce]
+- leg-house-cmte-energy-commerce-sub-innovation-data-commerce | Subcommittee on Commerce, Manufacturing, and Trade | Subcommittee
+- leg-house-cmte-energy-commerce-sub-communications-technology | Subcommittee on Communications & Technology | Subcommittee
+- leg-house-cmte-energy-commerce-sub-energy-climate-grid-security | Subcommittee on Energy | Subcommittee
+- leg-house-cmte-energy-commerce-sub-environment-manufacturing-critical-materials | Subcommittee on Environment | Subcommittee
+- leg-house-cmte-energy-commerce-sub-health | Subcommittee on Health | Subcommittee
+- leg-house-cmte-energy-commerce-sub-oversight-investigations | Subcommittee on Oversight & Investigations | Subcommittee
 
 ### beneath House Committee on Financial Services  [leg-house-cmte-financial-services]
 - leg-house-cmte-financial-services-sub-capital-markets | Subcommittee on Capital Markets | Subcommittee
@@ -3966,10 +3974,73 @@ THE UNITS:
 ### beneath Judicial Support Organizations  [jud-support]
 - jud-support-fjc | Federal Judicial Center (FJC) | Agency  [already carries: ombBudget]
 - jud-support-ussc | U.S. Sentencing Commission (USSC) | Agency  [already carries: ombBudget]
+```
+
+## Prompt B4 — 11 parent(s), 12 unit(s)
+
+```
+I am building a data-backed public graph of the U.S. federal government. Every
+published figure must be traceable to a specific published government document
+that prints it for that unit by name. Below are federal UNITS (bureaus, divisions,
+offices, regional offices, laboratories, committees), grouped by the unit above
+them, for which I currently publish only a share apportioned from a parent's total.
+For each I need the published document that prints the unit's OWN spending, if one
+exists, and what kind of figure it prints.
+
+For EVERY unit listed below, return exactly one line in this pipe-delimited
+format and nothing else per unit:
+
+    <node id> | <basis> | <document URL> | <period> | <figure or —> | <join key> | <confidence>
+
+- **basis** — what the figure measures, one of: `net_outlays`, `gross_outlays`,
+  `obligations`, `budget_authority`, `appropriations`, `budget_request`,
+  `audited_net_cost`, `payroll`, `disbursements`, `full_time_equivalents`,
+  `none`. These are different quantities and must never be mixed: an
+  appropriation is not spending, a request is not an appropriation, and a
+  committee's disbursements are not outlays.
+- **document URL** — the published document that prints the figure for THIS
+  unit by name, on the publisher's own site (a `.gov` host wherever one exists:
+  the Monthly Treasury Statement, OMB's Public Budget Database, USAspending
+  File A/B by Treasury Account Symbol, the agency's own Agency Financial Report
+  or Congressional Budget Justification, the House Statement of Disbursements,
+  the Report of the Secretary of the Senate). Not a news article, Wikipedia or
+  any republication.
+- **period** — the fiscal year or reporting period the figure covers, as the
+  document states it. A budget-year or out-year figure is a projection, not a
+  figure for a year that has happened; say so.
+- **figure** — only where the document prints one for this unit, as printed,
+  with its stated unit (dollars, thousands, millions). Never apportion a parent's
+  figure, never sum rows yourself unless the document prints the total.
+- **join key** — the string, account symbol or code the document uses for this
+  unit (a Treasury Account Symbol, an OMB bureau code, a committee name as the
+  disbursement report prints it).
+- **confidence** — `certain` only if you read the row; `likely` if the document
+  is right and the row inferred; `speculative` otherwise.
+
+Rules that matter more than coverage:
+1. **A missing answer is a result.** `<id> | none | — | — | — | — | certain` is
+   correct where no document prints a figure for the unit, and is more useful
+   than a guess. Many divisions, regional offices and laboratories are funded
+   from a parent's accounts and no document prints their spending alone.
+2. **A parent's figure is not the unit's.** If a document prints only the
+   bureau or department total, say `none` for the unit and name the document
+   in the join key column as `parent only: <name>`.
+3. **Contractor-operated is not federal spending by the unit.** A national
+   laboratory's budget is the sponsoring department's obligations to its
+   operating contractor; say so and give the department's own document.
+
+END with a section titled LOAD-BEARING NUMBERS: every figure you returned
+above, one line each, with the document URL it came from and whether it is
+official-published or third-party-estimated.
+
+THE UNITS:
 
 ### beneath Military Departments & Services  [exec-dept-defense-branches]
 - exec-dept-defense-af | U.S. Air Force | Military Branch  [already carries: usaspendingOutlays]
 - exec-dept-defense-army | U.S. Army | Military Branch  [already carries: usaspendingOutlays]
+
+### beneath Congressional Support Agencies  [leg-support]
+- leg-support-usbg | United States Botanic Garden | Agency  [already carries: ombBudget]
 
 ### beneath Department of Homeland Security (DHS)  [exec-dept-dhs]
 - exec-dept-dhs-fletc | Federal Law Enforcement Training Centers (FLETC) | Component Agency  [already carries: ombBudget, usaspendingOutlays]

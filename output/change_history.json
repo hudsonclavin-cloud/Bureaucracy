@@ -1,5 +1,665 @@
 [
  {
+  "builtAt": "2026-10-26T00:41:44.818197+00:00",
+  "anchor": {
+   "before": {
+    "recordDate": "2026-09-30",
+    "total": 7395799983313.23,
+    "statementFile": "tests/fixtures/mts_table5_2026-09-30.json"
+   },
+   "after": {
+    "recordDate": "2026-09-30",
+    "total": 7395799983313.23,
+    "statementFile": "tests/fixtures/mts_table5_2026-09-30.json"
+   },
+   "sameStatement": true
+  },
+  "nodes": {
+   "before": 5512,
+   "after": 5526,
+   "added": [
+    {
+     "id": "exec-ind-misc-denali-commission",
+     "name": "Denali Commission",
+     "type": "Independent Agency",
+     "parentId": "exec-ind-misc"
+    },
+    {
+     "id": "exec-ind-misc-farm-credit-system-insurance-corporation",
+     "name": "Farm Credit System Insurance Corporation",
+     "type": "Government Corporation",
+     "parentId": "exec-ind-misc"
+    },
+    {
+     "id": "exec-ind-misc-goldwater-scholarship-foundation",
+     "name": "Barry M. Goldwater Scholarship and Excellence in Education Foundation",
+     "type": "Independent Agency",
+     "parentId": "exec-ind-misc"
+    },
+    {
+     "id": "exec-ind-misc-office-of-navajo-and-hopi-indian-relocation",
+     "name": "Navajo and Hopi Indian Relocation Office",
+     "type": "Independent Agency",
+     "parentId": "exec-ind-misc"
+    },
+    {
+     "id": "exec-ind-misc-presidio-trust",
+     "name": "Presidio Trust",
+     "type": "Government Corporation",
+     "parentId": "exec-ind-misc"
+    },
+    {
+     "id": "exec-ind-misc-southeast-crescent-regional-commission",
+     "name": "Southeast Crescent Regional Commission",
+     "type": "Independent Agency",
+     "parentId": "exec-ind-misc"
+    },
+    {
+     "id": "exec-ind-misc-southwest-border-regional-commission",
+     "name": "Southwest Border Regional Commission",
+     "type": "Independent Agency",
+     "parentId": "exec-ind-misc"
+    },
+    {
+     "id": "exec-ind-misc-udall-foundation",
+     "name": "Morris K. Udall and Stewart L. Udall Foundation",
+     "type": "Independent Agency",
+     "parentId": "exec-ind-misc"
+    },
+    {
+     "id": "exec-ind-misc-utah-reclamation-mitigation-and-conservation-commission",
+     "name": "Utah Reclamation Mitigation and Conservation Commission",
+     "type": "Independent Agency",
+     "parentId": "exec-ind-misc"
+    },
+    {
+     "id": "jud-specialized-jpml",
+     "name": "Judicial Panel on Multidistrict Litigation",
+     "type": "Specialized Court",
+     "parentId": "jud-specialized"
+    },
+    {
+     "id": "leg-house-cmte-ethics",
+     "name": "House Committee on Ethics",
+     "type": "Committee",
+     "parentId": "leg-house-committees"
+    },
+    {
+     "id": "leg-house-cmte-jan6-select",
+     "name": "Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021",
+     "type": "Committee",
+     "parentId": "leg-house-committees"
+    },
+    {
+     "id": "leg-support-usbg",
+     "name": "United States Botanic Garden",
+     "type": "Agency",
+     "parentId": "leg-support"
+    },
+    {
+     "id": "leg-support-uscc",
+     "name": "U.S.-China Economic and Security Review Commission",
+     "type": "Agency",
+     "parentId": "leg-support"
+    }
+   ],
+   "removed": [],
+   "newlySuperseded": [],
+   "renamed": [],
+   "reparented": []
+  },
+  "measuredCosts": {
+   "before": 173,
+   "after": 173,
+   "moved": [],
+   "gained": [],
+   "lost": [],
+   "forReview": []
+  },
+  "estimates": {
+   "moved": 255,
+   "largestMoves": [
+    {
+     "id": "exec-ind-misc",
+     "name": "Other Independent Agencies (25+)",
+     "before": 29782463811.22,
+     "after": 30356982197.17,
+     "percent": 1.93
+    },
+    {
+     "id": "exec-ind-cia",
+     "name": "Central Intelligence Agency (CIA)",
+     "before": 6761290006.78,
+     "after": 6362757228.11,
+     "percent": -5.89
+    },
+    {
+     "id": "exec-independent",
+     "name": "Independent Establishments & Government Corporations",
+     "before": 1987891447041.18,
+     "after": 1988067432648.45,
+     "percent": 0.01
+    },
+    {
+     "id": "exec-cabinet",
+     "name": "The Cabinet — Executive Departments",
+     "before": 5768593733029.88,
+     "after": 5768431444932.52,
+     "percent": -0.0
+    },
+    {
+     "id": "exec-ind-misc-national-transportation-safety-board-ntsb",
+     "name": "National Transportation Safety Board (NTSB)",
+     "before": 1253576278.91,
+     "after": 1142325633.94,
+     "percent": -8.87
+    },
+    {
+     "id": "exec-ind-cia-directorate-of-support-ds",
+     "name": "Directorate of Support (DS)",
+     "before": 965898572.4,
+     "after": 908965318.3,
+     "percent": -5.89
+    },
+    {
+     "id": "exec-ind-cia-directorate-of-digital-innovation-ddi",
+     "name": "Directorate of Digital Innovation (DDI)",
+     "before": 965898572.4,
+     "after": 908965318.3,
+     "percent": -5.89
+    },
+    {
+     "id": "exec-ind-cia-directorate-of-science-technology-dst",
+     "name": "Directorate of Science & Technology (DS&T)",
+     "before": 965898572.4,
+     "after": 908965318.3,
+     "percent": -5.89
+    },
+    {
+     "id": "exec-ind-cia-directorate-of-analysis-da",
+     "name": "Directorate of Analysis (DA)",
+     "before": 965898572.4,
+     "after": 908965318.3,
+     "percent": -5.89
+    },
+    {
+     "id": "exec-ind-cia-directorate-of-operations-do",
+     "name": "Directorate of Operations (DO)",
+     "before": 965898572.4,
+     "after": 908965318.3,
+     "percent": -5.89
+    },
+    {
+     "id": "exec-ind-misc-american-battle-monuments-commission-abmc",
+     "name": "American Battle Monuments Commission (ABMC)",
+     "before": 607412503.27,
+     "after": 553506702.81,
+     "percent": -8.87
+    },
+    {
+     "id": "exec-ind-misc-national-capital-planning-commission-ncpc",
+     "name": "National Capital Planning Commission (NCPC)",
+     "before": 607412503.27,
+     "after": 553506702.81,
+     "percent": -8.87
+    },
+    {
+     "id": "exec-ind-misc-appalachian-regional-commission-arc",
+     "name": "Appalachian Regional Commission (ARC)",
+     "before": 607412503.27,
+     "after": 553506702.81,
+     "percent": -8.87
+    },
+    {
+     "id": "exec-ind-misc-farm-credit-administration",
+     "name": "Farm Credit Administration",
+     "before": 607412503.27,
+     "after": 553506702.81,
+     "percent": -8.87
+    },
+    {
+     "id": "exec-ind-misc-privacy-civil-liberties-oversight-board-pclob",
+     "name": "Privacy & Civil Liberties Oversight Board (PCLOB)",
+     "before": 607412503.27,
+     "after": 553506702.81,
+     "percent": -8.87
+    },
+    {
+     "id": "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission",
+     "name": "Postal Regulatory Commission",
+     "before": 607412503.27,
+     "after": 553506702.81,
+     "percent": -8.87
+    },
+    {
+     "id": "exec-ind-misc-chemical-safety-hazard-investigation-board-csb",
+     "name": "Chemical Safety & Hazard Investigation Board (CSB)",
+     "before": 607412503.27,
+     "after": 553506702.81,
+     "percent": -8.87
+    },
+    {
+     "id": "exec-ind-misc-election-assistance-commission-eac",
+     "name": "Election Assistance Commission (EAC)",
+     "before": 607412503.27,
+     "after": 553506702.81,
+     "percent": -8.87
+    },
+    {
+     "id": "exec-ind-misc-federal-election-commission-fec",
+     "name": "Federal Election Commission (FEC)",
+     "before": 607412503.27,
+     "after": 553506702.81,
+     "percent": -8.87
+    },
+    {
+     "id": "exec-ind-misc-national-mediation-board-nmb",
+     "name": "National Mediation Board (NMB)",
+     "before": 607412503.27,
+     "after": 553506702.81,
+     "percent": -8.87
+    }
+   ]
+  },
+  "pay": {
+   "claimsBefore": 1258,
+   "claimsAfter": 1258,
+   "added": [],
+   "withdrawn": [],
+   "moved": []
+  },
+  "evidence": {
+   "added": [
+    {
+     "id": "exec-ind-misc-denali-commission",
+     "name": "Denali Commission",
+     "field": "verificationMethod",
+     "method": "listed_in_federal_register_agency_directory",
+     "url": "https://www.federalregister.gov/agencies/denali-commission"
+    },
+    {
+     "id": "exec-ind-misc-farm-credit-system-insurance-corporation",
+     "name": "Farm Credit System Insurance Corporation",
+     "field": "verificationMethod",
+     "method": "name_labelled_on_own_official_page",
+     "url": "exec-ind-misc-farm-credit-system-insurance-corporation"
+    },
+    {
+     "id": "exec-ind-misc-goldwater-scholarship-foundation",
+     "name": "Barry M. Goldwater Scholarship and Excellence in Education Foundation",
+     "field": "verificationMethod",
+     "method": "listed_in_federal_register_agency_directory",
+     "url": "https://www.federalregister.gov/agencies/barry-m-goldwater-scholarship-and-excellence-in-education-foundation"
+    },
+    {
+     "id": "exec-ind-misc-office-of-navajo-and-hopi-indian-relocation",
+     "name": "Navajo and Hopi Indian Relocation Office",
+     "field": "verificationMethod",
+     "method": "listed_in_federal_register_agency_directory",
+     "url": "https://www.federalregister.gov/agencies/navajo-and-hopi-indian-relocation-office"
+    },
+    {
+     "id": "exec-ind-misc-presidio-trust",
+     "name": "Presidio Trust",
+     "field": "verificationMethod",
+     "method": "listed_in_federal_register_agency_directory",
+     "url": "https://www.federalregister.gov/agencies/presidio-trust"
+    },
+    {
+     "id": "exec-ind-misc-southeast-crescent-regional-commission",
+     "name": "Southeast Crescent Regional Commission",
+     "field": "verificationMethod",
+     "method": "name_labelled_on_own_official_page",
+     "url": "exec-ind-misc-southeast-crescent-regional-commission"
+    },
+    {
+     "id": "exec-ind-misc-udall-foundation",
+     "name": "Morris K. Udall and Stewart L. Udall Foundation",
+     "field": "verificationMethod",
+     "method": "listed_in_federal_register_agency_directory",
+     "url": "https://www.federalregister.gov/agencies/morris-k-udall-and-stewart-l-udall-foundation"
+    },
+    {
+     "id": "exec-ind-misc-utah-reclamation-mitigation-and-conservation-commission",
+     "name": "Utah Reclamation Mitigation and Conservation Commission",
+     "field": "verificationMethod",
+     "method": "listed_in_federal_register_agency_directory",
+     "url": "https://www.federalregister.gov/agencies/utah-reclamation-mitigation-and-conservation-commission"
+    },
+    {
+     "id": "jud-specialized-jpml",
+     "name": "Judicial Panel on Multidistrict Litigation",
+     "field": "verificationMethod",
+     "method": "name_labelled_on_own_official_page",
+     "url": "jud-specialized-jpml"
+    },
+    {
+     "id": "leg-house-cmte-ethics",
+     "name": "House Committee on Ethics",
+     "field": "verificationMethod",
+     "method": "name_labelled_on_own_official_page",
+     "url": "leg-house-cmte-ethics"
+    },
+    {
+     "id": "leg-house-cmte-jan6-select",
+     "name": "Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021",
+     "field": "verificationMethod",
+     "method": "listed_in_house_clerk_committee_list",
+     "url": "https://clerk.house.gov/Committees/ExcelCommitteeData"
+    },
+    {
+     "id": "leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government",
+     "name": "Select Subcommittee on the Weaponization of the Federal Government",
+     "field": "placementMethod",
+     "method": "name_labelled_on_parent_official_page",
+     "url": "leg-house-cmte-judiciary"
+    },
+    {
+     "id": "leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government",
+     "name": "Select Subcommittee on the Weaponization of the Federal Government",
+     "field": "verificationMethod",
+     "method": "name_labelled_on_parent_official_page",
+     "url": "leg-house-cmte-judiciary"
+    },
+    {
+     "id": "leg-support-usbg",
+     "name": "United States Botanic Garden",
+     "field": "placementMethod",
+     "method": "name_labelled_on_parent_official_page",
+     "url": "leg-support-usbg"
+    },
+    {
+     "id": "leg-support-usbg",
+     "name": "United States Botanic Garden",
+     "field": "verificationMethod",
+     "method": "name_labelled_on_own_official_page",
+     "url": "leg-support-usbg"
+    },
+    {
+     "id": "leg-support-uscc",
+     "name": "U.S.-China Economic and Security Review Commission",
+     "field": "verificationMethod",
+     "method": "listed_in_federal_register_agency_directory",
+     "url": "https://www.federalregister.gov/agencies/u-s-china-economic-and-security-review-commission"
+    }
+   ],
+   "withdrawn": [],
+   "changed": []
+  },
+  "sourcedFigures": {
+   "ombBudget": {
+    "added": [
+     {
+      "id": "exec-ind-misc-southwest-border-regional-commission",
+      "name": "Southwest Border Regional Commission",
+      "figure": 1000000.0,
+      "document": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+     },
+     {
+      "id": "exec-ind-misc-udall-foundation",
+      "name": "Morris K. Udall and Stewart L. Udall Foundation",
+      "figure": 7000000.0,
+      "document": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+     },
+     {
+      "id": "exec-ind-misc-southeast-crescent-regional-commission",
+      "name": "Southeast Crescent Regional Commission",
+      "figure": null,
+      "document": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+     },
+     {
+      "id": "exec-ind-misc-denali-commission",
+      "name": "Denali Commission",
+      "figure": -70000000.0,
+      "document": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+     },
+     {
+      "id": "leg-support-usbg",
+      "name": "United States Botanic Garden",
+      "figure": 25000000.0,
+      "document": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+     },
+     {
+      "id": "exec-ind-misc-presidio-trust",
+      "name": "Presidio Trust",
+      "figure": 16000000.0,
+      "document": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+     },
+     {
+      "id": "exec-ind-misc-farm-credit-system-insurance-corporation",
+      "name": "Farm Credit System Insurance Corporation",
+      "figure": -518000000.0,
+      "document": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+     }
+    ],
+    "withdrawn": [],
+    "moved": []
+   },
+   "auditedNetCost": {
+    "added": [
+     {
+      "id": "exec-ind-misc-farm-credit-system-insurance-corporation",
+      "name": "Farm Credit System Insurance Corporation",
+      "figure": -300000000.0,
+      "document": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200"
+     }
+    ],
+    "withdrawn": [],
+    "moved": []
+   },
+   "committeeDisbursements": {
+    "added": [
+     {
+      "id": "leg-house-cmte-ethics",
+      "name": "House Committee on Ethics",
+      "figure": 1129909.28,
+      "document": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv"
+     }
+    ],
+    "withdrawn": [],
+    "moved": []
+   },
+   "payrollOfficial": {
+    "added": [
+     {
+      "id": "exec-ind-misc-denali-commission",
+      "name": "Denali Commission",
+      "figure": 2519196,
+      "document": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip"
+     },
+     {
+      "id": "exec-ind-misc-presidio-trust",
+      "name": "Presidio Trust",
+      "figure": 42761600,
+      "document": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip"
+     }
+    ],
+    "withdrawn": [],
+    "moved": []
+   }
+  },
+  "sources": {
+   "changed": [
+    {
+     "id": "official_pages",
+     "before": "2026-10-22",
+     "after": "2026-10-26",
+     "status": "current"
+    }
+   ],
+   "registryAfter": {
+    "monthly_treasury_statement": {
+     "copyDate": "2026-09-30",
+     "status": "current"
+    },
+    "usaspending_file_a": {
+     "copyDate": "2026-09-17",
+     "status": "current"
+    },
+    "usaspending_file_b_object_class": {
+     "copyDate": "2025-09-30",
+     "status": "current"
+    },
+    "house_statement_of_disbursements": {
+     "copyDate": "2026-06-30",
+     "status": "current"
+    },
+    "senate_secretary_report": {
+     "copyDate": "2026-03-31",
+     "status": "current"
+    },
+    "opm_salary_tables": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "us_code_pay_schedules_5332_note": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "uscourts_judicial_compensation": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "senate_salary_schedule": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "whitehouse_staff_report": {
+     "copyDate": "2026-07-01",
+     "status": "current"
+    },
+    "opm_plum_current_export": {
+     "copyDate": "2026-09-21",
+     "status": "current"
+    },
+    "opm_plum_archive": {
+     "copyDate": "2025-01-20",
+     "status": "closed_record"
+    },
+    "opm_fedscope_employment": {
+     "copyDate": "2025-03-31",
+     "status": "overdue"
+    },
+    "us_government_manual": {
+     "copyDate": "2025-12-31",
+     "status": "current"
+    },
+    "omb_public_budget_database": {
+     "copyDate": "2026-09-20",
+     "status": "current"
+    },
+    "treasury_statement_of_net_cost": {
+     "copyDate": "2025-09-30",
+     "status": "current"
+    },
+    "treasury_combined_statement": {
+     "copyDate": "2025-09-30",
+     "status": "current"
+    },
+    "us_code_sections": {
+     "copyDate": "2026-09-18",
+     "status": "current"
+    },
+    "federal_register_agency_directory": {
+     "copyDate": "2026-09-08",
+     "status": "current"
+    },
+    "senate_committee_list": {
+     "copyDate": "2026-09-08",
+     "status": "current"
+    },
+    "house_clerk_committee_list": {
+     "copyDate": "2026-09-13",
+     "status": "current"
+    },
+    "federal_register_signatures": {
+     "copyDate": "2026-09-21",
+     "status": "current"
+    },
+    "usajobs_vacancy_announcements": {
+     "copyDate": "2026-10-06",
+     "status": "current"
+    },
+    "doj_usao_ad_pay_plan": {
+     "copyDate": "2025-01-12",
+     "status": "overdue"
+    },
+    "va_title38_pay_tables": {
+     "copyDate": "2026-01-11",
+     "status": "current"
+    },
+    "doe_laboratory_pages": {
+     "copyDate": "2026-10-06",
+     "status": "current"
+    },
+    "official_pages": {
+     "copyDate": "2026-10-26",
+     "status": "current"
+    }
+   }
+  },
+  "budget": {
+   "rules": [
+    {
+     "rule": "node_count_drops",
+     "tripped": false,
+     "detail": "5,512 nodes before, 5,526 after; 0 removed"
+    },
+    {
+     "rule": "anchor_lost",
+     "tripped": false,
+     "detail": "anchor record date after: 2026-09-30"
+    },
+    {
+     "rule": "anchor_period_goes_backwards",
+     "tripped": false,
+     "detail": "anchor 2026-09-30 -> 2026-09-30"
+    },
+    {
+     "rule": "measured_cost_moved_without_a_new_statement",
+     "tripped": false,
+     "detail": "the statement is unchanged (2026-09-30) and 0 measured costs moved"
+    },
+    {
+     "rule": "pay_claims_withdrawn_above_5_percent",
+     "tripped": false,
+     "detail": "0 of 1,258 pay claims withdrawn (0.0%; the limit is 5%)"
+    },
+    {
+     "rule": "rebuilt_without_a_statement",
+     "tripped": false,
+     "detail": "the build read a statement"
+    }
+   ],
+   "held": false,
+   "thresholds": {
+    "payWithdrawalLimit": 0.05,
+    "measuredReviewMove": 0.5,
+    "measuredReviewFloor": 1000000000.0
+   }
+  },
+  "touched": [
+   "exec-ind-misc-denali-commission",
+   "exec-ind-misc-farm-credit-system-insurance-corporation",
+   "exec-ind-misc-goldwater-scholarship-foundation",
+   "exec-ind-misc-office-of-navajo-and-hopi-indian-relocation",
+   "exec-ind-misc-presidio-trust",
+   "exec-ind-misc-southeast-crescent-regional-commission",
+   "exec-ind-misc-southwest-border-regional-commission",
+   "exec-ind-misc-udall-foundation",
+   "exec-ind-misc-utah-reclamation-mitigation-and-conservation-commission",
+   "jud-specialized-jpml",
+   "leg-house-cmte-ethics",
+   "leg-house-cmte-jan6-select",
+   "leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government",
+   "leg-support-usbg",
+   "leg-support-uscc"
+  ],
+  "summary": "the Treasury anchor is still the statement of 2026-09-30; 5,512 nodes before and 5,526 after (14 added, 0 removed, 0 newly marked replaced, 0 renamed); 0 measured costs moved, 0 gained a measured figure, 0 lost one; 255 estimates moved; pay claims 1,258 -> 1,258 (0 added, 0 withdrawn, 0 changed figure); verification or placement methods: 16 added, 0 withdrawn, 0 changed; within the change budget.",
+  "before": "HEAD:output/graph.json",
+  "reviewQueueOpen": 59
+ },
+ {
   "builtAt": "2026-10-22T08:53:12.726654+00:00",
   "anchor": {
    "before": {

@@ -28,6 +28,7 @@ for extra in (PROJECT_ROOT, PROJECT_ROOT / "scripts"):
 
 from add_curated_nodes import (  # noqa: E402
     LICENCE_ACCOUNT,
+    LICENCE_LIST,
     LICENCE_MANUAL,
     LICENCES,
     STRUCTURE_SOURCE,
@@ -182,6 +183,65 @@ class WriterRefusalTests(unittest.TestCase):
         except SourceUnreachable as unreachable:
             self.skipTest(f"a source this table is re-checked against did not answer: {unreachable}")
         self.assertEqual(report["added"], 0, "every committed row is already in the curated file")
+
+
+class OfficialListEntryTests(unittest.TestCase):
+    """The fifth licence: the unit's name is an entry of one committed official
+    list, exactly once. Offline, both ways. It licenses the NAME only; the
+    parent is always the row author's assertion."""
+
+    def row(self, **over):
+        base = {"id": "test-scratch-list-unit", "parentId": "leg-support", "name": "Denali Commission",
+                "type": "Independent Agency", "licence": LICENCE_LIST, "list": "usaspending_toptier",
+                "basis": "a test row", "addedOn": "2026-10-26"}
+        base.update(over)
+        return base
+
+    def only(self, report):
+        self.assertEqual(len(report["results"]), 1)
+        return report["results"][0]
+
+    def test_registered_with_its_own_structure_source(self):
+        self.assertIn(LICENCE_LIST, LICENCES)
+        self.assertEqual(STRUCTURE_SOURCE[LICENCE_LIST], "named_in_an_official_list")
+
+    def test_a_name_the_list_prints_exactly_once_is_added_from_each_list(self):
+        if not PUBLISHED.exists():
+            self.skipTest("output/graph.json is not built")
+        cases = (
+            ("usaspending_toptier", "Southwest Border Regional Commission"),
+            ("federal_register_directory", "Navajo and Hopi Indian Relocation Office"),
+            ("plum_current_agencies", "Utah Reclamation Mitigation and Conservation Commission"),
+            ("house_clerk_committee_list", "Committee on Ethics"),
+        )
+        for list_id, name in cases:
+            with self.subTest(list=list_id):
+                # the committed table has added these, so a scratch id under the same
+                # parent with a different name key would be a sibling collision;
+                # use a parent they are not under
+                item = self.only(run_table([self.row(name=name, list=list_id, parentId="leg-support", id="test-scratch-" + list_id)]))
+                self.assertTrue(item["added"], item)
+                self.assertIn(list_id, item["detail"])
+
+    def test_each_refusal(self):
+        cases = {
+            "row_names_no_known_list": {"list": "wikipedia"},
+            "list_does_not_name_one_such_unit": {"name": "Imaginary Frontier Commission"},
+            "row_states_no_basis": {"basis": ""},
+            "no_such_parent": {"parentId": "no-such-parent"},
+            "name_too_short": {"name": "Energy"},
+        }
+        for reason, over in cases.items():
+            with self.subTest(reason=reason):
+                item = self.only(run_table([self.row(**over)]))
+                self.assertFalse(item["added"], item)
+                self.assertEqual(item["reason"], reason)
+
+    def test_a_name_in_a_different_list_is_not_licensed_by_this_one(self):
+        # "Committee on Ethics" is the House Clerk's entry, not USAspending's
+        item = self.only(run_table([self.row(name="Committee on Ethics", list="usaspending_toptier", parentId="leg-support")]))
+        self.assertFalse(item["added"])
+        self.assertEqual(item["reason"], "list_does_not_name_one_such_unit")
 
 
 class CombinedStatementAccountTests(unittest.TestCase):

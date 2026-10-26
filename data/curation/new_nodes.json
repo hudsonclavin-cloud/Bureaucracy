@@ -1,11 +1,11 @@
 {
  "_comment": [
   "Organisations the graph had no node for, each licensed by an official source and",
-  "added by scripts/add_curated_nodes.py \u2014 the only writer of these nodes. The curated",
+  "added by scripts/add_curated_nodes.py — the only writer of these nodes. The curated",
   "file is never hand-edited. Every row is re-checked against its source on every run:",
   "a treasury_statement_line row must match exactly one non-header, non-receipts row of",
   "the CURRENT statement, and an official_page_label row must be labelled on the page",
-  "now. The table proposes; the source decides. CURATION.md \u00a71 carries the reasoning",
+  "now. The table proposes; the source decides. CURATION.md §1 carries the reasoning",
   "for each placement, and the export gate's same-section rule is the backstop that",
   "refuses a cost line filed under a section the node's ancestors do not match."
  ],
@@ -16,7 +16,7 @@
    "name": "General Services Administration",
    "type": "Independent Agency",
    "licence": "treasury_statement_line",
-   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money \u2014 CLAUDE.md's 'Known base-graph gaps'. Table 5 gives it a top-level section of its own; the graph has no node for it at all.",
+   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'. Table 5 gives it a top-level section of its own; the graph has no node for it at all.",
    "addedOn": "2026-09-19"
   },
   {
@@ -25,7 +25,7 @@
    "name": "Agency for International Development",
    "type": "Independent Agency",
    "licence": "treasury_statement_line",
-   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money \u2014 CLAUDE.md's 'Known base-graph gaps'. Filed by the statement under International Assistance Programs, a Treasury grouping this graph has no node for. CURATION.md \u00a71 note (c) records that the agency was reported reorganised into the Department of State in 2025; the statement still prints the line, which is what this repository can attest to, so the node's placement follows the statement and asserts nothing about its current organisational status.",
+   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'. Filed by the statement under International Assistance Programs, a Treasury grouping this graph has no node for. CURATION.md §1 note (c) records that the agency was reported reorganised into the Department of State in 2025; the statement still prints the line, which is what this repository can attest to, so the node's placement follows the statement and asserts nothing about its current organisational status.",
    "addedOn": "2026-09-19"
   },
   {
@@ -34,7 +34,7 @@
    "name": "Railroad Retirement Board",
    "type": "Independent Agency",
    "licence": "treasury_statement_line",
-   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money \u2014 CLAUDE.md's 'Known base-graph gaps'.",
+   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
    "addedOn": "2026-09-19"
   },
   {
@@ -43,7 +43,7 @@
    "name": "Corps of Engineers",
    "type": "Component Agency",
    "licence": "treasury_statement_line",
-   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money \u2014 CLAUDE.md's 'Known base-graph gaps'. Table 5 gives the civil-works programme its own top-level section, outside the Department of Defense total. CURATION.md \u00a71 note (a) sets out the choice: placing it under the Army would put a line outside DoD's measured total inside it and the same-section rule would leave the money unmatched, so this follows the statement's structure. The node is the Corps' civil works as the Treasury reports it, not the Corps' place in the Army's org chart.",
+   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'. Table 5 gives the civil-works programme its own top-level section, outside the Department of Defense total. CURATION.md §1 note (a) sets out the choice: placing it under the Army would put a line outside DoD's measured total inside it and the same-section rule would leave the money unmatched, so this follows the statement's structure. The node is the Corps' civil works as the Treasury reports it, not the Corps' place in the Army's org chart.",
    "addedOn": "2026-09-19"
   },
   {
@@ -52,7 +52,7 @@
    "name": "Agricultural Marketing Service",
    "type": "Component Agency",
    "licence": "treasury_statement_line",
-   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money \u2014 CLAUDE.md's 'Known base-graph gaps'.",
+   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
    "addedOn": "2026-09-19"
   },
   {
@@ -61,7 +61,7 @@
    "name": "Foreign Agricultural Service",
    "type": "Component Agency",
    "licence": "treasury_statement_line",
-   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money \u2014 CLAUDE.md's 'Known base-graph gaps'.",
+   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
    "addedOn": "2026-09-19"
   },
   {
@@ -70,7 +70,7 @@
    "name": "Economic Development Administration",
    "type": "Component Agency",
    "licence": "treasury_statement_line",
-   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money \u2014 CLAUDE.md's 'Known base-graph gaps'.",
+   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
    "addedOn": "2026-09-19"
   },
   {
@@ -79,7 +79,7 @@
    "name": "Federal Housing Finance Agency",
    "type": "Regulatory Agency",
    "licence": "treasury_statement_line",
-   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money \u2014 CLAUDE.md's 'Known base-graph gaps'.",
+   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
    "addedOn": "2026-09-19"
   },
   {
@@ -88,7 +88,7 @@
    "name": "Institute of Museum and Library Services",
    "type": "Independent Agency",
    "licence": "treasury_statement_line",
-   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money \u2014 CLAUDE.md's 'Known base-graph gaps'.",
+   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
    "addedOn": "2026-09-19"
   },
   {
@@ -97,7 +97,7 @@
    "name": "Administration for Children and Families",
    "type": "Component Agency",
    "licence": "treasury_statement_line",
-   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money \u2014 CLAUDE.md's 'Known base-graph gaps'. At $65.6B the largest single unit the graph was missing.",
+   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'. At $65.6B the largest single unit the graph was missing.",
    "addedOn": "2026-09-19"
   },
   {
@@ -106,7 +106,7 @@
    "name": "Administration for Community Living",
    "type": "Component Agency",
    "licence": "treasury_statement_line",
-   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money \u2014 CLAUDE.md's 'Known base-graph gaps'.",
+   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
    "addedOn": "2026-09-19"
   },
   {
@@ -115,7 +115,7 @@
    "name": "Legal Services Corporation",
    "type": "Government Corporation",
    "licence": "treasury_statement_line",
-   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money \u2014 CLAUDE.md's 'Known base-graph gaps'.",
+   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
    "addedOn": "2026-09-19"
   },
   {
@@ -124,7 +124,7 @@
    "name": "Millennium Challenge Corporation",
    "type": "Government Corporation",
    "licence": "treasury_statement_line",
-   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money \u2014 CLAUDE.md's 'Known base-graph gaps'.",
+   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
    "addedOn": "2026-09-19"
   },
   {
@@ -133,7 +133,7 @@
    "name": "Bureau of Consumer Financial Protection",
    "type": "Regulatory Agency",
    "licence": "treasury_statement_line",
-   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money \u2014 CLAUDE.md's 'Known base-graph gaps'.",
+   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
    "addedOn": "2026-09-19"
   },
   {
@@ -142,7 +142,7 @@
    "name": "Corporation for Public Broadcasting",
    "type": "Government Corporation",
    "licence": "treasury_statement_line",
-   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money \u2014 CLAUDE.md's 'Known base-graph gaps'. A private nonprofit chartered by Congress; its site is cpb.org, not a .gov host, and this project accepts only .gov/.mil pages as official \u2014 so it can carry the Treasury line and will never carry page evidence. CURATION.md \u00a71 note (b).",
+   "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'. A private nonprofit chartered by Congress; its site is cpb.org, not a .gov host, and this project accepts only .gov/.mil pages as official — so it can carry the Treasury line and will never carry page evidence. CURATION.md §1 note (b).",
    "addedOn": "2026-09-19"
   },
   {
@@ -152,7 +152,7 @@
    "type": "Regional Office",
    "licence": "official_page_label",
    "url": "https://department.va.gov/integrated-service-networks/",
-   "basis": "The Department of Veterans Affairs consolidated its Veterans Integrated Service Networks under the Restructure for Impact and Sustainability Effort (RISE). Two VA hosts on different systems agree: department.va.gov/integrated-service-networks/ states 'The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs' and labels VISN 1 through VISN 5 in its page content, and digital.va.gov/rise/ (last updated 2026-09-16) prints '5 VISN MAP (CAPTURE AREA BY STATE)' beside '18 HEALTH SERVICE AREA (HSA) MAP', with digital.va.gov/rise/leadership/ carrying exactly five networks and a named Network Director for each. The old numbering is retired rather than merely unlinked: all eighteen former slugs (visn-01 ... visn-23) return 301 Moved Permanently to the index while an invented slug returns 404, so those pages were withdrawn deliberately. VA names the new networks by number only; no regional name for any of them appears on an official page, and none is invented here. CURATION.md \u00a710.",
+   "basis": "The Department of Veterans Affairs consolidated its Veterans Integrated Service Networks under the Restructure for Impact and Sustainability Effort (RISE). Two VA hosts on different systems agree: department.va.gov/integrated-service-networks/ states 'The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs' and labels VISN 1 through VISN 5 in its page content, and digital.va.gov/rise/ (last updated 2026-09-16) prints '5 VISN MAP (CAPTURE AREA BY STATE)' beside '18 HEALTH SERVICE AREA (HSA) MAP', with digital.va.gov/rise/leadership/ carrying exactly five networks and a named Network Director for each. The old numbering is retired rather than merely unlinked: all eighteen former slugs (visn-01 ... visn-23) return 301 Moved Permanently to the index while an invented slug returns 404, so those pages were withdrawn deliberately. VA names the new networks by number only; no regional name for any of them appears on an official page, and none is invented here. CURATION.md §10.",
    "addedOn": "2026-09-19"
   },
   {
@@ -162,7 +162,7 @@
    "type": "Regional Office",
    "licence": "official_page_label",
    "url": "https://department.va.gov/integrated-service-networks/",
-   "basis": "The Department of Veterans Affairs consolidated its Veterans Integrated Service Networks under the Restructure for Impact and Sustainability Effort (RISE). Two VA hosts on different systems agree: department.va.gov/integrated-service-networks/ states 'The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs' and labels VISN 1 through VISN 5 in its page content, and digital.va.gov/rise/ (last updated 2026-09-16) prints '5 VISN MAP (CAPTURE AREA BY STATE)' beside '18 HEALTH SERVICE AREA (HSA) MAP', with digital.va.gov/rise/leadership/ carrying exactly five networks and a named Network Director for each. The old numbering is retired rather than merely unlinked: all eighteen former slugs (visn-01 ... visn-23) return 301 Moved Permanently to the index while an invented slug returns 404, so those pages were withdrawn deliberately. VA names the new networks by number only; no regional name for any of them appears on an official page, and none is invented here. CURATION.md \u00a710.",
+   "basis": "The Department of Veterans Affairs consolidated its Veterans Integrated Service Networks under the Restructure for Impact and Sustainability Effort (RISE). Two VA hosts on different systems agree: department.va.gov/integrated-service-networks/ states 'The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs' and labels VISN 1 through VISN 5 in its page content, and digital.va.gov/rise/ (last updated 2026-09-16) prints '5 VISN MAP (CAPTURE AREA BY STATE)' beside '18 HEALTH SERVICE AREA (HSA) MAP', with digital.va.gov/rise/leadership/ carrying exactly five networks and a named Network Director for each. The old numbering is retired rather than merely unlinked: all eighteen former slugs (visn-01 ... visn-23) return 301 Moved Permanently to the index while an invented slug returns 404, so those pages were withdrawn deliberately. VA names the new networks by number only; no regional name for any of them appears on an official page, and none is invented here. CURATION.md §10.",
    "addedOn": "2026-09-19"
   },
   {
@@ -172,7 +172,7 @@
    "type": "Regional Office",
    "licence": "official_page_label",
    "url": "https://department.va.gov/integrated-service-networks/",
-   "basis": "The Department of Veterans Affairs consolidated its Veterans Integrated Service Networks under the Restructure for Impact and Sustainability Effort (RISE). Two VA hosts on different systems agree: department.va.gov/integrated-service-networks/ states 'The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs' and labels VISN 1 through VISN 5 in its page content, and digital.va.gov/rise/ (last updated 2026-09-16) prints '5 VISN MAP (CAPTURE AREA BY STATE)' beside '18 HEALTH SERVICE AREA (HSA) MAP', with digital.va.gov/rise/leadership/ carrying exactly five networks and a named Network Director for each. The old numbering is retired rather than merely unlinked: all eighteen former slugs (visn-01 ... visn-23) return 301 Moved Permanently to the index while an invented slug returns 404, so those pages were withdrawn deliberately. VA names the new networks by number only; no regional name for any of them appears on an official page, and none is invented here. CURATION.md \u00a710.",
+   "basis": "The Department of Veterans Affairs consolidated its Veterans Integrated Service Networks under the Restructure for Impact and Sustainability Effort (RISE). Two VA hosts on different systems agree: department.va.gov/integrated-service-networks/ states 'The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs' and labels VISN 1 through VISN 5 in its page content, and digital.va.gov/rise/ (last updated 2026-09-16) prints '5 VISN MAP (CAPTURE AREA BY STATE)' beside '18 HEALTH SERVICE AREA (HSA) MAP', with digital.va.gov/rise/leadership/ carrying exactly five networks and a named Network Director for each. The old numbering is retired rather than merely unlinked: all eighteen former slugs (visn-01 ... visn-23) return 301 Moved Permanently to the index while an invented slug returns 404, so those pages were withdrawn deliberately. VA names the new networks by number only; no regional name for any of them appears on an official page, and none is invented here. CURATION.md §10.",
    "addedOn": "2026-09-19"
   },
   {
@@ -182,7 +182,7 @@
    "type": "Regional Office",
    "licence": "official_page_label",
    "url": "https://department.va.gov/integrated-service-networks/",
-   "basis": "The Department of Veterans Affairs consolidated its Veterans Integrated Service Networks under the Restructure for Impact and Sustainability Effort (RISE). Two VA hosts on different systems agree: department.va.gov/integrated-service-networks/ states 'The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs' and labels VISN 1 through VISN 5 in its page content, and digital.va.gov/rise/ (last updated 2026-09-16) prints '5 VISN MAP (CAPTURE AREA BY STATE)' beside '18 HEALTH SERVICE AREA (HSA) MAP', with digital.va.gov/rise/leadership/ carrying exactly five networks and a named Network Director for each. The old numbering is retired rather than merely unlinked: all eighteen former slugs (visn-01 ... visn-23) return 301 Moved Permanently to the index while an invented slug returns 404, so those pages were withdrawn deliberately. VA names the new networks by number only; no regional name for any of them appears on an official page, and none is invented here. CURATION.md \u00a710.",
+   "basis": "The Department of Veterans Affairs consolidated its Veterans Integrated Service Networks under the Restructure for Impact and Sustainability Effort (RISE). Two VA hosts on different systems agree: department.va.gov/integrated-service-networks/ states 'The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs' and labels VISN 1 through VISN 5 in its page content, and digital.va.gov/rise/ (last updated 2026-09-16) prints '5 VISN MAP (CAPTURE AREA BY STATE)' beside '18 HEALTH SERVICE AREA (HSA) MAP', with digital.va.gov/rise/leadership/ carrying exactly five networks and a named Network Director for each. The old numbering is retired rather than merely unlinked: all eighteen former slugs (visn-01 ... visn-23) return 301 Moved Permanently to the index while an invented slug returns 404, so those pages were withdrawn deliberately. VA names the new networks by number only; no regional name for any of them appears on an official page, and none is invented here. CURATION.md §10.",
    "addedOn": "2026-09-19"
   },
   {
@@ -192,7 +192,7 @@
    "type": "Regional Office",
    "licence": "official_page_label",
    "url": "https://department.va.gov/integrated-service-networks/",
-   "basis": "The Department of Veterans Affairs consolidated its Veterans Integrated Service Networks under the Restructure for Impact and Sustainability Effort (RISE). Two VA hosts on different systems agree: department.va.gov/integrated-service-networks/ states 'The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs' and labels VISN 1 through VISN 5 in its page content, and digital.va.gov/rise/ (last updated 2026-09-16) prints '5 VISN MAP (CAPTURE AREA BY STATE)' beside '18 HEALTH SERVICE AREA (HSA) MAP', with digital.va.gov/rise/leadership/ carrying exactly five networks and a named Network Director for each. The old numbering is retired rather than merely unlinked: all eighteen former slugs (visn-01 ... visn-23) return 301 Moved Permanently to the index while an invented slug returns 404, so those pages were withdrawn deliberately. VA names the new networks by number only; no regional name for any of them appears on an official page, and none is invented here. CURATION.md \u00a710.",
+   "basis": "The Department of Veterans Affairs consolidated its Veterans Integrated Service Networks under the Restructure for Impact and Sustainability Effort (RISE). Two VA hosts on different systems agree: department.va.gov/integrated-service-networks/ states 'The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs' and labels VISN 1 through VISN 5 in its page content, and digital.va.gov/rise/ (last updated 2026-09-16) prints '5 VISN MAP (CAPTURE AREA BY STATE)' beside '18 HEALTH SERVICE AREA (HSA) MAP', with digital.va.gov/rise/leadership/ carrying exactly five networks and a named Network Director for each. The old numbering is retired rather than merely unlinked: all eighteen former slugs (visn-01 ... visn-23) return 301 Moved Permanently to the index while an invented slug returns 404, so those pages were withdrawn deliberately. VA names the new networks by number only; no regional name for any of them appears on an official page, and none is invented here. CURATION.md §10.",
    "addedOn": "2026-09-19"
   },
   {
@@ -202,7 +202,7 @@
    "type": "Treasury accounting line",
    "color": "#8aa0b0",
    "licence": "treasury_statement_line",
-   "basis": "Table 5 reports $1.267 trillion under the Department of the Treasury's section as Interest on the Public Debt, and no node carried it \u2014 so the cascade treated it as money to be apportioned among Treasury's unlined bureaus by headcount. The result was published on the live site: the Alcohol & Tobacco Tax & Trade Bureau, with about 500 staff, at $287.1 BILLION \u2014 more than the measured IRS \u2014 and FinCEN at $201.0bn, OFAC at $143.6bn and the Office of Financial Research at $114.9bn, each exactly its curated headcount times one rate. This is not an organisation and the node does not claim it is: it is typed a Treasury accounting line, the same type the exporter gives the receipts lines it creates, and it exists so that money the statement reports under a heading naming no unit stops being divided among units. docs/EXACT_NODE_COSTS.md had listed this line among those deliberately left unmatched as one of 'Treasury's own funds and groupings'; leaving it unmatched is what caused the distortion.",
+   "basis": "Table 5 reports $1.267 trillion under the Department of the Treasury's section as Interest on the Public Debt, and no node carried it — so the cascade treated it as money to be apportioned among Treasury's unlined bureaus by headcount. The result was published on the live site: the Alcohol & Tobacco Tax & Trade Bureau, with about 500 staff, at $287.1 BILLION — more than the measured IRS — and FinCEN at $201.0bn, OFAC at $143.6bn and the Office of Financial Research at $114.9bn, each exactly its curated headcount times one rate. This is not an organisation and the node does not claim it is: it is typed a Treasury accounting line, the same type the exporter gives the receipts lines it creates, and it exists so that money the statement reports under a heading naming no unit stops being divided among units. docs/EXACT_NODE_COSTS.md had listed this line among those deliberately left unmatched as one of 'Treasury's own funds and groupings'; leaving it unmatched is what caused the distortion.",
    "addedOn": "2026-09-19"
   },
   {
@@ -274,7 +274,7 @@
    "name": "Agency for Toxic Substances and Disease Registry",
    "type": "Operating Division",
    "licence": "government_manual_entry",
-   "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: confirmed by a second agent that re-ran the probes. A genuine gap. It is a federal public-health agency within HHS, not a grouping heading, not a civilian/uniformed distinction, and not a non-federal body \u2014 none of the three reasons not to add applies. The Manual's HHS leadership table does print 'Agency for Toxic Substances and Disease Registry' as a TitleColumnValue (the table pairs an official with the OpDiv they head), which is a second, independent indication that the Manual treats it as a unit of HHS rather than scaf",
+   "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: confirmed by a second agent that re-ran the probes. A genuine gap. It is a federal public-health agency within HHS, not a grouping heading, not a civilian/uniformed distinction, and not a non-federal body — none of the three reasons not to add applies. The Manual's HHS leadership table does print 'Agency for Toxic Substances and Disease Registry' as a TitleColumnValue (the table pairs an official with the OpDiv they head), which is a second, independent indication that the Manual treats it as a unit of HHS rather than scaf",
    "addedOn": "2026-09-20"
   },
   {
@@ -283,7 +283,7 @@
    "name": "Office of Surface Mining Reclamation and Enforcement",
    "type": "Bureau",
    "licence": "government_manual_entry",
-   "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: confirmed by a second agent that re-ran the probes. A genuine gap and a real unit; none of the three refusals applies. Type: 'Bureau' is the measured convention for this position in the tree \u2014 8 of 8 existing exec-dept-doi children are 'Bureau'. The name beginning 'Office of' does not force the type 'Office': 5 existing nodes named 'Office of \u2026' are already typed 'Bureau' (against 26 typed 'Office'), so 'Bureau' stays inside the vocabulary the graph already uses. If the reviewer prefers name-shape over sibling convention, ",
+   "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: confirmed by a second agent that re-ran the probes. A genuine gap and a real unit; none of the three refusals applies. Type: 'Bureau' is the measured convention for this position in the tree — 8 of 8 existing exec-dept-doi children are 'Bureau'. The name beginning 'Office of' does not force the type 'Office': 5 existing nodes named 'Office of …' are already typed 'Bureau' (against 26 typed 'Office'), so 'Bureau' stays inside the vocabulary the graph already uses. If the reviewer prefers name-shape over sibling convention, ",
    "addedOn": "2026-09-20"
   },
   {
@@ -292,7 +292,7 @@
    "name": "National Intelligence University",
    "type": "Defense Agency",
    "licence": "government_manual_entry",
-   "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: adjudicated once. Genuinely absent: all four probes return nothing, and it is not a grouping heading, not a civilian-department/uniformed-service distinction, and not a non-federal body - it is a DoD institution the Manual carries with its own leadership row. CURATION.md \u00a713.3 independently lists it as a genuine gap, checked there by equality plus a distinctive phrase. Type 'Defense Agency' is the vocabulary all 16 existing children of the proposed parent already carry; the graph already uses that word loosely inside that ",
+   "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: adjudicated once. Genuinely absent: all four probes return nothing, and it is not a grouping heading, not a civilian-department/uniformed-service distinction, and not a non-federal body - it is a DoD institution the Manual carries with its own leadership row. CURATION.md §13.3 independently lists it as a genuine gap, checked there by equality plus a distinctive phrase. Type 'Defense Agency' is the vocabulary all 16 existing children of the proposed parent already carry; the graph already uses that word loosely inside that ",
    "addedOn": "2026-09-20"
   },
   {
@@ -310,7 +310,7 @@
    "name": "Uniformed Services University of the Health Sciences",
    "type": "Defense Agency",
    "licence": "government_manual_entry",
-   "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: adjudicated once. Genuinely absent, and the strongest of the three on external evidence: 773 federal civilian employees in OPM's March 2025 table under DoD. Note it carries zero eligible leadership rows in the Manual, so unlike NDU and NIU the node would gain no post evidence from the Manual itself - the payoff is the FedScope headcount record and the structural gap being closed, not a confirmed title. That is the same payoff test CURATION.md \u00a713.1 applies when it declines four renames whose entries carry no eligible rows;",
+   "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: adjudicated once. Genuinely absent, and the strongest of the three on external evidence: 773 federal civilian employees in OPM's March 2025 table under DoD. Note it carries zero eligible leadership rows in the Manual, so unlike NDU and NIU the node would gain no post evidence from the Manual itself - the payoff is the FedScope headcount record and the structural gap being closed, not a confirmed title. That is the same payoff test CURATION.md §13.1 applies when it declines four renames whose entries carry no eligible rows;",
    "addedOn": "2026-09-20"
   },
   {
@@ -364,7 +364,7 @@
    "name": "Foreign Claims Settlement Commission of the United States",
    "type": "Office",
    "licence": "government_manual_entry",
-   "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: confirmed by a second agent that re-ran the probes. Genuinely absent: all four probes returned nothing. It is a real federal unit, not scaffolding \u2014 a quasi-judicial commission located within the Department of Justice that adjudicates claims of U.S. nationals against foreign governments \u2014 so none of the three refusal reasons applies (it is not a grouping heading, not a civilian/uniformed distinction, not non-federal). Type 'Office' is measured, not invented: it is one of the 12 'Office'-typed direct children of Cabinet Dep",
+   "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: confirmed by a second agent that re-ran the probes. Genuinely absent: all four probes returned nothing. It is a real federal unit, not scaffolding — a quasi-judicial commission located within the Department of Justice that adjudicates claims of U.S. nationals against foreign governments — so none of the three refusal reasons applies (it is not a grouping heading, not a civilian/uniformed distinction, not non-federal). Type 'Office' is measured, not invented: it is one of the 12 'Office'-typed direct children of Cabinet Dep",
    "addedOn": "2026-09-20"
   },
   {
@@ -373,7 +373,7 @@
    "name": "International Criminal Police Organization (INTERPOL)-Washington",
    "type": "Bureau",
    "licence": "government_manual_entry",
-   "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: confirmed by a second agent that re-ran the probes. Genuinely absent: all four probes returned nothing. I considered refusal reason (c) \u2014 an international organisation \u2014 carefully, because the name's first words are INTERPOL's. It does not apply: the unit the Manual names is INTERPOL Washington, the United States National Central Bureau, which is a component of the Department of Justice co-managed with Homeland Security, not INTERPOL itself. The measured evidence for that is the Manual's own hierarchy, which files this ent",
+   "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: confirmed by a second agent that re-ran the probes. Genuinely absent: all four probes returned nothing. I considered refusal reason (c) — an international organisation — carefully, because the name's first words are INTERPOL's. It does not apply: the unit the Manual names is INTERPOL Washington, the United States National Central Bureau, which is a component of the Department of Justice co-managed with Homeland Security, not INTERPOL itself. The measured evidence for that is the Manual's own hierarchy, which files this ent",
    "addedOn": "2026-09-20"
   },
   {
@@ -382,7 +382,7 @@
    "name": "Office of Justice Programs",
    "type": "Office",
    "licence": "government_manual_entry",
-   "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: confirmed by a second agent that re-ran the probes. Genuinely absent: all four probes returned nothing. This is the candidate the brief warns about, and the warning is justified \u2014 44 node names in this graph contain the token 'programs', including 'State, Foreign Operations & Related Programs', which is the false positive a single long token produces. Probing by distinctive multi-word phrase instead ('justice programs', 'office of justice') returns nothing, and the graph-wide raw substring 'justice program' returns 0 hits,",
+   "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: confirmed by a second agent that re-ran the probes. Genuinely absent: all four probes returned nothing. This is the candidate the brief warns about, and the warning is justified — 44 node names in this graph contain the token 'programs', including 'State, Foreign Operations & Related Programs', which is the false positive a single long token produces. Probing by distinctive multi-word phrase instead ('justice programs', 'office of justice') returns nothing, and the graph-wide raw substring 'justice program' returns 0 hits,",
    "addedOn": "2026-09-20"
   },
   {
@@ -391,7 +391,7 @@
    "name": "United States Parole Commission",
    "type": "Office",
    "licence": "government_manual_entry",
-   "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: confirmed by a second agent that re-ran the probes. Genuinely absent: all four probes returned nothing, and the graph-wide raw substring 'parole' returns 0 hits across all 5,427 nodes, so this is as clean an absence as the data can show. It is a real federal unit \u2014 the commission within the Department of Justice that still exercises parole authority over D.C. Code offenders and pre-1987 federal offenders \u2014 so none of the three refusal reasons applies. Type 'Office' rests on the same measured precedent as the Foreign Claims",
+   "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: confirmed by a second agent that re-ran the probes. Genuinely absent: all four probes returned nothing, and the graph-wide raw substring 'parole' returns 0 hits across all 5,427 nodes, so this is as clean an absence as the data can show. It is a real federal unit — the commission within the Department of Justice that still exercises parole authority over D.C. Code offenders and pre-1987 federal offenders — so none of the three refusal reasons applies. Type 'Office' rests on the same measured precedent as the Foreign Claims",
    "addedOn": "2026-09-20"
   },
   {
@@ -400,7 +400,7 @@
    "name": "Executive Office for Immigration Review",
    "type": "Office",
    "licence": "government_manual_entry",
-   "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: confirmed by a second agent that re-ran the probes. Genuinely absent: all four probes returned nothing. It is a real federal unit \u2014 the Department of Justice component that runs the immigration courts and the Board of Immigration Appeals \u2014 so none of the three refusal reasons applies. The only probe hit anywhere near it was the acronym 'bia', which returned exec-dept-doi-bia 'Bureau of Indian Affairs (BIA)' and its Director under the Department of the Interior; that is a different unit under a different department and is N",
+   "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: confirmed by a second agent that re-ran the probes. Genuinely absent: all four probes returned nothing. It is a real federal unit — the Department of Justice component that runs the immigration courts and the Board of Immigration Appeals — so none of the three refusal reasons applies. The only probe hit anywhere near it was the acronym 'bia', which returned exec-dept-doi-bia 'Bureau of Indian Affairs (BIA)' and its Director under the Department of the Interior; that is a different unit under a different department and is N",
    "addedOn": "2026-09-20"
   },
   {
@@ -1017,7 +1017,7 @@
    "licence": "combined_statement_account",
    "account": "Capital Construction and Operations, Architect of the Capitol",
    "chapterUnit": "Architect of the Capitol",
-   "basis": "The Combined Statement's Legislative Branch chapter (FY2025) prints this appropriation account under the Architect of the Capitol's total, and no node in this graph carries it. It names no jurisdiction or office the graph draws, so it is carried as an accounting line beside the Architect's divisions rather than as an office; without a node its money would be divided among the divisions and the Architect's posts. CURATION.md \u00a722.9.",
+   "basis": "The Combined Statement's Legislative Branch chapter (FY2025) prints this appropriation account under the Architect of the Capitol's total, and no node in this graph carries it. It names no jurisdiction or office the graph draws, so it is carried as an accounting line beside the Architect's divisions rather than as an office; without a node its money would be divided among the divisions and the Architect's posts. CURATION.md §22.9.",
    "addedOn": "2026-10-21"
   },
   {
@@ -1028,8 +1028,134 @@
    "licence": "combined_statement_account",
    "account": "Capitol Police Buildings and Grounds, Architect of the Capitol",
    "chapterUnit": "Architect of the Capitol",
-   "basis": "The Combined Statement's Legislative Branch chapter (FY2025) prints this appropriation account under the Architect of the Capitol's total, and no node in this graph carries it. The owner asked for a division named 'Capitol Police Buildings, Grounds and Security' only if aoc.gov labels it; checked on 2026-10-21 with the verifier's own label test, aoc.gov names that jurisdiction only in prose (its Office of the Chief Security Officer page: 'The OCSO includes the Capitol Police Buildings, Grounds and Security jurisdiction'), and none of its organisational pages labels it. So no office is added and the account is carried as an accounting line under the Architect, the rule applied to Capital Construction and Operations. CURATION.md \u00a722.9.",
+   "basis": "The Combined Statement's Legislative Branch chapter (FY2025) prints this appropriation account under the Architect of the Capitol's total, and no node in this graph carries it. The owner asked for a division named 'Capitol Police Buildings, Grounds and Security' only if aoc.gov labels it; checked on 2026-10-21 with the verifier's own label test, aoc.gov names that jurisdiction only in prose (its Office of the Chief Security Officer page: 'The OCSO includes the Capitol Police Buildings, Grounds and Security jurisdiction'), and none of its organisational pages labels it. So no office is added and the account is carried as an accounting line under the Architect, the rule applied to Capital Construction and Operations. CURATION.md §22.9.",
    "addedOn": "2026-10-21"
+  },
+  {
+   "id": "exec-ind-misc-denali-commission",
+   "parentId": "exec-ind-misc",
+   "name": "Denali Commission",
+   "type": "Independent Agency",
+   "licence": "official_list_entry",
+   "basis": "Denali Commission is an entry of USAspending's toptier agency list under exactly this name. The unit's own site, denali.gov, answered the fetch with a redirect the verifier's fetch does not follow, so no page was read, so the page route refused it and the list is the licence. Where it sits in this graph is the row author's assertion; no list read here files it under a parent.",
+   "list": "usaspending_toptier"
+  },
+  {
+   "id": "exec-ind-misc-presidio-trust",
+   "parentId": "exec-ind-misc",
+   "name": "Presidio Trust",
+   "type": "Government Corporation",
+   "licence": "official_list_entry",
+   "basis": "Presidio Trust is an entry of USAspending's toptier agency list under exactly this name. presidio.gov was read and prints the name only inside longer headings ('About the Presidio Trust', 'Presidio Trust Careers'), never as a label of its own, so the page route refused it and the list is the licence. Where it sits in this graph is the row author's assertion; no list read here files it under a parent.",
+   "list": "usaspending_toptier"
+  },
+  {
+   "id": "exec-ind-misc-farm-credit-system-insurance-corporation",
+   "parentId": "exec-ind-misc",
+   "name": "Farm Credit System Insurance Corporation",
+   "type": "Government Corporation",
+   "licence": "official_page_label",
+   "url": "https://www.fcsic.gov/",
+   "basis": "Named as a label of its own on fcsic.gov, read now under the verifier's own label test. The Federal Register's agency directory and the USAspending toptier agency list the same unit, which is why it is a real federal body the graph lacked (CURATION.md §26.4). The placement under the graph's grouping of other independent agencies is the row author's assertion: no page or list read here files the unit under a parent, and the same is true of every other node this licence adds."
+  },
+  {
+   "id": "exec-ind-misc-udall-foundation",
+   "parentId": "exec-ind-misc",
+   "name": "Morris K. Udall and Stewart L. Udall Foundation",
+   "type": "Independent Agency",
+   "licence": "official_list_entry",
+   "basis": "Morris K. Udall and Stewart L. Udall Foundation is an entry of the Federal Register's agency directory under exactly this name. udall.gov was read and carries the name in no heading or link of its own, so the page route refused it and the list is the licence. Where it sits in this graph is the row author's assertion; no list read here files it under a parent.",
+   "list": "federal_register_directory"
+  },
+  {
+   "id": "exec-ind-misc-goldwater-scholarship-foundation",
+   "parentId": "exec-ind-misc",
+   "name": "Barry M. Goldwater Scholarship and Excellence in Education Foundation",
+   "type": "Independent Agency",
+   "licence": "official_list_entry",
+   "basis": "Barry M. Goldwater Scholarship and Excellence in Education Foundation is an entry of the Federal Register's agency directory under exactly this name. goldwaterscholarship.gov served 64 readable characters, below the verifier's floor for a page that was read, so the page route refused it and the list is the licence. Where it sits in this graph is the row author's assertion; no list read here files it under a parent.",
+   "list": "federal_register_directory"
+  },
+  {
+   "id": "exec-ind-misc-utah-reclamation-mitigation-and-conservation-commission",
+   "parentId": "exec-ind-misc",
+   "name": "Utah Reclamation Mitigation and Conservation Commission",
+   "type": "Independent Agency",
+   "licence": "official_list_entry",
+   "basis": "Utah Reclamation Mitigation and Conservation Commission is an entry of the Federal Register's agency directory under exactly this name. mitigationcommission.gov was read and prints the name in other wording ('Utah Reclamation Mitigation Conservation Commission'), so the page route refused it and the list is the licence. Where it sits in this graph is the row author's assertion; no list read here files it under a parent.",
+   "list": "federal_register_directory"
+  },
+  {
+   "id": "exec-ind-misc-southeast-crescent-regional-commission",
+   "parentId": "exec-ind-misc",
+   "name": "Southeast Crescent Regional Commission",
+   "type": "Independent Agency",
+   "licence": "official_page_label",
+   "url": "https://scrc.gov/",
+   "basis": "Named as a label of its own on scrc.gov, read now under the verifier's own label test. The Federal Register's agency directory and the USAspending toptier agency list the same unit, which is why it is a real federal body the graph lacked (CURATION.md §26.4). The placement under the graph's grouping of other independent agencies is the row author's assertion: no page or list read here files the unit under a parent, and the same is true of every other node this licence adds."
+  },
+  {
+   "id": "leg-support-uscc",
+   "parentId": "leg-support",
+   "name": "U.S.-China Economic and Security Review Commission",
+   "type": "Agency",
+   "licence": "official_list_entry",
+   "basis": "U.S.-China Economic and Security Review Commission is an entry of the Federal Register's agency directory under exactly this name. uscc.gov was read and prints the name only inside a page title ('U.S.- CHINA | ECONOMIC and SECURITY REVIEW COMMISSION'), which is not a label of its own, so the page route refused it and the list is the licence. Where it sits in this graph is the row author's assertion; no list read here files it under a parent.",
+   "list": "federal_register_directory"
+  },
+  {
+   "id": "leg-support-usbg",
+   "parentId": "leg-support",
+   "name": "United States Botanic Garden",
+   "type": "Agency",
+   "licence": "official_page_label",
+   "url": "https://www.usbg.gov/",
+   "basis": "Named as a label of its own on usbg.gov, read now under the verifier's own label test, and listed in the Government Manual's legislative section at the top level. A legislative-branch unit administered through the Architect of the Capitol; the Manual's chain licenses no placement beneath the Architect, so it sits under the legislative support grouping and the row author, not a document, says so."
+  },
+  {
+   "id": "jud-specialized-jpml",
+   "parentId": "jud-specialized",
+   "name": "Judicial Panel on Multidistrict Litigation",
+   "type": "Specialized Court",
+   "licence": "official_page_label",
+   "url": "https://www.jpml.uscourts.gov/",
+   "basis": "Named as a label of its own on jpml.uscourts.gov, read now under the verifier's own label test, and listed in the Government Manual under its judicial entries. It is a panel of the judicial branch rather than a court that tries cases; it is drawn beside the specialized courts because no grouping in this graph is closer, and that placement is the row author's assertion."
+  },
+  {
+   "id": "exec-ind-misc-office-of-navajo-and-hopi-indian-relocation",
+   "parentId": "exec-ind-misc",
+   "name": "Navajo and Hopi Indian Relocation Office",
+   "type": "Independent Agency",
+   "licence": "official_list_entry",
+   "list": "federal_register_directory",
+   "basis": "An entry of the Federal Register's agency directory under exactly this name, which USAspending's toptier list prints as 'Office of Navajo and Hopi Indian Relocation'. Its own site, www.onhir.gov, now redirects to www.doi.gov, so no page of its own was read; the list is the licence. Where it sits in this graph is the row author's assertion; no list read here files it under a parent."
+  },
+  {
+   "id": "exec-ind-misc-southwest-border-regional-commission",
+   "parentId": "exec-ind-misc",
+   "name": "Southwest Border Regional Commission",
+   "type": "Independent Agency",
+   "licence": "official_list_entry",
+   "list": "usaspending_toptier",
+   "basis": "An entry of USAspending's toptier agency list under exactly this name. Its own site did not answer from this environment, so no page of its own was read; the list is the licence. Where it sits in this graph is the row author's assertion; no list read here files it under a parent."
+  },
+  {
+   "id": "leg-house-cmte-ethics",
+   "parentId": "leg-house-committees",
+   "name": "House Committee on Ethics",
+   "type": "Committee",
+   "licence": "official_page_label",
+   "url": "https://ethics.house.gov/",
+   "basis": "A standing committee of the House that the Clerk's complete committee list carries ('Committee on Ethics') and the graph had no node for (CURATION.md §5.7, §26.4). Its own site, ethics.house.gov, is read now under the verifier's own label test; the graph's convention of naming a committee with its chamber word first is kept, and the verifier sets that scaffolding aside for a committee. Placed under the House's committees grouping, as every sibling is."
+  },
+  {
+   "id": "leg-house-cmte-jan6-select",
+   "parentId": "leg-house-committees",
+   "name": "Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021",
+   "type": "Committee",
+   "licence": "official_list_entry",
+   "basis": "An entry of the House Clerk's complete committee list under exactly this name, which the Clerk prints as a committee of its own (a top-level entry, with no parent); the graph had no node for it (CURATION.md §26.4). The Committee on House Administration's Subcommittees page (cha.house.gov/subcommittees) served 246 readable characters, below the verifier's floor, so the page route refused it and the list is the licence. It is filed as the Clerk files it, beside the other committees under the House's committees grouping, rather than beneath the Committee on House Administration: the 2026-10-22 disposition's reading that H.Res. 5 made it a select subcommittee of that committee is not something the list states, and a placement the list contradicts would have left the graph with a curated name the list lacks.",
+   "list": "house_clerk_committee_list"
   }
  ]
 }

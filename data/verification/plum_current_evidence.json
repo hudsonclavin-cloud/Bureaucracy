@@ -50,7 +50,7 @@
       "ST": 2,
       "FP": 1
     },
-    "agencies_matched": 120,
+    "agencies_matched": 123,
     "agencies_matched_by_scoped_prefix": 8,
     "agencies_matched_by_alias": 6,
     "agencies_unmatched": [
@@ -92,7 +92,6 @@
       "INTERNATIONAL BOUNDARY AND WATER COMMISSION",
       "INTERNATIONAL JOINT COMMISSION",
       "INTERSTATE COMMISSION ON THE POTOMAC RIVER BASIN",
-      "MORRIS K. UDALL AND STEWART L. UDALL FOUNDATION",
       "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION OFFICE OF THE INSPECTOR GENERAL",
       "NATIONAL ENDOWMENT FOR THE HUMANITIES OFFICE OF THE INSPECTOR GENERAL",
       "NUCLEAR REGULATORY COMMISSION OFFICE OF THE INSPECTOR GENERAL",
@@ -105,15 +104,13 @@
       "SOCIAL SECURITY ADMINISTRATION OFFICE OF THE INSPECTOR GENERAL",
       "TENNESSEE VALLEY AUTHORITY OFFICE OF THE INSPECTOR GENERAL",
       "U.S. AGENCY FOR INTERNATIONAL DEVELOPMENT OFFICE OF THE INSPECTOR GENERAL",
-      "U.S. CHINA ECONOMIC AND SECURITY REVIEW COMMISSION",
-      "U.S. SEMIQUINCENTENNIAL COMMISSION",
-      "UTAH RECLAMATION MITIGATION AND CONSERVATION COMMISSION"
+      "U.S. SEMIQUINCENTENNIAL COMMISSION"
     ],
     "agencies_ambiguous": [],
-    "organizations_of_agency": 68,
-    "organizations_matched": 199,
+    "organizations_of_agency": 70,
+    "organizations_matched": 201,
     "organizations_matched_by_alias": 5,
-    "organizations_under_unmatched_agency": 181,
+    "organizations_under_unmatched_agency": 178,
     "organizations_unmatched": [
       {
         "agency": "ARMED FORCES RETIREMENT HOME",
@@ -3884,6 +3881,10 @@
         "organization": "OFFICE OF THE CHAIRMAN"
       },
       {
+        "agency": "UTAH RECLAMATION MITIGATION AND CONSERVATION COMMISSION",
+        "organization": "COMMISSIONERS"
+      },
+      {
         "agency": "WOODROW WILSON INTERNATIONAL CENTER FOR SCHOLARS",
         "organization": "BOARD OF TRUSTEES"
       }
@@ -4315,19 +4316,11 @@
         "rows": 24
       },
       {
-        "agency": "U.S. CHINA ECONOMIC AND SECURITY REVIEW COMMISSION",
-        "rows": 14
-      },
-      {
         "agency": "EXECUTIVE OFFICE OF THE PRESIDENT - OFFICE OF THE VICE PRESIDENT",
         "rows": 11
       },
       {
         "agency": "BARRY GOLDWATER SCHOLARSHIP AND EXCELLENCE IN EDUCATION FOUNDATION",
-        "rows": 9
-      },
-      {
-        "agency": "MORRIS K. UDALL AND STEWART L. UDALL FOUNDATION",
         "rows": 9
       },
       {
@@ -4340,10 +4333,6 @@
       },
       {
         "agency": "EXECUTIVE OFFICE OF THE PRESIDENT - U.S. DOGE SERVICE",
-        "rows": 4
-      },
-      {
-        "agency": "UTAH RECLAMATION MITIGATION AND CONSERVATION COMMISSION",
         "rows": 4
       },
       {
@@ -4408,6 +4397,18 @@
       },
       {
         "agency": "DEPARTMENT OF DEFENSE OFFICE OF THE INSPECTOR GENERAL",
+        "rows": 1
+      },
+      {
+        "agency": "DEPARTMENT OF HEALTH AND HUMAN SERVICES OFFICE OF THE INSPECTOR GENERAL",
+        "rows": 1
+      },
+      {
+        "agency": "DEPARTMENT OF HOMELAND SECURITY OFFICE OF THE INSPECTOR GENERAL",
+        "rows": 1
+      },
+      {
+        "agency": "DEPARTMENT OF JUSTICE OFFICE OF THE INSPECTOR GENERAL",
         "rows": 1
       }
     ],

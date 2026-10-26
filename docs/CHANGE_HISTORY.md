@@ -5,7 +5,7 @@ the graph just built, `output/change_history.json` and `data/audit/review_queue.
 Do not edit by hand. `docs/DEFINITION_OF_DONE.md` Part 2 ("Change history"), criterion 5
 (the change budget) and criterion 7 (the review queue).
 
-**Review queue: 60 open**, 0 resolved, 0 closed. The queue is the only thing a person is asked to look at between cycles.
+**Review queue: 59 open**, 0 resolved, 1 closed. The queue is the only thing a person is asked to look at between cycles.
 
 ### Open: `measured_cost_moved_with_new_statement` (7)
 
@@ -70,7 +70,7 @@ Do not edit by hand. `docs/DEFINITION_OF_DONE.md` Part 2 ("Change history"), cri
   - the curated file: employees ~3,000 (est.)
   - OPM FedScope 2025-03: employees 1163 — https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip
 
-### Open: `verification_failure` (40)
+### Open: `verification_failure` (39)
 
 - opened 2026-10-22 — Children & Families (`leg-senate-cmte-health-education-labor-pensions-sub-children-families`): a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision
   - senate_committee_list: does not carry the name Children & Families — https://www.senate.gov/general/committee_membership/committee_memberships_SSHR.xml
@@ -147,9 +147,6 @@ Do not edit by hand. `docs/DEFINITION_OF_DONE.md` Part 2 ("Change history"), cri
 - opened 2026-10-22 — Science & Space (`leg-senate-cmte-commerce-science-transportation-sub-science-space`): a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision
   - senate_committee_list: does not carry the name Science & Space — https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml
   - this graph (curated): names it Science & Space
-- opened 2026-10-22 — Select Subcommittee on the Weaponization of the Federal Government (`leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government`): a document was read and does not carry this node's name (not_in_official_list); a name question or a curation decision
-  - house_clerk_committee_list: does not carry the name Select Subcommittee on the Weaponization of the Federal Government — https://clerk.house.gov/Committees/ExcelCommitteeData
-  - this graph (curated): names it Select Subcommittee on the Weaponization of the Federal Government
 - opened 2026-10-22 — Senate Administrative Offices (`leg-senate-admin`): a document was read and does not carry this node's name (not_found); a name question or a curation decision
   - own_official_page: does not carry the name Senate Administrative Offices — https://www.senate.gov/about/officers-staff.htm
   - this graph (curated): names it Senate Administrative Offices
@@ -203,6 +200,57 @@ Do not edit by hand. `docs/DEFINITION_OF_DONE.md` Part 2 ("Change history"), cri
   - the copy in use: dated 2025-01-12, read 2026-10-22 — https://www.justice.gov/usao/career-center/salary-information/administratively-determined-pay-plan-charts
 
 ## Builds, newest first
+
+### 2026-10-26T00:41:44.818197+00:00 — within the budget
+
+the Treasury anchor is still the statement of 2026-09-30; 5,512 nodes before and 5,526 after (14 added, 0 removed, 0 newly marked replaced, 0 renamed); 0 measured costs moved, 0 gained a measured figure, 0 lost one; 255 estimates moved; pay claims 1,258 -> 1,258 (0 added, 0 withdrawn, 0 changed figure); verification or placement methods: 16 added, 0 withdrawn, 0 changed; within the change budget.
+
+- `node_count_drops`: ok — 5,512 nodes before, 5,526 after; 0 removed
+- `anchor_lost`: ok — anchor record date after: 2026-09-30
+- `anchor_period_goes_backwards`: ok — anchor 2026-09-30 -> 2026-09-30
+- `measured_cost_moved_without_a_new_statement`: ok — the statement is unchanged (2026-09-30) and 0 measured costs moved
+- `pay_claims_withdrawn_above_5_percent`: ok — 0 of 1,258 pay claims withdrawn (0.0%; the limit is 5%)
+- `rebuilt_without_a_statement`: ok — the build read a statement
+
+Nodes added (14):
+
+- Denali Commission (`exec-ind-misc-denali-commission`)
+- Farm Credit System Insurance Corporation (`exec-ind-misc-farm-credit-system-insurance-corporation`)
+- Barry M. Goldwater Scholarship and Excellence in Education Foundation (`exec-ind-misc-goldwater-scholarship-foundation`)
+- Navajo and Hopi Indian Relocation Office (`exec-ind-misc-office-of-navajo-and-hopi-indian-relocation`)
+- Presidio Trust (`exec-ind-misc-presidio-trust`)
+- Southeast Crescent Regional Commission (`exec-ind-misc-southeast-crescent-regional-commission`)
+- Southwest Border Regional Commission (`exec-ind-misc-southwest-border-regional-commission`)
+- Morris K. Udall and Stewart L. Udall Foundation (`exec-ind-misc-udall-foundation`)
+- Utah Reclamation Mitigation and Conservation Commission (`exec-ind-misc-utah-reclamation-mitigation-and-conservation-commission`)
+- Judicial Panel on Multidistrict Litigation (`jud-specialized-jpml`)
+- House Committee on Ethics (`leg-house-cmte-ethics`)
+- Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021 (`leg-house-cmte-jan6-select`)
+- United States Botanic Garden (`leg-support-usbg`)
+- U.S.-China Economic and Security Review Commission (`leg-support-uscc`)
+
+Methods added (16):
+
+- Denali Commission (`exec-ind-misc-denali-commission`), `verificationMethod` listed_in_federal_register_agency_directory
+- Farm Credit System Insurance Corporation (`exec-ind-misc-farm-credit-system-insurance-corporation`), `verificationMethod` name_labelled_on_own_official_page
+- Barry M. Goldwater Scholarship and Excellence in Education Foundation (`exec-ind-misc-goldwater-scholarship-foundation`), `verificationMethod` listed_in_federal_register_agency_directory
+- Navajo and Hopi Indian Relocation Office (`exec-ind-misc-office-of-navajo-and-hopi-indian-relocation`), `verificationMethod` listed_in_federal_register_agency_directory
+- Presidio Trust (`exec-ind-misc-presidio-trust`), `verificationMethod` listed_in_federal_register_agency_directory
+- Southeast Crescent Regional Commission (`exec-ind-misc-southeast-crescent-regional-commission`), `verificationMethod` name_labelled_on_own_official_page
+- Morris K. Udall and Stewart L. Udall Foundation (`exec-ind-misc-udall-foundation`), `verificationMethod` listed_in_federal_register_agency_directory
+- Utah Reclamation Mitigation and Conservation Commission (`exec-ind-misc-utah-reclamation-mitigation-and-conservation-commission`), `verificationMethod` listed_in_federal_register_agency_directory
+- Judicial Panel on Multidistrict Litigation (`jud-specialized-jpml`), `verificationMethod` name_labelled_on_own_official_page
+- House Committee on Ethics (`leg-house-cmte-ethics`), `verificationMethod` name_labelled_on_own_official_page
+- Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021 (`leg-house-cmte-jan6-select`), `verificationMethod` listed_in_house_clerk_committee_list
+- Select Subcommittee on the Weaponization of the Federal Government (`leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government`), `placementMethod` name_labelled_on_parent_official_page
+- Select Subcommittee on the Weaponization of the Federal Government (`leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government`), `verificationMethod` name_labelled_on_parent_official_page
+- United States Botanic Garden (`leg-support-usbg`), `placementMethod` name_labelled_on_parent_official_page
+- United States Botanic Garden (`leg-support-usbg`), `verificationMethod` name_labelled_on_own_official_page
+- U.S.-China Economic and Security Review Commission (`leg-support-uscc`), `verificationMethod` listed_in_federal_register_agency_directory
+
+Sources whose copy changed:
+
+- `official_pages`: 2026-10-22 → 2026-10-26 (current)
 
 ### 2026-10-22T08:53:12.726654+00:00 — within the budget
 

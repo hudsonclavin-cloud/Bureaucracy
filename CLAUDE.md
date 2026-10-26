@@ -52,7 +52,7 @@ python scripts/rename_templated_post_titles.py --dry-run  # templated cabinet ti
 python scripts/probe_candidate_pages.py --uncovered        # organisations with no candidate page; read-only, no fetch
 python scripts/rename_units_to_official_wording.py --dry-run  # organisations -> the wording their own page carries; drives CURATION.md §9
 python -c "import sys;sys.path.insert(0,'.');from data_pipeline.exporter.build_graph import DEFAULT_BASE_GRAPH,load_base_graph;from data_pipeline.verification.aliases import load_alias_table;t=load_alias_table(load_base_graph(DEFAULT_BASE_GRAPH));print(len(t),t.refusals)"  # adjudicate data/curation/node_aliases.json; CURATION.md §17
-python scripts/add_curated_nodes.py --dry-run     # add a unit the graph lacks, licensed by the statement, a page or the Government Manual, or an account the Combined Statement prints (as a Treasury accounting line); CURATION.md §1, §22.9
+python scripts/add_curated_nodes.py --dry-run     # add a unit the graph lacks, licensed by the statement, a page, the Government Manual, an account the Combined Statement prints (as a Treasury accounting line) or an entry of one of four official lists (`official_list_entry`: USAspending toptier, Plum agencies, Federal Register directory, House Clerk); CURATION.md §1, §22.9, §32.1
 python scripts/mark_superseded_units.py --dry-run # mark a unit the government has replaced; nothing is ever deleted
 python scripts/probe_network_access.py           # what this session can reach now, and whether a 403 was the proxy or the host
 python scripts/derive_pay_evidence.py --dry-run  # the salary table joined to the listings' levels (the current export's where it lists the post, else the archive's); writes nothing

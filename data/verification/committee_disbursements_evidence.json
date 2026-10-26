@@ -2,12 +2,12 @@
   "_note": "Derived by scripts/derive_committee_disbursements_evidence.py from the House's Statement of Disbursements and the Senate's Report of the Secretary of the Senate, committed verbatim under tests/fixtures/disbursements/ with their digests. Each record is the sum of the totals the chamber prints for one committee's account -- or, for the House's own officer offices, that office's organisation -- over the report's period, every component listed. No row about a person is read. It is not a cost and the exporter never writes it into one.",
   "source": {
     "kind": "committee_disbursements",
-    "derivedAt": "2026-10-22T08:52:55Z"
+    "derivedAt": "2026-10-26T00:41:02Z"
   },
   "report": {
     "house": {
       "chamber": "house",
-      "committees_in_graph": 21,
+      "committees_in_graph": 23,
       "ambiguous": [],
       "refused": {
         "largest_office_total_too_small_to_bound_the_scale": [
@@ -25,6 +25,7 @@
         "leg-house-cmte-judiciary": "committee_key_equal",
         "leg-house-cmte-rules": "committee_key_equal",
         "leg-house-cmte-small-business": "committee_key_equal",
+        "leg-house-cmte-ethics": "committee_key_equal",
         "leg-house-cmte-veterans-affairs": "committee_key_equal",
         "leg-house-cmte-ways-means": "committee_key_equal",
         "leg-house-cmte-homeland-security": "committee_type_words_folded",
@@ -44,7 +45,6 @@
         "leg-house-ig": "reviewed_row"
       },
       "labels_not_matched": [
-        "2026 COMMITTEE ON ETHICS",
         "2026 REPUBLICAN STUDY COMMITTEE",
         "FISCAL YEAR 2026 COMMITTEE RENOVATION PROJECT"
       ],
@@ -885,6 +885,74 @@
       "arithmetic": {
         "operation": "sum_of_printed_totals",
         "note": "The document prints no single total for this committee; the figure is the sum of the 2 totals it prints, each listed with its printed text."
+      },
+      "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
+    },
+    "leg-house-cmte-ethics": {
+      "nodeId": "leg-house-cmte-ethics",
+      "nodeName": "House Committee on Ethics",
+      "chamber": "house",
+      "unitKind": "committee",
+      "costBasis": "disbursements",
+      "document": {
+        "title": "Statement of Disbursements of the House",
+        "file": "tests/fixtures/disbursements/house/2026q2_sod_summary_grid.csv",
+        "url": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv",
+        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
+        "fetchedAt": "2026-10-06T16:20:22Z",
+        "statementVolume": {
+          "file": "tests/fixtures/disbursements/house/2026q2_vol3_signed.pdf",
+          "url": "https://www.house.gov/sites/default/files/2026-08/books/2026q2_vol3_signed.pdf",
+          "sha256": "d7034a1122e34dae76f40257e20e5290d4a82367d9c531af6502311b259ca495"
+        },
+        "column": "QTD AMOUNT",
+        "columnDefinition": "Quarterly Amount — This amount lists the total expenditures for the specified quarter",
+        "statementTotal": {
+          "text": "$ 449,333,548.30",
+          "label": "Disbursements for salaries and expenses and canceled checks"
+        }
+      },
+      "period": {
+        "printed": "STATEMENT OF DISBURSEMENTS OF THE HOUSE FROM APRIL 1, 2026 TO JUNE 30, 2026",
+        "start": "2026-04-01",
+        "end": "2026-06-30",
+        "coverage": "quarter"
+      },
+      "listedNames": [
+        "2026 COMMITTEE ON ETHICS"
+      ],
+      "matchRule": "committee_key_equal",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "unitsEvidence": {
+        "kind": "currency_mark_on_the_statements_own_total_bounds_the_column",
+        "statementTotal": "$ 449,333,548.30",
+        "columnAnchor": "1129909.28"
+      },
+      "caveat": "The statement's summary file lists the committee's current-year organisation only. Disbursements the quarter charged to the committee's earlier-year accounts are printed in the signed volumes beside named payees and are not in this figure.",
+      "components": [
+        {
+          "label": "2026 COMMITTEE ON ETHICS",
+          "program": "GENERAL EXPENDITURES",
+          "printed": "1129909.28",
+          "locator": {
+            "row": 6571,
+            "column": "QTD AMOUNT",
+            "organization": "2026 COMMITTEE ON ETHICS",
+            "program": "GENERAL EXPENDITURES",
+            "description": "OFFICE TOTALS:"
+          },
+          "amount": 1129909.28,
+          "unitsEvidenceKind": "currency_mark_on_the_statements_own_total_bounds_the_column"
+        }
+      ],
+      "zeroComponents": [],
+      "amount": 1129909.28,
+      "componentCount": 1,
+      "documentsStatingTheFigure": 1,
+      "arithmetic": {
+        "operation": "sum_of_printed_totals",
+        "note": "The figure is the one total the document prints for this committee."
       },
       "notTheCost": "Cash the chamber's disbursing office paid out for the committee's account over the period. It is not the Treasury's net outlays, not the graph's estimate for this node, and not its cost."
     },

@@ -7570,3 +7570,93 @@ carry the sixth rule:
   the four condition kinds (a disagreement, a dispute, an unreadable page, an
   overdue source) still close when the graph stops being in that state.
   `tests/test_change_history.py` pins both directions.
+
+## 32. The lists' real units added, and the forty that need a decision (2026-10-26)
+
+### 32.1 Fourteen units, and the fifth licence
+
+`CURATION.md` §26.4 counted sixteen real units the five official lists name and
+the graph had not added. Fourteen are added now by `scripts/add_curated_nodes.py`,
+the same only-writer, from `data/curation/new_nodes.json`:
+
+- **By a page** (`official_page_label`, the verifier's own label test, read
+  now): the Farm Credit System Insurance Corporation, the Southeast Crescent
+  Regional Commission, the United States Botanic Garden, the Judicial Panel on
+  Multidistrict Litigation and the House Committee on Ethics. All five were then
+  queued as their own candidate page and **confirmed** by the verifier
+  (`name_labelled_on_own_official_page`).
+- **By a list** (`official_list_entry`, new): the Denali Commission, the
+  Presidio Trust, the Udall Foundation, the Goldwater Foundation, the Utah
+  Reclamation Mitigation and Conservation Commission, the U.S.-China Economic and
+  Security Review Commission, the Navajo and Hopi Indian Relocation Office, the
+  Southwest Border Regional Commission, and the January 6 select committee. The
+  row names one of four lists — USAspending's toptier agencies, OPM's current
+  Plum agencies, the Federal Register directory, the House Clerk's committee list
+  — and the run requires exactly one entry of that list whose canonical name is
+  the node's, read offline from the committed copy with its digest recomputed.
+  It is the page licence's twin for a unit whose page was read and does not carry
+  the name as a label of its own, or could not be read: Presidio's page prints
+  the name only inside longer headings; Udall's in no heading; Utah's in other
+  wording (no "and"); the U.S.-China Commission's only in its page title;
+  Goldwater's site served 64 readable characters; Denali's answered a redirect
+  the verifier's fetch does not follow; the Navajo-Hopi office's own site now
+  redirects to the Interior Department's; the Southwest Border Commission's did
+  not answer. In every case the page route was tried first and refused, and the
+  basis says which.
+
+**What the list licence does not license.** The placement. No list read here
+files a unit under a parent, so every parent is the row author's assertion, said
+so in the row's basis, as the Treasury-line and page licences' parents always
+were. The January 6 select committee is the one correction made in doing it: the
+2026-10-22 disposition placed it beneath the Committee on House Administration
+from the memory of H.Res. 5, the Clerk's list prints it as a committee of its
+own, and a placement the list contradicts left the graph with a curated name the
+list lacks. It is filed as the Clerk files it, beside the other committees.
+
+**What it changed beyond the tree.** 14 nodes added (5,512 → 5,526), 16
+verification or placement methods added, no measured cost moved, no pay claim
+moved, and 255 estimates moved because fourteen siblings now share their parents'
+pools (the honest direction; estimates are withheld by default). The new nodes
+reached records on their own: the Farm Credit System Insurance Corporation takes
+the audited net-cost row it was refused for lack of a node, the House Ethics
+Committee a Statement-of-Disbursements row, and FedScope and the PLUM archive
+two or three more agencies each. Eleven test pins moved by those counts and each
+move is the consequence named here, not a loosening. 20 disposition rows that the
+nodes made stale were removed (the table refuses a stale row), and three entries
+that are the same unit under another spelling are recorded as such.
+
+**Criterion 4(a): gap 19 → 5** — the three entries left unsure (CURATION.md
+§13.6: Defense Acquisition University, the Economics and Statistics
+Administration, one directory entry) and two the owner decides, Amtrak and the
+Bureau of Indian Education (§13.5).
+
+### 32.2 The forty that are not a build
+
+Criterion 3's gap stays **40** (884 current organisations, 631+ with a method).
+The verifier was re-run on all forty on 2026-10-26 with the .gov hosts reachable:
+none changed status. They are not unread pages; each is a document that was read
+and does not carry the graph's wording. Compared against the two complete
+committee lists they sort as follows:
+
+- **Seventeen subcommittees, mostly the previous Congress's** (nine House, eight Senate).
+  The graph carries both the current subcommittees and their predecessors
+  (Senate Commerce's "Oceans, Fisheries, Climate Change & Manufacturing" beside
+  the current "Coast Guard, Maritime, and Fisheries"; the House Judiciary's
+  "Select Subcommittee on the Weaponization of the Federal Government" beside
+  the current six). The lists omit the old ones, which is exactly the evidence
+  that they are gone, and the supersession rule (a replaced unit needs an
+  official page that STATES it) cannot be met by a list's silence. This needs a
+  decision: either a complete list's absence plus the Congress boundary is
+  licence enough to mark a subcommittee superseded, or these stay as honest
+  negatives. `supersededBy` would be empty, as it is for the eighteen VISNs.
+- **Seven of the graph's own groupings** (Independent Establishments &
+  Government Corporations, Judicial Support Organizations, Specialized Federal
+  Courts, Congressional Support Agencies, the House and Senate Administrative
+  Offices, House Committees). Four of them already carry
+  `verificationNoDocument: editorial_grouping`; the report counts a read negative above
+  a recorded reason, a choice made deliberately on 2026-10-22. For a grouping the
+  graph itself made, the negative is uninformative, and the rule could carve it
+  out. That reverses a stated choice, so it is recorded here rather than taken.
+- **Eleven NSF divisions and five other units** (the House Chaplain, the Senate
+  Sergeant at Arms, the Capitol Police's Protective Services Bureau, USSOCOM, the
+  Eisenhower library). Each is a wording question answered one page at a time (§9, §10).

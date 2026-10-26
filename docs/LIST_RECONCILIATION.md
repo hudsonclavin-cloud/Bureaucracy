@@ -9,17 +9,17 @@ the dispositions re-adjudicate.
 node or recorded as deliberately not one, and every curated committee name a complete
 list lacks is resolved. The gap, as one number:
 
-- **criterion 4(a) gap: 19** = 3 list entries unresolved + 16 distinct real units the lists name and the graph has not added + 0 curated committee names unresolved
+- **criterion 4(a) gap: 5** = 3 list entries unresolved + 2 distinct real units the lists name and the graph has not added + 0 curated committee names unresolved
 - rows refused on re-adjudication: 0
 
 | list | version | entries | reach a node | disposed | unresolved | addable | curated names the list lacks | of them unresolved |
 |---|---|---|---|---|---|---|---|---|
-| United States Government Manual, agency entries | edition 2025-12-31 | 231 | 187 | 44 | 2 | 4 | 0 | 0 |
-| Federal Register agency directory | fetched 2026-09-08 | 472 | 202 | 270 | 1 | 9 | 0 | 0 |
-| USAspending toptier agencies | 111 agencies as committed | 111 | 91 | 20 | 0 | 8 | 0 | 0 |
+| United States Government Manual, agency entries | edition 2025-12-31 | 231 | 189 | 42 | 2 | 2 | 0 | 0 |
+| Federal Register agency directory | fetched 2026-09-08 | 472 | 210 | 262 | 1 | 1 | 0 | 0 |
+| USAspending toptier agencies | 111 agencies as committed | 111 | 97 | 14 | 0 | 0 | 0 | 0 |
 | Senate committee list (committees and subcommittees) | 24 committees as committed | 94 | 86 | 8 | 0 | 0 | 11 | 0 |
-| House Clerk committee list (committees and subcommittees) | 27 committees as committed | 136 | 129 | 7 | 0 | 2 | 10 | 0 |
-| OPM's current Plum Book export, agencies | fetched 2026-09-21 | 174 | 120 | 54 | 0 | 4 | 0 | 0 |
+| House Clerk committee list (committees and subcommittees) | 27 committees as committed | 136 | 131 | 5 | 0 | 0 | 10 | 0 |
+| OPM's current Plum Book export, agencies | fetched 2026-09-21 | 174 | 123 | 51 | 0 | 0 | 0 | 0 |
 
 A disposition's basis ending "Reviewer's statement" rests on the reviewer's knowledge and
 no committed document; a row with a quote rests on the list's own words, re-found on
@@ -32,34 +32,20 @@ Each is counted once in the gap however many lists name it.
 
 - National Railroad Passenger Corporation (AMTRAK) — named by 2 list(s): `government_manual`; `federal_register_directory`
 - Bureau of Indian Education — named by 1 list(s): `government_manual`
-- United States Botanic Garden — named by 1 list(s): `government_manual`
-- Denali Commission — named by 2 list(s): `federal_register_directory`; `usaspending_toptier`
-- Farm Credit System Insurance Corporation — named by 2 list(s): `federal_register_directory`; `usaspending_toptier`
-- Barry M. Goldwater Scholarship and Excellence in Education Foundation — named by 3 list(s): `federal_register_directory`; `usaspending_toptier`; `plum_current_agencies`
-- Committee on Ethics — named by 1 list(s): `house_clerk_committee_list`
-- Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021 — named by 1 list(s): `house_clerk_committee_list`
-- Judicial Panel on Multidistrict Litigation — named by 1 list(s): `government_manual`
-- Navajo and Hopi Indian Relocation Office — named by 2 list(s): `federal_register_directory`; `usaspending_toptier`
-- Presidio Trust — named by 2 list(s): `federal_register_directory`; `usaspending_toptier`
-- Southeast Crescent Regional Commission — named by 1 list(s): `usaspending_toptier`
-- Southwest Border Regional Commission — named by 1 list(s): `usaspending_toptier`
-- Morris K. Udall and Stewart L. Udall Foundation — named by 3 list(s): `federal_register_directory`; `usaspending_toptier`; `plum_current_agencies`
-- U.S.-China Economic and Security Review Commission — named by 2 list(s): `federal_register_directory`; `plum_current_agencies`
-- Utah Reclamation Mitigation and Conservation Commission — named by 2 list(s): `federal_register_directory`; `plum_current_agencies`
 
 ## United States Government Manual, agency entries
 
-231 entries (edition 2025-12-31); 187 reach a node by the list's own matcher; 44 do not, of which 44 carry an accepted disposition.
+231 entries (edition 2025-12-31); 189 reach a node by the list's own matcher; 42 do not, of which 42 carry an accepted disposition.
 
 | disposition | entries |
 |---|---|
 | `non_federal_or_international_body` — not a unit of the federal government | 21 |
 | `scaffolding` — the list's own grouping heading | 8 |
-| `unit_the_list_names_not_added` — a real unit the graph lacks, recorded with its route (addable) | 4 |
 | `distinct_from_the_graphs_unit` — a different unit from the graph's, by population | 3 |
 | `names_a_node_under_another_wording` — names a node under another wording | 2 |
 | `carried_as_a_post` — carried as its head's post | 2 |
 | `unsure` — left unsure (unresolved) | 2 |
+| `unit_the_list_names_not_added` — a real unit the graph lacks, recorded with its route (addable) | 2 |
 | `umbrella_body_drawn_as_its_members` — a statutory umbrella drawn as its members | 1 |
 | `predecessor_of_a_node` — a former unit whose functions a node holds | 1 |
 
@@ -71,9 +57,7 @@ Each is counted once in the gap however many lists name it.
 **Real units the graph lacks (addable):**
 
 - Bureau of Indian Education — CURATION.md §13.5: the Treasury reports the Bureau jointly with the Bureau of Indian Affairs on one Table 5 line applied to the BIA node, and a separate node would take an apportioned share out of a jointly measured pool; add_curated_nodes.py refuses it by rule (jointly_measured_names).
-- Judicial Panel on Multidistrict Litigation — A real judicial-branch body the graph lacks. The Manual files it under its 'Lower Courts' heading, which the graph does not draw; adding it needs a placement decision (under the judicial branch, beside the courts of appeals) and the panel's own page or the Manual chain to license it.
 - National Railroad Passenger Corporation (AMTRAK) — A federally chartered corporation the Manual lists among quasi-official agencies. Table 5 prints no line for it (its federal grants flow through the Federal Railroad Administration), the Manual files it at the top level so its chain licenses no placement, and the graph draws no quasi-official corporations today except where the Treasury prints a line (the Legal Services Corporation, the CPB).
-- United States Botanic Garden — A legislative-branch unit the graph lacks, administered through the Architect of the Capitol. The Manual files it at the top level of its legislative section, so the government_manual_entry licence cannot place it beneath the Architect; adding it needs the Architect's own page labelling it (official_page_label).
 
 <details><summary>Every other disposition, entry by entry</summary>
 
@@ -120,7 +104,7 @@ Each is counted once in the gap however many lists name it.
 
 ## Federal Register agency directory
 
-472 entries (fetched 2026-09-08); 202 reach a node by the list's own matcher; 270 do not, of which 270 carry an accepted disposition.
+472 entries (fetched 2026-09-08); 210 reach a node by the list's own matcher; 262 do not, of which 262 carry an accepted disposition.
 
 | disposition | entries |
 |---|---|
@@ -130,11 +114,11 @@ Each is counted once in the gap however many lists name it.
 | `names_a_node_under_another_wording` — names a node under another wording | 22 |
 | `predecessor_of_a_node` — a former unit whose functions a node holds | 21 |
 | `non_federal_or_international_body` — not a unit of the federal government | 14 |
-| `unit_the_list_names_not_added` — a real unit the graph lacks, recorded with its route (addable) | 9 |
 | `carried_as_a_post` — carried as its head's post | 4 |
 | `distinct_from_the_graphs_unit` — a different unit from the graph's, by population | 3 |
 | `unsure` — left unsure (unresolved) | 1 |
 | `umbrella_body_drawn_as_its_members` — a statutory umbrella drawn as its members | 1 |
+| `unit_the_list_names_not_added` — a real unit the graph lacks, recorded with its route (addable) | 1 |
 
 **Unresolved:**
 
@@ -142,15 +126,7 @@ Each is counted once in the gap however many lists name it.
 
 **Real units the graph lacks (addable):**
 
-- Barry M. Goldwater Scholarship and Excellence in Education Foundation — A real independent foundation the graph lacks (its USAspending and Plum Book rows take the same disposition); route: a toptier-reporter licence or the Foundation's own page.
-- Denali Commission — A real independent agency the graph lacks (its USAspending toptier row takes the same disposition); route: a toptier-reporter licence or the Commission's own page under official_page_label.
-- Farm Credit System Insurance Corporation — A real government-controlled corporation the graph lacks (its USAspending toptier row takes the same disposition); route: a toptier-reporter licence under the independent establishments beside the Farm Credit Administration.
-- Morris K. Udall and Stewart L. Udall Foundation — A real independent foundation the graph lacks (its USAspending and Plum Book rows take the same disposition); route: a toptier-reporter licence or the Foundation's own page.
 - National Railroad Passenger Corporation — Amtrak, a federally chartered corporation; recorded as the Manual's row is: Table 5 prints no line for it and no licence in hand places it, so it is not added.
-- Navajo and Hopi Indian Relocation Office — A real independent office the graph lacks (its USAspending toptier row takes the same disposition); route: the office's own page under official_page_label.
-- Presidio Trust — A real wholly owned government corporation the graph lacks (its USAspending toptier row takes the same disposition); route: a toptier-reporter licence or the Trust's own page.
-- U.S.-China Economic and Security Review Commission — A real legislative-branch commission the graph lacks (its Plum Book row takes the same disposition); route: the Commission's own page under official_page_label, under the legislative branch.
-- Utah Reclamation Mitigation and Conservation Commission — A real independent commission the graph lacks (its Plum Book row takes the same disposition); route: the Commission's own page under official_page_label.
 
 <details><summary>Every other disposition, entry by entry</summary>
 
@@ -419,31 +395,20 @@ Each is counted once in the gap however many lists name it.
 
 ## USAspending toptier agencies
 
-111 entries (111 agencies as committed); 91 reach a node by the list's own matcher; 20 do not, of which 20 carry an accepted disposition.
+111 entries (111 agencies as committed); 97 reach a node by the list's own matcher; 14 do not, of which 14 carry an accepted disposition.
 
 | disposition | entries |
 |---|---|
-| `unit_the_list_names_not_added` — a real unit the graph lacks, recorded with its route (addable) | 8 |
+| `names_a_node_under_another_wording` — names a node under another wording | 6 |
 | `body_outside_the_graphs_scope` — an advisory, interagency or temporary body outside the graph's scope | 5 |
-| `names_a_node_under_another_wording` — names a node under another wording | 4 |
 | `predecessor_of_a_node` — a former unit whose functions a node holds | 1 |
 | `fund_or_account_not_a_unit` — an account or fund, not a unit | 1 |
 | `former_body` — a body that no longer exists | 1 |
 
-**Real units the graph lacks (addable):**
-
-- Barry Goldwater Scholarship and Excellence In Education Foundation — A real independent unit the graph lacks: an independent scholarship foundation (20 U.S.C. 4701); $1.7m of FY2026 outlays in the committed list; also an agency of the current Plum Book export. Route: a toptier-reporter licence for add_curated_nodes.py (exactly one row of the committed toptier list carries the name) under the independent establishments, or the unit's own page under official_page_label; the file-A figure would then land by name equality.
-- Denali Commission — A real independent unit the graph lacks: an independent federal agency for Alaska infrastructure (Pub. L. 105-277); $46.9m of outlays in the committed list. Route: a toptier-reporter licence for add_curated_nodes.py (exactly one row of the committed toptier list carries the name) under the independent establishments, or the unit's own page under official_page_label; the file-A figure would then land by name equality.
-- Farm Credit System Insurance Corporation — A real independent unit the graph lacks: a government-controlled corporation (12 U.S.C. 2277a) managed by the Farm Credit Administration's board; $228.0m of outlays in the committed list. Route: a toptier-reporter licence for add_curated_nodes.py (exactly one row of the committed toptier list carries the name) under the independent establishments, or the unit's own page under official_page_label; the file-A figure would then land by name equality.
-- Morris K. Udall and Stewart L. Udall Foundation — A real independent unit the graph lacks: an independent foundation (20 U.S.C. 5601); $8.4m of outlays in the committed list; also an agency of the current Plum Book export. Route: a toptier-reporter licence for add_curated_nodes.py (exactly one row of the committed toptier list carries the name) under the independent establishments, or the unit's own page under official_page_label; the file-A figure would then land by name equality.
-- Office of Navajo and Hopi Indian Relocation — A real independent unit the graph lacks: an independent office (25 U.S.C. 640d-11) reporting zero outlays in the committed list. Route: a toptier-reporter licence for add_curated_nodes.py (exactly one row of the committed toptier list carries the name) under the independent establishments, or the unit's own page under official_page_label; the file-A figure would then land by name equality.
-- Presidio Trust — A real independent unit the graph lacks: a wholly owned government corporation (16 U.S.C. 460bb note); $289.2m of outlays in the committed list. Route: a toptier-reporter licence for add_curated_nodes.py (exactly one row of the committed toptier list carries the name) under the independent establishments, or the unit's own page under official_page_label; the file-A figure would then land by name equality.
-- Southeast Crescent Regional Commission — A real independent unit the graph lacks: a regional commission (40 U.S.C. 15301) of the same kind as the Appalachian Regional Commission, the Delta Regional Authority and the Northern Border Regional Commission the graph carries; zero outlays in the committed list. Route: a toptier-reporter licence for add_curated_nodes.py (exactly one row of the committed toptier list carries the name) under the independent establishments, or the unit's own page under official_page_label; the file-A figure would then land by name equality.
-- Southwest Border Regional Commission — A real independent unit the graph lacks: a regional commission (40 U.S.C. 15301) of the same kind as those the graph carries; zero outlays in the committed list. Route: a toptier-reporter licence for add_curated_nodes.py (exactly one row of the committed toptier list carries the name) under the independent establishments, or the unit's own page under official_page_label; the file-A figure would then land by name equality.
-
 <details><summary>Every other disposition, entry by entry</summary>
 
 - 400 Years of African-American History Commission — `body_outside_the_graphs_scope`: A time-limited commemorative commission (Pub. L. 115-102) that reports zero outlays in the committed toptier list; temporary commissions are not drawn in this graph, a reviewer's scope decision recorded for the owner.
+- Barry Goldwater Scholarship and Excellence In Education Foundation — `names_a_node_under_another_wording` (node `exec-ind-misc-goldwater-scholarship-foundation`): The same foundation under the graph's node, which carries the name the Federal Register's directory prints, 'Barry M. Goldwater Scholarship and Excellence in Education Foundation' (with the middle initial). USAspending drops the initial and capitalises 'In'.
 - Committee for Purchase from People Who Are Blind or Severely Disabled — `names_a_node_under_another_wording` (node `exec-ind-misc-abilityone-commission`): The Committee operates as the U.S. AbilityOne Commission, the name the graph carries (41 U.S.C. 8502 creates the Committee; the Commission name is its operating name). Reviewer's statement.
 - Consumer Financial Protection Bureau — `names_a_node_under_another_wording` (node `exec-regulatory-bureau-of-consumer-financial-protection`): The graph carries the Bureau under its statutory name 'Bureau of Consumer Financial Protection'; node_aliases.json records the two names denote one unit on the Manual's entry 321 (CURATION.md §17.4), and the alias table is read by name evidence only, never by a money join, so the toptier row stays unmatched by design.
 - Corps of Engineers - Civil Works — `names_a_node_under_another_wording` (node `exec-independent-corps-of-engineers`): USAspending's reporter is the Corps' civil-works programme; the graph carries the Corps of Engineers as one node under the independent establishments, where Table 5 files its civil line.
@@ -452,6 +417,7 @@ Each is counted once in the gap however many lists name it.
 - Federal Financial Institutions Examination Council — `body_outside_the_graphs_scope`: An interagency council whose members are the heads of agencies the graph already carries; the graph draws agencies and their offices, not the councils that sit across them. A reviewer's scope decision recorded for the owner; USAspending reports it because it has its own appropriation account.
 - Federal Permitting Improvement Steering Council — `body_outside_the_graphs_scope`: An interagency council whose members are the heads of agencies the graph already carries; the graph draws agencies and their offices, not the councils that sit across them. A reviewer's scope decision recorded for the owner; USAspending reports it because it has its own appropriation account.
 - Gulf Coast Ecosystem Restoration Council — `body_outside_the_graphs_scope`: An interagency council whose members are the heads of agencies the graph already carries; the graph draws agencies and their offices, not the councils that sit across them. A reviewer's scope decision recorded for the owner; USAspending reports it because it has its own appropriation account.
+- Office of Navajo and Hopi Indian Relocation — `names_a_node_under_another_wording` (node `exec-ind-misc-office-of-navajo-and-hopi-indian-relocation`): The same office under the graph's node, which carries the name the Federal Register's directory prints, 'Navajo and Hopi Indian Relocation Office'; USAspending's toptier list prints the words in the other order.
 - Overseas Private Investment Corporation — `predecessor_of_a_node` (node `exec-ind-misc-u-s-international-development-finance-corp-dfc`): OPIC's functions passed to the U.S. International Development Finance Corporation under the BUILD Act of 2018; USAspending keeps the former reporter (toptier 071, $360,163 of outlays in the committed list). Reviewer's statement.
 - Patient-Centered Outcomes Research Trust Fund — `fund_or_account_not_a_unit`: A trust fund (26 U.S.C. 9511) that finances the Patient-Centered Outcomes Research Institute, which USAspending reports as a toptier entity because it has its own Treasury account; a fund is not a unit of government and the Institute is a non-federal nonprofit.
 - Vietnam Education Foundation — `former_body`: Reports zero outlays in the committed toptier list; the Foundation's statutory authority ended and it closed in 2018. Reviewer's statement: no document establishing the closure is committed here.
@@ -496,18 +462,12 @@ Each is counted once in the gap however many lists name it.
 
 ## House Clerk committee list (committees and subcommittees)
 
-136 entries (27 committees as committed); 129 reach a node by the list's own matcher; 7 do not, of which 7 carry an accepted disposition.
+136 entries (27 committees as committed); 131 reach a node by the list's own matcher; 5 do not, of which 5 carry an accepted disposition.
 
 | disposition | entries |
 |---|---|
 | `carried_outside_the_lists_scope` — a node outside the subtree the list's matcher is scoped to | 4 |
-| `unit_the_list_names_not_added` — a real unit the graph lacks, recorded with its route (addable) | 2 |
 | `names_a_node_under_another_wording` — names a node under another wording | 1 |
-
-**Real units the graph lacks (addable):**
-
-- Committee on Ethics — A standing committee of the House the graph lacks (CURATION.md §5.7 recorded it). Route: official_page_label from ethics.house.gov, or the Clerk's list itself as a licence, under the House's committees grouping.
-- Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021 — A select subcommittee of the Committee on House Administration created in the 119th Congress (H.Res. 5), which the Clerk lists as a committee of its own; the graph lacks it. Route: the Clerk's list or the committee's page under official_page_label, beneath House Administration.
 
 <details><summary>Every other disposition, entry by entry</summary>
 
@@ -534,7 +494,7 @@ Each is counted once in the gap however many lists name it.
 
 ## OPM's current Plum Book export, agencies
 
-174 entries (fetched 2026-09-21); 120 reach a node by the list's own matcher; 54 do not, of which 54 carry an accepted disposition.
+174 entries (fetched 2026-09-21); 123 reach a node by the list's own matcher; 51 do not, of which 51 carry an accepted disposition.
 
 | disposition | entries |
 |---|---|
@@ -542,21 +502,14 @@ Each is counted once in the gap however many lists name it.
 | `unit_beneath_a_node_not_drawn` — a live office beneath a node, not drawn | 9 |
 | `non_federal_or_international_body` — not a unit of the federal government | 5 |
 | `body_outside_the_graphs_scope` — an advisory, interagency or temporary body outside the graph's scope | 5 |
-| `unit_the_list_names_not_added` — a real unit the graph lacks, recorded with its route (addable) | 4 |
 | `distinct_from_the_graphs_unit` — a different unit from the graph's, by population | 3 |
+| `names_a_node_under_another_wording` — names a node under another wording | 2 |
 | `fund_or_account_not_a_unit` — an account or fund, not a unit | 1 |
-| `names_a_node_under_another_wording` — names a node under another wording | 1 |
-
-**Real units the graph lacks (addable):**
-
-- BARRY GOLDWATER SCHOLARSHIP AND EXCELLENCE IN EDUCATION FOUNDATION — A real unit the graph lacks: an independent foundation also reported by USAspending's toptier list. Route: the unit's own page under official_page_label, or a toptier-reporter licence where USAspending reports it.
-- MORRIS K. UDALL AND STEWART L. UDALL FOUNDATION — A real unit the graph lacks: an independent foundation also reported by USAspending's toptier list. Route: the unit's own page under official_page_label, or a toptier-reporter licence where USAspending reports it.
-- U.S. CHINA ECONOMIC AND SECURITY REVIEW COMMISSION — A real unit the graph lacks: a legislative-branch commission (22 U.S.C. 7002) with 14 live rows. Route: the unit's own page under official_page_label, or a toptier-reporter licence where USAspending reports it.
-- UTAH RECLAMATION MITIGATION AND CONSERVATION COMMISSION — A real unit the graph lacks: an independent executive-branch commission (Pub. L. 102-575 title III) with 4 live rows. Route: the unit's own page under official_page_label, or a toptier-reporter licence where USAspending reports it.
 
 <details><summary>Every other disposition, entry by entry</summary>
 
 - ASIAN DEVELOPMENT BANK — `non_federal_or_international_body`: A binational or international body (with Canada, with Mexico, or a multilateral bank) to which the United States appoints members the export lists; not a unit of the federal government.
+- BARRY GOLDWATER SCHOLARSHIP AND EXCELLENCE IN EDUCATION FOUNDATION — `names_a_node_under_another_wording` (node `exec-ind-misc-goldwater-scholarship-foundation`): The same foundation under the graph's node: the export prints the name without the middle initial the Federal Register's directory carries.
 - DEPARTMENT OF AGRICULTURE OFFICE OF THE INSPECTOR GENERAL — `carried_as_a_post` (node `exec-dept-usda-inspector-general`): The export files an agency's Office of Inspector General as an agency of its own; the graph carries the office as its head's post, 'Inspector General', directly under the agency.
 - DEPARTMENT OF DEFENSE OFFICE OF THE INSPECTOR GENERAL — `carried_as_a_post` (node `exec-dept-defense-inspector-general`): The export files an agency's Office of Inspector General as an agency of its own; the graph carries the office as its head's post, 'Inspector General', directly under the agency.
 - DEPARTMENT OF EDUCATION OFFICE OF THE INSPECTOR GENERAL — `carried_as_a_post` (node `exec-dept-ed-inspector-general`): The export files an agency's Office of Inspector General as an agency of its own; the graph carries the office as its head's post, 'Inspector General', directly under the agency.

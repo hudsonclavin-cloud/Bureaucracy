@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-10-22T08:53:12.726654+00:00",
+  "timestamp": "2026-10-26T00:41:44.818197+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
-  "nodes_before": 5483,
-  "nodes_after": 5512,
+  "nodes_before": 5497,
+  "nodes_after": 5526,
   "new_nodes_added": 29,
   "nodes_delta": 29,
-  "published_nodes_before": 5512,
+  "published_nodes_before": 5526,
   "nodes_delta_vs_published": 0,
   "candidate_nodes_written": 58,
   "review_queue_repair": {
@@ -22,49 +22,49 @@
   "promoted_nodes_written": 0,
   "promotion_stats": {},
   "verification_breakdown": {
-    "partial": 469,
-    "verified": 558,
-    "unverified": 4485
+    "partial": 472,
+    "verified": 562,
+    "unverified": 4492
   },
   "average_confidence_score": 0.76,
-  "verified_node_count": 558,
+  "verified_node_count": 562,
   "treasury_total_fetched": false,
   "build_validation": {
-    "initial_node_count": 1074,
-    "input_node_count": 1074,
+    "initial_node_count": 1088,
+    "input_node_count": 1088,
     "input_edge_count": 0,
-    "exported_node_count": 1074,
+    "exported_node_count": 1088,
     "exported_edge_count": 0,
     "nodes_removed_missing_parent": 0,
-    "nodes_reattached_to_root": 0,
+    "nodes_reattached_to_root": 1,
     "nodes_removed_structural_errors": 0,
-    "final_node_count": 1074,
+    "final_node_count": 1088,
     "orphan_nodes_detected": 0,
     "recovered_orphan_nodes": 0,
     "root_attached_missing_parent_nodes": 0,
     "dropped_edges_missing_source": 0,
     "dropped_edges_missing_target": 0,
     "orphaned_parent_ids": 0,
-    "attached_to_root": 0,
-    "explicitly_root_attached_nodes": 0,
+    "attached_to_root": 1,
+    "explicitly_root_attached_nodes": 1,
     "relationship_counts": {},
     "verification_status_counts": {
-      "partial": 469,
-      "verified": 558,
-      "unverified": 4485
+      "partial": 472,
+      "verified": 562,
+      "unverified": 4492
     },
-    "verified_node_count": 558,
+    "verified_node_count": 562,
     "dropped_placeholder_nodes": 0,
     "average_confidence_score": 0.76,
     "pipeline_summary": {
-      "initial_node_count": 1074,
-      "raw_nodes_loaded": 1074,
-      "nodes_after_normalization": 1074,
-      "nodes_after_merge": 1074,
+      "initial_node_count": 1088,
+      "raw_nodes_loaded": 1088,
+      "nodes_after_normalization": 1088,
+      "nodes_after_merge": 1088,
       "nodes_removed_missing_parent": 0,
-      "nodes_reattached_to_root": 0,
+      "nodes_reattached_to_root": 1,
       "nodes_removed_structural_errors": 0,
-      "final_node_count": 1074,
+      "final_node_count": 1088,
       "nodes_removed_cost_validation": 0
     },
     "cycle_fallback_root_attachments": 0,
@@ -385,26 +385,26 @@
       }
     },
     "verification_evidence": {
-      "confirmed": 544,
+      "confirmed": 550,
       "not_found": 29,
-      "inconclusive": 1975,
+      "inconclusive": 1974,
       "fetch_failed": 1066,
       "not_checkable": 288,
-      "own_page_confirmations": 377,
-      "parent_page_confirmations": 167,
+      "own_page_confirmations": 382,
+      "parent_page_confirmations": 168,
       "unknown_node": 10,
       "unknown_status": 0,
-      "urls_added": 638,
-      "stale_claims_cleared": 1045,
+      "urls_added": 644,
+      "stale_claims_cleared": 1059,
       "alias_confirmations": 0,
       "alias_records_without_a_row": 0,
       "placements_refused_alias": 0,
-      "placements_evidenced": 309,
+      "placements_evidenced": 311,
       "placements_checked_not_listed": 239,
       "placements_stale_parent": 0,
       "placements_stale_name": 0,
       "existence_stale_name": 0,
-      "placements_not_checkable_no_parent_page": 234,
+      "placements_not_checkable_no_parent_page": 243,
       "existence_folded": 68,
       "placements_folded": 73,
       "placement_only": 0,
@@ -412,21 +412,21 @@
       "existence_from_placement": 17
     },
     "directory_evidence": {
-      "listed": 413,
+      "listed": 423,
       "unknown_node": 0,
       "stale_name": 0,
       "placements_listed": 100,
       "placements_ancestor": 6,
       "placements_disagree": 1,
       "placements_stale_parent": 0,
-      "urls_added": 413,
-      "not_in_list": 17,
+      "urls_added": 423,
+      "not_in_list": 16,
       "unknown_source": 0,
       "failed_checks_withdrawn": 6,
       "page_negatives_superseded": 0
     },
     "headcount_evidence": {
-      "listed": 179,
+      "listed": 181,
       "unknown_node": 0,
       "not_an_organisation": 0,
       "stale_name": 0,
@@ -435,11 +435,11 @@
       "below_its_subtree": 0
     },
     "payroll_evidence": {
-      "published": 178,
+      "published": 180,
       "no_matching_rows": 0,
       "post_refused": 0,
       "measured_equal_refused": 0,
-      "total_annual_pay": 322101594591
+      "total_annual_pay": 322146875387
     },
     "position_evidence": {
       "listed": 138,
@@ -603,7 +603,7 @@
       "stands_for_many_posts_after_pruning": 0
     },
     "net_cost_evidence": {
-      "applied": 34,
+      "applied": 35,
       "withdrawn_first": 0,
       "refused_renamed": 0
     },
@@ -619,20 +619,20 @@
       "organisation_alias_row_withdrawn": 0
     },
     "govman_org_evidence": {
-      "listed": 187,
+      "listed": 189,
       "unknown_node": 0,
       "stale_name": 0,
       "is_a_post": 0,
-      "urls_added": 187,
-      "method_kept": 158,
+      "urls_added": 189,
+      "method_kept": 160,
       "method_set": 29,
       "failed_checks_withdrawn": 0,
       "placements_listed": 4,
       "placements_disagree": 1,
-      "placements_unresolved": 44,
+      "placements_unresolved": 45,
       "placements_already_evidenced": 49,
-      "top_level": 81,
-      "descriptions_published": 166,
+      "top_level": 82,
+      "descriptions_published": 167,
       "placements_refused_alias": 8
     },
     "govman_office_evidence": {
@@ -657,7 +657,7 @@
       "failed_checks_withdrawn": 0
     },
     "omb_budget_evidence": {
-      "applied": 177,
+      "applied": 184,
       "unknown_node": 0,
       "stale_name": 0,
       "is_a_post": 0,
@@ -665,7 +665,7 @@
       "equals_the_measured_cost": 0
     },
     "committee_disbursements_evidence": {
-      "applied": 46,
+      "applied": 47,
       "withdrawn_first": 0,
       "refused_not_a_committee": 0,
       "refused_renamed": 0
@@ -704,7 +704,7 @@
       "label": "FYTD net outlays through 2026-09-30",
       "source_system": "Treasury Fiscal Data",
       "source_url": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
-      "statement_file": "/home/user/Bureaucracy/tests/fixtures/mts_table5_2026-09-30.json"
+      "statement_file": "tests/fixtures/mts_table5_2026-09-30.json"
     },
     "alias_matches": {
       "nodes_with_an_alias_match": 19,
@@ -712,13 +712,13 @@
       "not_capped_other_evidence": 1
     },
     "no_document_evidence": {
-      "organisations": 870,
-      "with_method": 631,
+      "organisations": 884,
+      "with_method": 645,
       "unread": 72,
-      "stamped": 166,
+      "stamped": 165,
       "kinds": {
         "name_too_generic": 8,
-        "page_read_does_not_name_it": 57,
+        "page_read_does_not_name_it": 56,
         "curated_count_label": 11,
         "no_public_page_known": 8,
         "editorial_grouping": 24,
@@ -726,9 +726,10 @@
         "not_on_a_gov_host": 29
       },
       "refusals": {
-        "latest_record_nominates_a_page": 1
+        "latest_record_nominates_a_page": 1,
+        "no_ledger_record": 1
       },
-      "no_record": 0
+      "no_record": 1
     },
     "cost_no_document": {
       "documents": [
@@ -740,11 +741,11 @@
         "house_statement_of_disbursements",
         "senate_secretary_report"
       ],
-      "stamped": 359,
-      "named": 18,
+      "stamped": 364,
+      "named": 19,
       "kinds": {
-        "no_held_document_names_it": 341,
-        "named_in_a_held_document_without_a_licensed_figure": 18
+        "no_held_document_names_it": 345,
+        "named_in_a_held_document_without_a_licensed_figure": 19
       }
     },
     "pay_documents": {
@@ -805,12 +806,12 @@
         "closed_record": 1,
         "copy_date_unknown": 0
       },
-      "asOf": "2026-10-22"
+      "asOf": "2026-10-26"
     },
     "budget_reconciliation": {
-      "nodes_seen": 5512,
-      "organisation_nodes_seen": 681,
-      "nodes_without_figures": 490,
+      "nodes_seen": 5526,
+      "organisation_nodes_seen": 693,
+      "nodes_without_figures": 502,
       "rows_emitted": 191,
       "complete_rows": 89,
       "budget_only_rows": 19,
@@ -836,36 +837,36 @@
     "cost_status_counts": {
       "root_total": 1,
       "official": 172,
-      "allocated": 682,
+      "allocated": 696,
       "unavailable": 4657
     },
     "cost_validation_counts": {
       "verified_with_treasury_total": 1,
       "matched_official_rollup": 172,
-      "estimated_from_parent": 682,
+      "estimated_from_parent": 696,
       "post_is_not_a_budget_unit": 3859,
       "treasury_pool_negative": 240,
       "unit_superseded": 558
     },
     "cost_verification_status_counts": {
       "verified": 173,
-      "unverified": 5339
+      "unverified": 5353
     },
     "proof_status_counts": {
       "root": 1,
-      "proven": 1073,
+      "proven": 1087,
       "baseline": 4438
     },
-    "nodes_with_sources": 1074,
+    "nodes_with_sources": 1088,
     "nodes_without_sources": 4438,
-    "resolved_cost_node_count": 855,
+    "resolved_cost_node_count": 869,
     "unresolved_cost_node_count": 4657,
-    "estimated_cost_node_count": 682,
+    "estimated_cost_node_count": 696,
     "official_cost_node_count": 173,
     "verified_cost_node_count": 173,
     "partial_cost_node_count": 0,
-    "unverified_cost_node_count": 5339,
-    "mixed_weight_sibling_sets_implied": 15,
+    "unverified_cost_node_count": 5353,
+    "mixed_weight_sibling_sets_implied": 16,
     "headcount_weights_disputed_by_opm": 10,
     "allocations_below_precision": 0,
     "posts_not_apportioned": 3859,
@@ -883,43 +884,43 @@
     "graph_summary": {
       "verified_treasury_total": 7395799983313.23,
       "verification_status_counts": {
-        "partial": 469,
-        "verified": 558,
-        "unverified": 4485
+        "partial": 472,
+        "verified": 562,
+        "unverified": 4492
       },
       "cost_status_counts": {
         "root_total": 1,
         "official": 172,
-        "allocated": 682,
+        "allocated": 696,
         "unavailable": 4657
       },
       "cost_validation_counts": {
         "verified_with_treasury_total": 1,
         "matched_official_rollup": 172,
-        "estimated_from_parent": 682,
+        "estimated_from_parent": 696,
         "post_is_not_a_budget_unit": 3859,
         "treasury_pool_negative": 240,
         "unit_superseded": 558
       },
       "cost_verification_status_counts": {
         "verified": 173,
-        "unverified": 5339
+        "unverified": 5353
       },
       "proof_status_counts": {
         "root": 1,
-        "proven": 1073,
+        "proven": 1087,
         "baseline": 4438
       },
-      "nodes_with_sources": 1074,
+      "nodes_with_sources": 1088,
       "nodes_without_sources": 4438,
-      "resolved_cost_node_count": 855,
+      "resolved_cost_node_count": 869,
       "unresolved_cost_node_count": 4657,
-      "estimated_cost_node_count": 682,
+      "estimated_cost_node_count": 696,
       "official_cost_node_count": 173,
       "verified_cost_node_count": 173,
       "partial_cost_node_count": 0,
-      "unverified_cost_node_count": 5339,
-      "mixed_weight_sibling_sets_implied": 15,
+      "unverified_cost_node_count": 5353,
+      "mixed_weight_sibling_sets_implied": 16,
       "headcount_weights_disputed_by_opm": 10,
       "allocations_below_precision": 0,
       "posts_not_apportioned": 3859,
@@ -937,42 +938,42 @@
     },
     "audit_report": {
       "summary": {
-        "total_nodes": 5512,
+        "total_nodes": 5526,
         "nodes_with_errors": 4856,
-        "nodes_with_warnings": 4960,
-        "warning_only_nodes": 519,
+        "nodes_with_warnings": 4974,
+        "warning_only_nodes": 533,
         "severity_counts": {
-          "warning": 10969,
+          "warning": 11018,
           "error": 13752
         },
         "issue_counts": {
-          "estimated_cost": 682,
-          "cost_unverified": 682,
-          "low_cost_confidence": 682,
+          "estimated_cost": 696,
+          "cost_unverified": 696,
+          "low_cost_confidence": 696,
           "missing_cost": 4657,
           "unavailable_cost_status": 4657,
           "missing_source_urls": 4438,
           "low_confidence": 4438,
-          "unverified": 4485
+          "unverified": 4492
         },
         "cost_status_counts": {
           "root_total": 1,
           "official": 172,
-          "allocated": 682,
+          "allocated": 696,
           "unavailable": 4657
         },
         "cost_verification_status_counts": {
           "verified": 173,
-          "unverified": 5339
+          "unverified": 5353
         },
         "verification_status_counts": {
-          "partial": 469,
-          "verified": 558,
-          "unverified": 4485
+          "partial": 472,
+          "verified": 562,
+          "unverified": 4492
         },
         "proof_status_counts": {
           "root": 1,
-          "proven": 1073,
+          "proven": 1087,
           "baseline": 4438
         },
         "warning_cost_statuses": [
@@ -982,55 +983,55 @@
       }
     },
     "node_export_policy": {
-      "nodes_checked": 5512,
-      "nodes_allowed": 5512,
+      "nodes_checked": 5526,
+      "nodes_allowed": 5526,
       "nodes_rejected": 0,
       "trusted_exceptions_applied": 4856
     },
     "export_verification_status_counts": {
-      "partial": 469,
-      "verified": 558,
-      "unverified": 4485
+      "partial": 472,
+      "verified": 562,
+      "unverified": 4492
     },
-    "export_verified_node_count": 558,
+    "export_verified_node_count": 562,
     "export_average_confidence_score": 0.76,
     "pre_export_audit_summary": {
-      "total_nodes": 5512,
+      "total_nodes": 5526,
       "nodes_with_errors": 4856,
-      "nodes_with_warnings": 4960,
-      "warning_only_nodes": 519,
+      "nodes_with_warnings": 4974,
+      "warning_only_nodes": 533,
       "severity_counts": {
-        "warning": 10969,
+        "warning": 11018,
         "error": 13752
       },
       "issue_counts": {
-        "estimated_cost": 682,
-        "cost_unverified": 682,
-        "low_cost_confidence": 682,
+        "estimated_cost": 696,
+        "cost_unverified": 696,
+        "low_cost_confidence": 696,
         "missing_cost": 4657,
         "unavailable_cost_status": 4657,
         "missing_source_urls": 4438,
         "low_confidence": 4438,
-        "unverified": 4485
+        "unverified": 4492
       },
       "cost_status_counts": {
         "root_total": 1,
         "official": 172,
-        "allocated": 682,
+        "allocated": 696,
         "unavailable": 4657
       },
       "cost_verification_status_counts": {
         "verified": 173,
-        "unverified": 5339
+        "unverified": 5353
       },
       "verification_status_counts": {
-        "partial": 469,
-        "verified": 558,
-        "unverified": 4485
+        "partial": 472,
+        "verified": 562,
+        "unverified": 4492
       },
       "proof_status_counts": {
         "root": 1,
-        "proven": 1073,
+        "proven": 1087,
         "baseline": 4438
       },
       "warning_cost_statuses": [
@@ -1039,14 +1040,14 @@
       ]
     },
     "cost_export_policy": {
-      "nodes_checked": 5512,
-      "nodes_allowed": 5512,
+      "nodes_checked": 5526,
+      "nodes_allowed": 5526,
       "nodes_rejected": 0,
-      "trusted_exceptions_applied": 5339,
+      "trusted_exceptions_applied": 5353,
       "blocking_issue_counts": {
-        "non_authoritative_cost_status": 5339,
-        "cost_not_verified": 5339,
-        "missing_verifiable_cost_source": 5339,
+        "non_authoritative_cost_status": 5353,
+        "cost_not_verified": 5353,
+        "missing_verifiable_cost_source": 5353,
         "missing_cost": 4657,
         "missing_cost_confidence": 4657
       }
@@ -1063,10 +1064,10 @@
     "duplicate_child_rollups_dropped": 0,
     "proof_status_counts_before_cull": {
       "root": 1,
-      "proven": 1073,
+      "proven": 1087,
       "baseline": 4438
     },
-    "published_node_count": 5512,
+    "published_node_count": 5526,
     "treasury_lines_carried_forward": 172
   },
   "stage_errors": [],

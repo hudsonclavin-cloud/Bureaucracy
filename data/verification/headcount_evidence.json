@@ -28,7 +28,7 @@
       }
     ],
     "agencies": 115,
-    "agencies_matched": 74,
+    "agencies_matched": 76,
     "subagencies_matched": 105,
     "total_employees": 2289472,
     "agency_total_rows_found": 0,
@@ -94,12 +94,6 @@
         "listedName": "NAT FOUNDATION ON ARTS AND HUMANITIES",
         "employees": 465,
         "rows": 3
-      },
-      {
-        "agencyCode": "GJ",
-        "listedName": "PRESIDIO TRUST",
-        "employees": 332,
-        "rows": 1
       },
       {
         "agencyCode": "GW",
@@ -230,12 +224,6 @@
       {
         "agencyCode": "CX",
         "listedName": "NAT CMSN ON LIBRARIES AND INFO SCIENCE",
-        "employees": 17,
-        "rows": 1
-      },
-      {
-        "agencyCode": "DQ",
-        "listedName": "DENALI COMMISSION",
         "employees": 17,
         "rows": 1
       },
@@ -512,6 +500,14 @@
         "agencyRows": 1
       },
       {
+        "agencyCode": "GJ",
+        "subagencyCode": "GJ00",
+        "listedName": "PRESIDIO TRUST",
+        "employees": 332,
+        "carriedBy": "exec-ind-misc-presidio-trust",
+        "agencyRows": 1
+      },
+      {
         "agencyCode": "RH",
         "subagencyCode": "RH00",
         "listedName": "ARMED FORCES RETIREMENT HOME",
@@ -733,6 +729,14 @@
         "listedName": "COUNCIL OF ECONOMIC ADVISERS",
         "employees": 17,
         "carriedBy": "exec-eop-cea",
+        "agencyRows": 1
+      },
+      {
+        "agencyCode": "DQ",
+        "subagencyCode": "DQ00",
+        "listedName": "DENALI COMMISSION",
+        "employees": 17,
+        "carriedBy": "exec-ind-misc-denali-commission",
         "agencyRows": 1
       },
       {
@@ -999,6 +1003,17 @@
         "reason": "its agency matched no node, so the placement is unverified"
       },
       {
+        "agencyCode": "EO",
+        "agencyListedName": "MORRIS K. UDALL & STEWART L. UDALL FOUND",
+        "subagencyCode": "EO00",
+        "listedName": "MORRIS K. UDALL AND STEWART L. UDALL FOUNDATION",
+        "employees": 39,
+        "nodes": [
+          "exec-ind-misc-udall-foundation"
+        ],
+        "reason": "its agency matched no node, so the placement is unverified"
+      },
+      {
         "agencyCode": "VD",
         "agencyListedName": "PRIVACY AND CIVIL LIBERTIES OVERSIGHT",
         "subagencyCode": "VD00",
@@ -1021,6 +1036,17 @@
         "reason": "its agency matched no node, so the placement is unverified"
       },
       {
+        "agencyCode": "ZS",
+        "agencyListedName": "U.S.-CHINA ECONOMIC & SECURITY REV CMSN",
+        "subagencyCode": "ZS00",
+        "listedName": "UNITED STATES-CHINA ECONOMIC AND SECURITY REVIEW COMMISSION",
+        "employees": 26,
+        "nodes": [
+          "leg-support-uscc"
+        ],
+        "reason": "its agency matched no node, so the placement is unverified"
+      },
+      {
         "agencyCode": "BH",
         "agencyListedName": "CMSN FOR PRES OF AMERICA'S HERITAGE ABRD",
         "subagencyCode": "BH00",
@@ -1039,6 +1065,17 @@
         "employees": 12,
         "nodes": [
           "exec-ind-misc-japan-united-states-friendship-commission"
+        ],
+        "reason": "its agency matched no node, so the placement is unverified"
+      },
+      {
+        "agencyCode": "UT",
+        "agencyListedName": "UTAH RECLAMATN MITIGATN & CONSERVTN CMSN",
+        "subagencyCode": "UT00",
+        "listedName": "UTAH RECLAMATION MITIGATION AND CONSERVATION COMMISSION",
+        "employees": 12,
+        "nodes": [
+          "exec-ind-misc-utah-reclamation-mitigation-and-conservation-commission"
         ],
         "reason": "its agency matched no node, so the placement is unverified"
       }
@@ -1271,7 +1308,7 @@
         "employees": 12267
       }
     ],
-    "matched_employees": 1654932,
+    "matched_employees": 1655281,
     "unmatched_subagencies": [
       {
         "agencyCode": "AF",
@@ -2434,7 +2471,7 @@
           "direction": "opm_higher"
         }
       ],
-      "no_curated_figure": 51,
+      "no_curated_figure": 53,
       "no_curated_figure_nodes": [
         {
           "node": "exec-independent-general-services-administration",
@@ -2566,6 +2603,12 @@
           "node": "exec-ind-misc-millennium-challenge-corporation",
           "name": "Millennium Challenge Corporation",
           "opm": 346,
+          "curatedText": null
+        },
+        {
+          "node": "exec-ind-misc-presidio-trust",
+          "name": "Presidio Trust",
+          "opm": 332,
           "curatedText": null
         },
         {
@@ -2728,6 +2771,12 @@
           "node": "exec-ind-misc-national-council-on-disability",
           "name": "National Council on Disability",
           "opm": 18,
+          "curatedText": null
+        },
+        {
+          "node": "exec-ind-misc-denali-commission",
+          "name": "Denali Commission",
+          "opm": 17,
           "curatedText": null
         },
         {
@@ -6807,6 +6856,38 @@
         "employees": 333
       }
     },
+    "exec-ind-misc-presidio-trust": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "PRESIDIO TRUST",
+      "agencyCode": "GJ",
+      "subagencyCode": null,
+      "employees": 332,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "GJ00",
+          "listedName": "PRESIDIO TRUST",
+          "employees": 332
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 317
+      },
+      "selfNamedRow": {
+        "subagencyCode": "GJ00",
+        "listedName": "PRESIDIO TRUST",
+        "employees": 332
+      }
+    },
     "exec-ind-misc-armed-forces-retirement-home": {
       "source": "opm_fedscope_employment",
       "status": "listed",
@@ -7700,6 +7781,38 @@
       "selfNamedRow": {
         "subagencyCode": "CE00",
         "listedName": "COUNCIL OF ECONOMIC ADVISERS",
+        "employees": 17
+      }
+    },
+    "exec-ind-misc-denali-commission": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "DENALI COMMISSION",
+      "agencyCode": "DQ",
+      "subagencyCode": null,
+      "employees": 17,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "DQ00",
+          "listedName": "DENALI COMMISSION",
+          "employees": 17
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 16
+      },
+      "selfNamedRow": {
+        "subagencyCode": "DQ00",
+        "listedName": "DENALI COMMISSION",
         "employees": 17
       }
     },

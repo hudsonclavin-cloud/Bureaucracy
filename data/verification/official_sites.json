@@ -1687,5 +1687,20 @@
  ],
  "exec-ind-misc-macpac": [
   "https://www.macpac.gov/"
+ ],
+ "exec-ind-misc-farm-credit-system-insurance-corporation": [
+  "https://www.fcsic.gov/"
+ ],
+ "exec-ind-misc-southeast-crescent-regional-commission": [
+  "https://scrc.gov/"
+ ],
+ "leg-support-usbg": [
+  "https://www.usbg.gov/"
+ ],
+ "jud-specialized-jpml": [
+  "https://www.jpml.uscourts.gov/"
+ ],
+ "leg-house-cmte-ethics": [
+  "https://ethics.house.gov/"
  ]
 }

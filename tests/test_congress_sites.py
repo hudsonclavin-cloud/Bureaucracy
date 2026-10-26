@@ -206,9 +206,9 @@ class RealFixtureTests(unittest.TestCase):
         # Strategic Competition select committee -- and both were recorded here,
         # in §5.7 and in the list below, as names the official list spelled
         # differently from the curated ones. They are no longer "not in graph".
-        self.assertEqual((house["listed"], house["matched"], house["fetched_at"]), (26, 20, "2026-09-08T19:19:17Z"))
+        self.assertEqual((house["listed"], house["matched"], house["fetched_at"]), (26, 21, "2026-09-08T19:19:17Z"))
         self.assertEqual(house["not_in_graph"], [
-            "Education and Workforce", "Ethics",
+            "Education and Workforce",
             "Joint Economic Committee", "Joint Committee on the Library", "Joint Committee on Printing", "Joint Committee on Taxation",
         ])
         # leg-house-cmte-intelligence was the fourth here until 2026-09-18.
@@ -225,6 +225,7 @@ class RealFixtureTests(unittest.TestCase):
         # Workforce", and no page read this session settles which is current.
         self.assertEqual([g["id"] for g in house["graph_not_listed"]], [
             "leg-house-cmte-education-the-workforce",
+            "leg-house-cmte-jan6-select",  # added 2026-10-26 from the Clerk's own list; the house.gov page does not carry it
         ])
         self.assertEqual((house["ambiguous"], house["rejected_urls"]), ([], []))
         self.assertEqual(proposals["leg-house-cmte-ways-means"], ["https://waysandmeans.house.gov/"])
@@ -245,10 +246,10 @@ class RealFixtureTests(unittest.TestCase):
         self.assertEqual({r["reason"] for r in senate["rejected_urls"]}, {REJECT_NOT_HTTPS})
         self.assertTrue(all(r["url"].startswith("http://www.") and r["url"].split("/")[2].endswith(".senate.gov") for r in senate["rejected_urls"]))
         self.assertEqual(len(senate["hosts"]), 23)
-        self.assertEqual(report["proposed"], 20)
+        self.assertEqual(report["proposed"], 21)
         self.assertFalse(any(k.startswith("leg-senate-") for k in proposals))
         # As printed, when the caller accepts the page's scheme.
         proposals, report = load_congress_site_proposals(REAL_HOUSE, REAL_SENATE, self.node_map, require_https=False)
-        self.assertEqual((report["senate"]["matched"], report["proposed"]), (20, 40))
+        self.assertEqual((report["senate"]["matched"], report["proposed"]), (20, 41))
         self.assertEqual(proposals["leg-senate-cmte-banking-housing-urban-affairs"], ["http://www.banking.senate.gov/public"])
         self.assertEqual(proposals["leg-senate-cmte-special-committee-on-aging"], ["http://www.aging.senate.gov"])

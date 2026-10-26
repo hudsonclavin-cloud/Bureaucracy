@@ -10,9 +10,9 @@ document route that would move it — or the plain statement that none can. A fi
 this project publishes is one a committed document states and a matcher re-derives
 on every run; nothing here is a number somebody reports.
 
-- nodes in the published graph: **5,512**
+- nodes in the published graph: **5,526**
 - showing a figure a document states (measured cost or salary): **1,431**
-- carrying an apportioned estimate, withheld unless asked for: **682**
+- carrying an apportioned estimate, withheld unless asked for: **696**
 - **bare estimates — an organisation with only an estimate and no explanation (criterion 1 gap): 0**
 - positions no document prices: **3,333** — 2,789 research work, 432 paused beneath a replaced unit, 112 a document places off every federal pay schedule
 - **posts with an explained pay blank (`payNoDocument`, the held title-listing pay documents checked): 3,221** — 2,558 whose title none prints, 663 whose title a held document prints under a filing no rule ties to the post; an explained blank, not a terminal reason, so criterion 2's gap is unchanged by it
@@ -22,10 +22,10 @@ on every run; nothing here is a number somebody reports.
 |---|---|---|---|
 | Measured — a Treasury accounting line | 30 | The receipts and transfers the Monthly Treasury Statement nets inside a unit's published total, carried as explicit children so the arithmetic closes, plus Interest on the Public Debt and the government-wide offsetting receipts. Not organisations. | Nothing to do: these ARE the statement's own lines. |
 | Measured — the Treasury's own figure for the unit | 143 | The root's anchor and every Table 5 line applied to the node it names (`cost_status: official`). The only costs this graph calls measured. | Nothing to do for the node; the statement is re-fetched and re-applied on each run. |
-| Estimate — a committee or subcommittee | 240 | An apportioned share of the chamber's measured total. No line of Table 5 names a committee, so no Treasury alias can ever reach one of these. | Since 2026-10-07 a committee carries `committeeDisbursements` beside the estimate: what its chamber paid out for the committee's account over a stated period, from the House's Statement of Disbursements and the Report of the Secretary of the Senate (40 of the 41 chamber committees). A different basis on a different clock, never a cost. Subcommittees have no figure of their own in either document. |
-| Estimate — with a sourced figure already published beside it | 83 | An apportioned share, and beside it at least one figure an official source states for this unit under its own heading: USAspending File A gross outlays (fiscal year to date), OMB's Public Budget Database outlays (last completed year, summed over the unit's account rows), Treasury's audited Statement of Net Cost (last completed year), the net outlays the Treasury's Combined Statement prints for the unit's reviewed accounts (last completed year, since 2026-10-21), or — for the House's own officer offices, since 2026-10-20 — what the House's Statement of Disbursements paid out for the officer's organisation over a quarter. Each is on the panel today; none is headed COST, because each measures something different from the Treasury's net outlays on a different clock. | Decided by the owner: the headline falls back to one of these, labelled by its basis and period, when the Treasury prints no line (File A, OMB and audited net cost since 2026-10-07; a chamber's payout for a committee or an officer office since 2026-10-20; the Combined Statement since 2026-10-21) — the same move the panel makes for a post's salary. The estimate stays withheld behind its button. Measured on the 94 nodes that carry both, not one OMB FY2025 figure agrees with the Treasury line within 1%, so the fallback is a different number under a different label, never the same claim. |
-| Estimate — an explained blank: no held money document names the unit | 341 | An apportioned share, and `costNoDocument` saying that none of the money documents this project holds — the Monthly Treasury Statement the graph was built from, the Combined Statement chapter in hand, OMB's Public Budget Database (agency, bureau and account names), USAspending's agency and bureau lists, Treasury's Statement of Net Cost, the House's Statement of Disbursements and the Senate Secretary's report — prints a row, account, bureau or entity carrying this unit's name. The definition of done's explained blank: the documents checked are named on the block and the panel, each with its version. | A document this project does not yet hold that prints the unit's money (an agency's AFR, File B by Treasury Account Symbol, another Combined Statement chapter), or a reviewed alias where a held document prints the unit under another name. Most of these are divisions, regional offices and laboratories funded from a parent's accounts, for which no document prints a separate line. |
-| Estimate — a held document prints the name, no reviewed rule turns it into a figure | 18 | An apportioned share, and `costNoDocument` saying that a held document DOES print a row carrying this unit's name — OMB's database prints an account named "Board of Veterans Appeals" under the VA's Departmental Administration bureau; its bureau rows name the Inter-American Foundation under the "International Assistance Programs" grouping — which no reviewed rule has licensed as this unit's figure. The block names the document and the printed row. | A reviewed row (an OMB account-level table in the shape of the Combined Statement's; a bureau scoped to its agency's subtree), each a decision about whether the printed row IS the unit's money, never a name match alone. |
+| Estimate — a committee or subcommittee | 242 | An apportioned share of the chamber's measured total. No line of Table 5 names a committee, so no Treasury alias can ever reach one of these. | Since 2026-10-07 a committee carries `committeeDisbursements` beside the estimate: what its chamber paid out for the committee's account over a stated period, from the House's Statement of Disbursements and the Report of the Secretary of the Senate (40 of the 41 chamber committees). A different basis on a different clock, never a cost. Subcommittees have no figure of their own in either document. |
+| Estimate — with a sourced figure already published beside it | 90 | An apportioned share, and beside it at least one figure an official source states for this unit under its own heading: USAspending File A gross outlays (fiscal year to date), OMB's Public Budget Database outlays (last completed year, summed over the unit's account rows), Treasury's audited Statement of Net Cost (last completed year), the net outlays the Treasury's Combined Statement prints for the unit's reviewed accounts (last completed year, since 2026-10-21), or — for the House's own officer offices, since 2026-10-20 — what the House's Statement of Disbursements paid out for the officer's organisation over a quarter. Each is on the panel today; none is headed COST, because each measures something different from the Treasury's net outlays on a different clock. | Decided by the owner: the headline falls back to one of these, labelled by its basis and period, when the Treasury prints no line (File A, OMB and audited net cost since 2026-10-07; a chamber's payout for a committee or an officer office since 2026-10-20; the Combined Statement since 2026-10-21) — the same move the panel makes for a post's salary. The estimate stays withheld behind its button. Measured on the 94 nodes that carry both, not one OMB FY2025 figure agrees with the Treasury line within 1%, so the fallback is a different number under a different label, never the same claim. |
+| Estimate — an explained blank: no held money document names the unit | 345 | An apportioned share, and `costNoDocument` saying that none of the money documents this project holds — the Monthly Treasury Statement the graph was built from, the Combined Statement chapter in hand, OMB's Public Budget Database (agency, bureau and account names), USAspending's agency and bureau lists, Treasury's Statement of Net Cost, the House's Statement of Disbursements and the Senate Secretary's report — prints a row, account, bureau or entity carrying this unit's name. The definition of done's explained blank: the documents checked are named on the block and the panel, each with its version. | A document this project does not yet hold that prints the unit's money (an agency's AFR, File B by Treasury Account Symbol, another Combined Statement chapter), or a reviewed alias where a held document prints the unit under another name. Most of these are divisions, regional offices and laboratories funded from a parent's accounts, for which no document prints a separate line. |
+| Estimate — a held document prints the name, no reviewed rule turns it into a figure | 19 | An apportioned share, and `costNoDocument` saying that a held document DOES print a row carrying this unit's name — OMB's database prints an account named "Board of Veterans Appeals" under the VA's Departmental Administration bureau; its bureau rows name the Inter-American Foundation under the "International Assistance Programs" grouping — which no reviewed rule has licensed as this unit's figure. The block names the document and the printed row. | A reviewed row (an OMB account-level table in the shape of the Combined Statement's; a bureau scoped to its agency's subtree), each a decision about whether the printed row IS the unit's money, never a name match alone. |
 | Estimate — no sourced figure of any kind | 0 | An apportioned share of an ancestor's measured total, divided among siblings by budget, headcount or subtree size. Table 5 stops at the bureau, so divisions, regional offices, laboratories, centres and the courts beneath a circuit print no line of their own. | Three routes, in order of reach: OMB's Public Budget Database bureau rows (committed; 72 bureaus matched so far, more need a node whose name the file carries); USAspending File B by Treasury Account Symbol, which reaches programme level and has not been fetched; an agency's own Agency Financial Report. Each yields a figure beside the estimate, not a cost, until the decision above is made. |
 | Salary — a pay claim an official document supports | 1,258 | A position carrying at least one of the ten pay fields: a printed rate, a schedule level priced by OPM's table, a statutory rate, a roster figure, a derivation the block carries in the open, twelve months of a printed monthly military rate, or a range. Since 2026-10-05 it is the post's headline figure, headed as pay and never as COST. | Nothing to do for the node; each pay field is re-derived from its committed document on every run and withdrawn when the document stops supporting it. |
 | Post with no figure — stands for several holders | 611 | The node's name states a multiplicity and no claim that holds for every holder has reached it. An incumbency-shaped claim (one listing's level, one row of the current export) is refused on such a node because it is one appointment's figure, not the group's. | A tier, a statutory rate, a parity provision or a roster listing every holder at one figure IS published on such a node with a `holders` block. Finding which pay SYSTEM governs the title is the useful step: it lets the graph carry the schedule rather than a rate. `docs/UNPRICED_POSITIONS.md` lists every one. |
@@ -45,32 +45,32 @@ Where Table 5 stops is visible in which TYPES carry an estimate and no line:
 |---|---|---|---|
 | Subcommittee | 0 | 0 | 195 |
 | Division | 108 | 7 | 0 |
-| Independent Agency | 9 | 45 | 0 |
-| Committee | 0 | 0 | 45 |
+| Independent Agency | 12 | 49 | 0 |
+| Committee | 0 | 0 | 47 |
 | Regional Office | 35 | 0 | 0 |
 | Bureau | 29 | 5 | 0 |
 | Office | 21 | 9 | 0 |
 | Museum/Unit | 24 | 0 | 0 |
 | Defense Agency | 22 | 0 | 0 |
 | National Laboratory | 17 | 0 | 0 |
+| Agency | 7 | 8 | 0 |
 | Presidential Library | 14 | 0 | 0 |
-| Agency | 6 | 7 | 0 |
 | Circuit Court | 13 | 0 | 0 |
 | Directorate | 12 | 0 | 0 |
 | Combatant Command | 11 | 0 | 0 |
 | NASA Center | 10 | 0 | 0 |
 | Area Office | 7 | 0 | 0 |
 | Independent Regulatory Commission | 2 | 4 | 0 |
+| Specialized Court | 5 | 1 | 0 |
 | Military Branch | 3 | 2 | 0 |
 | Mission Directorate | 5 | 0 | 0 |
-| Specialized Court | 4 | 1 | 0 |
+| Government Corporation | 1 | 2 | 0 |
 | Component Agency | 1 | 1 | 0 |
 | Treasury accounting line | 0 | 2 | 0 |
 | Branch | 1 | 0 | 0 |
 | Court | 1 | 0 | 0 |
 | District Court | 1 | 0 | 0 |
 | Field Structure | 1 | 0 | 0 |
-| Government Corporation | 1 | 0 | 0 |
 | Operating Division | 1 | 0 | 0 |
 
 ---
@@ -262,7 +262,7 @@ The root's anchor and every Table 5 line applied to the node it names (`cost_sta
 - `judicial-branch` — Judicial Branch (Branch; under The Constitution of the United States) — beside it: ombBudget
 - `legislative-branch` — Legislative Branch (Branch; under The Constitution of the United States) — beside it: ombBudget
 
-## Estimate — a committee or subcommittee — 240
+## Estimate — a committee or subcommittee — 242
 
 An apportioned share of the chamber's measured total. No line of Table 5 names a committee, so no Treasury alias can ever reach one of these.
 
@@ -385,6 +385,7 @@ An apportioned share of the chamber's measured total. No line of Table 5 names a
 - `leg-house-cmte-budget` — House Committee on Budget (Committee; under House Committees) — beside it: committeeDisbursements
 - `leg-house-cmte-education-the-workforce` — House Committee on Education & the Workforce (Committee; under House Committees) — beside it: committeeDisbursements
 - `leg-house-cmte-energy-commerce` — House Committee on Energy & Commerce (Committee; under House Committees) — beside it: committeeDisbursements
+- `leg-house-cmte-ethics` — House Committee on Ethics (Committee; under House Committees) — beside it: committeeDisbursements
 - `leg-house-cmte-financial-services` — House Committee on Financial Services (Committee; under House Committees) — beside it: committeeDisbursements
 - `leg-house-cmte-foreign-affairs` — House Committee on Foreign Affairs (Committee; under House Committees) — beside it: committeeDisbursements
 - `leg-house-cmte-homeland-security` — House Committee on Homeland Security (Committee; under House Committees) — beside it: committeeDisbursements
@@ -400,6 +401,7 @@ An apportioned share of the chamber's measured total. No line of Table 5 names a
 - `leg-house-cmte-ways-means` — House Committee on Ways & Means (Committee; under House Committees) — beside it: committeeDisbursements
 - `leg-house-cmte-permanent-select-committee-on-intelligence` — House Permanent Select Committee on Intelligence (Committee; under House Committees) — beside it: committeeDisbursements
 - `leg-house-cmte-select-committee-on-the-chinese-communist-party` — Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party (Committee; under House Committees) — beside it: committeeDisbursements
+- `leg-house-cmte-jan6-select` — Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021 (Committee; under House Committees)
 - `leg-house-cmte-intelligence-sub-central-intelligence-agency` — Subcommittee on Central Intelligence Agency (Subcommittee; under House Permanent Select Committee on Intelligence)
 - `leg-house-cmte-intelligence-sub-defense-intelligence-warfighter-support` — Subcommittee on Defense Intelligence and Overhead Architecture (Subcommittee; under House Permanent Select Committee on Intelligence)
 - `leg-house-cmte-intelligence-sub-open-source-intelligence` — Subcommittee on Open Source Intelligence (Subcommittee; under House Permanent Select Committee on Intelligence)
@@ -509,7 +511,7 @@ An apportioned share of the chamber's measured total. No line of Table 5 names a
 - `leg-senate-cmte-judiciary-sub-criminal-justice-counterterrorism` — Subcommittee on Crime and Counterterrorism (Subcommittee; under United States Senate Committee on the Judiciary)
 - `leg-senate-cmte-judiciary-sub-federal-courts-oversight-agency-action-federal-rights` — Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights (Subcommittee; under United States Senate Committee on the Judiciary)
 
-## Estimate — with a sourced figure already published beside it — 83
+## Estimate — with a sourced figure already published beside it — 90
 
 An apportioned share, and beside it at least one figure an official source states for this unit under its own heading: USAspending File A gross outlays (fiscal year to date), OMB's Public Budget Database outlays (last completed year, summed over the unit's account rows), Treasury's audited Statement of Net Cost (last completed year), the net outlays the Treasury's Combined Statement prints for the unit's reviewed accounts (last completed year, since 2026-10-21), or — for the House's own officer offices, since 2026-10-20 — what the House's Statement of Disbursements paid out for the officer's organisation over a quarter. Each is on the panel today; none is headed COST, because each measures something different from the Treasury's net outlays on a different clock.
 
@@ -524,6 +526,7 @@ An apportioned share, and beside it at least one figure an official source state
 - `leg-support-aoc-house-office-buildings` — House Office Buildings (Division; under Architect of the Capitol) — beside it: combinedStatementOutlays
 - `leg-support-aoc-library-of-congress-buildings` — Library of Congress Buildings (Division; under Architect of the Capitol) — beside it: combinedStatementOutlays
 - `leg-support-aoc-senate-office-buildings` — Senate Office Buildings (Division; under Architect of the Capitol) — beside it: combinedStatementOutlays
+- `leg-support-usbg` — United States Botanic Garden (Agency; under Congressional Support Agencies) — beside it: ombBudget
 - `exec-dept-dhs-fletc` — Federal Law Enforcement Training Centers (FLETC) (Component Agency; under Department of Homeland Security (DHS)) — beside it: usaspendingOutlays, ombBudget
 - `exec-dept-hud-fheo` — Office of Fair Housing & Equal Opportunity (FHEO) (Office; under Department of Housing & Urban Development (HUD)) — beside it: usaspendingOutlays
 - `exec-dept-doj-parole-commission` — United States Parole Commission (Office; under Department of Justice (DOJ)) — beside it: ombBudget
@@ -561,8 +564,10 @@ An apportioned share, and beside it at least one figure an official source state
 - `exec-ind-misc-csosa` — Court Services and Offender Supervision Agency for the District of Columbia (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-defense-nuclear-facilities-safety-board` — Defense Nuclear Facilities Safety Board (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-delta-regional-authority` — Delta Regional Authority (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-denali-commission` — Denali Commission (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-election-assistance-commission-eac` — Election Assistance Commission (EAC) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
 - `exec-ind-misc-farm-credit-administration` — Farm Credit Administration (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-farm-credit-system-insurance-corporation` — Farm Credit System Insurance Corporation (Government Corporation; under Other Independent Agencies (25+)) — beside it: ombBudget, auditedNetCost
 - `exec-ind-misc-federal-election-commission-fec` — Federal Election Commission (FEC) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
 - `exec-ind-misc-federal-labor-relations-authority-flra` — Federal Labor Relations Authority (FLRA) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
 - `exec-ind-misc-federal-mediation-and-conciliation-service` — Federal Mediation and Conciliation Service (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
@@ -575,6 +580,7 @@ An apportioned share, and beside it at least one figure an official source state
 - `exec-ind-misc-macpac` — Medicaid and CHIP Payment and Access Commission (Independent Agency; under Other Independent Agencies (25+)) — beside it: combinedStatementOutlays
 - `exec-ind-misc-medpac` — Medicare Payment Advisory Commission (Independent Agency; under Other Independent Agencies (25+)) — beside it: combinedStatementOutlays
 - `exec-ind-misc-merit-systems-protection-board-mspb` — Merit Systems Protection Board (MSPB) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
+- `exec-ind-misc-udall-foundation` — Morris K. Udall and Stewart L. Udall Foundation (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-national-capital-planning-commission-ncpc` — National Capital Planning Commission (NCPC) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
 - `exec-ind-misc-national-council-on-disability` — National Council on Disability (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-national-mediation-board-nmb` — National Mediation Board (NMB) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
@@ -583,9 +589,12 @@ An apportioned share, and beside it at least one figure an official source state
 - `exec-ind-misc-nuclear-waste-technical-review-board` — Nuclear Waste Technical Review Board (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-occupational-safety-and-health-review-commission` — Occupational Safety and Health Review Commission (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-office-of-special-counsel-osc` — Office of Special Counsel (OSC) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
+- `exec-ind-misc-presidio-trust` — Presidio Trust (Government Corporation; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-privacy-civil-liberties-oversight-board-pclob` — Privacy & Civil Liberties Oversight Board (PCLOB) (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, ombBudget
 - `exec-ind-misc-public-buildings-reform-board` — Public Buildings Reform Board (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-selective-service-system` — Selective Service System (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays
+- `exec-ind-misc-southeast-crescent-regional-commission` — Southeast Crescent Regional Commission (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
+- `exec-ind-misc-southwest-border-regional-commission` — Southwest Border Regional Commission (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-surface-transportation-board` — Surface Transportation Board (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-access-board` — U.S. Access Board (Architectural and Transportation Barriers Compliance Board) (Independent Agency; under Other Independent Agencies (25+)) — beside it: ombBudget
 - `exec-ind-misc-u-s-international-development-finance-corp-dfc` — U.S. International Development Finance Corporation (Independent Agency; under Other Independent Agencies (25+)) — beside it: usaspendingOutlays, auditedNetCost
@@ -599,7 +608,7 @@ An apportioned share, and beside it at least one figure an official source state
 - `leg-senate-admin-legal` — Office of Senate Legal Counsel (Office; under Senate Administrative Offices) — beside it: combinedStatementOutlays
 - `jud-specialized-cavc` — Court of Appeals for Veterans Claims (CAVC) (Specialized Court; under Specialized Federal Courts) — beside it: usaspendingOutlays
 
-## Estimate — an explained blank: no held money document names the unit — 341
+## Estimate — an explained blank: no held money document names the unit — 345
 
 An apportioned share, and `costNoDocument` saying that none of the money documents this project holds — the Monthly Treasury Statement the graph was built from, the Combined Statement chapter in hand, OMB's Public Budget Database (agency, bureau and account names), USAspending's agency and bureau lists, Treasury's Statement of Net Cost, the House's Statement of Disbursements and the Senate Secretary's report — prints a row, account, bureau or entity carrying this unit's name. The definition of done's explained blank: the documents checked are named on the block and the panel, each with its version.
 
@@ -843,10 +852,13 @@ An apportioned share, and `costNoDocument` saying that none of the money documen
 - `exec-eop-omb-office-of-federal-procurement-policy` — Office of Federal Procurement Policy (Division; under Office of Management and Budget (OMB))
 - `exec-eop-omb-oira-office-of-information-regulatory-affairs` — Office of Information and Regulatory Affairs (OIRA) (Division; under Office of Management and Budget (OMB))
 - `exec-eop-omb-performance-personnel-management` — Performance & Personnel Management (Division; under Office of Management and Budget (OMB))
+- `exec-ind-misc-goldwater-scholarship-foundation` — Barry M. Goldwater Scholarship and Excellence in Education Foundation (Independent Agency; under Other Independent Agencies (25+))
+- `exec-ind-misc-office-of-navajo-and-hopi-indian-relocation` — Navajo and Hopi Indian Relocation Office (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-odni` — Office of the Director of National Intelligence (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission` — Postal Regulatory Commission (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-abilityone-commission` — U.S. AbilityOne Commission (Independent Agency; under Other Independent Agencies (25+))
 - `exec-ind-misc-arctic-research-commission` — United States Arctic Research Commission (Independent Agency; under Other Independent Agencies (25+))
+- `exec-ind-misc-utah-reclamation-mitigation-and-conservation-commission` — Utah Reclamation Mitigation and Conservation Commission (Independent Agency; under Other Independent Agencies (25+))
 - `leg-senate-admin-physician` — Office of the Senate Physician (Office; under Senate Administrative Offices)
 - `leg-senate-admin-chaplain` — Senate Chaplain (Office; under Senate Administrative Offices)
 - `leg-senate-admin-saa` — Sergeant at Arms of the Senate (Office; under Senate Administrative Offices)
@@ -880,6 +892,7 @@ An apportioned share, and `costNoDocument` saying that none of the money documen
 - `exec-ind-nsf-social-behavioral-economic-sciences-sbe-social-economic-sciences` — Division of Social & Economic Sciences (Division; under Social, Behavioral & Economic Sciences (SBE))
 - `exec-ind-nsf-social-behavioral-economic-sciences-sbe-national-center-for-science-engineering-statistics` — National Center for Science and Engineering Statistics (NCSES) (Division; under Social, Behavioral & Economic Sciences (SBE))
 - `jud-specialized-fisc` — Foreign Intelligence Surveillance Court (FISC) (Specialized Court; under Specialized Federal Courts)
+- `jud-specialized-jpml` — Judicial Panel on Multidistrict Litigation (Specialized Court; under Specialized Federal Courts)
 - `jud-specialized-claims` — U.S. Court of Federal Claims (Specialized Court; under Specialized Federal Courts)
 - `exec-ind-nsf-technology-innovation-partnerships-tip-convergence-accelerator` — Convergence Accelerator (Division; under Technology, Innovation & Partnerships (TIP))
 - `exec-ind-nsf-technology-innovation-partnerships-tip-directorate-for-tip-programs` — Division of Directorate for TIP Programs (Division; under Technology, Innovation & Partnerships (TIP))
@@ -947,13 +960,14 @@ An apportioned share, and `costNoDocument` saying that none of the money documen
 - `exec-dept-va-vha-visn-4` — VISN 4 (Regional Office; under Veterans Integrated Service Networks)
 - `exec-dept-va-vha-visn-5` — VISN 5 (Regional Office; under Veterans Integrated Service Networks)
 
-## Estimate — a held document prints the name, no reviewed rule turns it into a figure — 18
+## Estimate — a held document prints the name, no reviewed rule turns it into a figure — 19
 
 An apportioned share, and `costNoDocument` saying that a held document DOES print a row carrying this unit's name — OMB's database prints an account named "Board of Veterans Appeals" under the VA's Departmental Administration bureau; its bureau rows name the Inter-American Foundation under the "International Assistance Programs" grouping — which no reviewed rule has licensed as this unit's figure. The block names the document and the printed row.
 
 **Route.** A reviewed row (an OMB account-level table in the shape of the Combined Statement's; a bureau scoped to its agency's subtree), each a decision about whether the printed row IS the unit's money, never a name match alone.
 
 - `leg-support-cbo-national-security-division` — National Security Division (Division; under Analytical Divisions)
+- `leg-support-uscc` — U.S.-China Economic and Security Review Commission (Agency; under Congressional Support Agencies)
 - `exec-dept-ed-ocr` — Office for Civil Rights (OCR) (Office; under Department of Education)
 - `exec-dept-doj-executive-office-immigration-review` — Executive Office for Immigration Review (Office; under Department of Justice (DOJ))
 - `exec-dept-doj-div-nsd` — National Security Division (Division; under Department of Justice (DOJ))
