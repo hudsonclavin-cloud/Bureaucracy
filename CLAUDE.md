@@ -496,6 +496,27 @@ the anchor lives on the root's `__budgetSummary` (`amount_kind`,
 `record_date`, `label`) — the UI reads it there and applies it to every
 figure.
 
+**A recorded decision to keep the name (`name_decisions.py`, since 2026-10-26).**
+`docs/DEFINITION_OF_DONE.md` criterion 3 lets a negative ("checked and not
+found") be settled by a rename, a supersession or a recorded decision to keep
+the name. `data/curation/name_decisions.json` (23 rows; kinds
+`graphs_own_grouping` and `page_prints_another_wording`, the latter quoting the
+page's headline and URL) and the `curatedNames` rows of `list_dispositions.json`
+are the two tables; `data_pipeline/verification/name_decisions.py` re-adjudicates
+every row on every run (the node exists, still carries the name, the basis is
+non-empty, the kind is in the vocabulary, the negative is still there). A decision
+EXPLAINS a negative: the node keeps `verificationFailure`, gains no method, and
+`scripts/report_evidence_coverage.py` counts it in the class `decided_negative`,
+outside the gap. The gate mirrors the logic stdlib-only
+(`name_decisions_standing`); `tests/test_name_decisions.py` pins the mirror
+equal. Criterion 3 reads 0 open (39 decided, 1 ledger reason); a complete list's
+silence does not supersede a subcommittee (`CURATION.md` §32.3). The list
+reconciliation has fifteen kinds since the same day, the new one
+`carried_in_a_jointly_measured_node` (the Bureau of Indian Education sits in the
+Indian Affairs line), and Amtrak is `non_federal_or_international_body` by
+49 U.S.C. 24301(a)(3). "Three consecutive monthly cycles" means three scheduled
+hold-mode cycles (§32.3); the first is 2026-11-16.
+
 ### Existence evidence (`data_pipeline/verification/`, `data/verification/`)
 
 The curated file carries no sources. `scripts/verify_base_graph.py` fetches

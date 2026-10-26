@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-10-26T05:48:00Z",
+ "url": "https://www.govinfo.gov/link/uscode/49/24301?link-type=html",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title49/html/USCODE-2024-title49-subtitleV-partC-chap243-sec24301.htm",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /link/uscode/49/24301",
+ "bytes": 30123,
+ "sha256": "8cc04353f66bb3bc10e5a0102cc750bc3380e8796c1126d8f76bf4083b595f10",
+ "error": null
+}

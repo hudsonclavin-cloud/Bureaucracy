@@ -137,10 +137,10 @@
   {
    "list": "government_manual",
    "entry": "Bureau of Indian Education",
-   "disposition": "unit_the_list_names_not_added",
-   "basis": "CURATION.md §13.5: the Treasury reports the Bureau jointly with the Bureau of Indian Affairs on one Table 5 line applied to the BIA node, and a separate node would take an apportioned share out of a jointly measured pool; add_curated_nodes.py refuses it by rule (jointly_measured_names).",
-   "addedOn": "2026-10-22",
-   "unitKey": "bie"
+   "disposition": "carried_in_a_jointly_measured_node",
+   "basis": "The Treasury reports the Bureau jointly with the Bureau of Indian Affairs on one Table 5 line ('Bureau of Indian Affairs and Bureau of Indian Education'), measured on the node exec-dept-doi-bia. A node of its own would take an apportioned share out of a pool the statement measures for the two together, and add_curated_nodes.py refuses such a row by rule (jointly_measured_names, CURATION.md §13.5). The graph therefore carries the Bureau in that node. This says how the money is reported; it does not say the Bureau sits beneath the Bureau of Indian Affairs. Decided on 2026-10-26.",
+   "addedOn": "2026-10-26",
+   "nodeId": "exec-dept-doi-bia"
   },
   {
    "list": "government_manual",
@@ -292,10 +292,9 @@
   {
    "list": "government_manual",
    "entry": "National Railroad Passenger Corporation (AMTRAK)",
-   "disposition": "unit_the_list_names_not_added",
-   "basis": "A federally chartered corporation the Manual lists among quasi-official agencies. Table 5 prints no line for it (its federal grants flow through the Federal Railroad Administration), the Manual files it at the top level so its chain licenses no placement, and the graph draws no quasi-official corporations today except where the Treasury prints a line (the Legal Services Corporation, the CPB).",
-   "addedOn": "2026-10-22",
-   "unitKey": "amtrak"
+   "disposition": "non_federal_or_international_body",
+   "basis": "Amtrak is not a unit of the federal government by statute: 49 U.S.C. 24301(a), committed from the Government Publishing Office's 2024 edition at tests/fixtures/uscode/amtrak_49_usc_24301_govinfo2024.html, reads 'Amtrak— (1) is a railroad carrier ...; (2) shall be operated and managed as a for-profit corporation; and (3) is not a department, agency, or instrumentality of the United States Government, and shall not be subject to title 31.' It is a federally chartered corporation the lists name beside the agencies, and the graph carries a chartered corporation only where the Treasury prints a line for it or its page labels it (the Legal Services Corporation, the Corporation for Public Broadcasting); Table 5 prints none for Amtrak. Decided on 2026-10-26.",
+   "addedOn": "2026-10-26"
   },
   {
    "list": "government_manual",
@@ -2884,10 +2883,9 @@
   {
    "list": "federal_register_directory",
    "entry": "National Railroad Passenger Corporation",
-   "disposition": "unit_the_list_names_not_added",
-   "basis": "Amtrak, a federally chartered corporation; recorded as the Manual's row is: Table 5 prints no line for it and no licence in hand places it, so it is not added.",
-   "addedOn": "2026-10-22",
-   "unitKey": "amtrak"
+   "disposition": "non_federal_or_international_body",
+   "basis": "Amtrak is not a unit of the federal government by statute: 49 U.S.C. 24301(a), committed from the Government Publishing Office's 2024 edition at tests/fixtures/uscode/amtrak_49_usc_24301_govinfo2024.html, reads 'Amtrak— (1) is a railroad carrier ...; (2) shall be operated and managed as a for-profit corporation; and (3) is not a department, agency, or instrumentality of the United States Government, and shall not be subject to title 31.' It is a federally chartered corporation the lists name beside the agencies, and the graph carries a chartered corporation only where the Treasury prints a line for it or its page labels it (the Legal Services Corporation, the Corporation for Public Broadcasting); Table 5 prints none for Amtrak. Decided on 2026-10-26.",
+   "addedOn": "2026-10-26"
   },
   {
    "list": "federal_register_directory",

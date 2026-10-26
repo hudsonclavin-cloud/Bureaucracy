@@ -142,6 +142,17 @@ CLASSES = {
         "unit (`CURATION.md` §9), re-tested against the live page on every run; or a recorded refusal "
         "to rename, where the page's label is a breadcrumb rather than the unit's name.",
     ),
+    "decided_negative": (
+        "Decided — checked and not found, the name kept with its reason",
+        "`verificationFailure` beside a standing reviewed decision to keep the name: a grouping this "
+        "graph made, a unit whose own page headlines it in other words (the headline quoted), or a "
+        "curated committee name a complete list does not carry "
+        "(`data/curation/name_decisions.json`, the `curatedNames` rows of `list_dispositions.json`). "
+        "The negative is still published and the panel still says what was read; the decision explains "
+        "it and is not evidence that the unit exists.",
+        "A rename or a supersession where a document states one; otherwise the decision stands and is "
+        "re-adjudicated on every run (the node must still carry the name the row was written against).",
+    ),
     "negative_read": (
         "Gap — checked and not found",
         "`verificationFailure`: the unit's own page or a complete official list was read and does "
@@ -185,7 +196,7 @@ def in_population(node) -> bool:
     return str(node.get("id") or "") != ROOT_ID and is_current_organisation(node)
 
 
-def classify(node) -> str:
+def classify(node, decided=frozenset()) -> str:
     """Exactly one class per current organisation, decided in this order."""
     method = str(node.get("verificationMethod") or "")
     if method:
@@ -197,7 +208,7 @@ def classify(node) -> str:
     # decline beside the page's own negative), and the negative is the one a
     # reader can audit against a URL, so it is the one that counts here.
     if node.get("verificationFailure"):
-        return "negative_read"
+        return "decided_negative" if str(node.get("id") or "") in decided else "negative_read"
     block = node.get(NO_DOCUMENT_FIELD)
     if isinstance(block, dict) and str(block.get("kind") or "") in NO_DOCUMENT_KINDS:
         return "no_document_" + str(block.get("kind"))
@@ -208,13 +219,16 @@ def classify(node) -> str:
 
 def collect(graph):
     """Class -> rows, every current organisation exactly once."""
+    from data_pipeline.verification import name_decisions
+
     rows: dict[str, list[dict]] = defaultdict(list)
+    decided, _refused = name_decisions.decided_ids(n for n, _ in walk(graph))
     for node, parent in walk(graph):
         if not in_population(node):
             continue
         block = node.get(NO_DOCUMENT_FIELD) if isinstance(node.get(NO_DOCUMENT_FIELD), dict) else {}
         unread = node.get("verificationUnread") if isinstance(node.get("verificationUnread"), dict) else {}
-        rows[classify(node)].append(
+        rows[classify(node, decided)].append(
             {
                 "id": str(node.get("id") or ""),
                 "name": str(node.get("name") or ""),
@@ -259,6 +273,8 @@ def render(rows) -> str:
     w(f"- current organisations: **{total:,}**")
     w(f"- with a verification method: **{sourced:,}** ({sourced / total:.1%})" if total else "- with a verification method: 0")
     w(f"- with a recorded reason no official document can be read: **{recorded:,}**")
+    decided_n = len(rows.get("decided_negative", []))
+    w(f"- checked and not found, with a standing decision to keep the name: **{decided_n:,}**")
     w(f"- **criterion 3 gap — neither: {gap:,}**")
     w("")
     w("| class | organisations | what it means | route |")

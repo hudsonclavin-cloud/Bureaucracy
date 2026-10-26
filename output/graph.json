@@ -374865,7 +374865,18 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "verificationNoDocument": {
+                    "kind": "no_public_page_known",
+                    "basis": "nomination_ledger",
+                    "name": "Southwest Border Regional Commission",
+                    "recordedAt": "2026-10-26T05:51:55Z",
+                    "ledger": {
+                      "file": "source-decisions-2026-10-26.jsonl",
+                      "run": "decisions-2026-10-26"
+                    },
+                    "note": "Added on 2026-10-26 under official_list_entry from USAspending's toptier agency list. Its own site was not reachable from this environment: swbr.gov, swbrc.gov, www.src.gov, www.southwestborder.gov and www.borderregion.gov did not answer, so no page of its own is known and none could be queued. The unit is not in doubt"
+                  }
                 }
               ],
               "sourceUrls": [],
@@ -404795,7 +404806,7 @@
           "date": "2026-09-18",
           "meaning": "the date the OLDEST section in use was fetched",
           "basis": "",
-          "fetchedAt": "2026-10-22"
+          "fetchedAt": "2026-10-26"
         },
         "expected": {
           "next": null,
@@ -404821,7 +404832,7 @@
           },
           "positionEmployer"
         ],
-        "fixtureCount": 170,
+        "fixtureCount": 171,
         "fetch": {
           "kind": "refetch_each_fixture_url",
           "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim"
