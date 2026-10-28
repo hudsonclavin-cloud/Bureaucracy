@@ -252,6 +252,11 @@ Plain **go** with no number means one loop. A `baseline` record and `--dry-run`
 never count. Stop early, and say why, on a STOP result, a failing gate or suite,
 or anything the standing rules forbid; the remaining loops are not owed.
 
+**On GitHub.** `.github/workflows/go_loops.yml` ("go loops", Actions > Run workflow)
+takes the loop count as an input, runs that many agent sessions in turn, stops on a
+STOP result or a failed gate, and opens one pull request. Needs the
+`ANTHROPIC_API_KEY` repository secret. Merging the pull request is the publish step.
+
 **Stop rule.** If the number the last recorded cycle aimed at has not fallen,
 the file says STOP and asks the owner; it does not repeat the cycle or invent
 new work. A line noted `baseline` is not a cycle.

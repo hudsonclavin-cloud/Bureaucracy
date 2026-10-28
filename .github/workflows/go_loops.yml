@@ -1,0 +1,100 @@
+# Run the GO loop on GitHub: you choose how many loops, it does that many and
+# opens ONE pull request with the result. Nothing here pushes to main; merging
+# the pull request is the publish step.
+#
+# Start it: Actions > "go loops" > Run workflow > enter "loops".
+# Needs the repository secret ANTHROPIC_API_KEY (Settings > Secrets and
+# variables > Actions). Each loop is one agent session that follows docs/GO.md
+# Step 5 (docs/NEXT_CYCLE.md), proves its work (gate + suite) and records it with
+# scripts/next_cycle.py. The run stops early on a STOP result or a failed proof.
+name: go loops
+
+on:
+  workflow_dispatch:
+    inputs:
+      loops:
+        description: "How many loops to run (each one is a find > verify > place > measure cycle)"
+        type: number
+        default: 1
+        required: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: go-loops
+  cancel-in-progress: false
+
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip pytest
+          npm install -g @anthropic-ai/claude-code
+
+      - name: Start the run
+        run: |
+          N="${{ inputs.loops }}"
+          if ! [ "$N" -ge 1 ] 2>/dev/null; then echo "loops must be a whole number >= 1"; exit 1; fi
+          if [ "$N" -gt 10 ]; then echo "loops capped at 10 per run"; exit 1; fi
+          python scripts/next_cycle.py --loops "$N" --out docs/NEXT_CYCLE.md
+          if [ ! -s data/audit/cycle_log.jsonl ]; then python scripts/next_cycle.py --record --note baseline; python scripts/next_cycle.py --loops "$N"; fi
+
+      - name: Run the loops
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BUREAUCRACY_PIPELINE_UA: "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy; go loops)"
+        run: |
+          set -o pipefail
+          N="${{ inputs.loops }}"
+          for i in $(seq 1 "$N"); do
+            echo "=== loop $i of $N ==="
+            if grep -q "^## STOP" docs/NEXT_CYCLE.md; then echo "STOP in NEXT_CYCLE.md; ending the run"; break; fi
+            claude -p "Read docs/GO.md Step 5 and docs/NEXT_CYCLE.md and do exactly one cycle as they describe. Follow the standing rules in docs/GO.md. Run scripts/validate_published_graph.py and the test suite before finishing. Do not push or open a pull request; the workflow does that. Finish with: python scripts/next_cycle.py --record --note \"<what moved>\"." \
+              --permission-mode acceptEdits --allowedTools "Bash,Read,Write,Edit,Grep,Glob,WebFetch" --max-turns 200 2>&1 | tee -a go.log || { echo "agent failed in loop $i"; break; }
+            python scripts/validate_published_graph.py || { echo "gate failed after loop $i; ending the run"; break; }
+          done
+          python -m pytest tests/ -q -x 2>&1 | tail -5 | tee -a go.log
+
+      - name: Upload the log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: go-loops-log
+          path: |
+            go.log
+            data/audit/cycle_log.jsonl
+            docs/NEXT_CYCLE.md
+
+      - name: Open one pull request
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          git config user.name "go-loops"
+          git config user.email "go-loops@users.noreply.github.com"
+          BRANCH="go/$(date -u +%Y-%m-%d)-${{ github.run_id }}"
+          git checkout -b "$BRANCH"
+          git add -A data docs output/graph.json output/graph.min.json output/candidate_nodes.json output/change_history.json output/pipeline_stats.json tests/fixtures 2>/dev/null || true
+          if git diff --cached --quiet; then echo "nothing changed; no pull request"; exit 0; fi
+          git commit -q -m "go loops: ${{ inputs.loops }} requested" -m "Review data/audit/cycle_log.jsonl and the gate/suite output in the run log before merging."
+          git push -u origin "$BRANCH"
+          { echo "Requested loops: ${{ inputs.loops }}"; echo; echo '```'; tail -n 5 data/audit/cycle_log.jsonl; echo '```'; echo; echo "Merging is the publish step. Check the run's go.log for gate and suite results first."; } > pr_body.md
+          gh pr create --title "go loops ($(date -u +%Y-%m-%d))" --body-file pr_body.md --base main --head "$BRANCH" || echo "::warning::Open the PR from https://github.com/${{ github.repository }}/compare/main...${BRANCH}"
