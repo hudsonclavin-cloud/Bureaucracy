@@ -1,5 +1,212 @@
 [
  {
+  "builtAt": "2026-10-28T19:10:36.953268+00:00",
+  "anchor": {
+   "before": {
+    "recordDate": "2026-09-30",
+    "total": 7395799983313.23,
+    "statementFile": "tests/fixtures/mts_table5_2026-09-30.json"
+   },
+   "after": {
+    "recordDate": "2026-09-30",
+    "total": 7395799983313.23,
+    "statementFile": "tests/fixtures/mts_table5_2026-09-30.json"
+   },
+   "sameStatement": true
+  },
+  "nodes": {
+   "before": 5526,
+   "after": 5526,
+   "added": [],
+   "removed": [],
+   "newlySuperseded": [],
+   "renamed": [],
+   "reparented": []
+  },
+  "measuredCosts": {
+   "before": 173,
+   "after": 173,
+   "moved": [],
+   "gained": [],
+   "lost": [],
+   "forReview": []
+  },
+  "estimates": {
+   "moved": 0,
+   "largestMoves": []
+  },
+  "pay": {
+   "claimsBefore": 1258,
+   "claimsAfter": 1258,
+   "added": [],
+   "withdrawn": [],
+   "moved": []
+  },
+  "evidence": {
+   "added": [],
+   "withdrawn": [],
+   "changed": []
+  },
+  "sourcedFigures": {},
+  "sources": {
+   "changed": [],
+   "registryAfter": {
+    "monthly_treasury_statement": {
+     "copyDate": "2026-09-30",
+     "status": "current"
+    },
+    "usaspending_file_a": {
+     "copyDate": "2026-09-17",
+     "status": "current"
+    },
+    "usaspending_file_b_object_class": {
+     "copyDate": "2025-09-30",
+     "status": "current"
+    },
+    "house_statement_of_disbursements": {
+     "copyDate": "2026-06-30",
+     "status": "current"
+    },
+    "senate_secretary_report": {
+     "copyDate": "2026-03-31",
+     "status": "current"
+    },
+    "opm_salary_tables": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "us_code_pay_schedules_5332_note": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "uscourts_judicial_compensation": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "senate_salary_schedule": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "whitehouse_staff_report": {
+     "copyDate": "2026-07-01",
+     "status": "current"
+    },
+    "opm_plum_current_export": {
+     "copyDate": "2026-09-21",
+     "status": "current"
+    },
+    "opm_plum_archive": {
+     "copyDate": "2025-01-20",
+     "status": "closed_record"
+    },
+    "opm_fedscope_employment": {
+     "copyDate": "2025-03-31",
+     "status": "overdue"
+    },
+    "us_government_manual": {
+     "copyDate": "2025-12-31",
+     "status": "current"
+    },
+    "omb_public_budget_database": {
+     "copyDate": "2026-09-20",
+     "status": "current"
+    },
+    "treasury_statement_of_net_cost": {
+     "copyDate": "2025-09-30",
+     "status": "current"
+    },
+    "treasury_combined_statement": {
+     "copyDate": "2025-09-30",
+     "status": "current"
+    },
+    "us_code_sections": {
+     "copyDate": "2026-09-18",
+     "status": "current"
+    },
+    "federal_register_agency_directory": {
+     "copyDate": "2026-09-08",
+     "status": "current"
+    },
+    "senate_committee_list": {
+     "copyDate": "2026-09-08",
+     "status": "current"
+    },
+    "house_clerk_committee_list": {
+     "copyDate": "2026-09-13",
+     "status": "current"
+    },
+    "federal_register_signatures": {
+     "copyDate": "2026-09-21",
+     "status": "current"
+    },
+    "usajobs_vacancy_announcements": {
+     "copyDate": "2026-10-06",
+     "status": "current"
+    },
+    "doj_usao_ad_pay_plan": {
+     "copyDate": "2025-01-12",
+     "status": "overdue"
+    },
+    "va_title38_pay_tables": {
+     "copyDate": "2026-01-11",
+     "status": "current"
+    },
+    "doe_laboratory_pages": {
+     "copyDate": "2026-10-06",
+     "status": "current"
+    },
+    "official_pages": {
+     "copyDate": "2026-10-26",
+     "status": "current"
+    }
+   }
+  },
+  "budget": {
+   "rules": [
+    {
+     "rule": "node_count_drops",
+     "tripped": false,
+     "detail": "5,526 nodes before, 5,526 after; 0 removed"
+    },
+    {
+     "rule": "anchor_lost",
+     "tripped": false,
+     "detail": "anchor record date after: 2026-09-30"
+    },
+    {
+     "rule": "anchor_period_goes_backwards",
+     "tripped": false,
+     "detail": "anchor 2026-09-30 -> 2026-09-30"
+    },
+    {
+     "rule": "measured_cost_moved_without_a_new_statement",
+     "tripped": false,
+     "detail": "the statement is unchanged (2026-09-30) and 0 measured costs moved"
+    },
+    {
+     "rule": "pay_claims_withdrawn_above_5_percent",
+     "tripped": false,
+     "detail": "0 of 1,258 pay claims withdrawn (0.0%; the limit is 5%)"
+    },
+    {
+     "rule": "rebuilt_without_a_statement",
+     "tripped": false,
+     "detail": "the build read a statement"
+    }
+   ],
+   "held": false,
+   "thresholds": {
+    "payWithdrawalLimit": 0.05,
+    "measuredReviewMove": 0.5,
+    "measuredReviewFloor": 1000000000.0
+   }
+  },
+  "touched": [],
+  "summary": "the Treasury anchor is still the statement of 2026-09-30; 5,526 nodes before and 5,526 after (0 added, 0 removed, 0 newly marked replaced, 0 renamed); 0 measured costs moved, 0 gained a measured figure, 0 lost one; 0 estimates moved; pay claims 1,258 -> 1,258 (0 added, 0 withdrawn, 0 changed figure); verification or placement methods: 0 added, 0 withdrawn, 0 changed; within the change budget.",
+  "before": "HEAD:output/graph.json",
+  "reviewQueueOpen": 59
+ },
+ {
   "builtAt": "2026-10-26T05:54:29.567687+00:00",
   "anchor": {
    "before": {
