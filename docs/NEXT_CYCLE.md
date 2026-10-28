@@ -10,7 +10,7 @@ Open gap = the definition of done is not met. Reach = a recorded reason that mor
 
 | criterion | open gap | reach | measure |
 |---|---|---|---|
-| Evidence | **0** | 239 | 645 of 884 current organisations carry a verification method; the rest carry a recorded reason |
+| Evidence | **0** | 238 | 646 of 884 current organisations carry a verification method; the rest carry a recorded reason |
 | Money | **0** | 19 | 0 bare estimates; 345 explained blanks, 19 of them named in a held document with no licensed figure; 242 committee estimates counted apart |
 | Pay | **0** | 2789 | 1258 of 4591 posts priced; reach counts researchable posts that carry a documents-checked blank |
 

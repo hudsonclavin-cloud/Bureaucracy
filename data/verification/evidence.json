@@ -2377,7 +2377,7 @@
     },
     "exec-eop-omb-office-of-federal-financial-management": {
       "name": "Office of Federal Financial Management",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-28T19:29:58+00:00",
       "siteFrom": "exec-eop-omb",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2392,7 +2392,7 @@
     },
     "exec-eop-omb-office-of-e-government-it-federal-cio": {
       "name": "Office of E-Government & IT (Federal CIO)",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-28T19:29:58+00:00",
       "siteFrom": "exec-eop-omb",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2407,7 +2407,7 @@
     },
     "exec-eop-omb-budget-review-division": {
       "name": "Budget Review Division",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-28T19:29:58+00:00",
       "siteFrom": "exec-eop-omb",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2422,7 +2422,7 @@
     },
     "exec-eop-omb-legislative-reference-division": {
       "name": "Legislative Reference Division",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-28T19:29:58+00:00",
       "siteFrom": "exec-eop-omb",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2437,7 +2437,7 @@
     },
     "exec-eop-omb-performance-personnel-management": {
       "name": "Performance & Personnel Management",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-28T19:29:58+00:00",
       "siteFrom": "exec-eop-omb",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2452,7 +2452,7 @@
     },
     "exec-eop-omb-economic-policy-division": {
       "name": "Economic Policy Division",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-28T19:29:58+00:00",
       "siteFrom": "exec-eop-omb",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2576,7 +2576,7 @@
     },
     "exec-cabinet": {
       "name": "The Cabinet — Executive Departments",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-28T19:29:58+00:00",
       "siteFrom": "executive-branch",
       "ownPage": false,
       "status": "fetch_failed",
@@ -4305,7 +4305,7 @@
     },
     "exec-dept-hud-pih": {
       "name": "Office of Public & Indian Housing (PIH)",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-28T19:29:58+00:00",
       "siteFrom": "exec-dept-hud-pih",
       "ownPage": true,
       "status": "fetch_failed",
@@ -4325,7 +4325,7 @@
           "https://www.hud.gov/aboutus/field-leadership",
           "https://www.hud.gov/aboutus/leadership"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00",
+        "checkedAt": "2026-10-28T19:29:58+00:00",
         "failures": [
           {
             "url": "https://www.hud.gov/about",
@@ -4342,7 +4342,7 @@
     },
     "exec-dept-hud-cpd": {
       "name": "Office of Community Planning & Development (CPD)",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-28T19:29:58+00:00",
       "siteFrom": "exec-dept-hud-cpd",
       "ownPage": true,
       "status": "fetch_failed",
@@ -4362,7 +4362,7 @@
           "https://www.hud.gov/aboutus/field-leadership",
           "https://www.hud.gov/aboutus/leadership"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00",
+        "checkedAt": "2026-10-28T19:29:58+00:00",
         "failures": [
           {
             "url": "https://www.hud.gov/about",
@@ -4379,7 +4379,7 @@
     },
     "exec-dept-hud-fheo": {
       "name": "Office of Fair Housing & Equal Opportunity (FHEO)",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-28T19:29:58+00:00",
       "siteFrom": "exec-dept-hud-fheo",
       "ownPage": true,
       "status": "fetch_failed",
@@ -4399,7 +4399,7 @@
           "https://www.hud.gov/aboutus/field-leadership",
           "https://www.hud.gov/aboutus/leadership"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00",
+        "checkedAt": "2026-10-28T19:29:58+00:00",
         "failures": [
           {
             "url": "https://www.hud.gov/about",
@@ -7224,7 +7224,7 @@
     },
     "exec-regulatory": {
       "name": "Independent Regulatory Commissions",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-28T19:29:58+00:00",
       "siteFrom": "executive-branch",
       "ownPage": false,
       "status": "fetch_failed",
@@ -14675,7 +14675,7 @@
     },
     "exec-dept-defense-cocom-ustranscom": {
       "name": "USTRANSCOM — Transportation Command",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-28T19:29:58+00:00",
       "siteFrom": "exec-dept-defense-cocom-ustranscom",
       "ownPage": true,
       "status": "fetch_failed",
@@ -14831,15 +14831,16 @@
     },
     "exec-dept-defense-agency-dha": {
       "name": "Defense Health Agency (DHA)",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-28T19:29:58+00:00",
       "siteFrom": "exec-dept-defense-agency-dha",
       "ownPage": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "named_on_the_page_but_not_as_a_label",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.health.mil/",
-          "reason": "PermissionError: robots.txt disallows this path (www.health.mil/robots.txt could not be reached (RemoteDisconnected); refused: an undefined robots.txt is a complete disallow)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
@@ -66928,6 +66929,22 @@
           }
         ]
       }
+    },
+    "exec-ind-misc-southwest-border-regional-commission": {
+      "name": "Southwest Border Regional Commission",
+      "checkedAt": "2026-10-28T19:35:41+00:00",
+      "siteFrom": "exec-ind-misc-southwest-border-regional-commission",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://sbrc.gov/",
+          "matchedText": "Home - Southwest Border Regional Commission (SBRC)",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
     }
   }
 }

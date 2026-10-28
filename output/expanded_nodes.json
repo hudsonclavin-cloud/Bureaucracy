@@ -93,7 +93,7 @@
       }
     ],
     "__sourceRegistry": {
-      "asOf": "2026-10-26",
+      "asOf": "2026-10-28",
       "cadencesAre": "the reviewer's statements of each publisher's cycle, with a basis beside each; none was read from a publisher's own schedule, and every lag and margin is to be tuned on the first update cycles",
       "sources": [
         {
@@ -1213,7 +1213,7 @@
           },
           "copy": {
             "kind": "graph_field_max",
-            "date": "2026-10-26",
+            "date": "2026-10-28",
             "meaning": "the most recent date any page was read; each node's own panel uses its own lastVerified",
             "basis": "",
             "fetchedAt": "2026-09-13"
@@ -1222,7 +1222,7 @@
             "next": null,
             "expectedBy": null,
             "overdueAfter": null,
-            "recheckDue": "2027-04-24"
+            "recheckDue": "2027-04-26"
           },
           "statusAtBuild": "current",
           "lastReadAfterExpected": null,
@@ -79015,13 +79015,13 @@
       "kind": "page_below_readable_floor",
       "url": "https://www.hud.gov/program_offices/public_indian_housing",
       "host": "www.hud.gov",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-28T19:29:58+00:00",
       "attempts": 1,
       "detail": "no_readable_text"
     },
     "placementVerified": false,
     "placementParentId": "exec-dept-hud",
-    "placementVerifiedAt": "2026-09-21T05:26:27+00:00",
+    "placementVerifiedAt": "2026-10-28T19:29:58+00:00",
     "treasury_sum": {
       "statementDate": "2026-09-30",
       "classificationId": "59497287",
@@ -79373,13 +79373,13 @@
       "kind": "page_below_readable_floor",
       "url": "https://www.hud.gov/program_offices/comm_planning",
       "host": "www.hud.gov",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-10-28T19:29:58+00:00",
       "attempts": 1,
       "detail": "no_readable_text"
     },
     "placementVerified": false,
     "placementParentId": "exec-dept-hud",
-    "placementVerifiedAt": "2026-09-21T05:26:27+00:00",
+    "placementVerifiedAt": "2026-10-28T19:29:58+00:00",
     "treasury_sum": {
       "statementDate": "2026-09-30",
       "classificationId": "59497303",
@@ -145020,6 +145020,77 @@
         }
       ]
     },
+    "parentId": "exec-ind-misc"
+  },
+  {
+    "id": "exec-ind-misc-southwest-border-regional-commission",
+    "name": "Southwest Border Regional Commission",
+    "type": "Independent Agency",
+    "desc": "Southwest Border Regional Commission is listed by USAspending's toptier agency list (the agencies that report under the DATA Act) (fetched 2026-09-17) as 'Southwest Border Regional Commission'. This node exists because that list names the unit; where it sits in this graph is the row author's assertion, which no list read here states, and nothing further about it has been read.",
+    "structureSource": "named_in_an_official_list",
+    "structureSourceDetail": "usaspending_toptier: Southwest Border Regional Commission",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_an_official_list",
+    "sourceUrls": [
+      "https://sbrc.gov/"
+    ],
+    "evidenceUrls": [
+      "https://sbrc.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-10-28T19:35:41+00:00",
+    "evidenceVerifiedAt": "2026-10-28T19:35:41+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-misc-southwest-border-regional-commission",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementCheckable": false,
+    "ombBudget": {
+      "source": "omb_public_budget_database",
+      "level": "agency",
+      "listedAgency": "Southwest Border Regional Commission",
+      "listedBureau": null,
+      "cgacAgencyCode": "569",
+      "cgacAgencyCodeCount": 1,
+      "rowSelection": "every account row OMB files under this unit for the year, on-budget and off-budget together, including the negative offsetting-receipt rows",
+      "documentSha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+      "fiscalYear": 2025,
+      "outlays": 1000000.0,
+      "budgetAuthority": 5000000.0,
+      "unitsQuote": "Data for budget authority, outlays, offsetting receipts, and governmental receipts are shown in thousands of dollars.",
+      "precisionNote": "the file data from FY 1995 through FY 2031 represent the Budget amounts multiplied by one thousand to convert the amounts to thousands ; detail below millions is not available.",
+      "treasuryQuote": "The totals are generally consistent with data published in the Monthly Treasury Statement",
+      "treasuryDifferencesQuote": "Differences between the Treasury publications and the Budget arise from a small number of reporting and classification corrections made subsequent to the Treasury publications and some conceptual differences between OMB and Treasury reporting.",
+      "netQuote": "Budget authority and outlay amounts are reported net of any offsetting collections, such as fees, fines, and penalties.",
+      "signQuote": "Outlays are usually positive values. Offsetting receipts are usually negative values .",
+      "outlayAccountRows": 1,
+      "budgetAuthorityAccountRows": 1,
+      "package": "BUDGET-2027-DB",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
+    },
+    "resolved_total_amount": 276753351.41,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
     "parentId": "exec-ind-misc"
   },
   {

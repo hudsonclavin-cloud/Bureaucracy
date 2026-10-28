@@ -4564,5 +4564,16 @@
   "run": "add-curated-nodes-2026-10-26",
   "nominatedAt": "2026-10-26T00:00:00Z",
   "note": "Not evidence: a candidate for the verifier to fetch. The node earns a source only when the verifier reads the page and finds the name as a label of its own."
+ },
+ "exec-ind-misc-southwest-border-regional-commission": {
+  "url": "https://sbrc.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "exec-ind-misc-southwest-border-regional-commission",
+  "basis": "sbrc.gov is the Commission's own .gov domain; probed live with scripts/probe_candidate_pages.py, which ran the verifier's own label test and returned 'labelled' for \"Southwest Border Regional Commission\" (matched via the page title \"Home - Southwest Border Regional Commission (SBRC)\").",
+  "confidence": "likely",
+  "run": "pass-2026-10-28",
+  "nominatedAt": "2026-10-28T19:35:18Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  }
 }

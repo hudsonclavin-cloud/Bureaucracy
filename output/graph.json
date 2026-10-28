@@ -106894,7 +106894,7 @@
                     "kind": "page_below_readable_floor",
                     "url": "https://www.whitehouse.gov/omb/",
                     "host": "www.whitehouse.gov",
-                    "checkedAt": "2026-09-21T05:26:27+00:00",
+                    "checkedAt": "2026-10-28T19:29:58+00:00",
                     "attempts": 1,
                     "detail": "no_readable_text"
                   },
@@ -107209,7 +107209,7 @@
                     "kind": "page_below_readable_floor",
                     "url": "https://www.whitehouse.gov/omb/",
                     "host": "www.whitehouse.gov",
-                    "checkedAt": "2026-09-21T05:26:27+00:00",
+                    "checkedAt": "2026-10-28T19:29:58+00:00",
                     "attempts": 1,
                     "detail": "no_readable_text"
                   },
@@ -107474,7 +107474,7 @@
                     "kind": "page_below_readable_floor",
                     "url": "https://www.whitehouse.gov/omb/",
                     "host": "www.whitehouse.gov",
-                    "checkedAt": "2026-09-21T05:26:27+00:00",
+                    "checkedAt": "2026-10-28T19:29:58+00:00",
                     "attempts": 1,
                     "detail": "no_readable_text"
                   },
@@ -107739,7 +107739,7 @@
                     "kind": "page_below_readable_floor",
                     "url": "https://www.whitehouse.gov/omb/",
                     "host": "www.whitehouse.gov",
-                    "checkedAt": "2026-09-21T05:26:27+00:00",
+                    "checkedAt": "2026-10-28T19:29:58+00:00",
                     "attempts": 1,
                     "detail": "no_readable_text"
                   },
@@ -108004,7 +108004,7 @@
                     "kind": "page_below_readable_floor",
                     "url": "https://www.whitehouse.gov/omb/",
                     "host": "www.whitehouse.gov",
-                    "checkedAt": "2026-09-21T05:26:27+00:00",
+                    "checkedAt": "2026-10-28T19:29:58+00:00",
                     "attempts": 1,
                     "detail": "no_readable_text"
                   },
@@ -108269,7 +108269,7 @@
                     "kind": "page_below_readable_floor",
                     "url": "https://www.whitehouse.gov/omb/",
                     "host": "www.whitehouse.gov",
-                    "checkedAt": "2026-09-21T05:26:27+00:00",
+                    "checkedAt": "2026-10-28T19:29:58+00:00",
                     "attempts": 1,
                     "detail": "no_readable_text"
                   },
@@ -144285,7 +144285,7 @@
                         "kind": "robots_unreachable",
                         "url": "https://www.ustranscom.mil/",
                         "host": "www.ustranscom.mil",
-                        "checkedAt": "2026-09-21T05:26:27+00:00",
+                        "checkedAt": "2026-10-28T19:29:58+00:00",
                         "attempts": 1,
                         "detail": "PermissionError: robots.txt disallows this path (www.ustranscom.mil/robots.txt could not be reached (URLError); refused: an undefined robots.txt is a complete d"
                       },
@@ -153509,14 +153509,6 @@
                           }
                         }
                       ],
-                      "verificationUnread": {
-                        "kind": "robots_unreachable",
-                        "url": "https://www.health.mil/",
-                        "host": "www.health.mil",
-                        "checkedAt": "2026-09-21T05:26:27+00:00",
-                        "attempts": 1,
-                        "detail": "PermissionError: robots.txt disallows this path (www.health.mil/robots.txt could not be reached (RemoteDisconnected); refused: an undefined robots.txt is a comp"
-                      },
                       "placementCheckable": false,
                       "employeesOfficial": 6118,
                       "employeesOfficialSource": {
@@ -153585,6 +153577,21 @@
                         "source": "opm_fedscope_employment",
                         "period": "2025-03",
                         "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip"
+                      },
+                      "verificationNoDocument": {
+                        "kind": "page_read_does_not_name_it",
+                        "basis": "nomination_ledger",
+                        "name": "Defense Health Agency (DHA)",
+                        "recordedAt": "2026-10-28T19:38:34Z",
+                        "ledger": {
+                          "file": "source-pass-2026-10-28-dha.jsonl",
+                          "run": "pass-2026-10-28-dha"
+                        },
+                        "note": "www.health.mil is now reachable (it answered robots_unreachable in an earlier pass, which is a network/robots.txt fact and not a name fact). Re-probed live with scripts/probe_candidate_pages.py: the homepage reads fine (2,412 readable characters) and the verifier's own label test returns not-labelled for \"Defense Healt",
+                        "probe": {
+                          "url": "https://www.health.mil/",
+                          "verdict": "read_not_labelled"
+                        }
                       },
                       "costNoDocument": {
                         "kind": "no_held_document_names_it",
@@ -207625,13 +207632,13 @@
                     "kind": "page_below_readable_floor",
                     "url": "https://www.hud.gov/program_offices/public_indian_housing",
                     "host": "www.hud.gov",
-                    "checkedAt": "2026-09-21T05:26:27+00:00",
+                    "checkedAt": "2026-10-28T19:29:58+00:00",
                     "attempts": 1,
                     "detail": "no_readable_text"
                   },
                   "placementVerified": false,
                   "placementParentId": "exec-dept-hud",
-                  "placementVerifiedAt": "2026-09-21T05:26:27+00:00",
+                  "placementVerifiedAt": "2026-10-28T19:29:58+00:00",
                   "treasury_sum": {
                     "statementDate": "2026-09-30",
                     "classificationId": "59497287",
@@ -208120,13 +208127,13 @@
                     "kind": "page_below_readable_floor",
                     "url": "https://www.hud.gov/program_offices/comm_planning",
                     "host": "www.hud.gov",
-                    "checkedAt": "2026-09-21T05:26:27+00:00",
+                    "checkedAt": "2026-10-28T19:29:58+00:00",
                     "attempts": 1,
                     "detail": "no_readable_text"
                   },
                   "placementVerified": false,
                   "placementParentId": "exec-dept-hud",
-                  "placementVerifiedAt": "2026-09-21T05:26:27+00:00",
+                  "placementVerifiedAt": "2026-10-28T19:29:58+00:00",
                   "treasury_sum": {
                     "statementDate": "2026-09-30",
                     "classificationId": "59497303",
@@ -208572,13 +208579,13 @@
                     "kind": "page_below_readable_floor",
                     "url": "https://www.hud.gov/fairhousing",
                     "host": "www.hud.gov",
-                    "checkedAt": "2026-09-21T05:26:27+00:00",
+                    "checkedAt": "2026-10-28T19:29:58+00:00",
                     "attempts": 1,
                     "detail": "no_readable_text"
                   },
                   "placementVerified": false,
                   "placementParentId": "exec-dept-hud",
-                  "placementVerifiedAt": "2026-09-21T05:26:27+00:00",
+                  "placementVerifiedAt": "2026-10-28T19:29:58+00:00",
                   "usaspendingOutlays": {
                     "source": "usaspending_file_ab",
                     "basis": "gross_outlays",
@@ -290192,7 +290199,7 @@
             "kind": "page_below_readable_floor",
             "url": "https://www.whitehouse.gov/government/executive-branch/",
             "host": "www.whitehouse.gov",
-            "checkedAt": "2026-09-21T05:26:27+00:00",
+            "checkedAt": "2026-10-28T19:29:58+00:00",
             "attempts": 1,
             "detail": "no_readable_text"
           },
@@ -374822,6 +374829,39 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_an_official_list",
+                  "sourceUrls": [
+                    "https://sbrc.gov/"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 276753351.41,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-10-28T19:35:41+00:00",
+                  "evidenceUrls": [
+                    "https://sbrc.gov/"
+                  ],
+                  "evidenceVerifiedAt": "2026-10-28T19:35:41+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-southwest-border-regional-commission",
                   "placementCheckable": false,
                   "ombBudget": {
                     "source": "omb_public_budget_database",
@@ -374845,37 +374885,6 @@
                     "budgetAuthorityAccountRows": 1,
                     "package": "BUDGET-2027-DB",
                     "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
-                  },
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
-                  "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
-                  "resolved_total_amount": 276753351.41,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0,
-                  "verificationNoDocument": {
-                    "kind": "no_public_page_known",
-                    "basis": "nomination_ledger",
-                    "name": "Southwest Border Regional Commission",
-                    "recordedAt": "2026-10-26T05:51:55Z",
-                    "ledger": {
-                      "file": "source-decisions-2026-10-26.jsonl",
-                      "run": "decisions-2026-10-26"
-                    },
-                    "note": "Added on 2026-10-26 under official_list_entry from USAspending's toptier agency list. Its own site was not reachable from this environment: swbr.gov, swbrc.gov, www.src.gov, www.southwestborder.gov and www.borderregion.gov did not answer, so no page of its own is known and none could be queued. The unit is not in doubt"
                   }
                 }
               ],
@@ -389280,7 +389289,7 @@
             "kind": "page_below_readable_floor",
             "url": "https://www.whitehouse.gov/government/executive-branch/",
             "host": "www.whitehouse.gov",
-            "checkedAt": "2026-09-21T05:26:27+00:00",
+            "checkedAt": "2026-10-28T19:29:58+00:00",
             "attempts": 1,
             "detail": "no_readable_text"
           },
@@ -404090,7 +404099,7 @@
     }
   ],
   "__sourceRegistry": {
-    "asOf": "2026-10-26",
+    "asOf": "2026-10-28",
     "cadencesAre": "the reviewer's statements of each publisher's cycle, with a basis beside each; none was read from a publisher's own schedule, and every lag and margin is to be tuned on the first update cycles",
     "sources": [
       {
@@ -405210,7 +405219,7 @@
         },
         "copy": {
           "kind": "graph_field_max",
-          "date": "2026-10-26",
+          "date": "2026-10-28",
           "meaning": "the most recent date any page was read; each node's own panel uses its own lastVerified",
           "basis": "",
           "fetchedAt": "2026-09-13"
@@ -405219,7 +405228,7 @@
           "next": null,
           "expectedBy": null,
           "overdueAfter": null,
-          "recheckDue": "2027-04-24"
+          "recheckDue": "2027-04-26"
         },
         "statusAtBuild": "current",
         "lastReadAfterExpected": null,
