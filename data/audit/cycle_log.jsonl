@@ -1,1 +1,2 @@
 {"date": "2026-10-28", "numbers": {"evidence": {"gap": 0, "reach": 239}, "money": {"gap": 0, "reach": 19}, "pay": {"gap": 0, "reach": 2789}}, "pick": "evidence", "metric": "reach", "note": "baseline"}
+{"date": "2026-10-28", "numbers": {"evidence": {"gap": 0, "reach": 239}, "money": {"gap": 0, "reach": 19}, "pay": {"gap": 0, "reach": 2789}}, "pick": "evidence", "metric": "reach", "note": "blocked: this session's proxy refuses every .gov host (333 refused), so no page could be read; nothing moved"}
