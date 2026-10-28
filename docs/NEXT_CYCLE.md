@@ -2,17 +2,21 @@
 
 Generated 2026-10-28 by `python scripts/next_cycle.py` from `output/graph.json`. Do not edit by hand.
 
-## Gaps now
+## Where the three criteria stand
 
-| criterion | gap | measure |
-|---|---|---|
-| Evidence | **247** | 623 of 870 current organisations carry a verification method |
-| Money | **360** | bare estimates (no sourced figure of any kind); 240 committee estimates are counted apart |
-| Pay | **2789** | positions no pay document reaches, excluding those beneath a replaced unit or off the federal schedule (1258 of 4591 are priced) |
+Open gap = the definition of done is not met. Reach = a recorded reason that more documents could still turn into a source or a figure.
 
-## This cycle: EVIDENCE
+| criterion | open gap | reach | measure |
+|---|---|---|---|
+| Evidence | **0** | 239 | 645 of 884 current organisations carry a verification method; the rest carry a recorded reason |
+| Money | **0** | 19 | 0 bare estimates; 345 explained blanks, 19 of them named in a held document with no licensed figure; 242 committee estimates counted apart |
+| Pay | **0** | 2789 | 1258 of 4591 posts priced; reach counts researchable posts that carry a documents-checked blank |
 
-Order is the owner's: evidence, then money, then pay.
+Not measured here: criterion 4(a) (list units, CURATION.md 32.1) and criteria 5-7 (the refresh job, `scripts/update_cycle.py`, which counts only scheduled cycles).
+
+## This cycle: EVIDENCE (reach)
+
+Every open gap is zero, so the definition of done is met for all three. This cycle IMPROVES: it turns a recorded reason into a source or a figure.
 
 ### Find and verify
 
@@ -32,7 +36,7 @@ Order is the owner's: evidence, then money, then pay.
 ### Hand off
 
 ```bash
-python scripts/next_cycle.py --record --note "<what moved>"   # logs before/after, rewrites this file
+python scripts/next_cycle.py --record --note "<what moved>"   # logs this measurement, rewrites this file
 ```
 
 ### Rules
@@ -40,5 +44,5 @@ python scripts/next_cycle.py --record --note "<what moved>"   # logs before/afte
 - Never hand-edit data/federal_gov_complete_1.json, data/verification/* or output/*.
 - Fixtures only through scripts/fetch_fixture.py. Never read, store or print a person's name.
 - Stop if the gate or the suite fails. Report the failure; do not route around it.
-- If this cycle moves no gap number, the next run of this script prints STOP and asks the owner.
+- If the number this cycle aims at does not fall, the next run prints STOP and asks the owner.
 

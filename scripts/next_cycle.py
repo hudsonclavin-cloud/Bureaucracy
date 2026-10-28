@@ -8,8 +8,16 @@ classifiers (report_cost_coverage, report_unpriced_positions) so they cannot
 drift from the reports.
 
 Order is the owner's (2026-10-21): evidence, then money, then pay.
-Stop rule: if the last recorded cycle moved no gap, the file says STOP and
-asks the owner, instead of inventing work.
+
+Each criterion has an OPEN gap (the definition of done is not met) and a REACH
+(a recorded reason that more documents could still turn into a source or a
+figure). The pick is the first criterion in order with an open gap; when every
+open gap is zero it is the first with reach, and the file says that the
+definition of done is met and this is improvement, not completion. The refresh
+side (criterion 5) belongs to scripts/update_cycle.py and is not repeated here.
+
+Stop rule: if the number the last recorded cycle aimed at did not fall, the
+file says STOP and asks the owner, instead of inventing work.
 """
 from __future__ import annotations
 
@@ -21,8 +29,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT))
 
 import report_cost_coverage as cost  # noqa: E402
+import report_evidence_coverage as evidence  # noqa: E402
 import report_unpriced_positions as unpriced  # noqa: E402
 
 GRAPH = ROOT / "output" / "graph.json"
@@ -33,28 +43,38 @@ ORDER = ("evidence", "money", "pay")
 
 
 def measure(graph: dict) -> dict:
-    root_id = graph.get("id")
-    orgs = verified = 0
-    for node, _parent, _replaced in cost.walk_with_lifecycle(graph):
-        if node.get("id") == root_id or cost.is_position(node) or cost.is_treasury_line(node):
-            continue
-        if node.get("synthetic") or str(node.get("lifecycle") or "") == "superseded":
-            continue
-        orgs += 1
-        if node.get("verificationMethod"):
-            verified += 1
-    classes = {k: len(v) for k, v in cost.collect(graph).items()}
+    """Two numbers per criterion.
+
+    `gap` is the OPEN gap by the definition of done: what no figure, source or
+    recorded reason yet stands behind. `reach` is work that could still turn a
+    recorded reason into a figure or a source; it is picked only when every open
+    gap is zero, because the definition of done is already met there.
+    """
+    ev = {k: len(v) for k, v in evidence.collect(graph).items()}
+    ev_total = sum(ev.values())
+    ev_gap = sum(ev.get(c, 0) for c in evidence.GAP_CLASSES)
+    ev_sourced = ev.get("method_page", 0) + ev.get("method_list", 0)
+    ev_reach = ev_total - ev_sourced - ev_gap  # unit has a recorded reason, no document yet
+
+    cc = {k: len(v) for k, v in cost.collect(graph).items()}
+    bare = cc.get("estimate", 0)
+    named = cc.get("estimate_named_in_a_held_document", 0)
+
     groups, positions, priced, _ = unpriced.collect(graph)
-    researchable = sum(len(v) for v in unpriced.researchable(groups).values())
+    nodes = {str(n.get("id")): n for n, _p, _r in unpriced.walk(graph)}
+    open_pay = reach_pay = 0
+    for rows in unpriced.researchable(groups).values():
+        for row in rows:
+            if isinstance(nodes[row["id"]].get("payNoDocument"), dict):
+                reach_pay += 1
+            else:
+                open_pay += 1
     return {
-        "evidence": {"organisations": orgs, "verified": verified, "gap": orgs - verified},
-        "money": {
-            "bare_estimates": classes.get("estimate", 0),
-            "committee_estimates": classes.get("estimate_committee", 0),
-            "gap": classes.get("estimate", 0),
-        },
-        "pay": {"positions": positions, "priced": priced, "unpriced_researchable": researchable,
-                "gap": researchable},
+        "evidence": {"organisations": ev_total, "sourced": ev_sourced, "gap": ev_gap, "reach": ev_reach},
+        "money": {"bare_estimates": bare, "named_in_a_held_document": named,
+                  "explained_blanks": cc.get("estimate_explained_blank", 0),
+                  "committee_estimates": cc.get("estimate_committee", 0), "gap": bare, "reach": named},
+        "pay": {"positions": positions, "priced": priced, "gap": open_pay, "reach": reach_pay},
     }
 
 
@@ -95,40 +115,61 @@ PIPE = [
 ]
 
 
-def render(before: dict, pick: str, stop: str | None) -> str:
-    b = before
+def pick_of(now: dict) -> tuple[str | None, str]:
+    for k in ORDER:
+        if now[k]["gap"] > 0:
+            return k, "gap"
+    for k in ORDER:
+        if now[k]["reach"] > 0:
+            return k, "reach"
+    return None, "none"
+
+
+def render(now: dict, pick: str | None, metric: str, stop: str | None) -> str:
+    e, m, p = now["evidence"], now["money"], now["pay"]
     lines = [
         "# Next cycle",
         "",
         f"Generated {date.today().isoformat()} by `python scripts/next_cycle.py` from `output/graph.json`. "
         "Do not edit by hand.",
         "",
-        "## Gaps now",
+        "## Where the three criteria stand",
         "",
-        "| criterion | gap | measure |",
-        "|---|---|---|",
-        f"| Evidence | **{b['evidence']['gap']}** | {b['evidence']['verified']} of {b['evidence']['organisations']} "
-        "current organisations carry a verification method |",
-        f"| Money | **{b['money']['gap']}** | bare estimates (no sourced figure of any kind); "
-        f"{b['money']['committee_estimates']} committee estimates are counted apart |",
-        f"| Pay | **{b['pay']['gap']}** | positions no pay document reaches, excluding those beneath a replaced unit "
-        f"or off the federal schedule ({b['pay']['priced']} of {b['pay']['positions']} are priced) |",
+        "Open gap = the definition of done is not met. Reach = a recorded reason that more documents could still "
+        "turn into a source or a figure.",
+        "",
+        "| criterion | open gap | reach | measure |",
+        "|---|---|---|---|",
+        f"| Evidence | **{e['gap']}** | {e['reach']} | {e['sourced']} of {e['organisations']} current organisations "
+        "carry a verification method; the rest carry a recorded reason |",
+        f"| Money | **{m['gap']}** | {m['reach']} | {m['bare_estimates']} bare estimates; {m['explained_blanks']} explained "
+        f"blanks, {m['named_in_a_held_document']} of them named in a held document with no licensed figure; "
+        f"{m['committee_estimates']} committee estimates counted apart |",
+        f"| Pay | **{p['gap']}** | {p['reach']} | {p['priced']} of {p['positions']} posts priced; reach counts "
+        "researchable posts that carry a documents-checked blank |",
+        "",
+        "Not measured here: criterion 4(a) (list units, CURATION.md 32.1) and criteria 5-7 (the refresh job, "
+        "`scripts/update_cycle.py`, which counts only scheduled cycles).",
         "",
     ]
     if stop:
-        lines += ["## STOP", "", stop, ""]
-        return "\n".join(lines)
-    lines += [f"## This cycle: {pick.upper()}", "", "Order is the owner's: evidence, then money, then pay.", "",
-              "### Find and verify", ""]
-    lines += [f"{i}. {s}" for i, s in enumerate(ROUTES[pick], 1)]
+        return "\n".join(lines + ["## STOP", "", stop, ""])
+    if pick is None:
+        return "\n".join(lines + ["## Nothing to do", "",
+                                 "Every open gap and every reach is zero. Run `scripts/update_cycle.py --plan`.", ""])
+    kind = ("This closes an OPEN gap." if metric == "gap" else
+            "Every open gap is zero, so the definition of done is met for all three. This cycle IMPROVES: it turns a "
+            "recorded reason into a source or a figure.")
+    lines += [f"## This cycle: {pick.upper()} ({metric})", "", kind, "", "### Find and verify", ""]
+    lines += [f"{i}. {t}" for i, t in enumerate(ROUTES[pick], 1)]
     lines += ["", "### Place, then prove", ""]
-    lines += [f"{i}. `{s}`" if not s.startswith("node") else f"{i}. `{s}`" for i, s in enumerate(PIPE, 1)]
+    lines += [f"{i}. `{t}`" for i, t in enumerate(PIPE, 1)]
     lines += [
         "",
         "### Hand off",
         "",
         "```bash",
-        "python scripts/next_cycle.py --record --note \"<what moved>\"   # logs before/after, rewrites this file",
+        "python scripts/next_cycle.py --record --note \"<what moved>\"   # logs this measurement, rewrites this file",
         "```",
         "",
         "### Rules",
@@ -136,7 +177,7 @@ def render(before: dict, pick: str, stop: str | None) -> str:
         "- Never hand-edit data/federal_gov_complete_1.json, data/verification/* or output/*.",
         "- Fixtures only through scripts/fetch_fixture.py. Never read, store or print a person's name.",
         "- Stop if the gate or the suite fails. Report the failure; do not route around it.",
-        "- If this cycle moves no gap number, the next run of this script prints STOP and asks the owner.",
+        "- If the number this cycle aims at does not fall, the next run prints STOP and asks the owner.",
         "",
     ]
     return "\n".join(lines)
@@ -154,26 +195,29 @@ def main(argv=None) -> int:
     graph = json.loads(a.graph.read_text())
     now = measure(graph)
     prev = last_cycle(a.log)
-    gaps = {k: now[k]["gap"] for k in ORDER}
+    pick, metric = pick_of(now)
     stop = None
-    # A recorded line carries the gaps as they stood when that cycle was handed out. If the gap it picked
+    # A recorded line carries the numbers as they stood when that cycle was handed out. If the number it aimed at
     # has not fallen since, the cycle moved nothing and is not repeated. A "baseline" line is not a cycle.
-    if prev and prev.get("pick") and prev.get("note") != "baseline" and gaps[prev["pick"]] >= prev["gaps"][prev["pick"]]:
-        stop = (f"The last cycle picked **{prev['pick']}** with a gap of {prev['gaps'][prev['pick']]} and it is now "
-                f"{gaps[prev['pick']]}. A cycle that moves no gap is not repeated. Report what blocked it "
-                "and ask the owner which route to change.")
-    pick = next((k for k in ORDER if gaps[k] > 0), ORDER[0])
-    text = render(now, pick, stop)
+    if prev and prev.get("pick") and prev.get("note") != "baseline":
+        was = prev["numbers"][prev["pick"]][prev["metric"]]
+        is_now = now[prev["pick"]][prev["metric"]]
+        if is_now >= was:
+            stop = (f"The last cycle aimed at **{prev['pick']} {prev['metric']}**, which stood at {was} and is now "
+                    f"{is_now}. A cycle that moves nothing is not repeated. Report what blocked it and ask the "
+                    "owner which route to change.")
+    text = render(now, pick, metric, stop)
     if a.dry_run:
         print(text)
         return 0
     a.out.write_text(text + "\n")
     if a.record:
         a.log.parent.mkdir(parents=True, exist_ok=True)
+        numbers = {k: {"gap": now[k]["gap"], "reach": now[k]["reach"]} for k in ORDER}
         with a.log.open("a") as f:
-            f.write(json.dumps({"date": date.today().isoformat(), "gaps": gaps, "pick": pick,
-                                "note": a.note or "baseline"}) + "\n")
-    print(json.dumps({"gaps": gaps, "pick": pick, "stop": bool(stop)}))
+            f.write(json.dumps({"date": date.today().isoformat(), "numbers": numbers, "pick": pick,
+                                "metric": metric, "note": a.note or "baseline"}) + "\n")
+    print(json.dumps({"pick": pick, "metric": metric, "stop": bool(stop)}))
     return 0
 
 

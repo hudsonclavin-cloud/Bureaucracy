@@ -228,19 +228,21 @@ python scripts/next_cycle.py --record --note "<what moved>"
 `scripts/next_cycle.py` reads `output/graph.json` only and reuses the
 repository's own classifiers, so its three counts equal the generated reports':
 
-| criterion | gap | what it counts |
+| criterion | open gap (definition not met) | reach (a recorded reason more documents could turn into a source or figure) |
 |---|---|---|
-| Evidence | organisations with no verification method | `DEFINITION_OF_DONE.md` §3 |
-| Money | bare estimates (no sourced figure of any kind) | `docs/COST_COVERAGE.md` |
-| Pay | positions no pay document reaches, researchable | `docs/UNPRICED_POSITIONS.md` |
+| Evidence | `report_evidence_coverage.py`'s gap classes | organisations carrying a recorded reason, no method |
+| Money | bare estimates, `report_cost_coverage.py` | blanks named in a held document with no licensed figure |
+| Pay | researchable posts with no documents-checked blank | researchable posts that carry one |
 
 It picks in the owner's order of 2026-10-21 (evidence, then money, then pay),
-takes the first criterion whose gap is above zero, and writes
+takes the first criterion with an open gap and, when every open gap is zero
+(the definition of done is met for all three), the first with reach — the file
+then says this cycle IMPROVES rather than completes. It writes
 `docs/NEXT_CYCLE.md`: the gaps, the route for that criterion, the proving steps
 (regenerate, reports, gate, suite, smoke if JS changed) and the hand-off command.
 Each `--record` appends one line to `data/audit/cycle_log.jsonl`.
 
-**Stop rule.** If the criterion the last recorded cycle picked has not fallen,
+**Stop rule.** If the number the last recorded cycle aimed at has not fallen,
 the file says STOP and asks the owner; it does not repeat the cycle or invent
 new work. A line noted `baseline` is not a cycle.
 

@@ -3,77 +3,102 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import next_cycle  # noqa: E402
 
 
-def graph(verified=1, unverified=2, bare=1):
-    kids = [{"id": f"v{i}", "type": "Agency", "verificationMethod": "m", "cost_status": "official"} for i in range(verified)]
-    kids += [{"id": f"u{i}", "type": "Agency", "cost_status": "official"} for i in range(unverified)]
-    kids += [{"id": f"b{i}", "type": "Division", "cost_status": "allocated"} for i in range(bare)]
-    kids.append({"id": "p1", "type": "Position", "cost_status": "unavailable"})
-    return {"id": "root", "type": "Constitution", "children": kids}
+def numbers(eg=0, er=0, mg=0, mr=0, pg=0, pr=0):
+    return {
+        "evidence": {"organisations": 10, "sourced": 5, "gap": eg, "reach": er},
+        "money": {"bare_estimates": mg, "named_in_a_held_document": mr, "explained_blanks": 0,
+                  "committee_estimates": 0, "gap": mg, "reach": mr},
+        "pay": {"positions": 10, "priced": 5, "gap": pg, "reach": pr},
+    }
 
 
-class MeasureTests(unittest.TestCase):
-    def test_counts_exclude_root_and_posts(self):
-        m = next_cycle.measure(graph(verified=3, unverified=2, bare=4))
-        self.assertEqual(m["evidence"]["organisations"], 9)
-        self.assertEqual(m["evidence"]["gap"], 2 + 4)  # the bare estimates are unverified organisations too
-        self.assertEqual(m["money"]["bare_estimates"], 4)
-        self.assertEqual(m["pay"]["positions"], 1)
-        self.assertEqual(m["pay"]["gap"], 1)
+class PickTests(unittest.TestCase):
+    def test_open_gap_beats_reach_and_follows_owner_order(self):
+        self.assertEqual(next_cycle.pick_of(numbers(eg=0, er=9, mg=2, pg=5)), ("money", "gap"))
+        self.assertEqual(next_cycle.pick_of(numbers(eg=1, mg=2, pg=5)), ("evidence", "gap"))
+
+    def test_reach_only_when_every_gap_is_zero(self):
+        self.assertEqual(next_cycle.pick_of(numbers(er=3, mr=2, pr=9)), ("evidence", "reach"))
+        self.assertEqual(next_cycle.pick_of(numbers(mr=2, pr=9)), ("money", "reach"))
+
+    def test_nothing_left(self):
+        self.assertEqual(next_cycle.pick_of(numbers()), (None, "none"))
 
 
 class CycleTests(unittest.TestCase):
-    def run_cycle(self, g, log_lines):
+    def run_cycle(self, now, log_lines):
         with tempfile.TemporaryDirectory() as d:
             d = Path(d)
-            (d / "g.json").write_text(json.dumps(g))
+            (d / "g.json").write_text("{}")
             log = d / "log.jsonl"
             if log_lines:
                 log.write_text("\n".join(json.dumps(x) for x in log_lines) + "\n")
             out = d / "out.md"
-            next_cycle.main(["--graph", str(d / "g.json"), "--out", str(out), "--log", str(log)])
-            return out.read_text(), log
+            with mock.patch.object(next_cycle, "measure", return_value=now):
+                next_cycle.main(["--graph", str(d / "g.json"), "--out", str(out), "--log", str(log)])
+            return out.read_text()
 
-    def test_first_run_picks_evidence(self):
-        text, _ = self.run_cycle(graph(), None)
-        self.assertIn("## This cycle: EVIDENCE", text)
+    @staticmethod
+    def line(now, pick, metric, note="x"):
+        return {"numbers": {k: {"gap": now[k]["gap"], "reach": now[k]["reach"]} for k in now},
+                "pick": pick, "metric": metric, "note": note}
+
+    def test_first_run_has_no_stop(self):
+        text = self.run_cycle(numbers(er=4), None)
+        self.assertIn("## This cycle: EVIDENCE (reach)", text)
+        self.assertIn("IMPROVES", text)
         self.assertNotIn("## STOP", text)
 
-    def test_stops_when_the_picked_gap_did_not_fall(self):
-        before = {"evidence": 3, "money": 1, "pay": 1}
-        g = graph()
-        gap_now = next_cycle.measure(g)["evidence"]["gap"]
-        text, _ = self.run_cycle(g, [{"gaps": {**before, "evidence": gap_now}, "pick": "evidence", "note": "x"}])
+    def test_stops_when_the_aimed_number_did_not_fall(self):
+        now = numbers(er=4)
+        text = self.run_cycle(now, [self.line(now, "evidence", "reach")])
         self.assertIn("## STOP", text)
 
-    def test_continues_when_the_picked_gap_fell(self):
-        g = graph()
-        gap_now = next_cycle.measure(g)["evidence"]["gap"]
-        text, _ = self.run_cycle(g, [{"gaps": {"evidence": gap_now + 5, "money": 1, "pay": 1}, "pick": "evidence", "note": "x"}])
+    def test_continues_when_it_fell(self):
+        was = numbers(er=9)
+        text = self.run_cycle(numbers(er=4), [self.line(was, "evidence", "reach")])
         self.assertNotIn("## STOP", text)
 
-    def test_baseline_line_never_triggers_stop(self):
-        g = graph()
-        gap_now = next_cycle.measure(g)["evidence"]["gap"]
-        text, _ = self.run_cycle(g, [{"gaps": {"evidence": gap_now, "money": 1, "pay": 1}, "pick": "evidence", "note": "baseline"}])
+    def test_baseline_never_triggers_stop(self):
+        now = numbers(er=4)
+        text = self.run_cycle(now, [self.line(now, "evidence", "reach", note="baseline")])
         self.assertNotIn("## STOP", text)
 
-    def test_moves_to_money_when_evidence_is_closed(self):
-        g = graph(unverified=0, bare=0)
-        g["children"].append({"id": "b9", "type": "Division", "cost_status": "allocated", "verificationMethod": "m"})
-        text, _ = self.run_cycle(g, None)
-        self.assertIn("## This cycle: MONEY", text)
+    def test_open_gap_says_it_closes_a_gap(self):
+        text = self.run_cycle(numbers(mg=3), None)
+        self.assertIn("## This cycle: MONEY (gap)", text)
+        self.assertIn("closes an OPEN gap", text)
 
-    def test_record_appends_one_line(self):
+    def test_nothing_to_do(self):
+        self.assertIn("## Nothing to do", self.run_cycle(numbers(), None))
+
+    def test_record_appends_one_line_with_the_numbers(self):
         with tempfile.TemporaryDirectory() as d:
             d = Path(d)
-            (d / "g.json").write_text(json.dumps(graph()))
-            next_cycle.main(["--graph", str(d / "g.json"), "--out", str(d / "o.md"), "--log", str(d / "l.jsonl"), "--record"])
-            self.assertEqual(len((d / "l.jsonl").read_text().splitlines()), 1)
+            (d / "g.json").write_text("{}")
+            with mock.patch.object(next_cycle, "measure", return_value=numbers(er=4)):
+                next_cycle.main(["--graph", str(d / "g.json"), "--out", str(d / "o.md"),
+                                 "--log", str(d / "l.jsonl"), "--record"])
+            rows = [json.loads(x) for x in (d / "l.jsonl").read_text().splitlines()]
+            self.assertEqual(len(rows), 1)
+            self.assertEqual(rows[0]["numbers"]["evidence"]["reach"], 4)
+
+
+class RealGraphTests(unittest.TestCase):
+    def test_measure_matches_the_repositorys_own_reports(self):
+        import report_cost_coverage as cost
+        import report_evidence_coverage as ev
+        g = json.loads(next_cycle.GRAPH.read_text())
+        m = next_cycle.measure(g)
+        self.assertEqual(m["money"]["bare_estimates"], len(cost.collect(g).get("estimate", [])))
+        self.assertEqual(m["evidence"]["gap"], sum(len(v) for c, v in ev.collect(g).items() if c in ev.GAP_CLASSES))
+        self.assertEqual(m["evidence"]["organisations"], sum(len(v) for v in ev.collect(g).values()))
 
 
 if __name__ == "__main__":
