@@ -2,6 +2,8 @@
 
 Generated 2026-10-28 by `python scripts/next_cycle.py` from `output/graph.json`. Do not edit by hand.
 
+**Loop 1 of 3** (3 remaining including this one).
+
 ## Where the three criteria stand
 
 Open gap = the definition of done is not met. Reach = a recorded reason that more documents could still turn into a source or a figure.
