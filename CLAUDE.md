@@ -18,7 +18,9 @@ Work that does not move one of its gaps should say why.
 When the owner says **go**, read it and follow it from Step 0; it decides
 which of the three phases the work is currently in by reading state off disk,
 so a fresh session resumes exactly where the last one stopped. `/go` is the
-same thing as a slash command.
+same thing as a slash command. Step 5 of `docs/GO.md` is the loop's hand-off:
+`python scripts/next_cycle.py` measures the evidence, money and pay gaps and
+writes `docs/NEXT_CYCLE.md`.
 
 ## Project goal
 

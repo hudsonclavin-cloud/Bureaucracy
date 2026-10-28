@@ -24,7 +24,10 @@ Those four numbers tell you which phase you are in. Then:
 
 - `node_audit` still has nodes remaining → **Phase 1**, below.
 - Phase 1 complete, cost nominations at 0 → **Phase 2**.
-- Both complete → **Step 3, the handover**.
+- Both complete → **Step 3, the handover**, then **Step 5**.
+
+Either way, `python scripts/next_cycle.py --dry-run` tells you the gaps and which
+criterion the owner's order says is next.
 
 Check the network once per session, because it decides how much you can do:
 
@@ -206,6 +209,44 @@ volume:
 Never report nominations as verifications, or proposed identifiers as costs.
 The number that matters is not how much you produced; it is how much of it a
 machine has confirmed.
+
+---
+
+## Step 5 — Hand off the next cycle (since 2026-10-28)
+
+The work is a loop, not a list: **find → verify → place → measure → write the
+next cycle.** Phases 1 and 2 and Step 3 do the first three; this step does the
+last two, so a fresh session never needs a human to turn a report into a prompt.
+
+```bash
+python scripts/next_cycle.py --dry-run          # read the gaps and the pick; writes nothing
+python scripts/next_cycle.py --record --note "baseline"   # first time only: log where things stand
+# ... do the cycle it describes (docs/NEXT_CYCLE.md) ...
+python scripts/next_cycle.py --record --note "<what moved>"
+```
+
+`scripts/next_cycle.py` reads `output/graph.json` only and reuses the
+repository's own classifiers, so its three counts equal the generated reports':
+
+| criterion | gap | what it counts |
+|---|---|---|
+| Evidence | organisations with no verification method | `DEFINITION_OF_DONE.md` §3 |
+| Money | bare estimates (no sourced figure of any kind) | `docs/COST_COVERAGE.md` |
+| Pay | positions no pay document reaches, researchable | `docs/UNPRICED_POSITIONS.md` |
+
+It picks in the owner's order of 2026-10-21 (evidence, then money, then pay),
+takes the first criterion whose gap is above zero, and writes
+`docs/NEXT_CYCLE.md`: the gaps, the route for that criterion, the proving steps
+(regenerate, reports, gate, suite, smoke if JS changed) and the hand-off command.
+Each `--record` appends one line to `data/audit/cycle_log.jsonl`.
+
+**Stop rule.** If the criterion the last recorded cycle picked has not fallen,
+the file says STOP and asks the owner; it does not repeat the cycle or invent
+new work. A line noted `baseline` is not a cycle.
+
+**It publishes nothing.** The cycle's own steps do, and every standing rule below
+binds them: the gate and the suite pass before any push, and nothing is routed
+around.
 
 ---
 
