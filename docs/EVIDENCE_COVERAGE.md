@@ -12,24 +12,24 @@ about what this project can read — a host, a policy, a name that counts things
 never a finding about the unit; every panel says which.
 
 - current organisations: **884**
-- with a verification method: **645** (73.0%)
-- with a recorded reason no official document can be read: **200**
+- with a verification method: **646** (73.1%)
+- with a recorded reason no official document can be read: **199**
 - checked and not found, with a standing decision to keep the name: **39**
 - **criterion 3 gap — neither: 0**
 
 | class | organisations | what it means | route |
 |---|---|---|---|
-| Sourced — an official page labels it | 497 | `verificationMethod` is one of the page methods: the unit's own page, its parent's page or (for a post) its organisation's page names it as a heading, link or list item of its own. The strongest claim this project makes about a unit's existence. | Nothing to do; the page is re-fetched and the label re-tested by `scripts/verify_base_graph.py`. |
+| Sourced — an official page labels it | 498 | `verificationMethod` is one of the page methods: the unit's own page, its parent's page or (for a post) its organisation's page names it as a heading, link or list item of its own. The strongest claim this project makes about a unit's existence. | Nothing to do; the page is re-fetched and the label re-tested by `scripts/verify_base_graph.py`. |
 | Sourced — an official list or document names it | 148 | `verificationMethod` is one of the document methods: the Federal Register's agency directory, the Senate's or the House Clerk's committee list, the Government Manual's entry, OPM's PLUM archive or current export, or a Federal Register signature. A different document from a page, and the panel says which. | Nothing to do; each list is committed verbatim and re-matched on every build. |
-| Recorded reason — a page queued for it could not be read | 72 | `verificationUnread`: a candidate page WAS queued and the verifier could not read it — the host refuses the crawler (401/403 to robots.txt or the page), robots.txt is unreachable, the page answered 404, served under 400 readable characters, or the site was failing. A dated fact about the host or the page, never about the unit. | For `page_not_found` and the readable floor, nominate a better page (phase 1b). For a host that refuses the crawler, nothing on that host can ever be read under the robots policy (`docs/NETWORK_ACCESS.md` §11: 67 of 68 such hosts refuse the page too); the route is a different document — the Manual, a directory, a committee list. |
+| Recorded reason — a page queued for it could not be read | 71 | `verificationUnread`: a candidate page WAS queued and the verifier could not read it — the host refuses the crawler (401/403 to robots.txt or the page), robots.txt is unreachable, the page answered 404, served under 400 readable characters, or the site was failing. A dated fact about the host or the page, never about the unit. | For `page_not_found` and the readable floor, nominate a better page (phase 1b). For a host that refuses the crawler, nothing on that host can ever be read under the robots policy (`docs/NETWORK_ACCESS.md` §11: 67 of 68 such hosts refuse the page too); the route is a different document — the Manual, a directory, a committee list. |
 | Recorded reason — the name is this graph's own count label | 11 | `verificationNoDocument.kind: curated_count_label`: the name counts things ("Mission Teams (15)", "All 94 District Courts — Standard Structure"), so no official page can carry it as a label and none was fetched. Recomputed from the name on every build by the verifier's own floor. | None by evidence: the name is the graph's annotation. Renaming the grouping to a unit's real name would make it checkable, where one exists. |
 | Recorded reason — the name is one common word | 7 | `verificationNoDocument.kind: name_too_generic`: a one-token name a page may use without naming the unit ("Defense", "Districts (multiple)"), refused by the verifier's floor before any fetch. | A rename to the wording the parent's page carries, where the page carries a fuller one. |
 | Recorded reason — the graph's own grouping | 20 | `verificationNoDocument.kind: editorial_grouping`: the phase 1b nomination ledger's latest record for the node declines a page because the node is this graph's organising header ("Joint Congressional Bodies", "Judicial Support Organizations"), which no official page names. The ledger's note is quoted on the panel. | None by evidence: a grouping is curation. Dissolving or renaming it is a curation decision. |
 | Recorded reason — no page of its own; the parent's is the check | 0 | `verificationNoDocument.kind: covered_by_parent`: the ledger's latest record says the unit has no page of its own and its parent's page is the right place to look — and that page does not label it. | A rename to what the parent's page calls it, or a page of its own if one appears. |
-| Recorded reason — no official page could be named | 8 | `verificationNoDocument.kind: no_public_page_known`: a real unit for which the nomination pass, with network, could name no official page at all (the Office of the Attending Physician; the NSC's directorates). | A document that names it: the Government Manual, a directory, a statute committed as a fixture. The page route is exhausted for these. |
+| Recorded reason — no official page could be named | 7 | `verificationNoDocument.kind: no_public_page_known`: a real unit for which the nomination pass, with network, could name no official page at all (the Office of the Attending Physician; the NSC's directorates). | A document that names it: the Government Manual, a directory, a statute committed as a fixture. The page route is exhausted for these. |
 | Recorded reason — its site is not on a .gov or .mil host | 29 | `verificationNoDocument.kind: not_on_a_gov_host`: the unit's site exists and is on a host this verifier does not read (si.edu for the Smithsonian's museums, usps.com for the Postal Service's areas, cpb.org). A fact about the policy, recorded so it does not read as "nobody looked". | An owner's decision to admit a named non-.gov host for a named unit, as `politeness.STANDARD_4XX_HOSTS` admits two hosts to a different rule; or a .gov document that names the unit (the Smithsonian's museums appear in no committed list). |
 | Recorded reason — the host that would carry it refuses this crawler | 29 | `verificationNoDocument.kind: host_refuses_crawler`: no page was queued for the node itself, and the ledger's probe found the only host that would carry it answering 401/403 (gao.gov for GAO's mission teams, state.gov for State's bureaus, the .mil hosts for the combatant commands). The probe's URL and verdict ride on the record. | The same as `unread/host_refuses_crawler`: a different document, never that host. |
-| Recorded reason — the page was read and does not carry the graph's name | 24 | `verificationNoDocument.kind: page_read_does_not_name_it`: the ledger's probe read the page that would name it and the graph's wording is not a label on it (NSF's divisions, whose pages label "Mathematical Sciences" where the graph says "Division of Mathematical Sciences"; the Department of Education's regions). A question about the NAME, not about whether the unit exists. | A reviewed row in `data/curation/unit_renames.json` where the page's wording names the same unit (`CURATION.md` §9), re-tested against the live page on every run; or a recorded refusal to rename, where the page's label is a breadcrumb rather than the unit's name. |
+| Recorded reason — the page was read and does not carry the graph's name | 25 | `verificationNoDocument.kind: page_read_does_not_name_it`: the ledger's probe read the page that would name it and the graph's wording is not a label on it (NSF's divisions, whose pages label "Mathematical Sciences" where the graph says "Division of Mathematical Sciences"; the Department of Education's regions). A question about the NAME, not about whether the unit exists. | A reviewed row in `data/curation/unit_renames.json` where the page's wording names the same unit (`CURATION.md` §9), re-tested against the live page on every run; or a recorded refusal to rename, where the page's label is a breadcrumb rather than the unit's name. |
 | Decided — checked and not found, the name kept with its reason | 39 | `verificationFailure` beside a standing reviewed decision to keep the name: a grouping this graph made, a unit whose own page headlines it in other words (the headline quoted), or a curated committee name a complete list does not carry (`data/curation/name_decisions.json`, the `curatedNames` rows of `list_dispositions.json`). The negative is still published and the panel still says what was read; the decision explains it and is not evidence that the unit exists. | A rename or a supersession where a document states one; otherwise the decision stands and is re-adjudicated on every run (the node must still carry the name the row was written against). |
 | Gap — checked and not found | 0 | `verificationFailure`: the unit's own page or a complete official list was read and does not carry the name. A real negative about the graph's wording, not a reason no document can be read — a document was read — so it counts against criterion 3 until the name is fixed, the unit superseded, or the name kept with its reason in CURATION.md. Where the nomination ledger also declines a page for the node, the panel prints the negative, which a reader can audit against its URL. | A rename to the document's wording (`unit_renames.json`), a supersession, or a recorded decision to keep the name. |
 | Gap — no method, no unread page and no recorded reason | 0 | Nothing is published about this unit's existence and the nomination ledger's latest record for it NOMINATES a page (so no reason applies) or is missing. The page is queued or queueable and has not confirmed the unit. | Run the verifier on the queued page; where the page labels a different wording, a reviewed rename (`CURATION.md` §9). |
@@ -53,7 +53,7 @@ taken a parent at a time:
 | Office of Management and Budget (OMB) | 6 | 0 | 0 |
 | Department of Justice (DOJ) | 3 | 2 | 0 |
 | Mathematical & Physical Sciences (MPS) | 0 | 5 | 0 |
-| Defense Agencies & Field Activities | 4 | 0 | 0 |
+| Defense Agencies & Field Activities | 3 | 1 | 0 |
 | Department of Defense (DoD) | 3 | 1 | 0 |
 | Directorate for Engineering (ENG) | 0 | 4 | 0 |
 | Military Departments & Services | 4 | 0 | 0 |
@@ -69,7 +69,6 @@ taken a parent at a time:
 | Independent Establishments & Government Corporations | 0 | 2 | 0 |
 | Judicial Branch | 0 | 2 | 0 |
 | Legislative Branch | 0 | 2 | 0 |
-| Other Independent Agencies (25+) | 0 | 2 | 0 |
 | Social Security Administration (SSA) | 2 | 0 | 0 |
 | United States Senate | 0 | 2 | 0 |
 | Architect of the Capitol | 0 | 1 | 0 |
@@ -81,16 +80,17 @@ taken a parent at a time:
 | Executive Office of the President (EOP) | 0 | 1 | 0 |
 | Government Accountability Office (GAO) | 0 | 1 | 0 |
 | House Committee on Agriculture | 0 | 1 | 0 |
+| House Committee on Education & the Workforce | 0 | 1 | 0 |
 
 ---
 
-## Sourced — an official page labels it — 497
+## Sourced — an official page labels it — 498
 
 `verificationMethod` is one of the page methods: the unit's own page, its parent's page or (for a post) its organisation's page names it as a heading, link or list item of its own. The strongest claim this project makes about a unit's existence.
 
 **Route.** Nothing to do; the page is re-fetched and the label re-tested by `scripts/verify_base_graph.py`.
 
-- `name_labelled_on_own_official_page` — 381
+- `name_labelled_on_own_official_page` — 382
 - `name_labelled_on_parent_official_page` — 116
 
 ## Sourced — an official list or document names it — 148
@@ -104,14 +104,13 @@ taken a parent at a time:
 - `listed_in_house_clerk_committee_list` — 19
 - `listed_in_senate_committee_list` — 17
 
-## Recorded reason — a page queued for it could not be read — 72
+## Recorded reason — a page queued for it could not be read — 71
 
 `verificationUnread`: a candidate page WAS queued and the verifier could not read it — the host refuses the crawler (401/403 to robots.txt or the page), robots.txt is unreachable, the page answered 404, served under 400 readable characters, or the site was failing. A dated fact about the host or the page, never about the unit.
 
 **Route.** For `page_not_found` and the readable floor, nominate a better page (phase 1b). For a host that refuses the crawler, nothing on that host can ever be read under the robots policy (`docs/NETWORK_ACCESS.md` §11: 67 of 68 such hosts refuse the page too); the route is a different document — the Manual, a directory, a committee list.
 
 - `leg-support-cbo-divisions` — Analytical Divisions (Division; under Congressional Budget Office (CBO)) — host_refuses_crawler (www.cbo.gov)
-- `exec-dept-defense-agency-dha` — Defense Health Agency (DHA) (Defense Agency; under Defense Agencies & Field Activities) — robots_unreachable (www.health.mil)
 - `exec-dept-defense-agency-dodea` — DoD Education Activity (DoDEA) (Defense Agency; under Defense Agencies & Field Activities) — host_refuses_crawler (www.esd.whs.mil)
 - `exec-dept-defense-agency-nro` — National Reconnaissance Office (NRO) (Defense Agency; under Defense Agencies & Field Activities) — host_refuses_crawler (www.nro.gov)
 - `exec-dept-defense-agency-nsa` — National Security Agency (NSA) (Defense Agency; under Defense Agencies & Field Activities) — host_refuses_crawler (www.nsa.gov)
@@ -249,7 +248,7 @@ taken a parent at a time:
 **Route.** A rename to what the parent's page calls it, or a page of its own if one appears.
 
 
-## Recorded reason — no official page could be named — 8
+## Recorded reason — no official page could be named — 7
 
 `verificationNoDocument.kind: no_public_page_known`: a real unit for which the nomination pass, with network, could name no official page at all (the Office of the Attending Physician; the NSC's directorates).
 
@@ -259,7 +258,6 @@ taken a parent at a time:
 - `exec-dept-ed-region-iii-mid-atlantic` — Dept of Education Region III — Mid-Atlantic (Regional Office; under Department of Education)
 - `exec-dept-ed-region-vii-plains` — Dept of Education Region VII — Plains (Regional Office; under Department of Education)
 - `leg-house-physician` — Office of the Attending Physician (Office; under House Administrative Offices)
-- `exec-ind-misc-southwest-border-regional-commission` — Southwest Border Regional Commission (Independent Agency; under Other Independent Agencies (25+))
 - `leg-senate-admin-legal` — Office of Senate Legal Counsel (Office; under Senate Administrative Offices)
 - `leg-senate-admin-physician` — Office of the Senate Physician (Office; under Senate Administrative Offices)
 - `leg-support-uscp-communications-division` — Communications Division (Bureau; under U.S. Capitol Police)
@@ -336,7 +334,7 @@ taken a parent at a time:
 - `exec-dept-defense-cocom-usindopacom` — USINDOPACOM — Indo-Pacific Command (Combatant Command; under Unified Combatant Commands (11)) — probed www.indopacom.mil
 - `exec-dept-defense-cocom-usnorthcom` — USNORTHCOM — Northern Command (Combatant Command; under Unified Combatant Commands (11)) — probed www.northcom.mil
 
-## Recorded reason — the page was read and does not carry the graph's name — 24
+## Recorded reason — the page was read and does not carry the graph's name — 25
 
 `verificationNoDocument.kind: page_read_does_not_name_it`: the ledger's probe read the page that would name it and the graph's wording is not a label on it (NSF's divisions, whose pages label "Mathematical Sciences" where the graph says "Division of Mathematical Sciences"; the Department of Education's regions). A question about the NAME, not about whether the unit exists.
 
@@ -344,6 +342,7 @@ taken a parent at a time:
 
 - `leg-support-aoc-library-of-congress-buildings` — Library of Congress Buildings (Division; under Architect of the Capitol) — probed www.aoc.gov
 - `exec-ind-cia-directorate-of-digital-innovation-ddi` — Directorate of Digital Innovation (DDI) (Directorate; under Central Intelligence Agency (CIA)) — probed www.cia.gov
+- `exec-dept-defense-agency-dha` — Defense Health Agency (DHA) (Defense Agency; under Defense Agencies & Field Activities) — probed www.health.mil
 - `exec-dept-ed-region-i-new-england` — Dept of Education Region I — New England (Regional Office; under Department of Education) — probed www.ed.gov
 - `exec-dept-ed-region-iv-southeast` — Dept of Education Region IV — Southeast (Regional Office; under Department of Education) — probed www.ed.gov
 - `exec-dept-ed-region-ix-pacific` — Dept of Education Region IX — Pacific (Regional Office; under Department of Education) — probed www.ed.gov

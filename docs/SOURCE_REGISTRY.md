@@ -5,7 +5,7 @@ the fixtures' own fetch records and `output/graph.json`, as of the build date be
 Do not edit by hand; regenerate it. `tests/test_source_registry.py` re-renders it and pins
 the module and the gate equal.
 
-`docs/DEFINITION_OF_DONE.md` criterion 6. As of **2026-10-26**: 24 current, 2 overdue, 1 closed record.
+`docs/DEFINITION_OF_DONE.md` criterion 6. As of **2026-10-28**: 24 current, 2 overdue, 1 closed record.
 
 Cadences are the reviewer's statements of each publisher's cycle, with a basis beside each; none was read from a publisher's own schedule, and every lag and margin is to be tuned on the first update cycles.
 
@@ -44,7 +44,7 @@ Cadences are the reviewer's statements of each publisher's cycle, with a basis b
 | `doj_usao_ad_pay_plan` U.S. Attorneys' Administratively Determined pay plan chart | Department of Justice, Executive Office for U.S. Attorneys | yearly, effective each January; published about 60 days after the period, overdue 60 days after that | 2025-01-12 (the chart's own effective date) | 2026-10-22 | 2026-01-12 | 2026-03-13 | 2026-05-12 | — | **OVERDUE** | 2 | positionTierPay where source=doj_usao_ad_pay_plan |
 | `va_title38_pay_tables` VA Title 38 physician, dentist and podiatrist pay ranges | Department of Veterans Affairs, Veterans Health Administration | yearly, effective each January; published about 30 days after the period, overdue 60 days after that | 2026-01-11 (the table's own effective date) | 2026-09-23 | 2027-01-11 | 2027-02-10 | 2027-04-11 | — | current | 1 | positionTierPay where source=va_title38_pay_ranges |
 | `doe_laboratory_pages` DOE's laboratory pages and 48 CFR part 970 (who operates each laboratory) | Department of Energy; Government Publishing Office | no fixed cycle; re-checked every 365 days | 2026-10-06 (the date the pages were fetched) | 2026-10-06 | — | — | — | 2027-10-06 | current | 3 | positionEmployer |
-| `official_pages` The organisations' own official pages (existence and placement evidence) | each agency (.gov / .mil) | no fixed cycle; re-checked every 180 days | 2026-10-26 (the most recent date any page was read; each node's own panel uses its own lastVerified) | 2026-09-13 | — | — | — | 2027-04-24 | current | 2 | node verificationMethod, node placementMethod |
+| `official_pages` The organisations' own official pages (existence and placement evidence) | each agency (.gov / .mil) | no fixed cycle; re-checked every 180 days | 2026-10-28 (the most recent date any page was read; each node's own panel uses its own lastVerified) | 2026-09-13 | — | — | — | 2027-04-26 | current | 2 | node verificationMethod, node placementMethod |
 
 ## How each next copy would be fetched
 
