@@ -103,3 +103,31 @@ class RealGraphTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class LoopBudgetTests(unittest.TestCase):
+    def go(self, d, reach, *args):
+        (d / "g.json").write_text("{}")
+        with mock.patch.object(next_cycle, "measure", return_value=numbers(er=reach)):
+            next_cycle.main(["--graph", str(d / "g.json"), "--out", str(d / "o.md"), "--log", str(d / "l.jsonl"),
+                             "--budget", str(d / "b.json"), *args])
+
+    def test_loops_count_down_and_finish(self):
+        with tempfile.TemporaryDirectory() as t:
+            d = Path(t)
+            self.go(d, 5, "--loops", "2")
+            self.assertIn("Loop 1 of 2", (d / "o.md").read_text())
+            self.go(d, 4, "--record", "--note", "first")
+            self.assertEqual(json.loads((d / "b.json").read_text())["completed"], 1)
+            self.assertIn("Loop 2 of 2", (d / "o.md").read_text())
+            self.go(d, 3, "--record", "--note", "second")
+            self.assertIn("All 2 requested loops are complete", (d / "o.md").read_text())
+
+    def test_dry_run_and_baseline_do_not_count(self):
+        with tempfile.TemporaryDirectory() as t:
+            d = Path(t)
+            self.go(d, 5, "--loops", "3", "--dry-run")
+            self.assertFalse((d / "b.json").exists())
+            self.go(d, 5, "--loops", "3")
+            self.go(d, 5, "--record", "--note", "baseline")
+            self.assertEqual(json.loads((d / "b.json").read_text())["completed"], 0)

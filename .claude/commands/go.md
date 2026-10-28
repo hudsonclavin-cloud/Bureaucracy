@@ -1,5 +1,6 @@
 ---
-description: Run the standing node-by-node verification and cost work in docs/GO.md
+description: Run the standing verification and cost work in docs/GO.md; "/go 3" runs three loops
+argument-hint: "[number of loops, default 1]"
 ---
 
 Read `docs/GO.md` in this repository and follow it, starting at Step 0.
@@ -9,5 +10,8 @@ currently in (by reading state off disk, not from memory), which runbook to
 follow, and the rules that override everything else. You will run out of
 context long before the work is finished — that is expected, and every step is
 designed to be resumed by a fresh session.
+
+If an argument N is given ("/go 3"), run `python scripts/next_cycle.py --loops N` before
+Step 0 and follow "Starting a run of N loops" in Step 5; with no argument, run one loop.
 
 Do not plan around this message. Read the page and do what it says.

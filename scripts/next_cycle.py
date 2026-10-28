@@ -38,6 +38,7 @@ import report_unpriced_positions as unpriced  # noqa: E402
 GRAPH = ROOT / "output" / "graph.json"
 OUT = ROOT / "docs" / "NEXT_CYCLE.md"
 LOG = ROOT / "data" / "audit" / "cycle_log.jsonl"
+BUDGET = ROOT / "data" / "audit" / "cycle_budget.json"
 
 ORDER = ("evidence", "money", "pay")
 
@@ -115,6 +116,25 @@ PIPE = [
 ]
 
 
+def read_budget(path: Path):
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text())
+    except ValueError:
+        return None
+
+
+def render_header(budget) -> list[str]:
+    if not budget:
+        return []
+    done, total = budget["completed"], budget["total"]
+    left = total - done
+    if left <= 0:
+        return [f"**Loops: {done} of {total} done. The requested number is complete; stop and report.**", ""]
+    return [f"**Loop {done + 1} of {total}** ({left} remaining including this one).", ""]
+
+
 def pick_of(now: dict) -> tuple[str | None, str]:
     for k in ORDER:
         if now[k]["gap"] > 0:
@@ -125,7 +145,7 @@ def pick_of(now: dict) -> tuple[str | None, str]:
     return None, "none"
 
 
-def render(now: dict, pick: str | None, metric: str, stop: str | None) -> str:
+def render(now: dict, pick: str | None, metric: str, stop: str | None, budget=None) -> str:
     e, m, p = now["evidence"], now["money"], now["pay"]
     lines = [
         "# Next cycle",
@@ -133,6 +153,7 @@ def render(now: dict, pick: str | None, metric: str, stop: str | None) -> str:
         f"Generated {date.today().isoformat()} by `python scripts/next_cycle.py` from `output/graph.json`. "
         "Do not edit by hand.",
         "",
+    ] + render_header(budget) + [
         "## Where the three criteria stand",
         "",
         "Open gap = the definition of done is not met. Reach = a recorded reason that more documents could still "
@@ -152,6 +173,9 @@ def render(now: dict, pick: str | None, metric: str, stop: str | None) -> str:
         "`scripts/update_cycle.py`, which counts only scheduled cycles).",
         "",
     ]
+    if budget and budget["completed"] >= budget["total"]:
+        return "\n".join(lines + ["## Done", "", f"All {budget['total']} requested loops are complete. Summarise "
+                                 "what each moved (data/audit/cycle_log.jsonl) and stop.", ""])
     if stop:
         return "\n".join(lines + ["## STOP", "", stop, ""])
     if pick is None:
@@ -190,8 +214,20 @@ def main(argv=None) -> int:
     ap.add_argument("--log", type=Path, default=LOG)
     ap.add_argument("--record", action="store_true", help="append this measurement to the cycle log")
     ap.add_argument("--note", default="")
+    ap.add_argument("--budget", type=Path, default=BUDGET)
+    ap.add_argument("--loops", type=int, default=None, help="start a run of N loops (replaces any earlier budget)")
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args(argv)
+    if a.loops is not None:
+        if a.loops < 1:
+            ap.error("--loops must be at least 1")
+        budget = {"total": a.loops, "completed": 0, "started": date.today().isoformat()}
+        if not a.dry_run:
+            a.budget.parent.mkdir(parents=True, exist_ok=True)
+            a.budget.write_text(json.dumps(budget) + "\n")
+    else:
+        budget = read_budget(a.budget)
+    note = a.note or "baseline"
     graph = json.loads(a.graph.read_text())
     now = measure(graph)
     prev = last_cycle(a.log)
@@ -206,17 +242,21 @@ def main(argv=None) -> int:
             stop = (f"The last cycle aimed at **{prev['pick']} {prev['metric']}**, which stood at {was} and is now "
                     f"{is_now}. A cycle that moves nothing is not repeated. Report what blocked it and ask the "
                     "owner which route to change.")
-    text = render(now, pick, metric, stop)
+    text = render(now, pick, metric, stop, budget)
     if a.dry_run:
         print(text)
         return 0
     a.out.write_text(text + "\n")
+    if a.record and budget and note != "baseline" and budget["completed"] < budget["total"]:
+        budget["completed"] += 1
+        a.budget.write_text(json.dumps(budget) + "\n")
+        a.out.write_text(render(now, pick, metric, stop, budget) + "\n")
     if a.record:
         a.log.parent.mkdir(parents=True, exist_ok=True)
         numbers = {k: {"gap": now[k]["gap"], "reach": now[k]["reach"]} for k in ORDER}
         with a.log.open("a") as f:
             f.write(json.dumps({"date": date.today().isoformat(), "numbers": numbers, "pick": pick,
-                                "metric": metric, "note": a.note or "baseline"}) + "\n")
+                                "metric": metric, "note": note}) + "\n")
     print(json.dumps({"pick": pick, "metric": metric, "stop": bool(stop)}))
     return 0
 

@@ -242,6 +242,16 @@ then says this cycle IMPROVES rather than completes. It writes
 (regenerate, reports, gate, suite, smoke if JS changed) and the hand-off command.
 Each `--record` appends one line to `data/audit/cycle_log.jsonl`.
 
+**Starting a run of N loops.** When the owner says **go N** (or "go, 3 loops"),
+run `python scripts/next_cycle.py --loops N` first. It writes
+`data/audit/cycle_budget.json` and the top of `docs/NEXT_CYCLE.md` reads
+"Loop 1 of N". Do that cycle, then `--record --note "<what moved>"`: each record
+counts one loop and the file counts down. When it says "All N requested loops are
+complete", stop and summarise what each loop moved from `data/audit/cycle_log.jsonl`.
+Plain **go** with no number means one loop. A `baseline` record and `--dry-run`
+never count. Stop early, and say why, on a STOP result, a failing gate or suite,
+or anything the standing rules forbid; the remaining loops are not owed.
+
 **Stop rule.** If the number the last recorded cycle aimed at has not fallen,
 the file says STOP and asks the owner; it does not repeat the cycle or invent
 new work. A line noted `baseline` is not a cycle.
