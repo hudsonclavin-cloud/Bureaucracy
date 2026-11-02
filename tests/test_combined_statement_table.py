@@ -72,7 +72,7 @@ class TableTests(unittest.TestCase):
         self.assertIn(cs.FIELD, EVIDENCE_OWNED_FIELDS)
         self.assertIn(cs.FIELD, MINIMAL_GRAPH_FIELDS)
 
-    def test_fifteen_rows_publish_with_their_printed_sums(self):
+    def test_sixteen_rows_publish_with_their_printed_sums(self):
         s = shared()
         self.assertEqual(s["report"]["refused"], {})
         amounts = {node_id: record["amountRaw"] for node_id, record in s["records"].items()}
@@ -92,6 +92,9 @@ class TableTests(unittest.TestCase):
             "leg-senate-admin-legal": "1,165,507.91",
             "exec-ind-misc-macpac": "10,186,355.32",
             "exec-ind-misc-medpac": "686,932.49",
+            # the sixteenth, 2026-11-02: the Commission's own account, the only
+            # one in the chapter carrying that phrase
+            "leg-support-uscc": "4,208,729.08",
         })
 
     def test_two_accounts_where_the_chapter_prints_two(self):
@@ -183,7 +186,7 @@ class ApplyTests(unittest.TestCase):
         node_map, _ = index_tree(graph)
         node_map["leg-support-loc-nls"]["name"] = "Talking Books Service"
         stats = cs.apply_combined_statement_evidence(graph, records)
-        self.assertEqual((stats["applied"], stats["refused_not_a_reviewed_row"], stats["refused_renamed"]), (13, 1, 1))
+        self.assertEqual((stats["applied"], stats["refused_not_a_reviewed_row"], stats["refused_renamed"]), (14, 1, 1))
 
 
 class GateTests(unittest.TestCase):
