@@ -18,6 +18,35 @@ def numbers(eg=0, er=0, mg=0, mr=0, pg=0, pr=0):
     }
 
 
+class PayGapIsTheDefinitionOfDonesTests(unittest.TestCase):
+    """Criterion 2 counts every unpriced post without a TERMINAL reason; the
+    `payNoDocument` blank is deliberately not one (DEFINITION_OF_DONE.md)."""
+
+    GRAPH = Path(__file__).resolve().parents[1] / "output" / "graph.json"
+
+    def test_a_documents_checked_blank_does_not_close_a_pay_gap(self):
+        if not self.GRAPH.exists():
+            self.skipTest("no published graph")
+        import report_unpriced_positions as unpriced
+        graph = json.loads(self.GRAPH.read_text())
+        now = next_cycle.measure(graph)["pay"]
+        groups, _positions, _priced, _ = unpriced.collect(graph)
+        by_reason = {}
+        for rows in groups.values():
+            for row in rows:
+                by_reason[row["reason"]] = by_reason.get(row["reason"], 0) + 1
+        terminal = sum(by_reason.get(r, 0) for r in next_cycle.TERMINAL_PAY_REASONS)
+        self.assertEqual(now["gap"], sum(by_reason.values()) - terminal)
+        self.assertGreater(now["gap"], 0)
+        # reach is the researchable part of the gap, never more than it
+        self.assertLessEqual(now["reach"], now["gap"])
+        self.assertEqual(now["reach"], now["gap"] - by_reason.get("beneath_replaced_unit", 0))
+        # the blank is on posts of the gap, and the gap still counts them
+        with_blank = sum(1 for n, _p, _r in unpriced.walk(graph) if isinstance(n.get("payNoDocument"), dict))
+        self.assertGreater(with_blank, 0)
+        self.assertGreaterEqual(now["gap"], with_blank)
+
+
 class PickTests(unittest.TestCase):
     def test_open_gap_beats_reach_and_follows_owner_order(self):
         self.assertEqual(next_cycle.pick_of(numbers(eg=0, er=9, mg=2, pg=5)), ("money", "gap"))
@@ -41,7 +70,8 @@ class CycleTests(unittest.TestCase):
                 log.write_text("\n".join(json.dumps(x) for x in log_lines) + "\n")
             out = d / "out.md"
             with mock.patch.object(next_cycle, "measure", return_value=now):
-                next_cycle.main(["--graph", str(d / "g.json"), "--out", str(out), "--log", str(log)])
+                next_cycle.main(["--graph", str(d / "g.json"), "--out", str(out), "--log", str(log),
+                                 "--budget", str(d / "no_budget.json")])
             return out.read_text()
 
     @staticmethod

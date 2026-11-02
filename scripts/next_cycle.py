@@ -42,6 +42,9 @@ BUDGET = ROOT / "data" / "audit" / "cycle_budget.json"
 
 ORDER = ("evidence", "money", "pay")
 
+# A reason in report_unpriced_positions.classify that a document establishes, so the post is not a pay gap.
+TERMINAL_PAY_REASONS = ("not_federally_paid",)
+
 
 def measure(graph: dict) -> dict:
     """Two numbers per criterion.
@@ -62,14 +65,13 @@ def measure(graph: dict) -> dict:
     named = cc.get("estimate_named_in_a_held_document", 0)
 
     groups, positions, priced, _ = unpriced.collect(graph)
-    nodes = {str(n.get("id")): n for n, _p, _r in unpriced.walk(graph)}
-    open_pay = reach_pay = 0
-    for rows in unpriced.researchable(groups).values():
-        for row in rows:
-            if isinstance(nodes[row["id"]].get("payNoDocument"), dict):
-                reach_pay += 1
-            else:
-                open_pay += 1
+    # docs/DEFINITION_OF_DONE.md criterion 2 counts every unpriced post except one carrying a TERMINAL reason
+    # (`not_federally_paid`, a document establishing that no federal pay exists). The `payNoDocument` blank is
+    # NOT terminal there ("six documents were read and none prints the title" is a fact about what this
+    # repository holds), so it never lowers the gap. Reach is the researchable part of it: a post a pay
+    # document could still price (a post beneath a replaced unit is paused, not researched).
+    open_pay = sum(1 for rows in groups.values() for row in rows if row["reason"] not in TERMINAL_PAY_REASONS)
+    reach_pay = sum(1 for rows in unpriced.researchable(groups).values() for _row in rows)
     return {
         "evidence": {"organisations": ev_total, "sourced": ev_sourced, "gap": ev_gap, "reach": ev_reach},
         "money": {"bare_estimates": bare, "named_in_a_held_document": named,
@@ -166,8 +168,9 @@ def render(now: dict, pick: str | None, metric: str, stop: str | None, budget=No
         f"| Money | **{m['gap']}** | {m['reach']} | {m['bare_estimates']} bare estimates; {m['explained_blanks']} explained "
         f"blanks, {m['named_in_a_held_document']} of them named in a held document with no licensed figure; "
         f"{m['committee_estimates']} committee estimates counted apart |",
-        f"| Pay | **{p['gap']}** | {p['reach']} | {p['priced']} of {p['positions']} posts priced; reach counts "
-        "researchable posts that carry a documents-checked blank |",
+        f"| Pay | **{p['gap']}** | {p['reach']} | {p['priced']} of {p['positions']} posts priced; the gap is every "
+        "unpriced post without a terminal reason (a documents-checked blank is not one, DEFINITION_OF_DONE.md "
+        "criterion 2); reach is the part a pay document could still price |",
         "",
         "Not measured here: criterion 4(a) (list units, CURATION.md 32.1) and criteria 5-7 (the refresh job, "
         "`scripts/update_cycle.py`, which counts only scheduled cycles).",
