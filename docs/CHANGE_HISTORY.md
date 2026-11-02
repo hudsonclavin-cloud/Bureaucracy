@@ -201,6 +201,17 @@ Do not edit by hand. `docs/DEFINITION_OF_DONE.md` Part 2 ("Change history"), cri
 
 ## Builds, newest first
 
+### 2026-11-02T20:41:06.806886+00:00 — within the budget
+
+the Treasury anchor is still the statement of 2026-09-30; 5,527 nodes before and 5,527 after (0 added, 0 removed, 0 newly marked replaced, 0 renamed); 0 measured costs moved, 0 gained a measured figure, 0 lost one; 0 estimates moved; pay claims 1,258 -> 1,258 (0 added, 0 withdrawn, 0 changed figure); verification or placement methods: 0 added, 0 withdrawn, 0 changed; within the change budget.
+
+- `node_count_drops`: ok — 5,527 nodes before, 5,527 after; 0 removed
+- `anchor_lost`: ok — anchor record date after: 2026-09-30
+- `anchor_period_goes_backwards`: ok — anchor 2026-09-30 -> 2026-09-30
+- `measured_cost_moved_without_a_new_statement`: ok — the statement is unchanged (2026-09-30) and 0 measured costs moved
+- `pay_claims_withdrawn_above_5_percent`: ok — 0 of 1,258 pay claims withdrawn (0.0%; the limit is 5%)
+- `rebuilt_without_a_statement`: ok — the build read a statement
+
 ### 2026-11-02T20:05:36.106843+00:00 — within the budget
 
 the Treasury anchor is still the statement of 2026-09-30; 5,526 nodes before and 5,527 after (1 added, 0 removed, 0 newly marked replaced, 0 renamed); 0 measured costs moved, 0 gained a measured figure, 0 lost one; 122 estimates moved; pay claims 1,258 -> 1,258 (0 added, 0 withdrawn, 0 changed figure); verification or placement methods: 1 added, 0 withdrawn, 0 changed; within the change budget.
@@ -344,34 +355,4 @@ the Treasury anchor is still the statement of 2026-08-31; 5,512 nodes before and
 - `anchor_period_goes_backwards`: ok — anchor 2026-08-31 -> 2026-08-31
 - `measured_cost_moved_without_a_new_statement`: ok — the statement is unchanged (2026-08-31) and 0 measured costs moved
 - `pay_claims_withdrawn_above_5_percent`: ok — 0 of 1,258 pay claims withdrawn (0.0%; the limit is 5%)
-
-Sources whose copy changed:
-
-- `doe_laboratory_pages`: — → 2026-10-06 (current)
-- `doj_usao_ad_pay_plan`: — → 2025-01-12 (overdue)
-- `federal_register_agency_directory`: — → 2026-09-08 (current)
-- `federal_register_signatures`: — → 2026-09-21 (current)
-- `house_clerk_committee_list`: — → 2026-09-13 (current)
-- `house_statement_of_disbursements`: — → 2026-06-30 (current)
-- `monthly_treasury_statement`: — → 2026-08-31 (newer_edition_expected)
-- `official_pages`: — → 2026-10-22 (current)
-- `omb_public_budget_database`: — → 2026-09-20 (current)
-- `opm_fedscope_employment`: — → 2025-03-31 (overdue)
-- `opm_plum_archive`: — → 2025-01-20 (closed_record)
-- `opm_plum_current_export`: — → 2026-09-21 (current)
-- `opm_salary_tables`: — → 2026-01-01 (current)
-- `senate_committee_list`: — → 2026-09-08 (current)
-- `senate_salary_schedule`: — → 2026-01-01 (current)
-- `senate_secretary_report`: — → 2026-03-31 (current)
-- `treasury_combined_statement`: — → 2025-09-30 (current)
-- `treasury_statement_of_net_cost`: — → 2025-09-30 (current)
-- `us_code_pay_schedules_5332_note`: — → 2026-01-01 (current)
-- `us_code_sections`: — → 2026-09-18 (current)
-- `us_government_manual`: — → 2025-12-31 (current)
-- `usajobs_vacancy_announcements`: — → 2026-10-06 (current)
-- `usaspending_file_a`: — → 2026-09-17 (current)
-- `usaspending_file_b_object_class`: — → 2025-09-30 (current)
-- `uscourts_judicial_compensation`: — → 2026-01-01 (current)
-- `va_title38_pay_tables`: — → 2026-01-11 (current)
-- `whitehouse_staff_report`: — → 2026-07-01 (current)
 

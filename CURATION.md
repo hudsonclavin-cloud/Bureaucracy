@@ -7841,7 +7841,7 @@ cheaper route the agent missed.
   `combined_statement.REVIEWED_ROWS` entry, mirrored in the gate; both agents replayed it
   against the module and the graph (published, none refused). OMB prints the same account
   at $4,000 thousand, which corroborates the order of magnitude and is not used.
-- **Not built, and why.** The other reviewable rows need an OMB account-level reviewed table
+- **Not built, and why.** The other reviewable OMB rows need an OMB account-level reviewed table
   (agency + bureau + account code), which does not exist: a name-only sum is wrong where the
   same title appears under two agencies (the Office for Civil Rights is an Education account
   of $135m and an HHS account of $43m). Several are honest only as owner decisions: bureaus
@@ -7853,12 +7853,24 @@ cheaper route the agent missed.
   counted. Justice's National Security Division is blocked only by a name collision with the
   Congressional Budget Office's division, and scoping the bureau match to the agency's subtree
   reaches exactly that one pair.
-- **A cheaper route the first agent missed (not built).** USAspending's toptier list prints
-  non-zero outlays for the Inter-American Foundation, the African Development Foundation, the
-  Armed Forces Retirement Home and the Trade and Development Agency, and its Justice
-  sub-components file prints the National Security Division, none of which has a File A
-  figure on its node. Why `derive_usaspending_evidence.py` does not match them is the next
-  thing to check before any OMB table is written.
+- **A cheaper route the first agent missed, built the same day.** USAspending's toptier
+  list prints non-zero outlays for the Inter-American Foundation (code 164, $13,152,516.11
+  for FY2026 through Q4), the African Development Foundation (166, $7,740,910.04), the
+  Armed Forces Retirement Home (084, $107,428,744.50) and the Trade and Development
+  Agency (1133, $50,619,748.84), and none had a File A figure. The reason was not
+  matching: the crosswalk is the phase 2 ledger, run on 2026-09-17, and these four nodes
+  were added on 2026-09-21, so nobody had ever nominated them. Four `likely` nominations
+  were recorded in `cost-cost-usaspending.jsonl` (the one file `load_crosswalk` reads;
+  a separate run file is silently ignored, which cost one wasted attempt) and all four
+  apply by name equality, `verified`, with no alias: `canonical_name_key` sets
+  "United States" aside, which the first draft of the African Development Foundation
+  nomination missed and wrongly said needed one. File A applied 43 -> 47. Each is gross
+  outlays, fiscal-year-to-date, beside the cost, headline for the node, never the cost.
+  The Armed Forces Retirement Home's OMB figure (net $53m, or $44m with the interest
+  account) is a different measure and is not used. Justice's National Security Division
+  is not helped: USAspending's bureau list prints it, but that bureau list is the
+  Justice Department's, and the node-collision with the Congressional Budget Office's
+  division is the same question there.
 
 ### 33.5 What running the job taught, recorded rather than fixed
 

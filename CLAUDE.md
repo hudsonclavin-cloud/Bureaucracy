@@ -528,6 +528,7 @@ statement with the counter-evidence disclosed (a budget request and a consolidat
 assumption, no enacted instrument; 15 CFR 19.1, the Manual's 2021-dated text and an OPM
 2025 heading still name it). Criterion 4(a)'s gap reads **0**; criterion 3 reads 0 open
 of 885 organisations. Both are counts of recorded dispositions, not of new evidence.
+The same sweep found four small agencies (the Inter-American and African Development Foundations, the Armed Forces Retirement Home, the Trade and Development Agency) that had never been nominated for File A because they were added after the phase 2 pass; all four now carry a gross-outlays figure (File A 43 → 47 organisations, by name equality, `verified`).
 
 ### Existence evidence (`data_pipeline/verification/`, `data/verification/`)
 

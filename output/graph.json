@@ -367216,6 +367216,35 @@
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-151",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
                   },
+                  "usaspendingOutlays": {
+                    "source": "usaspending_file_ab",
+                    "basis": "gross_outlays",
+                    "level": "toptier",
+                    "key": "164",
+                    "apiName": "Inter-American Foundation",
+                    "toptierCode": "164",
+                    "toptierName": "Inter-American Foundation",
+                    "bureauId": null,
+                    "amount": 13152516.11,
+                    "amountRaw": "13152516.11",
+                    "obligations": 11782181.56,
+                    "accounts": null,
+                    "fiscalYear": 2026,
+                    "periodCoverage": "fiscal_year_to_date",
+                    "periodAsOf": "2026-09-17",
+                    "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+                    "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+                    "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+                    "retrievedAt": "2026-09-17T16:12:34Z",
+                    "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
+                    "unitsEvidenceKind": "publishers_data_dictionary",
+                    "unitsEvidenceSource": {
+                      "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+                    }
+                  },
                   "spendingByKind": {
                     "source": "usaspending_file_b_object_class",
                     "fiscalYear": 2025,
@@ -367407,78 +367436,6 @@
                       "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
                     },
                     "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
-                  },
-                  "costNoDocument": {
-                    "kind": "named_in_a_held_document_without_a_licensed_figure",
-                    "name": "Inter-American Foundation",
-                    "namedIn": [
-                      {
-                        "document": "omb_public_budget_database",
-                        "printed": "Inter-American Foundation"
-                      },
-                      {
-                        "document": "usaspending_agency_lists",
-                        "printed": "Inter-American Foundation"
-                      }
-                    ],
-                    "documents": [
-                      {
-                        "id": "monthly_treasury_statement",
-                        "document": "Monthly Treasury Statement, Table 5 (every line, headers included)",
-                        "version": "statement of 2026-09-30",
-                        "file": "mts_table5_2026-09-30.json",
-                        "sha256": "5ebbdae774fb68536e829929ceff8ad7995a76708063d26ec1faff86735e4564",
-                        "namesChecked": 557
-                      },
-                      {
-                        "id": "treasury_combined_statement_c01",
-                        "document": "Treasury Combined Statement of Receipts, Outlays, and Balances, chapter c01 (unit totals and account titles)",
-                        "version": "FY2025",
-                        "file": "c01.xlsx",
-                        "sha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
-                        "namesChecked": 117
-                      },
-                      {
-                        "id": "omb_public_budget_database",
-                        "document": "OMB Public Budget Database (agency, bureau and account names, budget authority and outlays)",
-                        "version": "package BUDGET-2027-DB, last actual year FY2025",
-                        "file": "BUDGET-2027-DB.zip",
-                        "sha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
-                        "namesChecked": 4145
-                      },
-                      {
-                        "id": "usaspending_agency_lists",
-                        "document": "USAspending toptier agency list and the committed bureau (sub-component) lists",
-                        "version": "53 files",
-                        "file": "usaspending/",
-                        "sha256": "e91995821e427d2ce2649376d263af1c91299c3acbe513474b4ad26602b9e50b",
-                        "namesChecked": 395
-                      },
-                      {
-                        "id": "treasury_statement_of_net_cost",
-                        "document": "Treasury Statement of Net Cost (reporting entities)",
-                        "version": "FY2025",
-                        "file": "statement_net_cost_2025-09-30.json",
-                        "sha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
-                        "namesChecked": 40
-                      },
-                      {
-                        "id": "house_statement_of_disbursements",
-                        "document": "House Statement of Disbursements, summary (organisations, the fiscal-year prefix set aside)",
-                        "version": "April 1 - June 30, 2026",
-                        "file": "2026q2_sod_summary_grid.csv",
-                        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
-                        "namesChecked": 543
-                      },
-                      {
-                        "id": "senate_secretary_report",
-                        "document": "Report of the Secretary of the Senate, Part II (committee headings)",
-                        "version": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
-                        "file": "GPO-CDOC-119sdoc6-2.pdf",
-                        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
-                        "namesChecked": 20
-                      }
-                    ]
                   }
                 },
                 {
@@ -368024,6 +367981,35 @@
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-128",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
                   },
+                  "usaspendingOutlays": {
+                    "source": "usaspending_file_ab",
+                    "basis": "gross_outlays",
+                    "level": "toptier",
+                    "key": "166",
+                    "apiName": "African Development Foundation",
+                    "toptierCode": "166",
+                    "toptierName": "African Development Foundation",
+                    "bureauId": null,
+                    "amount": 7740910.04,
+                    "amountRaw": "7740910.04",
+                    "obligations": 7942397.59,
+                    "accounts": null,
+                    "fiscalYear": 2026,
+                    "periodCoverage": "fiscal_year_to_date",
+                    "periodAsOf": "2026-09-17",
+                    "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+                    "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+                    "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+                    "retrievedAt": "2026-09-17T16:12:34Z",
+                    "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
+                    "unitsEvidenceKind": "publishers_data_dictionary",
+                    "unitsEvidenceSource": {
+                      "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+                    }
+                  },
                   "spendingByKind": {
                     "source": "usaspending_file_b_object_class",
                     "fiscalYear": 2025,
@@ -368205,78 +368191,6 @@
                       "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
                     },
                     "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
-                  },
-                  "costNoDocument": {
-                    "kind": "named_in_a_held_document_without_a_licensed_figure",
-                    "name": "United States African Development Foundation",
-                    "namedIn": [
-                      {
-                        "document": "omb_public_budget_database",
-                        "printed": "African Development Foundation"
-                      },
-                      {
-                        "document": "usaspending_agency_lists",
-                        "printed": "African Development Foundation"
-                      }
-                    ],
-                    "documents": [
-                      {
-                        "id": "monthly_treasury_statement",
-                        "document": "Monthly Treasury Statement, Table 5 (every line, headers included)",
-                        "version": "statement of 2026-09-30",
-                        "file": "mts_table5_2026-09-30.json",
-                        "sha256": "5ebbdae774fb68536e829929ceff8ad7995a76708063d26ec1faff86735e4564",
-                        "namesChecked": 557
-                      },
-                      {
-                        "id": "treasury_combined_statement_c01",
-                        "document": "Treasury Combined Statement of Receipts, Outlays, and Balances, chapter c01 (unit totals and account titles)",
-                        "version": "FY2025",
-                        "file": "c01.xlsx",
-                        "sha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
-                        "namesChecked": 117
-                      },
-                      {
-                        "id": "omb_public_budget_database",
-                        "document": "OMB Public Budget Database (agency, bureau and account names, budget authority and outlays)",
-                        "version": "package BUDGET-2027-DB, last actual year FY2025",
-                        "file": "BUDGET-2027-DB.zip",
-                        "sha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
-                        "namesChecked": 4145
-                      },
-                      {
-                        "id": "usaspending_agency_lists",
-                        "document": "USAspending toptier agency list and the committed bureau (sub-component) lists",
-                        "version": "53 files",
-                        "file": "usaspending/",
-                        "sha256": "e91995821e427d2ce2649376d263af1c91299c3acbe513474b4ad26602b9e50b",
-                        "namesChecked": 395
-                      },
-                      {
-                        "id": "treasury_statement_of_net_cost",
-                        "document": "Treasury Statement of Net Cost (reporting entities)",
-                        "version": "FY2025",
-                        "file": "statement_net_cost_2025-09-30.json",
-                        "sha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
-                        "namesChecked": 40
-                      },
-                      {
-                        "id": "house_statement_of_disbursements",
-                        "document": "House Statement of Disbursements, summary (organisations, the fiscal-year prefix set aside)",
-                        "version": "April 1 - June 30, 2026",
-                        "file": "2026q2_sod_summary_grid.csv",
-                        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
-                        "namesChecked": 543
-                      },
-                      {
-                        "id": "senate_secretary_report",
-                        "document": "Report of the Secretary of the Senate, Part II (committee headings)",
-                        "version": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
-                        "file": "GPO-CDOC-119sdoc6-2.pdf",
-                        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
-                        "namesChecked": 20
-                      }
-                    ]
                   }
                 },
                 {
@@ -368406,6 +368320,35 @@
                     "granule": "GOVMAN-2025-12-31-179",
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-179",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+                  },
+                  "usaspendingOutlays": {
+                    "source": "usaspending_file_ab",
+                    "basis": "gross_outlays",
+                    "level": "toptier",
+                    "key": "1133",
+                    "apiName": "United States Trade and Development Agency",
+                    "toptierCode": "1133",
+                    "toptierName": "United States Trade and Development Agency",
+                    "bureauId": null,
+                    "amount": 50619748.84,
+                    "amountRaw": "50619748.84",
+                    "obligations": 66570338.72,
+                    "accounts": null,
+                    "fiscalYear": 2026,
+                    "periodCoverage": "fiscal_year_to_date",
+                    "periodAsOf": "2026-09-17",
+                    "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+                    "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+                    "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+                    "retrievedAt": "2026-09-17T16:12:34Z",
+                    "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
+                    "unitsEvidenceKind": "publishers_data_dictionary",
+                    "unitsEvidenceSource": {
+                      "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+                    }
                   },
                   "spendingByKind": {
                     "source": "usaspending_file_b_object_class",
@@ -368593,78 +368536,6 @@
                       "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
                     },
                     "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
-                  },
-                  "costNoDocument": {
-                    "kind": "named_in_a_held_document_without_a_licensed_figure",
-                    "name": "United States Trade and Development Agency",
-                    "namedIn": [
-                      {
-                        "document": "omb_public_budget_database",
-                        "printed": "Trade and Development Agency"
-                      },
-                      {
-                        "document": "usaspending_agency_lists",
-                        "printed": "United States Trade and Development Agency"
-                      }
-                    ],
-                    "documents": [
-                      {
-                        "id": "monthly_treasury_statement",
-                        "document": "Monthly Treasury Statement, Table 5 (every line, headers included)",
-                        "version": "statement of 2026-09-30",
-                        "file": "mts_table5_2026-09-30.json",
-                        "sha256": "5ebbdae774fb68536e829929ceff8ad7995a76708063d26ec1faff86735e4564",
-                        "namesChecked": 557
-                      },
-                      {
-                        "id": "treasury_combined_statement_c01",
-                        "document": "Treasury Combined Statement of Receipts, Outlays, and Balances, chapter c01 (unit totals and account titles)",
-                        "version": "FY2025",
-                        "file": "c01.xlsx",
-                        "sha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
-                        "namesChecked": 117
-                      },
-                      {
-                        "id": "omb_public_budget_database",
-                        "document": "OMB Public Budget Database (agency, bureau and account names, budget authority and outlays)",
-                        "version": "package BUDGET-2027-DB, last actual year FY2025",
-                        "file": "BUDGET-2027-DB.zip",
-                        "sha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
-                        "namesChecked": 4145
-                      },
-                      {
-                        "id": "usaspending_agency_lists",
-                        "document": "USAspending toptier agency list and the committed bureau (sub-component) lists",
-                        "version": "53 files",
-                        "file": "usaspending/",
-                        "sha256": "e91995821e427d2ce2649376d263af1c91299c3acbe513474b4ad26602b9e50b",
-                        "namesChecked": 395
-                      },
-                      {
-                        "id": "treasury_statement_of_net_cost",
-                        "document": "Treasury Statement of Net Cost (reporting entities)",
-                        "version": "FY2025",
-                        "file": "statement_net_cost_2025-09-30.json",
-                        "sha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
-                        "namesChecked": 40
-                      },
-                      {
-                        "id": "house_statement_of_disbursements",
-                        "document": "House Statement of Disbursements, summary (organisations, the fiscal-year prefix set aside)",
-                        "version": "April 1 - June 30, 2026",
-                        "file": "2026q2_sod_summary_grid.csv",
-                        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
-                        "namesChecked": 543
-                      },
-                      {
-                        "id": "senate_secretary_report",
-                        "document": "Report of the Secretary of the Senate, Part II (committee headings)",
-                        "version": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
-                        "file": "GPO-CDOC-119sdoc6-2.pdf",
-                        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
-                        "namesChecked": 20
-                      }
-                    ]
                   }
                 },
                 {
@@ -372672,6 +372543,35 @@
                     "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
                     "sha256": "d0d7ce6a6df4e43177c2d584624398af0f13818f2e193de9460e5db015329f74"
                   },
+                  "usaspendingOutlays": {
+                    "source": "usaspending_file_ab",
+                    "basis": "gross_outlays",
+                    "level": "toptier",
+                    "key": "084",
+                    "apiName": "Armed Forces Retirement Home",
+                    "toptierCode": "084",
+                    "toptierName": "Armed Forces Retirement Home",
+                    "bureauId": null,
+                    "amount": 107428744.5,
+                    "amountRaw": "107428744.5",
+                    "obligations": 99533570.02,
+                    "accounts": null,
+                    "fiscalYear": 2026,
+                    "periodCoverage": "fiscal_year_to_date",
+                    "periodAsOf": "2026-09-17",
+                    "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+                    "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+                    "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+                    "retrievedAt": "2026-09-17T16:12:34Z",
+                    "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
+                    "unitsEvidenceKind": "publishers_data_dictionary",
+                    "unitsEvidenceSource": {
+                      "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+                    }
+                  },
                   "spendingByKind": {
                     "source": "usaspending_file_b_object_class",
                     "fiscalYear": 2025,
@@ -372868,82 +372768,6 @@
                       "note": "The publisher's Data Dictionary carries both File B elements as dollar figures of the account breakdown; it maps them to the account download's columns, not to this endpoint's field names."
                     },
                     "note": "Obligations by object class for fiscal year 2025, a completed year, as USAspending reports DATA Act File B. Obligations are commitments, not cash, and gross of offsetting collections: this is not the Treasury's net outlays the graph shows as a cost."
-                  },
-                  "costNoDocument": {
-                    "kind": "named_in_a_held_document_without_a_licensed_figure",
-                    "name": "Armed Forces Retirement Home",
-                    "namedIn": [
-                      {
-                        "document": "monthly_treasury_statement",
-                        "printed": "Armed Forces Retirement Home"
-                      },
-                      {
-                        "document": "omb_public_budget_database",
-                        "printed": "Armed Forces Retirement Home"
-                      },
-                      {
-                        "document": "usaspending_agency_lists",
-                        "printed": "Armed Forces Retirement Home"
-                      }
-                    ],
-                    "documents": [
-                      {
-                        "id": "monthly_treasury_statement",
-                        "document": "Monthly Treasury Statement, Table 5 (every line, headers included)",
-                        "version": "statement of 2026-09-30",
-                        "file": "mts_table5_2026-09-30.json",
-                        "sha256": "5ebbdae774fb68536e829929ceff8ad7995a76708063d26ec1faff86735e4564",
-                        "namesChecked": 557
-                      },
-                      {
-                        "id": "treasury_combined_statement_c01",
-                        "document": "Treasury Combined Statement of Receipts, Outlays, and Balances, chapter c01 (unit totals and account titles)",
-                        "version": "FY2025",
-                        "file": "c01.xlsx",
-                        "sha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
-                        "namesChecked": 117
-                      },
-                      {
-                        "id": "omb_public_budget_database",
-                        "document": "OMB Public Budget Database (agency, bureau and account names, budget authority and outlays)",
-                        "version": "package BUDGET-2027-DB, last actual year FY2025",
-                        "file": "BUDGET-2027-DB.zip",
-                        "sha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
-                        "namesChecked": 4145
-                      },
-                      {
-                        "id": "usaspending_agency_lists",
-                        "document": "USAspending toptier agency list and the committed bureau (sub-component) lists",
-                        "version": "53 files",
-                        "file": "usaspending/",
-                        "sha256": "e91995821e427d2ce2649376d263af1c91299c3acbe513474b4ad26602b9e50b",
-                        "namesChecked": 395
-                      },
-                      {
-                        "id": "treasury_statement_of_net_cost",
-                        "document": "Treasury Statement of Net Cost (reporting entities)",
-                        "version": "FY2025",
-                        "file": "statement_net_cost_2025-09-30.json",
-                        "sha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
-                        "namesChecked": 40
-                      },
-                      {
-                        "id": "house_statement_of_disbursements",
-                        "document": "House Statement of Disbursements, summary (organisations, the fiscal-year prefix set aside)",
-                        "version": "April 1 - June 30, 2026",
-                        "file": "2026q2_sod_summary_grid.csv",
-                        "sha256": "4828ceb94cc1dc67bbdc4faa276ef0cc0e36cbc3f4dcf0a84f9e1f54b005b28b",
-                        "namesChecked": 543
-                      },
-                      {
-                        "id": "senate_secretary_report",
-                        "document": "Report of the Secretary of the Senate, Part II (committee headings)",
-                        "version": "NET EXPENDITURES FOR THE PERIOD OF 10/01/2025 THRU 03/31/2026 ($)",
-                        "file": "GPO-CDOC-119sdoc6-2.pdf",
-                        "sha256": "8c0198e57f3f4a3bba56939e3972c7c2d3ef55f4d01aa0addd2457ff98158e47",
-                        "namesChecked": 20
-                      }
-                    ]
                   }
                 },
                 {

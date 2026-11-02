@@ -3,7 +3,7 @@
   "source": {
     "kind": "usaspending_file_ab",
     "basis": "gross_outlays",
-    "derivedAt": "2026-11-02T20:04:13Z",
+    "derivedAt": "2026-11-02T20:39:50Z",
     "fixtures": "tests/fixtures/usaspending/"
   },
   "dictionary": {
@@ -16,10 +16,10 @@
     "line": "A: GrossOutlayAmountByTAS_CPE | B: The definition for this element appears in Section 20 of OMB Circular A-11 issued June 2015; a brief summary from A-11 appears below.\r\n\r\nPayments made to liquidate an obligation (other than the repayment of debt principal or other disbursements that are “means of financing” transactions). Outlays generally are equal to cash disbursements but also are recorded for cash-equivalent transactions, such as the issuance of debentures to pay insurance claims, and in a few cases are recorded on an accrual basis such as interest on public issues of the public debt. Outlays are the measure of Government spending. | C: N/A | D: Account Status | E: N/A | F: N/A | G: N/A | H: N/A | I: N/A | J: N/A | K: FA_AccountBalances.csv,\r\nTAS_AccountBalances.csv | L: gross_outlay_amount | M: appropriation_account_balances | N: gross_outlay_amount_by_tas_cpe | O: N/A | P: N/A | Q: N/A"
   },
   "report": {
-    "crosswalk_identifiers": 47,
-    "applied": 43,
+    "crosswalk_identifiers": 51,
+    "applied": 47,
     "applied_by_level": {
-      "toptier": 20,
+      "toptier": 24,
       "bureau": 23
     },
     "refused": {
@@ -948,6 +948,44 @@
       "nominationConfidence": "likely",
       "unitsEvidenceKind": "publishers_data_dictionary"
     },
+    "exec-ind-misc-african-development-foundation": {
+      "nodeId": "exec-ind-misc-african-development-foundation",
+      "financialEvidenceStatus": "verified",
+      "costBasis": "gross_outlays",
+      "amount": 7740910.04,
+      "amountRaw": "7740910.04",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "A: GrossOutlayAmountByTAS_CPE | B: The definition for this element appears in Section 20 of OMB Circular A-11 issued June 2015; a brief summary from A-11 appears below.\r\n\r\nPayments made to liquidate an obligation (other than the repayment of debt principal or other disbursements that are “means of financing” transactions). Outlays generally are equal to cash disbursements but also are recorded for cash-equivalent transactions, such as the issuance of debentures to pay insurance claims, and in a few cases are recorded on an accrual basis such as interest on public issues of the public debt. Outlays are the measure of Government spending. | C: N/A | D: Account Status | E: N/A | F: N/A | G: N/A | H: N/A | I: N/A | J: N/A | K: FA_AccountBalances.csv,\r\nTAS_AccountBalances.csv | L: gross_outlay_amount | M: appropriation_account_balances | N: gross_outlay_amount_by_tas_cpe | O: N/A | P: N/A | Q: N/A",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      },
+      "quote": "\"agency_name\":\"African Development Foundation\"; \"outlay_amount\":7740910.04",
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "amountScope": "African Development Foundation",
+      "scopeMatch": "exact",
+      "rollupRole": "total",
+      "sourceType": "usaspending_file_ab",
+      "sourceUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "locator": {
+        "file": "tests/fixtures/usaspending/toptier_agencies.json",
+        "key": "166"
+      },
+      "level": "toptier",
+      "toptierCode": "166",
+      "toptierName": "African Development Foundation",
+      "bureauId": null,
+      "obligations": 7942397.59,
+      "accounts": null,
+      "nominationConfidence": "likely",
+      "unitsEvidenceKind": "publishers_data_dictionary"
+    },
     "exec-ind-misc-american-battle-monuments-commission-abmc": {
       "nodeId": "exec-ind-misc-american-battle-monuments-commission-abmc",
       "financialEvidenceStatus": "verified",
@@ -1020,6 +1058,44 @@
       "toptierName": "Appalachian Regional Commission",
       "bureauId": null,
       "obligations": 7042535.73,
+      "accounts": null,
+      "nominationConfidence": "likely",
+      "unitsEvidenceKind": "publishers_data_dictionary"
+    },
+    "exec-ind-misc-armed-forces-retirement-home": {
+      "nodeId": "exec-ind-misc-armed-forces-retirement-home",
+      "financialEvidenceStatus": "verified",
+      "costBasis": "gross_outlays",
+      "amount": 107428744.5,
+      "amountRaw": "107428744.5",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "A: GrossOutlayAmountByTAS_CPE | B: The definition for this element appears in Section 20 of OMB Circular A-11 issued June 2015; a brief summary from A-11 appears below.\r\n\r\nPayments made to liquidate an obligation (other than the repayment of debt principal or other disbursements that are “means of financing” transactions). Outlays generally are equal to cash disbursements but also are recorded for cash-equivalent transactions, such as the issuance of debentures to pay insurance claims, and in a few cases are recorded on an accrual basis such as interest on public issues of the public debt. Outlays are the measure of Government spending. | C: N/A | D: Account Status | E: N/A | F: N/A | G: N/A | H: N/A | I: N/A | J: N/A | K: FA_AccountBalances.csv,\r\nTAS_AccountBalances.csv | L: gross_outlay_amount | M: appropriation_account_balances | N: gross_outlay_amount_by_tas_cpe | O: N/A | P: N/A | Q: N/A",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      },
+      "quote": "\"agency_name\":\"Armed Forces Retirement Home\"; \"outlay_amount\":107428744.5",
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "amountScope": "Armed Forces Retirement Home",
+      "scopeMatch": "exact",
+      "rollupRole": "total",
+      "sourceType": "usaspending_file_ab",
+      "sourceUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "locator": {
+        "file": "tests/fixtures/usaspending/toptier_agencies.json",
+        "key": "084"
+      },
+      "level": "toptier",
+      "toptierCode": "084",
+      "toptierName": "Armed Forces Retirement Home",
+      "bureauId": null,
+      "obligations": 99533570.02,
       "accounts": null,
       "nominationConfidence": "likely",
       "unitsEvidenceKind": "publishers_data_dictionary"
@@ -1215,6 +1291,44 @@
       "toptierName": "Federal Labor Relations Authority",
       "bureauId": null,
       "obligations": 21929473.22,
+      "accounts": null,
+      "nominationConfidence": "likely",
+      "unitsEvidenceKind": "publishers_data_dictionary"
+    },
+    "exec-ind-misc-inter-american-foundation": {
+      "nodeId": "exec-ind-misc-inter-american-foundation",
+      "financialEvidenceStatus": "verified",
+      "costBasis": "gross_outlays",
+      "amount": 13152516.11,
+      "amountRaw": "13152516.11",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "A: GrossOutlayAmountByTAS_CPE | B: The definition for this element appears in Section 20 of OMB Circular A-11 issued June 2015; a brief summary from A-11 appears below.\r\n\r\nPayments made to liquidate an obligation (other than the repayment of debt principal or other disbursements that are “means of financing” transactions). Outlays generally are equal to cash disbursements but also are recorded for cash-equivalent transactions, such as the issuance of debentures to pay insurance claims, and in a few cases are recorded on an accrual basis such as interest on public issues of the public debt. Outlays are the measure of Government spending. | C: N/A | D: Account Status | E: N/A | F: N/A | G: N/A | H: N/A | I: N/A | J: N/A | K: FA_AccountBalances.csv,\r\nTAS_AccountBalances.csv | L: gross_outlay_amount | M: appropriation_account_balances | N: gross_outlay_amount_by_tas_cpe | O: N/A | P: N/A | Q: N/A",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      },
+      "quote": "\"agency_name\":\"Inter-American Foundation\"; \"outlay_amount\":13152516.11",
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "amountScope": "Inter-American Foundation",
+      "scopeMatch": "exact",
+      "rollupRole": "total",
+      "sourceType": "usaspending_file_ab",
+      "sourceUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "locator": {
+        "file": "tests/fixtures/usaspending/toptier_agencies.json",
+        "key": "164"
+      },
+      "level": "toptier",
+      "toptierCode": "164",
+      "toptierName": "Inter-American Foundation",
+      "bureauId": null,
+      "obligations": 11782181.56,
       "accounts": null,
       "nominationConfidence": "likely",
       "unitsEvidenceKind": "publishers_data_dictionary"
@@ -1481,6 +1595,44 @@
       "toptierName": "Selective Service System",
       "bureauId": null,
       "obligations": 24779516.73,
+      "accounts": null,
+      "nominationConfidence": "likely",
+      "unitsEvidenceKind": "publishers_data_dictionary"
+    },
+    "exec-ind-misc-trade-and-development-agency": {
+      "nodeId": "exec-ind-misc-trade-and-development-agency",
+      "financialEvidenceStatus": "verified",
+      "costBasis": "gross_outlays",
+      "amount": 50619748.84,
+      "amountRaw": "50619748.84",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "A: GrossOutlayAmountByTAS_CPE | B: The definition for this element appears in Section 20 of OMB Circular A-11 issued June 2015; a brief summary from A-11 appears below.\r\n\r\nPayments made to liquidate an obligation (other than the repayment of debt principal or other disbursements that are “means of financing” transactions). Outlays generally are equal to cash disbursements but also are recorded for cash-equivalent transactions, such as the issuance of debentures to pay insurance claims, and in a few cases are recorded on an accrual basis such as interest on public issues of the public debt. Outlays are the measure of Government spending. | C: N/A | D: Account Status | E: N/A | F: N/A | G: N/A | H: N/A | I: N/A | J: N/A | K: FA_AccountBalances.csv,\r\nTAS_AccountBalances.csv | L: gross_outlay_amount | M: appropriation_account_balances | N: gross_outlay_amount_by_tas_cpe | O: N/A | P: N/A | Q: N/A",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      },
+      "quote": "\"agency_name\":\"United States Trade and Development Agency\"; \"outlay_amount\":50619748.84",
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "amountScope": "United States Trade and Development Agency",
+      "scopeMatch": "exact",
+      "rollupRole": "total",
+      "sourceType": "usaspending_file_ab",
+      "sourceUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "locator": {
+        "file": "tests/fixtures/usaspending/toptier_agencies.json",
+        "key": "1133"
+      },
+      "level": "toptier",
+      "toptierCode": "1133",
+      "toptierName": "United States Trade and Development Agency",
+      "bureauId": null,
+      "obligations": 66570338.72,
       "accounts": null,
       "nominationConfidence": "likely",
       "unitsEvidenceKind": "publishers_data_dictionary"

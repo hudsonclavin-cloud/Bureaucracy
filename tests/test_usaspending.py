@@ -64,9 +64,18 @@ class RealFixturePinTests(unittest.TestCase):
         )
 
     def test_what_the_first_pass_applied_and_held(self) -> None:
-        self.assertEqual(self.report["crosswalk_identifiers"], 47)
-        self.assertEqual(self.report["applied"], 43)
-        self.assertEqual(self.report["applied_by_level"], {"toptier": 20, "bureau": 23})
+        # 47 -> 51 identifiers, 43 -> 47 applied and toptier 20 -> 24 on
+        # 2026-11-02: the Inter-American Foundation, the African Development
+        # Foundation, the Armed Forces Retirement Home and the Trade and
+        # Development Agency were added to the graph on 2026-09-21, four days
+        # after the phase 2 pass, so no one had ever nominated them although
+        # the committed toptier list prints a non-zero figure for each. All
+        # four apply by name equality ('United States' is set aside by the
+        # canonical key), so none needs an alias and the aliased count is
+        # unchanged at three.
+        self.assertEqual(self.report["crosswalk_identifiers"], 51)
+        self.assertEqual(self.report["applied"], 47)
+        self.assertEqual(self.report["applied_by_level"], {"toptier": 24, "bureau": 23})
         held = self.report["refused"]
         # Nothing is held on spelling any more: the six that were are aliased
         # with a recorded basis, and AmeriCorps fell through to the real
