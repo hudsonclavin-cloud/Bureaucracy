@@ -7,10 +7,10 @@ Do not edit by hand; regenerate it. The 100 largest title families are in
 ## What this covers
 
 - **Part A — 1,562 unpriced positions** in the 1,542 title families outside the top 100, across **15 shards**, whole organisations per shard.
-- **Part B — 332 organisation nodes** that publish an apportioned estimate rather than a measured
+- **Part B — 333 organisation nodes** that publish an apportioned estimate rather than a measured
   cost, across **4 shards**, whole parents per shard:
   - 242 — a committee or subcommittee (no Table 5 line can ever name one)
-  - 90 — an estimate with a sourced non-cost figure already beside it
+  - 91 — an estimate with a sourced non-cost figure already beside it
   - 0 — an estimate with no sourced figure of any kind
 
 Not asked about, by construction: measured nodes and priced posts (done), and the units
@@ -3967,16 +3967,16 @@ THE UNITS:
 - leg-support-loc-copyright | Copyright Office | Bureau  [already carries: combinedStatementOutlays]
 - leg-support-loc-nls | National Library Service for the Blind and Print Disabled (NLS) | Bureau  [already carries: combinedStatementOutlays]
 
+### beneath Congressional Support Agencies  [leg-support]
+- leg-support-uscc | U.S.-China Economic and Security Review Commission | Agency  [already carries: combinedStatementOutlays]
+- leg-support-usbg | United States Botanic Garden | Agency  [already carries: ombBudget]
+
 ### beneath House Committee on Rules  [leg-house-cmte-rules]
 - leg-house-cmte-rules-sub-legislative-budget-process | Subcommittee on Legislative & Budget Process | Subcommittee
 - leg-house-cmte-rules-sub-rules-the-organization-of-the-house | Subcommittee on Rules and Organization of the House | Subcommittee
-
-### beneath Judicial Support Organizations  [jud-support]
-- jud-support-fjc | Federal Judicial Center (FJC) | Agency  [already carries: ombBudget]
-- jud-support-ussc | U.S. Sentencing Commission (USSC) | Agency  [already carries: ombBudget]
 ```
 
-## Prompt B4 — 11 parent(s), 12 unit(s)
+## Prompt B4 — 11 parent(s), 13 unit(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -4035,12 +4035,13 @@ official-published or third-party-estimated.
 
 THE UNITS:
 
+### beneath Judicial Support Organizations  [jud-support]
+- jud-support-fjc | Federal Judicial Center (FJC) | Agency  [already carries: ombBudget]
+- jud-support-ussc | U.S. Sentencing Commission (USSC) | Agency  [already carries: ombBudget]
+
 ### beneath Military Departments & Services  [exec-dept-defense-branches]
 - exec-dept-defense-af | U.S. Air Force | Military Branch  [already carries: usaspendingOutlays]
 - exec-dept-defense-army | U.S. Army | Military Branch  [already carries: usaspendingOutlays]
-
-### beneath Congressional Support Agencies  [leg-support]
-- leg-support-usbg | United States Botanic Garden | Agency  [already carries: ombBudget]
 
 ### beneath Department of Homeland Security (DHS)  [exec-dept-dhs]
 - exec-dept-dhs-fletc | Federal Law Enforcement Training Centers (FLETC) | Component Agency  [already carries: ombBudget, usaspendingOutlays]

@@ -511,13 +511,23 @@ EXPLAINS a negative: the node keeps `verificationFailure`, gains no method, and
 `scripts/report_evidence_coverage.py` counts it in the class `decided_negative`,
 outside the gap. The gate mirrors the logic stdlib-only
 (`name_decisions_standing`); `tests/test_name_decisions.py` pins the mirror
-equal. Criterion 3 reads 0 open (39 decided, 1 ledger reason); a complete list's
+equal. Criterion 3 reads 0 open (39 decided; the Southwest Border Regional Commission, the fortieth, was confirmed on its own page on 2026-10-28); a complete list's
 silence does not supersede a subcommittee (`CURATION.md` §32.3). The list
 reconciliation has fifteen kinds since the same day, the new one
 `carried_in_a_jointly_measured_node` (the Bureau of Indian Education sits in the
 Indian Affairs line), and Amtrak is `non_federal_or_international_body` by
 49 U.S.C. 24301(a)(3). "Three consecutive monthly cycles" means three scheduled
 hold-mode cycles (§32.3); the first is 2026-11-16.
+
+**The three left unsure, closed (2026-11-02, `CURATION.md` §33).** The Defense
+Acquisition University is a node (the Manual's entry 232, the `government_manual_entry`
+licence, placement "within" the Department of Defense; an independent skeptic replayed
+the row and found no collision and no Treasury row) and the Economics and Statistics
+Administration's two list entries are `former_body` rows worded as a reviewer's
+statement with the counter-evidence disclosed (a budget request and a consolidation
+assumption, no enacted instrument; 15 CFR 19.1, the Manual's 2021-dated text and an OPM
+2025 heading still name it). Criterion 4(a)'s gap reads **0**; criterion 3 reads 0 open
+of 885 organisations. Both are counts of recorded dispositions, not of new evidence.
 
 ### Existence evidence (`data_pipeline/verification/`, `data/verification/`)
 
@@ -5846,7 +5856,7 @@ exists for this source yet, and the accounts that would reach a node still
 need a reviewed table (`CURATION.md` §22.6–22.7).
 
 **The reviewed table, published (since 2026-10-21, the owner's decision).**
-`combined_statement.REVIEWED_ROWS` holds fifteen rows: §22.6's eleven,
+`combined_statement.REVIEWED_ROWS` holds sixteen rows (the sixteenth, the U.S.-China Economic and Security Review Commission's account, since 2026-11-02, CURATION.md §33.4): §22.6's eleven,
 "Capitol Buildings" → `leg-support-aoc-capitol-building`, and since the same
 evening the Library Buildings and Grounds account → Library of Congress
 Buildings and the two account lines below (`CURATION.md` §22.9). Each row lists every

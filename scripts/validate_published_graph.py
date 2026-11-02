@@ -8479,6 +8479,10 @@ COMBINED_STATEMENT_ROWS = {
         "Capitol Police Buildings and Grounds",
         ("Capitol Police Buildings and Grounds, Architect of the Capitol",),
         "Capitol Police Buildings and Grounds", "Architect of the Capitol", False),
+    "leg-support-uscc": ("U.S.-China Economic and Security Review Commission",
+                         ("Salaries and Expenses, United States-China Economic and Security Review Commission",),
+                         "China Economic and Security Review Commission", "Legislative Branch Boards and Commissions",
+                         False),
 }
 _COMBINED_STATEMENT_DOCS = None
 

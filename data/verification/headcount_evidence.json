@@ -29,7 +29,7 @@
     ],
     "agencies": 115,
     "agencies_matched": 76,
-    "subagencies_matched": 105,
+    "subagencies_matched": 106,
     "total_employees": 2289472,
     "agency_total_rows_found": 0,
     "ambiguous_agencies": [],
@@ -2471,7 +2471,7 @@
           "direction": "opm_higher"
         }
       ],
-      "no_curated_figure": 53,
+      "no_curated_figure": 54,
       "no_curated_figure_nodes": [
         {
           "node": "exec-independent-general-services-administration",
@@ -2573,6 +2573,12 @@
           "node": "exec-dept-usda-foreign-agricultural-service",
           "name": "Foreign Agricultural Service",
           "opm": 693,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-defense-agency-defense-acquisition-university",
+          "name": "Defense Acquisition University",
+          "opm": 657,
           "curatedText": null
         },
         {
@@ -9718,6 +9724,29 @@
       "previous": {
         "period": "2024-09",
         "employees": 739
+      }
+    },
+    "exec-dept-defense-agency-defense-acquisition-university": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "DEFENSE ACQUISITION UNIVERSITY",
+      "agencyCode": "DD",
+      "agencyListedName": "DEPARTMENT OF DEFENSE",
+      "agencyMatched": "exec-dept-defense",
+      "subagencyCode": "DD81",
+      "employees": 657,
+      "agencyEmployees": 158689,
+      "agencySubagencyRows": 33,
+      "previous": {
+        "period": "2024-09",
+        "employees": 671
       }
     },
     "exec-dept-doc-ntia": {

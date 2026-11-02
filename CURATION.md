@@ -7741,3 +7741,130 @@ Not decided here because it is not this repository's to decide: the repository
 setting "Allow GitHub Actions to create and approve pull requests". Without it
 each scheduled cycle ends with an `update/` branch and a compare link in the job
 summary instead of a pull request; the cycle still counts.
+
+## 33. The research sweep of 2026-11-02: the unsure list entries, FedScope's successor and the OMB-named rows
+
+Four read-only research agents, each followed by an independent skeptic told to
+refute it (workflow `dod-research-sweep`), covered the four open items. All four
+findings were upheld; three of the skeptics required wording amendments, which are
+applied below. Nothing here was taken from an agent's say-so: each quote was
+re-fetched or re-read from the committed fixture by a second agent.
+
+### 33.1 The three entries §13.6 left unsure
+
+- **Defense Acquisition University is a node.** The Manual (2025-12-31, entry 232)
+  files it under "Joint Service Schools" under "Defense Agencies" under the Department
+  of Defense, exactly where it files the three schools already drawn beneath
+  "Defense Agencies & Field Activities". `data/curation/new_nodes.json` carries the
+  row (`government_manual_entry`, placement "within" the department, since neither
+  scaffolding heading is a node). Checked before writing it: no node, sibling or alias
+  of that name; no Treasury Table 5 row in any committed statement, so it is not
+  jointly measured and adds no measured cost; OMB's two acquisition accounts are not
+  named for the university. 10 U.S.C. 1746 (fetched from govinfo, 2024 edition) has the
+  Secretary of Defense, acting through the Under Secretary of Defense for Acquisition
+  and Sustainment, "establish and maintain a defense acquisition university structure"
+  and that officer "appoint the President of the Defense Acquisition University"; OPM's
+  current Plum export lists the President's post, FedScope lists DD81 (657 civilians,
+  March 2025), and Executive Order 14402 (May 2026) names the university. **Not
+  established:** the university's own page (dau.edu is refused at this session's proxy,
+  acq.osd.mil answered 503, defense.gov refuses). The statute and the Plum export file
+  it under the Under Secretary's office, which this graph does not draw; that reporting
+  line is not claimed. The §13.6 worry that it belongs beside the intelligence agencies
+  does not hold: the grouping already holds logistics, finance, health, education,
+  contract and legal agencies and three universities.
+- **The Economics and Statistics Administration is recorded `former_body` on both
+  lists, as a reviewer's statement and not as a finding that it was abolished.** For:
+  the FY2018 budget justification (BEA's copy) says ESA "will cease operations as a
+  bureau within DOC"; the FY2019 one "assumes the consolidation of [ESA] as a Bureau
+  within the Office of the Under Secretary for Economic Affairs, BEA and Census Bureau,
+  as requested in the FY 2018 Budget"; the Federal Register's last ESA-issued notice in
+  one series is 2018-09-13 and the first from the Under Secretary's office is
+  2019-05-22; BEA's FY2026 submission prints the Under Secretary's office beside Census
+  and BEA with no ESA. Against, still current and disclosed in both rows: 15 CFR 19.1
+  lists ESA "including the Bureau of Economic Analysis, and the Bureau of the Census"
+  among Commerce's bureaus (the same sentence lists a Technology Administration, which
+  corroborates that the regulation is stale); 15 CFR Part 4 Appendix B; the Manual's
+  2025 edition prints an entry whose personnel and sources are dated 2021; OPM's
+  career-reserved SES notice for CY2024 (FR 2025-05-20) prints it as a heading. The
+  evidence of cessation is a budget request and an assumption: no enacted instrument or
+  Commerce organization order was found, only BEA's submissions were read (commerce.gov
+  refuses this session), so the row says "ceased operating as a bureau" and nothing
+  stronger. The graph already draws the Census Bureau and BEA directly under Commerce,
+  where the Federal Register directory and OPM file them; no node is added, nothing is
+  re-parented. If the owner draws the Office of the Under Secretary for Economic
+  Affairs, the rows become `predecessor_of_a_node`.
+
+**Effect.** Criterion 4(a)'s gap 3 → 0. That is a count of dispositions: the ESA rows
+close it on a reviewer's statement and a reader who wants the strict standard should
+read the second bullet as "recorded, with the counter-evidence beside it".
+
+### 33.2 What the sweep changed in the tests
+
+`test_a_more_specific_parent_inside_the_licensed_region_is_allowed` used DAU as its
+deliberately absent subject. It now removes DAU from a scratch copy of the curated file
+and replays the licence against that, which cannot be invalidated by the unit being
+added (the third time a unit has been consumed by its own test; the Defense Commissary
+Agency was the first).
+
+### 33.3 FedScope: a successor product exists; the download is held
+
+OPM's page says Federal Workforce Data (data.opm.gov) "was launched in January 2026";
+`www.fedscope.opm.gov` answers 301 to it; `www.opm.gov/data/datasets/` lists no FedScope
+edition after March 2025. FWD's newest employment edition is August 2026 (published
+2026-10-04), a record-level ZSTD Parquet of about 57 MB (2,024,832 rows), listed at
+`https://data.opm.gov/api/v1/files/employment?current=true` and downloaded from
+`/api/v1/files/employment/{year}/{month}/{version}/download`; `data.opm.gov/robots.txt`
+is a 404 (nothing to obey). The next release is stated as 2026-11-04. **Held, for the
+owner:** the headcount, payroll and gate readers are stdlib-only and read the FedScope
+zip's table, and this Python has no Parquet or ZSTD reader; FWD carries a per-record pay
+column (with REDACTED values) rather than a printed average, so a payroll figure would be
+a mean this repository computes; its population sentence says "pay or non-pay status";
+and a monthly file is 57-76 MB against a verbatim-fixture rule. September 2024 matches the
+committed FedScope total exactly (2,313,216 rows), March 2025 is 280 rows short of the
+committed preliminary file. The registry row's `note` records this; its label and cadence
+still describe the copy in use, so its status stays overdue, which is true. Corrected here:
+the fixtures README said OPM's page "says FedScope was succeeded"; it does not, and no page
+read says FedScope is retired.
+
+### 33.4 The OMB-named rows: one built, the rest are decisions
+
+19 organisations name a held document without a licensed figure. The agent classed 13 as
+reviewable, 2 as not (the Senate's Secretary and Sergeant at Arms accounts are not the whole
+of either office) and 4 as undecidable; the skeptic re-found every figure and added a
+cheaper route the agent missed.
+
+- **Built:** the U.S.-China Economic and Security Review Commission, from the Combined
+  Statement. The chapter's account "Salaries and Expenses, United States-China Economic
+  and Security Review Commission" (292-2973, under "Legislative Branch Boards and
+  Commissions", FY2025 net outlays $4,208,729.08) is the only account carrying the phrase;
+  the Congressional-Executive Commission is a different body. It is the sixteenth
+  `combined_statement.REVIEWED_ROWS` entry, mirrored in the gate; both agents replayed it
+  against the module and the graph (published, none refused). OMB prints the same account
+  at $4,000 thousand, which corroborates the order of magnitude and is not used.
+- **Not built, and why.** The other reviewable rows need an OMB account-level reviewed table
+  (agency + bureau + account code), which does not exist: a name-only sum is wrong where the
+  same title appears under two agencies (the Office for Civil Rights is an Education account
+  of $135m and an HHS account of $43m). Several are honest only as owner decisions: bureaus
+  OMB files under a presentation grouping the graph refuses as a parent (the Inter-American
+  and African Development Foundations, the Trade and Development Agency, the Armed Forces
+  Retirement Home), the Court of Appeals for the Armed Forces filed by OMB under Defense
+  while the graph draws it in the judiciary, the National Cemetery Administration's partial
+  coverage, and the Retirement Home's net of $53m against $44m if the interest account is
+  counted. Justice's National Security Division is blocked only by a name collision with the
+  Congressional Budget Office's division, and scoping the bureau match to the agency's subtree
+  reaches exactly that one pair.
+- **A cheaper route the first agent missed (not built).** USAspending's toptier list prints
+  non-zero outlays for the Inter-American Foundation, the African Development Foundation, the
+  Armed Forces Retirement Home and the Trade and Development Agency, and its Justice
+  sub-components file prints the National Security Division, none of which has a File A
+  figure on its node. Why `derive_usaspending_evidence.py` does not match them is the next
+  thing to check before any OMB table is written.
+
+### 33.5 What running the job taught, recorded rather than fixed
+
+The first live fetch-and-swap (DOJ's AUSA pay chart, 2026-11-02) replaced the fixture
+because the page's bytes differ, but only its chrome changed (stylesheet hashes, a logo's
+alt text): the table is still headed "tables for 2025", no figure moved, and the source stays
+overdue, correctly. A monthly refetch of that page will therefore swap the fixture every
+cycle without a figure moving. The registry's `contentCheck` could compare the table's own
+text rather than the bytes; that is a change to the job and is the owner's to ask for.

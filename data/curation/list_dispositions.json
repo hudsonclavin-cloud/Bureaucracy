@@ -123,16 +123,9 @@
   {
    "list": "government_manual",
    "entry": "Economics and Statistics Administration",
-   "disposition": "unsure",
-   "basis": "CURATION.md §13.6: absent by every probe, and whether it still exists as a distinct unit rather than as the Under Secretary for Economic Affairs' office could not be established. Left unsure rather than guessed.",
-   "addedOn": "2026-10-22"
-  },
-  {
-   "list": "government_manual",
-   "entry": "Defense Acquisition University",
-   "disposition": "unsure",
-   "basis": "CURATION.md §13.6: absence confirmed; whether it belongs under 'Defense Agencies & Field Activities' beside the intelligence agencies or under a schools grouping the graph lacks was questioned and not settled.",
-   "addedOn": "2026-10-22"
+   "disposition": "former_body",
+   "basis": "Reviewer's statement (2026-11-02), not a document that abolishes the unit. What the documents say: Commerce's FY2018 budget justification, as published by BEA, says ESA 'will cease operations as a bureau within DOC' and that the Under Secretary's function as ESA's Administrator 'will cease in FY 2018'; the FY2019 justification 'assumes the consolidation of the Economics and Statistics Administration (ESA) as a Bureau within the Office of the Under Secretary for Economic Affairs, BEA and Census Bureau, as requested in the FY 2018 Budget'; the Federal Register's last ESA-issued notice in the performance-review series is 2018-09-13 and the first from the Office of the Under Secretary for Economic Affairs is 2019-05-22; BEA's FY2026 submission prints that Office beside Census and BEA with no ESA. Those are a request and an assumption, and no enacted instrument or Commerce organization order was found, so the row says 'ceased operating as a bureau' and nothing stronger. Counter-evidence that is still current and is disclosed here: 15 CFR 19.1 lists ESA, 'including the Bureau of Economic Analysis, and the Bureau of the Census', among Commerce's bureaus (the same sentence lists a Technology Administration); 15 CFR Part 4 Appendix B still lists it; OPM's career-reserved SES notice for CY2024 (FR 2025-05-20) prints it as a heading above Census Bureau positions. Only BEA's budget submissions were read, not Commerce's own (commerce.gov refuses this session). The Manual's 2025-12-31 edition still prints an entry for ESA, headed by the Under Secretary for Economic Affairs with three components, but its personnel and sources are dated 2021, about three years after the consolidation, so the entry is not evidence of current operation. The graph draws the Census Bureau and BEA directly under the Department of Commerce, where the Federal Register directory and OPM file them; no node is added and nothing is re-parented. If the owner draws the Office of the Under Secretary for Economic Affairs, this row can become predecessor_of_a_node.",
+   "addedOn": "2026-11-02"
   },
   {
    "list": "government_manual",
@@ -2890,9 +2883,9 @@
   {
    "list": "federal_register_directory",
    "entry": "Economics and Statistics Administration",
-   "disposition": "unsure",
-   "basis": "CURATION.md §13.6 and the Manual's row: whether it still exists as a distinct unit rather than as the Under Secretary for Economic Affairs' office could not be established.",
-   "addedOn": "2026-10-22"
+   "disposition": "former_body",
+   "basis": "Reviewer's statement (2026-11-02), not a document that abolishes the unit. What the documents say: Commerce's FY2018 budget justification, as published by BEA, says ESA 'will cease operations as a bureau within DOC' and that the Under Secretary's function as ESA's Administrator 'will cease in FY 2018'; the FY2019 justification 'assumes the consolidation of the Economics and Statistics Administration (ESA) as a Bureau within the Office of the Under Secretary for Economic Affairs, BEA and Census Bureau, as requested in the FY 2018 Budget'; the Federal Register's last ESA-issued notice in the performance-review series is 2018-09-13 and the first from the Office of the Under Secretary for Economic Affairs is 2019-05-22; BEA's FY2026 submission prints that Office beside Census and BEA with no ESA. Those are a request and an assumption, and no enacted instrument or Commerce organization order was found, so the row says 'ceased operating as a bureau' and nothing stronger. Counter-evidence that is still current and is disclosed here: 15 CFR 19.1 lists ESA, 'including the Bureau of Economic Analysis, and the Bureau of the Census', among Commerce's bureaus (the same sentence lists a Technology Administration); 15 CFR Part 4 Appendix B still lists it; OPM's career-reserved SES notice for CY2024 (FR 2025-05-20) prints it as a heading above Census Bureau positions. Only BEA's budget submissions were read, not Commerce's own (commerce.gov refuses this session). The directory prints ESA with no child agencies and files the Census Bureau and BEA directly under Commerce, which is how the graph draws them; no node is added and nothing is re-parented. The Office of the Under Secretary for Economic Affairs, which the directory also lists, is already disposed as a unit beneath a node not drawn.",
+   "addedOn": "2026-11-02"
   },
   {
    "list": "federal_register_directory",

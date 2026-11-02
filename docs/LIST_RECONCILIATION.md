@@ -9,13 +9,13 @@ the dispositions re-adjudicate.
 node or recorded as deliberately not one, and every curated committee name a complete
 list lacks is resolved. The gap, as one number:
 
-- **criterion 4(a) gap: 3** = 3 list entries unresolved + 0 distinct real units the lists name and the graph has not added + 0 curated committee names unresolved
+- **criterion 4(a) gap: 0** = 0 list entries unresolved + 0 distinct real units the lists name and the graph has not added + 0 curated committee names unresolved
 - rows refused on re-adjudication: 0
 
 | list | version | entries | reach a node | disposed | unresolved | addable | curated names the list lacks | of them unresolved |
 |---|---|---|---|---|---|---|---|---|
-| United States Government Manual, agency entries | edition 2025-12-31 | 231 | 189 | 42 | 2 | 0 | 0 | 0 |
-| Federal Register agency directory | fetched 2026-09-08 | 472 | 210 | 262 | 1 | 0 | 0 | 0 |
+| United States Government Manual, agency entries | edition 2025-12-31 | 231 | 190 | 41 | 0 | 0 | 0 | 0 |
+| Federal Register agency directory | fetched 2026-09-08 | 472 | 210 | 262 | 0 | 0 | 0 | 0 |
 | USAspending toptier agencies | 111 agencies as committed | 111 | 97 | 14 | 0 | 0 | 0 | 0 |
 | Senate committee list (committees and subcommittees) | 24 committees as committed | 94 | 86 | 8 | 0 | 0 | 11 | 0 |
 | House Clerk committee list (committees and subcommittees) | 27 committees as committed | 136 | 131 | 5 | 0 | 0 | 10 | 0 |
@@ -28,7 +28,7 @@ would add it, counted in the gap and never as reconciled.
 
 ## United States Government Manual, agency entries
 
-231 entries (edition 2025-12-31); 189 reach a node by the list's own matcher; 42 do not, of which 42 carry an accepted disposition.
+231 entries (edition 2025-12-31); 190 reach a node by the list's own matcher; 41 do not, of which 41 carry an accepted disposition.
 
 | disposition | entries |
 |---|---|
@@ -37,15 +37,10 @@ would add it, counted in the gap and never as reconciled.
 | `distinct_from_the_graphs_unit` — a different unit from the graph's, by population | 3 |
 | `names_a_node_under_another_wording` — names a node under another wording | 2 |
 | `carried_as_a_post` — carried as its head's post | 2 |
-| `unsure` — left unsure (unresolved) | 2 |
+| `former_body` — a body that no longer exists | 1 |
 | `carried_in_a_jointly_measured_node` — carried_in_a_jointly_measured_node | 1 |
 | `umbrella_body_drawn_as_its_members` — a statutory umbrella drawn as its members | 1 |
 | `predecessor_of_a_node` — a former unit whose functions a node holds | 1 |
-
-**Unresolved:**
-
-- Defense Acquisition University — `unsure`: CURATION.md §13.6: absence confirmed; whether it belongs under 'Defense Agencies & Field Activities' beside the intelligence agencies or under a schools grouping the graph lacks was questioned and not settled.
-- Economics and Statistics Administration — `unsure`: CURATION.md §13.6: absent by every probe, and whether it still exists as a distinct unit rather than as the Under Secretary for Economic Affairs' office could not be established. Left unsure rather than guessed.
 
 <details><summary>Every other disposition, entry by entry</summary>
 
@@ -59,6 +54,7 @@ would add it, counted in the gap and never as reconciled.
 - Department of the Air Force — `distinct_from_the_graphs_unit` (node `exec-dept-defense-af`): The civilian military department and the uniformed service are different units with different populations; the graph carries the service and no node for the department (CURATION.md §5 and §13.2; the same split refused for FedScope and the PLUM exports).
 - Department of the Army — `distinct_from_the_graphs_unit` (node `exec-dept-defense-army`): The civilian military department and the uniformed service are different units with different populations; the graph carries the service and no node for the department (CURATION.md §5 and §13.2; the same split refused for FedScope and the PLUM exports).
 - Department of the Navy — `distinct_from_the_graphs_unit` (node `exec-dept-defense-navy`): The civilian military department and the uniformed service are different units with different populations; the graph carries the service and no node for the department (CURATION.md §5 and §13.2; the same split refused for FedScope and the PLUM exports).
+- Economics and Statistics Administration — `former_body`: Reviewer's statement (2026-11-02), not a document that abolishes the unit. What the documents say: Commerce's FY2018 budget justification, as published by BEA, says ESA 'will cease operations as a bureau within DOC' and that the Under Secretary's function as ESA's Administrator 'will cease in FY 2018'; the FY2019 justification 'assumes the consolidation of the Economics and Statistics Administration (ESA) as a Bureau within the Office of the Under Secretary for Economic Affairs, BEA and Census Bureau, as requested in the FY 2018 Budget'; the Federal Register's last ESA-issued notice in the performance-review series is 2018-09-13 and the first from the Office of the Under Secretary for Economic Affairs is 2019-05-22; BEA's FY2026 submission prints that Office beside Census and BEA with no ESA. Those are a request and an assumption, and no enacted instrument or Commerce organization order was found, so the row says 'ceased operating as a bureau' and nothing stronger. Counter-evidence that is still current and is disclosed here: 15 CFR 19.1 lists ESA, 'including the Bureau of Economic Analysis, and the Bureau of the Census', among Commerce's bureaus (the same sentence lists a Technology Administration); 15 CFR Part 4 Appendix B still lists it; OPM's career-reserved SES notice for CY2024 (FR 2025-05-20) prints it as a heading above Census Bureau positions. Only BEA's budget submissions were read, not Commerce's own (commerce.gov refuses this session). The Manual's 2025-12-31 edition still prints an entry for ESA, headed by the Under Secretary for Economic Affairs with three components, but its personnel and sources are dated 2021, about three years after the consolidation, so the entry is not evidence of current operation. The graph draws the Census Bureau and BEA directly under the Department of Commerce, where the Federal Register directory and OPM file them; no node is added and nothing is re-parented. If the owner draws the Office of the Under Secretary for Economic Affairs, this row can become predecessor_of_a_node.
 - European Bank for Reconstruction and Development — `non_federal_or_international_body`: An international organisation the United States belongs to, which the Manual lists among multilateral organisations; not a unit of the federal government.
 - Federally Aided Corporations — `scaffolding`: One of the Manual's own grouping headings, the way 'Other Defense Civil Programs' is a Treasury grouping; the graph groups the same units differently and neither is wrong (CURATION.md §13.2).
 - Gallaudet University — `non_federal_or_international_body`: Listed by the Manual under its own heading 'Federally Aided Corporations': a private or chartered institution that receives federal appropriations, not a unit of the federal government.
@@ -98,7 +94,7 @@ would add it, counted in the gap and never as reconciled.
 
 | disposition | entries |
 |---|---|
-| `former_body` — a body that no longer exists | 92 |
+| `former_body` — a body that no longer exists | 93 |
 | `unit_beneath_a_node_not_drawn` — a live office beneath a node, not drawn | 80 |
 | `body_outside_the_graphs_scope` — an advisory, interagency or temporary body outside the graph's scope | 23 |
 | `names_a_node_under_another_wording` — names a node under another wording | 22 |
@@ -106,12 +102,7 @@ would add it, counted in the gap and never as reconciled.
 | `non_federal_or_international_body` — not a unit of the federal government | 15 |
 | `carried_as_a_post` — carried as its head's post | 4 |
 | `distinct_from_the_graphs_unit` — a different unit from the graph's, by population | 3 |
-| `unsure` — left unsure (unresolved) | 1 |
 | `umbrella_body_drawn_as_its_members` — a statutory umbrella drawn as its members | 1 |
-
-**Unresolved:**
-
-- Economics and Statistics Administration — `unsure`: CURATION.md §13.6 and the Manual's row: whether it still exists as a distinct unit rather than as the Under Secretary for Economic Affairs' office could not be established.
 
 <details><summary>Every other disposition, entry by entry</summary>
 
@@ -171,6 +162,7 @@ would add it, counted in the gap and never as reconciled.
 - Disability Employment Policy Office — `unit_beneath_a_node_not_drawn` (beneath `exec-dept-dol`): A live office the graph draws coarser than the directory: it sits beneath the node named here, which the graph carries, and is not drawn as a node of its own. Recorded, not added: the directory is an index of publishers, not an organisation chart, and a node needs the unit's own page or the Manual to license it (CLAUDE.md, usa.gov's A-to-Z index, the same reasoning).
 - Economic Analysis Staff — `former_body`: A USDA staff office of 1982 that no longer appears in the Department's organisation; the directory lists no site. Reviewer's statement: the directory's text does not itself state the ending.
 - Economic Research Service — `unit_beneath_a_node_not_drawn` (beneath `exec-dept-usda`): A live office the graph draws coarser than the directory: it sits beneath the node named here, which the graph carries, and is not drawn as a node of its own. Recorded, not added: the directory is an index of publishers, not an organisation chart, and a node needs the unit's own page or the Manual to license it (CLAUDE.md, usa.gov's A-to-Z index, the same reasoning).
+- Economics and Statistics Administration — `former_body`: Reviewer's statement (2026-11-02), not a document that abolishes the unit. What the documents say: Commerce's FY2018 budget justification, as published by BEA, says ESA 'will cease operations as a bureau within DOC' and that the Under Secretary's function as ESA's Administrator 'will cease in FY 2018'; the FY2019 justification 'assumes the consolidation of the Economics and Statistics Administration (ESA) as a Bureau within the Office of the Under Secretary for Economic Affairs, BEA and Census Bureau, as requested in the FY 2018 Budget'; the Federal Register's last ESA-issued notice in the performance-review series is 2018-09-13 and the first from the Office of the Under Secretary for Economic Affairs is 2019-05-22; BEA's FY2026 submission prints that Office beside Census and BEA with no ESA. Those are a request and an assumption, and no enacted instrument or Commerce organization order was found, so the row says 'ceased operating as a bureau' and nothing stronger. Counter-evidence that is still current and is disclosed here: 15 CFR 19.1 lists ESA, 'including the Bureau of Economic Analysis, and the Bureau of the Census', among Commerce's bureaus (the same sentence lists a Technology Administration); 15 CFR Part 4 Appendix B still lists it; OPM's career-reserved SES notice for CY2024 (FR 2025-05-20) prints it as a heading above Census Bureau positions. Only BEA's budget submissions were read, not Commerce's own (commerce.gov refuses this session). The directory prints ESA with no child agencies and files the Census Bureau and BEA directly under Commerce, which is how the graph draws them; no node is added and nothing is re-parented. The Office of the Under Secretary for Economic Affairs, which the directory also lists, is already disposed as a unit beneath a node not drawn.
 - Electronic Commerce Advisory Commission — `former_body`: Reported in April 2000 and terminated under the Internet Tax Freedom Act; the directory lists no site. Reviewer's statement: the directory's text does not itself state the ending.
 - Emergency Oil and Gas Guaranteed Loan Board — `former_body`: A loan-guarantee board of 1999 whose authority expired; the directory lists no site. Reviewer's statement: the directory's text does not itself state the ending.
 - Emergency Steel Guarantee Loan Board — `former_body`: A loan-guarantee board of 1999 whose authority expired; the directory lists no site. Reviewer's statement: the directory's text does not itself state the ending.

@@ -154,13 +154,28 @@ class WriterRefusalTests(unittest.TestCase):
         # which the Manual's chain does name — and the row is allowed under the
         # looser "within" rule rather than refused.
         #
-        # Deliberately a unit still absent from the curated file: CURATION.md
-        # §13.6 leaves the Defense Acquisition University unsure, so it is not
-        # added and this test cannot be invalidated by its own subject being
-        # added, which is what happened to the Defense Commissary Agency.
-        item = self.only(run_table([self.row(
-            id="test-scratch-within", parentId="exec-dept-defense-agencies",
-            name="Defense Acquisition University", type="Defense Agency")]))
+        # Run against a scratch copy of the curated file with the Defense
+        # Acquisition University taken out. That unit was this test's subject
+        # while CURATION.md 13.6 left it unsure; it became a node on
+        # 2026-11-02 (the row is in data/curation/new_nodes.json), so the
+        # committed file can no longer supply an absent unit and the test
+        # removes it from a copy instead, which cannot be invalidated by the
+        # unit being added, as happened to the Defense Commissary Agency.
+        base = json.loads((PROJECT_ROOT / "data" / "federal_gov_complete_1.json").read_text(encoding="utf-8"))
+
+        def drop(node):
+            node["children"] = [c for c in node.get("children") or []
+                                if c.get("id") != "exec-dept-defense-agency-defense-acquisition-university"]
+            for c in node["children"]:
+                drop(c)
+
+        drop(base)
+        with tempfile.TemporaryDirectory() as tmp:
+            scratch = Path(tmp) / "base.json"
+            scratch.write_text(json.dumps(base), encoding="utf-8")
+            item = self.only(run_table([self.row(
+                id="test-scratch-within", parentId="exec-dept-defense-agencies",
+                name="Defense Acquisition University", type="Defense Agency")], extra=("--base-graph", str(scratch))))
         self.assertTrue(item["added"], item)
 
     def test_a_unit_the_treasury_reports_jointly_is_refused(self):

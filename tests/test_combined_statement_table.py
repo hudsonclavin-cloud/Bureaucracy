@@ -171,9 +171,9 @@ class ApplyTests(unittest.TestCase):
     def test_apply_stamps_fifteen_and_withdraws_what_it_no_longer_has(self):
         graph = copy.deepcopy(shared()["base"])
         stats = cs.apply_combined_statement_evidence(graph, shared()["records"])
-        self.assertEqual(stats["applied"], 15)
+        self.assertEqual(stats["applied"], 16)
         stats = cs.apply_combined_statement_evidence(graph, {})
-        self.assertEqual(stats["withdrawn_first"], 15)
+        self.assertEqual(stats["withdrawn_first"], 16)
         self.assertFalse(any(cs.FIELD in n for n, _ in walk(graph)))
 
     def test_apply_refuses_an_unlisted_node_a_rename_and_a_moved_record(self):
@@ -212,7 +212,7 @@ class GateTests(unittest.TestCase):
     def test_the_true_blocks_pass(self):
         self.assertNotIn("error", self.docs)
         self.assertEqual(self.check(copy.deepcopy(self.graph)), [])
-        self.assertEqual(sum(1 for n, _ in walk(self.graph) if cs.FIELD in n), 15)
+        self.assertEqual(sum(1 for n, _ in walk(self.graph) if cs.FIELD in n), 16)
 
     def test_each_corruption_is_refused(self):
         single, double, commission = "leg-support-loc-crs", "leg-support-aoc-capitol-visitor-center", "exec-ind-misc-macpac"
@@ -387,7 +387,7 @@ class WeightTests(unittest.TestCase):
                       and parents[n["id"]] == "leg-support-aoc"]
         self.assertEqual(len(unweighted), 4)
         self.assertTrue(all(n.get("cost_status") == "unavailable" and "Position" in n.get("type", "") for n in unweighted))
-        self.assertEqual(sum(1 for n in nodes if cs.FIELD in n), 15)
+        self.assertEqual(sum(1 for n in nodes if cs.FIELD in n), 16)
         by_id = {n["id"]: n for n in nodes}
         aoc = by_id["leg-support-aoc"]
         units = sum(by_id[i]["resolved_total_amount"] for i in weighted)

@@ -213,7 +213,7 @@ list_dispositions.json` disposes of every one of the 403 entries that reach no
 node across the five lists (44 Manual, 270 directory, 20 toptier, 8 Senate, 7
 House, 54 Plum) and of all 21 curated committee names the two complete lists
 lack (11 Senate, 10 House), each row re-adjudicated against the committed list
-on every run. **Gap: 19 on 2026-10-22, 3 since 2026-10-26** (14 of the 16 units were added, Amtrak is non-federal by statute and the Bureau of Indian Education is carried in a jointly measured node; CURATION.md §32.1, §32.3) = 3 entries left unsure + 16 distinct real units the
+on every run. **Gap: 19 on 2026-10-22, 3 on 2026-10-26, 0 since 2026-11-02** (14 of the 16 units were added, Amtrak is non-federal by statute and the Bureau of Indian Education is carried in a jointly measured node; CURATION.md §32.1, §32.3) = 3 entries left unsure + 16 distinct real units the
 lists name and the graph has not added + 0 curated names unresolved. The
 sixteen are counted on purpose: a unit recorded as "not added, here is the
 route" is neither a node nor deliberately not one. Eight of them need a
@@ -411,8 +411,8 @@ settle publishes automatically, and everything that needs judgement is held.
 |---|---|---|---|---|
 | 1 | Money | 0 bare estimates | 0 (359 explained blanks; 341 have no held document naming the unit) | 0 by the test; the 18 named-but-unlicensed rows are the route to more figures |
 | 2 | Pay | 0 posts unpriced and unexplained | 3,221 (every one with a documents-checked blank since 2026-10-22) | 3,221 |
-| 3 | Evidence | every current organisation sourced | 884 current organisations; 0 open: 39 checked-and-not-found with a standing decision to keep the name, 1 with a ledger reason | 0 open (CURATION.md §32.3); the 39 still publish their negative and none gained a method |
-| 4a | Lists | every list unit reconciled | every unmatched entry disposed, 21 of 21 curated names resolved; 14 of the 16 real units added 2026-10-26 (CURATION.md §32.1) | 3: the §13.6 unknowns (Defense Acquisition University; Economics and Statistics Administration, on two lists) |
+| 3 | Evidence | every current organisation sourced | 885 current organisations; 0 open: 39 checked-and-not-found with a standing decision to keep the name; the fortieth of the old gap, the Southwest Border Regional Commission, was confirmed on sbrc.gov by the 2026-10-28 loop | 0 open (CURATION.md §32.3); the 39 still publish their negative and none gained a method |
+| 4a | Lists | every list unit reconciled | every unmatched entry disposed, 21 of 21 curated names resolved; 14 of the 16 real units added 2026-10-26 (CURATION.md §32.1) | 0 (2026-11-02: DAU added; ESA recorded `former_body` on both lists, CURATION.md §33.1) |
 | 4b | Money traced | every measured parent sums visibly | 57 of 57 measured units with parts show the sum; not attributed 0 (2026-10-22) | $3.15tn beneath 22 units (September statement) is still apportioned to estimated children, now named |
 | R | Reader | four features | 4 of 4 (figures explain themselves; totals add up visibly; change history; export/download) | — |
 | 5 | Self-update | 3 clean automatic cycles | job and monthly hold-mode workflow (the 16th, after the statement's latest possible publication) built 2026-10-22; run on GitHub's runner 2026-10-22 (clean); 0 SCHEDULED cycles counted — a cycle a person started proves the job works and is not counted | three clean scheduled cycles, then the owner's switch to --publish; earliest mid-January 2027 |
