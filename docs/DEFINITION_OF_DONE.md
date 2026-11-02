@@ -109,6 +109,27 @@ holdings, not a document establishing that no figure exists. The measurement
 sharpens the counterargument below: 1,624 of the 2,158 `unreached` titles
 appear in no held document at all, and most are curated templates.
 
+**The gap by cause, measured on 2026-11-02** (a read of the published graph with
+`report_research_prompts.family_name`; the four reasons above split by how much
+research could still reach). 3,221 posts:
+
+| cause | posts | what would close it |
+|---|---|---|
+| beneath a replaced VA network (paused) | 432 | a VA document mapping medical centres to the five current networks |
+| states a multiplicity (`×N`), no claim holds for every holder | 611 | a document pricing the whole class, or a decision that a counted node is not one post |
+| listed by OPM with no rate printed | 20 | nothing: the export prints none |
+| unreached; the title recurs in 5 or more organisations (a stamp: `Chief Financial Officer` 60, `Chief of Staff` 58, `General Counsel` 51, `Inspector General` 49, the regional-office set 30 each) | 850 | a pay document for each organisation's own post, or the curation decision that the stamp is a template, not a post |
+| unreached; the title recurs in 2-4 organisations | 93 | as above |
+| unreached; the title is unique to one organisation (court-support directors, Federal Reserve staff, FBI and embassy posts, Senate Sergeant at Arms) | 1,215 | a pay document per organisation |
+
+Fourteen research batches asked about 627 posts and priced 11 (CLAUDE.md, the
+thirteenth batch). Read with that yield, the first three rows (1,063 posts) are
+decisions, not research, and the stamped titles (943) are a curation question
+before they are a pay question; about 1,215 posts are genuinely researchable and
+the batches' own rate says most of those will answer "no document". `docs/GO.md`'s
+loop script reported this criterion as closed (Pay gap 0) until 2026-11-02 because
+it counted the `payNoDocument` blank as a terminal reason; it no longer does.
+
 **Route.**
 - Research packs 3–5.
 - The VA re-homing, which waits on a VA document mapping medical centres to
