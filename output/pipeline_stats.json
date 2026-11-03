@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-02T20:41:06.806886+00:00",
+  "timestamp": "2026-11-03T17:26:15.598505+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5498,
@@ -425,7 +425,7 @@
       "failed_checks_withdrawn": 6,
       "page_negatives_superseded": 0
     },
-    "headcount_evidence": {
+    "headcount_evidence_fedscope": {
       "listed": 182,
       "unknown_node": 0,
       "not_an_organisation": 0,
@@ -434,12 +434,25 @@
       "outside_stated_coverage": 1,
       "below_its_subtree": 0
     },
+    "headcount_evidence": {
+      "listed": 186,
+      "unknown_node": 0,
+      "not_an_organisation": 0,
+      "stale_name": 0,
+      "undated": 0,
+      "outside_stated_coverage": 2,
+      "below_its_subtree": 0
+    },
     "payroll_evidence": {
       "published": 181,
       "no_matching_rows": 0,
       "post_refused": 0,
       "measured_equal_refused": 0,
-      "total_annual_pay": 322257566747
+      "total_annual_pay": 322257566747,
+      "unknown_node": 0,
+      "not_an_organisation": 0,
+      "stale_name": 0,
+      "undated": 0
     },
     "position_evidence": {
       "listed": 138,
@@ -795,17 +808,17 @@
       }
     },
     "source_registry": {
-      "sources": 27,
+      "sources": 28,
       "refused": [],
       "counts": {
-        "current": 24,
+        "current": 25,
         "newer_edition_expected": 0,
-        "overdue": 2,
+        "overdue": 1,
         "recheck_due": 0,
-        "closed_record": 1,
+        "closed_record": 2,
         "copy_date_unknown": 0
       },
-      "asOf": "2026-11-02"
+      "asOf": "2026-11-03"
     },
     "budget_reconciliation": {
       "nodes_seen": 5527,
@@ -866,7 +879,7 @@
     "partial_cost_node_count": 0,
     "unverified_cost_node_count": 5354,
     "mixed_weight_sibling_sets_implied": 16,
-    "headcount_weights_disputed_by_opm": 10,
+    "headcount_weights_disputed_by_opm": 12,
     "allocations_below_precision": 0,
     "posts_not_apportioned": 3859,
     "posts_unweighted_in_dollar_splits": 52,
@@ -920,7 +933,7 @@
       "partial_cost_node_count": 0,
       "unverified_cost_node_count": 5354,
       "mixed_weight_sibling_sets_implied": 16,
-      "headcount_weights_disputed_by_opm": 10,
+      "headcount_weights_disputed_by_opm": 12,
       "allocations_below_precision": 0,
       "posts_not_apportioned": 3859,
       "posts_unweighted_in_dollar_splits": 52,

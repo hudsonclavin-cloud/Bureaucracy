@@ -449,7 +449,7 @@ settle publishes automatically, and everything that needs judgement is held.
 | 4b | Money traced | every measured parent sums visibly | 57 of 57 measured units with parts show the sum; not attributed 0 (2026-10-22) | $3.15tn beneath 22 units (September statement) is still apportioned to estimated children, now named |
 | R | Reader | four features | 4 of 4 (figures explain themselves; totals add up visibly; change history; export/download) | — |
 | 5 | Self-update | 3 clean automatic cycles | job and monthly hold-mode workflow (the 16th, after the statement's latest possible publication) built 2026-10-22; run on GitHub's runner 2026-10-22 (clean); 0 SCHEDULED cycles counted — a cycle a person started proves the job works and is not counted | three clean scheduled cycles, then the owner's switch to --publish; earliest mid-January 2027 |
-| 6 | Freshness | registry + overdue flag | registry (27 sources) + overdue flag built 2026-10-22; 24 current, 2 overdue (FedScope, the AUSA pay chart) on 2026-10-25 | the job that acts on "due" (criterion 5); cadences to tune |
+| 6 | Freshness | registry + overdue flag | registry (28 sources) + overdue flag built 2026-10-22; 25 current, 1 overdue (the AUSA pay chart), 2 closed on 2026-11-03 (FedScope closed when Federal Workforce Data became the headline headcount, CURATION.md §35) | the job that acts on "due" (criterion 5); cadences to tune |
 | 7 | Conflicts | review queue + change log | queue (53 open) and change log built 2026-10-22; withdrawals recorded with the document and why; the change budget has six rules since 2026-10-25 (a build that read no statement is held) | the job that writes both each cycle (criterion 5) |
 
 The 3,221 in row 2 is the 3,333 positions with no pay figure, less the 112

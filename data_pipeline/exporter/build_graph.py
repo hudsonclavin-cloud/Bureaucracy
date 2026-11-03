@@ -3028,6 +3028,7 @@ def build_graph(
     sites_path: str | Path | None = DEFAULT_SITES_PATH,
     directory_evidence_path: str | Path | None = "default",
     headcount_evidence_path: str | Path | None = "default",
+    fedscope_headcount_evidence_path: str | Path | None = "default",
     position_evidence_path: str | Path | None = "default",
     pay_evidence_path: str | Path | None = "default",
     grade_pay_evidence_path: str | Path | None = "default",
@@ -3201,6 +3202,7 @@ def build_graph(
     # listing is the archive's record of a period, never a claim about who
     # holds a post now.
     from data_pipeline.verification.headcounts import (  # noqa: E402 — headcounts imports this module
+        DEFAULT_FEDSCOPE_EVIDENCE_PATH,
         DEFAULT_HEADCOUNT_EVIDENCE_PATH,
         apply_headcount_evidence,
         load_headcount_evidence,
@@ -3212,14 +3214,23 @@ def build_graph(
     )
 
     resolved_headcount_path = DEFAULT_HEADCOUNT_EVIDENCE_PATH if headcount_evidence_path == "default" else headcount_evidence_path
+    # FedScope's March 2025 records are applied first and OPM's Federal Workforce Data over them: a node FWD names
+    # takes FWD's count (the headline), a node only FedScope names keeps FedScope's, dated as it is. A build asked
+    # for no headcount evidence (headcount_evidence_path=None) gets neither.
+    if fedscope_headcount_evidence_path == "default":
+        resolved_fedscope_path = DEFAULT_FEDSCOPE_EVIDENCE_PATH if resolved_headcount_path else None
+    else:
+        resolved_fedscope_path = fedscope_headcount_evidence_path
+    fedscope_records = load_headcount_evidence(resolved_fedscope_path) if resolved_fedscope_path else {}
+    validation["headcount_evidence_fedscope"] = apply_headcount_evidence(graph, fedscope_records, index_tree=index_tree)
     validation["headcount_evidence"] = apply_headcount_evidence(
         graph, load_headcount_evidence(resolved_headcount_path) if resolved_headcount_path else {}, index_tree=index_tree,
     )
-    # What those civilians are paid, off the same FedScope rows: only beside a
-    # headcount stamped just above, so every one of its refusals binds here.
+    # What FedScope's civilians are paid, off FedScope's own rows and records: a March 2025 payroll that sits beside
+    # whichever headcount is the headline, with its own count and period.
     from data_pipeline.verification.fedscope_payroll import apply_payroll_evidence  # noqa: E402
 
-    validation["payroll_evidence"] = apply_payroll_evidence(graph, index_tree=index_tree)
+    validation["payroll_evidence"] = apply_payroll_evidence(graph, fedscope_records, index_tree=index_tree)
     resolved_position_path = DEFAULT_POSITION_EVIDENCE_PATH if position_evidence_path == "default" else position_evidence_path
     validation["position_evidence"] = apply_position_evidence(
         graph, load_position_evidence(resolved_position_path) if resolved_position_path else {}, index_tree=index_tree,

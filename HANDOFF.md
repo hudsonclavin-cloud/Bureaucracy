@@ -1,5 +1,15 @@
 # HANDOFF — read this first, then CLAUDE.md
 
+> **Updated 2026-11-03.** Everything below is the state at 2026-10-12 and is out of date in its numbers. The
+> current state is `docs/DEFINITION_OF_DONE.md`'s finish-line table, `docs/NEXT_CYCLE.md` and `CURATION.md`
+> §28–§35. What changed since: criterion 2 was **redefined** on 2026-11-03 (every post is priced, carries a
+> documents-checked blank, or is a lead for the owner; the strict count, 3,221 unpriced, is still printed;
+> CURATION.md §34); `scripts/find_pay_leads.py` (no AI) finds the 144 open pay leads and
+> `.github/workflows/pay_leads.yml` keeps one issue open for them (the agent workflow `go_loops.yml` is gone);
+> OPM's Federal Workforce Data is the headline headcount, FedScope's payroll stays dated March 2025
+> (CURATION.md §35); criterion 4(a)'s gap is 0 and criterion 3 reads 0 open. Three scheduled hold-mode update
+> cycles must run clean before the owner's `--publish` switch; the first is due 2026-11-16.
+
 Written 2026-10-12 at the close of a long session. `CLAUDE.md` is the full
 record (why every rule exists); this file is the short version of **where
 things stand and what to do next**. Where they disagree, the code wins, then

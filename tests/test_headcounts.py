@@ -360,7 +360,7 @@ class ScriptTests(unittest.TestCase):
     def test_dry_run_prints_the_report_and_writes_nothing(self) -> None:
         buf = io.StringIO()
         with redirect_stdout(buf):
-            code = derive_headcount_evidence.main(["d", "--base-graph", str(self.base), "--fedscope", str(self.zip), "--out", str(self.out), "--dry-run"])
+            code = derive_headcount_evidence.main(["d", "--source", "fedscope", "--base-graph", str(self.base), "--fedscope", str(self.zip), "--out", str(self.out), "--dry-run"])
         self.assertEqual(code, 0)
         self.assertFalse(self.out.exists())
         # Eight sub-agency rows reach a node, not five. Five is the count of rows
@@ -377,7 +377,7 @@ class ScriptTests(unittest.TestCase):
     def test_the_script_writes_the_source_the_report_and_the_records(self) -> None:
         buf = io.StringIO()
         with redirect_stdout(buf):
-            code = derive_headcount_evidence.main(["d", "--base-graph", str(self.base), "--fedscope", str(self.zip), "--out", str(self.out)])
+            code = derive_headcount_evidence.main(["d", "--source", "fedscope", "--base-graph", str(self.base), "--fedscope", str(self.zip), "--out", str(self.out)])
         self.assertEqual(code, 0, buf.getvalue())
         store = json.loads(self.out.read_text(encoding="utf-8"))
         self.assertEqual((store["source"]["url"], store["source"]["fetched_at"], store["source"]["period"]), (META["url"], META["fetched_at"], "2025-03"))

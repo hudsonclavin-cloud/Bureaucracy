@@ -1,211 +1,253 @@
 [
  {
-  "key": "cost_weight_dispute:5e673d9d551d",
+  "key": "cost_weight_dispute:e60c2a62ae06",
   "kind": "cost_weight_dispute",
   "status": "open",
-  "opened": "2026-10-22",
+  "opened": "2026-11-03",
   "closed": null,
   "nodeId": "exec-dept-defense-agency-dcaa",
   "nodeName": "Defense Contract Audit Agency (DCAA)",
-  "detail": "the curated headcount ~5,000 and OPM's 3768 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "detail": "the curated headcount ~5,000 and OPM's 3260 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
   "documents": [
    {
     "role": "the curated file",
     "says": "employees ~5,000"
    },
    {
-    "role": "OPM FedScope 2025-03",
-    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
-    "says": "employees 3768"
+    "role": "OPM FedScope 2026-08",
+    "url": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json",
+    "says": "employees 3260"
    }
   ]
  },
  {
-  "key": "cost_weight_dispute:7eeb6d4784e1",
+  "key": "cost_weight_dispute:fabdbcb92077",
   "kind": "cost_weight_dispute",
   "status": "open",
-  "opened": "2026-10-22",
+  "opened": "2026-11-03",
   "closed": null,
   "nodeId": "exec-dept-defense-agency-dcma",
   "nodeName": "Defense Contract Management Agency (DCMA)",
-  "detail": "the curated headcount ~12,000 and OPM's 9665 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "detail": "the curated headcount ~12,000 and OPM's 8483 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
   "documents": [
    {
     "role": "the curated file",
     "says": "employees ~12,000"
    },
    {
-    "role": "OPM FedScope 2025-03",
-    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
-    "says": "employees 9665"
+    "role": "OPM FedScope 2026-08",
+    "url": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json",
+    "says": "employees 8483"
    }
   ]
  },
  {
-  "key": "cost_weight_dispute:cd96cc5c5e87",
+  "key": "cost_weight_dispute:abfb4d1fa3f0",
   "kind": "cost_weight_dispute",
   "status": "open",
-  "opened": "2026-10-22",
+  "opened": "2026-11-03",
   "closed": null,
   "nodeId": "exec-dept-defense-agency-dcsa",
   "nodeName": "Defense Counterintelligence & Security Agency (DCSA)",
-  "detail": "the curated headcount ~12,000 and OPM's 5644 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "detail": "the curated headcount ~12,000 and OPM's 4883 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
   "documents": [
    {
     "role": "the curated file",
     "says": "employees ~12,000"
    },
    {
-    "role": "OPM FedScope 2025-03",
-    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
-    "says": "employees 5644"
+    "role": "OPM FedScope 2026-08",
+    "url": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json",
+    "says": "employees 4883"
    }
   ]
  },
  {
-  "key": "cost_weight_dispute:59e3d3d9543a",
+  "key": "cost_weight_dispute:67f4c5ef7d16",
   "kind": "cost_weight_dispute",
   "status": "open",
-  "opened": "2026-10-22",
+  "opened": "2026-11-03",
   "closed": null,
   "nodeId": "exec-dept-defense-agency-dfas",
   "nodeName": "Defense Finance & Accounting Service (DFAS)",
-  "detail": "the curated headcount ~12,000 and OPM's 10735 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "detail": "the curated headcount ~12,000 and OPM's 9339 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
   "documents": [
    {
     "role": "the curated file",
     "says": "employees ~12,000"
    },
    {
-    "role": "OPM FedScope 2025-03",
-    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
-    "says": "employees 10735"
+    "role": "OPM FedScope 2026-08",
+    "url": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json",
+    "says": "employees 9339"
    }
   ]
  },
  {
-  "key": "cost_weight_dispute:69c5ddef581f",
+  "key": "cost_weight_dispute:ce8442120894",
   "kind": "cost_weight_dispute",
   "status": "open",
-  "opened": "2026-10-22",
+  "opened": "2026-11-03",
   "closed": null,
   "nodeId": "exec-dept-defense-agency-dha",
   "nodeName": "Defense Health Agency (DHA)",
-  "detail": "the curated headcount ~130,000 and OPM's 6118 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "detail": "the curated headcount ~130,000 and OPM's 5537 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
   "documents": [
    {
     "role": "the curated file",
     "says": "employees ~130,000"
    },
    {
-    "role": "OPM FedScope 2025-03",
-    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
-    "says": "employees 6118"
+    "role": "OPM FedScope 2026-08",
+    "url": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json",
+    "says": "employees 5537"
    }
   ]
  },
  {
-  "key": "cost_weight_dispute:004e096a0e50",
+  "key": "cost_weight_dispute:afb9bc8a2be0",
   "kind": "cost_weight_dispute",
   "status": "open",
-  "opened": "2026-10-22",
+  "opened": "2026-11-03",
   "closed": null,
   "nodeId": "exec-dept-defense-agency-disa",
   "nodeName": "Defense Information Systems Agency (DISA)",
-  "detail": "the curated headcount ~8,500 and OPM's 6823 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "detail": "the curated headcount ~8,500 and OPM's 6319 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
   "documents": [
    {
     "role": "the curated file",
     "says": "employees ~8,500"
    },
    {
-    "role": "OPM FedScope 2025-03",
-    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
-    "says": "employees 6823"
+    "role": "OPM FedScope 2026-08",
+    "url": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json",
+    "says": "employees 6319"
    }
   ]
  },
  {
-  "key": "cost_weight_dispute:943ede80e146",
+  "key": "cost_weight_dispute:58cd98c038a7",
   "kind": "cost_weight_dispute",
   "status": "open",
-  "opened": "2026-10-22",
+  "opened": "2026-11-03",
+  "closed": null,
+  "nodeId": "exec-dept-defense-agency-dla",
+  "nodeName": "Defense Logistics Agency (DLA)",
+  "detail": "the curated headcount ~26,000 and OPM's 22996 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~26,000"
+   },
+   {
+    "role": "OPM FedScope 2026-08",
+    "url": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json",
+    "says": "employees 22996"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:e61bbafb549a",
+  "kind": "cost_weight_dispute",
+  "status": "open",
+  "opened": "2026-11-03",
   "closed": null,
   "nodeId": "exec-dept-defense-agency-dtra",
   "nodeName": "Defense Threat Reduction Agency (DTRA)",
-  "detail": "the curated headcount ~2,000 and OPM's 1344 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "detail": "the curated headcount ~2,000 and OPM's 1060 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
   "documents": [
    {
     "role": "the curated file",
     "says": "employees ~2,000"
    },
    {
-    "role": "OPM FedScope 2025-03",
-    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
-    "says": "employees 1344"
+    "role": "OPM FedScope 2026-08",
+    "url": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json",
+    "says": "employees 1060"
    }
   ]
  },
  {
-  "key": "cost_weight_dispute:1406abbd6e6e",
+  "key": "cost_weight_dispute:17b9dc44aed1",
   "kind": "cost_weight_dispute",
   "status": "open",
-  "opened": "2026-10-22",
+  "opened": "2026-11-03",
   "closed": null,
   "nodeId": "exec-dept-treasury-fincen",
   "nodeName": "Financial Crimes Enforcement Network (FinCEN)",
-  "detail": "the curated headcount ~350 and OPM's 287 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "detail": "the curated headcount ~350 and OPM's 231 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
   "documents": [
    {
     "role": "the curated file",
     "says": "employees ~350"
    },
    {
-    "role": "OPM FedScope 2025-03",
-    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
-    "says": "employees 287"
+    "role": "OPM FedScope 2026-08",
+    "url": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json",
+    "says": "employees 231"
    }
   ]
  },
  {
-  "key": "cost_weight_dispute:0067e51db754",
+  "key": "cost_weight_dispute:add5dd0eba22",
   "kind": "cost_weight_dispute",
   "status": "open",
-  "opened": "2026-10-22",
+  "opened": "2026-11-03",
   "closed": null,
   "nodeId": "exec-dept-defense-agency-mda",
   "nodeName": "Missile Defense Agency (MDA)",
-  "detail": "the curated headcount ~9,000 and OPM's 2903 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "detail": "the curated headcount ~9,000 and OPM's 2469 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
   "documents": [
    {
     "role": "the curated file",
     "says": "employees ~9,000"
    },
    {
-    "role": "OPM FedScope 2025-03",
-    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
-    "says": "employees 2903"
+    "role": "OPM FedScope 2026-08",
+    "url": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json",
+    "says": "employees 2469"
    }
   ]
  },
  {
-  "key": "cost_weight_dispute:fee9c03f0f15",
+  "key": "cost_weight_dispute:35837238cd36",
   "kind": "cost_weight_dispute",
   "status": "open",
-  "opened": "2026-10-22",
+  "opened": "2026-11-03",
   "closed": null,
   "nodeId": "exec-dept-defense-agency-nro",
   "nodeName": "National Reconnaissance Office (NRO)",
-  "detail": "the curated headcount ~3,000 (est.) and OPM's 1163 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "detail": "the curated headcount ~3,000 (est.) and OPM's 1155 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
   "documents": [
    {
     "role": "the curated file",
     "says": "employees ~3,000 (est.)"
    },
    {
-    "role": "OPM FedScope 2025-03",
-    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
-    "says": "employees 1163"
+    "role": "OPM FedScope 2026-08",
+    "url": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json",
+    "says": "employees 1155"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:e916e1555b31",
+  "kind": "cost_weight_dispute",
+  "status": "open",
+  "opened": "2026-11-03",
+  "closed": null,
+  "nodeId": "exec-dept-ed-ocr",
+  "nodeName": "Office for Civil Rights (OCR)",
+  "detail": "the curated headcount ~550 and OPM's 293 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~550"
+   },
+   {
+    "role": "OPM FedScope 2026-08",
+    "url": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json",
+    "says": "employees 293"
    }
   ]
  },
@@ -367,27 +409,6 @@
    {
     "role": "this graph (curated)",
     "says": "drawn under Independent Regulatory Commissions (exec-regulatory)"
-   }
-  ]
- },
- {
-  "key": "source_overdue:add7b4cbcdef",
-  "kind": "source_overdue",
-  "status": "open",
-  "opened": "2026-10-22",
-  "closed": null,
-  "nodeId": null,
-  "nodeName": null,
-  "detail": "FedScope civilian employment (headcount and average pay by agency): the edition for 2025-09-30 was expected by 2026-05-28; the copy in use is dated 2025-03-31",
-  "documents": [
-   {
-    "role": "the registry",
-    "says": "expected by 2026-05-28, overdue after 2026-07-27"
-   },
-   {
-    "role": "the copy in use",
-    "url": "https://www.opm.gov/data/datasets/",
-    "says": "dated 2025-03-31, read 2026-09-08"
    }
   ]
  },
@@ -1228,6 +1249,237 @@
    {
     "role": "this graph (curated)",
     "says": "names it USSOCOM — Special Operations Command"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:5e673d9d551d",
+  "kind": "cost_weight_dispute",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-11-03",
+  "nodeId": "exec-dept-defense-agency-dcaa",
+  "nodeName": "Defense Contract Audit Agency (DCAA)",
+  "detail": "the curated headcount ~5,000 and OPM's 3768 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~5,000"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 3768"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:7eeb6d4784e1",
+  "kind": "cost_weight_dispute",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-11-03",
+  "nodeId": "exec-dept-defense-agency-dcma",
+  "nodeName": "Defense Contract Management Agency (DCMA)",
+  "detail": "the curated headcount ~12,000 and OPM's 9665 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~12,000"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 9665"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:cd96cc5c5e87",
+  "kind": "cost_weight_dispute",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-11-03",
+  "nodeId": "exec-dept-defense-agency-dcsa",
+  "nodeName": "Defense Counterintelligence & Security Agency (DCSA)",
+  "detail": "the curated headcount ~12,000 and OPM's 5644 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~12,000"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 5644"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:59e3d3d9543a",
+  "kind": "cost_weight_dispute",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-11-03",
+  "nodeId": "exec-dept-defense-agency-dfas",
+  "nodeName": "Defense Finance & Accounting Service (DFAS)",
+  "detail": "the curated headcount ~12,000 and OPM's 10735 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~12,000"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 10735"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:69c5ddef581f",
+  "kind": "cost_weight_dispute",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-11-03",
+  "nodeId": "exec-dept-defense-agency-dha",
+  "nodeName": "Defense Health Agency (DHA)",
+  "detail": "the curated headcount ~130,000 and OPM's 6118 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~130,000"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 6118"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:004e096a0e50",
+  "kind": "cost_weight_dispute",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-11-03",
+  "nodeId": "exec-dept-defense-agency-disa",
+  "nodeName": "Defense Information Systems Agency (DISA)",
+  "detail": "the curated headcount ~8,500 and OPM's 6823 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~8,500"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 6823"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:943ede80e146",
+  "kind": "cost_weight_dispute",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-11-03",
+  "nodeId": "exec-dept-defense-agency-dtra",
+  "nodeName": "Defense Threat Reduction Agency (DTRA)",
+  "detail": "the curated headcount ~2,000 and OPM's 1344 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~2,000"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 1344"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:1406abbd6e6e",
+  "kind": "cost_weight_dispute",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-11-03",
+  "nodeId": "exec-dept-treasury-fincen",
+  "nodeName": "Financial Crimes Enforcement Network (FinCEN)",
+  "detail": "the curated headcount ~350 and OPM's 287 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~350"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 287"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:0067e51db754",
+  "kind": "cost_weight_dispute",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-11-03",
+  "nodeId": "exec-dept-defense-agency-mda",
+  "nodeName": "Missile Defense Agency (MDA)",
+  "detail": "the curated headcount ~9,000 and OPM's 2903 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~9,000"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 2903"
+   }
+  ]
+ },
+ {
+  "key": "cost_weight_dispute:fee9c03f0f15",
+  "kind": "cost_weight_dispute",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-11-03",
+  "nodeId": "exec-dept-defense-agency-nro",
+  "nodeName": "National Reconnaissance Office (NRO)",
+  "detail": "the curated headcount ~3,000 (est.) and OPM's 1163 (2025-03) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+  "documents": [
+   {
+    "role": "the curated file",
+    "says": "employees ~3,000 (est.)"
+   },
+   {
+    "role": "OPM FedScope 2025-03",
+    "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+    "says": "employees 1163"
+   }
+  ]
+ },
+ {
+  "key": "source_overdue:add7b4cbcdef",
+  "kind": "source_overdue",
+  "status": "closed",
+  "opened": "2026-10-22",
+  "closed": "2026-11-03",
+  "nodeId": null,
+  "nodeName": null,
+  "detail": "FedScope civilian employment (headcount and average pay by agency): the edition for 2025-09-30 was expected by 2026-05-28; the copy in use is dated 2025-03-31",
+  "documents": [
+   {
+    "role": "the registry",
+    "says": "expected by 2026-05-28, overdue after 2026-07-27"
+   },
+   {
+    "role": "the copy in use",
+    "url": "https://www.opm.gov/data/datasets/",
+    "says": "dated 2025-03-31, read 2026-09-08"
    }
   ]
  },

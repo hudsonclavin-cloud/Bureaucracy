@@ -95,8 +95,17 @@ class GateTests(unittest.TestCase):
         self.corrupt(lambda n: n["payrollOfficial"].update(sha256="0" * 64))
         self.corrupt(lambda n: n["payrollOfficial"]["rows"][0].__setitem__(2, 1))
         self.corrupt(lambda n: n["payrollOfficial"].update(rowAverageRange=[1, 2]))
-        self.corrupt(lambda n: n.update(employeesOfficial=1))
+        self.corrupt(lambda n: n["payrollOfficial"].update(employees=1))
+        self.corrupt(lambda n: n.pop("employeesOfficial"))
         self.corrupt(lambda n: n.update(cost_status="official", resolved_total_amount=n["payrollOfficial"]["totalAnnualPay"]))
+
+    def test_a_payroll_may_sit_beside_a_headcount_of_another_period(self):
+        """Since 2026-11-03 the headline headcount is Federal Workforce Data's (2026-08) and the payroll is
+        FedScope's (2025-03), each with its own count: the two need not be equal."""
+        node = copy.deepcopy(self.node)
+        node["employeesOfficial"] = node["payrollOfficial"]["employees"] - 1000
+        node["employeesOfficialSource"] = dict(node.get("employeesOfficialSource") or {}, period="2026-08")
+        self.assertEqual(self.check(node), [])
 
 
 if __name__ == "__main__":

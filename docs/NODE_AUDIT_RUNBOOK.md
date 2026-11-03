@@ -230,7 +230,8 @@ Each node in `next`'s output gives you:
 |---|---|---|
 | `evidence` | Page-label checks against official sites | Nothing. A page not read says nothing. |
 | `directory_evidence` | Federal Register agency directory, the Senate committee list, **and** the House Clerk's committee list | For the Senate and House Clerk lists, **absence is evidence** — both are complete. For the Federal Register, absence means only that the unit does not publish in the Register. |
-| `headcount_evidence` | OPM FedScope civilian employment | Absence means unmatched, not zero staff |
+| `headcount_evidence` | OPM Federal Workforce Data civilian employment (August 2026, a derived aggregate) | Absence means unmatched, not zero staff |
+| `fedscope_headcount_evidence` | OPM FedScope civilian employment (March 2025); prices the payroll, and stands for a unit FWD names nothing of that name for | Absence means unmatched, not zero staff |
 | `position_evidence` | OPM PLUM archive of reported positions | Absence means unmatched. The archive is the **previous** administration's and is not complete for career posts. |
 
 Read the `status` and `reason` fields, not just presence. `inconclusive` with

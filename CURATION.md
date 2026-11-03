@@ -7815,7 +7815,7 @@ edition after March 2025. FWD's newest employment edition is August 2026 (publis
 `https://data.opm.gov/api/v1/files/employment?current=true` and downloaded from
 `/api/v1/files/employment/{year}/{month}/{version}/download`; `data.opm.gov/robots.txt`
 is a 404 (nothing to obey). The next release is stated as 2026-11-04. **Held, for the
-owner:** the headcount, payroll and gate readers are stdlib-only and read the FedScope
+owner (the owner said yes on 2026-11-03; the build and what it chose to leave on FedScope are §35):** the headcount, payroll and gate readers are stdlib-only and read the FedScope
 zip's table, and this Python has no Parquet or ZSTD reader; FWD carries a per-record pay
 column (with REDACTED values) rather than a printed average, so a payroll figure would be
 a mean this repository computes; its population sentence says "pay or non-pay status";
@@ -7939,4 +7939,59 @@ from FWD and leaves payroll on FedScope's March 2025 count times printed average
 own period. FWD is too large to commit verbatim and this Python has no ZSTD or Parquet reader,
 so the committed fixture is a derived aggregate (agency, sub-element, record count) with the
 stream's URL, byte count and sha256 recorded: an explicit exception to the verbatim-fixture rule,
-stated on the fixture. That build is §35 when it lands.
+stated on the fixture. That build is §35.
+
+## 35. Federal Workforce Data adopted for headcounts (2026-11-03)
+
+### 35.1 What was built, and what the owner's "yes" did not decide
+
+The owner said yes to adopting FedScope's successor. §33.3 had held it for four reasons (no Parquet or
+ZSTD reader, a per-record pay column with REDACTED values, a different population sentence, a 57-76 MB
+file against the verbatim-fixture rule). §34.3 measured the pay column (47% REDACTED, Defense entirely).
+The build takes **headcounts** from FWD and leaves **payroll** on FedScope, which is a narrower adoption
+than "FWD replaces FedScope" and is this repository's choice: FWD cannot price payroll, and a payroll built
+from the other half of the pay column would describe a different population from the headcount beside it.
+
+- `data_pipeline/verification/fwd.py` and `scripts/fetch_fwd_aggregate.py`: stream the text file once
+  (`/data/blob/download/chunked/employment_202608_1.txt`; the API's `/download` address is the Parquet),
+  aggregate by (agency code, sub-element code), commit the aggregate with the stream's digest. The August
+  2026 stream was 1,657,827,332 bytes, 2,024,832 records, 514 rows, sha256 `862aeac830b170a0...`, the same on
+  two fetches a quarter of an hour apart. **The aggregate is the one fixture in the repository that is not the
+  publisher's own bytes**; it says so on its face (`derived: true`), its own digest is recomputed before it
+  is read, and the stream's cannot be recomputed offline.
+- Three documents committed verbatim: the data dictionary (`count` is the integer 1), the Data Sources page
+  (the coverage sentence and the list of what EHRI excludes) and the listing (the edition and its address).
+- `headcounts.match_fedscope` takes a `source` and a `coverage_source`; `apply_headcount_evidence` accepts
+  both sources; the exporter applies FedScope's records first and FWD's over them, so a unit FWD names
+  nothing of that name for (DAU, NTIS, BOEM, BSEE, the Wilson Center) keeps FedScope's dated count. FWD adds
+  nine small bodies.
+- `fedscope_payroll.apply_payroll_evidence` now takes FedScope's own records
+  (`data/verification/fedscope_headcount_evidence.json`) and no longer reads whichever headcount was stamped.
+  The gate's "beside a headcount for its period" relation became "beside an official headcount of either
+  source", and the payroll's own count and period are checked against the printed rows.
+- Gate: `fwd_headcount_documents` and `fwd_headcount_violations` (stdlib, its own reader, mirrors pinned by
+  `tests/test_fwd_adoption.py`).
+- Registry: `opm_fwd_employment` (monthly, next release stated 2026-11-04) and FedScope as a closed record.
+- Viewer: the panel's headcount wording follows the record's source and, for FWD, quotes the page's coverage
+  sentence and points to its exclusion list; `js/` cache version `20261103a`.
+
+### 35.2 What moved, measured
+
+186 `employeesOfficialSource` and 185 `employeesOfficial` changed; 191 nodes carry an official headcount
+(182 before; 186 FWD, 5 FedScope); 12 `cost_weight_dispute` (10 before); **no cost, no payroll and no pay
+claim moved** (0 of 5,527 `resolved_total_amount`, 181 of 181 payrolls identical). The median node's count
+is 16% lower than March 2025's, over 182 nodes carrying both, which is the workforce and the dates
+(FedScope's file was preliminary and, by its own caveat, did not reflect the 2025 reductions).
+
+### 35.3 Risks, and what would change this
+
+- The derived aggregate cannot be re-verified offline. A reviewer who doubts it re-streams the URL; the script
+  prints the stream digest to compare. If OPM re-issues an edition under the same version number with
+  different bytes, the digest will differ and the aggregate must be re-derived (FWD re-issued its history as
+  new versions on 2026-10-03/04, which is why the listing's version is recorded).
+- The coverage population differs from the curated `employees` figures (civilians, uniformed members and
+  contractors mixed) as FedScope's did; the dispute rule is unchanged and no weight was recomputed.
+- FedScope is a closed record by what has not appeared, not by a statement of retirement; it reopens if an
+  edition appears.
+- The monthly job reports a new FWD edition as due and does not fetch it: 1.66 GB per cycle is not taken
+  on the runner's behalf. The next edition (September 2026 data) is stated for 2026-11-04.

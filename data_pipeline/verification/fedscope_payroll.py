@@ -14,12 +14,18 @@ employee, and the block says so. The unit's average is that total divided by
 the count. Nothing here is a cost: basic pay is not outlays, excludes
 benefits, and covers a different population from the Treasury's lines.
 
-The matching is not redone: a block is published only on a node that
-`apply_headcount_evidence` has just stamped with an `employeesOfficialSource`
-for the same period, so every refusal that module makes (an agency that is
-one other unit, an unscoped sub-agency row, a renamed node, a post) binds
-here unchanged. Never on a post. Withdrawn every build with the headcount it
-depends on (`EVIDENCE_OWNED_FIELDS`).
+The matching is not redone, and it is not the headline headcount's any more
+(since 2026-11-03, when OPM's Federal Workforce Data became the headline,
+`fwd.py`): FWD prints no average pay (47% of its pay column is REDACTED,
+Defense's entirely), so the payroll stays on FedScope's March 2025 rows with
+their own period and their own count. A block is published only for a node
+that FedScope's own derived headcount records (`fedscope_headcount_evidence.json`,
+the same matcher and every refusal it makes: an agency that is one other unit,
+an unscoped sub-agency row, a renamed node, a post) tie to the rows, and only
+where the record's count is the rows' count. The block carries its own count
+and period, so a node's payroll for March 2025 may sit beside an August 2026
+headcount, each dated. Never on a post. Withdrawn every build with the
+evidence it depends on (`EVIDENCE_OWNED_FIELDS`).
 """
 from __future__ import annotations
 
@@ -34,6 +40,8 @@ from data_pipeline.verification.headcounts import (
     DEFAULT_FEDSCOPE_ZIP,
     FEDSCOPE_MEMBER_PREFIX,
     FEDSCOPE_SOURCE,
+    _is_organisation,
+    listed_name_still_names,
     load_fedscope_meta,
     period_label,
 )
@@ -112,32 +120,59 @@ def payroll_block(source: dict[str, Any], employees: int, rows, *, sha256: str) 
     return block
 
 
-def apply_payroll_evidence(root: dict[str, Any], *, zip_path: str | Path = DEFAULT_FEDSCOPE_ZIP, index_tree=None) -> dict[str, Any]:
-    """Stamp `payrollOfficial` beside every headcount stamped this build."""
+def apply_payroll_evidence(
+    root: dict[str, Any],
+    records: dict[str, dict[str, Any]],
+    *,
+    zip_path: str | Path = DEFAULT_FEDSCOPE_ZIP,
+    index_tree=None,
+) -> dict[str, Any]:
+    """Stamp `payrollOfficial` on every node a FedScope headcount record ties to the table's rows.
+
+    `records` are the FedScope derivation's (`headcounts.match_fedscope`, source `opm_fedscope_employment`), by node
+    id. A record the headcount stamper would refuse is refused here for the same reason: a node that is gone, not an
+    organisation (never a post), renamed since the record was earned, undated, outside the Executive Branch the
+    table covers, or whose count is not its rows' count.
+    """
     if index_tree is None:
         from data_pipeline.exporter.build_graph import index_tree as _index_tree
 
         index_tree = _index_tree
     node_map, _ = index_tree(root)
-    stats = {"published": 0, "no_matching_rows": 0, "post_refused": 0, "measured_equal_refused": 0, "total_annual_pay": 0}
+    stats = {"published": 0, "no_matching_rows": 0, "post_refused": 0, "measured_equal_refused": 0, "total_annual_pay": 0,
+             "unknown_node": 0, "not_an_organisation": 0, "stale_name": 0, "undated": 0}
     for node in node_map.values():
         node.pop(PAYROLL_FIELD, None)
+    if not records:
+        return stats
     rows = load_avgsal_rows(zip_path)
     meta = load_fedscope_meta(zip_path)
     sha = file_sha256(zip_path)
     if meta.get("sha256") and meta["sha256"] != sha:
         raise ValueError(f"{zip_path}: digest {sha} is not the fetch record's {meta['sha256']}")
-    for node in node_map.values():
-        source = node.get("employeesOfficialSource")
-        employees = node.get("employeesOfficial")
-        if not isinstance(source, dict) or source.get("source") != FEDSCOPE_SOURCE or not isinstance(employees, int):
+    for node_id, record in records.items():
+        if record.get("source") != FEDSCOPE_SOURCE:
+            continue
+        node = node_map.get(node_id)
+        if node is None:
+            stats["unknown_node"] += 1
             continue
         if "position" in str(node.get("type") or "").casefold():
             stats["post_refused"] += 1
             continue
-        if source.get("outsideStatedCoverage"):
+        if not _is_organisation(node):
+            stats["not_an_organisation"] += 1
             continue
-        block = payroll_block(source, employees, rows, sha256=sha)
+        employees = record.get("employees")
+        if not str(record.get("url") or "").strip() or not str(record.get("checkedAt") or "").strip() or not isinstance(employees, int):
+            stats["undated"] += 1
+            continue
+        if not listed_name_still_names(node.get("name"), record.get("listedName")):
+            stats["stale_name"] += 1
+            continue
+        if record.get("outsideStatedCoverage"):
+            continue
+        block = payroll_block(record, employees, rows, sha256=sha)
         if block is None:
             stats["no_matching_rows"] += 1
             continue

@@ -54,6 +54,11 @@ from typing import Any
 from data_pipeline.exporter.build_graph import canonical_name_key, parse_cost_amount
 
 FEDSCOPE_SOURCE = "opm_fedscope_employment"
+# OPM's Federal Workforce Data, FedScope's successor (fwd.py): the headline headcount since 2026-11-03. A record
+# of either source is stamped by apply_headcount_evidence; FedScope's stays where FWD names no unit of that name,
+# dated, and is what fedscope_payroll.py prices.
+FWD_SOURCE = "opm_fwd_employment"
+HEADCOUNT_SOURCES = (FEDSCOPE_SOURCE, FWD_SOURCE)
 FEDSCOPE_MEMBER_PREFIX = "Status Employment by Agency and SubAgency"
 SUPPRESSED_CODE = "10_OR_LESS"
 LEVEL_AGENCY = "agency"
@@ -63,6 +68,7 @@ STATUS_LISTED = "listed"
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_FEDSCOPE_ZIP = PROJECT_ROOT / "tests" / "fixtures" / "opm" / "fedscope" / "fedscope_employment_summary_2025-03.zip"
 DEFAULT_HEADCOUNT_EVIDENCE_PATH = PROJECT_ROOT / "data" / "verification" / "headcount_evidence.json"
+DEFAULT_FEDSCOPE_EVIDENCE_PATH = PROJECT_ROOT / "data" / "verification" / "fedscope_headcount_evidence.json"
 
 # The data dictionary's own words (fedscope_employment_summary_2025-03_data_dictionary.pdf,
 # "(Preliminary) March 2025 Employment Dataset", Overview). Quoted, not paraphrased,
@@ -259,6 +265,8 @@ def match_fedscope(
     fetched_at: str | None = None,
     file: str | None = None,
     coverage: str = COVERAGE_STATEMENT,
+    source: str = FEDSCOPE_SOURCE,
+    coverage_source: str = COVERAGE_SOURCE,
 ) -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
     """Records keyed by node id, and a report of what did not match and why.
 
@@ -266,7 +274,7 @@ def match_fedscope(
     the table carries one, supplies each record's `previous`.
     """
     if not periods:
-        return {}, {"source": FEDSCOPE_SOURCE, "period": None, "error": "no rows"}
+        return {}, {"source": source, "period": None, "error": "no rows"}
     period = period or max(periods)
     earlier = sorted(p for p in periods if p < period)
     previous_period = earlier[-1] if earlier else None
@@ -302,7 +310,7 @@ def match_fedscope(
     )
 
     report: dict[str, Any] = {
-        "source": FEDSCOPE_SOURCE, "url": url, "fetched_at": fetched_at, "file": file,
+        "source": source, "url": url, "fetched_at": fetched_at, "file": file,
         "period": period, "previous_period": previous_period,
         "rows": len(rows), "suppressed_rows": [{"listedName": r["subagency_name"], "employees": r["employees"]} for r in suppressed],
         "agencies": len(totals), "agencies_matched": 0, "subagencies_matched": 0,
@@ -388,8 +396,8 @@ def match_fedscope(
                                                     "subagencyCode": row["subagency_code"], "listedName": row["subagency_name"], "employees": row["employees"]})
 
     records: dict[str, dict[str, Any]] = {}
-    base_record = {"source": FEDSCOPE_SOURCE, "status": STATUS_LISTED, "period": period, "coverage": coverage,
-                   "coverageSource": COVERAGE_SOURCE, "url": url, "checkedAt": fetched_at, "file": file}
+    base_record = {"source": source, "status": STATUS_LISTED, "period": period, "coverage": coverage,
+                   "coverageSource": coverage_source, "url": url, "checkedAt": fetched_at, "file": file}
 
     for code, node_id in agency_node.items():
         total = totals[code]
@@ -619,7 +627,7 @@ def apply_headcount_evidence(
         url = str(record.get("url") or "").strip()
         checked_at = str(record.get("checkedAt") or "").strip()
         employees = record.get("employees")
-        if record.get("source") != FEDSCOPE_SOURCE or not url or not checked_at or not isinstance(employees, int):
+        if record.get("source") not in HEADCOUNT_SOURCES or not url or not checked_at or not isinstance(employees, int):
             stats["undated"] += 1
             continue
         if not listed_name_still_names(node.get("name"), record.get("listedName")):
@@ -629,7 +637,7 @@ def apply_headcount_evidence(
             continue
         node["employeesOfficial"] = employees
         source: dict[str, Any] = {
-            "source": FEDSCOPE_SOURCE,
+            "source": record["source"],
             "listedName": record.get("listedName"),
             "level": record.get("level"),
             "agencyCode": record.get("agencyCode"),

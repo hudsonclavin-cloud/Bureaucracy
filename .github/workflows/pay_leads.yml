@@ -37,7 +37,8 @@ jobs:
 
       - name: Find the leads
         run: |
-          python scripts/find_pay_leads.py --dry-run | head -1 | tee leads_summary.txt
+          python scripts/find_pay_leads.py --dry-run > leads_full.txt
+          head -n 1 leads_full.txt | tee leads_summary.txt
           python scripts/find_pay_leads.py --issue-body > issue_body.md
           wc -c issue_body.md
 

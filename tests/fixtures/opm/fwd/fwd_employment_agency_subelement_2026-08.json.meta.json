@@ -1,0 +1,18 @@
+{
+ "fetched_at": "2026-11-03T17:19:46Z",
+ "url": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json",
+ "status": 200,
+ "final_url": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json",
+ "content_type": "application/json",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "no readable robots.txt (HTTP 404); failing open",
+ "bytes": 100313,
+ "sha256": "2213e35a8c93a225021c5c6b9d1af0f0d51d0b12850e76c552a6269a3a11032d",
+ "error": null,
+ "derived": true,
+ "derived_from": {
+  "url": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json",
+  "bytes": 1657827332,
+  "sha256": "862aeac830b170a0c5f1c569b39dcf946d29d27a4974041daaeb688cf7aae7f8"
+ }
+}

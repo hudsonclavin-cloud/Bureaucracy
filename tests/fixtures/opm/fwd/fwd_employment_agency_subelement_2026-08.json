@@ -1,0 +1,3631 @@
+{
+ "kind": "opm_fwd_employment_aggregate",
+ "derived": true,
+ "note": "Derived by scripts/fetch_fwd_aggregate.py from OPM's Federal Workforce Data status file as it was served: one row per (agency code, sub-element code) with the number of records, `count` being the integer 1 per record in the data dictionary. The stream is about 1.66 GB and is not committed; its URL, bytes, sha256 and record count are recorded here so a reviewer can re-stream it and compare. This is an explicit exception to the rule that fixtures are the publisher's own bytes. No other column of any record is kept.",
+ "stream": {
+  "url": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json",
+  "parquet_url": "https://data.opm.gov/api/v1/files/employment/2026/08/1/download",
+  "final_url": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json",
+  "status": 200,
+  "content_type": "application/octet-stream",
+  "content_disposition": "attachment; filename=\"employment_202608_1.txt\"; filename*=UTF-8''employment_202608_1.txt",
+  "listing_url": "https://data.opm.gov/api/v1/files/employment?current=true",
+  "listing_filename": "employment_202608_1",
+  "listing_publish_date": "2026-10-04T03:54:31.484Z",
+  "version": 1,
+  "bytes": 1657827332,
+  "sha256": "862aeac830b170a0c5f1c569b39dcf946d29d27a4974041daaeb688cf7aae7f8",
+  "records": 2024832,
+  "columns": 64,
+  "snapshot": "202608",
+  "columns_read": [
+   "agency_code",
+   "agency",
+   "agency_subelement_code",
+   "agency_subelement",
+   "count",
+   "snapshot_yyyymm"
+  ],
+  "robots": "no readable robots.txt (HTTP 404); failing open"
+ },
+ "rows": [
+  {
+   "agency_code": "AA",
+   "agency_name": "ADMIN CONFERENCE OF THE UNITED STATES",
+   "subelement_code": "AA00",
+   "subelement_name": "ADMINISTRATIVE CONFERENCE OF THE UNITED STATES",
+   "records": 10
+  },
+  {
+   "agency_code": "AB",
+   "agency_name": "AMERICAN BATTLE MONUMENTS COMMISSION",
+   "subelement_code": "AB00",
+   "subelement_name": "AMERICAN BATTLE MONUMENTS COMMISSION",
+   "records": 77
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF02",
+   "subelement_name": "AIR FORCE INSPECTION AGENCY (FO)",
+   "records": 30
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF03",
+   "subelement_name": "AIR FORCE OPERATIONAL TEST AND EVALUATION CENTER",
+   "records": 181
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF06",
+   "subelement_name": "AIR FORCE AUDIT AGENCY",
+   "records": 395
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF07",
+   "subelement_name": "AIR FORCE OFFICE OF SPECIAL INVESTIGATIONS",
+   "records": 1043
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF09",
+   "subelement_name": "AIR FORCE PERSONNEL CENTER",
+   "records": 1343
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF0B",
+   "subelement_name": "U.S. AIR FORCE ACADEMY",
+   "records": 1054
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF0D",
+   "subelement_name": "U.S. AIR FORCES, EUROPE",
+   "records": 1360
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF0J",
+   "subelement_name": "AIR EDUCATION AND TRAINING COMMAND",
+   "records": 12985
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF0M",
+   "subelement_name": "HEADQUARTERS, AIR FORCE RESERVE COMMAND",
+   "records": 8760
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF0R",
+   "subelement_name": "PACIFIC AIR FORCES",
+   "records": 3005
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF0U",
+   "subelement_name": "25 AF",
+   "records": 2
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF0V",
+   "subelement_name": "AIR FORCE SPECIAL OPERATIONS COMMAND",
+   "records": 1396
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF12",
+   "subelement_name": "AIR FORCE PUBLIC AFFAIRS AGENCY",
+   "records": 34
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF13",
+   "subelement_name": "HQ USAF AND SUPPORT ELEMENTS",
+   "records": 2103
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF16",
+   "subelement_name": "AIR FORCE MORTUARY AFFAIRS OPERATIONS",
+   "records": 29
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF1B",
+   "subelement_name": "AIR FORCE MANPOWER ANALYSIS AGENCY",
+   "records": 113
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF1C",
+   "subelement_name": "AIR COMBAT COMMAND",
+   "records": 10463
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF1L",
+   "subelement_name": "AIR MOBILITY COMMAND",
+   "records": 6749
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF1M",
+   "subelement_name": "AIR FORCE MATERIEL COMMAND",
+   "records": 64688
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF1Q",
+   "subelement_name": "HQ AF FLIGHT STANDARDS AGENCY",
+   "records": 46
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF1S",
+   "subelement_name": "HEADQUARTERS, AIR FORCE SPACE COMMAND",
+   "records": 1
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF1Y",
+   "subelement_name": "AIR FORCE CIVILIAN CAREER TRAINING",
+   "records": 2549
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF20",
+   "subelement_name": "AIR FORCE AGENCY FOR MODELING/SIMULATION",
+   "records": 16
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF2A",
+   "subelement_name": "AIR FORCE COST ANALYSIS AGENCY",
+   "records": 74
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF2E",
+   "subelement_name": "AIR FORCE LEGAL OPERATIONS AGENCY",
+   "records": 169
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF2F",
+   "subelement_name": "AIR FORCE MEDICAL SUPPORT AGENCY",
+   "records": 1
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF2H",
+   "subelement_name": "AIR FORCE OPERATIONS GROUP",
+   "records": 17
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF2I",
+   "subelement_name": "AIR NATIONAL GUARD SUPPORT CENTER",
+   "records": 579
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF2K",
+   "subelement_name": "AIR FORCE HISTORICAL RESEARCH AGENCY",
+   "records": 39
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF2L",
+   "subelement_name": "AIR FORCE TECHNICAL APPLICATIONS CENTER",
+   "records": 428
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF2M",
+   "subelement_name": "AIR FORCE REVIEW BOARDS AGENCY",
+   "records": 85
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF2R",
+   "subelement_name": "AIR FORCE PROGRAM EXECUTIVE OFFICE",
+   "records": 31
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF2S",
+   "subelement_name": "AIR FORCE ELEMENTS NORAD",
+   "records": 84
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF2T",
+   "subelement_name": "AIR FORCE SAFETY CENTER",
+   "records": 71
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF2Z",
+   "subelement_name": "AIR FORCE MEDICAL COMMAND",
+   "records": 152
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF38",
+   "subelement_name": "AFELM JCS",
+   "records": 15
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF3C",
+   "subelement_name": "AIR FORCE ELEMENTS, U.S. CENTRAL COMMAND",
+   "records": 349
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF3D",
+   "subelement_name": "AIR FORCE ELEMENTS, U.S. SPECIAL OPERATIONS COMMAND",
+   "records": 977
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF3Q",
+   "subelement_name": "AIR FORCE ELEMENTS, U.S. STRATEGIC COMMAND",
+   "records": 1226
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF3T",
+   "subelement_name": "AIR FORCE ELEMENTS, U.S. TRANSPORTATION COMMAND",
+   "records": 976
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF3V",
+   "subelement_name": "AIR FORCE ELEMENTS",
+   "records": 144
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF40",
+   "subelement_name": "NATIONAL AIR AND SPACE INTELLIGENCE CENTER",
+   "records": 1140
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF4D",
+   "subelement_name": "U.S. NORTHERN COMMAND",
+   "records": 628
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF4F",
+   "subelement_name": "HQ US SPACE FORCE",
+   "records": 274
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF4G",
+   "subelement_name": "UNITED STATES SPACE FORCE",
+   "records": 2171
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF4S",
+   "subelement_name": "AFELM US SPACE COMMAND",
+   "records": 532
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF4V",
+   "subelement_name": "NON-DOD AND OTHER SUPPORT",
+   "records": 811
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF4W",
+   "subelement_name": "AIR FORCE DISTRICT OF WASHINGTON",
+   "records": 1071
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF5D",
+   "subelement_name": "DEFENSE CYBER CRIME CENTER",
+   "records": 96
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF6D",
+   "subelement_name": "SPACE DEVELOPMENT AGENCY",
+   "records": 132
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF6E",
+   "subelement_name": "SPACE FORCE SERVICE WIDE SUPPORT ACTIVITIES",
+   "records": 67
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF6F",
+   "subelement_name": "UNITED STATES SPACE FORCE FORCES",
+   "records": 1310
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF6K",
+   "subelement_name": "UNITED STATES SPACE FORCE COMPONENTS",
+   "records": 83
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF6N",
+   "subelement_name": "NATIONAL SPACE INTELLIGENCE CENTER",
+   "records": 355
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF6S",
+   "subelement_name": "SPACE SYSTEMS COMMAND",
+   "records": 2627
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AF6T",
+   "subelement_name": "SPACE TRAINING AND READINESS COMMAND",
+   "records": 332
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AFGS",
+   "subelement_name": "AIR FORCE GLOBAL STRIKE COMMAND",
+   "records": 3448
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AFNG",
+   "subelement_name": "AIR NATIONAL GUARD UNITS",
+   "records": 12520
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AFSN",
+   "subelement_name": "AIR FORCES SOUTHERN",
+   "records": 95
+  },
+  {
+   "agency_code": "AF",
+   "agency_name": "DEPARTMENT OF THE AIR FORCE",
+   "subelement_code": "AFZG",
+   "subelement_name": "U.S. SPECIAL OPERATIONS COMMAND (ANG)",
+   "records": 93
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG01",
+   "subelement_name": "OFFICE OF THE SECRETARY OF AGRICULTURE",
+   "records": 121
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG02",
+   "subelement_name": "AGRICULTURAL MARKETING SERVICE",
+   "records": 3691
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG03",
+   "subelement_name": "AGRICULTURAL RESEARCH SERVICE",
+   "records": 4809
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG07",
+   "subelement_name": "RURAL DEVELOPMENT",
+   "records": 3007
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG08",
+   "subelement_name": "RISK MANAGEMENT AGENCY",
+   "records": 358
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG10",
+   "subelement_name": "FOREIGN AGRICULTURAL SERVICE",
+   "records": 524
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG11",
+   "subelement_name": "FOREST SERVICE",
+   "records": 33003
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG13",
+   "subelement_name": "OFFICE OF COMMUNICATIONS",
+   "records": 30
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG14",
+   "subelement_name": "OFFICE OF THE GENERAL COUNSEL",
+   "records": 204
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG16",
+   "subelement_name": "NATURAL RESOURCES CONSERVATION SERVICE",
+   "records": 8798
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG18",
+   "subelement_name": "ECONOMIC RESEARCH SERVICE",
+   "records": 189
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG20",
+   "subelement_name": "NATIONAL AGRICULTURAL STATISTICS SERVICE",
+   "records": 468
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG22",
+   "subelement_name": "NATIONAL INSTITUTE OF FOOD AND AGRICULTURE",
+   "records": 269
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG23",
+   "subelement_name": "OFFICE OF THE INSPECTOR GENERAL",
+   "records": 365
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG30",
+   "subelement_name": "FOOD AND NUTRITION SERVICE",
+   "records": 1131
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG34",
+   "subelement_name": "ANIMAL AND PLANT HEALTH INSPECTION SERVICE",
+   "records": 7024
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG37",
+   "subelement_name": "FOOD SAFETY AND INSPECTION SERVICE",
+   "records": 7283
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG38",
+   "subelement_name": "OFFICE OF THE CHIEF ECONOMIST",
+   "records": 47
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG42",
+   "subelement_name": "OFFICE OF BUDGET AND PROGRAM ANALYSIS",
+   "records": 37
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG90",
+   "subelement_name": "OFFICE OF THE CHIEF FINANCIAL OFFICER",
+   "records": 715
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AG99",
+   "subelement_name": "FPAC BUSINESS CENTER",
+   "records": 989
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AGAO",
+   "subelement_name": "OFFICE OF PARTNERSHIPS AND PUBLIC ENGAGEMENT",
+   "records": 13
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AGCR",
+   "subelement_name": "CIVIL RIGHTS",
+   "records": 94
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AGDA",
+   "subelement_name": "DEPARTMENTAL ADMINISTRATION",
+   "records": 336
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AGFA",
+   "subelement_name": "FARM SERVICE AGENCY",
+   "records": 2737
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AGHL",
+   "subelement_name": "HOMELAND SECURITY STAFF",
+   "records": 47
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AGIT",
+   "subelement_name": "OFFICE OF THE CHIEF INFORMATION OFFICER",
+   "records": 1162
+  },
+  {
+   "agency_code": "AG",
+   "agency_name": "DEPARTMENT OF AGRICULTURE",
+   "subelement_code": "AGNA",
+   "subelement_name": "NATIONAL APPEALS DIVISION",
+   "records": 45
+  },
+  {
+   "agency_code": "AH",
+   "agency_name": "NAT FOUNDATION ON ARTS AND HUMANITIES",
+   "subelement_code": "AH01",
+   "subelement_name": "NATIONAL ENDOWMENT FOR THE ARTS",
+   "records": 112
+  },
+  {
+   "agency_code": "AH",
+   "agency_name": "NAT FOUNDATION ON ARTS AND HUMANITIES",
+   "subelement_code": "AH02",
+   "subelement_name": "NATIONAL ENDOWMENT FOR THE HUMANITIES",
+   "records": 72
+  },
+  {
+   "agency_code": "AH",
+   "agency_name": "NAT FOUNDATION ON ARTS AND HUMANITIES",
+   "subelement_code": "AH03",
+   "subelement_name": "INSTITUTE OF MUSEUM AND LIBRARY SERVICES",
+   "records": 39
+  },
+  {
+   "agency_code": "AM",
+   "agency_name": "U.S. AGENCY FOR INTERNATIONAL DEV",
+   "subelement_code": "AM00",
+   "subelement_name": "U.S. AGENCY FOR INTERNATIONAL DEVELOPMENT",
+   "records": 229
+  },
+  {
+   "agency_code": "AN",
+   "agency_name": "AFRICAN DEVELOPMENT FOUNDATION",
+   "subelement_code": "AN00",
+   "subelement_name": "AFRICAN DEVELOPMENT FOUNDATION",
+   "records": 21
+  },
+  {
+   "agency_code": "AP",
+   "agency_name": "APPALACHIAN REGIONAL COMMISSION",
+   "subelement_code": "AP00",
+   "subelement_name": "APPALACHIAN REGIONAL COMMISSION",
+   "records": 5
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "AR2A",
+   "subelement_name": "UNITED STATES ARMY CYBER COMMAND",
+   "records": 3654
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "AR3A",
+   "subelement_name": "U.S. ARMY CENTRAL",
+   "records": 251
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "AR5A",
+   "subelement_name": "U.S. ARMY NORTH",
+   "records": 163
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARAE",
+   "subelement_name": "U.S. ARMY ACQUISITION SUPPORT CENTER",
+   "records": 4422
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARAF",
+   "subelement_name": "UNITED STATES ARMY FUTURES COMMAND",
+   "records": 12972
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARAN",
+   "subelement_name": "U.S. ARMY NATIONAL MILITARY CEMETERIES",
+   "records": 193
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARAP",
+   "subelement_name": "U. S. MILITARY ENTRANCE PROCESSING COMMAND",
+   "records": 2298
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARAS",
+   "subelement_name": "U.S. ARMY INTELLIGENCE AND SECURITY COMMAND",
+   "records": 3060
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARAT",
+   "subelement_name": "U.S. ARMY TEST AND EVALUATION COMMAND",
+   "records": 3279
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARCB",
+   "subelement_name": "U.S. ARMY CRIMINAL INVESTIGATION COMMAND",
+   "records": 1400
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARCC",
+   "subelement_name": "U.S. ARMY CORRECTIONS COMMAND",
+   "records": 105
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARCE",
+   "subelement_name": "U.S. ARMY CORPS OF ENGINEERS",
+   "records": 34022
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARCH",
+   "subelement_name": "US ARMY CIVILIAN HUMAN RESOURCES AGENCY",
+   "records": 3211
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARCS",
+   "subelement_name": "IMMEDIATE OFFICE OF THE CHIEF OF STAFF OF THE ARMY",
+   "records": 856
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARE1",
+   "subelement_name": "IMMEDIATE OFFICE OF THE COMMANDER-IN-CHIEF OF THE U.S. ARMY EUROPE AND SEVENTH ARMY",
+   "records": 786
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARE2",
+   "subelement_name": "21ST THEATER SUSTAINMENT COMMAND (TSC)",
+   "records": 338
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARE3",
+   "subelement_name": "UNITED STATES ARMY EUROPE AND AFRICA",
+   "records": 194
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARE5",
+   "subelement_name": "U.S. ARMY V CORPS",
+   "records": 53
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "AREN",
+   "subelement_name": "SEVENTH ARMY TRAINING COMMAND",
+   "records": 277
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARFC",
+   "subelement_name": "U.S. ARMY FORCES COMMAND",
+   "records": 2162
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARGB",
+   "subelement_name": "OFFICE OF THE CHIEF OF THE NATIONAL GUARD BUREAU",
+   "records": 632
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARHC",
+   "subelement_name": "US ARMY HUMAN RESOURCES COMMAND (DRU)",
+   "records": 1185
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARHR",
+   "subelement_name": "U.S. ARMY RESERVE COMMAND",
+   "records": 7435
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARJ1",
+   "subelement_name": "U.S. ARMY ELEMENT SHAPE",
+   "records": 160
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARJA",
+   "subelement_name": "JOINT ACTIVITIES",
+   "records": 2431
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARJC",
+   "subelement_name": "U.S. JOINT COUNTER",
+   "records": 27
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARMA",
+   "subelement_name": "U.S. MILITARY ACADEMY",
+   "records": 685
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARMC",
+   "subelement_name": "U.S. ARMY MEDICAL COMMAND",
+   "records": 2530
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARMW",
+   "subelement_name": "U.S. ARMY MILITARY DISTRICT OF WASHINGTON",
+   "records": 294
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARNG",
+   "subelement_name": "ARMY NATIONAL GUARD UNITS",
+   "records": 23909
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARP1",
+   "subelement_name": "U.S. ARMY, PACIFIC",
+   "records": 1287
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARPS",
+   "subelement_name": "MILITARY POSTAL SERVICE AGENCY",
+   "records": 14
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARSA",
+   "subelement_name": "OFFICE OF THE SECRETARY OF THE ARMY",
+   "records": 758
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARSB",
+   "subelement_name": "FIELD OPERATING OFFICES OF THE OFFICE OF THE SECRETARY OF THE ARMY",
+   "records": 977
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARSC",
+   "subelement_name": "U. S. ARMY SPACE AND MISSILE DEFENSE COMMAND/U. S. ARMY FORCES STRATEGIC COMMAND",
+   "records": 577
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARSE",
+   "subelement_name": "HQDA FIELD OPERATING AGENCIES AND STAFF SUPPORT AGENCIES AND STAFF SUPPORT AGENCIES",
+   "records": 902
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARSJ",
+   "subelement_name": "JOINT SERVICES AND ACTIVITIES SUPPORTED BY THE OFFICE, SECRETARY OF THE ARMY",
+   "records": 60
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARSO",
+   "subelement_name": "U.S. ARMY SOUTH",
+   "records": 112
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARSP",
+   "subelement_name": "U.S. SPECIAL OPERATIONS COMMAND (ARMY)",
+   "records": 1640
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ART2",
+   "subelement_name": "ARMY TRANSFORMATION AND TRAINING COMMAND (T2COM)",
+   "records": 1092
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARTA",
+   "subelement_name": "U.S. ARMY RECRUITING COMMAND AND U.S. ARMY CADET COMMAND",
+   "records": 1915
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARTC",
+   "subelement_name": "U.S. ARMY TRAINING AND DOCTRINE COMMAND",
+   "records": 8373
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARTW",
+   "subelement_name": "U.S. ARMY WAR COLLEGE",
+   "records": 272
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARX2",
+   "subelement_name": "HEADQUARTERS, AMC",
+   "records": 649
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARX6",
+   "subelement_name": "U.S. ARMY AVIATION AND MISSILE COMMAND",
+   "records": 5684
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARX7",
+   "subelement_name": "U.S. ARMY TANK-AUTOMOTIVE AND ARMAMENT COMMAND (TACOM)",
+   "records": 8720
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARX8",
+   "subelement_name": "U.S. ARMY COMMUNICATIONS ELECTRONICS COMMAND",
+   "records": 4939
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARXA",
+   "subelement_name": "UNITED STATES ARMY INSTALLATION MANAGEMENT COMMAND",
+   "records": 19344
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARXB",
+   "subelement_name": "U.S. ARMY CHEMICAL MATERIALS ACTIVITY",
+   "records": 120
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARXC",
+   "subelement_name": "U.S. ARMY SUSTAINMENT COMMAND",
+   "records": 3616
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARXD",
+   "subelement_name": "U. S. ARMY CONTRACTING COMMAND",
+   "records": 4340
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARXF",
+   "subelement_name": "UNITED STATES ARMY FINANCIAL MANAGEMENT COMMAND",
+   "records": 806
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARXG",
+   "subelement_name": "UNITED STATES ARMY PRINT AND MEDIA DISTRIBUTION CENTER",
+   "records": 38
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARXK",
+   "subelement_name": "MATERIEL ACQUISITION ACTIVITIES",
+   "records": 48
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARXP",
+   "subelement_name": "U.S. ARMY SECURITY ASSISTANCE COMMAND",
+   "records": 416
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARXQ",
+   "subelement_name": "U.S. ARMY JOINT MUNITIONS COMMAND",
+   "records": 4018
+  },
+  {
+   "agency_code": "AR",
+   "agency_name": "DEPARTMENT OF THE ARMY",
+   "subelement_code": "ARXT",
+   "subelement_name": "ARMY TRANSPORTATION COMMAND",
+   "records": 1127
+  },
+  {
+   "agency_code": "AU",
+   "agency_name": "FEDERAL LABOR RELATIONS AUTHORITY",
+   "subelement_code": "AU00",
+   "subelement_name": "FEDERAL LABOR RELATIONS AUTHORITY",
+   "records": 84
+  },
+  {
+   "agency_code": "AW",
+   "agency_name": "ARCTIC RESEARCH COMMISSION",
+   "subelement_code": "AW00",
+   "subelement_name": "ARCTIC RESEARCH COMMISSION",
+   "records": 2
+  },
+  {
+   "agency_code": "BD",
+   "agency_name": "MERIT SYSTEMS PROTECTION BOARD",
+   "subelement_code": "BD00",
+   "subelement_name": "MERIT SYSTEMS PROTECTION BOARD",
+   "records": 156
+  },
+  {
+   "agency_code": "BF",
+   "agency_name": "DEFENSE NUCLEAR FACILITIES SAFETY BOARD",
+   "subelement_code": "BF00",
+   "subelement_name": "DEFENSE NUCLEAR FACILITIES SAFETY BOARD",
+   "records": 102
+  },
+  {
+   "agency_code": "BG",
+   "agency_name": "PENSION BENEFIT GUARANTY CORPORATION",
+   "subelement_code": "BG00",
+   "subelement_name": "PENSION BENEFIT GUARANTY CORPORATION",
+   "records": 724
+  },
+  {
+   "agency_code": "BH",
+   "agency_name": "CMSN FOR PRES OF AMERICA'S HERITAGE ABRD",
+   "subelement_code": "BH00",
+   "subelement_name": "COMMISSION FOR THE PRESERVATION OF AMERICA'S HERITAGE ABROAD",
+   "records": 18
+  },
+  {
+   "agency_code": "BK",
+   "agency_name": "JAMES MADISON MEMORIAL FELLOWSHIP FOUND",
+   "subelement_code": "BK00",
+   "subelement_name": "JAMES MADISON MEMORIAL FELLOWSHIP FOUNDATION",
+   "records": 5
+  },
+  {
+   "agency_code": "BO",
+   "agency_name": "OFFICE OF MANAGEMENT AND BUDGET",
+   "subelement_code": "BO00",
+   "subelement_name": "OFFICE OF MANAGEMENT AND BUDGET",
+   "records": 513
+  },
+  {
+   "agency_code": "BT",
+   "agency_name": "ARCHITECTL & TRANS BARRIER COMPLIANCE BD",
+   "subelement_code": "BT00",
+   "subelement_name": "ARCHITECTURAL AND TRANSPORTATION BARRIERS COMPLIANCE BOARD",
+   "records": 32
+  },
+  {
+   "agency_code": "BW",
+   "agency_name": "NUCLEAR WASTE TECHNICAL REVIEW BOARD",
+   "subelement_code": "BW00",
+   "subelement_name": "NUCLEAR WASTE TECHNICAL REVIEW BOARD",
+   "records": 11
+  },
+  {
+   "agency_code": "CC",
+   "agency_name": "COMMISSION ON CIVIL RIGHTS",
+   "subelement_code": "CC00",
+   "subelement_name": "COMMISSION ON CIVIL RIGHTS",
+   "records": 50
+  },
+  {
+   "agency_code": "CE",
+   "agency_name": "COUNCIL OF ECONOMIC ADVISERS",
+   "subelement_code": "CE00",
+   "subelement_name": "COUNCIL OF ECONOMIC ADVISERS",
+   "records": 21
+  },
+  {
+   "agency_code": "CF",
+   "agency_name": "COMMISSION OF FINE ARTS",
+   "subelement_code": "CF00",
+   "subelement_name": "COMMISSION OF FINE ARTS",
+   "records": 8
+  },
+  {
+   "agency_code": "CM",
+   "agency_name": "DEPARTMENT OF COMMERCE",
+   "subelement_code": "CM51",
+   "subelement_name": "OFFICE OF THE SECRETARY",
+   "records": 896
+  },
+  {
+   "agency_code": "CM",
+   "agency_name": "DEPARTMENT OF COMMERCE",
+   "subelement_code": "CM52",
+   "subelement_name": "ECONOMIC DEVELOPMENT ADMINISTRATION",
+   "records": 191
+  },
+  {
+   "agency_code": "CM",
+   "agency_name": "DEPARTMENT OF COMMERCE",
+   "subelement_code": "CM53",
+   "subelement_name": "BUREAU OF ECONOMIC ANALYSIS",
+   "records": 372
+  },
+  {
+   "agency_code": "CM",
+   "agency_name": "DEPARTMENT OF COMMERCE",
+   "subelement_code": "CM54",
+   "subelement_name": "NATIONAL OCEANIC AND ATMOSPHERIC ADMINISTRATION",
+   "records": 9850
+  },
+  {
+   "agency_code": "CM",
+   "agency_name": "DEPARTMENT OF COMMERCE",
+   "subelement_code": "CM55",
+   "subelement_name": "INTERNATIONAL TRADE ADMINISTRATION",
+   "records": 1114
+  },
+  {
+   "agency_code": "CM",
+   "agency_name": "DEPARTMENT OF COMMERCE",
+   "subelement_code": "CM56",
+   "subelement_name": "PATENT AND TRADEMARK OFFICE",
+   "records": 13517
+  },
+  {
+   "agency_code": "CM",
+   "agency_name": "DEPARTMENT OF COMMERCE",
+   "subelement_code": "CM57",
+   "subelement_name": "NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY",
+   "records": 3152
+  },
+  {
+   "agency_code": "CM",
+   "agency_name": "DEPARTMENT OF COMMERCE",
+   "subelement_code": "CM59",
+   "subelement_name": "MINORITY BUSINESS DEVELOPMENT AGENCY",
+   "records": 16
+  },
+  {
+   "agency_code": "CM",
+   "agency_name": "DEPARTMENT OF COMMERCE",
+   "subelement_code": "CM61",
+   "subelement_name": "NATIONAL TELECOMMUNICATIONS AND INFORMATION ADMINISTRATION",
+   "records": 526
+  },
+  {
+   "agency_code": "CM",
+   "agency_name": "DEPARTMENT OF COMMERCE",
+   "subelement_code": "CM63",
+   "subelement_name": "U.S. CENSUS BUREAU",
+   "records": 10935
+  },
+  {
+   "agency_code": "CM",
+   "agency_name": "DEPARTMENT OF COMMERCE",
+   "subelement_code": "CM64",
+   "subelement_name": "OFFICE OF THE INSPECTOR GENERAL",
+   "records": 193
+  },
+  {
+   "agency_code": "CM",
+   "agency_name": "DEPARTMENT OF COMMERCE",
+   "subelement_code": "CM67",
+   "subelement_name": "BUREAU OF INDUSTRY AND SECURITY",
+   "records": 494
+  },
+  {
+   "agency_code": "CT",
+   "agency_name": "COMMODITY FUTURES TRADING COMMISSION",
+   "subelement_code": "CT00",
+   "subelement_name": "COMMODITY FUTURES TRADING COMMISSION",
+   "records": 571
+  },
+  {
+   "agency_code": "CU",
+   "agency_name": "NATIONAL CREDIT UNION ADMINISTRATION",
+   "subelement_code": "CU00",
+   "subelement_name": "NATIONAL CREDIT UNION ADMINISTRATION",
+   "records": 927
+  },
+  {
+   "agency_code": "CX",
+   "agency_name": "NAT CMSN ON LIBRARIES AND INFO SCIENCE",
+   "subelement_code": "CX00",
+   "subelement_name": "NATIONAL COMMISSION ON LIBRARIES AND INFORMATION SCIENCE",
+   "records": 17
+  },
+  {
+   "agency_code": "DA",
+   "agency_name": "DELTA REGIONAL AUTHORITY",
+   "subelement_code": "DA00",
+   "subelement_name": "DELTA REGIONAL AUTHORITY",
+   "records": 1
+  },
+  {
+   "agency_code": "DB",
+   "agency_name": "PUBLIC INTEREST DECLASSIFICATION BOARD",
+   "subelement_code": "DB00",
+   "subelement_name": "PUBLIC INTEREST DECLASSIFICATION BOARD",
+   "records": 9
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD01",
+   "subelement_name": "OFFICE OF THE SECRETARY OF DEFENSE",
+   "records": 2585
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD02",
+   "subelement_name": "ORGANIZATION OF THE JOINT CHIEFS OF STAFF",
+   "records": 762
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD04",
+   "subelement_name": "DEFENSE INFORMATION SYSTEMS AGENCY",
+   "records": 6319
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD06",
+   "subelement_name": "DEFENSE SECURITY COOPERATION AGENCY",
+   "records": 1018
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD07",
+   "subelement_name": "DEFENSE LOGISTICS AGENCY",
+   "records": 22996
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD10",
+   "subelement_name": "DEFENSE CONTRACT AUDIT AGENCY",
+   "records": 3260
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD12",
+   "subelement_name": "DEFENSE COUNTERINTELLIGENCE AND SECURITY AGENCY",
+   "records": 4883
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD13",
+   "subelement_name": "DEFENSE ADVANCED RESEARCH PROJECTS AGENCY",
+   "records": 210
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD15",
+   "subelement_name": "UNIFORMED SERVICES UNIVERSITY OF THE HEALTH SCIENCES",
+   "records": 652
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD16",
+   "subelement_name": "DEPARTMENT OF WAR EDUCATION ACTIVITY",
+   "records": 13413
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD21",
+   "subelement_name": "WASHINGTON HEADQUARTERS SERVICES",
+   "records": 1511
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD23",
+   "subelement_name": "OFFICE OF ECONOMIC ADJUSTMENT",
+   "records": 42
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD25",
+   "subelement_name": "DEFENSE LEGAL SERVICES AGENCY",
+   "records": 243
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD26",
+   "subelement_name": "OFFICE OF THE INSPECTOR GENERAL",
+   "records": 1531
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD27",
+   "subelement_name": "MISSILE DEFENSE AGENCY",
+   "records": 2469
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD29",
+   "subelement_name": "DEFENSE TECHNOLOGY SECURITY ADMINISTRATION",
+   "records": 119
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD34",
+   "subelement_name": "DEFENSE COMMISSARY AGENCY",
+   "records": 10109
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD35",
+   "subelement_name": "DEFENSE FINANCE AND ACCOUNTING SERVICE",
+   "records": 9339
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD48",
+   "subelement_name": "DEFENSE HUMAN RESOURCES ACTIVITY",
+   "records": 1041
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD53",
+   "subelement_name": "DEFENSE POW/MIA ACCOUNTING AGENCY",
+   "records": 288
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD60",
+   "subelement_name": "DEFENSE HEALTH AGENCY",
+   "records": 5537
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD61",
+   "subelement_name": "DEFENSE THREAT REDUCTION AGENCY",
+   "records": 1060
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD63",
+   "subelement_name": "DEFENSE CONTRACT MANAGEMENT AGENCY",
+   "records": 8483
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD65",
+   "subelement_name": "PENTAGON FORCE PROTECTION AGENCY",
+   "records": 1086
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD68",
+   "subelement_name": "DEPARTMENT OF DEFENSE TEST RESOURCE MANAGEMENT CENTER",
+   "records": 21
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD69",
+   "subelement_name": "NATIONAL DEFENSE UNIVERSITY",
+   "records": 402
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD71",
+   "subelement_name": "DEFENSE MICROELECTRONICS ACTIVITY",
+   "records": 189
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD74",
+   "subelement_name": "DEFENSE TECHNICAL INFORMATION CENTER",
+   "records": 45
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD80",
+   "subelement_name": "DEFENSE MEDIA ACTIVITY",
+   "records": 406
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD81",
+   "subelement_name": "WARFIGHTING ACQUISITION UNIVERSITY",
+   "records": 547
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD82",
+   "subelement_name": "NATIONAL RECONNAISSANCE OFFICE",
+   "records": 1155
+  },
+  {
+   "agency_code": "DD",
+   "agency_name": "DEPARTMENT OF DEFENSE",
+   "subelement_code": "DD83",
+   "subelement_name": "MILITARY TREATMENT FACILITIES UNDER DHA",
+   "records": 40888
+  },
+  {
+   "agency_code": "DG",
+   "agency_name": "NORTHERN BORDER REGIONAL COMMISSION",
+   "subelement_code": "DG00",
+   "subelement_name": "NORTHERN BORDER REGIONAL COMMISSION",
+   "records": 2
+  },
+  {
+   "agency_code": "DJ",
+   "agency_name": "DEPARTMENT OF JUSTICE",
+   "subelement_code": "DJ01",
+   "subelement_name": "OFFICES, BOARDS AND DIVISIONS",
+   "records": 5201
+  },
+  {
+   "agency_code": "DJ",
+   "agency_name": "DEPARTMENT OF JUSTICE",
+   "subelement_code": "DJ02",
+   "subelement_name": "FEDERAL BUREAU OF INVESTIGATION",
+   "records": 35283
+  },
+  {
+   "agency_code": "DJ",
+   "agency_name": "DEPARTMENT OF JUSTICE",
+   "subelement_code": "DJ03",
+   "subelement_name": "BUREAU OF PRISONS/FEDERAL PRISON SYSTEM",
+   "records": 34036
+  },
+  {
+   "agency_code": "DJ",
+   "agency_name": "DEPARTMENT OF JUSTICE",
+   "subelement_code": "DJ06",
+   "subelement_name": "DRUG ENFORCEMENT ADMINISTRATION",
+   "records": 8535
+  },
+  {
+   "agency_code": "DJ",
+   "agency_name": "DEPARTMENT OF JUSTICE",
+   "subelement_code": "DJ07",
+   "subelement_name": "OFFICE OF JUSTICE PROGRAMS",
+   "records": 646
+  },
+  {
+   "agency_code": "DJ",
+   "agency_name": "DEPARTMENT OF JUSTICE",
+   "subelement_code": "DJ08",
+   "subelement_name": "U.S. MARSHALS SERVICE",
+   "records": 5383
+  },
+  {
+   "agency_code": "DJ",
+   "agency_name": "DEPARTMENT OF JUSTICE",
+   "subelement_code": "DJ09",
+   "subelement_name": "EXECUTIVE OFFICE FOR U.S. ATTORNEYS AND THE OFFICES OF THE U.S. ATTORNEYS",
+   "records": 10512
+  },
+  {
+   "agency_code": "DJ",
+   "agency_name": "DEPARTMENT OF JUSTICE",
+   "subelement_code": "DJ10",
+   "subelement_name": "OFFICE OF THE INSPECTOR GENERAL",
+   "records": 477
+  },
+  {
+   "agency_code": "DJ",
+   "agency_name": "DEPARTMENT OF JUSTICE",
+   "subelement_code": "DJ11",
+   "subelement_name": "U.S. TRUSTEE PROGRAM",
+   "records": 662
+  },
+  {
+   "agency_code": "DJ",
+   "agency_name": "DEPARTMENT OF JUSTICE",
+   "subelement_code": "DJ12",
+   "subelement_name": "EXECUTIVE OFFICE FOR IMMIGRATION REVIEW",
+   "records": 2288
+  },
+  {
+   "agency_code": "DJ",
+   "agency_name": "DEPARTMENT OF JUSTICE",
+   "subelement_code": "DJ15",
+   "subelement_name": "BUREAU OF ALCOHOL, TOBACCO, FIREARMS AND EXPLOSIVES",
+   "records": 4493
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLAA",
+   "subelement_name": "OFFICE OF THE SECRETARY OF LABOR",
+   "records": 217
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLAM",
+   "subelement_name": "OFFICE OF THE ASSISTANT SECRETARY FOR ADMINISTRATION AND MANAGEMENT",
+   "records": 923
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLBL",
+   "subelement_name": "BUREAU OF INTERNATIONAL LABOR AFFAIRS",
+   "records": 93
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLCA",
+   "subelement_name": "OFFICE OF CONGRESSIONAL AND INTERGOVERNMENTAL AFFAIRS",
+   "records": 14
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLCF",
+   "subelement_name": "OFFICE OF THE CHIEF FINANCIAL OFFICER",
+   "records": 83
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLEH",
+   "subelement_name": "OFFICE OF DISABILITY EMPLOYMENT POLICY",
+   "records": 45
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLET",
+   "subelement_name": "EMPLOYMENT AND TRAINING ADMINISTRATION",
+   "records": 898
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLIG",
+   "subelement_name": "OFFICE OF THE INSPECTOR GENERAL",
+   "records": 247
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLLS",
+   "subelement_name": "BUREAU OF LABOR STATISTICS",
+   "records": 1864
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLMS",
+   "subelement_name": "MINE SAFETY AND HEALTH ADMINISTRATION",
+   "records": 1355
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLOF",
+   "subelement_name": "OFFICE OF FEDERAL CONTRACT COMPLIANCE PROGRAMS",
+   "records": 76
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLOL",
+   "subelement_name": "OFFICE OF LABOR-MANAGEMENT STANDARDS",
+   "records": 165
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLOW",
+   "subelement_name": "OFFICE OF WORKERS' COMPENSATION PROGRAMS",
+   "records": 1052
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLPA",
+   "subelement_name": "OFFICE OF PUBLIC AFFAIRS",
+   "records": 33
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLPE",
+   "subelement_name": "OFFICE OF THE ASSISTANT SECRETARY FOR POLICY",
+   "records": 47
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLPW",
+   "subelement_name": "EMPLOYEE BENEFITS SECURITY ADMINISTRATION",
+   "records": 642
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLSH",
+   "subelement_name": "OCCUPATIONAL SAFETY AND HEALTH ADMINISTRATION",
+   "records": 1538
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLSL",
+   "subelement_name": "OFFICE OF THE SOLICITOR",
+   "records": 453
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLVE",
+   "subelement_name": "VETERANS EMPLOYMENT AND TRAINING SERVICES",
+   "records": 162
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLWB",
+   "subelement_name": "WOMEN'S BUREAU",
+   "records": 18
+  },
+  {
+   "agency_code": "DL",
+   "agency_name": "DEPARTMENT OF LABOR",
+   "subelement_code": "DLWH",
+   "subelement_name": "WAGE AND HOUR DIVISION",
+   "records": 1187
+  },
+  {
+   "agency_code": "DN",
+   "agency_name": "DEPARTMENT OF ENERGY",
+   "subelement_code": "DN00",
+   "subelement_name": "DEPARTMENT OF ENERGY",
+   "records": 12048
+  },
+  {
+   "agency_code": "DN",
+   "agency_name": "DEPARTMENT OF ENERGY",
+   "subelement_code": "DNFE",
+   "subelement_name": "FEDERAL ENERGY REGULATORY COMMISSION",
+   "records": 1365
+  },
+  {
+   "agency_code": "DO",
+   "agency_name": "OFC OF THE NAT CYBER DIRECTOR",
+   "subelement_code": "DO00",
+   "subelement_name": "OFFICE OF THE CYBER DIRECTOR",
+   "records": 29
+  },
+  {
+   "agency_code": "DQ",
+   "agency_name": "DENALI COMMISSION",
+   "subelement_code": "DQ00",
+   "subelement_name": "DENALI COMMISSION",
+   "records": 12
+  },
+  {
+   "agency_code": "EB",
+   "agency_name": "EXPORT-IMPORT BANK OF THE UNITED STATES",
+   "subelement_code": "EB00",
+   "subelement_name": "EXPORT-IMPORT BANK OF THE UNITED STATES",
+   "records": 340
+  },
+  {
+   "agency_code": "EC",
+   "agency_name": "OFFICE OF ADMINISTRATION",
+   "subelement_code": "EC00",
+   "subelement_name": "OFFICE OF ADMINISTRATION",
+   "records": 252
+  },
+  {
+   "agency_code": "ED",
+   "agency_name": "DEPARTMENT OF EDUCATION",
+   "subelement_code": "EDEA",
+   "subelement_name": "IMMEDIATE OFFICE OF THE SECRETARY OF EDUCATION",
+   "records": 53
+  },
+  {
+   "agency_code": "ED",
+   "agency_name": "DEPARTMENT OF EDUCATION",
+   "subelement_code": "EDEB",
+   "subelement_name": "OFFICE OF THE DUTY SECRETARY OF EDUCATION",
+   "records": 23
+  },
+  {
+   "agency_code": "ED",
+   "agency_name": "DEPARTMENT OF EDUCATION",
+   "subelement_code": "EDEC",
+   "subelement_name": "OFFICE FOR CIVIL RIGHTS",
+   "records": 293
+  },
+  {
+   "agency_code": "ED",
+   "agency_name": "DEPARTMENT OF EDUCATION",
+   "subelement_code": "EDED",
+   "subelement_name": "OFFICE OF PLANNING, EVALUATION AND POLICY DEVELOPMENT",
+   "records": 74
+  },
+  {
+   "agency_code": "ED",
+   "agency_name": "DEPARTMENT OF EDUCATION",
+   "subelement_code": "EDEE",
+   "subelement_name": "OFFICE OF THE UNDER SECRETARY",
+   "records": 10
+  },
+  {
+   "agency_code": "ED",
+   "agency_name": "DEPARTMENT OF EDUCATION",
+   "subelement_code": "EDEF",
+   "subelement_name": "OFFICE OF INSPECTOR GENERAL",
+   "records": 145
+  },
+  {
+   "agency_code": "ED",
+   "agency_name": "DEPARTMENT OF EDUCATION",
+   "subelement_code": "EDEG",
+   "subelement_name": "OFFICE OF THE GENERAL COUNSEL",
+   "records": 38
+  },
+  {
+   "agency_code": "ED",
+   "agency_name": "DEPARTMENT OF EDUCATION",
+   "subelement_code": "EDEH",
+   "subelement_name": "OFFICE OF SPECIAL EDUCATION AND REHABILITATIVE SERVICES",
+   "records": 123
+  },
+  {
+   "agency_code": "ED",
+   "agency_name": "DEPARTMENT OF EDUCATION",
+   "subelement_code": "EDEI",
+   "subelement_name": "OFFICE OF THE CHIEF INFORMATION OFFICER",
+   "records": 1
+  },
+  {
+   "agency_code": "ED",
+   "agency_name": "DEPARTMENT OF EDUCATION",
+   "subelement_code": "EDEJ",
+   "subelement_name": "OFFICE OF LEGISLATION AND CONGRESSIONAL AFFAIRS",
+   "records": 19
+  },
+  {
+   "agency_code": "ED",
+   "agency_name": "DEPARTMENT OF EDUCATION",
+   "subelement_code": "EDEK",
+   "subelement_name": "OFFICE OF FINANCE AND OPERATIONS",
+   "records": 320
+  },
+  {
+   "agency_code": "ED",
+   "agency_name": "DEPARTMENT OF EDUCATION",
+   "subelement_code": "EDEN",
+   "subelement_name": "FEDERAL STUDENT AID",
+   "records": 797
+  },
+  {
+   "agency_code": "ED",
+   "agency_name": "DEPARTMENT OF EDUCATION",
+   "subelement_code": "EDEO",
+   "subelement_name": "OFFICE OF COMMUNICATIONS AND OUTREACH",
+   "records": 27
+  },
+  {
+   "agency_code": "ED",
+   "agency_name": "DEPARTMENT OF EDUCATION",
+   "subelement_code": "EDEP",
+   "subelement_name": "OFFICE OF POSTSECONDARY EDUCATION",
+   "records": 128
+  },
+  {
+   "agency_code": "ED",
+   "agency_name": "DEPARTMENT OF EDUCATION",
+   "subelement_code": "EDER",
+   "subelement_name": "INSTITUTE OF EDUCATION SCIENCES",
+   "records": 40
+  },
+  {
+   "agency_code": "ED",
+   "agency_name": "DEPARTMENT OF EDUCATION",
+   "subelement_code": "EDES",
+   "subelement_name": "OFFICE OF ELEMENTARY AND SECONDARY EDUCATION",
+   "records": 150
+  },
+  {
+   "agency_code": "ED",
+   "agency_name": "DEPARTMENT OF EDUCATION",
+   "subelement_code": "EDEV",
+   "subelement_name": "OFFICE OF CAREER, TECHNICAL, AND ADULT EDUCATION",
+   "records": 20
+  },
+  {
+   "agency_code": "ED",
+   "agency_name": "DEPARTMENT OF EDUCATION",
+   "subelement_code": "EDEZ",
+   "subelement_name": "NATIONAL ASSESSMENT GOVERNING BOARD",
+   "records": 33
+  },
+  {
+   "agency_code": "EE",
+   "agency_name": "EQUAL EMPLOYMENT OPPORTUNITY COMMISSION",
+   "subelement_code": "EE00",
+   "subelement_name": "EQUAL EMPLOYMENT OPPORTUNITY COMMISSION",
+   "records": 1693
+  },
+  {
+   "agency_code": "EO",
+   "agency_name": "MORRIS K. UDALL & STEWART L. UDALL FOUND",
+   "subelement_code": "EO00",
+   "subelement_name": "MORRIS K. UDALL AND STEWART L. UDALL FOUNDATION",
+   "records": 32
+  },
+  {
+   "agency_code": "EP",
+   "agency_name": "ENVIRONMENTAL PROTECTION AGENCY",
+   "subelement_code": "EP00",
+   "subelement_name": "ENVIRONMENTAL PROTECTION AGENCY",
+   "records": 12397
+  },
+  {
+   "agency_code": "EQ",
+   "agency_name": "COUNCIL ON ENVIR QUAL/OFC OF ENVIR QUAL",
+   "subelement_code": "EQ00",
+   "subelement_name": "COUNCIL ON ENVIRONMENTAL QUALITY/OFFICE OF ENVIRONMENTAL QUALITY",
+   "records": 19
+  },
+  {
+   "agency_code": "EW",
+   "agency_name": "TRADE AND DEVELOPMENT AGENCY",
+   "subelement_code": "EW00",
+   "subelement_name": "TRADE AND DEVELOPMENT AGENCY",
+   "records": 50
+  },
+  {
+   "agency_code": "FC",
+   "agency_name": "FEDERAL COMMUNICATIONS COMMISSION",
+   "subelement_code": "FC00",
+   "subelement_name": "FEDERAL COMMUNICATIONS COMMISSION",
+   "records": 1182
+  },
+  {
+   "agency_code": "FD",
+   "agency_name": "FEDERAL DEPOSIT INSURANCE CORPORATION",
+   "subelement_code": "FD00",
+   "subelement_name": "FEDERAL DEPOSIT INSURANCE CORPORATION",
+   "records": 4959
+  },
+  {
+   "agency_code": "FI",
+   "agency_name": "FEDERAL FINANCIAL INST. EXAM. COUNCIL",
+   "subelement_code": "FI00",
+   "subelement_name": "FEDERAL FINANCIAL INSTITUTIONS EXAMINATION COUNCIL",
+   "records": 12
+  },
+  {
+   "agency_code": "FJ",
+   "agency_name": "CHEMICAL SAFETY/HAZARD INVESTIGATION BD",
+   "subelement_code": "FJ00",
+   "subelement_name": "CHEMICAL SAFETY AND HAZARD INVESTIGATION BOARD",
+   "records": 43
+  },
+  {
+   "agency_code": "FK",
+   "agency_name": "FARM CREDIT SYSTEM INSURANCE CORPORATION",
+   "subelement_code": "FK00",
+   "subelement_name": "FARM CREDIT SYSTEM INSURANCE CORPORATION",
+   "records": 10
+  },
+  {
+   "agency_code": "FL",
+   "agency_name": "FARM CREDIT ADMINISTRATION",
+   "subelement_code": "FL00",
+   "subelement_name": "FARM CREDIT ADMINISTRATION",
+   "records": 309
+  },
+  {
+   "agency_code": "FM",
+   "agency_name": "FED MEDIATION AND CONCILIATION SERVICE",
+   "subelement_code": "FM00",
+   "subelement_name": "FEDERAL MEDIATION AND CONCILIATION SERVICE",
+   "records": 96
+  },
+  {
+   "agency_code": "FQ",
+   "agency_name": "COURT SERVICES AND OFFENDR SUPERVSN AGY",
+   "subelement_code": "FQ01",
+   "subelement_name": "OFFICE OF THE DIRECTOR",
+   "records": 585
+  },
+  {
+   "agency_code": "FQ",
+   "agency_name": "COURT SERVICES AND OFFENDR SUPERVSN AGY",
+   "subelement_code": "FQ02",
+   "subelement_name": "PRETRIAL SERVICES AGENCY",
+   "records": 325
+  },
+  {
+   "agency_code": "FR",
+   "agency_name": "FEDERAL RESERVE SYSTEM",
+   "subelement_code": "FRFT",
+   "subelement_name": "CONSUMER FINANCIAL PROTECTION BUREAU",
+   "records": 1056
+  },
+  {
+   "agency_code": "FT",
+   "agency_name": "FEDERAL TRADE COMMISSION",
+   "subelement_code": "FT00",
+   "subelement_name": "FEDERAL TRADE COMMISSION",
+   "records": 1035
+  },
+  {
+   "agency_code": "FW",
+   "agency_name": "OFFICE OF SPECIAL COUNSEL",
+   "subelement_code": "FW00",
+   "subelement_name": "OFFICE OF SPECIAL COUNSEL",
+   "records": 121
+  },
+  {
+   "agency_code": "GB",
+   "agency_name": "DFC",
+   "subelement_code": "GB00",
+   "subelement_name": "DEVELOPMENT FINANCE CORPORATION",
+   "records": 546
+  },
+  {
+   "agency_code": "GC",
+   "agency_name": "GULF COAST ECOSYSTEM RESTORATION COUNCIL",
+   "subelement_code": "GC00",
+   "subelement_name": "GULF COAST ECOSYSTEM RESTORATION COUNCIL",
+   "records": 20
+  },
+  {
+   "agency_code": "GE",
+   "agency_name": "BARRY GOLDWATER SCHOL & EXCEL IN ED FOUN",
+   "subelement_code": "GE00",
+   "subelement_name": "BARRY GOLDWATER SCHOLARSHIP AND EXCELLENCE IN EDUCATION FOUNDATION",
+   "records": 2
+  },
+  {
+   "agency_code": "GG",
+   "agency_name": "OFFICE OF GOVERNMENT ETHICS",
+   "subelement_code": "GG00",
+   "subelement_name": "OFFICE OF GOVERNMENT ETHICS",
+   "records": 59
+  },
+  {
+   "agency_code": "GJ",
+   "agency_name": "PRESIDIO TRUST",
+   "subelement_code": "GJ00",
+   "subelement_name": "PRESIDIO TRUST",
+   "records": 324
+  },
+  {
+   "agency_code": "GQ",
+   "agency_name": "ELECTION ASSISTANCE COMMISSION",
+   "subelement_code": "GQ00",
+   "subelement_name": "ELECTION ASSISTANCE COMMISSION",
+   "records": 62
+  },
+  {
+   "agency_code": "GS",
+   "agency_name": "GENERAL SERVICES ADMINISTRATION",
+   "subelement_code": "GS01",
+   "subelement_name": "IMMEDIATE OFFICE OF THE ADMINISTRATOR",
+   "records": 43
+  },
+  {
+   "agency_code": "GS",
+   "agency_name": "GENERAL SERVICES ADMINISTRATION",
+   "subelement_code": "GS02",
+   "subelement_name": "OFFICE OF ADMINISTRATIVE SERVICES",
+   "records": 66
+  },
+  {
+   "agency_code": "GS",
+   "agency_name": "GENERAL SERVICES ADMINISTRATION",
+   "subelement_code": "GS03",
+   "subelement_name": "PUBLIC BUILDINGS SERVICE",
+   "records": 3126
+  },
+  {
+   "agency_code": "GS",
+   "agency_name": "GENERAL SERVICES ADMINISTRATION",
+   "subelement_code": "GS04",
+   "subelement_name": "OFFICE OF CIVIL RIGHTS",
+   "records": 12
+  },
+  {
+   "agency_code": "GS",
+   "agency_name": "GENERAL SERVICES ADMINISTRATION",
+   "subelement_code": "GS10",
+   "subelement_name": "OFFICE OF SMALL BUSINESS UTILIZATION",
+   "records": 30
+  },
+  {
+   "agency_code": "GS",
+   "agency_name": "GENERAL SERVICES ADMINISTRATION",
+   "subelement_code": "GS11",
+   "subelement_name": "OFFICE OF THE CHIEF FINANCIAL OFFICER",
+   "records": 484
+  },
+  {
+   "agency_code": "GS",
+   "agency_name": "GENERAL SERVICES ADMINISTRATION",
+   "subelement_code": "GS12",
+   "subelement_name": "OFFICE OF GENERAL COUNSEL",
+   "records": 119
+  },
+  {
+   "agency_code": "GS",
+   "agency_name": "GENERAL SERVICES ADMINISTRATION",
+   "subelement_code": "GS13",
+   "subelement_name": "CIVILIAN BOARD OF CONTRACT APPEALS",
+   "records": 27
+  },
+  {
+   "agency_code": "GS",
+   "agency_name": "GENERAL SERVICES ADMINISTRATION",
+   "subelement_code": "GS14",
+   "subelement_name": "OFFICE OF THE HUMAN RESOURCES MANAGEMENT",
+   "records": 201
+  },
+  {
+   "agency_code": "GS",
+   "agency_name": "GENERAL SERVICES ADMINISTRATION",
+   "subelement_code": "GS15",
+   "subelement_name": "OFFICE OF INSPECTOR GENERAL",
+   "records": 228
+  },
+  {
+   "agency_code": "GS",
+   "agency_name": "GENERAL SERVICES ADMINISTRATION",
+   "subelement_code": "GS20",
+   "subelement_name": "OFFICE OF CONGRESSIONAL AND INTERGOVERNMENTAL AFFAIRS",
+   "records": 21
+  },
+  {
+   "agency_code": "GS",
+   "agency_name": "GENERAL SERVICES ADMINISTRATION",
+   "subelement_code": "GS22",
+   "subelement_name": "OFFICES OF THE REGIONAL ADMINISTRATORS",
+   "records": 17
+  },
+  {
+   "agency_code": "GS",
+   "agency_name": "GENERAL SERVICES ADMINISTRATION",
+   "subelement_code": "GS26",
+   "subelement_name": "OFFICE OF GOVERNMENTWIDE POLICY",
+   "records": 187
+  },
+  {
+   "agency_code": "GS",
+   "agency_name": "GENERAL SERVICES ADMINISTRATION",
+   "subelement_code": "GS28",
+   "subelement_name": "OFFICE OF GSA IT",
+   "records": 284
+  },
+  {
+   "agency_code": "GS",
+   "agency_name": "GENERAL SERVICES ADMINISTRATION",
+   "subelement_code": "GS30",
+   "subelement_name": "FEDERAL ACQUISITION SERVICE",
+   "records": 3253
+  },
+  {
+   "agency_code": "GS",
+   "agency_name": "GENERAL SERVICES ADMINISTRATION",
+   "subelement_code": "GS31",
+   "subelement_name": "OFFICE OF MISSION ASSURANCE",
+   "records": 81
+  },
+  {
+   "agency_code": "GS",
+   "agency_name": "GENERAL SERVICES ADMINISTRATION",
+   "subelement_code": "GS32",
+   "subelement_name": "OFFICE OF STRATEGIC COMMUNICATION",
+   "records": 57
+  },
+  {
+   "agency_code": "GU",
+   "agency_name": "THE US SEMIQUINCENTENNIAL COMMISSION",
+   "subelement_code": "GU00",
+   "subelement_name": "THE US SEMIQUINCENTENNIAL COMMISSION",
+   "records": 8
+  },
+  {
+   "agency_code": "GW",
+   "agency_name": "INTER BOUND AND WATER COMM U.S. SECTION",
+   "subelement_code": "GW00",
+   "subelement_name": "INTERNATIONAL BOUNDARY AND WATER COMMISSION, U.S. SECTION",
+   "records": 247
+  },
+  {
+   "agency_code": "GX",
+   "agency_name": "INTERNAT BOUNDARY CMSN: U.S. AND CANADA",
+   "subelement_code": "GX00",
+   "subelement_name": "INTERNATIONAL BOUNDARY COMMISSION:  UNITED STATES AND CANADA",
+   "records": 21
+  },
+  {
+   "agency_code": "GY",
+   "agency_name": "INTERNATIONAL JOINT CMSN: U.S. & CANADA",
+   "subelement_code": "GY00",
+   "subelement_name": "INTERNATIONAL JOINT COMMISSION:  UNITED STATES AND CANADA",
+   "records": 15
+  },
+  {
+   "agency_code": "HB",
+   "agency_name": "CMTE FOR PURCH FRM PPLE BLIND OR SEV DIS",
+   "subelement_code": "HB01",
+   "subelement_name": "OFFICE OF THE COMMITTEE FOR PURCHASE FROM PEOPLE WHO A RE BLIND OR SEVERELY DISABLED",
+   "records": 25
+  },
+  {
+   "agency_code": "HB",
+   "agency_name": "CMTE FOR PURCH FRM PPLE BLIND OR SEV DIS",
+   "subelement_code": "HB02",
+   "subelement_name": "OFFICE OF INSPECTOR GENERAL",
+   "records": 8
+  },
+  {
+   "agency_code": "HD",
+   "agency_name": "U.S. HOLOCAUST MEMORIAL MUSEUM",
+   "subelement_code": "HD00",
+   "subelement_name": "U.S. HOLOCAUST MEMORIAL MUSEUM",
+   "records": 85
+  },
+  {
+   "agency_code": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "subelement_code": "HE10",
+   "subelement_name": "OFFICE OF THE SECRETARY OF HEALTH AND HUMAN SERVICES",
+   "records": 2559
+  },
+  {
+   "agency_code": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "subelement_code": "HE11",
+   "subelement_name": "PROGRAM SUPPORT CENTER",
+   "records": 262
+  },
+  {
+   "agency_code": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "subelement_code": "HE12",
+   "subelement_name": "ADMINISTRATION FOR COMMUNITY LIVING",
+   "records": 151
+  },
+  {
+   "agency_code": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "subelement_code": "HE13",
+   "subelement_name": "OFFICE OF INSPECTOR GENERAL",
+   "records": 1339
+  },
+  {
+   "agency_code": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "subelement_code": "HE31",
+   "subelement_name": "OFFICE OF THE ASSISTANT SECRETARY FOR HEALTH",
+   "records": 8
+  },
+  {
+   "agency_code": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "subelement_code": "HE32",
+   "subelement_name": "SUBSTANCE ABUSE AND MENTAL HEALTH SERVICES ADMINISTRATION",
+   "records": 516
+  },
+  {
+   "agency_code": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "subelement_code": "HE33",
+   "subelement_name": "AGENCY FOR HEALTHCARE RESEARCH AND QUALITY",
+   "records": 82
+  },
+  {
+   "agency_code": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "subelement_code": "HE34",
+   "subelement_name": "HEALTH RESOURCES AND SERVICES ADMINISTRATION",
+   "records": 1652
+  },
+  {
+   "agency_code": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "subelement_code": "HE35",
+   "subelement_name": "AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY",
+   "records": 124
+  },
+  {
+   "agency_code": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "subelement_code": "HE36",
+   "subelement_name": "FOOD AND DRUG ADMINISTRATION",
+   "records": 16282
+  },
+  {
+   "agency_code": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "subelement_code": "HE37",
+   "subelement_name": "INDIAN HEALTH SERVICE",
+   "records": 12211
+  },
+  {
+   "agency_code": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "subelement_code": "HE38",
+   "subelement_name": "NATIONAL INSTITUTES OF HEALTH",
+   "records": 16428
+  },
+  {
+   "agency_code": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "subelement_code": "HE39",
+   "subelement_name": "CENTERS FOR DISEASE CONTROL AND PREVENTION",
+   "records": 9063
+  },
+  {
+   "agency_code": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "subelement_code": "HE50",
+   "subelement_name": "OFFICE OF MEDICARE HEARINGS AND APPEALS",
+   "records": 491
+  },
+  {
+   "agency_code": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "subelement_code": "HE60",
+   "subelement_name": "ADMINISTRATION FOR STRATEGIC PREPAREDNESS AND RESPONSE",
+   "records": 4472
+  },
+  {
+   "agency_code": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "subelement_code": "HE70",
+   "subelement_name": "CENTERS FOR MEDICARE & MEDICAID SERVICES",
+   "records": 5656
+  },
+  {
+   "agency_code": "HE",
+   "agency_name": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+   "subelement_code": "HE90",
+   "subelement_name": "ADMINISTRATION FOR CHILDREN AND FAMILIES",
+   "records": 1487
+  },
+  {
+   "agency_code": "HF",
+   "agency_name": "FEDERAL HOUSING FINANCE AGENCY",
+   "subelement_code": "HFHA",
+   "subelement_name": "FEDERAL HOUSING FINANCE AGENCY",
+   "records": 503
+  },
+  {
+   "agency_code": "HF",
+   "agency_name": "FEDERAL HOUSING FINANCE AGENCY",
+   "subelement_code": "HFHI",
+   "subelement_name": "OFFICE OF INSPECTOR GENERAL",
+   "records": 93
+  },
+  {
+   "agency_code": "HP",
+   "agency_name": "ADV COUNCIL ON HISTORIC PRESERVATION",
+   "subelement_code": "HP00",
+   "subelement_name": "ADVISORY COUNCIL ON HISTORIC PRESERVATION",
+   "records": 36
+  },
+  {
+   "agency_code": "HS",
+   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
+   "subelement_code": "HSAA",
+   "subelement_name": "DHS HEADQUARTERS",
+   "records": 4144
+  },
+  {
+   "agency_code": "HS",
+   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
+   "subelement_code": "HSAB",
+   "subelement_name": "CITIZENSHIP AND IMMIGRATION SERVICES",
+   "records": 20327
+  },
+  {
+   "agency_code": "HS",
+   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
+   "subelement_code": "HSAC",
+   "subelement_name": "U.S. COAST GUARD",
+   "records": 8664
+  },
+  {
+   "agency_code": "HS",
+   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
+   "subelement_code": "HSAD",
+   "subelement_name": "U.S. SECRET SERVICE",
+   "records": 8694
+  },
+  {
+   "agency_code": "HS",
+   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
+   "subelement_code": "HSAE",
+   "subelement_name": "OFFICE OF THE INSPECTOR GENERAL",
+   "records": 646
+  },
+  {
+   "agency_code": "HS",
+   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
+   "subelement_code": "HSBB",
+   "subelement_name": "IMMIGRATION AND CUSTOMS ENFORCEMENT",
+   "records": 28674
+  },
+  {
+   "agency_code": "HS",
+   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
+   "subelement_code": "HSBC",
+   "subelement_name": "TRANSPORTATION SECURITY ADMINISTRATION",
+   "records": 59342
+  },
+  {
+   "agency_code": "HS",
+   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
+   "subelement_code": "HSBD",
+   "subelement_name": "CUSTOMS AND BORDER PROTECTION",
+   "records": 70843
+  },
+  {
+   "agency_code": "HS",
+   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
+   "subelement_code": "HSBE",
+   "subelement_name": "FEDERAL LAW ENFORCEMENT TRAINING CENTERS",
+   "records": 1424
+  },
+  {
+   "agency_code": "HS",
+   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
+   "subelement_code": "HSCA",
+   "subelement_name": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY",
+   "records": 2204
+  },
+  {
+   "agency_code": "HS",
+   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
+   "subelement_code": "HSCB",
+   "subelement_name": "FEDERAL EMERGENCY MANAGEMENT AGENCY",
+   "records": 20208
+  },
+  {
+   "agency_code": "HS",
+   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
+   "subelement_code": "HSDA",
+   "subelement_name": "DOMESTIC NUCLEAR DETECTION OFFICE",
+   "records": 1
+  },
+  {
+   "agency_code": "HS",
+   "agency_name": "DEPARTMENT OF HOMELAND SECURITY",
+   "subelement_code": "HSFA",
+   "subelement_name": "SCIENCE AND TECHNOLOGY DIRECTORATE",
+   "records": 403
+  },
+  {
+   "agency_code": "HT",
+   "agency_name": "HARRY S. TRUMAN SCHOLARSHIP FOUNDATION",
+   "subelement_code": "HT00",
+   "subelement_name": "HARRY S. TRUMAN SCHOLARSHIP FOUNDATION",
+   "records": 5
+  },
+  {
+   "agency_code": "HU",
+   "agency_name": "DEPARTMENT OF HOUSING AND URBAN DEVELOPM",
+   "subelement_code": "HU**",
+   "subelement_name": "INVALID",
+   "records": 316
+  },
+  {
+   "agency_code": "HU",
+   "agency_name": "DEPARTMENT OF HOUSING AND URBAN DEVELOPM",
+   "subelement_code": "HUAA",
+   "subelement_name": "OFFICE OF THE SECRETARY OF HOUSING AND URBAN DEVELOPMENT",
+   "records": 428
+  },
+  {
+   "agency_code": "HU",
+   "agency_name": "DEPARTMENT OF HOUSING AND URBAN DEVELOPM",
+   "subelement_code": "HUBB",
+   "subelement_name": "OFFICE OF THE CHIEF HUMAN CAPITAL OFFICER",
+   "records": 1290
+  },
+  {
+   "agency_code": "HU",
+   "agency_name": "DEPARTMENT OF HOUSING AND URBAN DEVELOPM",
+   "subelement_code": "HUCC",
+   "subelement_name": "OFFICE OF GENERAL COUNSEL",
+   "records": 1904
+  },
+  {
+   "agency_code": "HU",
+   "agency_name": "DEPARTMENT OF HOUSING AND URBAN DEVELOPM",
+   "subelement_code": "HUDD",
+   "subelement_name": "ASSISTANT SECRETARY FOR COMMUNITY PLANNING AND DEVELOPMENT",
+   "records": 428
+  },
+  {
+   "agency_code": "HU",
+   "agency_name": "DEPARTMENT OF HOUSING AND URBAN DEVELOPM",
+   "subelement_code": "HUEE",
+   "subelement_name": "ASSISTANT SECRETARY FOR FAIR HOUSING AND EQUAL OPPORTUNITY",
+   "records": 455
+  },
+  {
+   "agency_code": "HU",
+   "agency_name": "DEPARTMENT OF HOUSING AND URBAN DEVELOPM",
+   "subelement_code": "HUFF",
+   "subelement_name": "OFFICE OF THE CHIEF FINANCIAL OFFICER",
+   "records": 277
+  },
+  {
+   "agency_code": "HU",
+   "agency_name": "DEPARTMENT OF HOUSING AND URBAN DEVELOPM",
+   "subelement_code": "HUGG",
+   "subelement_name": "OFFICE OF INSPECTOR GENERAL",
+   "records": 556
+  },
+  {
+   "agency_code": "HU",
+   "agency_name": "DEPARTMENT OF HOUSING AND URBAN DEVELOPM",
+   "subelement_code": "HUII",
+   "subelement_name": "OFFICE OF DEPARTMENTAL OPERATIONS AND COORDINATION",
+   "records": 47
+  },
+  {
+   "agency_code": "HU",
+   "agency_name": "DEPARTMENT OF HOUSING AND URBAN DEVELOPM",
+   "subelement_code": "HUJJ",
+   "subelement_name": "ASSISTANT SECRETARY FOR CONGRESSIONAL AND INTERGOVERNMENTAL RELATIONS",
+   "records": 47
+  },
+  {
+   "agency_code": "HU",
+   "agency_name": "DEPARTMENT OF HOUSING AND URBAN DEVELOPM",
+   "subelement_code": "HUKK",
+   "subelement_name": "OFFICE OF FIELD POLICY AND MANAGEMENT",
+   "records": 50
+  },
+  {
+   "agency_code": "HU",
+   "agency_name": "DEPARTMENT OF HOUSING AND URBAN DEVELOPM",
+   "subelement_code": "HULL",
+   "subelement_name": "OFFICE OF HEALTHY HOMES AND LEAD HAZARD CONTROL",
+   "records": 22
+  },
+  {
+   "agency_code": "HU",
+   "agency_name": "DEPARTMENT OF HOUSING AND URBAN DEVELOPM",
+   "subelement_code": "HUMM",
+   "subelement_name": "ASSISTANT SECRETARY FOR HOUSING--FEDERAL HOUSING COMMISSIONER",
+   "records": 21
+  },
+  {
+   "agency_code": "HW",
+   "agency_name": "U.S. INTERAGENCY COUNCIL ON HOMELESSNESS",
+   "subelement_code": "HW00",
+   "subelement_name": "U.S. INTERAGENCY COUNCIL ON HOMELESSNESS",
+   "records": 9
+  },
+  {
+   "agency_code": "IB",
+   "agency_name": "U.S.AGENCY FOR GLOBAL MEDIA",
+   "subelement_code": "IB00",
+   "subelement_name": "U.S. AGENCY FOR GLOBAL MEDIA",
+   "records": 797
+  },
+  {
+   "agency_code": "IF",
+   "agency_name": "INTER-AMERICAN FOUNDATION",
+   "subelement_code": "IF00",
+   "subelement_name": "INTER-AMERICAN FOUNDATION",
+   "records": 20
+  },
+  {
+   "agency_code": "IG",
+   "agency_name": "COUNCIL OF INSP. GEN. ON INTEG.& EFFIC.",
+   "subelement_code": "IG00",
+   "subelement_name": "COUNCIL OF THE INSPECTORS GENERAL ON INTEGRITY AND EFFICIENCY",
+   "records": 24
+  },
+  {
+   "agency_code": "IN",
+   "agency_name": "DEPARTMENT OF INTERIOR",
+   "subelement_code": "IN**",
+   "subelement_name": "INVALID",
+   "records": 453
+  },
+  {
+   "agency_code": "IN",
+   "agency_name": "DEPARTMENT OF INTERIOR",
+   "subelement_code": "IN01",
+   "subelement_name": "OFFICE OF THE SECRETARY OF THE INTERIOR",
+   "records": 11630
+  },
+  {
+   "agency_code": "IN",
+   "agency_name": "DEPARTMENT OF INTERIOR",
+   "subelement_code": "IN05",
+   "subelement_name": "BUREAU OF LAND MANAGEMENT",
+   "records": 5787
+  },
+  {
+   "agency_code": "IN",
+   "agency_name": "DEPARTMENT OF INTERIOR",
+   "subelement_code": "IN06",
+   "subelement_name": "INDIAN AFFAIRS",
+   "records": 2723
+  },
+  {
+   "agency_code": "IN",
+   "agency_name": "DEPARTMENT OF INTERIOR",
+   "subelement_code": "IN07",
+   "subelement_name": "BUREAU OF RECLAMATION",
+   "records": 3568
+  },
+  {
+   "agency_code": "IN",
+   "agency_name": "DEPARTMENT OF INTERIOR",
+   "subelement_code": "IN08",
+   "subelement_name": "GEOLOGICAL SURVEY",
+   "records": 5890
+  },
+  {
+   "agency_code": "IN",
+   "agency_name": "DEPARTMENT OF INTERIOR",
+   "subelement_code": "IN10",
+   "subelement_name": "NATIONAL PARK SERVICE",
+   "records": 19006
+  },
+  {
+   "agency_code": "IN",
+   "agency_name": "DEPARTMENT OF INTERIOR",
+   "subelement_code": "IN15",
+   "subelement_name": "U.S. FISH AND WILDLIFE SERVICE",
+   "records": 6287
+  },
+  {
+   "agency_code": "IN",
+   "agency_name": "DEPARTMENT OF INTERIOR",
+   "subelement_code": "IN21",
+   "subelement_name": "OFFICE OF THE SOLICITOR",
+   "records": 407
+  },
+  {
+   "agency_code": "IN",
+   "agency_name": "DEPARTMENT OF INTERIOR",
+   "subelement_code": "IN22",
+   "subelement_name": "OFFICE OF SURFACE MINING, RECLAMATION AND ENFORCEMENT",
+   "records": 261
+  },
+  {
+   "agency_code": "IN",
+   "agency_name": "DEPARTMENT OF INTERIOR",
+   "subelement_code": "IN24",
+   "subelement_name": "OFFICE OF THE INSPECTOR GENERAL",
+   "records": 227
+  },
+  {
+   "agency_code": "IN",
+   "agency_name": "DEPARTMENT OF INTERIOR",
+   "subelement_code": "IN26",
+   "subelement_name": "MARINE MINERALS ADMINISTRATION",
+   "records": 527
+  },
+  {
+   "agency_code": "IN",
+   "agency_name": "DEPARTMENT OF INTERIOR",
+   "subelement_code": "IN28",
+   "subelement_name": "BUREAU OF INDIAN EDUCATION",
+   "records": 2726
+  },
+  {
+   "agency_code": "IN",
+   "agency_name": "DEPARTMENT OF INTERIOR",
+   "subelement_code": "IN29",
+   "subelement_name": "BUREAU OF TRUST FUNDS ADMINISTRATION",
+   "records": 284
+  },
+  {
+   "agency_code": "JL",
+   "agency_name": "JUDICIAL BRANCH",
+   "subelement_code": "JL03",
+   "subelement_name": "U.S. TAX COURT",
+   "records": 160
+  },
+  {
+   "agency_code": "KS",
+   "agency_name": "CORP FOR NATIONAL AND COMMUNITY SERVICE",
+   "subelement_code": "KS00",
+   "subelement_name": "CORPORATION FOR NATIONAL AND COMMUNITY SERVICE",
+   "records": 373
+  },
+  {
+   "agency_code": "KY",
+   "agency_name": "PUBLIC BUILDINGS REFORM BOARD",
+   "subelement_code": "KY00",
+   "subelement_name": "PUBLIC BUILDINGS REFORM BOARD",
+   "records": 7
+  },
+  {
+   "agency_code": "LF",
+   "agency_name": "FEDERAL ELECTION COMMISSION",
+   "subelement_code": "LF00",
+   "subelement_name": "FEDERAL ELECTION COMMISSION",
+   "records": 256
+  },
+  {
+   "agency_code": "LP",
+   "agency_name": "GOVERNMENT PUBLISHING OFFICE",
+   "subelement_code": "LP00",
+   "subelement_name": "GOVERNMENT PUBLISHING OFFICE",
+   "records": 1625
+  },
+  {
+   "agency_code": "MA",
+   "agency_name": "MARINE MAMMAL COMMISSION",
+   "subelement_code": "MA00",
+   "subelement_name": "MARINE MAMMAL COMMISSION",
+   "records": 24
+  },
+  {
+   "agency_code": "MC",
+   "agency_name": "FEDERAL MARITIME COMMISSION",
+   "subelement_code": "MC00",
+   "subelement_name": "FEDERAL MARITIME COMMISSION",
+   "records": 109
+  },
+  {
+   "agency_code": "MI",
+   "agency_name": "MILLENNIUM CHALLENGE CORPORATION",
+   "subelement_code": "MI00",
+   "subelement_name": "MILLENNIUM CHALLENGE CORPORATION",
+   "records": 229
+  },
+  {
+   "agency_code": "NF",
+   "agency_name": "NATIONAL SCIENCE FOUNDATION",
+   "subelement_code": "NF00",
+   "subelement_name": "NATIONAL SCIENCE FOUNDATION",
+   "records": 1119
+  },
+  {
+   "agency_code": "NK",
+   "agency_name": "NATIONAL COUNCIL ON DISABILITY",
+   "subelement_code": "NK00",
+   "subelement_name": "NATIONAL COUNCIL ON DISABILITY",
+   "records": 20
+  },
+  {
+   "agency_code": "NL",
+   "agency_name": "NATIONAL LABOR RELATIONS BOARD",
+   "subelement_code": "NL00",
+   "subelement_name": "NATIONAL LABOR RELATIONS BOARD",
+   "records": 1061
+  },
+  {
+   "agency_code": "NM",
+   "agency_name": "NATIONAL MEDIATION BOARD",
+   "subelement_code": "NM00",
+   "subelement_name": "NATIONAL MEDIATION BOARD",
+   "records": 33
+  },
+  {
+   "agency_code": "NN",
+   "agency_name": "NAT AERONAUTICS AND SPACE ADMINISTRATION",
+   "subelement_code": "NN10",
+   "subelement_name": "HEADQUARTERS, NASA",
+   "records": 1685
+  },
+  {
+   "agency_code": "NN",
+   "agency_name": "NAT AERONAUTICS AND SPACE ADMINISTRATION",
+   "subelement_code": "NN21",
+   "subelement_name": "AMES RESEARCH CENTER",
+   "records": 1072
+  },
+  {
+   "agency_code": "NN",
+   "agency_name": "NAT AERONAUTICS AND SPACE ADMINISTRATION",
+   "subelement_code": "NN22",
+   "subelement_name": "JOHN GLENN RESEARCH CENTER AT LEWIS FIELD",
+   "records": 1128
+  },
+  {
+   "agency_code": "NN",
+   "agency_name": "NAT AERONAUTICS AND SPACE ADMINISTRATION",
+   "subelement_code": "NN23",
+   "subelement_name": "LANGLEY RESEARCH CENTER",
+   "records": 1322
+  },
+  {
+   "agency_code": "NN",
+   "agency_name": "NAT AERONAUTICS AND SPACE ADMINISTRATION",
+   "subelement_code": "NN24",
+   "subelement_name": "NEIL A. ARMSTRONG FLIGHT RESEARCH CENTER",
+   "records": 416
+  },
+  {
+   "agency_code": "NN",
+   "agency_name": "NAT AERONAUTICS AND SPACE ADMINISTRATION",
+   "subelement_code": "NN51",
+   "subelement_name": "GODDARD SPACE FLIGHT CENTER",
+   "records": 2026
+  },
+  {
+   "agency_code": "NN",
+   "agency_name": "NAT AERONAUTICS AND SPACE ADMINISTRATION",
+   "subelement_code": "NN62",
+   "subelement_name": "GEORGE C. MARSHALL SPACE FLIGHT CENTER",
+   "records": 2160
+  },
+  {
+   "agency_code": "NN",
+   "agency_name": "NAT AERONAUTICS AND SPACE ADMINISTRATION",
+   "subelement_code": "NN64",
+   "subelement_name": "JOHN C. STENNIS SPACE CENTER",
+   "records": 315
+  },
+  {
+   "agency_code": "NN",
+   "agency_name": "NAT AERONAUTICS AND SPACE ADMINISTRATION",
+   "subelement_code": "NN72",
+   "subelement_name": "LYNDON B. JOHNSON SPACE CENTER",
+   "records": 3184
+  },
+  {
+   "agency_code": "NN",
+   "agency_name": "NAT AERONAUTICS AND SPACE ADMINISTRATION",
+   "subelement_code": "NN76",
+   "subelement_name": "JOHN F. KENNEDY SPACE CENTER",
+   "records": 2079
+  },
+  {
+   "agency_code": "NP",
+   "agency_name": "NATIONAL CAPITAL PLANNING COMMISSION",
+   "subelement_code": "NP00",
+   "subelement_name": "NATIONAL CAPITAL PLANNING COMMISSION",
+   "records": 34
+  },
+  {
+   "agency_code": "NQ",
+   "agency_name": "NAT ARCHIVES AND RECORDS ADMINISTRATION",
+   "subelement_code": "NQ00",
+   "subelement_name": "NATIONAL ARCHIVES AND RECORDS ADMINISTRATION",
+   "records": 2339
+  },
+  {
+   "agency_code": "NS",
+   "agency_name": "NATIONAL SECURITY COUNCIL",
+   "subelement_code": "NS00",
+   "subelement_name": "NATIONAL SECURITY COUNCIL",
+   "records": 28
+  },
+  {
+   "agency_code": "NU",
+   "agency_name": "NUCLEAR REGULATORY COMMISSION",
+   "subelement_code": "NU00",
+   "subelement_name": "NUCLEAR REGULATORY COMMISSION",
+   "records": 2451
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV11",
+   "subelement_name": "IMMEDIATE OFFICE OF THE CHIEF OF NAVAL OPERATIONS",
+   "records": 1903
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV12",
+   "subelement_name": "DIRECTORATE FOR ADMINISTRATIONS, LOGISTICS, AND OPERATIONS (DALO)",
+   "records": 4811
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV14",
+   "subelement_name": "OFFICE OF NAVAL RESEARCH",
+   "records": 2559
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV15",
+   "subelement_name": "NAVAL INTELLIGENCE ACTIVITY",
+   "records": 1399
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV18",
+   "subelement_name": "NAVAL MEDICAL COMMAND",
+   "records": 1759
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV19",
+   "subelement_name": "NAVAL AIR SYSTEMS COMMAND",
+   "records": 26724
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV22",
+   "subelement_name": "BUREAU OF NAVAL PERSONNEL",
+   "records": 3756
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV23",
+   "subelement_name": "NAVAL SUPPLY SYSTEMS COMMAND",
+   "records": 5952
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV24",
+   "subelement_name": "NAVAL SEA SYSTEMS COMMAND",
+   "records": 33542
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV25",
+   "subelement_name": "NAVAL FACILITIES ENGINEERING COMMAND",
+   "records": 13461
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV27",
+   "subelement_name": "U.S. MARINE CORPS",
+   "records": 16112
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV30",
+   "subelement_name": "STRATEGIC SYSTEMS PROGRAMS (SSP)",
+   "records": 1709
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV39",
+   "subelement_name": "COMMANDER, NAVAL INFORMATION WARFARE SYSTEMS COMMAND (NAVWARSYSCOM)",
+   "records": 9515
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV41",
+   "subelement_name": "NAVY SYSTEMS MANAGEMENT ACTIVITY",
+   "records": 1174
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV52",
+   "subelement_name": "COMMANDER, NAVY INSTALLATIONS COMMAND",
+   "records": 12499
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV60",
+   "subelement_name": "UNITED STATES FLEET FORCES COMMAND",
+   "records": 33549
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV70",
+   "subelement_name": "U.S. PACIFIC FLEET, COMMANDER IN CHIEF",
+   "records": 25443
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV72",
+   "subelement_name": "NAVY RESERVE FORCE",
+   "records": 383
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV74",
+   "subelement_name": "NAVAL SPECIAL WARFARE COMMAND",
+   "records": 1078
+  },
+  {
+   "agency_code": "NV",
+   "agency_name": "DEPARTMENT OF THE NAVY",
+   "subelement_code": "NV76",
+   "subelement_name": "NAVAL EDUCATION AND TRAINING COMMAND",
+   "records": 3760
+  },
+  {
+   "agency_code": "OM",
+   "agency_name": "OFFICE OF PERSONNEL MANAGEMENT",
+   "subelement_code": "OM00",
+   "subelement_name": "OFFICE OF PERSONNEL MANAGEMENT",
+   "records": 2017
+  },
+  {
+   "agency_code": "OS",
+   "agency_name": "OCCUPATIONAL SAFETY & HEALTH REVIEW CMSN",
+   "subelement_code": "OS00",
+   "subelement_name": "OCCUPATIONAL SAFETY AND HEALTH REVIEW COMMISSION",
+   "records": 43
+  },
+  {
+   "agency_code": "PU",
+   "agency_name": "PEACE CORPS",
+   "subelement_code": "PU00",
+   "subelement_name": "PEACE CORPS",
+   "records": 601
+  },
+  {
+   "agency_code": "QQ",
+   "agency_name": "OFFICE OF NATIONAL DRUG CONTROL POLICY",
+   "subelement_code": "QQ00",
+   "subelement_name": "OFFICE OF NATIONAL DRUG CONTROL POLICY",
+   "records": 63
+  },
+  {
+   "agency_code": "RF",
+   "agency_name": "FED RETIREMENT THRIFT INVESTMENT BOARD",
+   "subelement_code": "RF00",
+   "subelement_name": "FEDERAL RETIREMENT THRIFT INVESTMENT BOARD",
+   "records": 232
+  },
+  {
+   "agency_code": "RH",
+   "agency_name": "ARMED FORCES RETIREMENT HOME",
+   "subelement_code": "RH00",
+   "subelement_name": "ARMED FORCES RETIREMENT HOME",
+   "records": 279
+  },
+  {
+   "agency_code": "RJ",
+   "agency_name": "CIVIL RIGHTS COLD CASE REVIEW BOARD",
+   "subelement_code": "RJ00",
+   "subelement_name": "CIVIL RIGHTS COLD CASE REVIEW BOARD (CRCCRB)",
+   "records": 10
+  },
+  {
+   "agency_code": "RO",
+   "agency_name": "MEDICAID & CHIP PAYMENT & ACCESS COMM",
+   "subelement_code": "RO00",
+   "subelement_name": "MEDICAID AND CHIP PAYMENT AND ACCESS COMMISSION",
+   "records": 51
+  },
+  {
+   "agency_code": "RR",
+   "agency_name": "RAILROAD RETIREMENT BOARD",
+   "subelement_code": "RR00",
+   "subelement_name": "RAILROAD RETIREMENT BOARD",
+   "records": 686
+  },
+  {
+   "agency_code": "RS",
+   "agency_name": "FED MINE SAFETY AND HEALTH REVIEW CMSN",
+   "subelement_code": "RS00",
+   "subelement_name": "FEDERAL MINE SAFETY AND HEALTH REVIEW COMMISSION",
+   "records": 23
+  },
+  {
+   "agency_code": "SB",
+   "agency_name": "SMALL BUSINESS ADMINISTRATION",
+   "subelement_code": "SB00",
+   "subelement_name": "SMALL BUSINESS ADMINISTRATION",
+   "records": 5032
+  },
+  {
+   "agency_code": "SE",
+   "agency_name": "SECURITIES AND EXCHANGE COMMISSION",
+   "subelement_code": "SE00",
+   "subelement_name": "SECURITIES AND EXCHANGE COMMISSION",
+   "records": 3909
+  },
+  {
+   "agency_code": "SK",
+   "agency_name": "CONSUMER PRODUCT SAFETY COMMISSION",
+   "subelement_code": "SK00",
+   "subelement_name": "CONSUMER PRODUCT SAFETY COMMISSION",
+   "records": 418
+  },
+  {
+   "agency_code": "SM",
+   "agency_name": "SMITHSONIAN INSTITUTION",
+   "subelement_code": "SM01",
+   "subelement_name": "NATIONAL GALLERY OF ART",
+   "records": 611
+  },
+  {
+   "agency_code": "SM",
+   "agency_name": "SMITHSONIAN INSTITUTION",
+   "subelement_code": "SM03",
+   "subelement_name": "SMITHSONIAN INSTITUTION (EXCEPT UNITS ADMINISTERED UNDER SEPARATE BOARDS OF TRUSTEES)",
+   "records": 3426
+  },
+  {
+   "agency_code": "SM",
+   "agency_name": "SMITHSONIAN INSTITUTION",
+   "subelement_code": "SM04",
+   "subelement_name": "JOHN F. KENNEDY CENTER FOR THE PERFORMING ARTS",
+   "records": 49
+  },
+  {
+   "agency_code": "SS",
+   "agency_name": "SELECTIVE SERVICE SYSTEM",
+   "subelement_code": "SS00",
+   "subelement_name": "SELECTIVE SERVICE SYSTEM",
+   "records": 118
+  },
+  {
+   "agency_code": "ST",
+   "agency_name": "DEPARTMENT OF STATE",
+   "subelement_code": "ST00",
+   "subelement_name": "DEPARTMENT OF STATE",
+   "records": 11252
+  },
+  {
+   "agency_code": "SZ",
+   "agency_name": "SOCIAL SECURITY ADMINISTRATION",
+   "subelement_code": "SZ00",
+   "subelement_name": "SOCIAL SECURITY ADMINISTRATION",
+   "records": 49457
+  },
+  {
+   "agency_code": "TB",
+   "agency_name": "NATIONAL TRANSPORTATION SAFETY BOARD",
+   "subelement_code": "TB00",
+   "subelement_name": "NATIONAL TRANSPORTATION SAFETY BOARD",
+   "records": 418
+  },
+  {
+   "agency_code": "TC",
+   "agency_name": "U.S. INTERNATIONAL TRADE COMMISSION",
+   "subelement_code": "TC00",
+   "subelement_name": "U.S. INTERNATIONAL TRADE COMMISSION",
+   "records": 417
+  },
+  {
+   "agency_code": "TD",
+   "agency_name": "DEPARTMENT OF TRANSPORTATION",
+   "subelement_code": "TD01",
+   "subelement_name": "OFFICE OF THE SECRETARY OF TRANSPORTATION",
+   "records": 1525
+  },
+  {
+   "agency_code": "TD",
+   "agency_name": "DEPARTMENT OF TRANSPORTATION",
+   "subelement_code": "TD03",
+   "subelement_name": "FEDERAL AVIATION ADMINISTRATION",
+   "records": 44564
+  },
+  {
+   "agency_code": "TD",
+   "agency_name": "DEPARTMENT OF TRANSPORTATION",
+   "subelement_code": "TD04",
+   "subelement_name": "FEDERAL HIGHWAY ADMINISTRATION",
+   "records": 1980
+  },
+  {
+   "agency_code": "TD",
+   "agency_name": "DEPARTMENT OF TRANSPORTATION",
+   "subelement_code": "TD05",
+   "subelement_name": "FEDERAL RAILROAD ADMINISTRATION",
+   "records": 946
+  },
+  {
+   "agency_code": "TD",
+   "agency_name": "DEPARTMENT OF TRANSPORTATION",
+   "subelement_code": "TD06",
+   "subelement_name": "GREAT LAKES SAINT LAWRENCE SEAWAY DEVELOPMENT CORPORATION",
+   "records": 117
+  },
+  {
+   "agency_code": "TD",
+   "agency_name": "DEPARTMENT OF TRANSPORTATION",
+   "subelement_code": "TD09",
+   "subelement_name": "FEDERAL TRANSIT ADMINISTRATION",
+   "records": 508
+  },
+  {
+   "agency_code": "TD",
+   "agency_name": "DEPARTMENT OF TRANSPORTATION",
+   "subelement_code": "TD10",
+   "subelement_name": "NATIONAL HIGHWAY TRAFFIC SAFETY ADMINISTRATION",
+   "records": 539
+  },
+  {
+   "agency_code": "TD",
+   "agency_name": "DEPARTMENT OF TRANSPORTATION",
+   "subelement_code": "TD12",
+   "subelement_name": "OFFICE OF INSPECTOR GENERAL",
+   "records": 336
+  },
+  {
+   "agency_code": "TD",
+   "agency_name": "DEPARTMENT OF TRANSPORTATION",
+   "subelement_code": "TD13",
+   "subelement_name": "MARITIME ADMINISTRATION",
+   "records": 711
+  },
+  {
+   "agency_code": "TD",
+   "agency_name": "DEPARTMENT OF TRANSPORTATION",
+   "subelement_code": "TD16",
+   "subelement_name": "PIPELINE AND HAZARDOUS MATERIALS SAFETY ADMINISTRATION",
+   "records": 549
+  },
+  {
+   "agency_code": "TD",
+   "agency_name": "DEPARTMENT OF TRANSPORTATION",
+   "subelement_code": "TD17",
+   "subelement_name": "FEDERAL MOTOR CARRIER SAFETY ADMINISTRATION",
+   "records": 1016
+  },
+  {
+   "agency_code": "TN",
+   "agency_name": "OFFICE OF THE U.S. TRADE REPRESENTATIVE",
+   "subelement_code": "TN00",
+   "subelement_name": "OFFICE OF THE U.S. TRADE REPRESENTATIVE",
+   "records": 223
+  },
+  {
+   "agency_code": "TR",
+   "agency_name": "DEPARTMENT OF TREASURY",
+   "subelement_code": "TR40",
+   "subelement_name": "ALCOHOL AND TOBACCO TAX AND TRADE BUREAU",
+   "records": 416
+  },
+  {
+   "agency_code": "TR",
+   "agency_name": "DEPARTMENT OF TREASURY",
+   "subelement_code": "TR91",
+   "subelement_name": "DEPARTMENTAL OFFICES",
+   "records": 2930
+  },
+  {
+   "agency_code": "TR",
+   "agency_name": "DEPARTMENT OF TREASURY",
+   "subelement_code": "TR93",
+   "subelement_name": "INTERNAL REVENUE SERVICE",
+   "records": 71757
+  },
+  {
+   "agency_code": "TR",
+   "agency_name": "DEPARTMENT OF TREASURY",
+   "subelement_code": "TR95",
+   "subelement_name": "OFFICE OF INSPECTOR GENERAL",
+   "records": 148
+  },
+  {
+   "agency_code": "TR",
+   "agency_name": "DEPARTMENT OF TREASURY",
+   "subelement_code": "TRAD",
+   "subelement_name": "U.S. MINT",
+   "records": 1228
+  },
+  {
+   "agency_code": "TR",
+   "agency_name": "DEPARTMENT OF TREASURY",
+   "subelement_code": "TRAF",
+   "subelement_name": "FINANCIAL CRIMES ENFORCEMENT NETWORK",
+   "records": 231
+  },
+  {
+   "agency_code": "TR",
+   "agency_name": "DEPARTMENT OF TREASURY",
+   "subelement_code": "TRAI",
+   "subelement_name": "BUREAU OF ENGRAVING AND PRINTING",
+   "records": 1468
+  },
+  {
+   "agency_code": "TR",
+   "agency_name": "DEPARTMENT OF TREASURY",
+   "subelement_code": "TRAJ",
+   "subelement_name": "OFFICE OF THE COMPTROLLER OF THE CURRENCY",
+   "records": 2594
+  },
+  {
+   "agency_code": "TR",
+   "agency_name": "DEPARTMENT OF TREASURY",
+   "subelement_code": "TRFD",
+   "subelement_name": "BUREAU OF THE FISCAL SERVICE",
+   "records": 1924
+  },
+  {
+   "agency_code": "TR",
+   "agency_name": "DEPARTMENT OF TREASURY",
+   "subelement_code": "TRTG",
+   "subelement_name": "OFFICE OF THE INSPECTOR GENERAL FOR TAX ADMINISTRATION",
+   "records": 625
+  },
+  {
+   "agency_code": "TS",
+   "agency_name": "OFFICE OF SCIENCE AND TECHNOLOGY POLICY",
+   "subelement_code": "TS00",
+   "subelement_name": "OFFICE OF SCIENCE AND TECHNOLOGY POLICY",
+   "records": 22
+  },
+  {
+   "agency_code": "TW",
+   "agency_name": "SURFACE TRANSPORTATION BOARD",
+   "subelement_code": "TW00",
+   "subelement_name": "SURFACE TRANSPORTATION BOARD",
+   "records": 109
+  },
+  {
+   "agency_code": "UJ",
+   "agency_name": "JAPAN-UNITED STATES FRIENDSHIP CMSN",
+   "subelement_code": "UJ00",
+   "subelement_name": "JAPAN-UNITED STATES FRIENDSHIP COMMISSION",
+   "records": 7
+  },
+  {
+   "agency_code": "UT",
+   "agency_name": "UTAH RECLAMATN MITIGATN & CONSERVTN CMSN",
+   "subelement_code": "UT00",
+   "subelement_name": "UTAH RECLAMATION MITIGATION AND CONSERVATION COMMISSION",
+   "records": 11
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAAA",
+   "subelement_name": "OFFICE OF THE SECRETARY",
+   "records": 936
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAAD",
+   "subelement_name": "BOARD OF VETERANS APPEALS",
+   "records": 1259
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAAE",
+   "subelement_name": "GENERAL COUNSEL",
+   "records": 682
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAAF",
+   "subelement_name": "INSPECTOR GENERAL",
+   "records": 941
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAAI",
+   "subelement_name": "ELECTRONIC HEALTH RECORD MODERNIZATION",
+   "records": 195
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAAJ",
+   "subelement_name": "OFFICE OF ACCOUNTABILITY AND WHISTLEBLOWER PROTECTION",
+   "records": 120
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VABA",
+   "subelement_name": "IMMEDIATE OFFICE OF THE ASSISTANT SECRETARY FOR HUMAN RESOURCES AND ADMINISTRATION",
+   "records": 36
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VABC",
+   "subelement_name": "CHIEF HUMAN CAPITAL OFFICER",
+   "records": 278
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VABE",
+   "subelement_name": "DEPUTY ASSISTANT SECRETARY FOR ADMINISTRATION",
+   "records": 53
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VABG",
+   "subelement_name": "DEPUTY ASSISTANT SECRETARY FOR CORPORATE SENIOR EXECUTIVE MANAGEMENT",
+   "records": 23
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VABH",
+   "subelement_name": "DEPUTY ASSISTANT SECRETARY FOR LABOR MANAGEMENT RELATIONS",
+   "records": 15
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VABK",
+   "subelement_name": "OFFICE OF ENTERPRISE OPERATIONS",
+   "records": 19
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VADA",
+   "subelement_name": "IMMEDIATE OFFICE OF THE ASSISTANT SECRETARY FOR MANAGEMENT",
+   "records": 3175
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VADC",
+   "subelement_name": "DEPUTY ASSISTANT SECRETARY FOR BUDGET",
+   "records": 36
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VADD",
+   "subelement_name": "DEPUTY ASSISTANT SECRETARY FOR FINANCE",
+   "records": 1631
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VADE",
+   "subelement_name": "DEPUTY ASSISTANT SECRETARY FOR FMBTS",
+   "records": 20
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VADG",
+   "subelement_name": "EXECUTIVE DIRECTOR, OFFICE OF ACQUISITION, LOGISTICS AND CONSTRUCTION",
+   "records": 3186
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAEA",
+   "subelement_name": "IMMEDIATE OFFICE OF THE ASSISTANT SECRETARY FOR INFORMATION AND TECHNOLOGY",
+   "records": 12
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAEB",
+   "subelement_name": "DEPUTY ASSISTANT SECRETARY FOR INFORMATION AND TECHNOLOGY",
+   "records": 6627
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAGA",
+   "subelement_name": "IMMEDIATE OFFICE OF THE ASSISTANT SECRETARY FOR OPERATIONS, SECURITY, AND PREPAREDNESS",
+   "records": 39
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAGB",
+   "subelement_name": "EXECUTIVE DIRECTOR FOR SECURITY AND LAW ENFORCEMENT",
+   "records": 198
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAGC",
+   "subelement_name": "DEP ASST SEC FOR EMERGENCY MGT & RESILIENCE",
+   "records": 7
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAGD",
+   "subelement_name": "EXECUTIVE DIRECTOR FOR IDENTITY, CREDENTIAL, AND ACCESSMANAGEMENT",
+   "records": 20
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAHG",
+   "subelement_name": "VET CUSTOMER EXPER (VCE)",
+   "records": 240
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAJA",
+   "subelement_name": "OFFICE OF THE ASSISTANT SECRETARY FOR PUBLIC AND INTERGOVERNMENTAL AFFAIRS",
+   "records": 31
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAJB",
+   "subelement_name": "DEPUTY ASSISTANCE SECRETARY FOR INTERGOVERNMENTAL AFFAIRS",
+   "records": 7
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAJC",
+   "subelement_name": "DEPUTY ASSISTANT SECRETARY FOR PUBLIC AFFAIRS",
+   "records": 26
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAKA",
+   "subelement_name": "IMMEDIATE OFFICE OF THE ASSISTANT SECRETARY FOR CONGRESSIONAL AND LEGISLATIVE AFFAIRS",
+   "records": 12
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAKB",
+   "subelement_name": "DEPUTY ASSISTANT SECRETARY FOR CONGRESSIONAL AFFAIRS",
+   "records": 42
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VALA",
+   "subelement_name": "VETERANS BENEFITS ADMINISTRATION",
+   "records": 29091
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VAPA",
+   "subelement_name": "NATIONAL CEMETERY ADMINISTRATION",
+   "records": 2019
+  },
+  {
+   "agency_code": "VA",
+   "agency_name": "DEPARTMENT OF VETERANS AFFAIRS",
+   "subelement_code": "VATA",
+   "subelement_name": "VETERANS HEALTH ADMINISTRATION",
+   "records": 396249
+  },
+  {
+   "agency_code": "VD",
+   "agency_name": "PRIVACY AND CIVIL LIBERTIES OVERSIGHT",
+   "subelement_code": "VD00",
+   "subelement_name": "PRIVACY AND CIVIL LIBERTIES OVERSIGHT BOARD",
+   "records": 24
+  },
+  {
+   "agency_code": "WK",
+   "agency_name": "FEDERAL PERMITTING IMPROVEMENT STEER",
+   "subelement_code": "WK00",
+   "subelement_name": "FEDERAL PERMITTING IMPROVEMENT STEERING COUNCIL",
+   "records": 20
+  },
+  {
+   "agency_code": "WU",
+   "agency_name": "SOUTHWEST BORDER REGIONAL COMMISSION",
+   "subelement_code": "WU00",
+   "subelement_name": "SOUTHWEST BORDER REGIONAL COMMISSION",
+   "records": 1
+  },
+  {
+   "agency_code": "ZP",
+   "agency_name": "U.S. CMSN ON INTERNATL RELIGIOUS FREEDOM",
+   "subelement_code": "ZP00",
+   "subelement_name": "U.S. COMMISSION ON INTERNATIONAL RELIGIOUS FREEDOM",
+   "records": 29
+  },
+  {
+   "agency_code": "ZS",
+   "agency_name": "U.S.-CHINA ECONOMIC & SECURITY REV CMSN",
+   "subelement_code": "ZS00",
+   "subelement_name": "UNITED STATES-CHINA ECONOMIC AND SECURITY REVIEW COMMISSION",
+   "records": 29
+  }
+ ]
+}
