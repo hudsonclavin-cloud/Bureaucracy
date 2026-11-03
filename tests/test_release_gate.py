@@ -15,7 +15,9 @@ import uuid
 from contextlib import redirect_stdout
 from pathlib import Path
 
-from data_pipeline.exporter.build_graph import build_graph
+from data_pipeline.exporter.build_graph import build_graph, index_tree
+from data_pipeline.verification import fwd
+from data_pipeline.verification.headcounts import FWD_SOURCE, match_fedscope
 from scripts import regenerate_published_graph
 from scripts.validate_published_graph import main as gate_main
 
@@ -58,11 +60,16 @@ def _find(node, node_id):
 
 
 class ReleaseGateTests(unittest.TestCase):
+    #: The graph the fixture builds from, and the headcount evidence it is given (none by default); a subclass that
+    #: needs an honest headcount sets both before calling setUp.
+    base_graph = BASE
+    headcount_path = None
+
     def setUp(self) -> None:
         self.tmp_path = TEST_TMP_ROOT / f"gate-{uuid.uuid4().hex}"
         self.tmp_path.mkdir(parents=True, exist_ok=True)
         base_graph_path = self.tmp_path / "base.json"
-        base_graph_path.write_text(json.dumps(BASE), encoding="utf-8")
+        base_graph_path.write_text(json.dumps(self.base_graph), encoding="utf-8")
         result = build_graph(
             [{"nodes": [], "edges": [], "budgetSummary": {"government_total_outlay_amount": 1_000_000, "record_date": "2026-06-30"}}],
             base_graph_path=base_graph_path,
@@ -83,7 +90,8 @@ class ReleaseGateTests(unittest.TestCase):
             govman_evidence_path=None,
             # Every name-keyed evidence file, not just three: the fixture's branch
             # is named "Legislative Branch" and OMB files an agency of that name.
-            headcount_evidence_path=None,
+            headcount_evidence_path=self.headcount_path,
+            fedscope_headcount_evidence_path=None,
             position_evidence_path=None,
             usaspending_evidence_path=None,
             net_cost_evidence_path=None,
@@ -154,42 +162,54 @@ class ReleaseGateTests(unittest.TestCase):
 class WeightDisputeGateTests(ReleaseGateTests):
     """A published disagreement is a claim, so the gate must refuse a
     malformed one. Every check here is pinned in both directions: the honest
-    block passes, each broken one fails."""
+    block passes, each broken one fails.
+
+    The fixture is the real pipeline's own: the Harry S. Truman Scholarship Foundation is added under the Executive
+    Branch with a curated headcount far from OPM's, an honest Federal Workforce Data record for it is derived from
+    the committed aggregate by the real matcher, and `build_graph` stamps the headcount and the dispute. (A
+    hand-written headcount would now fail the headcount gate, which re-reads the table, for a reason that has
+    nothing to do with the dispute.)"""
+
+    def setUp(self) -> None:
+        base = json.loads(json.dumps(BASE))
+        _find(base, "executive-branch")["children"].append(
+            {"id": "exec-truman", "name": "Harry S. Truman Scholarship Foundation", "type": "Agency", "employees": "~500", "children": []})
+        node_map, parent_map = index_tree(base)
+        paths = sorted(p for p in fwd.FWD_FIXTURE_DIR.glob("fwd_employment_agency_subelement_*.json") if not p.name.endswith(".meta.json"))
+        meta = fwd.load_fwd_meta(paths[-1])
+        records, _ = match_fedscope(
+            fwd.periods_from_aggregate(fwd.load_aggregate(paths[-1])), node_map, parent_map, root_id=ROOT_ID,
+            url=meta["url"], fetched_at=meta["fetched_at"], file=paths[-1].name, coverage=fwd.COVERAGE_STATEMENT,
+            source=FWD_SOURCE, coverage_source=fwd.COVERAGE_SOURCE)
+        self.assertIn("exec-truman", records)
+        self.fixture_dir = TEST_TMP_ROOT / f"dispute-{uuid.uuid4().hex}"
+        self.fixture_dir.mkdir(parents=True, exist_ok=True)
+        evidence = self.fixture_dir / "headcount.json"
+        evidence.write_text(json.dumps({"nodes": {"exec-truman": records["exec-truman"]}}), encoding="utf-8")
+        self.base_graph = base
+        self.headcount_path = evidence
+        super().setUp()
+
+    def tearDown(self) -> None:
+        shutil.rmtree(self.fixture_dir, ignore_errors=True)
+        super().tearDown()
 
     def _with_dispute(self, **overrides):
         def mutate(graph):
-            node = _find(graph, "executive-branch")
-            node["employeesOfficial"] = 2_000_000
-            node["employeesOfficialSource"] = {
-                "source": "opm_fedscope_employment",
-                "listedName": "EXECUTIVE BRANCH",
-                "level": "agency",
-                "period": "2025-03",
-                "coverage": "Federal civilian employees in the Executive Branch in an active pay status.",
-                "url": "https://www.opm.gov/data/datasets/Files/753/example.zip",
-                "checkedAt": "2026-09-08T19:50:51Z",
-            }
-            node["cost_weight_dispute"] = {
-                "basis": "employee_weight",
-                "curatedEmployees": "4,000,000",
-                "curatedEmployeesParsed": 4_000_000.0,
-                "officialEmployees": 2_000_000,
-                "source": "opm_fedscope_employment",
-                "period": "2025-03",
-                "url": "https://www.opm.gov/data/datasets/Files/753/example.zip",
-                **overrides,
-            }
+            node = _find(graph, "exec-truman")
+            self.assertIsInstance(node.get("cost_weight_dispute"), dict, "the pipeline published no dispute to start from")
             for key, value in overrides.items():
                 if key in ("cost_status", "cost_basis"):
                     node[key] = value
-                    node["cost_weight_dispute"].pop(key, None)
+                else:
+                    node["cost_weight_dispute"][key] = value
         return self._write_corrupted(mutate)
 
     def test_an_honest_dispute_passes(self) -> None:
         code, out = _gate(self._with_dispute())
         self.assertEqual(code, 0, out)
         self.assertIn("every published weight dispute names both figures and is one", out)
-        self.assertIn("weights disputed     : 1", out)
+        self.assertRegex(out, r"weights disputed     : \d+ allocated shares")
 
     def test_a_dispute_citing_a_figure_the_node_does_not_carry_fails(self) -> None:
         code, out = _gate(self._with_dispute(officialEmployees=999))
@@ -202,6 +222,13 @@ class WeightDisputeGateTests(ReleaseGateTests):
         code, out = _gate(self._with_dispute(officialEmployees=4_000_000, curatedEmployeesParsed=4_000_000.0))
         self.assertEqual(code, 1)
         self.assertIn("within 10%", out)
+
+    def test_a_dispute_citing_another_table_or_period_than_the_headcount_beside_it_fails(self) -> None:
+        for override in ({"source": "opm_fedscope_employment"}, {"period": "1999-01"}, {"url": "https://www.opm.gov/other.zip"}):
+            with self.subTest(override=override):
+                code, out = _gate(self._with_dispute(**override))
+                self.assertEqual(code, 1)
+                self.assertIn("other than the headcount beside it", out)
 
     def test_a_dispute_with_no_source_url_fails(self) -> None:
         code, out = _gate(self._with_dispute(url=""))
