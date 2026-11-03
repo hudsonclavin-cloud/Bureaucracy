@@ -1,0 +1,12 @@
+{
+ "_comment": [
+  "Decisions on pay leads (scripts/find_pay_leads.py, docs/PAY_LEADS.md): a post the current Plum Book export prints",
+  "a title for under the post's own agency, in an organisation the matching rules did not tie to it.",
+  "A row takes the post out of the OPEN count and keeps the reason beside it; it never publishes a figure.",
+  "kind is one of: not_this_post (the export's office is a different office from this node), stamp_not_a_post_of_this_agency",
+  "(the node is a copied template title the agency does not carry), needs_a_reviewed_row (the owner says it IS the post;",
+  "the pay modules need a reviewed row, which this file does not supply).",
+  "Each row: nodeId, name (the node's name when decided; a rename makes the row stale), kind, basis, decidedOn."
+ ],
+ "decisions": []
+}

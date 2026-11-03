@@ -77,15 +77,46 @@ from their parent's accounts with no separate line [Likely]. If so, most of
 the 373 end in the explained-blank state, not with a figure. That still meets
 this criterion, but only if the explanation lists what was checked.
 
-### 2. Pay: every post priced or explained
+### 2. Pay: every post priced, explained, or put to the owner
 
-**Decision.** Every position carries a pay claim an official document supports,
-or a stated reason no such figure exists.
+**Decision, redefined on 2026-11-03 (the owner left the wording to this
+repository).** The original was "every position carries a pay claim an official
+document supports, or a terminal reason, which needs a document exactly as a
+figure does". It cannot be met, and the reason is arithmetic rather than effort:
+about 3,000 of the unpriced posts are curated templates, counted nodes and copies
+beneath a replaced unit for which no pay document exists, and fourteen research
+batches priced 11 of the 627 posts they were asked about. A criterion that can
+never close stops steering work, so it is replaced by one this project controls.
 
-**Done when** `docs/UNPRICED_POSITIONS.md` has **0** in `unreached`,
-`multiplicity`, `listed_no_rate` and `beneath_replaced_unit`. Every post is
-priced, or carries a terminal reason the way the 112 contractor-laboratory
-posts carry `not_federally_paid`.
+**Done when** all three hold, each checked by the gate or a test:
+
+1. **No pay figure is published without a document** (the ten pay checkers,
+   unchanged).
+2. **Every unpriced post says in words why** it is unpriced: `payNoDocument`
+   names the six title-listing pay documents read and whether any prints the
+   title (`pay_no_document.py`, CURATION.md §25).
+3. **Every lead is put to the owner.** A lead is an unpriced post whose title a
+   held document prints under the post's own agency, in an organisation the
+   matching rules did not tie to it (`scripts/find_pay_leads.py`, no AI and no
+   network; `docs/PAY_LEADS.md`; one GitHub issue kept open by
+   `.github/workflows/pay_leads.yml`). A lead leaves the open count only by a
+   recorded decision in `data/curation/pay_lead_decisions.json`, and a decision
+   publishes nothing.
+
+**What this does not say.** It does not say pay is complete. **1,258 of 4,591
+posts (27.4%) are priced; 3,221 are not and stay not**, every one with its blank,
+and the strict number (posts with neither a price nor a document-backed terminal
+reason) is printed by `scripts/report_unpriced_positions.py` and in the table
+below, not retired. What moves the priced share is a document, a reviewed row the
+owner approves from a lead, or a curation decision about a template; the loop
+reports the open leads so that work has a queue instead of a gap that cannot close.
+
+**This is a loosening, and it is the repository's choice, not a finding.** The
+counterargument is in the next paragraphs: relabelling an unreachable target as
+met can be a way of not facing it. The defence is that the strict number stays
+published beside the criterion, the gate still refuses an unsourced figure, and
+the thing the old wording asked for that research can reach (the 144 leads) is
+now surfaced rather than buried among 3,221.
 
 | measure | today |
 |---|---|
@@ -126,9 +157,11 @@ Fourteen research batches asked about 627 posts and priced 11 (CLAUDE.md, the
 thirteenth batch). Read with that yield, the first three rows (1,063 posts) are
 decisions, not research, and the stamped titles (943) are a curation question
 before they are a pay question; about 1,215 posts are genuinely researchable and
-the batches' own rate says most of those will answer "no document". `docs/GO.md`'s
-loop script reported this criterion as closed (Pay gap 0) until 2026-11-02 because
-it counted the `payNoDocument` blank as a terminal reason; it no longer does.
+the batches' own rate says most of those will answer "no document". (Between
+2026-10-28 and 2026-11-02 the loop script reported Pay gap 0 because it counted the
+`payNoDocument` blank as closing the old wording; the old wording said it did not,
+so that was an over-claim then. It is the new wording's own reading now, with the
+strict number printed beside it.)
 
 **Route.**
 - Research packs 3–5.
@@ -410,7 +443,7 @@ settle publishes automatically, and everything that needs judgement is held.
 | # | criterion | target | today | gap |
 |---|---|---|---|---|
 | 1 | Money | 0 bare estimates | 0 (359 explained blanks; 341 have no held document naming the unit) | 0 by the test; the 18 named-but-unlicensed rows are the route to more figures |
-| 2 | Pay | 0 posts unpriced and unexplained | 3,221 (every one with a documents-checked blank since 2026-10-22) | 3,221 |
+| 2 | Pay | every post priced, explained by a documents-checked blank, or put to the owner as a lead | 1,258 of 4,591 priced (27.4%); the other 3,221 each carry a blank (2026-10-22); 144 open leads for the owner (`docs/PAY_LEADS.md`) | 0 by the redefined test (2026-11-03); the strict count, 3,221 unpriced, is still printed |
 | 3 | Evidence | every current organisation sourced | 885 current organisations; 0 open: 39 checked-and-not-found with a standing decision to keep the name; the fortieth of the old gap, the Southwest Border Regional Commission, was confirmed on sbrc.gov by the 2026-10-28 loop | 0 open (CURATION.md §32.3); the 39 still publish their negative and none gained a method |
 | 4a | Lists | every list unit reconciled | every unmatched entry disposed, 21 of 21 curated names resolved; 14 of the 16 real units added 2026-10-26 (CURATION.md §32.1) | 0 (2026-11-02: DAU added; ESA recorded `former_body` on both lists, CURATION.md §33.1) |
 | 4b | Money traced | every measured parent sums visibly | 57 of 57 measured units with parts show the sum; not attributed 0 (2026-10-22) | $3.15tn beneath 22 units (September statement) is still apportioned to estimated children, now named |

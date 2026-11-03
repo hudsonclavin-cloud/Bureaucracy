@@ -7880,3 +7880,63 @@ alt text): the table is still headed "tables for 2025", no figure moved, and the
 overdue, correctly. A monthly refetch of that page will therefore swap the fixture every
 cycle without a figure moving. The registry's `contentCheck` could compare the table's own
 text rather than the bytes; that is a change to the job and is the owner's to ask for.
+
+## 34. Criterion 2 redefined, and the pay leads (2026-11-03)
+
+### 34.1 What the owner decided, and what this repository chose
+
+On 2026-11-03 the owner answered the last open decisions: criterion 2's wording is the
+repository's call; the GitHub "go loops" workflow must not use an AI and should "just be
+finding positions to bring to you"; FedScope's successor is adopted (§34.3).
+
+**The redefinition is a loosening and is recorded as one.** The strict criterion, "every post
+priced", cannot be reached by any build: of 4,591 posts, 1,258 (27.4%) carry a pay claim a
+committed document states, and the other 3,221 are posts no held title-listing pay document
+prices (2,158 unreached by any rule, 611 stating a multiplicity, 432 beneath replaced units,
+20 listed without a rate). Each of the 3,221 already carries `payNoDocument`, a record of the
+six documents read and what each prints for the title (CURATION.md §25). The criterion in
+`docs/DEFINITION_OF_DONE.md` now reads: every post is priced, carries that explained blank, or
+is put to the owner as a lead; the gap by that test is 0. The strict number, 3,221 unpriced, is
+still printed beside it and nothing here prices a post. The risk the redefinition runs, which
+the owner should weigh, is that a criterion met by recording what was read can be read as a
+criterion met by finding pay; the table row says "1,258 of 4,591 priced" for that reason.
+
+### 34.2 Pay leads, found without an AI
+
+`scripts/find_pay_leads.py` (no AI, no network, no secret) answers one question per unpriced
+post: does the committed current Plum Book export print this post's title, in an organisation
+of the post's own agency, that the reviewed matching rules did not tie to it? Of the 3,221,
+**144** are such leads (88 where exactly one organisation prints the title, 56 where several
+do). The rest have no title of theirs printed under their own agency; a stamped title printed
+under other agencies ("Chief of Staff" appears under dozens) is not a lead, for the reason the
+current-export work gave when it refused the broad sub-organisation fallback. A lead is a
+question for a person and never a claim; nothing is published from one.
+
+An answer is recorded in `data/curation/pay_lead_decisions.json` (kinds `not_this_post`,
+`stamp_not_a_post_of_this_agency`, `needs_a_reviewed_row`), which takes the lead out of the open
+count and publishes nothing; a reviewed row, where the owner names the organisation, is a
+separate step the pay modules re-check against the document. `docs/PAY_LEADS.md` is generated
+and `tests/test_pay_leads.py` compares it to a fresh render.
+
+The previous `.github/workflows/go_loops.yml` ran agent sessions with an `ANTHROPIC_API_KEY`
+secret, committed, and opened a pull request. It is deleted. `.github/workflows/pay_leads.yml`
+replaces it: it runs the script and keeps one open issue, "Pay leads awaiting the owner", with
+the count and the first leads. It needs no secret and not the "create and approve pull
+requests" repository setting, and a test asserts it contains neither a model, a secret, a push
+nor a pull-request step. `scripts/next_cycle.py` measures pay as the gap (posts with neither a
+blank nor a terminal reason: 0) and the reach (the open leads: 144); because only the owner can
+lower the reach, the loop's stop rule will ask rather than invent work.
+
+### 34.3 Federal Workforce Data, measured before it was built
+
+Measured on 2026-11-03 against data.opm.gov (`robots.txt` 404): the August 2026 employment
+edition is 2,024,832 records; the text download is a pipe-delimited stream of 1,657,827,332
+bytes with no Range support, the Parquet 57 MB in ZSTD with 64 string columns. FWD's agency and
+sub-element codes match FedScope's `AGY` and `AGYSUB`. Counts are complete; **pay is 47%
+REDACTED** (Defense 100%, Homeland Security 77%, Justice 66%), so a payroll total from FWD
+would cover about half the records and none of Defense. The adoption therefore takes headcounts
+from FWD and leaves payroll on FedScope's March 2025 count times printed average, each with its
+own period. FWD is too large to commit verbatim and this Python has no ZSTD or Parquet reader,
+so the committed fixture is a derived aggregate (agency, sub-element, record count) with the
+stream's URL, byte count and sha256 recorded: an explicit exception to the verbatim-fixture rule,
+stated on the fixture. That build is §35 when it lands.

@@ -232,7 +232,7 @@ repository's own classifiers, so its three counts equal the generated reports':
 |---|---|---|
 | Evidence | `report_evidence_coverage.py`'s gap classes | organisations carrying a recorded reason, no method |
 | Money | bare estimates, `report_cost_coverage.py` | blanks named in a held document with no licensed figure |
-| Pay | researchable posts with no documents-checked blank | researchable posts that carry one |
+| Pay | unpriced posts with neither a documents-checked blank nor a terminal reason | open pay leads (`scripts/find_pay_leads.py`): posts the current Plum export prints under their own agency that a person has not decided |
 
 It picks in the owner's order of 2026-10-21 (evidence, then money, then pay),
 takes the first criterion with an open gap and, when every open gap is zero
@@ -252,10 +252,11 @@ Plain **go** with no number means one loop. A `baseline` record and `--dry-run`
 never count. Stop early, and say why, on a STOP result, a failing gate or suite,
 or anything the standing rules forbid; the remaining loops are not owed.
 
-**On GitHub.** `.github/workflows/go_loops.yml` ("go loops", Actions > Run workflow)
-takes the loop count as an input, runs that many agent sessions in turn, stops on a
-STOP result or a failed gate, and opens one pull request. Needs the
-`ANTHROPIC_API_KEY` repository secret. Merging the pull request is the publish step.
+**On GitHub.** There is no agent workflow. `.github/workflows/pay_leads.yml` ("pay leads", Actions >
+Run workflow, and monthly on the 17th) runs `scripts/find_pay_leads.py`, which uses no AI, no network
+and no secret, and keeps one open issue, "Pay leads awaiting the owner", with the count and the first
+leads; the full list is `docs/PAY_LEADS.md`. It finds posts and brings them to the owner and decides
+nothing. The interactive `/go N` loop stays for a person's own session.
 
 **Stop rule.** If the number the last recorded cycle aimed at has not fallen,
 the file says STOP and asks the owner; it does not repeat the cycle or invent

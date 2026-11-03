@@ -81,7 +81,7 @@ DERIVE_STEPS = (
 REPORT_STEPS = (
     "report_unpriced_positions.py", "report_cost_coverage.py", "report_evidence_coverage.py",
     "report_list_reconciliation.py", "report_research_prompts.py", "report_source_registry.py",
-    "export_flat_csv.py",
+    "export_flat_csv.py", "find_pay_leads.py",
 )
 CONTENT_TYPES = {
     "json": ("application/json", "text/json"), "html": ("text/html",), "csv": ("text/csv", "application/csv", "text/plain", "application/octet-stream"),
