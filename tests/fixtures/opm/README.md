@@ -181,11 +181,14 @@ only machine-readable PLUM file reachable from here (the current export above la
 ## 2. Headcounts — FedScope employment data
 
 **Where it lives now.** OPM's "Federal Workforce Data" page
-(`/policy-data-oversight/data-analysis-documentation/fedscope/`) says FedScope was
-succeeded by Federal Workforce Data (FWD) at `https://data.opm.gov/`, launched January
-2026, with downloads at `https://data.opm.gov/explore-data/data/data-downloads`; both that
-host and the old `www.fedscope.opm.gov` are refused by the proxy (meta files in
-`fedscope/`). The raw files are still published on **www.opm.gov** at
+(`/policy-data-oversight/data-analysis-documentation/fedscope/`) says Federal Workforce
+Data (FWD) at `https://data.opm.gov/` "was launched in January 2026"; it does not say
+FedScope is retired (corrected 2026-11-02: an earlier sentence here said the page says
+FedScope "was succeeded"). `www.fedscope.opm.gov` answers 301 to `data.opm.gov`, and
+`www.opm.gov/data/datasets/` lists no FedScope edition after March 2025. When the zip
+below was fetched both hosts were refused by the proxy (meta files in `fedscope/`); on
+2026-11-02 `data.opm.gov` answers, its `robots.txt` is a 404 (nothing to obey), and its
+newest employment file is a ZSTD Parquet this repository does not read (CURATION.md 33.3). The raw files are still published on **www.opm.gov** at
 `https://www.opm.gov/data/datasets/` — the full index (saved as
 `fedscope/opm_datasets_index.html`, 160 datasets) — under the names "FedScope Employment
 Cube (<month year>)" through September 2024 and, from the March 2025 release on, "FedScope

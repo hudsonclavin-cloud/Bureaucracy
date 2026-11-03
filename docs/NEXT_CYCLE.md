@@ -1,6 +1,6 @@
 # Next cycle
 
-Generated 2026-10-28 by `python scripts/next_cycle.py` from `output/graph.json`. Do not edit by hand.
+Generated 2026-11-02 by `python scripts/next_cycle.py` from `output/graph.json`. Do not edit by hand.
 
 **Loops: 1 of 1 done. The requested number is complete; stop and report.**
 
@@ -12,7 +12,7 @@ Open gap = the definition of done is not met. Reach = a recorded reason that mor
 |---|---|---|---|
 | Evidence | **0** | 238 | 646 of 884 current organisations carry a verification method; the rest carry a recorded reason |
 | Money | **0** | 19 | 0 bare estimates; 345 explained blanks, 19 of them named in a held document with no licensed figure; 242 committee estimates counted apart |
-| Pay | **0** | 2789 | 1258 of 4591 posts priced; reach counts researchable posts that carry a documents-checked blank |
+| Pay | **3221** | 2789 | 1258 of 4591 posts priced; the gap is every unpriced post without a terminal reason (a documents-checked blank is not one, DEFINITION_OF_DONE.md criterion 2); reach is the part a pay document could still price |
 
 Not measured here: criterion 4(a) (list units, CURATION.md 32.1) and criteria 5-7 (the refresh job, `scripts/update_cycle.py`, which counts only scheduled cycles).
 

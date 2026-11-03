@@ -11,8 +11,8 @@ receipts line and not a unit the government has replaced. A recorded reason is a
 about what this project can read — a host, a policy, a name that counts things — and
 never a finding about the unit; every panel says which.
 
-- current organisations: **884**
-- with a verification method: **646** (73.1%)
+- current organisations: **885**
+- with a verification method: **647** (73.1%)
 - with a recorded reason no official document can be read: **199**
 - checked and not found, with a standing decision to keep the name: **39**
 - **criterion 3 gap — neither: 0**
@@ -20,7 +20,7 @@ never a finding about the unit; every panel says which.
 | class | organisations | what it means | route |
 |---|---|---|---|
 | Sourced — an official page labels it | 498 | `verificationMethod` is one of the page methods: the unit's own page, its parent's page or (for a post) its organisation's page names it as a heading, link or list item of its own. The strongest claim this project makes about a unit's existence. | Nothing to do; the page is re-fetched and the label re-tested by `scripts/verify_base_graph.py`. |
-| Sourced — an official list or document names it | 148 | `verificationMethod` is one of the document methods: the Federal Register's agency directory, the Senate's or the House Clerk's committee list, the Government Manual's entry, OPM's PLUM archive or current export, or a Federal Register signature. A different document from a page, and the panel says which. | Nothing to do; each list is committed verbatim and re-matched on every build. |
+| Sourced — an official list or document names it | 149 | `verificationMethod` is one of the document methods: the Federal Register's agency directory, the Senate's or the House Clerk's committee list, the Government Manual's entry, OPM's PLUM archive or current export, or a Federal Register signature. A different document from a page, and the panel says which. | Nothing to do; each list is committed verbatim and re-matched on every build. |
 | Recorded reason — a page queued for it could not be read | 71 | `verificationUnread`: a candidate page WAS queued and the verifier could not read it — the host refuses the crawler (401/403 to robots.txt or the page), robots.txt is unreachable, the page answered 404, served under 400 readable characters, or the site was failing. A dated fact about the host or the page, never about the unit. | For `page_not_found` and the readable floor, nominate a better page (phase 1b). For a host that refuses the crawler, nothing on that host can ever be read under the robots policy (`docs/NETWORK_ACCESS.md` §11: 67 of 68 such hosts refuse the page too); the route is a different document — the Manual, a directory, a committee list. |
 | Recorded reason — the name is this graph's own count label | 11 | `verificationNoDocument.kind: curated_count_label`: the name counts things ("Mission Teams (15)", "All 94 District Courts — Standard Structure"), so no official page can carry it as a label and none was fetched. Recomputed from the name on every build by the verifier's own floor. | None by evidence: the name is the graph's annotation. Renaming the grouping to a unit's real name would make it checkable, where one exists. |
 | Recorded reason — the name is one common word | 7 | `verificationNoDocument.kind: name_too_generic`: a one-token name a page may use without naming the unit ("Defense", "Districts (multiple)"), refused by the verifier's floor before any fetch. | A rename to the wording the parent's page carries, where the page carries a fuller one. |
@@ -93,14 +93,14 @@ taken a parent at a time:
 - `name_labelled_on_own_official_page` — 382
 - `name_labelled_on_parent_official_page` — 116
 
-## Sourced — an official list or document names it — 148
+## Sourced — an official list or document names it — 149
 
 `verificationMethod` is one of the document methods: the Federal Register's agency directory, the Senate's or the House Clerk's committee list, the Government Manual's entry, OPM's PLUM archive or current export, or a Federal Register signature. A different document from a page, and the panel says which.
 
 **Route.** Nothing to do; each list is committed verbatim and re-matched on every build.
 
 - `listed_in_federal_register_agency_directory` — 83
-- `listed_in_us_government_manual` — 29
+- `listed_in_us_government_manual` — 30
 - `listed_in_house_clerk_committee_list` — 19
 - `listed_in_senate_committee_list` — 17
 

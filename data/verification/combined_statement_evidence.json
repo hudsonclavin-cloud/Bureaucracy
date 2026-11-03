@@ -2,13 +2,13 @@
   "_note": "Derived by scripts/derive_combined_statement_evidence.py from the Combined Statement's Legislative Branch chapter (c01, XLSX and PDF) and the September 2025 Monthly Treasury Statement, committed verbatim under tests/fixtures/ with their digests. Each record is one reviewed row: every account the chapter prints for the unit, summed. It is not a cost and the exporter never writes it into one.",
   "source": {
     "kind": "combined_statement",
-    "derivedAt": "2026-10-26T05:53:29Z"
+    "derivedAt": "2026-11-02T20:04:22Z"
   },
   "report": {
     "chapter": "c01",
     "fiscalYear": 2025,
-    "rowsReviewed": 15,
-    "published": 15,
+    "rowsReviewed": 16,
+    "published": 16,
     "refused": {},
     "scale": {
       "chapterTotal": {
@@ -1262,6 +1262,87 @@
       },
       "matchRule": "reviewed_row",
       "matchBasis": "The node is this account, added from the chapter under the combined_statement_account licence; the identification is the account's own title.",
+      "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
+      "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+    },
+    "leg-support-uscc": {
+      "nodeId": "leg-support-uscc",
+      "nodeName": "U.S.-China Economic and Security Review Commission",
+      "costBasis": "net_outlays",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "amount": 4208729.08,
+      "amountRaw": "4,208,729.08",
+      "unitsEvidence": "Total, Legislative Branch 7,232,968,757.51 = Total--Legislative Branch 7232968757.51 (2025-09-30); Salaries and Expenses, United States-China Economic and Security Review Commission 4,208,729.08",
+      "scaleReconciliation": {
+        "chapterTotal": {
+          "label": "Total, Legislative Branch",
+          "amountRaw": "7,232,968,757.51",
+          "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+          "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295"
+        },
+        "statementLine": {
+          "label": "Total--Legislative Branch",
+          "amountRaw": "7232968757.51",
+          "recordDate": "2025-09-30",
+          "field": "current_fytd_net_outly_amt",
+          "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_5?filter=record_date%3Aeq%3A2025-09-30&sort=print_order_nbr&page%5Bsize%5D=1000&page%5Bnumber%5D=1",
+          "documentSha256": "7c25e0df2983a97acb4c55394de6fbc49f1f7cbe1924b39629324d70b6b9cb12"
+        }
+      },
+      "fiscalYear": 2025,
+      "periodCoverage": "full_fiscal_year",
+      "amountScope": "Salaries and Expenses, United States-China Economic and Security Review Commission",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "treasury_combined_statement",
+      "sourceUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+      "documentSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+      "retrievedAt": "2026-10-21T16:30:58Z",
+      "locator": {
+        "chapter": "c01",
+        "accounts": [
+          "Salaries and Expenses, United States-China Economic and Security Review Commission"
+        ],
+        "column": "Outlays (Net)"
+      },
+      "quote": "Salaries and Expenses, United States-China Economic and Security Review Commission ... 4,208,729.08",
+      "financialEvidenceStatus": "partial",
+      "components": [
+        {
+          "account": "Salaries and Expenses, United States-China Economic and Security Review Commission",
+          "accountSymbol": "292-2973",
+          "chapterUnit": "Legislative Branch Boards and Commissions",
+          "printed": "4,208,729.08",
+          "amount": 4208729.08,
+          "rowIndex": 969,
+          "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
+        }
+      ],
+      "componentCount": 1,
+      "documentsStatingTheFigure": 1,
+      "arithmetic": {
+        "operation": "sum_of_printed_account_figures",
+        "note": "The figure is the one account's net outlays as the chapter prints it."
+      },
+      "document": {
+        "title": "Combined Statement of Receipts, Outlays, and Balances of the United States Government",
+        "edition": "Fiscal Year 2025",
+        "part": "Part Three, Detail of Appropriations, Outlays, and Balances",
+        "chapter": "c01",
+        "chapterSection": "Legislative Branch",
+        "xlsxUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.xlsx",
+        "xlsxSha256": "75070850c2fd1dc9ad415280772f4b2ec51717e86be46333a1c754b26a568295",
+        "pdfUrl": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2025/c01.pdf",
+        "pdfSha256": "9b9d11fb255f452f623351ed4c2d28e6391f8eb1ed1d5b13e27de08808fd020a"
+      },
+      "treasurySection": {
+        "chapter": "Legislative Branch",
+        "graphBranch": "Legislative Branch",
+        "filedInAnotherSection": false
+      },
+      "matchRule": "reviewed_row",
+      "matchBasis": "The chapter's account titled for the Commission, printed under 'Legislative Branch Boards and Commissions'. It is the only account carrying that phrase: the Congressional-Executive Commission on the People's Republic of China is a different body with its own account. Found by the 2026-11-02 research sweep and re-found by an independent skeptic, who replayed the row against the module and the graph (published, none refused). OMB prints the same account at $4,000 thousand, which corroborates the order of magnitude and is not used.",
       "notTheCost": "Net outlays for fiscal year 2025, a completed year, as the Combined Statement prints them for the account(s) listed. The Treasury's own basis, but not the current fiscal year the graph's figures cover, and not this node's cost.",
       "unitsEvidenceKind": "chapter_total_equals_the_monthly_treasury_statements_line_to_the_cent"
     }

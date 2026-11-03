@@ -7,10 +7,10 @@ Do not edit by hand; regenerate it. The 100 largest title families are in
 ## What this covers
 
 - **Part A — 1,562 unpriced positions** in the 1,542 title families outside the top 100, across **15 shards**, whole organisations per shard.
-- **Part B — 332 organisation nodes** that publish an apportioned estimate rather than a measured
+- **Part B — 337 organisation nodes** that publish an apportioned estimate rather than a measured
   cost, across **4 shards**, whole parents per shard:
   - 242 — a committee or subcommittee (no Table 5 line can ever name one)
-  - 90 — an estimate with a sourced non-cost figure already beside it
+  - 95 — an estimate with a sourced non-cost figure already beside it
   - 0 — an estimate with no sourced figure of any kind
 
 Not asked about, by construction: measured nodes and priced posts (done), and the units
@@ -3394,7 +3394,7 @@ THE TITLES:
 
 # Part B — organisations that publish an estimate
 
-## Prompt B1 — 4 parent(s), 106 unit(s)
+## Prompt B1 — 4 parent(s), 110 unit(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -3458,6 +3458,7 @@ THE UNITS:
 - exec-ind-misc-advisory-council-on-historic-preservation | Advisory Council on Historic Preservation | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-american-battle-monuments-commission-abmc | American Battle Monuments Commission (ABMC) | Independent Agency  [already carries: usaspendingOutlays]
 - exec-ind-misc-appalachian-regional-commission-arc | Appalachian Regional Commission (ARC) | Independent Agency  [already carries: ombBudget, usaspendingOutlays]
+- exec-ind-misc-armed-forces-retirement-home | Armed Forces Retirement Home | Independent Agency  [already carries: usaspendingOutlays]
 - exec-ind-misc-chemical-safety-hazard-investigation-board-csb | Chemical Safety & Hazard Investigation Board (CSB) | Independent Agency  [already carries: ombBudget, usaspendingOutlays]
 - exec-ind-misc-civil-rights-cold-case-records-review-board | Civil Rights Cold Case Records Review Board | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-cigie | Council of the Inspectors General on Integrity and Efficiency | Independent Agency  [already carries: ombBudget]
@@ -3474,6 +3475,7 @@ THE UNITS:
 - exec-ind-misc-federal-mine-safety-and-health-review-commission | Federal Mine Safety and Health Review Commission | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-federal-retirement-thrift-investment-board | Federal Retirement Thrift Investment Board | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-truman-scholarship-foundation | Harry S. Truman Scholarship Foundation | Independent Agency  [already carries: ombBudget]
+- exec-ind-misc-inter-american-foundation | Inter-American Foundation | Independent Agency  [already carries: usaspendingOutlays]
 - exec-ind-misc-madison-fellowship-foundation | James Madison Memorial Fellowship Foundation | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-japan-united-states-friendship-commission | Japan-United States Friendship Commission | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-marine-mammal-commission | Marine Mammal Commission | Independent Agency  [already carries: ombBudget]
@@ -3498,6 +3500,7 @@ THE UNITS:
 - exec-ind-misc-surface-transportation-board | Surface Transportation Board | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-access-board | U.S. Access Board (Architectural and Transportation Barriers Compliance Board) | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-u-s-international-development-finance-corp-dfc | U.S. International Development Finance Corporation | Independent Agency  [already carries: auditedNetCost, usaspendingOutlays]
+- exec-ind-misc-african-development-foundation | United States African Development Foundation | Independent Agency  [already carries: usaspendingOutlays]
 - exec-ind-misc-commission-of-fine-arts | United States Commission of Fine Arts | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-commission-on-civil-rights | United States Commission on Civil Rights | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-holocaust-memorial-museum | United States Holocaust Memorial Museum | Independent Agency  [already carries: ombBudget]
@@ -3505,6 +3508,7 @@ THE UNITS:
 - exec-ind-misc-interagency-council-on-homelessness | United States Interagency Council on Homelessness | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-international-trade-commission | United States International Trade Commission | Independent Agency  [already carries: ombBudget]
 - exec-ind-misc-office-of-government-ethics | United States Office of Government Ethics | Independent Agency  [already carries: ombBudget]
+- exec-ind-misc-trade-and-development-agency | United States Trade and Development Agency | Independent Agency  [already carries: usaspendingOutlays]
 
 ### beneath House Committees  [leg-house-committees]
 - leg-house-cmte-agriculture | House Committee on Agriculture | Committee
@@ -3967,16 +3971,16 @@ THE UNITS:
 - leg-support-loc-copyright | Copyright Office | Bureau  [already carries: combinedStatementOutlays]
 - leg-support-loc-nls | National Library Service for the Blind and Print Disabled (NLS) | Bureau  [already carries: combinedStatementOutlays]
 
+### beneath Congressional Support Agencies  [leg-support]
+- leg-support-uscc | U.S.-China Economic and Security Review Commission | Agency  [already carries: combinedStatementOutlays]
+- leg-support-usbg | United States Botanic Garden | Agency  [already carries: ombBudget]
+
 ### beneath House Committee on Rules  [leg-house-cmte-rules]
 - leg-house-cmte-rules-sub-legislative-budget-process | Subcommittee on Legislative & Budget Process | Subcommittee
 - leg-house-cmte-rules-sub-rules-the-organization-of-the-house | Subcommittee on Rules and Organization of the House | Subcommittee
-
-### beneath Judicial Support Organizations  [jud-support]
-- jud-support-fjc | Federal Judicial Center (FJC) | Agency  [already carries: ombBudget]
-- jud-support-ussc | U.S. Sentencing Commission (USSC) | Agency  [already carries: ombBudget]
 ```
 
-## Prompt B4 — 11 parent(s), 12 unit(s)
+## Prompt B4 — 11 parent(s), 13 unit(s)
 
 ```
 I am building a data-backed public graph of the U.S. federal government. Every
@@ -4035,12 +4039,13 @@ official-published or third-party-estimated.
 
 THE UNITS:
 
+### beneath Judicial Support Organizations  [jud-support]
+- jud-support-fjc | Federal Judicial Center (FJC) | Agency  [already carries: ombBudget]
+- jud-support-ussc | U.S. Sentencing Commission (USSC) | Agency  [already carries: ombBudget]
+
 ### beneath Military Departments & Services  [exec-dept-defense-branches]
 - exec-dept-defense-af | U.S. Air Force | Military Branch  [already carries: usaspendingOutlays]
 - exec-dept-defense-army | U.S. Army | Military Branch  [already carries: usaspendingOutlays]
-
-### beneath Congressional Support Agencies  [leg-support]
-- leg-support-usbg | United States Botanic Garden | Agency  [already carries: ombBudget]
 
 ### beneath Department of Homeland Security (DHS)  [exec-dept-dhs]
 - exec-dept-dhs-fletc | Federal Law Enforcement Training Centers (FLETC) | Component Agency  [already carries: ombBudget, usaspendingOutlays]

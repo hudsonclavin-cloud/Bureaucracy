@@ -478,6 +478,19 @@ REVIEWED_ROWS: dict[str, dict[str, Any]] = {
         "basis": ("The node is this account, added from the chapter under the combined_statement_account "
                   "licence; the identification is the account's own title."),
     },
+    "leg-support-uscc": {
+        "nodeName": "U.S.-China Economic and Security Review Commission",
+        "accounts": ("Salaries and Expenses, United States-China Economic and Security Review Commission",),
+        "phrase": "China Economic and Security Review Commission",
+        "chapterUnit": "Legislative Branch Boards and Commissions",
+        "filedInAnotherSection": False,
+        "basis": ("The chapter's account titled for the Commission, printed under 'Legislative Branch Boards and "
+                  "Commissions'. It is the only account carrying that phrase: the Congressional-Executive Commission "
+                  "on the People's Republic of China is a different body with its own account. Found by the "
+                  "2026-11-02 research sweep and re-found by an independent skeptic, who replayed the row against "
+                  "the module and the graph (published, none refused). OMB prints the same account at $4,000 "
+                  "thousand, which corroborates the order of magnitude and is not used."),
+    },
 }
 
 NOT_THE_COST = (

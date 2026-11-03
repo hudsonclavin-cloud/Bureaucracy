@@ -555,7 +555,8 @@
         "employeesOfficialSource",
         "payrollOfficial",
         "cost_weight_dispute"
-      ]
+      ],
+      "note": "A successor product exists and the copy in use is not it (checked 2026-11-02): OPM's page says Federal Workforce Data (data.opm.gov) 'was launched in January 2026', www.fedscope.opm.gov answers 301 to data.opm.gov, and www.opm.gov/data/datasets/ lists no FedScope edition after March 2025. FWD's newest employment edition is August 2026 (published 2026-10-04), listed at https://data.opm.gov/api/v1/files/employment?current=true and downloaded from /api/v1/files/employment/{year}/{month}/{version}/download as a record-level ZSTD Parquet of about 57 MB; the next release is stated as 2026-11-04 (September 2026 data). Not adopted: the headcount, payroll and gate readers are stdlib-only and read the FedScope zip's table, FWD carries a per-record pay column (with REDACTED values) rather than a printed average, and its population sentence differs, so adopting it needs the owner's decision on a reader or dependency, a 57-76 MB fixture and the wording of a computed mean. Nothing here says FedScope is retired; the page says only that FWD launched."
     },
     {
       "id": "us_government_manual",

@@ -1156,6 +1156,15 @@
    "licence": "official_list_entry",
    "basis": "An entry of the House Clerk's complete committee list under exactly this name, which the Clerk prints as a committee of its own (a top-level entry, with no parent); the graph had no node for it (CURATION.md §26.4). The Committee on House Administration's Subcommittees page (cha.house.gov/subcommittees) served 246 readable characters, below the verifier's floor, so the page route refused it and the list is the licence. It is filed as the Clerk files it, beside the other committees under the House's committees grouping, rather than beneath the Committee on House Administration: the 2026-10-22 disposition's reading that H.Res. 5 made it a select subcommittee of that committee is not something the list states, and a placement the list contradicts would have left the graph with a curated name the list lacks.",
    "list": "house_clerk_committee_list"
+  },
+  {
+   "id": "exec-dept-defense-agency-defense-acquisition-university",
+   "parentId": "exec-dept-defense-agencies",
+   "name": "Defense Acquisition University",
+   "type": "Defense Agency",
+   "licence": "government_manual_entry",
+   "basis": "The United States Government Manual (2025-12-31 edition, entry 232) carries an entry for this unit under 'Joint Service Schools', under 'Defense Agencies', under the Department of Defense, exactly where it files the three schools already drawn beneath 'Defense Agencies & Field Activities'; the Manual's own scaffolding headings ('Joint Service Schools', 'Defense Agencies') are not nodes, so the placement is the looser 'within' rule and the node records that. CURATION.md 13.6 left it unsure over the placement question; checked again on 2026-11-02 with a second skeptic, which re-found the entry, found no node, sibling or alias of that name, no Treasury Table 5 row (so it is not jointly measured and adds no measured cost), and no collision. Corroboration that the unit exists under this name: 10 U.S.C. 1746 (2024 edition) has the Secretary of Defense, acting through the Under Secretary of Defense for Acquisition and Sustainment, 'establish and maintain a defense acquisition university structure' and that officer 'appoint the President of the Defense Acquisition University'; OPM's current Plum export lists a President of the university; FedScope lists it as a DoD sub-agency (DD81); Executive Order 14402 (FR 2026-08900, May 2026) names it. Not established: the university's own page (dau.edu is refused at this session's proxy; acq.osd.mil answered 503; defense.gov refuses). The statute and the Plum export file it under the Under Secretary's office, which this graph does not draw; that reporting line is not claimed here.",
+   "addedOn": "2026-11-02"
   }
  ]
 }

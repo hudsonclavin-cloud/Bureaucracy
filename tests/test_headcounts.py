@@ -450,7 +450,12 @@ class RealFixturePinTests(unittest.TestCase):
         # fifteen, and each landed the moment the node existed. Sub-agency
         # matches are unchanged at 105 -- none of the 39 has a sub-unit in the
         # table -- so every one of the 15 new records is an agency row.
-        self.assertEqual((self.report["agencies_matched"], self.report["subagencies_matched"], len(self.records)), (76, 105, 181))
+        # 105 -> 106 sub-agencies and 181 -> 182 records on 2026-11-02, the same
+        # effect a fourth time: the Defense Acquisition University (DD81, 657
+        # civilians) was added from the Manual's entry 232 and FedScope's row
+        # landed the moment the node existed. It is a sub-agency row, so the
+        # agency count is unchanged at 76.
+        self.assertEqual((self.report["agencies_matched"], self.report["subagencies_matched"], len(self.records)), (76, 106, 182))
         self.assertEqual((len(self.report["ambiguous_agencies"]), len(self.report["ambiguous_subagencies"])), (0, 0))
         # Two fewer unmatched agencies: NASA and NARA, whose names the table
         # truncates ("NAT ...") and whose truncation is now undone, so their
@@ -468,7 +473,9 @@ class RealFixturePinTests(unittest.TestCase):
         # of placement, so those nine publish nothing; undoing FedScope's
         # agency abbreviations the way the leading "NATIONAL" is undone would
         # reach them, and that is a matcher decision, not a curation one.
-        self.assertEqual((len(self.report["unmatched_agencies"]), len(self.report["unmatched_subagencies"])), (37, 308))
+        # 308 -> 307 unmatched sub-agencies on 2026-11-02: DD81, the Defense
+        # Acquisition University, reached its node when the node was added.
+        self.assertEqual((len(self.report["unmatched_agencies"]), len(self.report["unmatched_subagencies"])), (37, 307))
         self.assertEqual(len(self.report["unscoped_refused"]), 20)
         # 10 -> 3 and 331 -> 337 on 2026-09-20 (later): the House Inspector
         # General was renamed from "Office of the Inspector General", a name
@@ -519,7 +526,11 @@ class RealFixturePinTests(unittest.TestCase):
         # ten more -- and each landed the moment the node existed, with no
         # matcher change at all. "compared" is unchanged at 128, so no figure
         # that was already being compared moved.
-        self.assertEqual((comparison["compared"], comparison["no_curated_figure"]), (128, 53))
+        # 53 -> 54 on 2026-11-02: the Defense Acquisition University carries an
+        # OPM headcount and no curated `employees` of its own, the honest state
+        # for a node whose whole basis is the Manual naming it. "compared" is
+        # unchanged at 128.
+        self.assertEqual((comparison["compared"], comparison["no_curated_figure"]), (128, 54))
         self.assertEqual(sum(comparison["bands"].values()), 128)
         # Defense heads the list now that the judicial branch's record is
         # refused: a curated "~750,000 civilian + 1.3M active military"
