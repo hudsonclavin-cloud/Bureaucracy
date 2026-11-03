@@ -66,6 +66,10 @@ class AggregatorTests(unittest.TestCase):
             "a short row": stream([row()[:5]]),
             "a code with two names": stream([row(), row(sub="SOMETHING ELSE")]),
             "no records": stream([]),
+            "an empty agency code": stream([row(code="")]),
+            "an empty sub-element code": stream([row(sub_code="  ")]),
+            "a header naming a read column twice": stream([row() + ["1"]], header=HEADER + ["count"]),
+            "a line with no newline longer than the cap": b"|".join([b"x" * 200] * 400),
         }
         for label, data in cases.items():
             with self.subTest(label), self.assertRaises(fwd.Unreadable):
@@ -128,6 +132,19 @@ class DocumentTests(unittest.TestCase):
         self.assertEqual(fwd.parquet_url(entry), "https://data.opm.gov/api/v1/files/employment/2026/08/1/download")
         with self.assertRaises(fwd.Unreadable):
             fwd.select_latest([])
+
+    def test_a_listing_entry_that_is_not_an_employment_edition_is_never_selected(self):
+        good = {"filename": "employment_202608_1", "year": "2026", "month": "08", "version": 1, "current": True}
+        bad = [
+            dict(good, month="13", filename="employment_202613_1"),
+            dict(good, month="0", filename="employment_202600_1"),
+            dict(good, version="x"),
+            dict(good, filename="dynamics_202609_1", month="09"),
+            dict(good, current=False, month="09", filename="employment_202609_1"),
+        ]
+        self.assertEqual(fwd.select_latest(bad + [good])["filename"], "employment_202608_1")
+        with self.assertRaises(fwd.Unreadable):
+            fwd.select_latest(bad)
 
 
 def write_aggregate(directory: Path, payload: dict) -> Path:

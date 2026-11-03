@@ -267,6 +267,7 @@ def match_fedscope(
     coverage: str = COVERAGE_STATEMENT,
     source: str = FEDSCOPE_SOURCE,
     coverage_source: str = COVERAGE_SOURCE,
+    included_outside: dict[str, str] | None = None,
 ) -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
     """Records keyed by node id, and a report of what did not match and why.
 
@@ -319,7 +320,7 @@ def match_fedscope(
         "ambiguous_agencies": [], "ambiguous_subagencies": [], "unmatched_agencies": [], "unmatched_subagencies": [],
         "self_named_rows": [], "headquarters_rows": [], "scoped_out": [], "node_answers_to_agency_and_subagency": [],
         "unscoped_refused": [], "agency_is_one_other_unit": [], "record_below_its_subtree": [],
-        "agencies_listed_separately_beneath": [], "matched_outside_executive_branch": [],
+        "agencies_listed_separately_beneath": [], "matched_outside_executive_branch": [], "listed_as_included_outside_executive_branch": [],
         "ambiguous_names_in_graph": sorted(ambiguous_keys)[:40],
     }
 
@@ -480,9 +481,16 @@ def match_fedscope(
     for node_id, record in records.items():
         branch = _branch_of(node_id, parent_map, root_id)
         if executive_branch and branch != executive_branch:
-            record["outsideStatedCoverage"] = True
             record["treeBranch"] = branch
-            report["matched_outside_executive_branch"].append({"node": node_id, "listedName": record["listedName"], "employees": record["employees"], "branch": branch})
+            if node_id in (included_outside or {}):
+                # The source's own page names this organisation among the legislative or judicial bodies the dataset
+                # includes (fwd.INCLUDED_OUTSIDE_EXECUTIVE), so "outside the covered branch" would be false of it.
+                record["listedAsIncludedOutsideExecutive"] = included_outside[node_id]
+                report["listed_as_included_outside_executive_branch"].append(
+                    {"node": node_id, "listedName": record["listedName"], "employees": record["employees"], "branch": branch})
+            else:
+                record["outsideStatedCoverage"] = True
+                report["matched_outside_executive_branch"].append({"node": node_id, "listedName": record["listedName"], "employees": record["employees"], "branch": branch})
 
     report["unmatched_agencies"].sort(key=lambda a: -a["employees"])
     report["unmatched_subagencies"].sort(key=lambda a: -a["employees"])
@@ -654,7 +662,7 @@ def apply_headcount_evidence(
             # What the agency total is made of, so a reader can see when it
             # is one unit rather than the whole department.
             source["components"] = record["components"]
-        for flag in ("outsideStatedCoverage", "subtreeRecordsExceedIt", "wholeAgency", "agencyMatched"):
+        for flag in ("outsideStatedCoverage", "listedAsIncludedOutsideExecutive", "subtreeRecordsExceedIt", "wholeAgency", "agencyMatched"):
             if record.get(flag) is not None:
                 source[flag] = record[flag]
         if record.get("outsideStatedCoverage"):

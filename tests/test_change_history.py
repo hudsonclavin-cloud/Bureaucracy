@@ -177,6 +177,53 @@ class DiffTests(unittest.TestCase):
         self.assertEqual([x["id"] for x in entry["sourcedFigures"]["usaspendingOutlays"]["added"]], ["dept"])
         self.assertEqual(sorted(entry["touched"]), ["dept", "exec", "leg", "new", "sec"])
 
+    def test_an_official_headcount_swapped_to_another_table_is_a_sourced_change_and_named(self):
+        base = small_graph()
+        dept = base["children"][0]["children"][0]
+        dept["employeesOfficial"] = 287
+        dept["employeesOfficialSource"] = {"source": "opm_fedscope_employment", "period": "2025-03", "url": "https://www.opm.gov/x.zip"}
+        after = copy.deepcopy(base)
+        after_dept = after["children"][0]["children"][0]
+        after_dept["employeesOfficial"] = 240
+        after_dept["employeesOfficialSource"] = {"source": "opm_fwd_employment", "period": "2026-08", "url": "https://data.opm.gov/x"}
+        entry = ch.diff_graphs(base, after, built_at="2026-11-03T00:00:00Z")
+        moved = entry["sourcedFigures"]["employeesOfficial"]["moved"]
+        self.assertEqual([(m["id"], m["before"], m["after"]) for m in moved], [("dept", 287, 240)])
+        self.assertEqual((moved[0]["sourceBefore"], moved[0]["sourceAfter"]),
+                         ("OPM FedScope 2025-03", "OPM Federal Workforce Data 2026-08"))
+        self.assertIn("dept", entry["touched"])
+        # the same count under a new edition is still a change: the monthly refresh must not be invisible
+        again = copy.deepcopy(after)
+        again["children"][0]["children"][0]["employeesOfficialSource"]["period"] = "2026-09"
+        entry2 = ch.diff_graphs(after, again, built_at="2026-12-03T00:00:00Z")
+        self.assertEqual(entry2["sourcedFigures"]["employeesOfficial"]["moved"][0]["sourceAfter"], "OPM Federal Workforce Data 2026-09")
+        # an unchanged headcount touches nothing
+        self.assertNotIn("employeesOfficial", ch.diff_graphs(after, copy.deepcopy(after), built_at="x")["sourcedFigures"])
+        # and a headcount that appears or disappears is read
+        gone = copy.deepcopy(after)
+        gone["children"][0]["children"][0].pop("employeesOfficial")
+        self.assertEqual([x["id"] for x in ch.diff_graphs(gone, after, built_at="x")["sourcedFigures"]["employeesOfficial"]["added"]], ["dept"])
+        self.assertEqual([x["id"] for x in ch.diff_graphs(after, gone, built_at="x")["sourcedFigures"]["employeesOfficial"]["withdrawn"]], ["dept"])
+
+    def test_a_headcount_dispute_is_keyed_by_node_and_source_and_named_for_its_table(self):
+        graph = small_graph()
+        dept = graph["children"][0]["children"][0]
+        dept["cost_weight_dispute"] = {"source": "opm_fwd_employment", "period": "2026-08", "curatedEmployees": "~350",
+                                       "officialEmployees": 240, "url": "https://data.opm.gov/x"}
+        first = [r for r in ch.queue_records_from_graph(graph, "2026-11-03") if r["kind"] == "cost_weight_dispute"][0]
+        dept["cost_weight_dispute"]["period"] = "2026-09"
+        second = [r for r in ch.queue_records_from_graph(graph, "2026-12-03") if r["kind"] == "cost_weight_dispute"][0]
+        self.assertEqual(first["key"], second["key"], "a monthly edition must not reopen the dispute")
+        self.assertIn("OPM Federal Workforce Data, 2026-08", first["summary"] if "summary" in first else json.dumps(first))
+        self.assertNotIn("FedScope", json.dumps(first))
+        merged = ch.merge_queue([dict(first, status="resolved", resolution="decided")], [second], "2026-12-03")
+        self.assertEqual((merged[0]["status"], merged[0]["resolution"]), ("resolved", "decided"))
+        self.assertIn("2026-09", json.dumps(merged[0]))
+        # FedScope's own dispute is still named for FedScope
+        dept["cost_weight_dispute"].update(source="opm_fedscope_employment", period="2025-03")
+        fed = [r for r in ch.queue_records_from_graph(graph, "2026-11-03") if r["kind"] == "cost_weight_dispute"][0]
+        self.assertIn("OPM FedScope 2025-03", json.dumps(fed))
+
     def test_the_queue_holds_the_graphs_disagreements_and_merges_without_deleting(self):
         base = small_graph()
         entry = ch.diff_graphs(base, copy.deepcopy(base), built_at="2026-10-22T00:00:00Z")

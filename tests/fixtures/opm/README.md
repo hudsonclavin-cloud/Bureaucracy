@@ -6,7 +6,8 @@ civilian employment by agency and sub-agency (FedScope), committed exactly as se
 so the graph's 4,591 position nodes (4,382 when this was written) and its uncited `employees` fields — the counts the
 cost cascade weights by — can be checked against official sources offline. Nothing here
 is interpreted. Each file is **verbatim; refreshed only by re-fetching, never edited by
-hand**.
+hand** — with ONE exception, `fwd/fwd_employment_agency_subelement_*.json`, a derived
+aggregate of a 1.66 GB stream (section 3 below), which says so on its face.
 
 Every fetch used the project User-Agent
 (`bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)`,
@@ -188,7 +189,7 @@ FedScope "was succeeded"). `www.fedscope.opm.gov` answers 301 to `data.opm.gov`,
 `www.opm.gov/data/datasets/` lists no FedScope edition after March 2025. When the zip
 below was fetched both hosts were refused by the proxy (meta files in `fedscope/`); on
 2026-11-02 `data.opm.gov` answers, its `robots.txt` is a 404 (nothing to obey), and its
-newest employment file is a ZSTD Parquet this repository does not read (CURATION.md 33.3). The raw files are still published on **www.opm.gov** at
+newest employment file is a 1.66 GB text stream (57 MB as ZSTD Parquet, which no stdlib reader opens) that this repository reads through a derived aggregate (section 3, CURATION.md 35). The raw files are still published on **www.opm.gov** at
 `https://www.opm.gov/data/datasets/` — the full index (saved as
 `fedscope/opm_datasets_index.html`, 160 datasets) — under the names "FedScope Employment
 Cube (<month year>)" through September 2024 and, from the March 2025 release on, "FedScope
@@ -303,6 +304,32 @@ NV 220,772; AF 171,657.
 **Size.** No committed file exceeds 50 MB (the largest is the September 2024 cube zip at
 24,176,563 bytes), so every file is committed whole; the directory totals about 66 MB.
 The uncompressed fact tables (166 MB and 942 MB) are read from the zips, not extracted.
+
+## 3. Headcounts — Federal Workforce Data (`fwd/`), the successor to FedScope
+
+OPM's Federal Workforce Data (`data.opm.gov`, `robots.txt` answers 404: nothing to obey), which
+the repository reads for headcounts since 2026-11-03 (`data_pipeline/verification/fwd.py`,
+CURATION.md 35). Four files; **three are verbatim and one is not**.
+
+| File | URL | Fetched (UTC) | HTTP | Bytes | sha256 |
+|---|---|---|---|---|---|
+| `fwd/fwd_data_dictionary.xlsx` | https://data.opm.gov/FWD%20Data%20Dictionary.xlsx | 2026-11-03T17:15:55Z | 200 | 16026 | `9f2199915e996d2779671f2ac09eb4c737497e1e906f3b35a54eff1409ec6d52` |
+| `fwd/fwd_data_sources.html` | https://data.opm.gov/resources/data-sources | 2026-11-03T17:15:53Z | 200 | 123973 | `5c2433c87f53691ffdaac4948a5bb91f90dd55eff268de77b3bd7ebdabc0ef58` |
+| `fwd/fwd_employment_listing.json` | https://data.opm.gov/api/v1/files/employment?current=true | 2026-11-03T17:15:55Z | 200 | 27041 | `536d6fbec4629921b7a2153e3e1da1c00595999ba35f96016ab5dc5d1f734803` |
+| `fwd/fwd_employment_agency_subelement_2026-08.json` (**derived, not the publisher's bytes**) | https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json | 2026-11-03T17:19:46Z | 200 | 100313 | `2213e35a8c93a225021c5c6b9d1af0f0d51d0b12850e76c552a6269a3a11032d` |
+
+**The derived aggregate.** The August 2026 status file is 1,657,827,332 bytes of pipe-delimited
+text (2,024,832 records, 64 columns, no Range support) and cannot be committed or re-read by a
+reviewer. `scripts/fetch_fwd_aggregate.py` streamed it once and kept one row per (agency code,
+sub-element code) with the number of records; `count` is "The integer value 1" per record in the
+dictionary above. The aggregate's `stream` block records the stream's URL, byte count, sha256
+(`862aeac830b170a0c5f1c569b39dcf946d29d27a4974041daaeb688cf7aae7f8`), record count and snapshot.
+The same stream was fetched twice, a quarter of an hour apart, and gave the same bytes and
+digest both times. The aggregate's own digest (the table's last column) is recomputed before any
+row is read; the stream's cannot be recomputed offline. To check a row, re-stream the URL and
+compare the digest the script prints. No column other than the six in `fwd.READ_COLUMNS` is read
+and the file carries no name column. The `.meta.json` beside it says `derived: true` and carries
+`derived_from` (the stream's URL, bytes and sha256).
 
 ## Refreshing
 

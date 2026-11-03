@@ -18,7 +18,7 @@ robots.txt is asked first (data.opm.gov answers it with a 404, so nothing is
 published to obey). A response that is not the file (a different media type, a
 filename that is not employment_<YYYYMM>_<version>.txt) is refused, not parsed.
 Nothing is written when the stream fails; the failure is printed and the exit
-code is 1.
+code is 1. robots.txt is asked once, for the listing and the download alike.
 """
 
 from __future__ import annotations
@@ -43,11 +43,22 @@ CHUNK = 1 << 20
 READ_TIMEOUT = 300
 
 
+def shown(path: Path) -> str:
+    try:
+        return str(path.relative_to(PROJECT_ROOT))
+    except ValueError:
+        return str(path)
+
+
 def fixture_path(period: str) -> Path:
     return fwd.FWD_FIXTURE_DIR / f"fwd_employment_agency_subelement_{period}.json"
 
 
-def read_listing() -> list[dict]:
+def read_listing(robots_cache: dict | None = None) -> list[dict]:
+    """The listing, after robots.txt has been asked about its address like every other fetch."""
+    allowed, verdict = fetch_fixture.robots_verdict(fwd.FWD_LISTING_URL, fetch_fixture.DEFAULT_UA, robots_cache)
+    if not allowed:
+        raise fwd.Unreadable(f"robots.txt {verdict}")
     request = urllib.request.Request(fwd.FWD_LISTING_URL, headers={"User-Agent": fetch_fixture.DEFAULT_UA})
     with urllib.request.urlopen(request, timeout=fetch_fixture.TIMEOUT) as response:
         body = response.read()
@@ -73,10 +84,16 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--plan", action="store_true", help="print the edition and URL; download nothing")
     args = ap.parse_args(argv)
 
-    listing = read_listing()
+    robots_cache: dict = {}
+    try:
+        listing = read_listing(robots_cache)
+    except (fwd.Unreadable, OSError, ValueError) as error:
+        print(f"refused: the listing could not be read: {error}")
+        return 1
     if args.year and args.month and args.version:
-        entry = next((e for e in listing if str(e.get("year")) == args.year and str(e.get("month")).zfill(2) == args.month.zfill(2)
-                      and str(e.get("version")) == str(args.version)), None)
+        entry = next((e for e in listing if isinstance(e, dict) and str(e.get("year")) == args.year
+                      and str(e.get("month")).zfill(2) == args.month.zfill(2) and str(e.get("version")) == str(args.version)
+                      and str(e.get("filename") or "").startswith("employment_")), None)
         if entry is None:
             print(f"the listing names no edition {args.year}-{args.month} version {args.version}")
             return 1
@@ -88,7 +105,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.plan:
         return 0
 
-    allowed, verdict = fetch_fixture.robots_verdict(url, fetch_fixture.DEFAULT_UA)
+    allowed, verdict = fetch_fixture.robots_verdict(url, fetch_fixture.DEFAULT_UA, robots_cache)
     if not allowed:
         print(f"refused: robots.txt {verdict}")
         return 1
@@ -100,10 +117,11 @@ def main(argv: list[str] | None = None) -> int:
             content_type = response.headers.get("Content-Type") or ""
             disposition = response.headers.get("Content-Disposition") or ""
             final_url = response.geturl()
-            if not re.search(rf'filename="?{re.escape(entry["filename"])}\.txt', disposition):
+            if not re.search(rf'filename="?{re.escape(entry["filename"])}\.txt(?:"|;|\s|$)', disposition):
                 print(f"refused: the response names {disposition!r}, not {entry['filename']}.txt")
                 return 1
-            if "octet-stream" not in content_type and "text" not in content_type:
+            media = content_type.split(";")[0].strip().lower()
+            if media not in ("application/octet-stream", "text/plain"):
                 print(f"refused: the response is {content_type!r}, not the text stream")
                 return 1
             aggregate = fwd.aggregate_stream(chunks_of(response))
@@ -146,7 +164,7 @@ def main(argv: list[str] | None = None) -> int:
     }
     target.with_name(target.name + ".meta.json").write_text(json.dumps(meta, indent=1) + "\n", encoding="utf-8")
     print(f"streamed {aggregate['bytes']:,} bytes, {aggregate['records']:,} records, {len(aggregate['rows'])} rows, "
-          f"stream sha256 {aggregate['sha256']}\nwrote {target.relative_to(PROJECT_ROOT)}")
+          f"stream sha256 {aggregate['sha256']}\nwrote {shown(target)}")
     return 0
 
 

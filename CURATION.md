@@ -7891,9 +7891,10 @@ finding positions to bring to you"; FedScope's successor is adopted (§34.3).
 
 **The redefinition is a loosening and is recorded as one.** The strict criterion, "every post
 priced", cannot be reached by any build: of 4,591 posts, 1,258 (27.4%) carry a pay claim a
-committed document states, and the other 3,221 are posts no held title-listing pay document
-prices (2,158 unreached by any rule, 611 stating a multiplicity, 432 beneath replaced units,
-20 listed without a rate). Each of the 3,221 already carries `payNoDocument`, a record of the
+committed document states, 112 are not on a federal pay schedule (the contractor-operated
+laboratories), and the other 3,221 are posts no held title-listing pay document prices (2,158
+unreached by any rule, 611 stating a multiplicity, 432 beneath replaced units, 20 listed without
+a rate). The original Decision and test are quoted in `docs/DEFINITION_OF_DONE.md`. Each of the 3,221 already carries `payNoDocument`, a record of the
 six documents read and what each prints for the title (CURATION.md §25). The criterion in
 `docs/DEFINITION_OF_DONE.md` now reads: every post is priced, carries that explained blank, or
 is put to the owner as a lead; the gap by that test is 0. The strict number, 3,221 unpriced, is
@@ -7906,25 +7907,44 @@ criterion met by finding pay; the table row says "1,258 of 4,591 priced" for tha
 `scripts/find_pay_leads.py` (no AI, no network, no secret) answers one question per unpriced
 post: does the committed current Plum Book export print this post's title, in an organisation
 of the post's own agency, that the reviewed matching rules did not tie to it? Of the 3,221,
-**144** are such leads (88 where exactly one organisation prints the title, 56 where several
-do). The rest have no title of theirs printed under their own agency; a stamped title printed
-under other agencies ("Chief of Staff" appears under dozens) is not a lead, for the reason the
-current-export work gave when it refused the broad sub-organisation fallback. A lead is a
-question for a person and never a claim; nothing is published from one.
+**109** are such leads (81 where exactly one organisation prints the title, 28 where several do;
+99 by the agency route and 10 by the route for an agency this graph has no node for, below). The
+rest have no title of theirs printed under their own agency, or are already tied to a printed
+row; a stamped title printed under other agencies ("Chief of Staff" appears under dozens) is not
+a lead, for the reason the current-export work gave when it refused the broad sub-organisation
+fallback. A lead is a question for a person and never a claim; nothing is published from one.
+
+**The first definition was too broad, and an adversarial review of it said so.** The first build
+reported 144. A review run over both commits of this change (five reviewers, each finding then
+checked by two skeptics) reproduced two defects: 25 of the 144 carried a listing of the current
+export already (the rules HAD tied them; the lead asked the owner a question the graph had
+answered), and 20 named only organisations the rules had already matched to some other unit,
+whose titles are that unit's. It also found 10 posts missing: the export files every Defense
+agency under "OFFICE OF THE SECRETARY OF WAR", an agency this graph has no node for, so the
+agency route never saw them, though the export prints their exact title with a rate ($228,000 for
+the Director of the Defense Finance and Accounting Service) under an organisation named for the
+post's own parent. The definition now excludes a post that carries a listing and an organisation
+tied to another unit, and adds the second route. 144 became 109.
 
 An answer is recorded in `data/curation/pay_lead_decisions.json` (kinds `not_this_post`,
 `stamp_not_a_post_of_this_agency`, `needs_a_reviewed_row`), which takes the lead out of the open
-count and publishes nothing; a reviewed row, where the owner names the organisation, is a
+count and publishes nothing, but only while its row names the post as it is now called (a rename
+makes the row stale and the lead stays open) and only for the two kinds that close a lead:
+`needs_a_reviewed_row`, the owner's "yes, that is the post", keeps the lead open and marked
+awaiting a row, because the decisions file supplies no figure. An unreadable or malformed file
+is an error, never an empty one. A reviewed row, where the owner names the organisation, is a
 separate step the pay modules re-check against the document. `docs/PAY_LEADS.md` is generated
 and `tests/test_pay_leads.py` compares it to a fresh render.
 
 The previous `.github/workflows/go_loops.yml` ran agent sessions with an `ANTHROPIC_API_KEY`
 secret, committed, and opened a pull request. It is deleted. `.github/workflows/pay_leads.yml`
 replaces it: it runs the script and keeps one open issue, "Pay leads awaiting the owner", with
-the count and the first leads. It needs no secret and not the "create and approve pull
+the count and the first leads, adding a short comment on each refresh because editing a body
+notifies nobody. **It has not yet run on GitHub**: a workflow can only be started from the default
+branch, so it is untested there until this change is merged. It needs no secret and not the "create and approve pull
 requests" repository setting, and a test asserts it contains neither a model, a secret, a push
 nor a pull-request step. `scripts/next_cycle.py` measures pay as the gap (posts with neither a
-blank nor a terminal reason: 0) and the reach (the open leads: 144); because only the owner can
+blank nor a terminal reason: 0) and the reach (the open leads: 109); because only the owner can
 lower the reach, the loop's stop rule will ask rather than invent work.
 
 ### 34.3 Federal Workforce Data, measured before it was built
@@ -7933,7 +7953,7 @@ Measured on 2026-11-03 against data.opm.gov (`robots.txt` 404): the August 2026 
 edition is 2,024,832 records; the text download is a pipe-delimited stream of 1,657,827,332
 bytes with no Range support, the Parquet 57 MB in ZSTD with 64 string columns. FWD's agency and
 sub-element codes match FedScope's `AGY` and `AGYSUB`. Counts are complete; **pay is 47%
-REDACTED** (Defense 100%, Homeland Security 77%, Justice 66%), so a payroll total from FWD
+REDACTED** (Defense and the three military departments 100%, Homeland Security 76%, Justice 66%; measured on the stream), so a payroll total from FWD
 would cover about half the records and none of Defense. The adoption therefore takes headcounts
 from FWD and leaves payroll on FedScope's March 2025 count times printed average, each with its
 own period. FWD is too large to commit verbatim and this Python has no ZSTD or Parquet reader,
@@ -7980,18 +8000,58 @@ from the other half of the pay column would describe a different population from
 186 `employeesOfficialSource` and 185 `employeesOfficial` changed; 191 nodes carry an official headcount
 (182 before; 186 FWD, 5 FedScope); 12 `cost_weight_dispute` (10 before); **no cost, no payroll and no pay
 claim moved** (0 of 5,527 `resolved_total_amount`, 181 of 181 payrolls identical). The median node's count
-is 16% lower than March 2025's, over 182 nodes carrying both, which is the workforce and the dates
-(FedScope's file was preliminary and, by its own caveat, did not reflect the 2025 reductions).
+is 16.6% lower than March 2025's (median ratio 0.834 over the 177 nodes carrying both; the other five carry
+FedScope's count forward), which is the workforce and the dates (FedScope's file was preliminary and, by its
+own caveat, did not reflect the 2025 reductions).
 
 ### 35.3 Risks, and what would change this
 
 - The derived aggregate cannot be re-verified offline. A reviewer who doubts it re-streams the URL; the script
   prints the stream digest to compare. If OPM re-issues an edition under the same version number with
-  different bytes, the digest will differ and the aggregate must be re-derived (FWD re-issued its history as
-  new versions on 2026-10-03/04, which is why the listing's version is recorded).
+  different bytes, the digest will differ and the aggregate must be re-derived (FWD re-issued 187 editions as
+  new versions, published 2026-10-01 to 2026-10-04, which is why the listing's version is recorded).
 - The coverage population differs from the curated `employees` figures (civilians, uniformed members and
   contractors mixed) as FedScope's did; the dispute rule is unchanged and no weight was recomputed.
 - FedScope is a closed record by what has not appeared, not by a statement of retirement; it reopens if an
   edition appears.
 - The monthly job reports a new FWD edition as due and does not fetch it: 1.66 GB per cycle is not taken
   on the runner's behalf. The next edition (September 2026 data) is stated for 2026-11-04.
+- **The identification of "Status" with "Employment" is this repository's reading.** The coverage sentence is
+  printed on OPM's Data Sources page under the "Status" dataset ("A snapshot of the federal workforce each
+  month"); the files are listed and downloaded as "Employment". No committed document says in words that they are
+  the same dataset. The reading rests on the file's own contents (one record per active civilian employee, a
+  `snapshot_yyyymm` column, codes equal to FedScope's) and on the dictionary's `count`; the panel says "status
+  file", the registry "employment", and this paragraph says which is the reading.
+
+### 35.4 What an adversarial review of §34 and §35 found, and what was done (2026-11-03)
+
+Five reviewers (the gate's soundness, the prose's honesty, the pay leads and the workflow, the aggregate and the
+fetch script, the consumers of the headcount fields) each tried to break one dimension of the two commits, and two
+skeptics tried to refute each finding. 44 findings were reported and 35 survived; none was critical, and most
+skeptics rated the high ones medium. What was changed because of them:
+
+- **The gate did not tie a headcount, a payroll or a dispute to the node it sat on.** A correct block moved to another
+  node, or copied onto an unrelated one, passed. Fixed (CLAUDE.md, the gate paragraph); FedScope-sourced headcounts,
+  which had lost their only re-read when the payroll relation was relaxed, are re-read against the committed zip;
+  the corruption tests now move whole blocks.
+- **GPO and the Tax Court were called outside the file's coverage** against the page that lists them as included.
+  Fixed with a reviewed table the page is checked against.
+- **The pay-lead definition was too broad and missed ten posts** (§34.2); the decisions file's comment and its code
+  disagreed; the workflow's notification claim was false and its present tense premature.
+- **The review queue named FWD disputes "OPM FedScope" and keyed them by period**, so each monthly edition would
+  have closed every dispute and dropped a person's resolution; the change history had no way to record a headcount
+  change at all (186 swapped silently). Fixed; the history now reads a headcount as a sourced figure with its table
+  and period. The 186-node swap of this build is recorded in this section and in the entry spanning it.
+- **The flat CSV put a March 2025 payroll beside an August 2026 headcount with no period**; it now carries the
+  headcount's table and the payroll's own count and period.
+- The aggregator now refuses a header naming a read column twice, an empty code and an unbounded line; the fetch
+  script asks robots.txt about the listing too, anchors its filename test, refuses an HTML response and is tested
+  hermetically; the fixtures README says the aggregate is derived.
+- Statements that were wrong are corrected: the original criterion-2 wording is quoted verbatim, "fourteen research
+  batches priced 11 of 627" was the thirteenth batch alone, the median was over 177 nodes and 0.834, Homeland
+  Security is 76%, the registry has 28 rows, and the generated unpriced report no longer says the blank counts as
+  unpriced under the new wording.
+
+Left as recorded decisions and not changed: the monthly job reports a new FWD edition and does not stream it
+(1.66 GB per cycle); a source a person fetches now names the command to run; FedScope's closed-record status rests
+on what has not appeared, as stated; the per-record FWD pay figures are not read.

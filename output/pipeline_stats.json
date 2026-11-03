@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-03T17:26:15.598505+00:00",
+  "timestamp": "2026-11-03T19:49:46.722821+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5498,
@@ -440,7 +440,7 @@
       "not_an_organisation": 0,
       "stale_name": 0,
       "undated": 0,
-      "outside_stated_coverage": 2,
+      "outside_stated_coverage": 0,
       "below_its_subtree": 0
     },
     "payroll_evidence": {

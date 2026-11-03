@@ -1191,7 +1191,12 @@ function renderHeadcountProvenance(data) {
     add(`The figure is the sum of ${source.components.length} rows the file lists under this agency. `);
   }
   if (source.outsideStatedCoverage) {
-    add("This unit sits outside the Executive Branch the file says it covers, so the number may not describe it at all. ");
+    add(source.source === "opm_fwd_employment"
+      ? "This unit sits outside the Executive Branch and OPM's Data Sources page does not list it among the legislative and judicial bodies the dataset includes, so the number may not describe it at all. "
+      : "This unit sits outside the Executive Branch the file says it covers, so the number may not describe it at all. ");
+  }
+  if (source.listedAsIncludedOutsideExecutive) {
+    add(`This unit sits outside the Executive Branch, and OPM's Data Sources page lists it ("${source.listedAsIncludedOutsideExecutive}") among the legislative and judicial bodies the dataset includes. `);
   }
   if (source.subtreeRecordsExceedIt) {
     add(`Units beneath this one already account for ${source.subtreeRecordsExceedIt.toLocaleString()} in the same file, so this figure does not cover its own subtree. `);
@@ -3153,6 +3158,15 @@ function buildChangeLines(node) {
     for (const x of byId(changes.added)) lines.push(`${field} added`);
     for (const x of byId(changes.withdrawn)) lines.push(`${field} withdrawn — ${x.why}`);
     for (const x of byId(changes.moved)) lines.push(`${field} ${exactMoney(x.before)} → ${exactMoney(x.after)}`);
+  }
+  // An official headcount is a count of people, not dollars, and names the table and period it came from.
+  const headcount = sourced.employeesOfficial;
+  if (headcount) {
+    for (const x of byId(headcount.added)) lines.push("official headcount added");
+    for (const x of byId(headcount.withdrawn)) lines.push(`official headcount withdrawn — ${x.why}`);
+    for (const x of byId(headcount.moved)) {
+      lines.push(`official headcount ${Number(x.before).toLocaleString("en-US")} (${x.sourceBefore}) → ${Number(x.after).toLocaleString("en-US")} (${x.sourceAfter})`);
+    }
   }
   if (!lines.length) return null;
   const host = document.createElement("div");

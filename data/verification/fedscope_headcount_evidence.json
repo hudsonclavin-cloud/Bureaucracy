@@ -1116,6 +1116,7 @@
         "branch": "judicial-branch"
       }
     ],
+    "listed_as_included_outside_executive_branch": [],
     "ambiguous_names_in_graph": [
       "agriculture rural development food and drug administration and related agencies",
       "budget review division",
@@ -10140,8 +10141,8 @@
         "employees": 160
       },
       "wholeAgency": true,
-      "outsideStatedCoverage": true,
-      "treeBranch": "judicial-branch"
+      "treeBranch": "judicial-branch",
+      "outsideStatedCoverage": true
     },
     "exec-dept-hhs-agency-toxic-substances-disease-registry": {
       "source": "opm_fedscope_employment",

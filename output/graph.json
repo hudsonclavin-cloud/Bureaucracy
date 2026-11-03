@@ -78129,7 +78129,7 @@
                     "employees": 1625
                   }
                 ],
-                "outsideStatedCoverage": true
+                "listedAsIncludedOutsideExecutive": "Government Printing Office"
               },
               "govmanEntry": {
                 "source": "us_government_manual",
@@ -398073,7 +398073,7 @@
                 "coverageSource": "OPM, Federal Workforce Data, Data Sources page, Status dataset",
                 "url": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json",
                 "checkedAt": "2026-11-03T17:19:46Z",
-                "outsideStatedCoverage": true,
+                "listedAsIncludedOutsideExecutive": "U.S. Tax Court",
                 "wholeAgency": true,
                 "agencyMatched": "judicial-branch"
               },

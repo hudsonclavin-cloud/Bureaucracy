@@ -603,7 +603,8 @@
         "contentCheck": {
           "contentType": "json",
           "minBytes": 1000
-        }
+        },
+        "command": "python scripts/fetch_fwd_aggregate.py"
       },
       "graphFields": [
         {

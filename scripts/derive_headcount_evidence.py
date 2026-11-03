@@ -136,6 +136,7 @@ def derive_fwd(args, root, node_map, parent_map, out: Path):
         periods, node_map, parent_map, root_id=str(root.get("id") or ""), period=args.period,
         url=meta["url"], fetched_at=meta["fetched_at"], file=_relative(path),
         coverage=fwd.COVERAGE_STATEMENT, source=FWD_SOURCE, coverage_source=fwd.COVERAGE_SOURCE,
+        included_outside=fwd.INCLUDED_OUTSIDE_EXECUTIVE,
     )
     stream = payload["stream"]
     store_source = {

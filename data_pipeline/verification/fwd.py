@@ -69,6 +69,9 @@ FWD_DICTIONARY_FIXTURE = FWD_FIXTURE_DIR / "fwd_data_dictionary.xlsx"
 FWD_LISTING_FIXTURE = FWD_FIXTURE_DIR / "fwd_employment_listing.json"
 AGGREGATE_KIND = "opm_fwd_employment_aggregate"
 DELIMITER = "|"
+#: A line longer than this is not a record of this file (the longest real one is a few hundred bytes); a stream with no
+#: newline would otherwise grow without bound.
+MAX_LINE_BYTES = 1 << 16
 
 #: The only columns taken off a record, by header name. Anything else in the stream is read past and dropped.
 READ_COLUMNS = (
@@ -84,6 +87,20 @@ COVERAGE_STATEMENT = (
 COVERAGE_SOURCE = "OPM, Federal Workforce Data, Data Sources page, Status dataset"
 #: Names the Data Sources page's exclusion list must carry for the panel's pointer to be true.
 EXCLUSION_LIST_MARKERS = ("U.S. Postal Service", "Central Intelligence Agency", "Defense Intelligence Agency")
+
+
+#: Organisations OUTSIDE the Executive Branch that the Data Sources page lists as INCLUDED in the dataset ("EHRI
+#: generally does not include employees of the Legislative branch. However, the following organizations are
+#: included"; likewise the Judicial branch). A reviewed identification, node id -> the label the page prints,
+#: re-checked on every run against the committed page: a record for one of these is not "outside the covered
+#: branch", whatever the Executive-Branch rule says. The Government Publishing Office is the page's
+#: "Government Printing Office" under the name the FWD file itself prints for it, which is why this is a table of
+#: reviewed identifications and not a name match.
+INCLUDED_OUTSIDE_EXECUTIVE = {
+    "leg-support-gpo": "Government Printing Office",
+    "leg-support-uscc": "U.S. \u2013 China Economic and Security Review Commission",
+    "jud-specialized-tax": "U.S. Tax Court",
+}
 
 
 class Unreadable(ValueError):
@@ -130,6 +147,9 @@ def aggregate_stream(chunks: Iterable[bytes]) -> dict[str, Any]:
             missing = [c for c in READ_COLUMNS if c not in index]
             if missing:
                 raise Unreadable(f"the stream's header lacks {missing}")
+            repeated = [c for c in READ_COLUMNS if header.count(c) != 1]
+            if repeated:
+                raise Unreadable(f"the stream's header names {repeated} more than once")
             wanted = tuple(index[c] for c in READ_COLUMNS)
             return
         if not text:
@@ -138,6 +158,8 @@ def aggregate_stream(chunks: Iterable[bytes]) -> dict[str, Any]:
         if len(parts) != len(header):
             raise Unreadable(f"record {records + 1} has {len(parts)} fields against a header of {len(header)}")
         agency_code, agency, sub_code, sub_name, count, snap = (parts[i] for i in wanted)
+        if not agency_code.strip() or not sub_code.strip():
+            raise Unreadable(f"record {records + 1} has an empty agency or sub-element code")
         if count != "1":
             raise Unreadable(f"record {records + 1}: count {count!r} is not the integer 1 the dictionary defines")
         if snapshot is None:
@@ -161,6 +183,8 @@ def aggregate_stream(chunks: Iterable[bytes]) -> dict[str, Any]:
         pending += chunk
         lines = pending.split(b"\n")
         pending = lines.pop()
+        if len(pending) > MAX_LINE_BYTES:
+            raise Unreadable(f"a line of more than {MAX_LINE_BYTES} bytes with no newline is not a record of this file")
         for line in lines:
             take(line)
     if pending.strip():
@@ -238,6 +262,17 @@ def page_text(path: str | Path = FWD_DATA_SOURCES_FIXTURE) -> str:
     return html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", text)))
 
 
+def included_outside_executive_labels(page: str | Path = FWD_DATA_SOURCES_FIXTURE) -> list[str]:
+    """The organisations the page lists as included from the Legislative and Judicial branches, as printed."""
+    text = Path(page).read_text(encoding="utf-8")
+    start = text.find("Legislative branch")
+    end = text.find("EHRI datasets", start)
+    if start < 0 or end < 0:
+        raise Unreadable("the committed Data Sources page has no Legislative/Judicial inclusion lists")
+    items = re.findall(r"<li[^>]*>(.*?)</li>", text[start:end], flags=re.S)
+    return [html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", item))).strip() for item in items]
+
+
 def check_documents(
     dictionary: str | Path = FWD_DICTIONARY_FIXTURE, page: str | Path = FWD_DATA_SOURCES_FIXTURE,
 ) -> None:
@@ -254,12 +289,17 @@ def check_documents(
     for marker in EXCLUSION_LIST_MARKERS:
         if marker not in text:
             raise Unreadable(f"the committed Data Sources page's exclusion list does not carry {marker!r}")
+    listed = included_outside_executive_labels(page)
+    for node_id, wanted in INCLUDED_OUTSIDE_EXECUTIVE.items():
+        if wanted not in listed:
+            raise Unreadable(f"the committed Data Sources page does not list {wanted!r} (for {node_id}) among the included bodies")
 
 
 def select_latest(listing: list[dict[str, Any]]) -> dict[str, Any]:
     """The newest (year, month) entry of the listing, highest version of that month."""
     entries = [e for e in listing if isinstance(e, dict) and e.get("current") and str(e.get("year", "")).isdigit()
-               and str(e.get("month", "")).isdigit()]
+               and str(e.get("month", "")).isdigit() and 1 <= int(e["month"]) <= 12 and str(e.get("version", "")).isdigit()
+               and str(e.get("filename") or "").startswith("employment_")]
     if not entries:
         raise Unreadable("the listing carries no current employment file")
     return max(entries, key=lambda e: (int(e["year"]), int(e["month"]), int(e.get("version") or 0)))

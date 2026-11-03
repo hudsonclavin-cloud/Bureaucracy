@@ -5,7 +5,7 @@ the graph just built, `output/change_history.json` and `data/audit/review_queue.
 Do not edit by hand. `docs/DEFINITION_OF_DONE.md` Part 2 ("Change history"), criterion 5
 (the change budget) and criterion 7 (the review queue).
 
-**Review queue: 60 open**, 0 resolved, 12 closed. The queue is the only thing a person is asked to look at between cycles.
+**Review queue: 60 open**, 0 resolved, 24 closed. The queue is the only thing a person is asked to look at between cycles.
 
 ### Open: `measured_cost_moved_with_new_statement` (7)
 
@@ -39,42 +39,42 @@ Do not edit by hand. `docs/DEFINITION_OF_DONE.md` Part 2 ("Change history"), cri
 
 ### Open: `cost_weight_dispute` (12)
 
-- opened 2026-11-03 — Defense Contract Audit Agency (DCAA) (`exec-dept-defense-agency-dcaa`): the curated headcount ~5,000 and OPM's 3260 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
+- opened 2026-11-03 — Defense Contract Audit Agency (DCAA) (`exec-dept-defense-agency-dcaa`): the curated headcount ~5,000 and OPM's 3260 (OPM Federal Workforce Data, 2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
   - the curated file: employees ~5,000
-  - OPM FedScope 2026-08: employees 3260 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
-- opened 2026-11-03 — Defense Contract Management Agency (DCMA) (`exec-dept-defense-agency-dcma`): the curated headcount ~12,000 and OPM's 8483 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
+  - OPM Federal Workforce Data 2026-08: employees 3260 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
+- opened 2026-11-03 — Defense Contract Management Agency (DCMA) (`exec-dept-defense-agency-dcma`): the curated headcount ~12,000 and OPM's 8483 (OPM Federal Workforce Data, 2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
   - the curated file: employees ~12,000
-  - OPM FedScope 2026-08: employees 8483 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
-- opened 2026-11-03 — Defense Counterintelligence & Security Agency (DCSA) (`exec-dept-defense-agency-dcsa`): the curated headcount ~12,000 and OPM's 4883 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
+  - OPM Federal Workforce Data 2026-08: employees 8483 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
+- opened 2026-11-03 — Defense Counterintelligence & Security Agency (DCSA) (`exec-dept-defense-agency-dcsa`): the curated headcount ~12,000 and OPM's 4883 (OPM Federal Workforce Data, 2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
   - the curated file: employees ~12,000
-  - OPM FedScope 2026-08: employees 4883 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
-- opened 2026-11-03 — Defense Finance & Accounting Service (DFAS) (`exec-dept-defense-agency-dfas`): the curated headcount ~12,000 and OPM's 9339 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
+  - OPM Federal Workforce Data 2026-08: employees 4883 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
+- opened 2026-11-03 — Defense Finance & Accounting Service (DFAS) (`exec-dept-defense-agency-dfas`): the curated headcount ~12,000 and OPM's 9339 (OPM Federal Workforce Data, 2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
   - the curated file: employees ~12,000
-  - OPM FedScope 2026-08: employees 9339 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
-- opened 2026-11-03 — Defense Health Agency (DHA) (`exec-dept-defense-agency-dha`): the curated headcount ~130,000 and OPM's 5537 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
+  - OPM Federal Workforce Data 2026-08: employees 9339 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
+- opened 2026-11-03 — Defense Health Agency (DHA) (`exec-dept-defense-agency-dha`): the curated headcount ~130,000 and OPM's 5537 (OPM Federal Workforce Data, 2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
   - the curated file: employees ~130,000
-  - OPM FedScope 2026-08: employees 5537 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
-- opened 2026-11-03 — Defense Information Systems Agency (DISA) (`exec-dept-defense-agency-disa`): the curated headcount ~8,500 and OPM's 6319 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
+  - OPM Federal Workforce Data 2026-08: employees 5537 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
+- opened 2026-11-03 — Defense Information Systems Agency (DISA) (`exec-dept-defense-agency-disa`): the curated headcount ~8,500 and OPM's 6319 (OPM Federal Workforce Data, 2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
   - the curated file: employees ~8,500
-  - OPM FedScope 2026-08: employees 6319 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
-- opened 2026-11-03 — Defense Logistics Agency (DLA) (`exec-dept-defense-agency-dla`): the curated headcount ~26,000 and OPM's 22996 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
+  - OPM Federal Workforce Data 2026-08: employees 6319 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
+- opened 2026-11-03 — Defense Logistics Agency (DLA) (`exec-dept-defense-agency-dla`): the curated headcount ~26,000 and OPM's 22996 (OPM Federal Workforce Data, 2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
   - the curated file: employees ~26,000
-  - OPM FedScope 2026-08: employees 22996 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
-- opened 2026-11-03 — Defense Threat Reduction Agency (DTRA) (`exec-dept-defense-agency-dtra`): the curated headcount ~2,000 and OPM's 1060 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
+  - OPM Federal Workforce Data 2026-08: employees 22996 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
+- opened 2026-11-03 — Defense Threat Reduction Agency (DTRA) (`exec-dept-defense-agency-dtra`): the curated headcount ~2,000 and OPM's 1060 (OPM Federal Workforce Data, 2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
   - the curated file: employees ~2,000
-  - OPM FedScope 2026-08: employees 1060 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
-- opened 2026-11-03 — Financial Crimes Enforcement Network (FinCEN) (`exec-dept-treasury-fincen`): the curated headcount ~350 and OPM's 231 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
+  - OPM Federal Workforce Data 2026-08: employees 1060 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
+- opened 2026-11-03 — Financial Crimes Enforcement Network (FinCEN) (`exec-dept-treasury-fincen`): the curated headcount ~350 and OPM's 231 (OPM Federal Workforce Data, 2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
   - the curated file: employees ~350
-  - OPM FedScope 2026-08: employees 231 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
-- opened 2026-11-03 — Missile Defense Agency (MDA) (`exec-dept-defense-agency-mda`): the curated headcount ~9,000 and OPM's 2469 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
+  - OPM Federal Workforce Data 2026-08: employees 231 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
+- opened 2026-11-03 — Missile Defense Agency (MDA) (`exec-dept-defense-agency-mda`): the curated headcount ~9,000 and OPM's 2469 (OPM Federal Workforce Data, 2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
   - the curated file: employees ~9,000
-  - OPM FedScope 2026-08: employees 2469 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
-- opened 2026-11-03 — National Reconnaissance Office (NRO) (`exec-dept-defense-agency-nro`): the curated headcount ~3,000 (est.) and OPM's 1155 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
+  - OPM Federal Workforce Data 2026-08: employees 2469 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
+- opened 2026-11-03 — National Reconnaissance Office (NRO) (`exec-dept-defense-agency-nro`): the curated headcount ~3,000 (est.) and OPM's 1155 (OPM Federal Workforce Data, 2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
   - the curated file: employees ~3,000 (est.)
-  - OPM FedScope 2026-08: employees 1155 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
-- opened 2026-11-03 — Office for Civil Rights (OCR) (`exec-dept-ed-ocr`): the curated headcount ~550 and OPM's 293 (2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
+  - OPM Federal Workforce Data 2026-08: employees 1155 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
+- opened 2026-11-03 — Office for Civil Rights (OCR) (`exec-dept-ed-ocr`): the curated headcount ~550 and OPM's 293 (OPM Federal Workforce Data, 2026-08) differ by more than 10%; the estimate was divided by the curated figure and not recomputed
   - the curated file: employees ~550
-  - OPM FedScope 2026-08: employees 293 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
+  - OPM Federal Workforce Data 2026-08: employees 293 — https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json
 
 ### Open: `verification_failure` (39)
 
@@ -204,6 +204,21 @@ Do not edit by hand. `docs/DEFINITION_OF_DONE.md` Part 2 ("Change history"), cri
 
 ## Builds, newest first
 
+### 2026-11-03T19:49:46.722821+00:00 — within the budget
+
+the Treasury anchor is still the statement of 2026-09-30; 5,527 nodes before and 5,527 after (0 added, 0 removed, 0 newly marked replaced, 0 renamed); 0 measured costs moved, 0 gained a measured figure, 0 lost one; 0 estimates moved; pay claims 1,258 -> 1,258 (0 added, 0 withdrawn, 0 changed figure); verification or placement methods: 0 added, 0 withdrawn, 0 changed; within the change budget.
+
+- `node_count_drops`: ok — 5,527 nodes before, 5,527 after; 0 removed
+- `anchor_lost`: ok — anchor record date after: 2026-09-30
+- `anchor_period_goes_backwards`: ok — anchor 2026-09-30 -> 2026-09-30
+- `measured_cost_moved_without_a_new_statement`: ok — the statement is unchanged (2026-09-30) and 0 measured costs moved
+- `pay_claims_withdrawn_above_5_percent`: ok — 0 of 1,258 pay claims withdrawn (0.0%; the limit is 5%)
+- `rebuilt_without_a_statement`: ok — the build read a statement
+
+Sources whose copy changed:
+
+- `opm_fwd_employment`: — → 2026-08-31 (current)
+
 ### 2026-11-03T17:26:15.598505+00:00 — within the budget
 
 the Treasury anchor is still the statement of 2026-09-30; 5,527 nodes before and 5,527 after (0 added, 0 removed, 0 newly marked replaced, 0 renamed); 0 measured costs moved, 0 gained a measured figure, 0 lost one; 0 estimates moved; pay claims 1,258 -> 1,258 (0 added, 0 withdrawn, 0 changed figure); verification or placement methods: 0 added, 0 withdrawn, 0 changed; within the change budget.
@@ -281,46 +296,6 @@ the Treasury anchor is still the statement of 2026-09-30; 5,512 nodes before and
 - `measured_cost_moved_without_a_new_statement`: ok — the statement is unchanged (2026-09-30) and 0 measured costs moved
 - `pay_claims_withdrawn_above_5_percent`: ok — 0 of 1,258 pay claims withdrawn (0.0%; the limit is 5%)
 - `rebuilt_without_a_statement`: ok — the build read a statement
-
-Nodes added (14):
-
-- Denali Commission (`exec-ind-misc-denali-commission`)
-- Farm Credit System Insurance Corporation (`exec-ind-misc-farm-credit-system-insurance-corporation`)
-- Barry M. Goldwater Scholarship and Excellence in Education Foundation (`exec-ind-misc-goldwater-scholarship-foundation`)
-- Navajo and Hopi Indian Relocation Office (`exec-ind-misc-office-of-navajo-and-hopi-indian-relocation`)
-- Presidio Trust (`exec-ind-misc-presidio-trust`)
-- Southeast Crescent Regional Commission (`exec-ind-misc-southeast-crescent-regional-commission`)
-- Southwest Border Regional Commission (`exec-ind-misc-southwest-border-regional-commission`)
-- Morris K. Udall and Stewart L. Udall Foundation (`exec-ind-misc-udall-foundation`)
-- Utah Reclamation Mitigation and Conservation Commission (`exec-ind-misc-utah-reclamation-mitigation-and-conservation-commission`)
-- Judicial Panel on Multidistrict Litigation (`jud-specialized-jpml`)
-- House Committee on Ethics (`leg-house-cmte-ethics`)
-- Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021 (`leg-house-cmte-jan6-select`)
-- United States Botanic Garden (`leg-support-usbg`)
-- U.S.-China Economic and Security Review Commission (`leg-support-uscc`)
-
-Methods added (16):
-
-- Denali Commission (`exec-ind-misc-denali-commission`), `verificationMethod` listed_in_federal_register_agency_directory
-- Farm Credit System Insurance Corporation (`exec-ind-misc-farm-credit-system-insurance-corporation`), `verificationMethod` name_labelled_on_own_official_page
-- Barry M. Goldwater Scholarship and Excellence in Education Foundation (`exec-ind-misc-goldwater-scholarship-foundation`), `verificationMethod` listed_in_federal_register_agency_directory
-- Navajo and Hopi Indian Relocation Office (`exec-ind-misc-office-of-navajo-and-hopi-indian-relocation`), `verificationMethod` listed_in_federal_register_agency_directory
-- Presidio Trust (`exec-ind-misc-presidio-trust`), `verificationMethod` listed_in_federal_register_agency_directory
-- Southeast Crescent Regional Commission (`exec-ind-misc-southeast-crescent-regional-commission`), `verificationMethod` name_labelled_on_own_official_page
-- Morris K. Udall and Stewart L. Udall Foundation (`exec-ind-misc-udall-foundation`), `verificationMethod` listed_in_federal_register_agency_directory
-- Utah Reclamation Mitigation and Conservation Commission (`exec-ind-misc-utah-reclamation-mitigation-and-conservation-commission`), `verificationMethod` listed_in_federal_register_agency_directory
-- Judicial Panel on Multidistrict Litigation (`jud-specialized-jpml`), `verificationMethod` name_labelled_on_own_official_page
-- House Committee on Ethics (`leg-house-cmte-ethics`), `verificationMethod` name_labelled_on_own_official_page
-- Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021 (`leg-house-cmte-jan6-select`), `verificationMethod` listed_in_house_clerk_committee_list
-- Select Subcommittee on the Weaponization of the Federal Government (`leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government`), `placementMethod` name_labelled_on_parent_official_page
-- Select Subcommittee on the Weaponization of the Federal Government (`leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government`), `verificationMethod` name_labelled_on_parent_official_page
-- United States Botanic Garden (`leg-support-usbg`), `placementMethod` name_labelled_on_parent_official_page
-- United States Botanic Garden (`leg-support-usbg`), `verificationMethod` name_labelled_on_own_official_page
-- U.S.-China Economic and Security Review Commission (`leg-support-uscc`), `verificationMethod` listed_in_federal_register_agency_directory
-
-Sources whose copy changed:
-
-- `official_pages`: 2026-10-22 → 2026-10-26 (current)
 
 ### 2026-10-22T08:53:12.726654+00:00 — within the budget
 

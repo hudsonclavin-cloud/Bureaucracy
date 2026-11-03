@@ -45,14 +45,14 @@ class PayGapIsTheDefinitionOfDonesTests(unittest.TestCase):
         import find_pay_leads as fpl
         graph = json.loads(self.GRAPH.read_text())
         before = next_cycle.open_pay_leads(graph)
-        self.assertEqual(before, 144)
+        self.assertEqual(before, 109)
         first = None
         with mock.patch.object(fpl, "load_decisions") as decisions:
             export = fpl.load_plum_export()
             node_map, parent_map = fpl.index_tree(graph)
             found = fpl.find_leads(graph, export, fpl.load_alias_table(node_map=node_map, parent_map=parent_map))
             first = found[0]["nodeId"]
-            decisions.return_value = {first: {"nodeId": first, "kind": "not_this_post", "basis": "test"}}
+            decisions.return_value = {first: {"nodeId": first, "name": found[0]["name"], "kind": "not_this_post", "basis": "test"}}
             self.assertEqual(next_cycle.open_pay_leads(graph), before - 1)
 
     def test_a_post_with_neither_a_blank_nor_a_terminal_reason_is_a_gap(self):

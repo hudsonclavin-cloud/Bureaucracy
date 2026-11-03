@@ -447,8 +447,9 @@ def render_inventory(groups, totals) -> str:
         w(f"- of those, carrying `payNoDocument`, the explained blank naming the {checked} title-listing pay documents "
           f"checked for the title: **{len(blanks):,}** — {len(blanks) - printed:,} whose title none of them prints, "
           f"{printed:,} whose title a held document prints under a filing no reviewed rule ties to the post. "
-          "An explained blank is not a terminal reason: the definition of done's criterion 2 counts these as unpriced "
-          "until a document prices the post or establishes why none can.")
+          "An explained blank is not a terminal reason: under the 2026-11-03 wording of the definition of done's "
+          "criterion 2 it satisfies the item that every unpriced post says in words why, and the strict count (posts "
+          "with neither a price nor a document-backed terminal reason) is this report's number.")
     w("")
     w("| reason | count | what it means |")
     w("|---|---|---|")

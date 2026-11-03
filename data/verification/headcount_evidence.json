@@ -1217,7 +1217,8 @@
     ],
     "record_below_its_subtree": [],
     "agencies_listed_separately_beneath": [],
-    "matched_outside_executive_branch": [
+    "matched_outside_executive_branch": [],
+    "listed_as_included_outside_executive_branch": [
       {
         "node": "leg-support-gpo",
         "listedName": "GOVERNMENT PUBLISHING OFFICE",
@@ -6810,8 +6811,8 @@
         "listedName": "GOVERNMENT PUBLISHING OFFICE",
         "employees": 1625
       },
-      "outsideStatedCoverage": true,
-      "treeBranch": "legislative-branch"
+      "treeBranch": "legislative-branch",
+      "listedAsIncludedOutsideExecutive": "Government Printing Office"
     },
     "exec-ind-misc-marine-mammal-commission": {
       "source": "opm_fwd_employment",
@@ -9635,8 +9636,8 @@
       "agencySubagencyRows": 1,
       "previous": null,
       "wholeAgency": true,
-      "outsideStatedCoverage": true,
-      "treeBranch": "judicial-branch"
+      "treeBranch": "judicial-branch",
+      "listedAsIncludedOutsideExecutive": "U.S. Tax Court"
     },
     "exec-ind-nasa-ames-research-center-arc": {
       "source": "opm_fwd_employment",

@@ -75,7 +75,26 @@ SOURCED_FIGURE_FIELDS = {
     "combinedStatementOutlays": "amount",
     "spendingByKind": "totalObligations",
     "payrollOfficial": "totalAnnualPay",
+    # a headcount sits on the node itself, beside employeesOfficialSource; _figure_block builds the block the diff reads
+    "employeesOfficial": "employees",
 }
+#: The table an official headcount came from, as the review queue and the viewer name it.
+HEADCOUNT_SOURCE_LABELS = {
+    "opm_fwd_employment": "OPM Federal Workforce Data",
+    "opm_fedscope_employment": "OPM FedScope",
+}
+
+
+def _figure_block(node: dict[str, Any], field: str) -> Any:
+    """The block a sourced figure is read from. A headcount is an integer on the node with its source beside it, so
+    it is lifted into a block (the count, the table, the period and the file) for the same diff the others get."""
+    if field != "employeesOfficial":
+        return node.get(field)
+    count = node.get("employeesOfficial")
+    source = node.get("employeesOfficialSource")
+    if isinstance(count, int) and not isinstance(count, bool) and isinstance(source, dict):
+        return {"employees": count, "source": source.get("source"), "period": source.get("period"), "url": source.get("url")}
+    return None
 EVIDENCE_METHOD_FIELDS = ("verificationMethod", "placementMethod")
 MEASURED = ("official", "root_total")
 #: The budget's starting thresholds (criterion 5: "to be tuned on the first cycles").
@@ -286,13 +305,21 @@ def diff_graphs(before: dict[str, Any], after: dict[str, Any], *, built_at: str 
         for i in set(a) | set(b):
             node_a = a[i][0] if i in a else {}
             node_b = b[i][0] if i in b else {}
-            block_a, block_b = node_a.get(field), node_b.get(field)
+            block_a, block_b = _figure_block(node_a, field), _figure_block(node_b, field)
             if isinstance(block_a, dict) and not isinstance(block_b, dict):
                 added_f.append({"id": i, "name": str(node_a.get("name")), "figure": block_a.get(key), "document": _document_of(block_a)})
             elif isinstance(block_b, dict) and not isinstance(block_a, dict):
                 withdrawn_f.append({"id": i, "name": str(node_b.get("name")), "figure": block_b.get(key), "document": _document_of(block_b), "why": "node removed" if i not in a else "the record was withdrawn or no longer applies"})
-            elif isinstance(block_a, dict) and isinstance(block_b, dict) and block_a.get(key) != block_b.get(key):
-                moved_f.append({"id": i, "name": str(node_a.get("name")), "before": block_b.get(key), "after": block_a.get(key)})
+            elif isinstance(block_a, dict) and isinstance(block_b, dict):
+                # A headcount also moves when the table or its period does with the count unchanged: that is the edition
+                # changing under a node, and the history must be able to say so.
+                same_edition = field != "employeesOfficial" or (block_a.get("source"), block_a.get("period")) == (block_b.get("source"), block_b.get("period"))
+                if block_a.get(key) != block_b.get(key) or not same_edition:
+                    moved = {"id": i, "name": str(node_a.get("name")), "before": block_b.get(key), "after": block_a.get(key)}
+                    if field == "employeesOfficial":
+                        moved["sourceBefore"] = f"{HEADCOUNT_SOURCE_LABELS.get(block_b.get('source'), block_b.get('source'))} {block_b.get('period')}"
+                        moved["sourceAfter"] = f"{HEADCOUNT_SOURCE_LABELS.get(block_a.get('source'), block_a.get('source'))} {block_a.get('period')}"
+                    moved_f.append(moved)
         if added_f or withdrawn_f or moved_f:
             sourced[field] = {"added": added_f, "withdrawn": withdrawn_f, "moved": moved_f}
 
@@ -426,10 +453,14 @@ def queue_records_from_graph(after: dict[str, Any], opened: str) -> list[dict[st
                                 {"role": "this graph (curated)", "says": f"drawn under {(parent or {}).get('name')} ({(parent or {}).get('id')})"}], opened))
         dispute = node.get("cost_weight_dispute")
         if isinstance(dispute, dict):
-            out.append(_record("cost_weight_dispute", _key("cost_weight_dispute", node.get("id"), dispute.get("period")), node,
-                               f"the curated headcount {dispute.get('curatedEmployees')} and OPM's {dispute.get('officialEmployees')} ({dispute.get('period')}) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
+            # Keyed by node and source, NOT by period: a monthly edition changes the period, and a key that carried it
+            # would close every dispute and drop a person's resolution each month. The record's text carries the
+            # current period and is refreshed on every build.
+            table = HEADCOUNT_SOURCE_LABELS.get(str(dispute.get("source")), "OPM")
+            out.append(_record("cost_weight_dispute", _key("cost_weight_dispute", node.get("id"), dispute.get("source")), node,
+                               f"the curated headcount {dispute.get('curatedEmployees')} and OPM's {dispute.get('officialEmployees')} ({table}, {dispute.get('period')}) differ by more than 10%; the estimate was divided by the curated figure and not recomputed",
                                [{"role": "the curated file", "says": f"employees {dispute.get('curatedEmployees')}"},
-                                {"role": "OPM FedScope " + str(dispute.get("period")), "url": dispute.get("url"), "says": f"employees {dispute.get('officialEmployees')}"}], opened))
+                                {"role": f"{table} {dispute.get('period')}", "url": dispute.get("url"), "says": f"employees {dispute.get('officialEmployees')}"}], opened))
         failure = node.get("verificationFailure")
         if failure and not node.get("verificationMethod"):
             source = node.get("verificationFailureSource") if isinstance(node.get("verificationFailureSource"), dict) else {}

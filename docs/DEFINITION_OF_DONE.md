@@ -2,7 +2,9 @@
 
 Decided by the owner on 2026-10-21, in two rounds of multiple-choice questions.
 Every "today" figure below was last re-measured on 2026-10-25 on the published
-graph (`output/graph.json`, 5,512 nodes); the criteria sections keep the day each
+graph (`output/graph.json`, 5,512 nodes) except where a row or section is dated
+later (criteria 2, 3, 4(a) and 6 carry their own dates; the graph now has 5,527
+nodes); the criteria sections keep the day each
 figure was first taken where the history matters by `scripts/validate_published_graph.py`,
 `scripts/report_cost_coverage.py`, `scripts/report_unpriced_positions.py`,
 `scripts/report_evidence_coverage.py` (criterion 3, since 2026-10-22) and
@@ -80,13 +82,21 @@ this criterion, but only if the explanation lists what was checked.
 ### 2. Pay: every post priced, explained, or put to the owner
 
 **Decision, redefined on 2026-11-03 (the owner left the wording to this
-repository).** The original was "every position carries a pay claim an official
-document supports, or a terminal reason, which needs a document exactly as a
-figure does". It cannot be met, and the reason is arithmetic rather than effort:
-about 3,000 of the unpriced posts are curated templates, counted nodes and copies
-beneath a replaced unit for which no pay document exists, and fourteen research
-batches priced 11 of the 627 posts they were asked about. A criterion that can
-never close stops steering work, so it is replaced by one this project controls.
+repository).** The original Decision read "Every position carries a pay claim an
+official document supports, or a stated reason no such figure exists.", and its
+test "`docs/UNPRICED_POSITIONS.md` has **0** in `unreached`, `multiplicity`,
+`listed_no_rate` and `beneath_replaced_unit`. Every post is priced, or carries a
+terminal reason the way the 112 contractor-laboratory posts carry
+`not_federally_paid`." No build can meet it, and the reason is the shape of the
+gap rather than effort: of the 3,221 unpriced posts, 1,063 sit beneath a replaced
+VA network, state a multiplicity or are listed with no rate, and 943 more carry a
+title that recurs in two or more organisations (a copied stamp), so about 2,000
+are a curation decision before they are a pay question (the table below); 1,215
+more carry a title unique to one organisation, and the most recent research batch
+(the thirteenth) priced 11 of the 627 posts it was asked about, though earlier
+batches priced more (the ninth took the pay claims from 590 to 638). A criterion
+that can never close stops steering work, so it is replaced by one this project
+controls.
 
 **Done when** all three hold, each checked by the gate or a test:
 
@@ -95,13 +105,20 @@ never close stops steering work, so it is replaced by one this project controls.
 2. **Every unpriced post says in words why** it is unpriced: `payNoDocument`
    names the six title-listing pay documents read and whether any prints the
    title (`pay_no_document.py`, CURATION.md §25).
-3. **Every lead is put to the owner.** A lead is an unpriced post whose title a
-   held document prints under the post's own agency, in an organisation the
-   matching rules did not tie to it (`scripts/find_pay_leads.py`, no AI and no
-   network; `docs/PAY_LEADS.md`; one GitHub issue kept open by
-   `.github/workflows/pay_leads.yml`). A lead leaves the open count only by a
-   recorded decision in `data/curation/pay_lead_decisions.json`, and a decision
-   publishes nothing.
+3. **Every lead is put to the owner.** A lead is an unpriced post the matching
+   rules have not tied to a printed row (it carries no listing) whose title the
+   current Plum Book export prints under the post's own agency, in an
+   organisation no node has been matched to or one in the post's own chain; or,
+   for an agency this graph has no node for (the export files every Defense
+   agency under "Office of the Secretary of War"), in an organisation named for
+   the post's own parent (`scripts/find_pay_leads.py`, no AI and no network;
+   `docs/PAY_LEADS.md`; one GitHub issue to be kept open by
+   `.github/workflows/pay_leads.yml`, which has NOT yet run on GitHub: a workflow
+   can only be started from the default branch, so this item holds in full once
+   the pull request is merged and the workflow has run once). A lead leaves the
+   open count only by a recorded decision in
+   `data/curation/pay_lead_decisions.json` (`needs_a_reviewed_row` keeps it open,
+   marked awaiting a row), and a decision publishes nothing.
 
 **What this does not say.** It does not say pay is complete. **1,258 of 4,591
 posts (27.4%) are priced; 3,221 are not and stay not**, every one with its blank,
@@ -115,7 +132,7 @@ reports the open leads so that work has a queue instead of a gap that cannot clo
 counterargument is in the next paragraphs: relabelling an unreachable target as
 met can be a way of not facing it. The defence is that the strict number stays
 published beside the criterion, the gate still refuses an unsourced figure, and
-the thing the old wording asked for that research can reach (the 144 leads) is
+the thing the old wording asked for that research can reach (the 109 leads) is
 now surfaced rather than buried among 3,221.
 
 | measure | today |
@@ -133,10 +150,12 @@ now surfaced rather than buried among 3,221.
 carries `payNoDocument` (`pay_no_document.py`, CURATION.md §25): the six
 title-listing pay documents this project holds, each with version and digest,
 and whether any prints the title. That is criterion 1's "explained blank"
-applied to posts, and it is deliberately NOT counted as a terminal reason here:
-the gap by this criterion's own test stays **3,221**, because "six documents
-were read and none prints the title" is a fact about this repository's
-holdings, not a document establishing that no figure exists. The measurement
+applied to posts, and it was deliberately NOT counted as a terminal reason by the
+criterion as then worded: the gap by that test stayed **3,221**, because "six
+documents were read and none prints the title" is a fact about this repository's
+holdings, not a document establishing that no figure exists. (Superseded as the
+test on 2026-11-03: under the redefinition the blank satisfies item 2, and 3,221
+is the strict count printed beside the criterion.) The measurement
 sharpens the counterargument below: 1,624 of the 2,158 `unreached` titles
 appear in no held document at all, and most are curated templates.
 
@@ -153,8 +172,9 @@ research could still reach). 3,221 posts:
 | unreached; the title recurs in 2-4 organisations | 93 | as above |
 | unreached; the title is unique to one organisation (court-support directors, Federal Reserve staff, FBI and embassy posts, Senate Sergeant at Arms) | 1,215 | a pay document per organisation |
 
-Fourteen research batches asked about 627 posts and priced 11 (CLAUDE.md, the
-thirteenth batch). Read with that yield, the first three rows (1,063 posts) are
+The thirteenth research batch asked about 627 posts and priced 11 (CLAUDE.md);
+earlier batches priced more (the ninth took the pay claims from 590 to 638), so 11
+of 627 is the latest yield and not the whole record's. Read with that yield, the first three rows (1,063 posts) are
 decisions, not research, and the stamped titles (943) are a curation question
 before they are a pay question; about 1,215 posts are genuinely researchable and
 the batches' own rate says most of those will answer "no document". (Between
@@ -443,7 +463,7 @@ settle publishes automatically, and everything that needs judgement is held.
 | # | criterion | target | today | gap |
 |---|---|---|---|---|
 | 1 | Money | 0 bare estimates | 0 (359 explained blanks; 341 have no held document naming the unit) | 0 by the test; the 18 named-but-unlicensed rows are the route to more figures |
-| 2 | Pay | every post priced, explained by a documents-checked blank, or put to the owner as a lead | 1,258 of 4,591 priced (27.4%); the other 3,221 each carry a blank (2026-10-22); 144 open leads for the owner (`docs/PAY_LEADS.md`) | 0 by the redefined test (2026-11-03); the strict count, 3,221 unpriced, is still printed |
+| 2 | Pay | every post priced, explained by a documents-checked blank, or put to the owner as a lead | 1,258 of 4,591 priced (27.4%); the other 3,221 each carry a blank (2026-10-22); 109 open leads for the owner (`docs/PAY_LEADS.md`) | 0 by the redefined test (2026-11-03); the strict count, 3,221 unpriced, is still printed |
 | 3 | Evidence | every current organisation sourced | 885 current organisations; 0 open: 39 checked-and-not-found with a standing decision to keep the name; the fortieth of the old gap, the Southwest Border Regional Commission, was confirmed on sbrc.gov by the 2026-10-28 loop | 0 open (CURATION.md §32.3); the 39 still publish their negative and none gained a method |
 | 4a | Lists | every list unit reconciled | every unmatched entry disposed, 21 of 21 curated names resolved; 14 of the 16 real units added 2026-10-26 (CURATION.md §32.1) | 0 (2026-11-02: DAU added; ESA recorded `former_body` on both lists, CURATION.md §33.1) |
 | 4b | Money traced | every measured parent sums visibly | 57 of 57 measured units with parts show the sum; not attributed 0 (2026-10-22) | $3.15tn beneath 22 units (September statement) is still apportioned to estimated children, now named |

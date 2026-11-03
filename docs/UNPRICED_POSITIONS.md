@@ -10,7 +10,7 @@ same list in the same run.
 - position nodes in the published graph: **4,591**
 - carrying a pay claim an official document supports: **1,258**
 - carrying none: **3,333**
-- of those, carrying `payNoDocument`, the explained blank naming the 6 title-listing pay documents checked for the title: **3,221** — 2,558 whose title none of them prints, 663 whose title a held document prints under a filing no reviewed rule ties to the post. An explained blank is not a terminal reason: the definition of done's criterion 2 counts these as unpriced until a document prices the post or establishes why none can.
+- of those, carrying `payNoDocument`, the explained blank naming the 6 title-listing pay documents checked for the title: **3,221** — 2,558 whose title none of them prints, 663 whose title a held document prints under a filing no reviewed rule ties to the post. An explained blank is not a terminal reason: under the 2026-11-03 wording of the definition of done's criterion 2 it satisfies the item that every unpriced post says in words why, and the strict count (posts with neither a price nor a document-backed terminal reason) is this report's number.
 
 | reason | count | what it means |
 |---|---|---|

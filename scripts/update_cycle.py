@@ -250,8 +250,14 @@ def fetch_due(block: dict[str, Any], registry: dict[str, Any], *, dry: bool) -> 
         elif kind in ("fixed_url", "refetch_each_fixture_url", "api_latest_statement"):
             results.extend(fetch_fixed(entry, row, dry=dry))
         elif kind == "url_changes_each_period":
-            results.append({"source": entry["id"], "kind": kind, "url": row["fetch"]["url"], "outcome": "needs_a_reviewed_url",
-                            "reason": "the next edition is published at an address that changes each period; a person finds it on the landing page and records it"})
+            command = str((row.get("fetch") or {}).get("command") or "")
+            result = {"source": entry["id"], "kind": kind, "url": row["fetch"]["url"], "outcome": "needs_a_reviewed_url",
+                      "reason": "the next edition is published at an address that changes each period; a person finds it on the landing page and records it"}
+            if command:
+                result["command"] = command
+                result["reason"] = (f"the next edition is published at an address that changes each period; a person runs `{command}`, "
+                                    "which reads the listing and records the edition (the job does not stream it on its own)")
+            results.append(result)
         else:
             results.append({"source": entry["id"], "kind": kind, "outcome": "no_fetch_rule"})
     return results

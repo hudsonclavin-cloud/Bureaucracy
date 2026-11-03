@@ -1,5 +1,1888 @@
 [
  {
+  "builtAt": "2026-11-03T19:49:46.722821+00:00",
+  "anchor": {
+   "before": {
+    "recordDate": "2026-09-30",
+    "total": 7395799983313.23,
+    "statementFile": "tests/fixtures/mts_table5_2026-09-30.json"
+   },
+   "after": {
+    "recordDate": "2026-09-30",
+    "total": 7395799983313.23,
+    "statementFile": "tests/fixtures/mts_table5_2026-09-30.json"
+   },
+   "sameStatement": true
+  },
+  "nodes": {
+   "before": 5527,
+   "after": 5527,
+   "added": [],
+   "removed": [],
+   "newlySuperseded": [],
+   "renamed": [],
+   "reparented": []
+  },
+  "measuredCosts": {
+   "before": 173,
+   "after": 173,
+   "moved": [],
+   "gained": [],
+   "lost": [],
+   "forReview": []
+  },
+  "estimates": {
+   "moved": 0,
+   "largestMoves": []
+  },
+  "pay": {
+   "claimsBefore": 1258,
+   "claimsAfter": 1258,
+   "added": [],
+   "withdrawn": [],
+   "moved": []
+  },
+  "evidence": {
+   "added": [],
+   "withdrawn": [],
+   "changed": []
+  },
+  "sourcedFigures": {
+   "employeesOfficial": {
+    "added": [
+     {
+      "id": "exec-ind-misc-appalachian-regional-commission-arc",
+      "name": "Appalachian Regional Commission (ARC)",
+      "figure": 5,
+      "document": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json"
+     },
+     {
+      "id": "exec-ind-misc-public-buildings-reform-board",
+      "name": "Public Buildings Reform Board",
+      "figure": 7,
+      "document": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json"
+     },
+     {
+      "id": "exec-ind-misc-southwest-border-regional-commission",
+      "name": "Southwest Border Regional Commission",
+      "figure": 1,
+      "document": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json"
+     },
+     {
+      "id": "exec-ind-misc-arctic-research-commission",
+      "name": "United States Arctic Research Commission",
+      "figure": 2,
+      "document": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json"
+     },
+     {
+      "id": "exec-ind-misc-farm-credit-system-insurance-corporation",
+      "name": "Farm Credit System Insurance Corporation",
+      "figure": 10,
+      "document": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json"
+     },
+     {
+      "id": "exec-ind-misc-northern-border-regional-commission",
+      "name": "Northern Border Regional Commission",
+      "figure": 2,
+      "document": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json"
+     },
+     {
+      "id": "leg-support-gpo",
+      "name": "Government Publishing Office (GPO)",
+      "figure": 1625,
+      "document": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json"
+     },
+     {
+      "id": "exec-ind-misc-truman-scholarship-foundation",
+      "name": "Harry S. Truman Scholarship Foundation",
+      "figure": 5,
+      "document": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json"
+     },
+     {
+      "id": "exec-ind-misc-delta-regional-authority",
+      "name": "Delta Regional Authority",
+      "figure": 1,
+      "document": "https://data.opm.gov/data/blob/download/chunked/employment_202608_1.txt?customFileName=employment_202608_1.txt&fileType=application/json"
+     }
+    ],
+    "withdrawn": [],
+    "moved": [
+     {
+      "id": "exec-dept-treasury-bep",
+      "name": "Bureau of Engraving & Printing",
+      "before": 1913,
+      "after": 1468,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-election-assistance-commission-eac",
+      "name": "Election Assistance Commission (EAC)",
+      "before": 82,
+      "after": 62,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doj-usms",
+      "name": "U.S. Marshals Service (USMS)",
+      "before": 5568,
+      "after": 5383,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dol-women-s-bureau",
+      "name": "Women's Bureau",
+      "before": 48,
+      "after": 18,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dhs-fletc",
+      "name": "Federal Law Enforcement Training Centers (FLETC)",
+      "before": 1365,
+      "after": 1424,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-holocaust-memorial-museum",
+      "name": "United States Holocaust Memorial Museum",
+      "before": 109,
+      "after": 85,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-defense-agency-mda",
+      "name": "Missile Defense Agency (MDA)",
+      "before": 2903,
+      "after": 2469,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-eop-ostp",
+      "name": "Office of Science & Technology Policy",
+      "before": 20,
+      "after": 22,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-defense-agency-dcsa",
+      "name": "Defense Counterintelligence & Security Agency (DCSA)",
+      "before": 5644,
+      "after": 4883,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-treasury-occ",
+      "name": "Office of the Comptroller of the Currency (OCC)",
+      "before": 3583,
+      "after": 2594,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dhs-cisa",
+      "name": "Cybersecurity & Infrastructure Security Agency (CISA)",
+      "before": 3323,
+      "after": 2204,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dol-ebsa",
+      "name": "Employee Benefits Security Administration (EBSA)",
+      "before": 778,
+      "after": 642,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-export-import-bank-of-the-u-s",
+      "name": "Export-Import Bank of the U.S.",
+      "before": 377,
+      "after": 340,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-sba",
+      "name": "Small Business Administration (SBA)",
+      "before": 8164,
+      "after": 5032,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-treasury-mint",
+      "name": "U.S. Mint",
+      "before": 1584,
+      "after": 1228,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-national-mediation-board-nmb",
+      "name": "National Mediation Board (NMB)",
+      "before": 38,
+      "after": 33,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-commission-on-civil-rights",
+      "name": "United States Commission on Civil Rights",
+      "before": 60,
+      "after": 50,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-opm",
+      "name": "Office of Personnel Management (OPM)",
+      "before": 2941,
+      "after": 2017,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dol-whd",
+      "name": "Wage & Hour Division (WHD)",
+      "before": 1382,
+      "after": 1187,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-eop-omb",
+      "name": "Office of Management and Budget (OMB)",
+      "before": 536,
+      "after": 513,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-smithsonian",
+      "name": "Smithsonian Institution",
+      "before": 4453,
+      "after": 4086,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doc",
+      "name": "Department of Commerce",
+      "before": 47410,
+      "after": 41256,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dol-bureau-international-labor-affairs",
+      "name": "Bureau of International Labor Affairs",
+      "before": 144,
+      "after": 93,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-usda-foreign-agricultural-service",
+      "name": "Foreign Agricultural Service",
+      "before": 693,
+      "after": 524,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-national-capital-planning-commission-ncpc",
+      "name": "National Capital Planning Commission (NCPC)",
+      "before": 35,
+      "after": 34,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-marine-mammal-commission",
+      "name": "Marine Mammal Commission",
+      "before": 23,
+      "after": 24,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-defense-agency-defense-commissary-agency",
+      "name": "Defense Commissary Agency",
+      "before": 11238,
+      "after": 10109,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-eop-nsc",
+      "name": "National Security Council",
+      "before": 76,
+      "after": 28,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doe",
+      "name": "Department of Energy (DOE)",
+      "before": 17472,
+      "after": 13413,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-ssa",
+      "name": "Social Security Administration (SSA)",
+      "before": 56263,
+      "after": 49457,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-treasury",
+      "name": "Department of the Treasury",
+      "before": 116073,
+      "after": 83321,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doj-fbi",
+      "name": "Federal Bureau of Investigation (FBI)",
+      "before": 36896,
+      "after": 35283,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-regulatory-sec",
+      "name": "Securities & Exchange Commission (SEC)",
+      "before": 4744,
+      "after": 3909,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-defense-agency-dha",
+      "name": "Defense Health Agency (DHA)",
+      "before": 6118,
+      "after": 5537,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-equal-employment-opportunity-commission-eeoc",
+      "name": "Equal Employment Opportunity Commission (EEOC)",
+      "before": 2028,
+      "after": 1693,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doj-executive-office-immigration-review",
+      "name": "Executive Office for Immigration Review",
+      "before": 2621,
+      "after": 2288,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-defense-agency-dcaa",
+      "name": "Defense Contract Audit Agency (DCAA)",
+      "before": 3768,
+      "after": 3260,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dol-osha",
+      "name": "Occupational Safety & Health Administration (OSHA)",
+      "before": 1793,
+      "after": 1538,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-defense-nuclear-facilities-safety-board",
+      "name": "Defense Nuclear Facilities Safety Board",
+      "before": 112,
+      "after": 102,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dhs-usss",
+      "name": "U.S. Secret Service (USSS)",
+      "before": 8148,
+      "after": 8694,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doj-office-justice-programs",
+      "name": "Office of Justice Programs",
+      "before": 809,
+      "after": 646,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-hhs-nih",
+      "name": "National Institutes of Health (NIH)",
+      "before": 21299,
+      "after": 16428,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dhs-uscis",
+      "name": "U.S. Citizenship & Immigration Services (USCIS)",
+      "before": 22636,
+      "after": 20327,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doi-usgs",
+      "name": "U.S. Geological Survey (USGS)",
+      "before": 8305,
+      "after": 5890,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-regulatory-ftc",
+      "name": "Federal Trade Commission (FTC)",
+      "before": 1244,
+      "after": 1035,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dol",
+      "name": "Department of Labor (DOL)",
+      "before": 14107,
+      "after": 11112,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-regulatory-cftc",
+      "name": "Commodity Futures Trading Commission (CFTC)",
+      "before": 680,
+      "after": 571,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-railroad-retirement-board",
+      "name": "Railroad Retirement Board",
+      "before": 767,
+      "after": 686,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-hhs",
+      "name": "Department of Health & Human Services (HHS)",
+      "before": 92269,
+      "after": 72783,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-hhs-administration-for-community-living",
+      "name": "Administration for Community Living",
+      "before": 260,
+      "after": 151,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-federal-labor-relations-authority-flra",
+      "name": "Federal Labor Relations Authority (FLRA)",
+      "before": 108,
+      "after": 84,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-treasury-irs",
+      "name": "Internal Revenue Service (IRS)",
+      "before": 101312,
+      "after": 71757,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-federal-election-commission-fec",
+      "name": "Federal Election Commission (FEC)",
+      "before": 280,
+      "after": 256,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-hhs-agency-toxic-substances-disease-registry",
+      "name": "Agency for Toxic Substances and Disease Registry",
+      "before": 165,
+      "after": 124,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-regulatory-fcc",
+      "name": "Federal Communications Commission (FCC)",
+      "before": 1473,
+      "after": 1182,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doc-census",
+      "name": "Census Bureau",
+      "before": 12300,
+      "after": 10935,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-smithsonian-national-gallery-art",
+      "name": "National Gallery of Art",
+      "before": 709,
+      "after": 611,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-usda-fsa",
+      "name": "Farm Service Agency (FSA)",
+      "before": 3262,
+      "after": 2737,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-regulatory-nrc",
+      "name": "Nuclear Regulatory Commission (NRC)",
+      "before": 2941,
+      "after": 2451,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-regulatory-cpsc",
+      "name": "Consumer Product Safety Commission (CPSC)",
+      "before": 508,
+      "after": 418,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-defense",
+      "name": "Department of Defense (DoD)",
+      "before": 158689,
+      "after": 142609,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doi-nps",
+      "name": "National Park Service (NPS)",
+      "before": 17980,
+      "after": 19006,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-independent-general-services-administration",
+      "name": "General Services Administration",
+      "before": 13182,
+      "after": 8236,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-african-development-foundation",
+      "name": "United States African Development Foundation",
+      "before": 32,
+      "after": 21,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dot",
+      "name": "Department of Transportation (DOT)",
+      "before": 57204,
+      "after": 52791,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-treasury-fiscal",
+      "name": "Bureau of the Fiscal Service",
+      "before": 3278,
+      "after": 1924,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dhs-tsa",
+      "name": "Transportation Security Administration (TSA)",
+      "before": 66112,
+      "after": 59342,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-international-trade-commission",
+      "name": "United States International Trade Commission",
+      "before": 443,
+      "after": 417,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-office-of-special-counsel-osc",
+      "name": "Office of Special Counsel (OSC)",
+      "before": 123,
+      "after": 121,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-eop-onadm",
+      "name": "Office of Administration",
+      "before": 252,
+      "after": 252,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-presidio-trust",
+      "name": "Presidio Trust",
+      "before": 332,
+      "after": 324,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-ed-fsa",
+      "name": "Federal Student Aid (FSA)",
+      "before": 1413,
+      "after": 797,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dot-fra",
+      "name": "Federal Railroad Administration (FRA)",
+      "before": 1193,
+      "after": 946,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-national-transportation-safety-board-ntsb",
+      "name": "National Transportation Safety Board (NTSB)",
+      "before": 426,
+      "after": 418,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doc-nist",
+      "name": "National Institute of Standards and Technology (NIST)",
+      "before": 3874,
+      "after": 3152,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-nasa-langley-research-center-larc",
+      "name": "Langley Research Center (LaRC)",
+      "before": 1787,
+      "after": 1322,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doi-blm",
+      "name": "Bureau of Land Management (BLM)",
+      "before": 9853,
+      "after": 5787,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-commission-of-fine-arts",
+      "name": "United States Commission of Fine Arts",
+      "before": 12,
+      "after": 8,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-usda-fs",
+      "name": "Forest Service (USFS)",
+      "before": 32624,
+      "after": 33003,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-nsf",
+      "name": "National Science Foundation (NSF)",
+      "before": 1601,
+      "after": 1119,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-defense-agency-dfas",
+      "name": "Defense Finance & Accounting Service (DFAS)",
+      "before": 10735,
+      "after": 9339,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-regulatory-federal-housing-finance-agency",
+      "name": "Federal Housing Finance Agency",
+      "before": 869,
+      "after": 596,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-usda-nrcs",
+      "name": "Natural Resources Conservation Service (NRCS)",
+      "before": 11840,
+      "after": 8798,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-state",
+      "name": "Department of State",
+      "before": 14163,
+      "after": 11252,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-va-vba",
+      "name": "Veterans Benefits Administration (VBA)",
+      "before": 34126,
+      "after": 29091,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doi",
+      "name": "Department of the Interior (DOI)",
+      "before": 63752,
+      "after": 59776,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-american-battle-monuments-commission-abmc",
+      "name": "American Battle Monuments Commission (ABMC)",
+      "before": 80,
+      "after": 77,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-usda",
+      "name": "Department of Agriculture (USDA)",
+      "before": 90840,
+      "after": 77496,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dhs-fema",
+      "name": "Federal Emergency Management Agency (FEMA)",
+      "before": 25922,
+      "after": 20208,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-nuclear-waste-technical-review-board",
+      "name": "Nuclear Waste Technical Review Board",
+      "before": 22,
+      "after": 11,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-national-credit-union-administration-ncua",
+      "name": "National Credit Union Administration (NCUA)",
+      "before": 1214,
+      "after": 927,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-va-vha",
+      "name": "Veterans Health Administration (VHA)",
+      "before": 420521,
+      "after": 396249,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dot-great-lakes-saint-lawrence-seaway-development-corporatio",
+      "name": "Great Lakes Saint Lawrence Seaway Development Corporation",
+      "before": 125,
+      "after": 117,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-ed-ies",
+      "name": "Institute of Education Sciences (IES)",
+      "before": 185,
+      "after": 40,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dot-marad",
+      "name": "Maritime Administration (MARAD)",
+      "before": 814,
+      "after": 711,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dol-ofccp",
+      "name": "Office of Federal Contract Compliance Programs (OFCCP)",
+      "before": 474,
+      "after": 76,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-national-council-on-disability",
+      "name": "National Council on Disability",
+      "before": 18,
+      "after": 20,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dhs-ice",
+      "name": "Immigration & Customs Enforcement (ICE)",
+      "before": 20692,
+      "after": 28674,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-regulatory-fdic",
+      "name": "Federal Deposit Insurance Corporation (FDIC)",
+      "before": 6487,
+      "after": 4959,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-usda-fsis",
+      "name": "Food Safety & Inspection Service (FSIS)",
+      "before": 8240,
+      "after": 7283,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-merit-systems-protection-board-mspb",
+      "name": "Merit Systems Protection Board (MSPB)",
+      "before": 177,
+      "after": 156,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-hhs-ihs",
+      "name": "Indian Health Service (IHS)",
+      "before": 13860,
+      "after": 12211,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doc-bureau-industry-security",
+      "name": "Bureau of Industry and Security",
+      "before": 509,
+      "after": 494,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-usda-agricultural-marketing-service",
+      "name": "Agricultural Marketing Service",
+      "before": 4370,
+      "after": 3691,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-defense-agency-national-defense-university",
+      "name": "National Defense University",
+      "before": 431,
+      "after": 402,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doc-ntia",
+      "name": "National Telecommunications and Information Administration",
+      "before": 645,
+      "after": 526,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-armed-forces-retirement-home",
+      "name": "Armed Forces Retirement Home",
+      "before": 311,
+      "after": 279,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dol-bls",
+      "name": "Bureau of Labor Statistics (BLS)",
+      "before": 2268,
+      "after": 1864,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-hhs-administration-for-children-and-families",
+      "name": "Administration for Children and Families",
+      "before": 2296,
+      "after": 1487,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doi-bor",
+      "name": "Bureau of Reclamation (BOR)",
+      "before": 5771,
+      "after": 3568,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-treasury-fincen",
+      "name": "Financial Crimes Enforcement Network (FinCEN)",
+      "before": 287,
+      "after": 231,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-nasa-ames-research-center-arc",
+      "name": "Ames Research Center (ARC)",
+      "before": 1314,
+      "after": 1072,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doj",
+      "name": "Department of Justice (DOJ)",
+      "before": 116047,
+      "after": 107516,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doc-ita",
+      "name": "International Trade Administration (ITA)",
+      "before": 1438,
+      "after": 1114,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dot-fta",
+      "name": "Federal Transit Administration (FTA)",
+      "before": 767,
+      "after": 508,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-hhs-cdc",
+      "name": "Centers for Disease Control & Prevention (CDC)",
+      "before": 12581,
+      "after": 9063,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-defense-agency-dla",
+      "name": "Defense Logistics Agency (DLA)",
+      "before": 23896,
+      "after": 22996,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-interagency-council-on-homelessness",
+      "name": "United States Interagency Council on Homelessness",
+      "before": 13,
+      "after": 9,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-peace-corps",
+      "name": "Peace Corps",
+      "before": 978,
+      "after": 601,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-hhs-cms",
+      "name": "Centers for Medicare & Medicaid Services (CMS)",
+      "before": 6620,
+      "after": 5656,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dot-fhwa",
+      "name": "Federal Highway Administration (FHWA)",
+      "before": 2967,
+      "after": 1980,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doi-office-surface-mining-reclamation-enforcement",
+      "name": "Office of Surface Mining Reclamation and Enforcement",
+      "before": 416,
+      "after": 261,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-defense-agency-dtra",
+      "name": "Defense Threat Reduction Agency (DTRA)",
+      "before": 1344,
+      "after": 1060,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dhs-uscg",
+      "name": "U.S. Coast Guard",
+      "before": 9583,
+      "after": 8664,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-surface-transportation-board",
+      "name": "Surface Transportation Board",
+      "before": 126,
+      "after": 109,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-denali-commission",
+      "name": "Denali Commission",
+      "before": 17,
+      "after": 12,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-trade-and-development-agency",
+      "name": "United States Trade and Development Agency",
+      "before": 59,
+      "after": 50,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc",
+      "name": "Pension Benefit Guaranty Corporation (PBGC)",
+      "before": 939,
+      "after": 724,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-selective-service-system",
+      "name": "Selective Service System",
+      "before": 162,
+      "after": 118,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-office-of-government-ethics",
+      "name": "United States Office of Government Ethics",
+      "before": 72,
+      "after": 59,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-hhs-hrsa",
+      "name": "Health Resources & Services Administration (HRSA)",
+      "before": 2679,
+      "after": 1652,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-hhs-samhsa",
+      "name": "Substance Abuse and Mental Health Services Administration (SAMHSA)",
+      "before": 929,
+      "after": 516,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-defense-agency-defense-security-cooperation-agency",
+      "name": "Defense Security Cooperation Agency",
+      "before": 1128,
+      "after": 1018,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-nasa",
+      "name": "National Aeronautics & Space Administration (NASA)",
+      "before": 17973,
+      "after": 15387,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-eop-cea",
+      "name": "Council of Economic Advisers",
+      "before": 17,
+      "after": 21,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doj-atf",
+      "name": "Bureau of Alcohol, Tobacco, Firearms & Explosives (ATF)",
+      "before": 5168,
+      "after": 4493,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-treasury-ttb",
+      "name": "Alcohol & Tobacco Tax & Trade Bureau (TTB)",
+      "before": 519,
+      "after": 416,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-regulatory-fmc",
+      "name": "Federal Maritime Commission (FMC)",
+      "before": 131,
+      "after": 109,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-smithsonian-john-f-kennedy-center-performing-arts",
+      "name": "John F. Kennedy Center for the Performing Arts",
+      "before": 53,
+      "after": 49,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-nasa-goddard-space-flight-center-gsfc",
+      "name": "Goddard Space Flight Center (GSFC)",
+      "before": 3042,
+      "after": 2026,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-va",
+      "name": "Department of Veterans Affairs (VA)",
+      "before": 474532,
+      "after": 447225,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-farm-credit-administration",
+      "name": "Farm Credit Administration",
+      "before": 333,
+      "after": 309,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-ed-ocr",
+      "name": "Office for Civil Rights (OCR)",
+      "before": 581,
+      "after": 293,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-eop-ondcp",
+      "name": "Office of National Drug Control Policy",
+      "before": 53,
+      "after": 63,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-nara",
+      "name": "National Archives & Records Administration (NARA)",
+      "before": 2810,
+      "after": 2339,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doc-minority-business-development-agency",
+      "name": "Minority Business Development Agency",
+      "before": 50,
+      "after": 16,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doc-bea",
+      "name": "Bureau of Economic Analysis (BEA)",
+      "before": 446,
+      "after": 372,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doc-economic-development-administration",
+      "name": "Economic Development Administration",
+      "before": 225,
+      "after": 191,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "jud-specialized-tax",
+      "name": "U.S. Tax Court",
+      "before": 165,
+      "after": 160,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-eop-ustr",
+      "name": "Office of the U.S. Trade Representative",
+      "before": 238,
+      "after": 223,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-defense-agency-dcma",
+      "name": "Defense Contract Management Agency (DCMA)",
+      "before": 9665,
+      "after": 8483,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doc-uspto",
+      "name": "United States Patent and Trademark Office (USPTO)",
+      "before": 14369,
+      "after": 13517,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-usda-aphis",
+      "name": "Animal & Plant Health Inspection Service (APHIS)",
+      "before": 8512,
+      "after": 7024,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-defense-agency-uniformed-services-university-health-sciences",
+      "name": "Uniformed Services University of the Health Sciences",
+      "before": 773,
+      "after": 652,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-epa",
+      "name": "Environmental Protection Agency (EPA)",
+      "before": 16557,
+      "after": 12397,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dol-eta",
+      "name": "Employment & Training Administration (ETA)",
+      "before": 1138,
+      "after": 898,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-broadcasting-board-of-governors-usagm",
+      "name": "U.S. Agency for Global Media",
+      "before": 1160,
+      "after": 797,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-millennium-challenge-corporation",
+      "name": "Millennium Challenge Corporation",
+      "before": 346,
+      "after": 229,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-defense-agency-nro",
+      "name": "National Reconnaissance Office (NRO)",
+      "before": 1163,
+      "after": 1155,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-hhs-ahrq",
+      "name": "Agency for Healthcare Research & Quality (AHRQ)",
+      "before": 280,
+      "after": 82,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-inter-american-foundation",
+      "name": "Inter-American Foundation",
+      "before": 36,
+      "after": 20,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-hhs-fda",
+      "name": "Food & Drug Administration (FDA)",
+      "before": 20721,
+      "after": 16282,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doi-fws",
+      "name": "U.S. Fish & Wildlife Service (FWS)",
+      "before": 8724,
+      "after": 6287,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dhs",
+      "name": "Department of Homeland Security (DHS)",
+      "before": 231771,
+      "after": 225574,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-defense-agency-disa",
+      "name": "Defense Information Systems Agency (DISA)",
+      "before": 6823,
+      "after": 6319,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-defense-agency-pfpa",
+      "name": "Pentagon Force Protection Agency (PFPA)",
+      "before": 1069,
+      "after": 1086,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-usda-ars",
+      "name": "Agricultural Research Service (ARS)",
+      "before": 6874,
+      "after": 4809,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-ed",
+      "name": "Department of Education",
+      "before": 4052,
+      "after": 2294,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-va-nca",
+      "name": "National Cemetery Administration (NCA)",
+      "before": 2395,
+      "after": 2019,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dot-faa",
+      "name": "Federal Aviation Administration (FAA)",
+      "before": 46335,
+      "after": 44564,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dhs-cbp",
+      "name": "Customs & Border Protection (CBP)",
+      "before": 66839,
+      "after": 70843,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-defense-agency-defense-legal-services-agency",
+      "name": "Defense Legal Services Agency",
+      "before": 272,
+      "after": 243,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-doj-dea",
+      "name": "Drug Enforcement Administration (DEA)",
+      "before": 8871,
+      "after": 8535,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-ed-oese",
+      "name": "Office of Elementary & Secondary Education (OESE)",
+      "before": 293,
+      "after": 150,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
+      "name": "National Labor Relations Board (NLRB — independent)",
+      "before": 1237,
+      "after": 1061,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-dol-msha",
+      "name": "Mine Safety & Health Administration (MSHA)",
+      "before": 1648,
+      "after": 1355,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     },
+     {
+      "id": "exec-dept-va-bva",
+      "name": "Board of Veterans Appeals (BVA)",
+      "before": 1419,
+      "after": 1259,
+      "sourceBefore": "OPM FedScope 2025-03",
+      "sourceAfter": "OPM Federal Workforce Data 2026-08"
+     }
+    ]
+   }
+  },
+  "sources": {
+   "changed": [
+    {
+     "id": "opm_fwd_employment",
+     "before": null,
+     "after": "2026-08-31",
+     "status": "current"
+    }
+   ],
+   "registryAfter": {
+    "monthly_treasury_statement": {
+     "copyDate": "2026-09-30",
+     "status": "current"
+    },
+    "usaspending_file_a": {
+     "copyDate": "2026-09-17",
+     "status": "current"
+    },
+    "usaspending_file_b_object_class": {
+     "copyDate": "2025-09-30",
+     "status": "current"
+    },
+    "house_statement_of_disbursements": {
+     "copyDate": "2026-06-30",
+     "status": "current"
+    },
+    "senate_secretary_report": {
+     "copyDate": "2026-03-31",
+     "status": "current"
+    },
+    "opm_salary_tables": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "us_code_pay_schedules_5332_note": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "uscourts_judicial_compensation": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "senate_salary_schedule": {
+     "copyDate": "2026-01-01",
+     "status": "current"
+    },
+    "whitehouse_staff_report": {
+     "copyDate": "2026-07-01",
+     "status": "current"
+    },
+    "opm_plum_current_export": {
+     "copyDate": "2026-09-21",
+     "status": "current"
+    },
+    "opm_plum_archive": {
+     "copyDate": "2025-01-20",
+     "status": "closed_record"
+    },
+    "opm_fedscope_employment": {
+     "copyDate": "2025-03-31",
+     "status": "closed_record"
+    },
+    "opm_fwd_employment": {
+     "copyDate": "2026-08-31",
+     "status": "current"
+    },
+    "us_government_manual": {
+     "copyDate": "2025-12-31",
+     "status": "current"
+    },
+    "omb_public_budget_database": {
+     "copyDate": "2026-09-20",
+     "status": "current"
+    },
+    "treasury_statement_of_net_cost": {
+     "copyDate": "2025-09-30",
+     "status": "current"
+    },
+    "treasury_combined_statement": {
+     "copyDate": "2025-09-30",
+     "status": "current"
+    },
+    "us_code_sections": {
+     "copyDate": "2026-09-18",
+     "status": "current"
+    },
+    "federal_register_agency_directory": {
+     "copyDate": "2026-09-08",
+     "status": "current"
+    },
+    "senate_committee_list": {
+     "copyDate": "2026-09-08",
+     "status": "current"
+    },
+    "house_clerk_committee_list": {
+     "copyDate": "2026-09-13",
+     "status": "current"
+    },
+    "federal_register_signatures": {
+     "copyDate": "2026-09-21",
+     "status": "current"
+    },
+    "usajobs_vacancy_announcements": {
+     "copyDate": "2026-10-06",
+     "status": "current"
+    },
+    "doj_usao_ad_pay_plan": {
+     "copyDate": "2025-01-12",
+     "status": "overdue"
+    },
+    "va_title38_pay_tables": {
+     "copyDate": "2026-01-11",
+     "status": "current"
+    },
+    "doe_laboratory_pages": {
+     "copyDate": "2026-10-06",
+     "status": "current"
+    },
+    "official_pages": {
+     "copyDate": "2026-10-28",
+     "status": "current"
+    }
+   }
+  },
+  "budget": {
+   "rules": [
+    {
+     "rule": "node_count_drops",
+     "tripped": false,
+     "detail": "5,527 nodes before, 5,527 after; 0 removed"
+    },
+    {
+     "rule": "anchor_lost",
+     "tripped": false,
+     "detail": "anchor record date after: 2026-09-30"
+    },
+    {
+     "rule": "anchor_period_goes_backwards",
+     "tripped": false,
+     "detail": "anchor 2026-09-30 -> 2026-09-30"
+    },
+    {
+     "rule": "measured_cost_moved_without_a_new_statement",
+     "tripped": false,
+     "detail": "the statement is unchanged (2026-09-30) and 0 measured costs moved"
+    },
+    {
+     "rule": "pay_claims_withdrawn_above_5_percent",
+     "tripped": false,
+     "detail": "0 of 1,258 pay claims withdrawn (0.0%; the limit is 5%)"
+    },
+    {
+     "rule": "rebuilt_without_a_statement",
+     "tripped": false,
+     "detail": "the build read a statement"
+    }
+   ],
+   "held": false,
+   "thresholds": {
+    "payWithdrawalLimit": 0.05,
+    "measuredReviewMove": 0.5,
+    "measuredReviewFloor": 1000000000.0
+   }
+  },
+  "touched": [
+   "exec-dept-defense",
+   "exec-dept-defense-agency-dcaa",
+   "exec-dept-defense-agency-dcma",
+   "exec-dept-defense-agency-dcsa",
+   "exec-dept-defense-agency-defense-commissary-agency",
+   "exec-dept-defense-agency-defense-legal-services-agency",
+   "exec-dept-defense-agency-defense-security-cooperation-agency",
+   "exec-dept-defense-agency-dfas",
+   "exec-dept-defense-agency-dha",
+   "exec-dept-defense-agency-disa",
+   "exec-dept-defense-agency-dla",
+   "exec-dept-defense-agency-dtra",
+   "exec-dept-defense-agency-mda",
+   "exec-dept-defense-agency-national-defense-university",
+   "exec-dept-defense-agency-nro",
+   "exec-dept-defense-agency-pfpa",
+   "exec-dept-defense-agency-uniformed-services-university-health-sciences",
+   "exec-dept-dhs",
+   "exec-dept-dhs-cbp",
+   "exec-dept-dhs-cisa",
+   "exec-dept-dhs-fema",
+   "exec-dept-dhs-fletc",
+   "exec-dept-dhs-ice",
+   "exec-dept-dhs-tsa",
+   "exec-dept-dhs-uscg",
+   "exec-dept-dhs-uscis",
+   "exec-dept-dhs-usss",
+   "exec-dept-doc",
+   "exec-dept-doc-bea",
+   "exec-dept-doc-bureau-industry-security",
+   "exec-dept-doc-census",
+   "exec-dept-doc-economic-development-administration",
+   "exec-dept-doc-ita",
+   "exec-dept-doc-minority-business-development-agency",
+   "exec-dept-doc-nist",
+   "exec-dept-doc-ntia",
+   "exec-dept-doc-uspto",
+   "exec-dept-doe",
+   "exec-dept-doi",
+   "exec-dept-doi-blm",
+   "exec-dept-doi-bor",
+   "exec-dept-doi-fws",
+   "exec-dept-doi-nps",
+   "exec-dept-doi-office-surface-mining-reclamation-enforcement",
+   "exec-dept-doi-usgs",
+   "exec-dept-doj",
+   "exec-dept-doj-atf",
+   "exec-dept-doj-dea",
+   "exec-dept-doj-executive-office-immigration-review",
+   "exec-dept-doj-fbi",
+   "exec-dept-doj-office-justice-programs",
+   "exec-dept-doj-usms",
+   "exec-dept-dol",
+   "exec-dept-dol-bls",
+   "exec-dept-dol-bureau-international-labor-affairs",
+   "exec-dept-dol-ebsa",
+   "exec-dept-dol-eta",
+   "exec-dept-dol-msha",
+   "exec-dept-dol-ofccp",
+   "exec-dept-dol-osha",
+   "exec-dept-dol-whd",
+   "exec-dept-dol-women-s-bureau",
+   "exec-dept-dot",
+   "exec-dept-dot-faa",
+   "exec-dept-dot-fhwa",
+   "exec-dept-dot-fra",
+   "exec-dept-dot-fta",
+   "exec-dept-dot-great-lakes-saint-lawrence-seaway-development-corporatio",
+   "exec-dept-dot-marad",
+   "exec-dept-ed",
+   "exec-dept-ed-fsa",
+   "exec-dept-ed-ies",
+   "exec-dept-ed-ocr",
+   "exec-dept-ed-oese",
+   "exec-dept-hhs",
+   "exec-dept-hhs-administration-for-children-and-families",
+   "exec-dept-hhs-administration-for-community-living",
+   "exec-dept-hhs-agency-toxic-substances-disease-registry",
+   "exec-dept-hhs-ahrq",
+   "exec-dept-hhs-cdc",
+   "exec-dept-hhs-cms",
+   "exec-dept-hhs-fda",
+   "exec-dept-hhs-hrsa",
+   "exec-dept-hhs-ihs",
+   "exec-dept-hhs-nih",
+   "exec-dept-hhs-samhsa",
+   "exec-dept-state",
+   "exec-dept-treasury",
+   "exec-dept-treasury-bep",
+   "exec-dept-treasury-fincen",
+   "exec-dept-treasury-fiscal",
+   "exec-dept-treasury-irs",
+   "exec-dept-treasury-mint",
+   "exec-dept-treasury-occ",
+   "exec-dept-treasury-ttb",
+   "exec-dept-usda",
+   "exec-dept-usda-agricultural-marketing-service",
+   "exec-dept-usda-aphis",
+   "exec-dept-usda-ars",
+   "exec-dept-usda-foreign-agricultural-service",
+   "exec-dept-usda-fs",
+   "exec-dept-usda-fsa",
+   "exec-dept-usda-fsis",
+   "exec-dept-usda-nrcs",
+   "exec-dept-va",
+   "exec-dept-va-bva",
+   "exec-dept-va-nca",
+   "exec-dept-va-vba",
+   "exec-dept-va-vha",
+   "exec-eop-cea",
+   "exec-eop-nsc",
+   "exec-eop-omb",
+   "exec-eop-onadm",
+   "exec-eop-ondcp",
+   "exec-eop-ostp",
+   "exec-eop-ustr",
+   "exec-ind-epa",
+   "exec-ind-misc-african-development-foundation",
+   "exec-ind-misc-american-battle-monuments-commission-abmc",
+   "exec-ind-misc-appalachian-regional-commission-arc",
+   "exec-ind-misc-arctic-research-commission",
+   "exec-ind-misc-armed-forces-retirement-home",
+   "exec-ind-misc-broadcasting-board-of-governors-usagm",
+   "exec-ind-misc-commission-of-fine-arts",
+   "exec-ind-misc-commission-on-civil-rights",
+   "exec-ind-misc-defense-nuclear-facilities-safety-board",
+   "exec-ind-misc-delta-regional-authority",
+   "exec-ind-misc-denali-commission",
+   "exec-ind-misc-election-assistance-commission-eac",
+   "exec-ind-misc-equal-employment-opportunity-commission-eeoc",
+   "exec-ind-misc-export-import-bank-of-the-u-s",
+   "exec-ind-misc-farm-credit-administration",
+   "exec-ind-misc-farm-credit-system-insurance-corporation",
+   "exec-ind-misc-federal-election-commission-fec",
+   "exec-ind-misc-federal-labor-relations-authority-flra",
+   "exec-ind-misc-holocaust-memorial-museum",
+   "exec-ind-misc-inter-american-foundation",
+   "exec-ind-misc-interagency-council-on-homelessness",
+   "exec-ind-misc-international-trade-commission",
+   "exec-ind-misc-marine-mammal-commission",
+   "exec-ind-misc-merit-systems-protection-board-mspb",
+   "exec-ind-misc-millennium-challenge-corporation",
+   "exec-ind-misc-national-capital-planning-commission-ncpc",
+   "exec-ind-misc-national-council-on-disability",
+   "exec-ind-misc-national-credit-union-administration-ncua",
+   "exec-ind-misc-national-labor-relations-board-nlrb-independent",
+   "exec-ind-misc-national-mediation-board-nmb",
+   "exec-ind-misc-national-transportation-safety-board-ntsb",
+   "exec-ind-misc-northern-border-regional-commission",
+   "exec-ind-misc-nuclear-waste-technical-review-board",
+   "exec-ind-misc-office-of-government-ethics",
+   "exec-ind-misc-office-of-special-counsel-osc",
+   "exec-ind-misc-peace-corps",
+   "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc",
+   "exec-ind-misc-presidio-trust",
+   "exec-ind-misc-public-buildings-reform-board",
+   "exec-ind-misc-railroad-retirement-board",
+   "exec-ind-misc-selective-service-system",
+   "exec-ind-misc-southwest-border-regional-commission",
+   "exec-ind-misc-surface-transportation-board",
+   "exec-ind-misc-trade-and-development-agency",
+   "exec-ind-misc-truman-scholarship-foundation",
+   "exec-ind-nara",
+   "exec-ind-nasa",
+   "exec-ind-nasa-ames-research-center-arc",
+   "exec-ind-nasa-goddard-space-flight-center-gsfc",
+   "exec-ind-nasa-langley-research-center-larc",
+   "exec-ind-nsf",
+   "exec-ind-opm",
+   "exec-ind-sba",
+   "exec-ind-smithsonian",
+   "exec-ind-smithsonian-john-f-kennedy-center-performing-arts",
+   "exec-ind-smithsonian-national-gallery-art",
+   "exec-ind-ssa",
+   "exec-independent-general-services-administration",
+   "exec-regulatory-cftc",
+   "exec-regulatory-cpsc",
+   "exec-regulatory-fcc",
+   "exec-regulatory-fdic",
+   "exec-regulatory-federal-housing-finance-agency",
+   "exec-regulatory-fmc",
+   "exec-regulatory-ftc",
+   "exec-regulatory-nrc",
+   "exec-regulatory-sec",
+   "jud-specialized-tax",
+   "leg-support-gpo"
+  ],
+  "summary": "the Treasury anchor is still the statement of 2026-09-30; 5,527 nodes before and 5,527 after (0 added, 0 removed, 0 newly marked replaced, 0 renamed); 0 measured costs moved, 0 gained a measured figure, 0 lost one; 0 estimates moved; pay claims 1,258 -> 1,258 (0 added, 0 withdrawn, 0 changed figure); verification or placement methods: 0 added, 0 withdrawn, 0 changed; within the change budget.",
+  "before": "a4467d0:output/graph.json",
+  "reviewQueueOpen": 60
+ },
+ {
   "builtAt": "2026-11-03T17:26:15.598505+00:00",
   "anchor": {
    "before": {
@@ -1280,590 +3163,7 @@
    },
    "sameStatement": true
   },
-  "nodes": {
-   "before": 5512,
-   "after": 5526,
-   "added": [
-    {
-     "id": "exec-ind-misc-denali-commission",
-     "name": "Denali Commission",
-     "type": "Independent Agency",
-     "parentId": "exec-ind-misc"
-    },
-    {
-     "id": "exec-ind-misc-farm-credit-system-insurance-corporation",
-     "name": "Farm Credit System Insurance Corporation",
-     "type": "Government Corporation",
-     "parentId": "exec-ind-misc"
-    },
-    {
-     "id": "exec-ind-misc-goldwater-scholarship-foundation",
-     "name": "Barry M. Goldwater Scholarship and Excellence in Education Foundation",
-     "type": "Independent Agency",
-     "parentId": "exec-ind-misc"
-    },
-    {
-     "id": "exec-ind-misc-office-of-navajo-and-hopi-indian-relocation",
-     "name": "Navajo and Hopi Indian Relocation Office",
-     "type": "Independent Agency",
-     "parentId": "exec-ind-misc"
-    },
-    {
-     "id": "exec-ind-misc-presidio-trust",
-     "name": "Presidio Trust",
-     "type": "Government Corporation",
-     "parentId": "exec-ind-misc"
-    },
-    {
-     "id": "exec-ind-misc-southeast-crescent-regional-commission",
-     "name": "Southeast Crescent Regional Commission",
-     "type": "Independent Agency",
-     "parentId": "exec-ind-misc"
-    },
-    {
-     "id": "exec-ind-misc-southwest-border-regional-commission",
-     "name": "Southwest Border Regional Commission",
-     "type": "Independent Agency",
-     "parentId": "exec-ind-misc"
-    },
-    {
-     "id": "exec-ind-misc-udall-foundation",
-     "name": "Morris K. Udall and Stewart L. Udall Foundation",
-     "type": "Independent Agency",
-     "parentId": "exec-ind-misc"
-    },
-    {
-     "id": "exec-ind-misc-utah-reclamation-mitigation-and-conservation-commission",
-     "name": "Utah Reclamation Mitigation and Conservation Commission",
-     "type": "Independent Agency",
-     "parentId": "exec-ind-misc"
-    },
-    {
-     "id": "jud-specialized-jpml",
-     "name": "Judicial Panel on Multidistrict Litigation",
-     "type": "Specialized Court",
-     "parentId": "jud-specialized"
-    },
-    {
-     "id": "leg-house-cmte-ethics",
-     "name": "House Committee on Ethics",
-     "type": "Committee",
-     "parentId": "leg-house-committees"
-    },
-    {
-     "id": "leg-house-cmte-jan6-select",
-     "name": "Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021",
-     "type": "Committee",
-     "parentId": "leg-house-committees"
-    },
-    {
-     "id": "leg-support-usbg",
-     "name": "United States Botanic Garden",
-     "type": "Agency",
-     "parentId": "leg-support"
-    },
-    {
-     "id": "leg-support-uscc",
-     "name": "U.S.-China Economic and Security Review Commission",
-     "type": "Agency",
-     "parentId": "leg-support"
-    }
-   ],
-   "removed": [],
-   "newlySuperseded": [],
-   "renamed": [],
-   "reparented": []
-  },
-  "measuredCosts": {
-   "before": 173,
-   "after": 173,
-   "moved": [],
-   "gained": [],
-   "lost": [],
-   "forReview": []
-  },
-  "estimates": {
-   "moved": 255,
-   "largestMoves": [
-    {
-     "id": "exec-ind-misc",
-     "name": "Other Independent Agencies (25+)",
-     "before": 29782463811.22,
-     "after": 30356982197.17,
-     "percent": 1.93
-    },
-    {
-     "id": "exec-ind-cia",
-     "name": "Central Intelligence Agency (CIA)",
-     "before": 6761290006.78,
-     "after": 6362757228.11,
-     "percent": -5.89
-    },
-    {
-     "id": "exec-independent",
-     "name": "Independent Establishments & Government Corporations",
-     "before": 1987891447041.18,
-     "after": 1988067432648.45,
-     "percent": 0.01
-    },
-    {
-     "id": "exec-cabinet",
-     "name": "The Cabinet — Executive Departments",
-     "before": 5768593733029.88,
-     "after": 5768431444932.52,
-     "percent": -0.0
-    },
-    {
-     "id": "exec-ind-misc-national-transportation-safety-board-ntsb",
-     "name": "National Transportation Safety Board (NTSB)",
-     "before": 1253576278.91,
-     "after": 1142325633.94,
-     "percent": -8.87
-    },
-    {
-     "id": "exec-ind-cia-directorate-of-support-ds",
-     "name": "Directorate of Support (DS)",
-     "before": 965898572.4,
-     "after": 908965318.3,
-     "percent": -5.89
-    },
-    {
-     "id": "exec-ind-cia-directorate-of-digital-innovation-ddi",
-     "name": "Directorate of Digital Innovation (DDI)",
-     "before": 965898572.4,
-     "after": 908965318.3,
-     "percent": -5.89
-    },
-    {
-     "id": "exec-ind-cia-directorate-of-science-technology-dst",
-     "name": "Directorate of Science & Technology (DS&T)",
-     "before": 965898572.4,
-     "after": 908965318.3,
-     "percent": -5.89
-    },
-    {
-     "id": "exec-ind-cia-directorate-of-analysis-da",
-     "name": "Directorate of Analysis (DA)",
-     "before": 965898572.4,
-     "after": 908965318.3,
-     "percent": -5.89
-    },
-    {
-     "id": "exec-ind-cia-directorate-of-operations-do",
-     "name": "Directorate of Operations (DO)",
-     "before": 965898572.4,
-     "after": 908965318.3,
-     "percent": -5.89
-    },
-    {
-     "id": "exec-ind-misc-american-battle-monuments-commission-abmc",
-     "name": "American Battle Monuments Commission (ABMC)",
-     "before": 607412503.27,
-     "after": 553506702.81,
-     "percent": -8.87
-    },
-    {
-     "id": "exec-ind-misc-national-capital-planning-commission-ncpc",
-     "name": "National Capital Planning Commission (NCPC)",
-     "before": 607412503.27,
-     "after": 553506702.81,
-     "percent": -8.87
-    },
-    {
-     "id": "exec-ind-misc-appalachian-regional-commission-arc",
-     "name": "Appalachian Regional Commission (ARC)",
-     "before": 607412503.27,
-     "after": 553506702.81,
-     "percent": -8.87
-    },
-    {
-     "id": "exec-ind-misc-farm-credit-administration",
-     "name": "Farm Credit Administration",
-     "before": 607412503.27,
-     "after": 553506702.81,
-     "percent": -8.87
-    },
-    {
-     "id": "exec-ind-misc-privacy-civil-liberties-oversight-board-pclob",
-     "name": "Privacy & Civil Liberties Oversight Board (PCLOB)",
-     "before": 607412503.27,
-     "after": 553506702.81,
-     "percent": -8.87
-    },
-    {
-     "id": "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission",
-     "name": "Postal Regulatory Commission",
-     "before": 607412503.27,
-     "after": 553506702.81,
-     "percent": -8.87
-    },
-    {
-     "id": "exec-ind-misc-chemical-safety-hazard-investigation-board-csb",
-     "name": "Chemical Safety & Hazard Investigation Board (CSB)",
-     "before": 607412503.27,
-     "after": 553506702.81,
-     "percent": -8.87
-    },
-    {
-     "id": "exec-ind-misc-election-assistance-commission-eac",
-     "name": "Election Assistance Commission (EAC)",
-     "before": 607412503.27,
-     "after": 553506702.81,
-     "percent": -8.87
-    },
-    {
-     "id": "exec-ind-misc-federal-election-commission-fec",
-     "name": "Federal Election Commission (FEC)",
-     "before": 607412503.27,
-     "after": 553506702.81,
-     "percent": -8.87
-    },
-    {
-     "id": "exec-ind-misc-national-mediation-board-nmb",
-     "name": "National Mediation Board (NMB)",
-     "before": 607412503.27,
-     "after": 553506702.81,
-     "percent": -8.87
-    }
-   ]
-  },
-  "pay": {
-   "claimsBefore": 1258,
-   "claimsAfter": 1258,
-   "added": [],
-   "withdrawn": [],
-   "moved": []
-  },
-  "evidence": {
-   "added": [
-    {
-     "id": "exec-ind-misc-denali-commission",
-     "name": "Denali Commission",
-     "field": "verificationMethod",
-     "method": "listed_in_federal_register_agency_directory",
-     "url": "https://www.federalregister.gov/agencies/denali-commission"
-    },
-    {
-     "id": "exec-ind-misc-farm-credit-system-insurance-corporation",
-     "name": "Farm Credit System Insurance Corporation",
-     "field": "verificationMethod",
-     "method": "name_labelled_on_own_official_page",
-     "url": "exec-ind-misc-farm-credit-system-insurance-corporation"
-    },
-    {
-     "id": "exec-ind-misc-goldwater-scholarship-foundation",
-     "name": "Barry M. Goldwater Scholarship and Excellence in Education Foundation",
-     "field": "verificationMethod",
-     "method": "listed_in_federal_register_agency_directory",
-     "url": "https://www.federalregister.gov/agencies/barry-m-goldwater-scholarship-and-excellence-in-education-foundation"
-    },
-    {
-     "id": "exec-ind-misc-office-of-navajo-and-hopi-indian-relocation",
-     "name": "Navajo and Hopi Indian Relocation Office",
-     "field": "verificationMethod",
-     "method": "listed_in_federal_register_agency_directory",
-     "url": "https://www.federalregister.gov/agencies/navajo-and-hopi-indian-relocation-office"
-    },
-    {
-     "id": "exec-ind-misc-presidio-trust",
-     "name": "Presidio Trust",
-     "field": "verificationMethod",
-     "method": "listed_in_federal_register_agency_directory",
-     "url": "https://www.federalregister.gov/agencies/presidio-trust"
-    },
-    {
-     "id": "exec-ind-misc-southeast-crescent-regional-commission",
-     "name": "Southeast Crescent Regional Commission",
-     "field": "verificationMethod",
-     "method": "name_labelled_on_own_official_page",
-     "url": "exec-ind-misc-southeast-crescent-regional-commission"
-    },
-    {
-     "id": "exec-ind-misc-udall-foundation",
-     "name": "Morris K. Udall and Stewart L. Udall Foundation",
-     "field": "verificationMethod",
-     "method": "listed_in_federal_register_agency_directory",
-     "url": "https://www.federalregister.gov/agencies/morris-k-udall-and-stewart-l-udall-foundation"
-    },
-    {
-     "id": "exec-ind-misc-utah-reclamation-mitigation-and-conservation-commission",
-     "name": "Utah Reclamation Mitigation and Conservation Commission",
-     "field": "verificationMethod",
-     "method": "listed_in_federal_register_agency_directory",
-     "url": "https://www.federalregister.gov/agencies/utah-reclamation-mitigation-and-conservation-commission"
-    },
-    {
-     "id": "jud-specialized-jpml",
-     "name": "Judicial Panel on Multidistrict Litigation",
-     "field": "verificationMethod",
-     "method": "name_labelled_on_own_official_page",
-     "url": "jud-specialized-jpml"
-    },
-    {
-     "id": "leg-house-cmte-ethics",
-     "name": "House Committee on Ethics",
-     "field": "verificationMethod",
-     "method": "name_labelled_on_own_official_page",
-     "url": "leg-house-cmte-ethics"
-    },
-    {
-     "id": "leg-house-cmte-jan6-select",
-     "name": "Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021",
-     "field": "verificationMethod",
-     "method": "listed_in_house_clerk_committee_list",
-     "url": "https://clerk.house.gov/Committees/ExcelCommitteeData"
-    },
-    {
-     "id": "leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government",
-     "name": "Select Subcommittee on the Weaponization of the Federal Government",
-     "field": "placementMethod",
-     "method": "name_labelled_on_parent_official_page",
-     "url": "leg-house-cmte-judiciary"
-    },
-    {
-     "id": "leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government",
-     "name": "Select Subcommittee on the Weaponization of the Federal Government",
-     "field": "verificationMethod",
-     "method": "name_labelled_on_parent_official_page",
-     "url": "leg-house-cmte-judiciary"
-    },
-    {
-     "id": "leg-support-usbg",
-     "name": "United States Botanic Garden",
-     "field": "placementMethod",
-     "method": "name_labelled_on_parent_official_page",
-     "url": "leg-support-usbg"
-    },
-    {
-     "id": "leg-support-usbg",
-     "name": "United States Botanic Garden",
-     "field": "verificationMethod",
-     "method": "name_labelled_on_own_official_page",
-     "url": "leg-support-usbg"
-    },
-    {
-     "id": "leg-support-uscc",
-     "name": "U.S.-China Economic and Security Review Commission",
-     "field": "verificationMethod",
-     "method": "listed_in_federal_register_agency_directory",
-     "url": "https://www.federalregister.gov/agencies/u-s-china-economic-and-security-review-commission"
-    }
-   ],
-   "withdrawn": [],
-   "changed": []
-  },
-  "sourcedFigures": {
-   "ombBudget": {
-    "added": [
-     {
-      "id": "exec-ind-misc-southwest-border-regional-commission",
-      "name": "Southwest Border Regional Commission",
-      "figure": 1000000.0,
-      "document": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
-     },
-     {
-      "id": "exec-ind-misc-udall-foundation",
-      "name": "Morris K. Udall and Stewart L. Udall Foundation",
-      "figure": 7000000.0,
-      "document": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
-     },
-     {
-      "id": "exec-ind-misc-southeast-crescent-regional-commission",
-      "name": "Southeast Crescent Regional Commission",
-      "figure": null,
-      "document": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
-     },
-     {
-      "id": "exec-ind-misc-denali-commission",
-      "name": "Denali Commission",
-      "figure": -70000000.0,
-      "document": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
-     },
-     {
-      "id": "leg-support-usbg",
-      "name": "United States Botanic Garden",
-      "figure": 25000000.0,
-      "document": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
-     },
-     {
-      "id": "exec-ind-misc-presidio-trust",
-      "name": "Presidio Trust",
-      "figure": 16000000.0,
-      "document": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
-     },
-     {
-      "id": "exec-ind-misc-farm-credit-system-insurance-corporation",
-      "name": "Farm Credit System Insurance Corporation",
-      "figure": -518000000.0,
-      "document": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
-     }
-    ],
-    "withdrawn": [],
-    "moved": []
-   },
-   "auditedNetCost": {
-    "added": [
-     {
-      "id": "exec-ind-misc-farm-credit-system-insurance-corporation",
-      "name": "Farm Credit System Insurance Corporation",
-      "figure": -300000000.0,
-      "document": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200"
-     }
-    ],
-    "withdrawn": [],
-    "moved": []
-   },
-   "committeeDisbursements": {
-    "added": [
-     {
-      "id": "leg-house-cmte-ethics",
-      "name": "House Committee on Ethics",
-      "figure": 1129909.28,
-      "document": "https://www.house.gov/sites/default/files/2026-08/grids/APRIL-JUNE%202026%20SOD%20SUMM%20GRID-FINAL.csv"
-     }
-    ],
-    "withdrawn": [],
-    "moved": []
-   },
-   "payrollOfficial": {
-    "added": [
-     {
-      "id": "exec-ind-misc-denali-commission",
-      "name": "Denali Commission",
-      "figure": 2519196,
-      "document": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip"
-     },
-     {
-      "id": "exec-ind-misc-presidio-trust",
-      "name": "Presidio Trust",
-      "figure": 42761600,
-      "document": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip"
-     }
-    ],
-    "withdrawn": [],
-    "moved": []
-   }
-  },
-  "sources": {
-   "changed": [
-    {
-     "id": "official_pages",
-     "before": "2026-10-22",
-     "after": "2026-10-26",
-     "status": "current"
-    }
-   ],
-   "registryAfter": {
-    "monthly_treasury_statement": {
-     "copyDate": "2026-09-30",
-     "status": "current"
-    },
-    "usaspending_file_a": {
-     "copyDate": "2026-09-17",
-     "status": "current"
-    },
-    "usaspending_file_b_object_class": {
-     "copyDate": "2025-09-30",
-     "status": "current"
-    },
-    "house_statement_of_disbursements": {
-     "copyDate": "2026-06-30",
-     "status": "current"
-    },
-    "senate_secretary_report": {
-     "copyDate": "2026-03-31",
-     "status": "current"
-    },
-    "opm_salary_tables": {
-     "copyDate": "2026-01-01",
-     "status": "current"
-    },
-    "us_code_pay_schedules_5332_note": {
-     "copyDate": "2026-01-01",
-     "status": "current"
-    },
-    "uscourts_judicial_compensation": {
-     "copyDate": "2026-01-01",
-     "status": "current"
-    },
-    "senate_salary_schedule": {
-     "copyDate": "2026-01-01",
-     "status": "current"
-    },
-    "whitehouse_staff_report": {
-     "copyDate": "2026-07-01",
-     "status": "current"
-    },
-    "opm_plum_current_export": {
-     "copyDate": "2026-09-21",
-     "status": "current"
-    },
-    "opm_plum_archive": {
-     "copyDate": "2025-01-20",
-     "status": "closed_record"
-    },
-    "opm_fedscope_employment": {
-     "copyDate": "2025-03-31",
-     "status": "overdue"
-    },
-    "us_government_manual": {
-     "copyDate": "2025-12-31",
-     "status": "current"
-    },
-    "omb_public_budget_database": {
-     "copyDate": "2026-09-20",
-     "status": "current"
-    },
-    "treasury_statement_of_net_cost": {
-     "copyDate": "2025-09-30",
-     "status": "current"
-    },
-    "treasury_combined_statement": {
-     "copyDate": "2025-09-30",
-     "status": "current"
-    },
-    "us_code_sections": {
-     "copyDate": "2026-09-18",
-     "status": "current"
-    },
-    "federal_register_agency_directory": {
-     "copyDate": "2026-09-08",
-     "status": "current"
-    },
-    "senate_committee_list": {
-     "copyDate": "2026-09-08",
-     "status": "current"
-    },
-    "house_clerk_committee_list": {
-     "copyDate": "2026-09-13",
-     "status": "current"
-    },
-    "federal_register_signatures": {
-     "copyDate": "2026-09-21",
-     "status": "current"
-    },
-    "usajobs_vacancy_announcements": {
-     "copyDate": "2026-10-06",
-     "status": "current"
-    },
-    "doj_usao_ad_pay_plan": {
-     "copyDate": "2025-01-12",
-     "status": "overdue"
-    },
-    "va_title38_pay_tables": {
-     "copyDate": "2026-01-11",
-     "status": "current"
-    },
-    "doe_laboratory_pages": {
-     "copyDate": "2026-10-06",
-     "status": "current"
-    },
-    "official_pages": {
-     "copyDate": "2026-10-26",
-     "status": "current"
-    }
-   }
-  },
+  "summary": "the Treasury anchor is still the statement of 2026-09-30; 5,512 nodes before and 5,526 after (14 added, 0 removed, 0 newly marked replaced, 0 renamed); 0 measured costs moved, 0 gained a measured figure, 0 lost one; 255 estimates moved; pay claims 1,258 -> 1,258 (0 added, 0 withdrawn, 0 changed figure); verification or placement methods: 16 added, 0 withdrawn, 0 changed; within the change budget.",
   "budget": {
    "rules": [
     {
@@ -1904,26 +3204,28 @@
     "measuredReviewFloor": 1000000000.0
    }
   },
-  "touched": [
-   "exec-ind-misc-denali-commission",
-   "exec-ind-misc-farm-credit-system-insurance-corporation",
-   "exec-ind-misc-goldwater-scholarship-foundation",
-   "exec-ind-misc-office-of-navajo-and-hopi-indian-relocation",
-   "exec-ind-misc-presidio-trust",
-   "exec-ind-misc-southeast-crescent-regional-commission",
-   "exec-ind-misc-southwest-border-regional-commission",
-   "exec-ind-misc-udall-foundation",
-   "exec-ind-misc-utah-reclamation-mitigation-and-conservation-commission",
-   "jud-specialized-jpml",
-   "leg-house-cmte-ethics",
-   "leg-house-cmte-jan6-select",
-   "leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government",
-   "leg-support-usbg",
-   "leg-support-uscc"
-  ],
-  "summary": "the Treasury anchor is still the statement of 2026-09-30; 5,512 nodes before and 5,526 after (14 added, 0 removed, 0 newly marked replaced, 0 renamed); 0 measured costs moved, 0 gained a measured figure, 0 lost one; 255 estimates moved; pay claims 1,258 -> 1,258 (0 added, 0 withdrawn, 0 changed figure); verification or placement methods: 16 added, 0 withdrawn, 0 changed; within the change budget.",
-  "before": "HEAD:output/graph.json",
-  "reviewQueueOpen": 59
+  "nodes": {
+   "before": 5512,
+   "after": 5526
+  },
+  "measuredCosts": {
+   "before": 173,
+   "after": 173
+  },
+  "pay": {
+   "claimsBefore": 1258,
+   "claimsAfter": 1258
+  },
+  "counts": {
+   "added": 14,
+   "removed": 0,
+   "measuredMoved": 0,
+   "payAdded": 0,
+   "payWithdrawn": 0,
+   "methodsWithdrawn": 0,
+   "touched": 15
+  },
+  "trimmed": true
  },
  {
   "builtAt": "2026-10-22T08:53:12.726654+00:00",

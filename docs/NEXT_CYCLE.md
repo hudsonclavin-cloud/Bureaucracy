@@ -12,7 +12,7 @@ Open gap = the definition of done is not met. Reach = a recorded reason that mor
 |---|---|---|---|
 | Evidence | **0** | 238 | 647 of 885 current organisations carry a verification method; the rest carry a recorded reason |
 | Money | **0** | 14 | 0 bare estimates; 346 explained blanks, 14 of them named in a held document with no licensed figure; 242 committee estimates counted apart |
-| Pay | **0** | 144 | 1258 of 4591 posts priced; the gap is every unpriced post with neither a documents-checked blank nor a terminal reason (DEFINITION_OF_DONE.md criterion 2); reach is the open pay leads, posts a person must tie to a printed row |
+| Pay | **0** | 109 | 1258 of 4591 posts priced; the gap is every unpriced post with neither a documents-checked blank nor a terminal reason (DEFINITION_OF_DONE.md criterion 2); reach is the open pay leads, posts a person must tie to a printed row |
 
 Not measured here: criterion 4(a) (list units, CURATION.md 32.1) and criteria 5-7 (the refresh job, `scripts/update_cycle.py`, which counts only scheduled cycles).
 
