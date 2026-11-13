@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20261022f";
-import { loadMergedGraphData } from "./graphLoader.js?v=20261022f";
+import { createGovernmentGraph } from "./graph.js?v=20261103a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20261103a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1179,23 +1179,44 @@ function renderHeadcountProvenance(data) {
   const on = source.checkedAt
     ? new Date(source.checkedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
     : null;
-  add(`OPM's FedScope employment file lists ${data.employeesOfficial.toLocaleString()} for "${source.listedName}"`);
+  add(`${headcountSourceSentence(source)} lists ${data.employeesOfficial.toLocaleString()} for "${source.listedName}"`);
   if (source.level === "subagency" && source.agencyCode) add(` (a sub-agency of ${source.agencyCode})`);
   if (on) add(`, fetched ${on}`);
   add(". ");
   if (source.coverage) add(`Coverage: ${source.coverage} `);
+  if (source.source === "opm_fwd_employment") {
+    add("OPM's Data Sources page lists what the dataset excludes, among them the U.S. Postal Service and the intelligence agencies. ");
+  }
   if (source.components && source.components.length > 1) {
     add(`The figure is the sum of ${source.components.length} rows the file lists under this agency. `);
   }
   if (source.outsideStatedCoverage) {
-    add("This unit sits outside the Executive Branch the file says it covers, so the number may not describe it at all. ");
+    add(source.source === "opm_fwd_employment"
+      ? "This unit sits outside the Executive Branch and OPM's Data Sources page does not list it among the legislative and judicial bodies the dataset includes, so the number may not describe it at all. "
+      : "This unit sits outside the Executive Branch the file says it covers, so the number may not describe it at all. ");
+  }
+  if (source.listedAsIncludedOutsideExecutive) {
+    add(`This unit sits outside the Executive Branch, and OPM's Data Sources page lists it ("${source.listedAsIncludedOutsideExecutive}") among the legislative and judicial bodies the dataset includes. `);
   }
   if (source.subtreeRecordsExceedIt) {
     add(`Units beneath this one already account for ${source.subtreeRecordsExceedIt.toLocaleString()} in the same file, so this figure does not cover its own subtree. `);
   }
   if (data.employees) {
-    add(`The figure above it is prose from the base graph with no citation, and the two often count different populations — OPM counts federal civilians in an active pay status, not uniformed members or contractors. Neither is corrected against the other.`);
+    add(`The figure above it is prose from the base graph with no citation, and the two often count different populations — OPM counts the federal civilian employees its coverage sentence above describes, not uniformed members or contractors. Neither is corrected against the other.`);
   }
+}
+
+// The official headcount comes from one of two OPM tables: Federal Workforce Data (the headline since
+// 2026-11-03) or, where FWD names no unit of that name, FedScope's March 2025 table. The wording follows
+// the record's own source, never a constant, so a node never names one table under the other's figure.
+function headcountSourceLabel(source) {
+  return source && source.source === "opm_fwd_employment" ? "OPM Federal Workforce Data" : "OPM FedScope";
+}
+
+function headcountSourceSentence(source) {
+  return source && source.source === "opm_fwd_employment"
+    ? "OPM's Federal Workforce Data status file"
+    : "OPM's FedScope employment file";
 }
 
 function renderCountProvenance(data) {
@@ -3138,6 +3159,15 @@ function buildChangeLines(node) {
     for (const x of byId(changes.withdrawn)) lines.push(`${field} withdrawn — ${x.why}`);
     for (const x of byId(changes.moved)) lines.push(`${field} ${exactMoney(x.before)} → ${exactMoney(x.after)}`);
   }
+  // An official headcount is a count of people, not dollars, and names the table and period it came from.
+  const headcount = sourced.employeesOfficial;
+  if (headcount) {
+    for (const x of byId(headcount.added)) lines.push("official headcount added");
+    for (const x of byId(headcount.withdrawn)) lines.push(`official headcount withdrawn — ${x.why}`);
+    for (const x of byId(headcount.moved)) {
+      lines.push(`official headcount ${Number(x.before).toLocaleString("en-US")} (${x.sourceBefore}) → ${Number(x.after).toLocaleString("en-US")} (${x.sourceAfter})`);
+    }
+  }
   if (!lines.length) return null;
   const host = document.createElement("div");
   host.id = "info-changes";
@@ -4772,7 +4802,7 @@ function renderInfoPanel(nodeObj) {
   }
   if (typeof data.employeesOfficial === "number" && official && typeof official === "object") {
     const period = official.period ? ` (${official.period})` : "";
-    statRows.push([`EMPLOYEES — OPM FedScope${period}`, data.employeesOfficial.toLocaleString()]);
+    statRows.push([`EMPLOYEES — ${headcountSourceLabel(official)}${period}`, data.employeesOfficial.toLocaleString()]);
   }
   statRows.push(...payrollStatRows(nodeObj));
   // USAspending File A, under its own heading so it can never read as the

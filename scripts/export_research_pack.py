@@ -17,7 +17,7 @@ Files written:
   organisations.csv        every organisation node, with its parent, branch,
                            cost status, verification status and what the graph
                            already holds about it (candidate page, Manual entry,
-                           USAspending toptier code, OMB CGAC code, FedScope)
+                           USAspending toptier code, OMB CGAC code, OPM's listed name with its table and period)
   estimated_units.csv      the organisations that publish an apportioned
                            estimate, with the basis of the share
   orgs_without_source.csv  organisations with no official source at all
@@ -162,6 +162,8 @@ def build(out_dir: Path) -> dict:
             get(node, "usaspendingOutlays", "toptierCode") or get(node, "usaspendingOutlays", "agencyCode"),
             get(node, "ombBudget", "cgacAgencyCode"),
             get(node, "employeesOfficialSource", "listedName"),
+            get(node, "employeesOfficialSource", "source"),
+            get(node, "employeesOfficialSource", "period"),
             node.get("employees") or "",
         ]
         orgs.append(row)
@@ -186,7 +188,7 @@ def build(out_dir: Path) -> dict:
             "id", "name", "type", "parent_id", "parent_name", "branch_or_sector", "depth", "replaced_unit",
             "cost_status", "measured_amount_usd", "verification_status", "official_source_count",
             "verification_method", "has_candidate_page", "government_manual_entry_name",
-            "usaspending_toptier_code", "omb_cgac_agency_code", "opm_fedscope_listed_name",
+            "usaspending_toptier_code", "omb_cgac_agency_code", "opm_listed_name", "opm_headcount_source", "opm_headcount_period",
             "curated_employees_text_uncited"], orgs),
         "estimated_units.csv": write_csv(out_dir / "estimated_units.csv", [
             "id", "name", "type", "parent_id", "parent_name", "branch_or_sector", "share_basis",

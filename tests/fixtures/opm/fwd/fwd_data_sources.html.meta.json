@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-11-03T17:15:53Z",
+ "url": "https://data.opm.gov/resources/data-sources",
+ "status": 200,
+ "final_url": "https://data.opm.gov/resources/data-sources",
+ "content_type": "text/html; charset=utf-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "no readable robots.txt (HTTP 404); failing open",
+ "bytes": 123973,
+ "sha256": "5c2433c87f53691ffdaac4948a5bb91f90dd55eff268de77b3bd7ebdabc0ef58",
+ "error": null
+}

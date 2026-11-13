@@ -115,6 +115,26 @@ class PlanTests(unittest.TestCase):
         self.assertEqual(sorted(uc.DERIVE_STEPS), derive_scripts, "a derive script the cycle does not run")
 
 
+class FetchHintTests(unittest.TestCase):
+    def test_a_source_a_person_fetches_names_the_command_to_run(self):
+        row = {"id": "opm_fwd_employment", "fetch": {"kind": "url_changes_each_period", "url": "https://data.opm.gov/x",
+                                                     "command": "python scripts/fetch_fwd_aggregate.py"}}
+        block = {"sources": [{"id": "opm_fwd_employment", "statusAtBuild": "newer_edition_expected"}]}
+        registry = {"sources": [row]}
+        results = uc.fetch_due(block, registry, dry=True)
+        self.assertEqual(results[0]["outcome"], "needs_a_reviewed_url")
+        self.assertEqual(results[0]["command"], "python scripts/fetch_fwd_aggregate.py")
+        self.assertIn("python scripts/fetch_fwd_aggregate.py", results[0]["reason"])
+        row["fetch"].pop("command")
+        self.assertNotIn("command", uc.fetch_due(block, registry, dry=True)[0])
+
+    def test_the_registry_row_for_federal_workforce_data_names_its_command(self):
+        registry = json.loads((PROJECT_ROOT / "data" / "source_registry.json").read_text(encoding="utf-8"))
+        row = next(r for r in registry["sources"] if r["id"] == "opm_fwd_employment")
+        self.assertEqual(row["fetch"]["command"], "python scripts/fetch_fwd_aggregate.py")
+        self.assertTrue((PROJECT_ROOT / "scripts" / "fetch_fwd_aggregate.py").is_file())
+
+
 class WorkflowTests(unittest.TestCase):
     def test_the_workflow_runs_the_job_in_hold_mode_and_never_pushes_to_main(self):
         self.assertTrue(WORKFLOW.is_file())

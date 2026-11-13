@@ -267,6 +267,11 @@ class IsolationTests(unittest.TestCase):
         # two name joins already take, to say which entries reach a node. It
         # lands no figure.
         "data_pipeline/verification/list_dispositions.py",
+        # Since 2026-11-03: the pay-lead finder matches the current export's agencies to nodes with the table the
+        # export's own agency scoping already takes (plum_current.match_organisations), to say which posts the
+        # export prints a title for. It lands no figure and publishes nothing; a lead is a question for a person.
+        "scripts/find_pay_leads.py",
+        "tests/test_pay_leads.py",
         "tests/test_node_aliases.py",
         "tests/test_govman.py",
     }

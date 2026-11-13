@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-11-03T17:15:55Z",
+ "url": "https://data.opm.gov/FWD%20Data%20Dictionary.xlsx",
+ "status": 200,
+ "final_url": "https://data.opm.gov/FWD%20Data%20Dictionary.xlsx",
+ "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "no readable robots.txt (HTTP 404); failing open",
+ "bytes": 16026,
+ "sha256": "9f2199915e996d2779671f2ac09eb4c737497e1e906f3b35a54eff1409ec6d52",
+ "error": null
+}

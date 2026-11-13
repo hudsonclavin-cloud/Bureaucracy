@@ -1,19 +1,22 @@
 #!/usr/bin/env python
-"""Derive headcount evidence from OPM's FedScope employment table.
+"""Derive headcount evidence from OPM's two employment tables.
 
     python scripts/derive_headcount_evidence.py --dry-run
-    python scripts/derive_headcount_evidence.py            # writes data/verification/headcount_evidence.json
+    python scripts/derive_headcount_evidence.py                       # both sources, default files
+    python scripts/derive_headcount_evidence.py --source fedscope --out /tmp/x.json
 
-Reads the March 2025 FedScope employment summary exactly as fetched
-(tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip, in
-place; its .meta.json supplies the URL and fetch time), matches the table's
-agency and sub-agency names to the curated graph's organisations by
-canonical name — one name to one node, or nothing — and writes one record
-per node saying what the table says: the name as listed, the codes, the
-civilian headcount for March 2025 and September 2024, and the population
-the data dictionary says the table covers. Then it compares the table's
-count with the curated `employees` figure the cost cascade weights by, and
-prints the distribution. Nothing here fetches.
+Two sources, one matcher (`headcounts.match_fedscope`), two evidence files:
+
+* `fwd` (the headline since 2026-11-03): OPM's Federal Workforce Data status file, read from the committed DERIVED
+  aggregate (tests/fixtures/opm/fwd/, `fwd.py` says why it is an aggregate and not the publisher's bytes), written to
+  data/verification/headcount_evidence.json;
+* `fedscope`: the March 2025 FedScope employment summary exactly as fetched, in place, written to
+  data/verification/fedscope_headcount_evidence.json. It prices the payroll (FWD prints no average pay) and
+  stands for a unit FWD names nothing of that name for.
+
+Each record says what its table lists for the node: the name as listed, the codes, the civilian headcount for the
+period and the population the publisher says it covers. Then the count is compared with the curated `employees`
+figure the cost cascade weights by. Nothing here fetches.
 """
 
 from __future__ import annotations
@@ -28,12 +31,16 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from data_pipeline.exporter.build_graph import index_tree, load_base_graph  # noqa: E402
 from data_pipeline.json_io import write_json_file  # noqa: E402
+from data_pipeline.verification import fwd  # noqa: E402
 from data_pipeline.verification.headcounts import (  # noqa: E402
     COVERAGE_SOURCE,
     COVERAGE_STATEMENT,
+    DEFAULT_FEDSCOPE_EVIDENCE_PATH,
     DEFAULT_FEDSCOPE_ZIP,
     DEFAULT_HEADCOUNT_EVIDENCE_PATH,
     FEDSCOPE_MEMBER_PREFIX,
+    FEDSCOPE_SOURCE,
+    FWD_SOURCE,
     SNAPSHOT_CAVEAT,
     compare_with_curated,
     load_fedscope_agency_subagency,
@@ -44,6 +51,13 @@ from data_pipeline.verification.headcounts import (  # noqa: E402
 DEFAULT_BASE_GRAPH = PROJECT_ROOT / "data" / "federal_gov_complete_1.json"
 
 
+def latest_fwd_aggregate() -> Path:
+    found = sorted(p for p in fwd.FWD_FIXTURE_DIR.glob("fwd_employment_agency_subelement_*.json") if not p.name.endswith(".meta.json"))
+    if not found:
+        raise SystemExit("no committed FWD aggregate; run scripts/fetch_fwd_aggregate.py")
+    return found[-1]
+
+
 def _relative(path: Path) -> str:
     return str(path.relative_to(PROJECT_ROOT)) if path.is_relative_to(PROJECT_ROOT) else str(path)
 
@@ -52,9 +66,9 @@ def _fmt(n: int | float | None) -> str:
     return "—" if n is None else f"{n:,.0f}"
 
 
-def print_report(report: dict, comparison: dict, records: dict) -> None:
-    print(f"fedscope {report.get('file')}  fetched {report.get('fetched_at')}  period {report['period']}  previous {report['previous_period']}")
-    print(f"coverage ({COVERAGE_SOURCE}): {COVERAGE_STATEMENT}")
+def print_report(report: dict, comparison: dict, records: dict, coverage: str = COVERAGE_STATEMENT, coverage_source: str = COVERAGE_SOURCE) -> None:
+    print(f"{report.get('source')} {report.get('file')}  fetched {report.get('fetched_at')}  period {report['period']}  previous {report['previous_period']}")
+    print(f"coverage ({coverage_source}): {coverage}")
     print(f"rows {report['rows']} (+{len(report['suppressed_rows'])} suppressed '10_OR_LESS' row(s))  agencies {report['agencies']}  "
           f"total employees {report['total_employees']:,}  agency total rows found {report['agency_total_rows_found']}")
     print(f"matched: agencies {report['agencies_matched']}  sub-agencies {report['subagencies_matched']}  records {len(records)}  "
@@ -89,48 +103,95 @@ def print_report(report: dict, comparison: dict, records: dict) -> None:
         print(f"    {row['node']:55} {_fmt(row['curated']):>12} {row['opm']:>10,} {row['ratio']:>8.3f}   curated text: {row['curatedText']!r}")
 
 
-def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--base-graph", type=Path, default=DEFAULT_BASE_GRAPH)
-    parser.add_argument("--fedscope", type=Path, default=DEFAULT_FEDSCOPE_ZIP, help="verbatim FedScope employment summary ZIP (read in place)")
-    parser.add_argument("--period", default=None, help="period to publish, e.g. 2025-03 (default: the latest in the table)")
-    parser.add_argument("--out", type=Path, default=DEFAULT_HEADCOUNT_EVIDENCE_PATH)
-    parser.add_argument("--dry-run", action="store_true", help="report the matches; write nothing")
-    args = parser.parse_args((argv or sys.argv)[1:])
-
-    root = load_base_graph(args.base_graph)
-    node_map, parent_map = index_tree(root)
+def derive_fedscope(args, root, node_map, parent_map, out: Path):
     periods = load_fedscope_agency_subagency(args.fedscope)
     meta = load_fedscope_meta(args.fedscope)
     records, report = match_fedscope(
         periods, node_map, parent_map, root_id=str(root.get("id") or ""), period=args.period,
         url=meta.get("url"), fetched_at=meta.get("fetched_at"), file=_relative(args.fedscope),
     )
-    comparison = compare_with_curated(records, node_map)
-    print_report(report, comparison, records)
-    if args.dry_run:
-        return 0
-    store = {
-        "_note": (
-            "Derived by scripts/derive_headcount_evidence.py from OPM's FedScope employment summary table, read verbatim "
-            "from the committed ZIP; each record says what the table lists for the node — the name, the codes, the civilian "
-            "headcount for the period and the one before, and the population the data dictionary says the table covers — "
-            "and nothing else. checkedAt is the dataset's fetch time. Regenerate by re-running the script; never edit by hand."
-        ),
-        "source": {
-            "kind": "opm_fedscope_employment_summary", "url": meta.get("url"), "fetched_at": meta.get("fetched_at"), "sha256": meta.get("sha256"),
-            "file": _relative(args.fedscope), "member": f"{FEDSCOPE_MEMBER_PREFIX}_202503_and_202409.txt",
-            "period": report["period"], "previous_period": report["previous_period"],
-            "coverage": COVERAGE_STATEMENT, "coverage_source": COVERAGE_SOURCE, "snapshot_caveat": SNAPSHOT_CAVEAT,
-        },
-        "report": {k: v for k, v in report.items() if k not in ("unmatched_subagencies",)} | {
-            "unmatched_subagencies": report["unmatched_subagencies"][:120],
-            "comparison": {k: v for k, v in comparison.items() if k != "rows"} | {"rows": comparison["rows"]},
-        },
-        "nodes": records,
+    store_source = {
+        "kind": "opm_fedscope_employment_summary", "url": meta.get("url"), "fetched_at": meta.get("fetched_at"), "sha256": meta.get("sha256"),
+        "file": _relative(args.fedscope), "member": f"{FEDSCOPE_MEMBER_PREFIX}_202503_and_202409.txt",
+        "period": report["period"], "previous_period": report["previous_period"],
+        "coverage": COVERAGE_STATEMENT, "coverage_source": COVERAGE_SOURCE, "snapshot_caveat": SNAPSHOT_CAVEAT,
     }
-    write_json_file(args.out, store)
-    print(f"wrote {len(records)} records -> {args.out}")
+    note = (
+        "Derived by scripts/derive_headcount_evidence.py from OPM's FedScope employment summary table, read verbatim "
+        "from the committed ZIP; each record says what the table lists for the node — the name, the codes, the civilian "
+        "headcount for the period and the one before, and the population the data dictionary says the table covers — "
+        "and nothing else. checkedAt is the dataset's fetch time. FedScope is the payroll's source and the headcount of "
+        "a unit Federal Workforce Data names nothing of that name for. Regenerate by re-running the script; never edit by hand."
+    )
+    return records, report, store_source, note, COVERAGE_STATEMENT, COVERAGE_SOURCE
+
+
+def derive_fwd(args, root, node_map, parent_map, out: Path):
+    path = args.fwd or latest_fwd_aggregate()
+    fwd.check_documents()
+    payload = fwd.load_aggregate(path)
+    periods = fwd.periods_from_aggregate(payload)
+    meta = fwd.load_fwd_meta(path)
+    records, report = match_fedscope(
+        periods, node_map, parent_map, root_id=str(root.get("id") or ""), period=args.period,
+        url=meta["url"], fetched_at=meta["fetched_at"], file=_relative(path),
+        coverage=fwd.COVERAGE_STATEMENT, source=FWD_SOURCE, coverage_source=fwd.COVERAGE_SOURCE,
+        included_outside=fwd.INCLUDED_OUTSIDE_EXECUTIVE,
+    )
+    stream = payload["stream"]
+    store_source = {
+        "kind": fwd.AGGREGATE_KIND, "derived": True, "url": stream["url"], "fetched_at": meta["fetched_at"], "sha256": meta["sha256"],
+        "file": _relative(path), "period": report["period"], "previous_period": report["previous_period"],
+        "stream": {k: stream[k] for k in ("bytes", "sha256", "records", "snapshot", "listing_filename", "version", "listing_publish_date") if k in stream},
+        "coverage": fwd.COVERAGE_STATEMENT, "coverage_source": fwd.COVERAGE_SOURCE,
+        "data_sources_url": fwd.FWD_DATA_SOURCES_URL, "dictionary_url": fwd.FWD_DICTIONARY_URL,
+    }
+    note = (
+        "Derived by scripts/derive_headcount_evidence.py from OPM's Federal Workforce Data status file, read from the "
+        "committed DERIVED aggregate (one row per agency and sub-element with the number of records; the 1.66 GB stream is "
+        "not committed and its digest is recorded); each record says what the file lists for the node — the name, the codes "
+        "and the civilian headcount for the snapshot — and nothing else. checkedAt is the stream's fetch time. Regenerate by "
+        "re-running the script; never edit by hand."
+    )
+    return records, report, store_source, note, fwd.COVERAGE_STATEMENT, fwd.COVERAGE_SOURCE
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--base-graph", type=Path, default=DEFAULT_BASE_GRAPH)
+    parser.add_argument("--source", choices=("both", "fwd", "fedscope"), default="both")
+    parser.add_argument("--fedscope", type=Path, default=DEFAULT_FEDSCOPE_ZIP, help="verbatim FedScope employment summary ZIP (read in place)")
+    parser.add_argument("--fwd", type=Path, default=None, help="the derived FWD aggregate (default: the newest committed)")
+    parser.add_argument("--period", default=None, help="period to publish, e.g. 2025-03 (default: the latest in the table)")
+    parser.add_argument("--out", type=Path, default=None, help="with one --source only; default is that source's evidence file")
+    parser.add_argument("--dry-run", action="store_true", help="report the matches; write nothing")
+    args = parser.parse_args((argv or sys.argv)[1:])
+    if args.source == "both" and (args.out is not None or args.period is not None):
+        parser.error("--out and --period name one source's file; pass --source fwd or --source fedscope")
+
+    root = load_base_graph(args.base_graph)
+    node_map, parent_map = index_tree(root)
+    plan = [("fwd", DEFAULT_HEADCOUNT_EVIDENCE_PATH), ("fedscope", DEFAULT_FEDSCOPE_EVIDENCE_PATH)] if args.source == "both" \
+        else [(args.source, args.out or (DEFAULT_HEADCOUNT_EVIDENCE_PATH if args.source == "fwd" else DEFAULT_FEDSCOPE_EVIDENCE_PATH))]
+    for source, out in plan:
+        derive = derive_fwd if source == "fwd" else derive_fedscope
+        records, report, store_source, note, coverage, coverage_source = derive(args, root, node_map, parent_map, out)
+        comparison = compare_with_curated(records, node_map)
+        print(f"== {source} ==")
+        print_report(report, comparison, records, coverage, coverage_source)
+        if args.dry_run:
+            continue
+        store = {
+            "_note": note,
+            "source": store_source,
+            "report": {k: v for k, v in report.items() if k not in ("unmatched_subagencies",)} | {
+                "unmatched_subagencies": report["unmatched_subagencies"][:120],
+                "comparison": {k: v for k, v in comparison.items() if k != "rows"} | {"rows": comparison["rows"]},
+            },
+            "nodes": records,
+        }
+        write_json_file(out, store)
+        print(f"wrote {len(records)} records -> {out}")
     return 0
 
 

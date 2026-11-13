@@ -139,7 +139,7 @@ def load_graph():
 
 def load_evidence():
     out = {}
-    for name in ("evidence", "directory_evidence", "headcount_evidence", "position_evidence"):
+    for name in ("evidence", "directory_evidence", "headcount_evidence", "fedscope_headcount_evidence", "position_evidence"):
         payload = load_json(EVIDENCE_DIR / f"{name}.json")
         out[name] = payload.get("nodes") if isinstance(payload.get("nodes"), dict) else {}
     return out

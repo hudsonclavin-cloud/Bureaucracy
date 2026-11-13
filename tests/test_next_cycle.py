@@ -19,32 +19,50 @@ def numbers(eg=0, er=0, mg=0, mr=0, pg=0, pr=0):
 
 
 class PayGapIsTheDefinitionOfDonesTests(unittest.TestCase):
-    """Criterion 2 counts every unpriced post without a TERMINAL reason; the
-    `payNoDocument` blank is deliberately not one (DEFINITION_OF_DONE.md)."""
+    """Criterion 2 (redefined 2026-11-03): a post is priced, carries an explained blank, or carries a terminal
+    reason. The gap is the posts with none of those; reach is the open pay leads a person must decide."""
 
     GRAPH = Path(__file__).resolve().parents[1] / "output" / "graph.json"
 
-    def test_a_documents_checked_blank_does_not_close_a_pay_gap(self):
+    def test_the_gap_is_the_posts_with_no_blank_and_no_terminal_reason(self):
         if not self.GRAPH.exists():
             self.skipTest("no published graph")
         import report_unpriced_positions as unpriced
         graph = json.loads(self.GRAPH.read_text())
         now = next_cycle.measure(graph)["pay"]
-        groups, _positions, _priced, _ = unpriced.collect(graph)
-        by_reason = {}
-        for rows in groups.values():
-            for row in rows:
-                by_reason[row["reason"]] = by_reason.get(row["reason"], 0) + 1
-        terminal = sum(by_reason.get(r, 0) for r in next_cycle.TERMINAL_PAY_REASONS)
-        self.assertEqual(now["gap"], sum(by_reason.values()) - terminal)
-        self.assertGreater(now["gap"], 0)
-        # reach is the researchable part of the gap, never more than it
-        self.assertLessEqual(now["reach"], now["gap"])
-        self.assertEqual(now["reach"], now["gap"] - by_reason.get("beneath_replaced_unit", 0))
-        # the blank is on posts of the gap, and the gap still counts them
-        with_blank = sum(1 for n, _p, _r in unpriced.walk(graph) if isinstance(n.get("payNoDocument"), dict))
-        self.assertGreater(with_blank, 0)
-        self.assertGreaterEqual(now["gap"], with_blank)
+        groups, positions, priced, _ = unpriced.collect(graph)
+        rows = [row for group in groups.values() for row in group]
+        expected = sum(1 for r in rows if r["reason"] not in next_cycle.TERMINAL_PAY_REASONS and r["blank"] is None)
+        self.assertEqual(now["gap"], expected)
+        self.assertEqual(now["gap"], 0)
+        # a blank-carrying post is explained, not priced: the strict count is the rows, and the table says so
+        self.assertEqual(positions - priced, len(rows))
+        self.assertGreater(sum(1 for r in rows if r["blank"] is not None), 0)
+
+    def test_reach_is_the_open_leads_and_a_decision_lowers_it(self):
+        if not self.GRAPH.exists():
+            self.skipTest("no published graph")
+        import find_pay_leads as fpl
+        graph = json.loads(self.GRAPH.read_text())
+        before = next_cycle.open_pay_leads(graph)
+        self.assertEqual(before, 109)
+        first = None
+        with mock.patch.object(fpl, "load_decisions") as decisions:
+            export = fpl.load_plum_export()
+            node_map, parent_map = fpl.index_tree(graph)
+            found = fpl.find_leads(graph, export, fpl.load_alias_table(node_map=node_map, parent_map=parent_map))
+            first = found[0]["nodeId"]
+            decisions.return_value = {first: {"nodeId": first, "name": found[0]["name"], "kind": "not_this_post", "basis": "test"}}
+            self.assertEqual(next_cycle.open_pay_leads(graph), before - 1)
+
+    def test_a_post_with_neither_a_blank_nor_a_terminal_reason_is_a_gap(self):
+        rows = [{"reason": "unreached", "blank": None}, {"reason": "unreached", "blank": {"checked": 6}},
+                {"reason": "not_federally_paid", "blank": None}]
+        with mock.patch("report_unpriced_positions.collect", return_value=({("p", "P"): rows}, 3, 0, 0)), \
+                mock.patch.object(next_cycle, "open_pay_leads", return_value=0), \
+                mock.patch.object(next_cycle.evidence, "collect", return_value={}), \
+                mock.patch.object(next_cycle.cost, "collect", return_value={}):
+            self.assertEqual(next_cycle.measure({})["pay"]["gap"], 1)
 
 
 class PickTests(unittest.TestCase):

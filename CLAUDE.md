@@ -18,7 +18,9 @@ Work that does not move one of its gaps should say why.
 When the owner says **go**, read it and follow it from Step 0; it decides
 which of the three phases the work is currently in by reading state off disk,
 so a fresh session resumes exactly where the last one stopped. `/go` is the
-same thing as a slash command. Step 5 of `docs/GO.md` is the loop's hand-off:
+same thing as a slash command. Criterion 2 was redefined on 2026-11-03 (CURATION.md §34): every post
+is priced, carries a documents-checked blank, or is a lead for the owner; `scripts/find_pay_leads.py`
+(no AI) finds the leads and `.github/workflows/pay_leads.yml` will keep one issue open for them once merged and run. Step 5 of `docs/GO.md` is the loop's hand-off:
 `python scripts/next_cycle.py` measures the evidence, money and pay gaps and
 writes `docs/NEXT_CYCLE.md`.
 
@@ -1275,7 +1277,7 @@ measurement did to each: the House Clerk's committee list **landed**
 **landed**; OPM's current Plum Book **landed** on 2026-09-21 and is read by
 `plum_current.py` beside the archive; and SAM.gov's Federal Hierarchy
 is reachable at last and still needs a key the owner would have to obtain.
-`data.opm.gov` answers too and nothing here has read it; `www.usa.gov`'s
+`data.opm.gov` answers too and, since 2026-11-03, is read for headcounts (Federal Workforce Data, below); `www.usa.gov`'s
 A-to-Z index was crawled once on 2026-09-20, to nominate pages (below).
 
 **usa.gov's A-to-Z index, used to nominate and not as a source (since
@@ -1949,12 +1951,89 @@ is a civilian department, the second the uniformed service, and they are
 different populations — a curation gap, in `CURATION.md`, not a matcher
 bug.
 
+**Federal Workforce Data, the headline headcount since 2026-11-03 (`fwd.py`, the owner's "yes to
+4").** OPM's Federal Workforce Data (data.opm.gov) succeeds FedScope: the Status dataset is one
+record per active federal civilian employee, monthly, and a record's `count` is "The integer value 1,
+used for counting or aggregating values over the data set." (the data dictionary, committed beside the
+Data Sources page at `tests/fixtures/opm/fwd/`). The August 2026 edition is 2,024,832 records in a
+1,657,827,332-byte pipe-delimited stream (57 MB as Parquet, which no stdlib reader opens). It is too
+large to commit and is not a thing a reviewer re-reads, so the committed fixture is a **derived
+aggregate**, the one explicit exception to "fixtures are the publisher's own bytes": one row per
+(agency code, sub-element code) with the number of records, written by `scripts/fetch_fwd_aggregate.py`
+from the stream as it was served, with the stream's URL, byte count, sha256 and record count recorded in
+the aggregate and the aggregate's own digest recomputed before any row is read. The stream was fetched
+twice a quarter of an hour apart and gave the same bytes and sha256 both times
+(`862aeac830b170a0…`). The aggregator takes six columns by header name and keeps nothing else; the
+file carries no name column. It refuses rather than repairs a short row, a `count` that is not 1,
+two snapshots in one stream or a code printed with two names. The TXT stream is
+`/data/blob/download/chunked/<filename>.txt`; the API's `/download` address serves the Parquet instead.
+
+FWD's codes are FedScope's (`AGY`, `AGYSUB`), so the same matcher (`headcounts.match_fedscope`, now taking
+a `source` and a `coverage_source`) reads it unchanged: 186 records (85 agencies, 101 sub-agencies), 1,476,824
+of 2,024,832 employees reaching a node, against FedScope's 182 and 1,655,281. `apply_headcount_evidence`
+accepts either source and the exporter applies **FedScope's records first and FWD's over them**: nine
+small bodies gain a headcount (the Appalachian, Northern Border and Southwest Border Regional Commissions,
+the Delta Regional Authority, the Arctic Research Commission, the Farm Credit System Insurance Corporation,
+the Public Buildings Reform Board, the Truman Scholarship Foundation, GPO) and five units FWD names nothing
+of that name for (the Defense Acquisition University, NTIS, BOEM, BSEE, the Wilson Center) keep FedScope's
+count, labelled FedScope with its own period. Nothing is lost. **The coverage sentence is FWD's own and
+differs from FedScope's**: "Status data files include all active employees (in either a pay or non-pay
+status) for each agency's workforce as of the last day of each month." — re-found in the committed page,
+beside the page's list of what EHRI excludes (the Postal Service, the intelligence agencies and others),
+which the panel points to; a node never carries one population's sentence under the other's count. A
+node's count is a median 16.6% lower than March 2025's (177 nodes carry both, median ratio 0.834; the other five
+are FedScope's carried forward; OFCCP 474 → 76, ICE 20,692 → 28,674), which is a fact about the workforce and the
+table's date, not a correction.
+
+**Pay stays on FedScope, and says so.** FWD's `annualized_adjusted_basic_pay` is per record, 47% REDACTED
+(Defense and the three military departments entirely, Homeland Security 76%, Justice 66%, 47.3% overall; measured on the stream on 2026-11-03 and not kept in the aggregate, which has no pay column), and prints no average; a total over the rest would
+describe a different population from the headcount beside it. So `payrollOfficial` keeps FedScope's March
+2025 printed averages with their own count and period, and is now applied from FedScope's own derived records
+(`data/verification/fedscope_headcount_evidence.json`, the file `headcount_evidence.json` was until this
+date; `headcount_evidence.json` is FWD's) instead of off whatever headcount was stamped. The gate's
+"payroll beside a headcount for its period" relation is gone on purpose: a March 2025 payroll sits beside an
+August 2026 headcount, each dated, and the gate checks the payroll's own rows and count and that the node
+carries an official headcount of either source. 181 organisations carry a payroll, unchanged to the dollar.
+`headcount_table_violations` (one checker for both tables) re-reads the committed aggregate, the dictionary and
+the page — or, for a FedScope-sourced headcount, the committed zip — with its own stdlib reader (digests
+recomputed, the rows summing to the stream's record count, the dictionary's definition of `count`, the coverage
+sentence, the exclusion list and the included bodies in the page) and refuses a headcount that is not the table's
+count for the unit, a sub-element name the table does not print, components that are not exactly the agency's
+counted rows (the table's own total row set aside, by the matcher's rule), a wrong period, URL, date or coverage,
+a key the pipeline never writes, a post and an unknown source. **And it ties the block to the node it sits on**
+(the adversarial review's first finding: the count check alone passed a correct block moved to the wrong node):
+the node's name must be one of the keys the listed name answers to, `agencyMatched` must be above the node in the
+tree the gate walks, no table row may be carried by two nodes, and `wholeAgency`, `subtreeRecordsExceedIt` and the
+outside-the-branch flags are recomputed from the tree. The payroll is tied the same way (its rows must be one
+agency's counted rows or one sub-element, and the node's name must be that unit's), and a dispute must cite the
+source, period and file of the headcount beside it. `tests/test_fwd.py` and `tests/test_fwd_adoption.py` pin both
+directions, whole-block moves included.
+
+**GPO and the Tax Court are not "outside the file's coverage" (the review's second finding).** The
+Executive-Branch rule `match_fedscope` applies to FedScope flagged both under FWD, and the panel then said the
+number "may not describe it at all" — against OPM's own Data Sources page, which lists the Government Printing
+Office and the U.S. Tax Court among the legislative and judicial bodies the dataset includes.
+`fwd.INCLUDED_OUTSIDE_EXECUTIVE` is a reviewed table (node id → the page's label, re-checked against the committed
+page on every run; the gate mirrors it) and a record for one of those carries `listedAsIncludedOutsideExecutive`
+and says so, not `outsideStatedCoverage`; for any other body outside the Executive Branch the FWD sentence says the
+page does not list it. Measured on the rebuild: 186
+`employeesOfficialSource` and 185 `employeesOfficial` changed, 12 `cost_weight_dispute` (10 → 12), 191 nodes
+with an official headcount (182 before), **no cost, no payroll and no pay claim moved**. The source registry
+(`data/source_registry.json`) has a monthly `opm_fwd_employment` row (next release stated 2026-11-04) and
+FedScope as a closed record: OPM has published no edition after March 2025 and FedScope's address answers
+301 to data.opm.gov, though nothing read says FedScope is retired. A new edition is taken by running
+`scripts/fetch_fwd_aggregate.py` (it reads the listing, streams the newest edition once and records the
+stream's digest); the monthly job reports the edition as due and does not stream 1.66 GB itself.
+`CURATION.md` §35.
+
 **What the civilian staff are paid, off the same rows (`fedscope_payroll.py`,
 since 2026-10-08, the owner's ask: "a good total cost of everyone combined").**
 The FedScope row that gives a headcount also prints `AVGSAL`, "The average
 employee annualized adjusted basic pay." in the data dictionary's own words.
-`payrollOfficial` is stamped only beside an `employeesOfficialSource` stamped on
-the same build, so every refusal above binds unchanged, never on a post: the
+`payrollOfficial` was stamped only beside an `employeesOfficialSource` stamped on
+the same build; since 2026-11-03 it is applied from FedScope's own records (see
+the Federal Workforce Data paragraphs above), so every refusal above still binds
+unchanged, never on a post: the
 total (count × printed average, summed over the record's sub-agency rows — OPM
 prints no total, and each average is rounded to the dollar, so it is exact to
 half a dollar per head), the count, total ÷ count, and on a multi-row agency the
@@ -6069,7 +6148,7 @@ publishing which medical centres sit in which new network.
 ### The source registry (`data_pipeline/freshness.py`, since 2026-10-22)
 
 `data/source_registry.json` is one row per source the graph publishes a figure
-or a piece of evidence from — 27 rows — each with the reviewer's statement of
+or a piece of evidence from — 28 rows (27 when first derived) — each with the reviewer's statement of
 the publisher's cycle (eight cadence kinds), a publication lag and an overdue
 margin in days, how the copy's date is READ (off the graph root, off the
 maximum of a block field, off the fixtures' own fetch records, or a stated
@@ -6088,7 +6167,9 @@ reader's date; the `official_pages` row is read per node from `lastVerified`.
 The gate mirrors the derivation stdlib-only (`source_registry_expected`) and
 refuses any difference; `tests/test_source_registry.py` pins the two equal.
 First derivation: 23 current, 1 newer edition expected (the Treasury
-statement), 2 overdue (FedScope, the AUSA pay chart), 1 closed record.
+statement), 2 overdue (FedScope, the AUSA pay chart), 1 closed record (as first derived; since
+2026-11-03 FedScope is itself a closed record and Federal Workforce Data a monthly source: 25 current,
+1 overdue, 2 closed).
 `CURATION.md` §28.
 
 ### The change history, the budget and the review queue (`data_pipeline/changes.py`, since 2026-10-22)

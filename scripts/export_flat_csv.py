@@ -16,7 +16,11 @@ nothing computed here that the panel does not already say:
   line, the validation word for a withheld one;
 - sourced figures of another kind, each with its period and URL: File A gross
   outlays, OMB outlays, audited net cost, Combined Statement net outlays, the
-  chamber's disbursements, FedScope headcount and civilian payroll;
+  chamber's disbursements, the official headcount (Federal Workforce Data, or
+  FedScope where FWD names no unit of that name) with the table and period it
+  came from, and FedScope's civilian payroll with its OWN count and period (a
+  March 2025 payroll sits beside an August 2026 headcount, so dividing the two
+  columns is wrong);
 - the pay headline the panel shows for a post: which field, the figure or the
   range, the document's URL, and the count of documents it rests on;
 - existence and placement evidence: method, URL, date; the recorded reason no
@@ -58,7 +62,8 @@ COLUMNS = (
     "audited_net_cost_usd", "audited_fiscal_year", "audited_url",
     "combined_statement_net_outlays_usd", "combined_statement_fiscal_year", "combined_statement_url",
     "disbursements_usd", "disbursements_period_start", "disbursements_period_end", "disbursements_url",
-    "employees_official", "employees_period", "employees_url", "payroll_official_usd",
+    "employees_official", "employees_source", "employees_period", "employees_url",
+    "payroll_official_usd", "payroll_employees", "payroll_period",
     "pay_field", "pay_amount_usd", "pay_minimum_usd", "pay_maximum_usd", "pay_source", "pay_url", "pay_documents",
     "verification_method", "verification_url", "verification_date", "verification_no_document_kind",
     "placement_method", "placement_url",
@@ -135,8 +140,10 @@ def row_for(node: dict[str, Any], parent: dict[str, Any] | None, depth: int, bra
         "combined_statement_net_outlays_usd": _num(comb.get("amount")), "combined_statement_fiscal_year": str(comb.get("fiscalYear") or ""), "combined_statement_url": str(comb.get("sourceUrl") or ""),
         "disbursements_usd": _num(disb.get("amount")), "disbursements_period_start": str((disb.get("period") or {}).get("start") or ""), "disbursements_period_end": str((disb.get("period") or {}).get("end") or ""),
         "disbursements_url": str((disb.get("document") or {}).get("url") or ""),
-        "employees_official": str(node.get("employeesOfficial")) if isinstance(node.get("employeesOfficial"), int) else "", "employees_period": str(emp.get("period") or ""), "employees_url": str(emp.get("url") or ""),
+        "employees_official": str(node.get("employeesOfficial")) if isinstance(node.get("employeesOfficial"), int) else "",
+        "employees_source": str(emp.get("source") or ""), "employees_period": str(emp.get("period") or ""), "employees_url": str(emp.get("url") or ""),
         "payroll_official_usd": _num(payroll.get("totalAnnualPay")),
+        "payroll_employees": str(payroll.get("employees")) if isinstance(payroll.get("employees"), int) else "", "payroll_period": str(payroll.get("period") or ""),
         "verification_method": str(node.get("verificationMethod") or ""),
         "verification_url": _first(node, "verificationSiteFrom", "evidenceUrls", "sourceUrls") if node.get("verificationMethod") else "",
         "verification_date": str(node.get("lastVerified") or "") if node.get("verificationMethod") else "",

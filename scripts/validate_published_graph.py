@@ -10450,8 +10450,10 @@ def fedscope_payroll_rows(zip_path=None):
     return rows, digest
 
 
-def fedscope_payroll_violations(node, block, rows, digest, label):
-    """Everything a `payrollOfficial` block may claim, re-derived from the zip."""
+def fedscope_payroll_violations(node, block, rows, digest, label, names=None):
+    """Everything a `payrollOfficial` block may claim, re-derived from the zip. `names` (the table's rows with the
+    agency and sub-element names it prints, by period) ties the block to the node it sits on: its rows must be one
+    agency's counted rows or one sub-element, and the node's name must be that unit's."""
     out = []
     who = label(node)
     if not isinstance(block, dict):
@@ -10471,12 +10473,29 @@ def fedscope_payroll_violations(node, block, rows, digest, label):
         out.append("{} payroll cites a digest the committed file does not have".format(who))
     if not str(block.get("url") or "").startswith("https://www.opm.gov/"):
         out.append("{} payroll does not cite OPM".format(who))
-    src = node.get("employeesOfficialSource") if isinstance(node.get("employeesOfficialSource"), dict) else {}
-    if src.get("period") != period:
-        out.append("{} payroll stands beside no headcount for its period".format(who))
+    if not isinstance(node.get("employeesOfficial"), int) or isinstance(node.get("employeesOfficial"), bool):
+        out.append("{} payroll stands beside no official headcount".format(who))
     components = block.get("rows") if isinstance(block.get("rows"), list) else []
     if not components:
         out.append("{} payroll lists no rows".format(who))
+    if names is not None:
+        table = names.get(period) or {}
+        by_sub = {k[1]: (k[0], v[0], v[1]) for k, v in table.items()}
+        codes = [str(c[0]) for c in components if isinstance(c, list) and len(c) == 3]
+        known = [by_sub.get(c) for c in codes]
+        if not codes or any(k is None for k in known):
+            out.append("{} payroll names a unit the table does not carry".format(who))
+        elif len({k[0] for k in known}) != 1:
+            out.append("{} payroll rows span more than one agency".format(who))
+        else:
+            agency_name, counted, _total = headcount_counted_rows(table, known[0][0])
+            unit_keys = set(headcount_name_keys(agency_name))
+            if len(codes) == 1:
+                unit_keys |= headcount_name_keys(known[0][2])
+            if canonical_key(node.get("name")) not in unit_keys:
+                out.append("{} payroll was earned by rows that do not name this node ({})".format(who, agency_name))
+            if len(codes) > 1 and sorted(codes) != sorted(k[1] for k in counted):
+                out.append("{} payroll rows are not exactly the agency's counted rows".format(who))
     total = 0
     count = 0
     for item in components:
@@ -10490,8 +10509,8 @@ def fedscope_payroll_violations(node, block, rows, digest, label):
         count += int(item[1])
     if block.get("totalAnnualPay") != total:
         out.append("{} payroll total is not the sum of its rows' count x average".format(who))
-    if block.get("employees") != count or node.get("employeesOfficial") != count:
-        out.append("{} payroll headcount is not its rows' count or the node's OPM headcount".format(who))
+    if block.get("employees") != count:
+        out.append("{} payroll headcount is not its rows' count".format(who))
     if count and block.get("average") != round(total / count):
         out.append("{} payroll average is not total / count".format(who))
     if len(components) > 1:
@@ -10504,6 +10523,303 @@ def fedscope_payroll_violations(node, block, rows, digest, label):
         out.append("{} payroll equals the measured cost to the cent".format(who))
     return out
 
+
+# --- OPM headcounts, both sources (data_pipeline/verification/fwd.py and headcounts.py) -----------
+#: Mirrors of the modules' constants, pinned equal by tests/test_fwd_adoption.py.
+FWD_HEADCOUNT_SOURCE = "opm_fwd_employment"
+FEDSCOPE_HEADCOUNT_SOURCE = "opm_fedscope_employment"
+FWD_FIXTURE_DIR = PROJECT_ROOT / "tests" / "fixtures" / "opm" / "fwd"
+FWD_AGGREGATE_KIND = "opm_fwd_employment_aggregate"
+FWD_COUNT_DEFINITION = "The integer value 1, used for counting or aggregating values over the data set."
+FWD_COVERAGE = (
+    "Status data files include all active employees (in either a pay or non-pay status) for each "
+    "agency’s workforce as of the last day of each month."
+)
+FWD_COVERAGE_SOURCE = "OPM, Federal Workforce Data, Data Sources page, Status dataset"
+FWD_EXCLUSION_MARKERS = ("U.S. Postal Service", "Central Intelligence Agency", "Defense Intelligence Agency")
+#: node id -> the label the committed Data Sources page prints for an organisation outside the Executive Branch
+#: that the dataset includes (fwd.INCLUDED_OUTSIDE_EXECUTIVE).
+FWD_INCLUDED_OUTSIDE_EXECUTIVE = {
+    "leg-support-gpo": "Government Printing Office",
+    "leg-support-uscc": "U.S. – China Economic and Security Review Commission",
+    "jud-specialized-tax": "U.S. Tax Court",
+}
+FEDSCOPE_COVERAGE_SOURCE = "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview"
+FEDSCOPE_SUPPRESSED_CODE = "10_OR_LESS"
+HEADCOUNT_SOURCE_KEYS = (
+    "source", "listedName", "level", "agencyCode", "subagencyCode", "period", "coverage", "coverageSource", "url", "checkedAt",
+    "previous", "components", "outsideStatedCoverage", "listedAsIncludedOutsideExecutive", "subtreeRecordsExceedIt",
+    "wholeAgency", "agencyMatched",
+)
+HEADCOUNT_COMPONENT_KEYS = ("subagencyCode", "listedName", "employees")
+
+
+def headcount_name_keys(name):
+    """Mirror of headcounts.headcount_name_keys: the canonical keys a table's name answers to."""
+    key = canonical_key(name)
+    if not key:
+        return set()
+    keys = {key}
+    if key.startswith("department of the "):
+        keys.add("department of " + key[len("department of the "):])
+    elif key.startswith("department of "):
+        keys.add("department of the " + key[len("department of "):])
+    if key.startswith("nat "):
+        keys.add("national " + key[len("nat "):])
+    return {k for k in keys if k}
+
+
+def headcount_counted_rows(table, agency_code):
+    """Mirror of headcounts.agency_totals for one agency: the agency's name, the rows its headcount is the sum of
+    (every row but a self-named row that equals the sum of the others, which is the table's own total) and that
+    total row, if any. `table` maps (agency code, sub-element code) -> (agency name, sub-element name, count)."""
+    rows = {k: v for k, v in table.items() if k[0] == agency_code}
+    if not rows:
+        return None, {}, None
+    agency_name = next(iter(rows.values()))[0]
+    agency_keys = headcount_name_keys(agency_name)
+    total_key = None
+    if len(rows) > 1:
+        for key, (_a, sub_name, count) in rows.items():
+            if headcount_name_keys(sub_name) & agency_keys and count == sum(v[2] for k, v in rows.items() if k != key):
+                total_key = key
+                break
+    return agency_name, {k: v for k, v in rows.items() if k != total_key}, total_key
+
+
+def _headcount_fixture_checked(path):
+    import hashlib
+
+    data = path.read_bytes()
+    meta = json.loads(path.with_name(path.name + ".meta.json").read_text(encoding="utf-8"))
+    if meta.get("sha256") != hashlib.sha256(data).hexdigest():
+        raise ValueError("{} digest is not the fetch record's".format(path.name))
+    return data, meta
+
+
+def fwd_headcount_documents():
+    """The committed derived aggregate, the dictionary and the Data Sources page, re-read with the standard
+    library alone: every digest recomputed against its fetch record, the rows summing to the stream's record
+    count, the dictionary defining `count` as the integer 1, the page printing the coverage sentence, the
+    exclusion list and the labels of the included bodies. Raises ValueError on any difference."""
+    import html as html_module
+    import re
+    import zipfile
+
+    candidates = sorted(p for p in FWD_FIXTURE_DIR.glob("fwd_employment_agency_subelement_*.json") if not p.name.endswith(".meta.json"))
+    if not candidates:
+        raise ValueError("no committed FWD aggregate")
+    data, meta = _headcount_fixture_checked(candidates[-1])
+    payload = json.loads(data.decode("utf-8"))
+    if payload.get("kind") != FWD_AGGREGATE_KIND or payload.get("derived") is not True:
+        raise ValueError("the committed aggregate is not a derived FWD aggregate")
+    stream = payload.get("stream") or {}
+    rows = payload.get("rows") or []
+    if not rows or sum(int(r["records"]) for r in rows) != stream.get("records"):
+        raise ValueError("the aggregate's rows do not sum to the stream's record count")
+    dictionary_bytes, _ = _headcount_fixture_checked(FWD_FIXTURE_DIR / "fwd_data_dictionary.xlsx")
+    with zipfile.ZipFile(io.BytesIO(dictionary_bytes)) as archive:
+        shared = archive.read("xl/sharedStrings.xml").decode("utf-8")
+    if FWD_COUNT_DEFINITION not in [html_module.unescape(t) for t in re.findall(r"<t[^>]*>([^<]*)</t>", shared)]:
+        raise ValueError("the committed dictionary does not define count as the integer 1")
+    page_bytes, _ = _headcount_fixture_checked(FWD_FIXTURE_DIR / "fwd_data_sources.html")
+    page_html = page_bytes.decode("utf-8")
+    page = re.sub(r"\s+", " ", html_module.unescape(re.sub(r"<[^>]+>", " ", page_html)))
+    if re.sub(r"\s+", " ", FWD_COVERAGE) not in page:
+        raise ValueError("the committed Data Sources page does not print the coverage sentence")
+    for marker in FWD_EXCLUSION_MARKERS:
+        if marker not in page:
+            raise ValueError("the committed Data Sources page's exclusion list does not carry {}".format(marker))
+    start = page_html.find("Legislative branch")
+    end = page_html.find("EHRI datasets", start)
+    listed = [html_module.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", item))).strip()
+              for item in re.findall(r"<li[^>]*>(.*?)</li>", page_html[start:end], flags=re.S)] if start >= 0 and end > start else []
+    for node_id, wanted in FWD_INCLUDED_OUTSIDE_EXECUTIVE.items():
+        if wanted not in listed:
+            raise ValueError("the committed Data Sources page does not list {} (for {}) among the included bodies".format(wanted, node_id))
+    snapshot = str(stream.get("snapshot") or "")
+    if len(snapshot) != 6 or not snapshot.isdigit():
+        raise ValueError("the aggregate's snapshot is not YYYYMM")
+    period = "{}-{}".format(snapshot[:4], snapshot[4:])
+    table = {(str(r["agency_code"]), str(r["subelement_code"])): (str(r["agency_name"]), str(r["subelement_name"]), int(r["records"])) for r in rows}
+    return {
+        "source": FWD_HEADCOUNT_SOURCE, "periods": {period: table}, "rows": table, "stream": stream, "period": period,
+        "url": stream.get("url"), "fetched_at": meta.get("fetched_at"), "coverage": FWD_COVERAGE,
+        "coverage_source": FWD_COVERAGE_SOURCE, "included": dict(FWD_INCLUDED_OUTSIDE_EXECUTIVE), "previous_allowed": False,
+    }
+
+
+def fedscope_headcount_documents():
+    """The committed FedScope employment summary, read with the standard library alone (digest recomputed against
+    the fetch record): every period's rows with the names the table prints, the suppressed-count row set aside."""
+    import csv
+    import zipfile
+
+    data, meta = _headcount_fixture_checked(FEDSCOPE_PAYROLL_ZIP)
+    with zipfile.ZipFile(io.BytesIO(data)) as archive:
+        name = [n for n in archive.namelist() if n.split("/")[-1].startswith("Status Employment by Agency and SubAgency")][0]
+        text = archive.read(name).decode("utf-8-sig")
+    periods = {}
+    for row in csv.DictReader(io.StringIO(text), delimiter="\t"):
+        code = str(row.get("DATECODE") or "").strip()
+        agency = str(row.get("AGY") or "").strip()
+        if not code or agency == FEDSCOPE_SUPPRESSED_CODE:
+            continue
+        periods.setdefault("{}-{}".format(code[:4], code[4:]), {})[(agency, str(row.get("AGYSUB") or "").strip())] = (
+            str(row.get("AGYT") or "").strip(), str(row.get("AGYSUBT") or "").strip(), int(str(row["EMPCOUNT"]).replace(",", "")))
+    return {
+        "source": FEDSCOPE_HEADCOUNT_SOURCE, "periods": periods, "url": meta.get("final_url") or meta.get("url"),
+        "fetched_at": meta.get("fetched_at"), "coverage": FEDSCOPE_PAYROLL_COVERAGE, "coverage_source": FEDSCOPE_COVERAGE_SOURCE,
+        "included": {}, "previous_allowed": True,
+    }
+
+
+def headcount_table_violations(node, docs, label, ctx=None):
+    """Everything an `employeesOfficial` of one OPM table may claim, re-derived from that table and tied to the node it
+    sits on. `ctx` (read off the tree the gate walks) carries `parents` (id -> parent id), `executive_ids`, `carriers`
+    (how many nodes carry each table row) and `beneath` (the sum of the same source's counts under each node)."""
+    out = []
+    who = label(node)
+    node_id = str(node.get("id") or "")
+    src = node.get("employeesOfficialSource") if isinstance(node.get("employeesOfficialSource"), dict) else {}
+    employees = node.get("employeesOfficial")
+    extra = sorted(set(src) - set(HEADCOUNT_SOURCE_KEYS))
+    if extra:
+        out.append("{} headcount source carries keys the pipeline never writes: {}".format(who, extra))
+    if "position" in str(node.get("type") or "").casefold() or node.get("synthetic"):
+        out.append("{} is a post or a synthetic line and carries an OPM headcount".format(who))
+    if src.get("coverage") != docs["coverage"]:
+        out.append("{} headcount does not quote its table's coverage sentence".format(who))
+    if src.get("coverageSource") != docs["coverage_source"]:
+        out.append("{} headcount names another coverage source".format(who))
+    if src.get("url") != docs["url"]:
+        out.append("{} headcount cites a file that is not the committed table's".format(who))
+    if src.get("checkedAt") != docs["fetched_at"]:
+        out.append("{} headcount is dated other than the table's fetch".format(who))
+    table = docs["periods"].get(src.get("period"))
+    if table is None:
+        out.append("{} headcount is for a period the committed table does not carry ({!r})".format(who, src.get("period")))
+        return out
+    previous = src.get("previous")
+    if previous and not docs["previous_allowed"]:
+        out.append("{} headcount carries a previous period this table does not have".format(who))
+    if previous and docs["previous_allowed"]:
+        if not isinstance(previous, dict) or previous.get("period") not in docs["periods"]:
+            out.append("{} headcount's previous period is not one the table carries".format(who))
+    if not isinstance(employees, int) or isinstance(employees, bool) or employees <= 0:
+        out.append("{} headcount {!r} is not a positive count".format(who, employees))
+        return out
+    agency_code = str(src.get("agencyCode") or "")
+    level = src.get("level")
+    listed = str(src.get("listedName") or "")
+    if canonical_key(node.get("name")) not in headcount_name_keys(listed):
+        out.append("{} headcount was earned by the name {!r}, which does not name this node".format(who, listed))
+    if level == "subagency":
+        row = table.get((agency_code, str(src.get("subagencyCode") or "")))
+        if row is None:
+            out.append("{} headcount names a row the table does not carry".format(who))
+        else:
+            if row[2] != employees:
+                out.append("{} headcount {} is not the table's {}".format(who, employees, row[2]))
+            if listed != row[1]:
+                out.append("{} headcount lists a sub-element name the table does not print".format(who))
+            if bool(src.get("wholeAgency")) != (sum(1 for k in table if k[0] == agency_code) == 1):
+                out.append("{} headcount's wholeAgency flag is not what the table says of its agency".format(who))
+        if src.get("components"):
+            out.append("{} sub-element headcount lists components".format(who))
+    elif level == "agency":
+        agency_name, counted, _total = headcount_counted_rows(table, agency_code)
+        components = src.get("components") if isinstance(src.get("components"), list) else []
+        if not counted or not components:
+            out.append("{} agency headcount lists no components of an agency the table carries".format(who))
+        else:
+            seen = []
+            total = 0
+            for item in components:
+                if not isinstance(item, dict) or set(item) - set(HEADCOUNT_COMPONENT_KEYS):
+                    out.append("{} agency headcount carries a malformed component".format(who))
+                    continue
+                key = (agency_code, str(item.get("subagencyCode") or ""))
+                row = counted.get(key)
+                if row is None or (item.get("employees"), item.get("listedName")) != (row[2], row[1]):
+                    out.append("{} agency component {} is not what the table prints".format(who, key[1]))
+                else:
+                    total += row[2]
+                    seen.append(key)
+            if sorted(seen) != sorted(counted):
+                out.append("{} agency headcount's components are not exactly the agency's counted rows".format(who))
+            if total != employees:
+                out.append("{} agency headcount is not the sum of the agency's rows".format(who))
+            if listed != agency_name:
+                out.append("{} agency headcount lists a name the table does not print".format(who))
+        if src.get("subagencyCode") not in (None, ""):
+            out.append("{} agency headcount carries a sub-element code".format(who))
+    else:
+        out.append("{} headcount has an unknown level {!r}".format(who, level))
+    if ctx is not None:
+        parents = ctx["parents"]
+        matched = src.get("agencyMatched")
+        if matched:
+            up = []
+            current = parents.get(node_id)
+            while current and current not in up:
+                up.append(current)
+                current = parents.get(current)
+            if matched not in up:
+                out.append("{} headcount says its agency matched {!r}, which is not above it in the tree".format(who, matched))
+        branch = node_id
+        while parents.get(branch) and parents.get(parents.get(branch)):
+            branch = parents[branch]
+        outside = parents.get(node_id) is not None and branch not in ctx["executive_ids"]
+        included = docs["included"].get(node_id)
+        if outside and included:
+            if src.get("listedAsIncludedOutsideExecutive") != included or src.get("outsideStatedCoverage"):
+                out.append("{} sits outside the Executive Branch and the page lists it as included; the record must say so".format(who))
+        elif outside:
+            if src.get("outsideStatedCoverage") is not True or src.get("listedAsIncludedOutsideExecutive"):
+                out.append("{} sits outside the Executive Branch and the table does not list it as included; the record must say so".format(who))
+        elif src.get("outsideStatedCoverage") or src.get("listedAsIncludedOutsideExecutive"):
+            out.append("{} carries an outside-the-branch flag but sits in the Executive Branch".format(who))
+        key = (src.get("source"), level, agency_code, str(src.get("subagencyCode") or ""))
+        if ctx["carriers"].get(key, 0) > 1:
+            out.append("{} headcount row {} is carried by {} nodes".format(who, key[1:], ctx["carriers"][key]))
+        if src.get("source") == FWD_HEADCOUNT_SOURCE:
+            beneath = ctx["beneath"].get((src.get("source"), node_id), 0)
+            expected = beneath if beneath > employees else None
+            if src.get("subtreeRecordsExceedIt") != expected:
+                out.append("{} subtreeRecordsExceedIt is {!r}; the units beneath it sum to {}".format(who, src.get("subtreeRecordsExceedIt"), beneath))
+        elif src.get("subtreeRecordsExceedIt") is not None and not isinstance(src.get("subtreeRecordsExceedIt"), int):
+            out.append("{} subtreeRecordsExceedIt is not a count".format(who))
+    return out
+
+
+#: The name the function was published under; kept for the tests that import it.
+fwd_headcount_violations = headcount_table_violations
+
+
+def headcount_gate_context(nodes, tree_parents, by_id):
+    """What headcount_table_violations reads off the walked tree: parents, the Executive Branch's id, how many nodes
+    carry each table row, and the sum of each source's counts beneath every node."""
+    root_ids = [i for i, p in tree_parents.items() if not p]
+    executive = set()
+    for root in root_ids:
+        executive |= {i for i, p in tree_parents.items()
+                      if p == root and canonical_key((by_id.get(i) or {}).get("name")) == "executive branch"}
+    carriers = {}
+    beneath = {}
+    for node in nodes:
+        src = node.get("employeesOfficialSource")
+        if not isinstance(src, dict) or not isinstance(node.get("employeesOfficial"), int):
+            continue
+        key = (src.get("source"), src.get("level"), str(src.get("agencyCode") or ""), str(src.get("subagencyCode") or ""))
+        carriers[key] = carriers.get(key, 0) + 1
+        current = tree_parents.get(str(node.get("id") or ""))
+        seen = set()
+        while current and current not in seen:
+            seen.add(current)
+            beneath[(src.get("source"), current)] = beneath.get((src.get("source"), current), 0) + node["employeesOfficial"]
+            current = tree_parents.get(current)
+    return {"parents": tree_parents, "executive_ids": executive, "carriers": carriers, "beneath": beneath}
 
 # ---------------------------------------------------------------------------
 # The source registry (criterion 6), re-derived. A stdlib mirror of
@@ -10920,7 +11236,7 @@ def review_queue_expected_keys(graph):
             keys.add(review_queue_key("placement_directory_disagreement", node.get("id"), d.get("source")))
         w = node.get("cost_weight_dispute")
         if isinstance(w, dict):
-            keys.add(review_queue_key("cost_weight_dispute", node.get("id"), w.get("period")))
+            keys.add(review_queue_key("cost_weight_dispute", node.get("id"), w.get("source")))
         if node.get("verificationFailure") and not node.get("verificationMethod"):
             keys.add(review_queue_key("verification_failure", node.get("id"), node.get("verificationFailure")))
     registry = graph.get(SOURCE_REGISTRY_ROOT_FIELD) if isinstance(graph.get(SOURCE_REGISTRY_ROOT_FIELD), dict) else {}
@@ -11079,7 +11395,8 @@ FLAT_CSV_COLUMNS = (
     "audited_net_cost_usd", "audited_fiscal_year", "audited_url",
     "combined_statement_net_outlays_usd", "combined_statement_fiscal_year", "combined_statement_url",
     "disbursements_usd", "disbursements_period_start", "disbursements_period_end", "disbursements_url",
-    "employees_official", "employees_period", "employees_url", "payroll_official_usd",
+    "employees_official", "employees_source", "employees_period", "employees_url",
+    "payroll_official_usd", "payroll_employees", "payroll_period",
     "pay_field", "pay_amount_usd", "pay_minimum_usd", "pay_maximum_usd", "pay_source", "pay_url", "pay_documents",
     "verification_method", "verification_url", "verification_date", "verification_no_document_kind",
     "placement_method", "placement_url",
@@ -11128,6 +11445,15 @@ def flat_csv_violations(graph, graph_path, label):
             out.append("{}: {} publishes a zero cost".format(FLAT_CSV_FILENAME, node_id))
         if row.get("verification_method") != str(node.get("verificationMethod") or ""):
             out.append("{}: {} verification_method is not the node's".format(FLAT_CSV_FILENAME, node_id))
+        headcount_source = node.get("employeesOfficialSource") if isinstance(node.get("employeesOfficialSource"), dict) else {}
+        expected_headcount = str(node.get("employeesOfficial")) if isinstance(node.get("employeesOfficial"), int) else ""
+        if (row.get("employees_official"), row.get("employees_source"), row.get("employees_period")) != (
+                expected_headcount, str(headcount_source.get("source") or ""), str(headcount_source.get("period") or "")):
+            out.append("{}: {} headcount columns are not the node's".format(FLAT_CSV_FILENAME, node_id))
+        payroll_block = node.get("payrollOfficial") if isinstance(node.get("payrollOfficial"), dict) else {}
+        if (row.get("payroll_employees"), row.get("payroll_period")) != (
+                str(payroll_block.get("employees")) if isinstance(payroll_block.get("employees"), int) else "", str(payroll_block.get("period") or "")):
+            out.append("{}: {} payroll count or period is not the node's".format(FLAT_CSV_FILENAME, node_id))
         if row.get("pay_field") and not isinstance(node.get(row["pay_field"]), dict):
             out.append("{}: {} names a pay field {} the node does not carry".format(FLAT_CSV_FILENAME, node_id, row["pay_field"]))
         if row.get("pay_amount_usd") and row.get("pay_field") and "{:.2f}".format(float(node[row["pay_field"]].get("amount") or 0)) != row["pay_amount_usd"]:
@@ -12021,6 +12347,13 @@ def main(argv):
                 label(node), node.get("cost_status"), node.get("cost_basis")))
         if not str(dispute.get("url") or "").startswith("https://"):
             bad_dispute.append("{} dispute has no source URL".format(label(node)))
+        official_source = node.get("employeesOfficialSource") if isinstance(node.get("employeesOfficialSource"), dict) else {}
+        for field in ("source", "period", "url"):
+            if dispute.get(field) != official_source.get(field):
+                bad_dispute.append("{} dispute cites a {} ({!r}) other than the headcount beside it ({!r})".format(
+                    label(node), field, dispute.get(field), official_source.get(field)))
+        if not str(node.get("employees") or "").strip():
+            bad_dispute.append("{} dispute cites a curated headcount the node does not carry".format(label(node)))
     gate.check("every published weight dispute names both figures and is one", bad_dispute)
 
     # A measured cost belongs to an organisation. An outside review of an
@@ -12405,12 +12738,41 @@ def main(argv):
     payroll_nodes = [n for n in nodes if "payrollOfficial" in n]
     if payroll_nodes:
         payroll_rows, payroll_digest = fedscope_payroll_rows()
+        payroll_names = fedscope_headcount_documents()["periods"]
         for node in payroll_nodes:
-            payroll_violations.extend(fedscope_payroll_violations(node, node["payrollOfficial"], payroll_rows, payroll_digest, label))
+            payroll_violations.extend(fedscope_payroll_violations(node, node["payrollOfficial"], payroll_rows, payroll_digest, label, payroll_names))
     gate.check(
-        "a FedScope payroll is the sum of the table's printed rows, beside a headcount, and never the cost",
+        "a FedScope payroll is the sum of the table's printed rows, beside a headcount, tied to the unit its rows name, and never the cost",
         payroll_violations,
         " — {} organisation(s)".format(len(payroll_nodes)) if not payroll_violations else "",
+    )
+    headcount_violations = []
+    headcount_loaders = {FWD_HEADCOUNT_SOURCE: fwd_headcount_documents, FEDSCOPE_HEADCOUNT_SOURCE: fedscope_headcount_documents}
+    headcount_nodes = [n for n in nodes if isinstance(n.get("employeesOfficialSource"), dict)]
+    headcount_docs = {}
+    for source in sorted({str(n["employeesOfficialSource"].get("source")) for n in headcount_nodes}):
+        loader = headcount_loaders.get(source)
+        if loader is None:
+            headcount_violations.append("a headcount names an unknown source {!r}".format(source))
+            continue
+        try:
+            headcount_docs[source] = loader()
+        except (OSError, ValueError, KeyError) as error:
+            headcount_violations.append("the committed {} table or the documents it rests on are unreadable: {}".format(source, error))
+    headcount_context = headcount_gate_context(nodes, tree_parents, by_id)
+    for node in headcount_nodes:
+        docs = headcount_docs.get(str(node["employeesOfficialSource"].get("source")))
+        if docs:
+            headcount_violations.extend(headcount_table_violations(node, docs, label, headcount_context))
+    for node in nodes:
+        if "employeesOfficial" in node and not isinstance(node.get("employeesOfficialSource"), dict):
+            headcount_violations.append("{} carries an official headcount with no source block".format(label(node)))
+    gate.check(
+        "an OPM headcount is its table's own count for the unit it sits on, under that table's own coverage sentence",
+        headcount_violations,
+        " — {} organisation(s) ({})".format(len(headcount_nodes), ", ".join("{} {}".format(
+            sum(1 for n in headcount_nodes if n["employeesOfficialSource"].get("source") == src), src) for src in sorted(headcount_docs)))
+        if not headcount_violations else "",
     )
     payout_weight_violations = disbursement_weight_violations(nodes, tree_parents, label)
     gate.check(

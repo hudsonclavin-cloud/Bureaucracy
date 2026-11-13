@@ -34,6 +34,7 @@ sys.path.insert(0, str(ROOT))
 import report_cost_coverage as cost  # noqa: E402
 import report_evidence_coverage as evidence  # noqa: E402
 import report_unpriced_positions as unpriced  # noqa: E402
+import find_pay_leads as leads_mod  # noqa: E402
 
 GRAPH = ROOT / "output" / "graph.json"
 OUT = ROOT / "docs" / "NEXT_CYCLE.md"
@@ -42,8 +43,21 @@ BUDGET = ROOT / "data" / "audit" / "cycle_budget.json"
 
 ORDER = ("evidence", "money", "pay")
 
-# A reason in report_unpriced_positions.classify that a document establishes, so the post is not a pay gap.
+# A reason in report_unpriced_positions.classify that a document establishes, so the post needs no explanation.
 TERMINAL_PAY_REASONS = ("not_federally_paid",)
+
+
+def open_pay_leads(graph: dict) -> int:
+    """Posts the current Plum export prints under their own agency that a person has not yet decided
+    (scripts/find_pay_leads.py). No AI and no network; 0 when the export cannot be read."""
+    try:
+        export = leads_mod.load_plum_export()
+        node_map, parent_map = leads_mod.index_tree(graph)
+        table = leads_mod.load_alias_table(node_map=node_map, parent_map=parent_map)
+        found = leads_mod.find_leads(graph, export, table)
+    except leads_mod.Unreadable:
+        return 0
+    return len(leads_mod.partition(found, leads_mod.load_decisions())[0])
 
 
 def measure(graph: dict) -> dict:
@@ -65,13 +79,16 @@ def measure(graph: dict) -> dict:
     named = cc.get("estimate_named_in_a_held_document", 0)
 
     groups, positions, priced, _ = unpriced.collect(graph)
-    # docs/DEFINITION_OF_DONE.md criterion 2 counts every unpriced post except one carrying a TERMINAL reason
-    # (`not_federally_paid`, a document establishing that no federal pay exists). The `payNoDocument` blank is
-    # NOT terminal there ("six documents were read and none prints the title" is a fact about what this
-    # repository holds), so it never lowers the gap. Reach is the researchable part of it: a post a pay
-    # document could still price (a post beneath a replaced unit is paused, not researched).
-    open_pay = sum(1 for rows in groups.values() for row in rows if row["reason"] not in TERMINAL_PAY_REASONS)
-    reach_pay = sum(1 for rows in unpriced.researchable(groups).values() for _row in rows)
+    # docs/DEFINITION_OF_DONE.md criterion 2 (redefined 2026-11-03): every post is priced, carries an explained
+    # blank (`payNoDocument`: six documents read, what each prints), or carries a terminal reason
+    # (`not_federally_paid`). The gap is the posts with none of those. Reach is the open pay leads: posts whose
+    # title the export prints under their own agency, which only a person can tie to the post. A beneath-replaced
+    # post is paused, not researched, but still needs its blank, so it stays in the gap if it lacks one.
+    open_pay = sum(
+        1 for rows in groups.values() for row in rows
+        if row["reason"] not in TERMINAL_PAY_REASONS and row["blank"] is None
+    )
+    reach_pay = open_pay_leads(graph)
     return {
         "evidence": {"organisations": ev_total, "sourced": ev_sourced, "gap": ev_gap, "reach": ev_reach},
         "money": {"bare_estimates": bare, "named_in_a_held_document": named,
@@ -103,15 +120,18 @@ ROUTES = {
         "python scripts/derive_combined_statement_evidence.py --dry-run, then write",
     ],
     "pay": [
-        "python scripts/report_research_prompts.py --dry-run   # title families, largest first",
-        "Take the largest family; find the pay DOCUMENT (not a figure); add a reviewed row or a terminal reason.",
-        "Posts that sit beneath a replaced unit or off the federal schedule are not researched.",
+        "python scripts/find_pay_leads.py --dry-run   # posts the export prints under their own agency; no AI, no network",
+        "Bring the open leads (docs/PAY_LEADS.md) to the owner. Do not decide which organisation is the post's: "
+        "the matching rules refuse to guess and so do you.",
+        "On the owner's answer: a reviewed row (the pay modules re-check it against the document) or a decision in "
+        "data/curation/pay_lead_decisions.json with the reason.",
+        "A post with no blank is a gap: python scripts/regenerate_published_graph.py, then the derive steps.",
     ],
 }
 
 PIPE = [
     "python scripts/regenerate_published_graph.py --treasury-rows <the statement named in __budgetSummary.statement_file>",
-    "python scripts/report_cost_coverage.py && python scripts/report_unpriced_positions.py",
+    "python scripts/report_cost_coverage.py && python scripts/report_unpriced_positions.py && python scripts/find_pay_leads.py",
     "python scripts/validate_published_graph.py",
     "python -m pytest tests/ -q",
     "node scripts/frontend_smoke.mjs   # only if js/ changed",
@@ -169,8 +189,8 @@ def render(now: dict, pick: str | None, metric: str, stop: str | None, budget=No
         f"blanks, {m['named_in_a_held_document']} of them named in a held document with no licensed figure; "
         f"{m['committee_estimates']} committee estimates counted apart |",
         f"| Pay | **{p['gap']}** | {p['reach']} | {p['priced']} of {p['positions']} posts priced; the gap is every "
-        "unpriced post without a terminal reason (a documents-checked blank is not one, DEFINITION_OF_DONE.md "
-        "criterion 2); reach is the part a pay document could still price |",
+        "unpriced post with neither a documents-checked blank nor a terminal reason (DEFINITION_OF_DONE.md "
+        "criterion 2); reach is the open pay leads, posts a person must tie to a printed row |",
         "",
         "Not measured here: criterion 4(a) (list units, CURATION.md 32.1) and criteria 5-7 (the refresh job, "
         "`scripts/update_cycle.py`, which counts only scheduled cycles).",

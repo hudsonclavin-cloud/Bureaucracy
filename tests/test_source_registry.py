@@ -129,8 +129,11 @@ class RegistryTests(unittest.TestCase):
         self.assertEqual(by_id["whitehouse_staff_report"]["copy"]["graphCheck"], "holds")
         self.assertEqual(by_id["official_pages"]["perNodeDate"], "lastVerified")
         self.assertIsNone(by_id["monthly_treasury_statement"]["perNodeDate"])
-        # the two sources whose next edition is past the margin as of this build
-        self.assertEqual(by_id["opm_fedscope_employment"]["statusAtBuild"], fr.STATUS_OVERDUE)
+        # the one source whose next edition is past the margin as of this build; FedScope is a closed record
+        # since Federal Workforce Data (its successor, a monthly source of its own) became the headline headcount
+        self.assertEqual(by_id["opm_fedscope_employment"]["statusAtBuild"], fr.STATUS_CLOSED)
+        self.assertEqual(by_id["opm_fwd_employment"]["statusAtBuild"], fr.STATUS_CURRENT)
+        self.assertEqual(by_id["opm_fwd_employment"]["copy"]["date"], "2026-08-31")
         self.assertEqual(by_id["doj_usao_ad_pay_plan"]["statusAtBuild"], fr.STATUS_OVERDUE)
 
     def test_the_committed_document_is_what_the_script_renders(self):

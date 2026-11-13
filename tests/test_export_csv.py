@@ -64,6 +64,35 @@ class RenderTests(unittest.TestCase):
         self.assertTrue(gate.flat_csv_violations(graph, tmp / "graph.json", gate.label))
 
 
+class HeadcountColumnTests(unittest.TestCase):
+    def graph(self):
+        return {
+            "id": "the-constitution-of-the-united-states", "name": "Constitution", "type": "Foundation", "cost_status": "root_total", "resolved_total_amount": 1000.0,
+            "children": [{"id": "unit", "name": "Unit One", "type": "Agency", "cost_status": "unavailable",
+                          "employeesOfficial": 240,
+                          "employeesOfficialSource": {"source": "opm_fwd_employment", "period": "2026-08", "url": "https://data.opm.gov/x"},
+                          "payrollOfficial": {"totalAnnualPay": 24_000_000, "employees": 287, "period": "2025-03"},
+                          "children": []}],
+        }
+
+    def test_the_payroll_carries_its_own_count_and_period_beside_the_headcount_s_table_and_period(self):
+        rows = {r["id"]: r for r in ex.rows_of(self.graph())}
+        row = rows["unit"]
+        self.assertEqual((row["employees_official"], row["employees_source"], row["employees_period"]), ("240", "opm_fwd_employment", "2026-08"))
+        self.assertEqual((row["payroll_official_usd"], row["payroll_employees"], row["payroll_period"]), ("24000000.00", "287", "2025-03"))
+
+    def test_the_gate_refuses_a_row_whose_headcount_or_payroll_columns_are_not_the_node_s(self):
+        graph = self.graph()
+        tmp = PROJECT_ROOT / "tests" / ".tmp"; tmp.mkdir(exist_ok=True)
+        (tmp / "graph.json").write_text("{}", encoding="utf-8")
+        good = ex.render(graph)
+        (tmp / "nodes.csv").write_text(good, encoding="utf-8")
+        self.assertEqual(gate.flat_csv_violations(graph, tmp / "graph.json", gate.label), [])
+        for old, new in (("opm_fwd_employment", "opm_fedscope_employment"), ("2026-08", "2026-09"), (",287,", ",240,"), (",2025-03,", ",2026-08,")):
+            (tmp / "nodes.csv").write_text(good.replace(old, new, 1), encoding="utf-8")
+            self.assertTrue(gate.flat_csv_violations(graph, tmp / "graph.json", gate.label), (old, new))
+
+
 class PublishedTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):

@@ -660,9 +660,24 @@ try {
   if (withOfficial) {
     await openByName(withOfficial.name);
     const stats = await text("#info-stats");
-    check("the official headcount is shown and named as OPM's", /EMPLOYEES — OPM FedScope/.test(stats), stats.slice(0, 400));
+    const fwdSourced = withOfficial.employeesOfficialSource?.source === "opm_fwd_employment";
+    check("the official headcount is shown and named as OPM's, under the table it came from",
+      (fwdSourced ? /EMPLOYEES — OPM Federal Workforce Data/ : /EMPLOYEES — OPM FedScope/).test(stats), stats.slice(0, 400));
     const note = await text("#info-headcount-provenance");
-    check("the headcount names the file and its coverage", /OPM's FedScope employment file lists .* Coverage: /.test(note), note);
+    check("the headcount names the file and its coverage",
+      (fwdSourced ? /OPM's Federal Workforce Data status file lists .* Coverage: / : /OPM's FedScope employment file lists .* Coverage: /).test(note), note);
+    if (fwdSourced) {
+      check("a Federal Workforce Data headcount quotes the page's own coverage and says what it excludes",
+        /in either a pay or non-pay status/.test(note) && /lists what the dataset excludes/.test(note), note);
+    }
+    // A unit FWD names nothing of that name for keeps FedScope's dated count, said as FedScope's.
+    const fedscopeSourced = allNodes.find((n) => n.employeesOfficialSource?.source === "opm_fedscope_employment");
+    if (fedscopeSourced) {
+      await openByName(fedscopeSourced.name);
+      const fedStats = await text("#info-stats");
+      check("a headcount only FedScope names is labelled FedScope with its period", /EMPLOYEES — OPM FedScope \(2025-03\)/.test(fedStats), fedStats.slice(0, 400));
+      await openByName(withOfficial.name);
+    }
     if (withOfficial.employees) {
       check("the curated figure is labelled uncited beside it", /EMPLOYEES \(uncited, from the base graph\)/.test(stats), stats.slice(0, 400));
       check("the panel says the two count different populations", /count different populations/.test(note), note);

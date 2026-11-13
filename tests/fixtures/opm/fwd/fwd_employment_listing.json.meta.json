@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-11-03T17:15:55Z",
+ "url": "https://data.opm.gov/api/v1/files/employment?current=true",
+ "status": 200,
+ "final_url": "https://data.opm.gov/api/v1/files/employment?current=true",
+ "content_type": "application/json",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "no readable robots.txt (HTTP 404); failing open",
+ "bytes": 27041,
+ "sha256": "536d6fbec4629921b7a2153e3e1da1c00595999ba35f96016ab5dc5d1f734803",
+ "error": null
+}
