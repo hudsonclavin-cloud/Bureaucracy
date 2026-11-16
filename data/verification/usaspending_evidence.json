@@ -3,7 +3,7 @@
   "source": {
     "kind": "usaspending_file_ab",
     "basis": "gross_outlays",
-    "derivedAt": "2026-11-02T20:39:50Z",
+    "derivedAt": "2026-11-16T19:37:45Z",
     "fixtures": "tests/fixtures/usaspending/"
   },
   "dictionary": {

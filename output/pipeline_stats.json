@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-02T20:41:06.806886+00:00",
+  "timestamp": "2026-11-16T19:37:59.619883+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5498,
@@ -805,7 +805,7 @@
         "closed_record": 1,
         "copy_date_unknown": 0
       },
-      "asOf": "2026-11-02"
+      "asOf": "2026-11-16"
     },
     "budget_reconciliation": {
       "nodes_seen": 5527,

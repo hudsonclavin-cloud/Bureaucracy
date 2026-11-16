@@ -46,5 +46,21 @@
   ],
   "reviewQueueOpen": 59,
   "publishable": false
+ },
+ {
+  "startedAt": "2026-11-16T19:37:40Z",
+  "finishedAt": "2026-11-16T19:53:18Z",
+  "mode": "hold",
+  "trigger": "schedule",
+  "clean": true,
+  "held": false,
+  "reasons": [],
+  "anchorBefore": "2026-09-30",
+  "anchorAfter": "2026-09-30",
+  "fetched": [
+   "doj_usao_ad_pay_plan"
+  ],
+  "reviewQueueOpen": 59,
+  "publishable": false
  }
 ]
